@@ -18,6 +18,8 @@ Public Class ReciboDetalleEditForm
         fluent.SetObjectDataSourceBinding(RecibosDetallesBindingSource, Function(x) x.Entity, Sub(x) x.Update())
         fluent.SetBinding(IdConceptoLookUpEdit.Properties, Function(abs) abs.DataSource, Function(x) x.LookUpFormula.Entities)
 
+        ColumnaReciboImageComboBoxEdit.Properties.AddEnum(Of YiZi.AccesoDatos.Entidades.enmColumnaRecivo)()
+
         fluent.SetBinding(IdConceptoLookUpEdit, Function(sl) sl.EditValue, Function(x) x.SelectedItem)
 
         fluent.SetBinding(bsiEstado, Function(item) item.Caption, Function(x) x.Estado, Function(estado) String.Format("Estado : {0}", estado))

@@ -8,5 +8,9 @@ Public Class ReciboViewModel
         End Get
     End Property
 
-
+    Public ReadOnly Property ReciboPlantillas() As CollectionViewModel(Of YiZi.AccesoDatos.RecibosPlantillas, Integer, YiZi.AccesoDatos.IModeloDbContextUnitOfWork)
+        Get
+            Return GetDetailsCollectionViewModel(Function(x As ReciboViewModel) x.ReciboPlantillas, Function(x) x.RecibosPlantilllas, Function(x) x.IdConvenio, Sub(x, key) x.IdConvenio = key)
+        End Get
+    End Property
 End Class

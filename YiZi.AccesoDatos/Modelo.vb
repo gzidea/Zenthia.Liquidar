@@ -27,6 +27,7 @@ Partial Public Class Modelo
     Public Overridable Property Provincias As DbSet(Of Provincias)
     Public Overridable Property Recibos As DbSet(Of Recibos)
     Public Overridable Property RecibosDetalles As DbSet(Of RecibosDetalles)
+    Public Overridable Property RecibosPlantillas As DbSet(Of RecibosPlantillas)
     Public Overridable Property Sindicatos As DbSet(Of Sindicatos)
     Public Overridable Property TipoClaveUnica As DbSet(Of TipoClaveUnica)
     Public Overridable Property TipoLiquidacion As DbSet(Of TipoLiquidacion)
@@ -35,6 +36,7 @@ Partial Public Class Modelo
     Public Overridable Property Provinciasas As DbSet(Of Provinciasas)
     Public Overridable Property TipoConceptos As DbSet(Of TipoConceptos)
     Public Overridable Property Variables As DbSet(Of Variables)
+
 
     Protected Overrides Sub OnModelCreating(ByVal modelBuilder As DbModelBuilder)
         modelBuilder.Entity(Of Actividades)() _
@@ -84,6 +86,11 @@ Partial Public Class Modelo
             .WithOptional(Function(e) e.Convenios) _
             .HasForeignKey(Function(e) e.IdConvenio)
 
+        modelBuilder.Entity(Of Convenios)() _
+            .HasMany(Function(e) e.RecibosPlantillas) _
+            .WithOptional(Function(e) e.Convenio) _
+            .HasForeignKey(Function(e) e.IdConvenio)
+
         modelBuilder.Entity(Of Empresas)() _
             .HasMany(Function(e) e.Contactos) _
             .WithOptional(Function(e) e.Empresas) _
@@ -122,6 +129,11 @@ Partial Public Class Modelo
             .HasMany(Function(e) e.RecibosDetalles) _
             .WithOptional(Function(e) e.Formulas) _
             .HasForeignKey(Function(e) e.IdConcepto)
+
+        modelBuilder.Entity(Of Formulas)() _
+            .HasMany(Function(e) e.RecibosPlantillas) _
+            .WithOptional(Function(e) e.Formulas) _
+            .HasForeignKey(Function(e) e.IdFormula)
 
         modelBuilder.Entity(Of Jornadas)() _
             .HasMany(Function(e) e.Legajos) _
@@ -220,6 +232,11 @@ Partial Public Class Modelo
 
         modelBuilder.Entity(Of TipoLiquidacion)() _
             .HasMany(Function(e) e.Recibos) _
+            .WithOptional(Function(e) e.TipoLiquidacion) _
+            .HasForeignKey(Function(e) e.IdTipoLiquidacion)
+
+        modelBuilder.Entity(Of TipoLiquidacion)() _
+            .HasMany(Function(e) e.RecibosPlantillas) _
             .WithOptional(Function(e) e.TipoLiquidacion) _
             .HasForeignKey(Function(e) e.IdTipoLiquidacion)
 

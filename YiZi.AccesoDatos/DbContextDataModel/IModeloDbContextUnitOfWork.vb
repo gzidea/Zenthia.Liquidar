@@ -107,4 +107,9 @@ Public Interface IModeloDbContextUnitOfWork
     ''' </summary>
     ReadOnly Property RecibosDetalles As IRepository(Of RecibosDetalles, Integer)
 
+    ''' <summary>
+    ''' El repositorio de Recibos Plantilla
+    ''' </summary>
+    ReadOnly Property RecibosPlantilllas As IRepository(Of RecibosPlantillas, Integer)
+
 End Interface

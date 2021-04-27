@@ -9,9 +9,11 @@ Partial Public Class Formulas
         FormulasPeriodos = New HashSet(Of FormulasPeriodos)()
         FormulaTipoLiquidacion = New HashSet(Of FormulaTipoLiquidacion)()
         RecibosDetalles = New HashSet(Of RecibosDetalles)()
+        'RecibosPlantillas = New HashSet(Of RecibosPlantillas)()
     End Sub
 
-    <DatabaseGenerated(DatabaseGeneratedOption.None)>
+    <Key>
+    <DatabaseGenerated(DatabaseGeneratedOption.Identity)>
     Public Property Id As Integer
 
     Public Property Codigo As Integer?
@@ -63,6 +65,8 @@ Partial Public Class Formulas
     Public Overridable Property FormulaTipoLiquidacion As ICollection(Of FormulaTipoLiquidacion)
 
     Public Overridable Property RecibosDetalles As ICollection(Of RecibosDetalles)
+
+    Public Overridable Property RecibosPlantillas As ICollection(Of RecibosPlantillas)
 
     Public ReadOnly Property Variable As String
         Get

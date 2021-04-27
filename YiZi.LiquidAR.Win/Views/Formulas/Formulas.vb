@@ -32,8 +32,4 @@ Public Class Formulas
         'fluentAPI.WithEvent(Of CustomColumnDisplayTextEventArgs)(gridView, "CustomColumnDisplayText").Confirmation()
         fluentAPI.SetBinding(bsiRecordsCount, Function(item) item.Caption, Function(x) x.Entities.Count, Function(count) String.Format("Registros : {0}", count))
     End Sub
-
-    Private Sub gridView_CustomColumnDisplayText(sender As Object, e As CustomColumnDisplayTextEventArgs) Handles gridView.CustomColumnDisplayText
-
-    End Sub
 End Class

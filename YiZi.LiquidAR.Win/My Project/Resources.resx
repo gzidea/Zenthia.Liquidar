@@ -121,6 +121,9 @@
   <data name="cancel_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cancel_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="converttorange_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\converttorange_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="edit_32x322" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit_32x322.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -136,17 +139,32 @@
   <data name="delete_32x321" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\delete_32x321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="saveandnew_32x321" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\saveandnew_32x321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="customizegrid" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\customizegrid.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="save" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\save.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
+  <data name="apply_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\apply_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="actions_refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\actions_refresh.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="saveandclose2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\saveandclose2.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="saveandnew_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\saveandnew_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="saveandnew_16x161" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\saveandnew_16x161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="recurrence_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\recurrence_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="actions_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\actions_add.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
@@ -160,29 +178,50 @@
   <data name="refreshallpivottable_32x321" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\refreshallpivottable_32x321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="new_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\new_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="edit_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="initialstate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\initialstate.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
+  <data name="mailmerge_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mailmerge_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="converttorange_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\converttorange_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="saveandnew" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\saveandnew.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="design_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\design_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="print" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\print.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="new_16x162" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\new_16x162.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="functionsum_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\functionsum_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="preview_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\preview_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="delete_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\delete_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="preview_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\preview_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="refreshallpivottable_16x161" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\refreshallpivottable_16x161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="new_32x321" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\new_32x321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="addcalculatedfield_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\addcalculatedfield_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\delete.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
@@ -193,20 +232,38 @@
   <data name="edit_16x161" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit_16x161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="apply_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\apply_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="addcalculatedfield_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\addcalculatedfield_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="new_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\new_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="close" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="edit_16x162" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\edit_16x162.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="customizegrid1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\customizegrid1.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
+  <data name="edit_16x162" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit_16x162.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="functionsum_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\functionsum_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="apply_32x321" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\apply_32x321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="new_16x162" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\new_16x162.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="delete_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\delete_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mailmerge_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mailmerge_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="new_16x161" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\new_16x161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -217,8 +274,11 @@
   <data name="actions_add1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\actions_add1.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="new_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\new_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="apply_16x161" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\apply_16x161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="saveandnew_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\saveandnew_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="edit_32x321" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit_32x321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -226,7 +286,7 @@
   <data name="recurrence_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\recurrence_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="recurrence_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\recurrence_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="design_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\design_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

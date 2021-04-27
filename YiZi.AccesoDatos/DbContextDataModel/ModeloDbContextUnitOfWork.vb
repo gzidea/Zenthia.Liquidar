@@ -134,4 +134,10 @@ Public Class ModeloDbContextUnitOfWork
             Return GetRepository(Function(x) x.[Set](Of RecibosDetalles)(), Function(x As RecibosDetalles) x.Id)
         End Get
     End Property
+
+    Public ReadOnly Property RecibosPlantilllas As IRepository(Of RecibosPlantillas, Integer) Implements IModeloDbContextUnitOfWork.RecibosPlantilllas
+        Get
+            Return GetRepository(Function(x) x.[Set](Of RecibosPlantillas)(), Function(x As RecibosPlantillas) x.Id)
+        End Get
+    End Property
 End Class

@@ -103,6 +103,66 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property addcalculatedfield_16x16() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("addcalculatedfield_16x16", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property addcalculatedfield_32x32() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("addcalculatedfield_32x32", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property apply_16x16() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("apply_16x16", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property apply_16x161() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("apply_16x161", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property apply_32x32() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("apply_32x32", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property apply_32x321() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("apply_32x321", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property cancel_16x16() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("cancel_16x16", resourceCulture)
@@ -127,6 +187,26 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("close", resourceCulture)
                 Return CType(obj,DevExpress.Utils.Svg.SvgImage)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property converttorange_16x16() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("converttorange_16x16", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property converttorange_32x32() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("converttorange_32x32", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
@@ -203,6 +283,26 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property design_16x16() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("design_16x16", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property design_32x32() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("design_32x32", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property edit_16x16() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("edit_16x16", resourceCulture)
@@ -261,12 +361,52 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property functionsum_16x16() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("functionsum_16x16", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property functionsum_32x32() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("functionsum_32x32", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Busca un recurso adaptado de tipo DevExpress.Utils.Svg.SvgImage.
         '''</summary>
         Friend ReadOnly Property initialstate() As DevExpress.Utils.Svg.SvgImage
             Get
                 Dim obj As Object = ResourceManager.GetObject("initialstate", resourceCulture)
                 Return CType(obj,DevExpress.Utils.Svg.SvgImage)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property mailmerge_16x16() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("mailmerge_16x16", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property mailmerge_32x32() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("mailmerge_32x32", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
@@ -326,6 +466,26 @@ Namespace My.Resources
         Friend ReadOnly Property new_32x322() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("new_32x322", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property preview_16x16() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("preview_16x16", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property preview_32x32() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("preview_32x32", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -427,6 +587,46 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("saveandnew", resourceCulture)
                 Return CType(obj,DevExpress.Utils.Svg.SvgImage)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property saveandnew_16x16() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("saveandnew_16x16", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property saveandnew_16x161() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("saveandnew_16x161", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property saveandnew_32x32() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("saveandnew_32x32", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property saveandnew_32x321() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("saveandnew_32x321", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
     End Module

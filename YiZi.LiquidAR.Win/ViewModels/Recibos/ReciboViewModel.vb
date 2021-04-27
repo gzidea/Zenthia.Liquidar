@@ -1,4 +1,5 @@
-﻿Imports DevExpress.Mvvm.POCO
+﻿Imports DevExpress.Mvvm
+Imports DevExpress.Mvvm.POCO
 Imports YiZi.AccesoDatos
 Imports YiZi.mvvm.Common.DataModel
 Imports YiZi.mvvm.Common.ViewModel
@@ -10,12 +11,107 @@ Partial Public Class ReciboViewModel
         Return ViewModelSource.Create(Function() New ReciboViewModel(unitOfWorkFactory))
     End Function
 
+
+
     Protected Sub New(Optional ByVal unitOfWorkFactory As IUnitOfWorkFactory(Of IModeloDbContextUnitOfWork) = Nothing)
-        MyBase.New(If(unitOfWorkFactory, UnitOfWorkSource.GetUnitOfWorkFactory()), Function(x) x.Recibos, Function(x) x.Legajos.NombreYApellido)
+        MyBase.New(If(unitOfWorkFactory, UnitOfWorkSource.GetUnitOfWorkFactory()), Function(x) x.Recibos, Function(x) x.Fecha)
+        Messenger.[Default].Register(Of EntityMessage(Of RecibosDetalles, Integer))(Me, Sub(x) OnDetalleMessage(x))
+        'AsignarVariables()
     End Sub
 
-    Public Sub AddDetalleToFromPlantilla()
+    '//// ESTE PROCESO DETECTA QUE SE GUARDO EL DETALLE Y VUELVE A REALIZAR UN CALCULO \\\\
+    Protected Overridable Sub OnDetalleMessage(ByVal message As EntityMessage(Of RecibosDetalles, Integer))
+        If Entity Is Nothing Then
+            Return
+        End If
+        'If message.MessageType = EntityMessageType.Deleted AndAlso Object.Equals(message.PrimaryKey, PrimaryKey) Then
+        '    Close()
+        'End If
+    End Sub
 
+    Public _formula As CalcularFormulas
+
+    Public Overridable Sub Recalcular()
+        _formula = New CalcularFormulas(MyBase.Entity)
+        For Each detalle As RecibosDetalles In MyBase.Entity.RecibosDetalles
+
+            _formula.NewVariable(detalle.Formulas.Variable & "I", detalle.formulaImporte)
+            _formula.NewVariable(detalle.Formulas.Variable & "C", detalle.formulaCantidad)
+
+            detalle.Cantidad = Val(_formula.Formula(detalle.formulaCantidad))
+            Select Case detalle.Formulas.Conceptos.ColumnaRecibo
+                Case Entidades.enmColumnaRecivo.Remunerativo
+                    detalle.Remunerativo = Val(_formula.Formula(detalle.formulaImporte))
+                    detalle.NoRemunerativo = 0
+                    detalle.Descuento = 0
+                Case Entidades.enmColumnaRecivo.NoRemunerativo
+                    detalle.NoRemunerativo = Val(_formula.Formula(detalle.formulaImporte))
+                    detalle.Remunerativo = 0
+                    detalle.Descuento = 0
+                Case Entidades.enmColumnaRecivo.Descuento
+                    detalle.Descuento = Val(_formula.Formula(detalle.formulaImporte))
+                    detalle.Remunerativo = 0
+                    detalle.NoRemunerativo = 0
+                Case Entidades.enmColumnaRecivo.DescuentoNoRemunerativo
+                    detalle.Descuento = Val(_formula.Formula(detalle.formulaImporte))
+                    detalle.Remunerativo = 0
+                    detalle.NoRemunerativo = 0
+            End Select
+        Next
+        MyBase.Entity.TotalRemunerativos = MyBase.Entity.RecibosDetalles.Sum(Function(x) x.Remunerativo)
+        MyBase.Entity.TotalDescuentos = MyBase.Entity.RecibosDetalles.Sum(Function(x) x.Descuento)
+        MyBase.Entity.TotalNoRemunerativos = MyBase.Entity.RecibosDetalles.Sum(Function(x) x.NoRemunerativo)
+        MyBase.Entity.Total = MyBase.Entity.TotalRemunerativos - MyBase.Entity.TotalDescuentos + MyBase.Entity.TotalNoRemunerativos
+        MyBase.Save()
+    End Sub
+
+    Public Overridable Sub AddDetalleFromPlantilla()
+        Dim idconvenio As Integer? = 0
+        If Not MyBase.Entity Is Nothing Then
+            idconvenio = MyBase.Entity.Legajos.IdConvenio
+        End If
+        Using db As YiZi.AccesoDatos.Modelo = New YiZi.AccesoDatos.Modelo()
+            Dim lista As List(Of RecibosPlantillas) = db.RecibosPlantillas.Where(Function(x) x.IdConvenio = idconvenio).ToList()
+
+            For Each item As RecibosPlantillas In lista
+                Dim itemDetalle As YiZi.AccesoDatos.RecibosDetalles = New YiZi.AccesoDatos.RecibosDetalles
+                itemDetalle.IdRecibo = MyBase.Entity.Id
+                itemDetalle.IdConcepto = item.IdFormula
+                Dim formula As YiZi.AccesoDatos.Formulas = getFormula(item.IdFormula)
+                itemDetalle.formulaCantidad = formula.FormulaCantidad
+                itemDetalle.formulaImporte = formula.FormulaImporte
+                itemDetalle.Remunerativo = 100
+                MyBase.Entity.RecibosDetalles.Add(itemDetalle)
+            Next
+        End Using
+        MyBase.Save()
+    End Sub
+
+    Public Overridable Function getFormula(idFormula As Integer?) As YiZi.AccesoDatos.Formulas
+        Dim resultado As YiZi.AccesoDatos.Formulas = New YiZi.AccesoDatos.Formulas
+        Using db As YiZi.AccesoDatos.Modelo = New YiZi.AccesoDatos.Modelo()
+            resultado = db.Formulas.Where(Function(x) x.Id = idFormula).FirstOrDefault
+        End Using
+        Return resultado
+    End Function
+
+    Public Overridable Sub AddDetalleToPlantilla()
+        Dim newItemPlantilla As RecibosPlantillas = New RecibosPlantillas
+        For Each item As RecibosDetalles In MyBase.Entity.RecibosDetalles
+            newItemPlantilla = New RecibosPlantillas
+            newItemPlantilla.IdConvenio = MyBase.Entity.Legajos.IdConvenio
+            newItemPlantilla.IdFormula = item.IdConcepto
+            newItemPlantilla.IdTipoLiquidacion = MyBase.Entity.IdTipoLiquidacion
+            AddSingleRecord(newItemPlantilla)
+        Next
+
+    End Sub
+
+    Public Sub AddSingleRecord(itemReciboPlantilla As RecibosPlantillas)
+        Using db As YiZi.AccesoDatos.Modelo = New YiZi.AccesoDatos.Modelo()
+            db.RecibosPlantillas.Add(itemReciboPlantilla)
+            db.SaveChanges()
+        End Using
     End Sub
 
     Public ReadOnly Property LookUpEmpresas As IEntitiesViewModel(Of YiZi.AccesoDatos.Empresas)
@@ -30,11 +126,72 @@ Partial Public Class ReciboViewModel
         End Get
     End Property
 
+    Public Overridable Property SelectedEmpresa() As Integer
+
+    Private _LookUpLegajos As IEntitiesViewModel(Of YiZi.AccesoDatos.Legajos)
     Public ReadOnly Property LookUpLegajos As IEntitiesViewModel(Of YiZi.AccesoDatos.Legajos)
         Get
-            Return GetLookUpEntitiesViewModel(Function(x As ReciboViewModel) x.LookUpLegajos, Function(x) x.Legajos)
+            Return _LookUpLegajos
         End Get
     End Property
 
+    Protected Overridable Sub OnSelectedEmpresaChanged()
+        RefreshLookUpCollections(True) 'esto hago para poder actualizar el lookup con otros valores. El error era que cargaba una vez y luego no renovaba sus valores
+        _LookUpLegajos = GetLookUpEntitiesViewModel(Function(x As ReciboViewModel) x.LookUpLegajos, Function(x) x.Legajos, Function(query) query.Where(Function(c) c.Empresas.Id = SelectedEmpresa))
+        Me.RaisePropertyChanged(Function(m) m.LookUpLegajos)
+    End Sub
 
+    Public Overridable Property SelectedItems As IEnumerable(Of RecibosDetalles)
+
+    Public Overridable Sub DeleteSelectedItems()
+        For Each item As RecibosDetalles In SelectedItems
+            ReciboDetalles.Delete(item)
+        Next
+    End Sub
+
+    Protected Sub OnSelectedItemsChanged()
+
+    End Sub
+
+    Public Overridable Sub VistaPreviaImpresion()
+        Dim source As List(Of YiZi.AccesoDatos.Recibos) = New List(Of YiZi.AccesoDatos.Recibos)
+
+        source.Add(MyBase.Entity)
+        Dim reporte As xrReciboSueldoX1 = New xrReciboSueldoX1
+        reporte.DataSource = source  'ReciboBindingSource
+
+        Dim reporteContenedor As xrReciboSueldoX2 = New xrReciboSueldoX2
+        reporteContenedor.Recibo = reporte
+
+
+        ''reporteContenedor
+
+        Dim pad As frmReportesVistaPrevia = New frmReportesVistaPrevia
+        reporteContenedor.ExportOptions.Pdf.DocumentOptions.Title = "Recibo de Sueldo " & MyBase.Entity.Legajos.NombreYApellido.ToString
+        reporteContenedor.Name = MyBase.Entity.Legajos.NombreYApellido.ToString & " " & MyBase.Entity.Periodo.Replace("/", "")
+
+        reporteContenedor.PaperKind = Printing.PaperKind.Custom
+        reporteContenedor.PageHeight = 2100
+        reporteContenedor.PageWidth = 2970
+        reporteContenedor.Margins = New Printing.Margins(15, 15, 15, 15)
+        reporteContenedor.CreateDocument(False)
+        reporteContenedor.PrintingSystem.Document.ScaleFactor = 0.78
+        ''reporteContenedor.PrintingSystem.Document.AutoFitToPagesWidth = 1
+
+        pad.dvReportes.DocumentSource = reporteContenedor
+
+        ''SetTextWatermark(reporte)
+        pad.ShowDialog()
+    End Sub
+
+    Public Overridable Sub ReportDesigner()
+        Dim source As List(Of YiZi.AccesoDatos.Recibos) = New List(Of YiZi.AccesoDatos.Recibos)
+
+        source.Add(MyBase.Entity)
+        Dim reporte As xrReciboSueldoX1 = New xrReciboSueldoX1
+        reporte.DataSource = source
+        Dim pad As frmReportesDesigner = New frmReportesDesigner
+        pad.ReportDesigner1.OpenReport(reporte)
+        pad.ShowDialog()
+    End Sub
 End Class

@@ -9,7 +9,8 @@ Partial Public Class Conceptos
         Formulas = New HashSet(Of Formulas)()
     End Sub
 
-    <DatabaseGenerated(DatabaseGeneratedOption.None)>
+    <Key>
+    <DatabaseGenerated(DatabaseGeneratedOption.Identity)>
     Public Property Id As Integer
 
     Public Property Codigo As Integer?
@@ -17,8 +18,7 @@ Partial Public Class Conceptos
     <StringLength(255)>
     Public Property Descripcion As String
 
-    <StringLength(255)>
-    Public Property ColumnaRecibo As String
+    Public Property ColumnaRecibo As Entidades.enmColumnaRecivo
 
     Public Overridable Property Formulas As ICollection(Of Formulas)
 End Class

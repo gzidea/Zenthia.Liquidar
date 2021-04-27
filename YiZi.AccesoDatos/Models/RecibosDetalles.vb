@@ -5,7 +5,9 @@ Imports System.ComponentModel.DataAnnotations.Schema
 Imports System.Data.Entity.Spatial
 
 Partial Public Class RecibosDetalles
-    <DatabaseGenerated(DatabaseGeneratedOption.None)>
+
+    <Key>
+    <DatabaseGenerated(DatabaseGeneratedOption.Identity)>
     Public Property Id As Integer
 
     Public Property IdRecibo As Integer?
@@ -28,13 +30,13 @@ Partial Public Class RecibosDetalles
     Public Property Importe As Double?
 
     '<Column(TypeName:="money")>
-    Public Property Remunerativo As Double?
+    Public Property Remunerativo As Decimal?
 
     '<Column(TypeName:="money")>
-    Public Property Descuento As Double?
+    Public Property Descuento As Decimal?
 
     '<Column(TypeName:="money")>
-    Public Property NoRemunerativo As Double?
+    Public Property NoRemunerativo As Decimal?
 
     Public Overridable Property Formulas As Formulas
 

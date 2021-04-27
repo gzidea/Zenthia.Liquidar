@@ -18,6 +18,8 @@ Partial Public Class Recibos
 
     Public Property Fecha As Date?
 
+    Public Property FechaPago As Date
+
     <StringLength(255)>
     Public Property Periodo As String
 
@@ -40,7 +42,6 @@ Partial Public Class Recibos
     Public Overridable Property Legajos As Legajos
 
     Public Overridable Property TipoLiquidacion As TipoLiquidacion
-
 
     Public Overridable Property RecibosDetalles As ICollection(Of RecibosDetalles)
 End Class
