@@ -23,6 +23,7 @@ Public Class FormulaEditForm
 
         fluent.SetBinding(ConveniosBindingSource, Function(abs) abs.DataSource, Function(x) x.LookUpConvenios.Entities)
         fluent.SetBinding(ConceptosBindingSource, Function(abs) abs.DataSource, Function(x) x.LookUpConceptos.Entities)
+        fluent.SetBinding(UnidadesBindingSource, Function(abs) abs.DataSource, Function(x) x.LookUpUnidades.Entities)
 
         fluent.WithEvent(Of GridView, FocusedRowObjectChangedEventArgs)(gridViewLiquidaciones, "FocusedRowObjectChanged").SetBinding(Function(x) x.FormulaLiquidaciones.SelectedEntity, Function(args) TryCast(args.Row, YiZi.AccesoDatos.FormulaTipoLiquidacion), Sub(gView, entity) gView.FocusedRowHandle = gView.FindRow(entity))
         fluent.WithEvent(Of RowClickEventArgs)(gridViewLiquidaciones, "RowClick").EventToCommand(Sub(x) x.FormulaLiquidaciones.Edit(Nothing), Function(x) x.FormulaLiquidaciones.SelectedEntity, Function(args) (args.Clicks = 2) AndAlso (args.Button = System.Windows.Forms.MouseButtons.Left))

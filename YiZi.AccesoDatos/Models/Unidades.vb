@@ -9,6 +9,7 @@ Partial Public Class Unidades
         Formulas = New HashSet(Of Formulas)()
     End Sub
 
+    <Key>
     <DatabaseGenerated(DatabaseGeneratedOption.None)>
     Public Property Id As Integer
 

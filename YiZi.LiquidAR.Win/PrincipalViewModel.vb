@@ -18,9 +18,7 @@ Partial Class PrincipalViewModel
         Return ViewModelSource.Create(Function() New PrincipalViewModel())
     End Function
 
-    Protected Sub New()
-        MyBase.New(UnitOfWorkSource.GetUnitOfWorkFactory())
-    End Sub
+
     Protected Overrides Function CreateModules() As PrincipalModuleDescription()
         Return New PrincipalModuleDescription() {New PrincipalModuleDescription("Sindicatos", "SindicatoCollectionView", _TablesGroup, GetPeekCollectionViewModelFactory(Function(x) x.Sindicatos)),
                                                    New PrincipalModuleDescription("Obras Sociales", "ObrasSocialesCollectionView", _TablesGroup, GetPeekCollectionViewModelFactory(Function(x) x.ObrasSociales)),
@@ -28,7 +26,9 @@ Partial Class PrincipalViewModel
                                                    New PrincipalModuleDescription("Convenios", "ConveniosCollectionView", _TablesGroup, GetPeekCollectionViewModelFactory(Function(x) x.Convenios)),
                                                    New PrincipalModuleDescription("Legajos", "LegajosCollectionView", _TablesGroup, GetPeekCollectionViewModelFactory(Function(x) x.Legajos)),
                                                    New PrincipalModuleDescription("Formulas", "FormulasCollectionView", _TablesGroup, GetPeekCollectionViewModelFactory(Function(x) x.Formulas)),
-                                                   New PrincipalModuleDescription("Recibos", "RecibosCollectionView", _TablesGroup, GetPeekCollectionViewModelFactory(Function(x) x.Recibos))}
+                                                   New PrincipalModuleDescription("Recibos", "RecibosCollectionView", _TablesGroup, GetPeekCollectionViewModelFactory(Function(x) x.Recibos)),
+                                                   New PrincipalModuleDescription("Usuarios", "UsuarioCollectionView", _TablesGroup, GetPeekCollectionViewModelFactory(Function(x) x.Usuarios)),
+                                                   New PrincipalModuleDescription("Roles", "RolCollectionView", _TablesGroup, GetPeekCollectionViewModelFactory(Function(x) x.Roles))}
     End Function
     Protected Overrides Sub OnActiveModuleChanged(ByVal oldModule As PrincipalModuleDescription)
         If ActiveModule IsNot Nothing AndAlso NavigationService IsNot Nothing Then
@@ -36,6 +36,7 @@ Partial Class PrincipalViewModel
         End If
         MyBase.OnActiveModuleChanged(oldModule)
     End Sub
+
 
 
     Private _empresaactual As YiZi.AccesoDatos.Empresas

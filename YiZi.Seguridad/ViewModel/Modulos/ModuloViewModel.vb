@@ -1,0 +1,16 @@
+﻿Imports DevExpress.Mvvm.POCO
+Imports YiZi.AccesoDatos
+Imports YiZi.mvvm.Common.DataModel
+Imports YiZi.mvvm.Common.ViewModel
+
+Public Class ModuloViewModel
+    Inherits SingleObjectViewModel(Of YiZi.AccesoDatos.Modulos, Integer, IModeloDbContextUnitOfWork)
+
+    Public Shared Function Create(Optional ByVal unitOfWorkFactory As IUnitOfWorkFactory(Of IModeloDbContextUnitOfWork) = Nothing) As ModuloViewModel
+        Return ViewModelSource.Create(Function() New ModuloViewModel(unitOfWorkFactory))
+    End Function
+
+    Protected Sub New(Optional ByVal unitOfWorkFactory As IUnitOfWorkFactory(Of IModeloDbContextUnitOfWork) = Nothing)
+        MyBase.New(If(unitOfWorkFactory, UnitOfWorkSource.GetUnitOfWorkFactory()), Function(x) x.Modulos, Function(x) x.Nombre)
+    End Sub
+End Class

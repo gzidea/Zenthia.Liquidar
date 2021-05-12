@@ -45,10 +45,14 @@ Public Class xrReciboSueldoX1
         Dim largo = Len(CStr(Format(CDbl(xlblTotalRecibo.Value), "#,###.00")))
 
         Dim decimales = Mid(CStr(Format(CDbl(xlblTotalRecibo.Value), "#,###.00")), largo - 2)
-        'xlblTotalEnLetras.Text = "Recibi conforme la suma en pesos: " & UI_WIN.GetMyNumberToWords(Format(CDbl(xlblTotalRecibo.Value), "#,###.00") - decimales) & "  " & Mid(decimales, Len(decimales) - 1) & "/100" & " " _
-        '            & "en concepto de mis haberes correspondiente al periodo arriba indicado y segun la presente liquidacion"
+        xlblTotalEnLetras.Text = "Recibi conforme la suma en pesos: " & UI_Win.GetMyNumberToWords(Format(CDbl(xlblTotalRecibo.Value), "#,###.00") - decimales) & "  " & Mid(decimales, Len(decimales) - 1) & "/100" & " " _
+                    & "en concepto de mis haberes correspondiente al periodo arriba indicado y segun la presente liquidacion"
         'Dim fecha As DateTime = DateSerial(Year(Now), Month(Now) + 1, 0)
-        xlblLugarYFechaDePago.Text = "RECONQUISTA - " & "15/04/2021" 'fechaLarga(fecha)
+        Dim lugardepago As String = ""
+        If Not xlbLocalidad.Value Is Nothing Then
+            lugardepago = xlbLocalidad.Value.ToString()
+        End If
+        xlblLugarYFechaDePago.Text = lugardepago & " - " & fechaLarga(xlblFechaPago.Value)
     End Sub
 
     Function fechaLarga(fecha As Date) As String
@@ -65,9 +69,15 @@ Public Class xrReciboSueldoX1
     End Function
 
     Private Sub Detail1_BeforePrint(sender As Object, e As PrintEventArgs) Handles Detail1.BeforePrint
-        'If TryCast(DetailReport.GetCurrentRow, YiZi.AccesoDatos.RecibosDetalles).Importe = 0 Then
-        '    e.Cancel = True
-        '    Return
-        'End If
+
+        'Debug.Print(CDbl(TryCast(DetailReport.GetCurrentRow, YiZi.AccesoDatos.RecibosDetalles).Importe))
+        Dim importe As Double = TryCast(DetailReport.GetCurrentRow, YiZi.AccesoDatos.RecibosDetalles).Remunerativo +
+            TryCast(DetailReport.GetCurrentRow, YiZi.AccesoDatos.RecibosDetalles).Descuento +
+            TryCast(DetailReport.GetCurrentRow, YiZi.AccesoDatos.RecibosDetalles).NoRemunerativo
+
+        If importe = 0 Then
+            e.Cancel = True
+            Return
+        End If
     End Sub
 End Class

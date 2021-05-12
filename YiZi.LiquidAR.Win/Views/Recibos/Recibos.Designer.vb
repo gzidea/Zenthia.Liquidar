@@ -20,6 +20,9 @@ Partial Class Recibos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim SuperToolTip1 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
+        Dim ToolTipTitleItem1 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
+        Dim ToolTipItem1 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
         Me.gridControl = New DevExpress.XtraGrid.GridControl()
         Me.RecibosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.gridView = New DevExpress.XtraGrid.Views.Grid.GridView()
@@ -31,19 +34,26 @@ Partial Class Recibos
         Me.colTotalDescuentos = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colTotalNoRemunerativos = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.columnSep1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colTipoLiquidacion = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colTotal = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.ribbonControl = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.bbiNew = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiEdit = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiDelete = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiRefresh = New DevExpress.XtraBars.BarButtonItem()
         Me.bsiRecordsCount = New DevExpress.XtraBars.BarStaticItem()
+        Me.bbiImprimirGrilla = New DevExpress.XtraBars.BarButtonItem()
+        Me.bbiGenerarPdfRecibos = New DevExpress.XtraBars.BarButtonItem()
+        Me.bbiEnviarPorCorreo = New DevExpress.XtraBars.BarButtonItem()
+        Me.bbiClose = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.rpgImpresion = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonStatusBar1 = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
         Me.mvvmContext = New DevExpress.Utils.MVVM.MVVMContext(Me.components)
         Me.popupMenu = New DevExpress.XtraBars.PopupMenu(Me.components)
         Me.FiltrosEmpresasRecibos1 = New YiZi.LiquidAR.Win.FiltrosEmpresasRecibos()
-        Me.colTipoLiquidacion = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.gridControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RecibosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -70,18 +80,20 @@ Partial Class Recibos
         '
         'gridView
         '
-        Me.gridView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colPeriodo, Me.colLegajos, Me.colLegajos1, Me.colLegajos2, Me.colTotalRemunerativos, Me.colTotalDescuentos, Me.colTotalNoRemunerativos, Me.columnSep1, Me.colTipoLiquidacion})
+        Me.gridView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colPeriodo, Me.colLegajos, Me.colLegajos1, Me.colLegajos2, Me.colTotalRemunerativos, Me.colTotalDescuentos, Me.colTotalNoRemunerativos, Me.columnSep1, Me.colTipoLiquidacion, Me.colTotal})
         Me.gridView.GridControl = Me.gridControl
         Me.gridView.Name = "gridView"
         Me.gridView.OptionsBehavior.Editable = False
+        Me.gridView.OptionsSelection.MultiSelect = True
+        Me.gridView.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect
         '
         'colPeriodo
         '
         Me.colPeriodo.FieldName = "Periodo"
         Me.colPeriodo.Name = "colPeriodo"
         Me.colPeriodo.Visible = True
-        Me.colPeriodo.VisibleIndex = 0
-        Me.colPeriodo.Width = 60
+        Me.colPeriodo.VisibleIndex = 1
+        Me.colPeriodo.Width = 80
         '
         'colLegajos
         '
@@ -89,8 +101,8 @@ Partial Class Recibos
         Me.colLegajos.FieldName = "Legajos.Legajo"
         Me.colLegajos.Name = "colLegajos"
         Me.colLegajos.Visible = True
-        Me.colLegajos.VisibleIndex = 2
-        Me.colLegajos.Width = 61
+        Me.colLegajos.VisibleIndex = 3
+        Me.colLegajos.Width = 81
         '
         'colLegajos1
         '
@@ -98,8 +110,8 @@ Partial Class Recibos
         Me.colLegajos1.FieldName = "Legajos.NombreYApellido"
         Me.colLegajos1.Name = "colLegajos1"
         Me.colLegajos1.Visible = True
-        Me.colLegajos1.VisibleIndex = 3
-        Me.colLegajos1.Width = 350
+        Me.colLegajos1.VisibleIndex = 4
+        Me.colLegajos1.Width = 470
         '
         'colLegajos2
         '
@@ -107,8 +119,8 @@ Partial Class Recibos
         Me.colLegajos2.FieldName = "Legajos.CUIL"
         Me.colLegajos2.Name = "colLegajos2"
         Me.colLegajos2.Visible = True
-        Me.colLegajos2.VisibleIndex = 4
-        Me.colLegajos2.Width = 131
+        Me.colLegajos2.VisibleIndex = 5
+        Me.colLegajos2.Width = 176
         '
         'colTotalRemunerativos
         '
@@ -118,8 +130,8 @@ Partial Class Recibos
         Me.colTotalRemunerativos.FieldName = "TotalRemunerativos"
         Me.colTotalRemunerativos.Name = "colTotalRemunerativos"
         Me.colTotalRemunerativos.Visible = True
-        Me.colTotalRemunerativos.VisibleIndex = 5
-        Me.colTotalRemunerativos.Width = 126
+        Me.colTotalRemunerativos.VisibleIndex = 6
+        Me.colTotalRemunerativos.Width = 135
         '
         'colTotalDescuentos
         '
@@ -129,8 +141,8 @@ Partial Class Recibos
         Me.colTotalDescuentos.FieldName = "TotalDescuentos"
         Me.colTotalDescuentos.Name = "colTotalDescuentos"
         Me.colTotalDescuentos.Visible = True
-        Me.colTotalDescuentos.VisibleIndex = 6
-        Me.colTotalDescuentos.Width = 112
+        Me.colTotalDescuentos.VisibleIndex = 7
+        Me.colTotalDescuentos.Width = 127
         '
         'colTotalNoRemunerativos
         '
@@ -140,22 +152,41 @@ Partial Class Recibos
         Me.colTotalNoRemunerativos.FieldName = "TotalNoRemunerativos"
         Me.colTotalNoRemunerativos.Name = "colTotalNoRemunerativos"
         Me.colTotalNoRemunerativos.Visible = True
-        Me.colTotalNoRemunerativos.VisibleIndex = 7
-        Me.colTotalNoRemunerativos.Width = 114
+        Me.colTotalNoRemunerativos.VisibleIndex = 8
+        Me.colTotalNoRemunerativos.Width = 125
         '
         'columnSep1
         '
         Me.columnSep1.Name = "columnSep1"
         Me.columnSep1.Visible = True
-        Me.columnSep1.VisibleIndex = 8
-        Me.columnSep1.Width = 54
+        Me.columnSep1.VisibleIndex = 10
+        Me.columnSep1.Width = 122
+        '
+        'colTipoLiquidacion
+        '
+        Me.colTipoLiquidacion.Caption = "Liquidacion"
+        Me.colTipoLiquidacion.FieldName = "TipoLiquidacion.Descripcion"
+        Me.colTipoLiquidacion.Name = "colTipoLiquidacion"
+        Me.colTipoLiquidacion.Visible = True
+        Me.colTipoLiquidacion.VisibleIndex = 2
+        Me.colTipoLiquidacion.Width = 159
+        '
+        'colTotal
+        '
+        Me.colTotal.DisplayFormat.FormatString = "c2"
+        Me.colTotal.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colTotal.FieldName = "Total"
+        Me.colTotal.Name = "colTotal"
+        Me.colTotal.Visible = True
+        Me.colTotal.VisibleIndex = 9
+        Me.colTotal.Width = 140
         '
         'ribbonControl
         '
         Me.ribbonControl.ExpandCollapseItem.Id = 0
-        Me.ribbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl.ExpandCollapseItem, Me.ribbonControl.SearchEditItem, Me.bbiNew, Me.bbiEdit, Me.bbiDelete, Me.bbiRefresh, Me.bsiRecordsCount})
+        Me.ribbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl.ExpandCollapseItem, Me.ribbonControl.SearchEditItem, Me.bbiNew, Me.bbiEdit, Me.bbiDelete, Me.bbiRefresh, Me.bsiRecordsCount, Me.bbiImprimirGrilla, Me.bbiGenerarPdfRecibos, Me.bbiEnviarPorCorreo, Me.bbiClose})
         Me.ribbonControl.Location = New System.Drawing.Point(0, 0)
-        Me.ribbonControl.MaxItemId = 15
+        Me.ribbonControl.MaxItemId = 19
         Me.ribbonControl.Name = "ribbonControl"
         Me.ribbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.[False]
@@ -198,9 +229,45 @@ Partial Class Recibos
         Me.bsiRecordsCount.Id = 14
         Me.bsiRecordsCount.Name = "bsiRecordsCount"
         '
+        'bbiImprimirGrilla
+        '
+        Me.bbiImprimirGrilla.Caption = "Imprimir Grilla"
+        Me.bbiImprimirGrilla.Id = 15
+        Me.bbiImprimirGrilla.ImageOptions.SvgImage = Global.YiZi.LiquidAR.Win.My.Resources.Resources.printarea
+        Me.bbiImprimirGrilla.Name = "bbiImprimirGrilla"
+        '
+        'bbiGenerarPdfRecibos
+        '
+        Me.bbiGenerarPdfRecibos.Caption = "Generar y Guardar"
+        Me.bbiGenerarPdfRecibos.Id = 16
+        Me.bbiGenerarPdfRecibos.ImageOptions.Image = Global.YiZi.LiquidAR.Win.My.Resources.Resources.exporttopdf_16x16
+        Me.bbiGenerarPdfRecibos.ImageOptions.LargeImage = Global.YiZi.LiquidAR.Win.My.Resources.Resources.exporttopdf_32x32
+        Me.bbiGenerarPdfRecibos.Name = "bbiGenerarPdfRecibos"
+        ToolTipTitleItem1.AllowHtmlText = DevExpress.Utils.DefaultBoolean.[True]
+        ToolTipTitleItem1.Text = "<b>Generar Pdf de Recibos</b>"
+        ToolTipItem1.Text = "Seleccione primero los Recibos que quiere generar los PDF"
+        SuperToolTip1.Items.Add(ToolTipTitleItem1)
+        SuperToolTip1.Items.Add(ToolTipItem1)
+        Me.bbiGenerarPdfRecibos.SuperTip = SuperToolTip1
+        '
+        'bbiEnviarPorCorreo
+        '
+        Me.bbiEnviarPorCorreo.Caption = "Generar y Enviar"
+        Me.bbiEnviarPorCorreo.Id = 17
+        Me.bbiEnviarPorCorreo.ImageOptions.Image = Global.YiZi.LiquidAR.Win.My.Resources.Resources.sendpdf_16x16
+        Me.bbiEnviarPorCorreo.ImageOptions.LargeImage = Global.YiZi.LiquidAR.Win.My.Resources.Resources.sendpdf_32x32
+        Me.bbiEnviarPorCorreo.Name = "bbiEnviarPorCorreo"
+        '
+        'bbiClose
+        '
+        Me.bbiClose.Caption = "Cerrar"
+        Me.bbiClose.Id = 18
+        Me.bbiClose.ImageOptions.SvgImage = Global.YiZi.LiquidAR.Win.My.Resources.Resources.close1
+        Me.bbiClose.Name = "bbiClose"
+        '
         'RibbonPage1
         '
-        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1})
+        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1, Me.rpgImpresion, Me.RibbonPageGroup2})
         Me.RibbonPage1.Name = "RibbonPage1"
         Me.RibbonPage1.Text = "RibbonPage1"
         '
@@ -211,6 +278,20 @@ Partial Class Recibos
         Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiDelete)
         Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiRefresh)
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
+        Me.RibbonPageGroup1.Text = "Edicion"
+        '
+        'rpgImpresion
+        '
+        Me.rpgImpresion.ItemLinks.Add(Me.bbiImprimirGrilla)
+        Me.rpgImpresion.ItemLinks.Add(Me.bbiGenerarPdfRecibos, True)
+        Me.rpgImpresion.ItemLinks.Add(Me.bbiEnviarPorCorreo, True)
+        Me.rpgImpresion.Name = "rpgImpresion"
+        Me.rpgImpresion.Text = "Impresion"
+        '
+        'RibbonPageGroup2
+        '
+        Me.RibbonPageGroup2.ItemLinks.Add(Me.bbiClose)
+        Me.RibbonPageGroup2.Name = "RibbonPageGroup2"
         '
         'RibbonStatusBar1
         '
@@ -222,7 +303,7 @@ Partial Class Recibos
         '
         'mvvmContext
         '
-        Me.mvvmContext.BindingExpressions.AddRange(New DevExpress.Utils.MVVM.BindingExpression() {DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(YiZi.LiquidAR.Win.ReciboCollectionViewModel), "New", Me.bbiNew), DevExpress.Utils.MVVM.BindingExpression.CreateParameterizedCommandBinding(GetType(YiZi.LiquidAR.Win.ReciboCollectionViewModel), "Edit", "SelectedEntity", Me.bbiEdit), DevExpress.Utils.MVVM.BindingExpression.CreateParameterizedCommandBinding(GetType(YiZi.LiquidAR.Win.ReciboCollectionViewModel), "Delete", "SelectedEntity", Me.bbiDelete), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(YiZi.LiquidAR.Win.ReciboCollectionViewModel), "Refresh", Me.bbiRefresh)})
+        Me.mvvmContext.BindingExpressions.AddRange(New DevExpress.Utils.MVVM.BindingExpression() {DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(YiZi.LiquidAR.Win.ReciboCollectionViewModel), "New", Me.bbiNew), DevExpress.Utils.MVVM.BindingExpression.CreateParameterizedCommandBinding(GetType(YiZi.LiquidAR.Win.ReciboCollectionViewModel), "Edit", "SelectedEntity", Me.bbiEdit), DevExpress.Utils.MVVM.BindingExpression.CreateParameterizedCommandBinding(GetType(YiZi.LiquidAR.Win.ReciboCollectionViewModel), "Delete", "SelectedEntity", Me.bbiDelete), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(YiZi.LiquidAR.Win.ReciboCollectionViewModel), "Refresh", Me.bbiRefresh), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(YiZi.LiquidAR.Win.ReciboCollectionViewModel), "Imprimir", Me.bbiGenerarPdfRecibos), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(YiZi.LiquidAR.Win.ReciboCollectionViewModel), "Close", Me.bbiClose)})
         Me.mvvmContext.ContainerControl = Me
         Me.mvvmContext.ViewModelType = GetType(YiZi.LiquidAR.Win.ReciboCollectionViewModel)
         '
@@ -243,15 +324,6 @@ Partial Class Recibos
         Me.FiltrosEmpresasRecibos1.Name = "FiltrosEmpresasRecibos1"
         Me.FiltrosEmpresasRecibos1.Size = New System.Drawing.Size(1152, 36)
         Me.FiltrosEmpresasRecibos1.TabIndex = 20
-        '
-        'colTipoLiquidacion
-        '
-        Me.colTipoLiquidacion.Caption = "Liquidacion"
-        Me.colTipoLiquidacion.FieldName = "TipoLiquidacion.Descripcion"
-        Me.colTipoLiquidacion.Name = "colTipoLiquidacion"
-        Me.colTipoLiquidacion.Visible = True
-        Me.colTipoLiquidacion.VisibleIndex = 1
-        Me.colTipoLiquidacion.Width = 119
         '
         'Recibos
         '
@@ -298,4 +370,11 @@ Partial Class Recibos
     Friend WithEvents popupMenu As DevExpress.XtraBars.PopupMenu
     Friend WithEvents FiltrosEmpresasRecibos1 As FiltrosEmpresasRecibos
     Friend WithEvents colTipoLiquidacion As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colTotal As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents rpgImpresion As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents bbiImprimirGrilla As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents bbiGenerarPdfRecibos As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents bbiEnviarPorCorreo As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents bbiClose As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents RibbonPageGroup2 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
 End Class

@@ -5,7 +5,9 @@ Imports System.ComponentModel.DataAnnotations.Schema
 Imports System.Data.Entity.Spatial
 
 Partial Public Class FormulasPeriodos
-    <DatabaseGenerated(DatabaseGeneratedOption.None)>
+
+    <Key>
+    <DatabaseGenerated(DatabaseGeneratedOption.Identity)>
     Public Property Id As Integer
 
     Public Property IdFormula As Integer?

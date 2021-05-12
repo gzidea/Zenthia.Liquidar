@@ -6,7 +6,9 @@ Imports System.Data.Entity.Spatial
 
 <Table("FormulaTipoLiquidacion")>
 Partial Public Class FormulaTipoLiquidacion
-    <DatabaseGenerated(DatabaseGeneratedOption.None)>
+
+    <Key>
+    <DatabaseGenerated(DatabaseGeneratedOption.Identity)>
     Public Property Id As Integer
 
     Public Property IdFormula As Integer?

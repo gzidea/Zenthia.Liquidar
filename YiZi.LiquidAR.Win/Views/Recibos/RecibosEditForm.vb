@@ -19,6 +19,7 @@ Public Class RecibosEditForm
         fluent.SetObjectDataSourceBinding(RecibosBindingSource, Function(x) x.Entity, Sub(x) x.Update())
 
         mvvmContext.SetBinding(IdEmpresaSearchLookUpEdit, Function(abs) abs.EditValue, "SelectedEmpresa")
+        mvvmContext.SetBinding(IdLegajoSearchLookUpEdit, Function(abs) abs.EditValue, "SelectedLegajo")
         fluent.SetBinding(EmpresasBindingSource, Function(abs) abs.DataSource, Function(x) x.LookUpEmpresas.Entities)
         fluent.SetBinding(TipoLiquidacionBindingSource, Function(abs) abs.DataSource, Function(x) x.LookUpTipoLiquidaciones.Entities)
         fluent.SetBinding(LegajosBindingSource, Function(abs) abs.DataSource, Function(x) x.LookUpLegajos.Entities)

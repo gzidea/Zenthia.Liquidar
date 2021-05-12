@@ -1,4 +1,5 @@
 ﻿
+Imports System.Collections.ObjectModel
 Imports YiZi.mvvm.Common.ViewModel
 
 Public Class ReciboViewModel
@@ -13,4 +14,6 @@ Public Class ReciboViewModel
             Return GetDetailsCollectionViewModel(Function(x As ReciboViewModel) x.ReciboPlantillas, Function(x) x.RecibosPlantilllas, Function(x) x.IdConvenio, Sub(x, key) x.IdConvenio = key)
         End Get
     End Property
+
+
 End Class

@@ -8,8 +8,8 @@ Partial Public Class Recibos
     Public Sub New()
         RecibosDetalles = New HashSet(Of RecibosDetalles)()
     End Sub
-
-    <DatabaseGenerated(DatabaseGeneratedOption.None)>
+    <Key>
+    <DatabaseGenerated(DatabaseGeneratedOption.Identity)>
     Public Property Id As Integer
 
     Public Property IdEmpresa As Integer?

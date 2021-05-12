@@ -9,7 +9,8 @@ Partial Public Class Categorias
         Legajos = New HashSet(Of Legajos)()
     End Sub
 
-    <DatabaseGenerated(DatabaseGeneratedOption.None)>
+    <Key>
+    <DatabaseGenerated(DatabaseGeneratedOption.Identity)>
     Public Property Id As Integer
 
     Public Property Codigo As Integer?

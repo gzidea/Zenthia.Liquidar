@@ -23,6 +23,7 @@ Partial Class frmPrincipal
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPrincipal))
         Me.FluentDesignFormContainer1 = New DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormContainer()
         Me.AccordionControl1 = New DevExpress.XtraBars.Navigation.AccordionControl()
         Me.AccordionControlElement2 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
@@ -39,6 +40,9 @@ Partial Class frmPrincipal
         Me.aceiObrasSociales = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.aceiSindicatos = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlSeparator1 = New DevExpress.XtraBars.Navigation.AccordionControlSeparator()
+        Me.aceSeguridad = New DevExpress.XtraBars.Navigation.AccordionControlElement()
+        Me.aceiUsuarios = New DevExpress.XtraBars.Navigation.AccordionControlElement()
+        Me.aceiRoles = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlElement16 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.FluentDesignFormControl1 = New DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl()
         Me.beiSelectorDeEmpresa = New DevExpress.XtraBars.BarEditItem()
@@ -49,11 +53,18 @@ Partial Class frmPrincipal
         Me.SkinPaletteDropDownButtonItem1 = New DevExpress.XtraBars.SkinPaletteDropDownButtonItem()
         Me.SkinDropDownButtonItem1 = New DevExpress.XtraBars.SkinDropDownButtonItem()
         Me.BarDockingMenuItem1 = New DevExpress.XtraBars.BarDockingMenuItem()
+        Me.bbiUsuario = New DevExpress.XtraBars.BarSubItem()
+        Me.bbiCerrarSesion = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarSubItem1 = New DevExpress.XtraBars.BarSubItem()
+        Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
+        Me.bbiUsuariosControl = New DevExpress.XtraBars.BarSubItem()
+        Me.bbiCerrarSesionUsuario = New DevExpress.XtraBars.BarButtonItem()
         Me.FluentFormDefaultManager = New DevExpress.XtraBars.FluentDesignSystem.FluentFormDefaultManager(Me.components)
         Me.DocumentManager = New DevExpress.XtraBars.Docking2010.DocumentManager(Me.components)
         Me.tabbedView = New DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(Me.components)
         Me.mvvmContext = New DevExpress.Utils.MVVM.MVVMContext(Me.components)
         Me.mvvmContextSelectorEmpresa = New DevExpress.Utils.MVVM.MVVMContext(Me.components)
+        Me.lookAndFeelSettingsHelper = New YiZi.LiquidAR.Win.LookAndFeelSettingsHelper()
         CType(Me.AccordionControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FluentDesignFormControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.rislueEmpresa, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -69,21 +80,21 @@ Partial Class frmPrincipal
         'FluentDesignFormContainer1
         '
         Me.FluentDesignFormContainer1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FluentDesignFormContainer1.Location = New System.Drawing.Point(205, 31)
+        Me.FluentDesignFormContainer1.Location = New System.Drawing.Point(249, 31)
         Me.FluentDesignFormContainer1.Margin = New System.Windows.Forms.Padding(2)
         Me.FluentDesignFormContainer1.Name = "FluentDesignFormContainer1"
-        Me.FluentDesignFormContainer1.Size = New System.Drawing.Size(1194, 620)
+        Me.FluentDesignFormContainer1.Size = New System.Drawing.Size(1150, 620)
         Me.FluentDesignFormContainer1.TabIndex = 0
         '
         'AccordionControl1
         '
         Me.AccordionControl1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.AccordionControl1.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement2, Me.AccordionControlElement12, Me.AccordionControlSeparator1, Me.AccordionControlElement16})
+        Me.AccordionControl1.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.AccordionControlElement2, Me.AccordionControlElement12, Me.AccordionControlSeparator1, Me.aceSeguridad, Me.AccordionControlElement16})
         Me.AccordionControl1.Location = New System.Drawing.Point(0, 31)
         Me.AccordionControl1.Margin = New System.Windows.Forms.Padding(2)
         Me.AccordionControl1.Name = "AccordionControl1"
         Me.AccordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch
-        Me.AccordionControl1.Size = New System.Drawing.Size(205, 620)
+        Me.AccordionControl1.Size = New System.Drawing.Size(249, 620)
         Me.AccordionControl1.TabIndex = 1
         Me.AccordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu
         '
@@ -96,12 +107,16 @@ Partial Class frmPrincipal
         '
         'aceiLegajos
         '
+        Me.aceiLegajos.ImageOptions.SvgImage = Global.YiZi.LiquidAR.Win.My.Resources.Resources.bo_department
+        Me.aceiLegajos.ImageOptions.SvgImageSize = New System.Drawing.Size(16, 16)
         Me.aceiLegajos.Name = "aceiLegajos"
         Me.aceiLegajos.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
         Me.aceiLegajos.Text = "Legajos"
         '
         'aceiRecibos
         '
+        Me.aceiRecibos.ImageOptions.SvgImage = Global.YiZi.LiquidAR.Win.My.Resources.Resources.pivottablecalculationsfieldsitemssetsgroup
+        Me.aceiRecibos.ImageOptions.SvgImageSize = New System.Drawing.Size(16, 16)
         Me.aceiRecibos.Name = "aceiRecibos"
         Me.aceiRecibos.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
         Me.aceiRecibos.Text = "Recibo de sueldo"
@@ -124,6 +139,8 @@ Partial Class frmPrincipal
         '
         Me.AccordionControlElement7.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.aceiConvenios, Me.AccordionControlElement10, Me.aceiFormulas})
         Me.AccordionControlElement7.Expanded = True
+        Me.AccordionControlElement7.ImageOptions.SvgImage = Global.YiZi.LiquidAR.Win.My.Resources.Resources.calculationoptions
+        Me.AccordionControlElement7.ImageOptions.SvgImageSize = New System.Drawing.Size(16, 16)
         Me.AccordionControlElement7.Name = "AccordionControlElement7"
         Me.AccordionControlElement7.Text = "Conf. empresa"
         '
@@ -141,6 +158,8 @@ Partial Class frmPrincipal
         '
         'aceiFormulas
         '
+        Me.aceiFormulas.ImageOptions.SvgImage = CType(resources.GetObject("aceiFormulas.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
+        Me.aceiFormulas.ImageOptions.SvgImageSize = New System.Drawing.Size(16, 16)
         Me.aceiFormulas.Name = "aceiFormulas"
         Me.aceiFormulas.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
         Me.aceiFormulas.Text = "Formulas"
@@ -154,18 +173,24 @@ Partial Class frmPrincipal
         '
         'aceiEmpresas
         '
+        Me.aceiEmpresas.ImageOptions.SvgImage = Global.YiZi.LiquidAR.Win.My.Resources.Resources.bo_organization
+        Me.aceiEmpresas.ImageOptions.SvgImageSize = New System.Drawing.Size(16, 16)
         Me.aceiEmpresas.Name = "aceiEmpresas"
         Me.aceiEmpresas.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
         Me.aceiEmpresas.Text = "Empresas"
         '
         'aceiObrasSociales
         '
+        Me.aceiObrasSociales.ImageOptions.SvgImage = Global.YiZi.LiquidAR.Win.My.Resources.Resources.bo_position_v921
+        Me.aceiObrasSociales.ImageOptions.SvgImageSize = New System.Drawing.Size(16, 16)
         Me.aceiObrasSociales.Name = "aceiObrasSociales"
         Me.aceiObrasSociales.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
         Me.aceiObrasSociales.Text = "Obras Sociales"
         '
         'aceiSindicatos
         '
+        Me.aceiSindicatos.ImageOptions.SvgImage = Global.YiZi.LiquidAR.Win.My.Resources.Resources.bo_department1
+        Me.aceiSindicatos.ImageOptions.SvgImageSize = New System.Drawing.Size(16, 16)
         Me.aceiSindicatos.Name = "aceiSindicatos"
         Me.aceiSindicatos.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
         Me.aceiSindicatos.Text = "Sindicatos"
@@ -173,6 +198,25 @@ Partial Class frmPrincipal
         'AccordionControlSeparator1
         '
         Me.AccordionControlSeparator1.Name = "AccordionControlSeparator1"
+        '
+        'aceSeguridad
+        '
+        Me.aceSeguridad.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.aceiUsuarios, Me.aceiRoles})
+        Me.aceSeguridad.Expanded = True
+        Me.aceSeguridad.Name = "aceSeguridad"
+        Me.aceSeguridad.Text = "Seguridad"
+        '
+        'aceiUsuarios
+        '
+        Me.aceiUsuarios.Name = "aceiUsuarios"
+        Me.aceiUsuarios.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
+        Me.aceiUsuarios.Text = "Usuarios"
+        '
+        'aceiRoles
+        '
+        Me.aceiRoles.Name = "aceiRoles"
+        Me.aceiRoles.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
+        Me.aceiRoles.Text = "Roles"
         '
         'AccordionControlElement16
         '
@@ -183,7 +227,7 @@ Partial Class frmPrincipal
         'FluentDesignFormControl1
         '
         Me.FluentDesignFormControl1.FluentDesignForm = Me
-        Me.FluentDesignFormControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.beiSelectorDeEmpresa, Me.SkinPaletteDropDownButtonItem1, Me.SkinDropDownButtonItem1, Me.BarDockingMenuItem1})
+        Me.FluentDesignFormControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.beiSelectorDeEmpresa, Me.SkinPaletteDropDownButtonItem1, Me.SkinDropDownButtonItem1, Me.BarDockingMenuItem1, Me.bbiUsuario, Me.bbiCerrarSesion, Me.BarSubItem1, Me.BarButtonItem1, Me.bbiUsuariosControl, Me.bbiCerrarSesionUsuario})
         Me.FluentDesignFormControl1.Location = New System.Drawing.Point(0, 0)
         Me.FluentDesignFormControl1.Manager = Me.FluentFormDefaultManager
         Me.FluentDesignFormControl1.Margin = New System.Windows.Forms.Padding(2)
@@ -196,6 +240,7 @@ Partial Class frmPrincipal
         Me.FluentDesignFormControl1.TitleItemLinks.Add(Me.SkinPaletteDropDownButtonItem1)
         Me.FluentDesignFormControl1.TitleItemLinks.Add(Me.SkinDropDownButtonItem1)
         Me.FluentDesignFormControl1.TitleItemLinks.Add(Me.BarDockingMenuItem1)
+        Me.FluentDesignFormControl1.TitleItemLinks.Add(Me.bbiUsuariosControl)
         '
         'beiSelectorDeEmpresa
         '
@@ -253,12 +298,59 @@ Partial Class frmPrincipal
         Me.BarDockingMenuItem1.Id = 3
         Me.BarDockingMenuItem1.Name = "BarDockingMenuItem1"
         '
+        'bbiUsuario
+        '
+        Me.bbiUsuario.Caption = "Usuario"
+        Me.bbiUsuario.Id = 4
+        Me.bbiUsuario.ImageOptions.Image = Global.YiZi.LiquidAR.Win.My.Resources.Resources.customer_16x16
+        Me.bbiUsuario.ImageOptions.LargeImage = Global.YiZi.LiquidAR.Win.My.Resources.Resources.customer_32x32
+        Me.bbiUsuario.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.bbiCerrarSesion)})
+        Me.bbiUsuario.Name = "bbiUsuario"
+        '
+        'bbiCerrarSesion
+        '
+        Me.bbiCerrarSesion.Caption = "Cerrar Sesion"
+        Me.bbiCerrarSesion.Id = 5
+        Me.bbiCerrarSesion.ImageOptions.Image = Global.YiZi.LiquidAR.Win.My.Resources.Resources.bopermission_16x16
+        Me.bbiCerrarSesion.ImageOptions.LargeImage = Global.YiZi.LiquidAR.Win.My.Resources.Resources.bopermission_32x32
+        Me.bbiCerrarSesion.Name = "bbiCerrarSesion"
+        '
+        'BarSubItem1
+        '
+        Me.BarSubItem1.Caption = "BarSubItem1"
+        Me.BarSubItem1.Id = 7
+        Me.BarSubItem1.Name = "BarSubItem1"
+        '
+        'BarButtonItem1
+        '
+        Me.BarButtonItem1.Caption = "BarButtonItem1"
+        Me.BarButtonItem1.Id = 8
+        Me.BarButtonItem1.Name = "BarButtonItem1"
+        '
+        'bbiUsuariosControl
+        '
+        Me.bbiUsuariosControl.Caption = "Usuario"
+        Me.bbiUsuariosControl.Id = 9
+        Me.bbiUsuariosControl.ImageOptions.Image = Global.YiZi.LiquidAR.Win.My.Resources.Resources.customer_16x161
+        Me.bbiUsuariosControl.ImageOptions.LargeImage = Global.YiZi.LiquidAR.Win.My.Resources.Resources.customer_32x321
+        Me.bbiUsuariosControl.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.bbiCerrarSesionUsuario)})
+        Me.bbiUsuariosControl.Name = "bbiUsuariosControl"
+        Me.bbiUsuariosControl.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph
+        '
+        'bbiCerrarSesionUsuario
+        '
+        Me.bbiCerrarSesionUsuario.Caption = "Cerrar Sesion"
+        Me.bbiCerrarSesionUsuario.Id = 10
+        Me.bbiCerrarSesionUsuario.ImageOptions.Image = Global.YiZi.LiquidAR.Win.My.Resources.Resources.assignto_16x16
+        Me.bbiCerrarSesionUsuario.ImageOptions.LargeImage = Global.YiZi.LiquidAR.Win.My.Resources.Resources.assignto_32x32
+        Me.bbiCerrarSesionUsuario.Name = "bbiCerrarSesionUsuario"
+        '
         'FluentFormDefaultManager
         '
         Me.FluentFormDefaultManager.DockingEnabled = False
         Me.FluentFormDefaultManager.Form = Me
-        Me.FluentFormDefaultManager.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.beiSelectorDeEmpresa, Me.SkinPaletteDropDownButtonItem1, Me.SkinDropDownButtonItem1, Me.BarDockingMenuItem1})
-        Me.FluentFormDefaultManager.MaxItemId = 4
+        Me.FluentFormDefaultManager.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.beiSelectorDeEmpresa, Me.SkinPaletteDropDownButtonItem1, Me.SkinDropDownButtonItem1, Me.BarDockingMenuItem1, Me.bbiUsuario, Me.bbiCerrarSesion, Me.BarSubItem1, Me.BarButtonItem1, Me.bbiUsuariosControl, Me.bbiCerrarSesionUsuario})
+        Me.FluentFormDefaultManager.MaxItemId = 11
         Me.FluentFormDefaultManager.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.rislueEmpresa})
         '
         'DocumentManager
@@ -288,10 +380,12 @@ Partial Class frmPrincipal
         Me.Controls.Add(Me.AccordionControl1)
         Me.Controls.Add(Me.FluentDesignFormControl1)
         Me.FluentDesignFormControl = Me.FluentDesignFormControl1
+        Me.IconOptions.Icon = CType(resources.GetObject("frmPrincipal.IconOptions.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "frmPrincipal"
         Me.NavigationControl = Me.AccordionControl1
-        Me.Text = "Liquidar"
+        Me.Opacity = 0R
+        Me.Text = "Roles"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.AccordionControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.FluentDesignFormControl1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -337,4 +431,14 @@ Partial Class frmPrincipal
     Friend WithEvents SkinPaletteDropDownButtonItem1 As DevExpress.XtraBars.SkinPaletteDropDownButtonItem
     Friend WithEvents SkinDropDownButtonItem1 As DevExpress.XtraBars.SkinDropDownButtonItem
     Friend WithEvents BarDockingMenuItem1 As DevExpress.XtraBars.BarDockingMenuItem
+    Friend WithEvents aceSeguridad As DevExpress.XtraBars.Navigation.AccordionControlElement
+    Friend WithEvents aceiUsuarios As DevExpress.XtraBars.Navigation.AccordionControlElement
+    Friend WithEvents bbiUsuario As DevExpress.XtraBars.BarSubItem
+    Friend WithEvents bbiCerrarSesion As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents BarSubItem1 As DevExpress.XtraBars.BarSubItem
+    Friend WithEvents BarButtonItem1 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents bbiUsuariosControl As DevExpress.XtraBars.BarSubItem
+    Friend WithEvents bbiCerrarSesionUsuario As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents aceiRoles As DevExpress.XtraBars.Navigation.AccordionControlElement
+    Friend WithEvents lookAndFeelSettingsHelper As LookAndFeelSettingsHelper
 End Class

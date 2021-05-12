@@ -27,5 +27,11 @@ Public Class LegajoEditForm
 
         fluent.SetBinding(SindicatosBindingSource, Function(abs) abs.DataSource, Function(x) x.LookUpSindicatos.Entities)
         fluent.SetBinding(ObrasSocialesBindingSource, Function(abs) abs.DataSource, Function(x) x.LookUpObrasSociales.Entities)
+
+        fluent.SetBinding(dataLayout, Function(abs) abs.Enabled, Function(x) x.CanEdit)
+
+        AddHandler bbiCustomize.ItemClick, Sub(s, e)
+                                               dataLayout.ShowCustomizationForm()
+                                           End Sub
     End Sub
 End Class

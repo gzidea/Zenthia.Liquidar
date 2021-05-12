@@ -34,6 +34,7 @@ Partial Public Class Formulas
 
     Public Property FormulaImporte As String
 
+    '<Required(ErrorMessage:="No te olvides del apellido")>
     Public Property CantidadUnidad As Integer?
 
     Public Property Visible As Boolean

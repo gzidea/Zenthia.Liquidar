@@ -44,7 +44,7 @@ Namespace YiZi.mvvm.Common.ViewModel
     ''' <typeparam name="TUnitOfWork">A unit of work type.</typeparam>
     <POCOViewModel>
     Public MustInherit Class SingleObjectViewModelBase(Of TEntity As Class, TPrimaryKey, TUnitOfWork As IUnitOfWork)
-        Implements ISupportParameter, IDocumentContent, ISupportLogicalLayout(Of SingleObjectViewModelState), ISingleObjectViewModel(Of TEntity, TPrimaryKey)
+        Implements ISupportParameter, IDocumentContent, ISupportLogicalLayout(Of SingleObjectViewModelState), ISingleObjectViewModel(Of TEntity, TPrimaryKey), ISupportParentViewModel
         Private _DocumentOwner As IDocumentOwner
         Private _PrimaryKey As TPrimaryKey
         Private _UnitOfWork As TUnitOfWork
@@ -72,6 +72,8 @@ Namespace YiZi.mvvm.Common.ViewModel
                 OnInitializeInRuntime()
             End If
         End Sub
+
+        Public Overridable Property ParentViewModel As Object Implements ISupportParentViewModel.ParentViewModel
         ''' <summary>
         ''' The display text for a given entity used as a title in the corresponding view.
         ''' </summary>
@@ -213,6 +215,7 @@ Namespace YiZi.mvvm.Common.ViewModel
                 Return
             End If
             If DocumentOwner IsNot Nothing Then
+
                 DocumentOwner.Close(Me)
             End If
         End Sub

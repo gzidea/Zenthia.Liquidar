@@ -13,6 +13,7 @@ Public Class LegajoViewModel
 
     Protected Sub New(Optional ByVal unitOfWorkFactory As IUnitOfWorkFactory(Of IModeloDbContextUnitOfWork) = Nothing)
         MyBase.New(If(unitOfWorkFactory, UnitOfWorkSource.GetUnitOfWorkFactory()), Function(x) x.Legajos, Function(x) x.Nombres)
+        'CanEdit = False
     End Sub
 
 
@@ -74,4 +75,16 @@ Public Class LegajoViewModel
             Return GetLookUpEntitiesViewModel(Function(ByVal x As LegajoViewModel) x.LookUpObrasSociales, Function(x) x.ObrasSociales)
         End Get
     End Property
+
+    Private _readonly As Boolean
+    Public Overridable Property CanEdit As Boolean
+        Get
+
+            Return TryCast(ParentViewModel.ParentViewModel, PrincipalViewModel).CheckPermissions("Legajos", "CanEdit")
+        End Get
+        Set(value As Boolean)
+            _readonly = value
+        End Set
+    End Property
+
 End Class

@@ -1,0 +1,17 @@
+﻿Imports DevExpress.Skins
+Friend NotInheritable Class Program
+
+    Private Sub New()
+    End Sub
+
+    ''' <summary>
+    ''' The main entry point for the application.
+    ''' </summary>
+    <STAThread>
+    Shared Sub Main()
+        SkinManager.EnableFormSkins()
+        Application.EnableVisualStyles()
+        Application.SetCompatibleTextRenderingDefault(False)
+        Application.Run(New frmPrincipal())
+    End Sub
+End Class

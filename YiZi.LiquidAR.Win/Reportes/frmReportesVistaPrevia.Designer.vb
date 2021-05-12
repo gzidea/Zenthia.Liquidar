@@ -179,6 +179,7 @@ Partial Class frmReportesVistaPrevia
         Me.dvReportes = New DevExpress.XtraPrinting.Preview.DocumentViewer()
         Me.DocumentViewerRibbonController1 = New DevExpress.XtraPrinting.Preview.DocumentViewerRibbonController(Me.components)
         Me.RibbonControl1 = New DevExpress.XtraBars.Ribbon.RibbonControl()
+        Me.RibbonStatusBar1 = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
         Me.PrintPreviewBarItem1 = New DevExpress.XtraPrinting.Preview.PrintPreviewBarItem()
         Me.PrintPreviewBarItem2 = New DevExpress.XtraPrinting.Preview.PrintPreviewBarItem()
         Me.PrintPreviewBarItem3 = New DevExpress.XtraPrinting.Preview.PrintPreviewBarItem()
@@ -231,12 +232,12 @@ Partial Class frmReportesVistaPrevia
         Me.PrintPreviewBarItem50 = New DevExpress.XtraPrinting.Preview.PrintPreviewBarItem()
         Me.PrintPreviewBarItem51 = New DevExpress.XtraPrinting.Preview.PrintPreviewBarItem()
         Me.PrintPreviewStaticItem1 = New DevExpress.XtraPrinting.Preview.PrintPreviewStaticItem()
-        Me.ProgressBarEditItem1 = New DevExpress.XtraPrinting.Preview.ProgressBarEditItem()
         Me.RepositoryItemProgressBar1 = New DevExpress.XtraEditors.Repository.RepositoryItemProgressBar()
+        Me.ProgressBarEditItem1 = New DevExpress.XtraPrinting.Preview.ProgressBarEditItem()
         Me.PrintPreviewBarItem52 = New DevExpress.XtraPrinting.Preview.PrintPreviewBarItem()
         Me.PrintPreviewStaticItem2 = New DevExpress.XtraPrinting.Preview.PrintPreviewStaticItem()
-        Me.ZoomTrackBarEditItem1 = New DevExpress.XtraPrinting.Preview.ZoomTrackBarEditItem()
         Me.RepositoryItemZoomTrackBar1 = New DevExpress.XtraEditors.Repository.RepositoryItemZoomTrackBar()
+        Me.ZoomTrackBarEditItem1 = New DevExpress.XtraPrinting.Preview.ZoomTrackBarEditItem()
         Me.RibbonPage1 = New DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPage()
         Me.PrintPreviewRibbonPageGroup1 = New DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup()
         Me.PrintPreviewRibbonPageGroup2 = New DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup()
@@ -246,7 +247,6 @@ Partial Class frmReportesVistaPrevia
         Me.PrintPreviewRibbonPageGroup6 = New DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup()
         Me.PrintPreviewRibbonPageGroup7 = New DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup()
         Me.PrintPreviewRibbonPageGroup8 = New DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroup()
-        Me.RibbonStatusBar1 = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
         CType(Me.DocumentViewerRibbonController1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RibbonControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemProgressBar1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -271,18 +271,28 @@ Partial Class frmReportesVistaPrevia
         'RibbonControl1
         '
         Me.RibbonControl1.AutoHideEmptyItems = True
-        Me.RibbonControl1.AutoSizeItems = True
         Me.RibbonControl1.ExpandCollapseItem.Id = 0
         Me.RibbonControl1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl1.ExpandCollapseItem, Me.RibbonControl1.SearchEditItem, Me.PrintPreviewBarItem1, Me.PrintPreviewBarItem2, Me.PrintPreviewBarItem3, Me.PrintPreviewBarItem4, Me.PrintPreviewBarItem5, Me.PrintPreviewBarItem6, Me.PrintPreviewBarItem7, Me.PrintPreviewBarItem8, Me.PrintPreviewBarItem9, Me.PrintPreviewBarItem10, Me.PrintPreviewBarItem11, Me.PrintPreviewBarItem12, Me.PrintPreviewBarItem13, Me.PrintPreviewBarItem14, Me.PrintPreviewBarItem15, Me.PrintPreviewBarItem16, Me.PrintPreviewBarItem17, Me.PrintPreviewBarItem18, Me.PrintPreviewBarItem19, Me.PrintPreviewBarItem20, Me.PrintPreviewBarItem21, Me.PrintPreviewBarItem22, Me.PrintPreviewBarItem23, Me.PrintPreviewBarItem24, Me.PrintPreviewBarItem25, Me.PrintPreviewBarItem26, Me.PrintPreviewBarItem27, Me.PrintPreviewBarItem28, Me.PrintPreviewBarItem29, Me.PrintPreviewBarItem30, Me.PrintPreviewBarItem31, Me.PrintPreviewBarItem32, Me.PrintPreviewBarItem33, Me.PrintPreviewBarItem34, Me.PrintPreviewBarItem35, Me.PrintPreviewBarItem36, Me.PrintPreviewBarItem37, Me.PrintPreviewBarItem38, Me.PrintPreviewBarItem39, Me.PrintPreviewBarItem40, Me.PrintPreviewBarItem41, Me.PrintPreviewBarItem42, Me.PrintPreviewBarItem43, Me.PrintPreviewBarItem44, Me.PrintPreviewBarItem45, Me.PrintPreviewBarItem46, Me.PrintPreviewBarItem47, Me.PrintPreviewBarItem48, Me.PrintPreviewBarItem49, Me.PrintPreviewBarItem50, Me.PrintPreviewBarItem51, Me.PrintPreviewStaticItem1, Me.ProgressBarEditItem1, Me.PrintPreviewBarItem52, Me.PrintPreviewStaticItem2, Me.ZoomTrackBarEditItem1})
         Me.RibbonControl1.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonControl1.MaxItemId = 283
+        Me.RibbonControl1.MaxItemId = 57
         Me.RibbonControl1.Name = "RibbonControl1"
         Me.RibbonControl1.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.RibbonControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemProgressBar1, Me.RepositoryItemZoomTrackBar1})
-        Me.RibbonControl1.ShowItemCaptionsInPageHeader = True
         Me.RibbonControl1.Size = New System.Drawing.Size(845, 150)
         Me.RibbonControl1.StatusBar = Me.RibbonStatusBar1
         Me.RibbonControl1.TransparentEditorsMode = DevExpress.Utils.DefaultBoolean.[True]
+        '
+        'RibbonStatusBar1
+        '
+        Me.RibbonStatusBar1.ItemLinks.Add(Me.PrintPreviewStaticItem1)
+        Me.RibbonStatusBar1.ItemLinks.Add(Me.ProgressBarEditItem1)
+        Me.RibbonStatusBar1.ItemLinks.Add(Me.PrintPreviewBarItem52)
+        Me.RibbonStatusBar1.ItemLinks.Add(Me.PrintPreviewStaticItem2)
+        Me.RibbonStatusBar1.ItemLinks.Add(Me.ZoomTrackBarEditItem1)
+        Me.RibbonStatusBar1.Location = New System.Drawing.Point(0, 508)
+        Me.RibbonStatusBar1.Name = "RibbonStatusBar1"
+        Me.RibbonStatusBar1.Ribbon = Me.RibbonControl1
+        Me.RibbonStatusBar1.Size = New System.Drawing.Size(845, 27)
         '
         'PrintPreviewBarItem1
         '
@@ -1194,6 +1204,10 @@ Partial Class frmReportesVistaPrevia
         Me.PrintPreviewStaticItem1.RightIndent = 1
         Me.PrintPreviewStaticItem1.Type = "PageOfPages"
         '
+        'RepositoryItemProgressBar1
+        '
+        Me.RepositoryItemProgressBar1.Name = "RepositoryItemProgressBar1"
+        '
         'ProgressBarEditItem1
         '
         Me.ProgressBarEditItem1.ContextSpecifier = Me.DocumentViewerRibbonController1
@@ -1203,10 +1217,6 @@ Partial Class frmReportesVistaPrevia
         Me.ProgressBarEditItem1.Id = 53
         Me.ProgressBarEditItem1.Name = "ProgressBarEditItem1"
         Me.ProgressBarEditItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
-        '
-        'RepositoryItemProgressBar1
-        '
-        Me.RepositoryItemProgressBar1.Name = "RepositoryItemProgressBar1"
         '
         'PrintPreviewBarItem52
         '
@@ -1228,6 +1238,14 @@ Partial Class frmReportesVistaPrevia
         Me.PrintPreviewStaticItem2.Name = "PrintPreviewStaticItem2"
         Me.PrintPreviewStaticItem2.Type = "ZoomFactorText"
         '
+        'RepositoryItemZoomTrackBar1
+        '
+        Me.RepositoryItemZoomTrackBar1.Alignment = DevExpress.Utils.VertAlignment.Center
+        Me.RepositoryItemZoomTrackBar1.AllowFocused = False
+        Me.RepositoryItemZoomTrackBar1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.RepositoryItemZoomTrackBar1.Maximum = 180
+        Me.RepositoryItemZoomTrackBar1.Name = "RepositoryItemZoomTrackBar1"
+        '
         'ZoomTrackBarEditItem1
         '
         Me.ZoomTrackBarEditItem1.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right
@@ -1240,21 +1258,12 @@ Partial Class frmReportesVistaPrevia
         Me.ZoomTrackBarEditItem1.Name = "ZoomTrackBarEditItem1"
         Me.ZoomTrackBarEditItem1.Range = New Integer() {10, 500}
         '
-        'RepositoryItemZoomTrackBar1
-        '
-        Me.RepositoryItemZoomTrackBar1.Alignment = DevExpress.Utils.VertAlignment.Center
-        Me.RepositoryItemZoomTrackBar1.AllowFocused = False
-        Me.RepositoryItemZoomTrackBar1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
-        Me.RepositoryItemZoomTrackBar1.Maximum = 180
-        Me.RepositoryItemZoomTrackBar1.Name = "RepositoryItemZoomTrackBar1"
-        '
         'RibbonPage1
         '
         Me.RibbonPage1.ContextSpecifier = Me.DocumentViewerRibbonController1
         Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.PrintPreviewRibbonPageGroup1, Me.PrintPreviewRibbonPageGroup2, Me.PrintPreviewRibbonPageGroup3, Me.PrintPreviewRibbonPageGroup4, Me.PrintPreviewRibbonPageGroup5, Me.PrintPreviewRibbonPageGroup6, Me.PrintPreviewRibbonPageGroup7, Me.PrintPreviewRibbonPageGroup8})
         Me.RibbonPage1.Name = "RibbonPage1"
         Me.RibbonPage1.Text = "Imprimir Previsualización"
-        Me.RibbonPage1.Visible = False
         '
         'PrintPreviewRibbonPageGroup1
         '
@@ -1366,18 +1375,6 @@ Partial Class frmReportesVistaPrevia
         Me.PrintPreviewRibbonPageGroup8.Kind = DevExpress.XtraPrinting.Preview.PrintPreviewRibbonPageGroupKind.Close
         Me.PrintPreviewRibbonPageGroup8.Name = "PrintPreviewRibbonPageGroup8"
         Me.PrintPreviewRibbonPageGroup8.Text = "Cerrar"
-        '
-        'RibbonStatusBar1
-        '
-        Me.RibbonStatusBar1.ItemLinks.Add(Me.PrintPreviewStaticItem1)
-        Me.RibbonStatusBar1.ItemLinks.Add(Me.ProgressBarEditItem1)
-        Me.RibbonStatusBar1.ItemLinks.Add(Me.PrintPreviewBarItem52)
-        Me.RibbonStatusBar1.ItemLinks.Add(Me.PrintPreviewStaticItem2)
-        Me.RibbonStatusBar1.ItemLinks.Add(Me.ZoomTrackBarEditItem1)
-        Me.RibbonStatusBar1.Location = New System.Drawing.Point(0, 508)
-        Me.RibbonStatusBar1.Name = "RibbonStatusBar1"
-        Me.RibbonStatusBar1.Ribbon = Me.RibbonControl1
-        Me.RibbonStatusBar1.Size = New System.Drawing.Size(845, 27)
         '
         'frmReportesVistaPrevia
         '

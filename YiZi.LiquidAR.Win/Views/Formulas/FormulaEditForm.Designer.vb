@@ -181,6 +181,7 @@ Partial Class FormulaEditForm
         Me.LayoutControlItem31 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem51 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.liquidacion_DetailsPopUpMenu = New DevExpress.XtraBars.PopupMenu(Me.components)
+        Me.UnidadesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.RepositoryItemRibbonSearchEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ribbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dataLayout, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -267,6 +268,7 @@ Partial Class FormulaEditForm
         CType(Me.LayoutControlItem31, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem51, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.liquidacion_DetailsPopUpMenu, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UnidadesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RepositoryItemRibbonSearchEdit2
@@ -597,6 +599,9 @@ Partial Class FormulaEditForm
         Me.CantidadUnidadLookUpEdit.MenuManager = Me.ribbonControl
         Me.CantidadUnidadLookUpEdit.Name = "CantidadUnidadLookUpEdit"
         Me.CantidadUnidadLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.CantidadUnidadLookUpEdit.Properties.DataSource = Me.UnidadesBindingSource
+        Me.CantidadUnidadLookUpEdit.Properties.DisplayMember = "Descripcion"
+        Me.CantidadUnidadLookUpEdit.Properties.ValueMember = "Id"
         Me.CantidadUnidadLookUpEdit.Size = New System.Drawing.Size(136, 20)
         Me.CantidadUnidadLookUpEdit.StyleController = Me.dataLayout
         Me.CantidadUnidadLookUpEdit.TabIndex = 14
@@ -1602,6 +1607,10 @@ Partial Class FormulaEditForm
         Me.liquidacion_DetailsPopUpMenu.Manager = Me.liquidacion_DetailsBarManager
         Me.liquidacion_DetailsPopUpMenu.Name = "liquidacion_DetailsPopUpMenu"
         '
+        'UnidadesBindingSource
+        '
+        Me.UnidadesBindingSource.DataSource = GetType(YiZi.AccesoDatos.Unidades)
+        '
         'FormulaEditForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1699,6 +1708,7 @@ Partial Class FormulaEditForm
         CType(Me.LayoutControlItem31, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem51, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.liquidacion_DetailsPopUpMenu, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UnidadesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1857,6 +1867,7 @@ Partial Class FormulaEditForm
     Friend WithEvents colDescripcion1 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colDescripcion2 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colColumnaRecibo As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents UnidadesBindingSource As BindingSource
     'Friend WithEvents LayoutControlItem28 As DevExpress.XtraLayout.LayoutControlItem
     'Friend WithEvents LayoutControlItem29 As DevExpress.XtraLayout.LayoutControlItem
     'Friend WithEvents LayoutControlItem30 As DevExpress.XtraLayout.LayoutControlItem

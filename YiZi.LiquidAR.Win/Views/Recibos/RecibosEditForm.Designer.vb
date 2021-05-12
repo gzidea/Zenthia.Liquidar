@@ -56,6 +56,7 @@ Partial Class RecibosEditForm
         Me.colRemunerativo = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colDescuento = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colNoRemunerativo = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colFormulas3 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.columnaSep01 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.NombreTextEdit1 = New DevExpress.XtraEditors.TextEdit()
         Me.NombreTextEdit = New DevExpress.XtraEditors.TextEdit()
@@ -77,9 +78,9 @@ Partial Class RecibosEditForm
         Me.TotalNoRemunerativosSpinEdit = New DevExpress.XtraEditors.TextEdit()
         Me.TotalSpinEdit = New DevExpress.XtraEditors.TextEdit()
         Me.LegajoSpinEdit = New DevExpress.XtraEditors.TextEdit()
-        Me.SueldoSpinEdit = New DevExpress.XtraEditors.TextEdit()
         Me.CondicionliquidacionComoEdit = New DevExpress.XtraEditors.CheckEdit()
         Me.PeriodoDateEdit = New DevExpress.XtraEditors.TextEdit()
+        Me.ImporteSpinEdit = New DevExpress.XtraEditors.TextEdit()
         Me.barDockControlLeft = New DevExpress.XtraBars.BarDockControl()
         Me.recibodetalles_DetailsBarManager = New DevExpress.XtraBars.BarManager(Me.components)
         Me.Actividades_DetailsBar = New DevExpress.XtraBars.Bar()
@@ -104,9 +105,10 @@ Partial Class RecibosEditForm
         Me.LayoutControlItem6 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem12 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem8 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem18 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem10 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem5 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.LayoutControlItem21 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.EmptySpaceItem8 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.LayoutControlItem16 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem17 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
@@ -150,9 +152,9 @@ Partial Class RecibosEditForm
         CType(Me.TotalNoRemunerativosSpinEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TotalSpinEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LegajoSpinEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SueldoSpinEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CondicionliquidacionComoEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PeriodoDateEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ImporteSpinEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.recibodetalles_DetailsBarManager, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -165,9 +167,10 @@ Partial Class RecibosEditForm
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem12, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem18, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem21, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmptySpaceItem8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem16, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem17, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -188,10 +191,10 @@ Partial Class RecibosEditForm
         'RibbonStatusBar1
         '
         Me.RibbonStatusBar1.ItemLinks.Add(Me.bsiEstado)
-        Me.RibbonStatusBar1.Location = New System.Drawing.Point(5, 845)
+        Me.RibbonStatusBar1.Location = New System.Drawing.Point(5, 882)
         Me.RibbonStatusBar1.Name = "RibbonStatusBar1"
         Me.RibbonStatusBar1.Ribbon = Me.ribbonControl
-        Me.RibbonStatusBar1.Size = New System.Drawing.Size(1133, 27)
+        Me.RibbonStatusBar1.Size = New System.Drawing.Size(1165, 27)
         '
         'bsiEstado
         '
@@ -209,7 +212,7 @@ Partial Class RecibosEditForm
         Me.ribbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.[False]
         Me.ribbonControl.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
-        Me.ribbonControl.Size = New System.Drawing.Size(1133, 100)
+        Me.ribbonControl.Size = New System.Drawing.Size(1165, 100)
         Me.ribbonControl.StatusBar = Me.RibbonStatusBar1
         Me.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -376,9 +379,9 @@ Partial Class RecibosEditForm
         Me.dataLayout.Controls.Add(Me.TotalNoRemunerativosSpinEdit)
         Me.dataLayout.Controls.Add(Me.TotalSpinEdit)
         Me.dataLayout.Controls.Add(Me.LegajoSpinEdit)
-        Me.dataLayout.Controls.Add(Me.SueldoSpinEdit)
         Me.dataLayout.Controls.Add(Me.CondicionliquidacionComoEdit)
         Me.dataLayout.Controls.Add(Me.PeriodoDateEdit)
+        Me.dataLayout.Controls.Add(Me.ImporteSpinEdit)
         Me.dataLayout.Controls.Add(Me.barDockControlLeft)
         Me.dataLayout.Controls.Add(Me.barDockControlRight)
         Me.dataLayout.Controls.Add(Me.barDockControlBottom)
@@ -388,7 +391,7 @@ Partial Class RecibosEditForm
         Me.dataLayout.Name = "dataLayout"
         Me.dataLayout.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = New System.Drawing.Rectangle(782, 455, 650, 400)
         Me.dataLayout.Root = Me.Root
-        Me.dataLayout.Size = New System.Drawing.Size(1133, 745)
+        Me.dataLayout.Size = New System.Drawing.Size(1165, 782)
         Me.dataLayout.TabIndex = 4
         Me.dataLayout.Text = "LayoutControl1"
         '
@@ -396,12 +399,12 @@ Partial Class RecibosEditForm
         '
         Me.FechaPagoDateEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.RecibosBindingSource, "FechaPago", True))
         Me.FechaPagoDateEdit.EditValue = Nothing
-        Me.FechaPagoDateEdit.Location = New System.Drawing.Point(654, 36)
+        Me.FechaPagoDateEdit.Location = New System.Drawing.Point(671, 36)
         Me.FechaPagoDateEdit.MenuManager = Me.ribbonControl
         Me.FechaPagoDateEdit.Name = "FechaPagoDateEdit"
         Me.FechaPagoDateEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.FechaPagoDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.FechaPagoDateEdit.Size = New System.Drawing.Size(190, 20)
+        Me.FechaPagoDateEdit.Size = New System.Drawing.Size(197, 20)
         Me.FechaPagoDateEdit.StyleController = Me.dataLayout
         Me.FechaPagoDateEdit.TabIndex = 27
         '
@@ -412,11 +415,11 @@ Partial Class RecibosEditForm
         'gridControl
         '
         Me.gridControl.DataSource = Me.RecibosDetallesBindingSource
-        Me.gridControl.Location = New System.Drawing.Point(12, 258)
+        Me.gridControl.Location = New System.Drawing.Point(12, 276)
         Me.gridControl.MainView = Me.gridView
         Me.gridControl.MenuManager = Me.ribbonControl
         Me.gridControl.Name = "gridControl"
-        Me.gridControl.Size = New System.Drawing.Size(1109, 307)
+        Me.gridControl.Size = New System.Drawing.Size(1141, 289)
         Me.gridControl.TabIndex = 5
         Me.gridControl.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridView})
         '
@@ -426,7 +429,7 @@ Partial Class RecibosEditForm
         '
         'gridView
         '
-        Me.gridView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colFormulas, Me.colFormulas1, Me.colCantidad, Me.colFormulas2, Me.colRemunerativo, Me.colDescuento, Me.colNoRemunerativo, Me.columnaSep01})
+        Me.gridView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colFormulas, Me.colFormulas1, Me.colCantidad, Me.colFormulas2, Me.colRemunerativo, Me.colDescuento, Me.colNoRemunerativo, Me.colFormulas3, Me.columnaSep01})
         Me.gridView.GridControl = Me.gridControl
         Me.gridView.Name = "gridView"
         Me.gridView.OptionsBehavior.Editable = False
@@ -456,6 +459,8 @@ Partial Class RecibosEditForm
         'colCantidad
         '
         Me.colCantidad.Caption = "Cant."
+        Me.colCantidad.DisplayFormat.FormatString = "n2"
+        Me.colCantidad.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.colCantidad.FieldName = "Cantidad"
         Me.colCantidad.Name = "colCantidad"
         Me.colCantidad.Visible = True
@@ -474,6 +479,8 @@ Partial Class RecibosEditForm
         'colRemunerativo
         '
         Me.colRemunerativo.Caption = "Remunerativos"
+        Me.colRemunerativo.DisplayFormat.FormatString = "c2"
+        Me.colRemunerativo.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.colRemunerativo.FieldName = "Remunerativo"
         Me.colRemunerativo.Name = "colRemunerativo"
         Me.colRemunerativo.Visible = True
@@ -483,6 +490,8 @@ Partial Class RecibosEditForm
         'colDescuento
         '
         Me.colDescuento.Caption = "Descuentos"
+        Me.colDescuento.DisplayFormat.FormatString = "c2"
+        Me.colDescuento.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.colDescuento.FieldName = "Descuento"
         Me.colDescuento.Name = "colDescuento"
         Me.colDescuento.Visible = True
@@ -492,27 +501,37 @@ Partial Class RecibosEditForm
         'colNoRemunerativo
         '
         Me.colNoRemunerativo.Caption = "No Remunerativos"
+        Me.colNoRemunerativo.DisplayFormat.FormatString = "c2"
+        Me.colNoRemunerativo.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.colNoRemunerativo.FieldName = "NoRemunerativo"
         Me.colNoRemunerativo.Name = "colNoRemunerativo"
         Me.colNoRemunerativo.Visible = True
         Me.colNoRemunerativo.VisibleIndex = 6
         Me.colNoRemunerativo.Width = 102
         '
+        'colFormulas3
+        '
+        Me.colFormulas3.Caption = "Variable"
+        Me.colFormulas3.FieldName = "Formulas.Variable"
+        Me.colFormulas3.Name = "colFormulas3"
+        Me.colFormulas3.Visible = True
+        Me.colFormulas3.VisibleIndex = 7
+        '
         'columnaSep01
         '
         Me.columnaSep01.Name = "columnaSep01"
         Me.columnaSep01.Visible = True
-        Me.columnaSep01.VisibleIndex = 7
+        Me.columnaSep01.VisibleIndex = 8
         Me.columnaSep01.Width = 177
         '
         'NombreTextEdit1
         '
         Me.NombreTextEdit1.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.RecibosBindingSource, "Legajos.ObrasSociales.Nombre", True))
-        Me.NombreTextEdit1.Location = New System.Drawing.Point(659, 165)
+        Me.NombreTextEdit1.Location = New System.Drawing.Point(676, 165)
         Me.NombreTextEdit1.MenuManager = Me.ribbonControl
         Me.NombreTextEdit1.Name = "NombreTextEdit1"
         Me.NombreTextEdit1.Properties.ReadOnly = True
-        Me.NombreTextEdit1.Size = New System.Drawing.Size(450, 20)
+        Me.NombreTextEdit1.Size = New System.Drawing.Size(465, 20)
         Me.NombreTextEdit1.StyleController = Me.dataLayout
         Me.NombreTextEdit1.TabIndex = 15
         '
@@ -523,7 +542,7 @@ Partial Class RecibosEditForm
         Me.NombreTextEdit.MenuManager = Me.ribbonControl
         Me.NombreTextEdit.Name = "NombreTextEdit"
         Me.NombreTextEdit.Properties.ReadOnly = True
-        Me.NombreTextEdit.Size = New System.Drawing.Size(438, 20)
+        Me.NombreTextEdit.Size = New System.Drawing.Size(455, 20)
         Me.NombreTextEdit.StyleController = Me.dataLayout
         Me.NombreTextEdit.TabIndex = 14
         '
@@ -534,18 +553,18 @@ Partial Class RecibosEditForm
         Me.DescripcionTextEdit.MenuManager = Me.ribbonControl
         Me.DescripcionTextEdit.Name = "DescripcionTextEdit"
         Me.DescripcionTextEdit.Properties.ReadOnly = True
-        Me.DescripcionTextEdit.Size = New System.Drawing.Size(212, 20)
+        Me.DescripcionTextEdit.Size = New System.Drawing.Size(256, 20)
         Me.DescripcionTextEdit.StyleController = Me.dataLayout
         Me.DescripcionTextEdit.TabIndex = 12
         '
         'AntiguedadStrTextEdit
         '
         Me.AntiguedadStrTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.RecibosBindingSource, "Legajos.AntiguedadStr", True))
-        Me.AntiguedadStrTextEdit.Location = New System.Drawing.Point(926, 93)
+        Me.AntiguedadStrTextEdit.Location = New System.Drawing.Point(950, 93)
         Me.AntiguedadStrTextEdit.MenuManager = Me.ribbonControl
         Me.AntiguedadStrTextEdit.Name = "AntiguedadStrTextEdit"
         Me.AntiguedadStrTextEdit.Properties.ReadOnly = True
-        Me.AntiguedadStrTextEdit.Size = New System.Drawing.Size(183, 20)
+        Me.AntiguedadStrTextEdit.Size = New System.Drawing.Size(191, 20)
         Me.AntiguedadStrTextEdit.StyleController = Me.dataLayout
         Me.AntiguedadStrTextEdit.TabIndex = 11
         '
@@ -556,14 +575,14 @@ Partial Class RecibosEditForm
         Me.CUILTextEdit.MenuManager = Me.ribbonControl
         Me.CUILTextEdit.Name = "CUILTextEdit"
         Me.CUILTextEdit.Properties.ReadOnly = True
-        Me.CUILTextEdit.Size = New System.Drawing.Size(159, 20)
+        Me.CUILTextEdit.Size = New System.Drawing.Size(167, 20)
         Me.CUILTextEdit.StyleController = Me.dataLayout
         Me.CUILTextEdit.TabIndex = 10
         '
         'IdLegajoSearchLookUpEdit
         '
         Me.IdLegajoSearchLookUpEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.RecibosBindingSource, "IdLegajo", True))
-        Me.IdLegajoSearchLookUpEdit.Location = New System.Drawing.Point(254, 93)
+        Me.IdLegajoSearchLookUpEdit.Location = New System.Drawing.Point(259, 93)
         Me.IdLegajoSearchLookUpEdit.MenuManager = Me.ribbonControl
         Me.IdLegajoSearchLookUpEdit.Name = "IdLegajoSearchLookUpEdit"
         Me.IdLegajoSearchLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -571,7 +590,7 @@ Partial Class RecibosEditForm
         Me.IdLegajoSearchLookUpEdit.Properties.DisplayMember = "NombreYApellido"
         Me.IdLegajoSearchLookUpEdit.Properties.PopupView = Me.IdLegajoSearchLookUpEditView
         Me.IdLegajoSearchLookUpEdit.Properties.ValueMember = "Id"
-        Me.IdLegajoSearchLookUpEdit.Size = New System.Drawing.Size(596, 20)
+        Me.IdLegajoSearchLookUpEdit.Size = New System.Drawing.Size(615, 20)
         Me.IdLegajoSearchLookUpEdit.StyleController = Me.dataLayout
         Me.IdLegajoSearchLookUpEdit.TabIndex = 8
         '
@@ -605,7 +624,7 @@ Partial Class RecibosEditForm
         Me.IdTipoLiquidacionLookUpEdit.Properties.DataSource = Me.TipoLiquidacionBindingSource
         Me.IdTipoLiquidacionLookUpEdit.Properties.DisplayMember = "Descripcion"
         Me.IdTipoLiquidacionLookUpEdit.Properties.ValueMember = "Id"
-        Me.IdTipoLiquidacionLookUpEdit.Size = New System.Drawing.Size(190, 20)
+        Me.IdTipoLiquidacionLookUpEdit.Size = New System.Drawing.Size(199, 20)
         Me.IdTipoLiquidacionLookUpEdit.StyleController = Me.dataLayout
         Me.IdTipoLiquidacionLookUpEdit.TabIndex = 7
         '
@@ -624,7 +643,7 @@ Partial Class RecibosEditForm
         Me.IdEmpresaSearchLookUpEdit.Properties.DisplayMember = "Nombre"
         Me.IdEmpresaSearchLookUpEdit.Properties.PopupView = Me.IdEmpresaSearchLookUpEditView
         Me.IdEmpresaSearchLookUpEdit.Properties.ValueMember = "Id"
-        Me.IdEmpresaSearchLookUpEdit.Size = New System.Drawing.Size(987, 20)
+        Me.IdEmpresaSearchLookUpEdit.Size = New System.Drawing.Size(1019, 20)
         Me.IdEmpresaSearchLookUpEdit.StyleController = Me.dataLayout
         Me.IdEmpresaSearchLookUpEdit.TabIndex = 5
         '
@@ -651,7 +670,7 @@ Partial Class RecibosEditForm
         '
         Me.TotalRemunerativosSpinEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.RecibosBindingSource, "TotalRemunerativos", True))
         Me.TotalRemunerativosSpinEdit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.TotalRemunerativosSpinEdit.Location = New System.Drawing.Point(735, 585)
+        Me.TotalRemunerativosSpinEdit.Location = New System.Drawing.Point(756, 585)
         Me.TotalRemunerativosSpinEdit.MenuManager = Me.ribbonControl
         Me.TotalRemunerativosSpinEdit.Name = "TotalRemunerativosSpinEdit"
         Me.TotalRemunerativosSpinEdit.Properties.Appearance.Options.UseTextOptions = True
@@ -661,7 +680,7 @@ Partial Class RecibosEditForm
         Me.TotalRemunerativosSpinEdit.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered
         Me.TotalRemunerativosSpinEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
         Me.TotalRemunerativosSpinEdit.Properties.ReadOnly = True
-        Me.TotalRemunerativosSpinEdit.Size = New System.Drawing.Size(123, 20)
+        Me.TotalRemunerativosSpinEdit.Size = New System.Drawing.Size(127, 20)
         Me.TotalRemunerativosSpinEdit.StyleController = Me.dataLayout
         Me.TotalRemunerativosSpinEdit.TabIndex = 19
         '
@@ -669,7 +688,7 @@ Partial Class RecibosEditForm
         '
         Me.TotalDescuentosSpinEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.RecibosBindingSource, "TotalDescuentos", True))
         Me.TotalDescuentosSpinEdit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.TotalDescuentosSpinEdit.Location = New System.Drawing.Point(862, 585)
+        Me.TotalDescuentosSpinEdit.Location = New System.Drawing.Point(887, 585)
         Me.TotalDescuentosSpinEdit.MenuManager = Me.ribbonControl
         Me.TotalDescuentosSpinEdit.Name = "TotalDescuentosSpinEdit"
         Me.TotalDescuentosSpinEdit.Properties.Appearance.Options.UseTextOptions = True
@@ -679,7 +698,7 @@ Partial Class RecibosEditForm
         Me.TotalDescuentosSpinEdit.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered
         Me.TotalDescuentosSpinEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
         Me.TotalDescuentosSpinEdit.Properties.ReadOnly = True
-        Me.TotalDescuentosSpinEdit.Size = New System.Drawing.Size(122, 20)
+        Me.TotalDescuentosSpinEdit.Size = New System.Drawing.Size(125, 20)
         Me.TotalDescuentosSpinEdit.StyleController = Me.dataLayout
         Me.TotalDescuentosSpinEdit.TabIndex = 17
         '
@@ -687,7 +706,7 @@ Partial Class RecibosEditForm
         '
         Me.TotalNoRemunerativosSpinEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.RecibosBindingSource, "TotalNoRemunerativos", True))
         Me.TotalNoRemunerativosSpinEdit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.TotalNoRemunerativosSpinEdit.Location = New System.Drawing.Point(988, 585)
+        Me.TotalNoRemunerativosSpinEdit.Location = New System.Drawing.Point(1016, 585)
         Me.TotalNoRemunerativosSpinEdit.MenuManager = Me.ribbonControl
         Me.TotalNoRemunerativosSpinEdit.Name = "TotalNoRemunerativosSpinEdit"
         Me.TotalNoRemunerativosSpinEdit.Properties.Appearance.Options.UseTextOptions = True
@@ -697,7 +716,7 @@ Partial Class RecibosEditForm
         Me.TotalNoRemunerativosSpinEdit.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered
         Me.TotalNoRemunerativosSpinEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
         Me.TotalNoRemunerativosSpinEdit.Properties.ReadOnly = True
-        Me.TotalNoRemunerativosSpinEdit.Size = New System.Drawing.Size(123, 20)
+        Me.TotalNoRemunerativosSpinEdit.Size = New System.Drawing.Size(127, 20)
         Me.TotalNoRemunerativosSpinEdit.StyleController = Me.dataLayout
         Me.TotalNoRemunerativosSpinEdit.TabIndex = 18
         '
@@ -705,7 +724,7 @@ Partial Class RecibosEditForm
         '
         Me.TotalSpinEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.RecibosBindingSource, "Total", True))
         Me.TotalSpinEdit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.TotalSpinEdit.Location = New System.Drawing.Point(796, 609)
+        Me.TotalSpinEdit.Location = New System.Drawing.Point(817, 609)
         Me.TotalSpinEdit.MenuManager = Me.ribbonControl
         Me.TotalSpinEdit.Name = "TotalSpinEdit"
         Me.TotalSpinEdit.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -717,7 +736,7 @@ Partial Class RecibosEditForm
         Me.TotalSpinEdit.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered
         Me.TotalSpinEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
         Me.TotalSpinEdit.Properties.ReadOnly = True
-        Me.TotalSpinEdit.Size = New System.Drawing.Size(315, 30)
+        Me.TotalSpinEdit.Size = New System.Drawing.Size(326, 30)
         Me.TotalSpinEdit.StyleController = Me.dataLayout
         Me.TotalSpinEdit.TabIndex = 20
         '
@@ -733,53 +752,53 @@ Partial Class RecibosEditForm
         Me.LegajoSpinEdit.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered
         Me.LegajoSpinEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
         Me.LegajoSpinEdit.Properties.ReadOnly = True
-        Me.LegajoSpinEdit.Size = New System.Drawing.Size(55, 20)
+        Me.LegajoSpinEdit.Size = New System.Drawing.Size(60, 20)
         Me.LegajoSpinEdit.StyleController = Me.dataLayout
         Me.LegajoSpinEdit.TabIndex = 9
-        '
-        'SueldoSpinEdit
-        '
-        Me.SueldoSpinEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.RecibosBindingSource, "Legajos.Sueldo", True))
-        Me.SueldoSpinEdit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.SueldoSpinEdit.Location = New System.Drawing.Point(411, 141)
-        Me.SueldoSpinEdit.MenuManager = Me.ribbonControl
-        Me.SueldoSpinEdit.Name = "SueldoSpinEdit"
-        Me.SueldoSpinEdit.Properties.DisplayFormat.FormatString = "c2"
-        Me.SueldoSpinEdit.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.SueldoSpinEdit.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered
-        Me.SueldoSpinEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.SueldoSpinEdit.Properties.ReadOnly = True
-        Me.SueldoSpinEdit.Size = New System.Drawing.Size(391, 20)
-        Me.SueldoSpinEdit.StyleController = Me.dataLayout
-        Me.SueldoSpinEdit.TabIndex = 22
         '
         'CondicionliquidacionComoEdit
         '
         Me.CondicionliquidacionComoEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.RecibosBindingSource, "Legajos.Condicionliquidacion", True))
         Me.CondicionliquidacionComoEdit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.CondicionliquidacionComoEdit.Location = New System.Drawing.Point(814, 141)
+        Me.CondicionliquidacionComoEdit.Location = New System.Drawing.Point(837, 141)
         Me.CondicionliquidacionComoEdit.MenuManager = Me.ribbonControl
         Me.CondicionliquidacionComoEdit.Name = "CondicionliquidacionComoEdit"
         Me.CondicionliquidacionComoEdit.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.[Default]
         Me.CondicionliquidacionComoEdit.Properties.Caption = "Fuera de Convenio"
         Me.CondicionliquidacionComoEdit.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered
         Me.CondicionliquidacionComoEdit.Properties.ReadOnly = True
-        Me.CondicionliquidacionComoEdit.Size = New System.Drawing.Size(295, 20)
+        Me.CondicionliquidacionComoEdit.Size = New System.Drawing.Size(304, 20)
         Me.CondicionliquidacionComoEdit.StyleController = Me.dataLayout
         Me.CondicionliquidacionComoEdit.TabIndex = 13
         '
         'PeriodoDateEdit
         '
         Me.PeriodoDateEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.RecibosBindingSource, "Periodo", True))
-        Me.PeriodoDateEdit.Location = New System.Drawing.Point(381, 36)
+        Me.PeriodoDateEdit.Location = New System.Drawing.Point(390, 36)
         Me.PeriodoDateEdit.MenuManager = Me.ribbonControl
         Me.PeriodoDateEdit.Name = "PeriodoDateEdit"
         Me.PeriodoDateEdit.Properties.Mask.EditMask = "99/9999"
         Me.PeriodoDateEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple
         Me.PeriodoDateEdit.Properties.Mask.SaveLiteral = False
-        Me.PeriodoDateEdit.Size = New System.Drawing.Size(106, 20)
+        Me.PeriodoDateEdit.Size = New System.Drawing.Size(111, 20)
         Me.PeriodoDateEdit.StyleController = Me.dataLayout
         Me.PeriodoDateEdit.TabIndex = 21
+        '
+        'ImporteSpinEdit
+        '
+        Me.ImporteSpinEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.RecibosBindingSource, "Legajos.Categorias.Importe", True))
+        Me.ImporteSpinEdit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
+        Me.ImporteSpinEdit.Location = New System.Drawing.Point(466, 141)
+        Me.ImporteSpinEdit.MenuManager = Me.ribbonControl
+        Me.ImporteSpinEdit.Name = "ImporteSpinEdit"
+        Me.ImporteSpinEdit.Properties.DisplayFormat.FormatString = "c2"
+        Me.ImporteSpinEdit.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.ImporteSpinEdit.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered
+        Me.ImporteSpinEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.ImporteSpinEdit.Properties.ReadOnly = True
+        Me.ImporteSpinEdit.Size = New System.Drawing.Size(235, 20)
+        Me.ImporteSpinEdit.StyleController = Me.dataLayout
+        Me.ImporteSpinEdit.TabIndex = 32
         '
         'barDockControlLeft
         '
@@ -881,9 +900,9 @@ Partial Class RecibosEditForm
         'BarDockControl1
         '
         Me.BarDockControl1.CausesValidation = False
-        Me.BarDockControl1.Location = New System.Drawing.Point(12, 229)
+        Me.BarDockControl1.Location = New System.Drawing.Point(12, 225)
         Me.BarDockControl1.Manager = Me.recibodetalles_DetailsBarManager
-        Me.BarDockControl1.Size = New System.Drawing.Size(1109, 25)
+        Me.BarDockControl1.Size = New System.Drawing.Size(1141, 47)
         '
         'barDockControlBottom
         '
@@ -907,7 +926,7 @@ Partial Class RecibosEditForm
         Me.Root.GroupBordersVisible = False
         Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem2, Me.LayoutControlGroup1, Me.LayoutControlItem16, Me.LayoutControlItem17, Me.LayoutControlItem1, Me.LayoutControlItem13, Me.LayoutControlItem4, Me.EmptySpaceItem2, Me.LayoutControlItem14, Me.LayoutControlItem15, Me.EmptySpaceItem3, Me.EmptySpaceItem4, Me.EmptySpaceItem6, Me.LayoutControlItem3, Me.LayoutControlItem20, Me.EmptySpaceItem7})
         Me.Root.Name = "Root"
-        Me.Root.Size = New System.Drawing.Size(1133, 745)
+        Me.Root.Size = New System.Drawing.Size(1165, 782)
         Me.Root.TextVisible = False
         '
         'LayoutControlItem2
@@ -915,16 +934,16 @@ Partial Class RecibosEditForm
         Me.LayoutControlItem2.Control = Me.IdEmpresaSearchLookUpEdit
         Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem2.Name = "LayoutControlItem2"
-        Me.LayoutControlItem2.Size = New System.Drawing.Size(1113, 24)
+        Me.LayoutControlItem2.Size = New System.Drawing.Size(1145, 24)
         Me.LayoutControlItem2.Text = "Empresa:"
         Me.LayoutControlItem2.TextSize = New System.Drawing.Size(119, 13)
         '
         'LayoutControlGroup1
         '
-        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem11, Me.EmptySpaceItem1, Me.LayoutControlItem5, Me.LayoutControlItem7, Me.LayoutControlItem9, Me.LayoutControlItem6, Me.LayoutControlItem12, Me.LayoutControlItem8, Me.LayoutControlItem18, Me.LayoutControlItem10, Me.EmptySpaceItem5})
+        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem11, Me.EmptySpaceItem1, Me.LayoutControlItem5, Me.LayoutControlItem7, Me.LayoutControlItem9, Me.LayoutControlItem6, Me.LayoutControlItem12, Me.LayoutControlItem8, Me.LayoutControlItem10, Me.EmptySpaceItem5, Me.LayoutControlItem21, Me.EmptySpaceItem8})
         Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 48)
         Me.LayoutControlGroup1.Name = "LayoutControlGroup1"
-        Me.LayoutControlGroup1.Size = New System.Drawing.Size(1113, 169)
+        Me.LayoutControlGroup1.Size = New System.Drawing.Size(1145, 165)
         Me.LayoutControlGroup1.Text = "Datos personales"
         '
         'LayoutControlItem11
@@ -932,7 +951,7 @@ Partial Class RecibosEditForm
         Me.LayoutControlItem11.Control = Me.NombreTextEdit
         Me.LayoutControlItem11.Location = New System.Drawing.Point(0, 72)
         Me.LayoutControlItem11.Name = "LayoutControlItem11"
-        Me.LayoutControlItem11.Size = New System.Drawing.Size(564, 24)
+        Me.LayoutControlItem11.Size = New System.Drawing.Size(581, 24)
         Me.LayoutControlItem11.Text = "Sindicato:"
         Me.LayoutControlItem11.TextSize = New System.Drawing.Size(119, 13)
         '
@@ -941,16 +960,16 @@ Partial Class RecibosEditForm
         Me.EmptySpaceItem1.AllowHotTrack = False
         Me.EmptySpaceItem1.Location = New System.Drawing.Point(0, 96)
         Me.EmptySpaceItem1.Name = "EmptySpaceItem1"
-        Me.EmptySpaceItem1.Size = New System.Drawing.Size(1089, 28)
+        Me.EmptySpaceItem1.Size = New System.Drawing.Size(1121, 24)
         Me.EmptySpaceItem1.TextSize = New System.Drawing.Size(0, 0)
         '
         'LayoutControlItem5
         '
         Me.LayoutControlItem5.Control = Me.IdLegajoSearchLookUpEdit
-        Me.LayoutControlItem5.Location = New System.Drawing.Point(181, 0)
+        Me.LayoutControlItem5.Location = New System.Drawing.Point(186, 0)
         Me.LayoutControlItem5.Name = "LayoutControlItem5"
         Me.LayoutControlItem5.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 2, 2, 2)
-        Me.LayoutControlItem5.Size = New System.Drawing.Size(649, 24)
+        Me.LayoutControlItem5.Size = New System.Drawing.Size(668, 24)
         Me.LayoutControlItem5.Text = "Legajo:"
         Me.LayoutControlItem5.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize
         Me.LayoutControlItem5.TextSize = New System.Drawing.Size(36, 13)
@@ -961,7 +980,7 @@ Partial Class RecibosEditForm
         Me.LayoutControlItem7.Control = Me.CUILTextEdit
         Me.LayoutControlItem7.Location = New System.Drawing.Point(0, 24)
         Me.LayoutControlItem7.Name = "LayoutControlItem7"
-        Me.LayoutControlItem7.Size = New System.Drawing.Size(285, 24)
+        Me.LayoutControlItem7.Size = New System.Drawing.Size(293, 24)
         Me.LayoutControlItem7.Text = "CUIL:"
         Me.LayoutControlItem7.TextSize = New System.Drawing.Size(119, 13)
         '
@@ -970,7 +989,7 @@ Partial Class RecibosEditForm
         Me.LayoutControlItem9.Control = Me.DescripcionTextEdit
         Me.LayoutControlItem9.Location = New System.Drawing.Point(0, 48)
         Me.LayoutControlItem9.Name = "LayoutControlItem9"
-        Me.LayoutControlItem9.Size = New System.Drawing.Size(338, 24)
+        Me.LayoutControlItem9.Size = New System.Drawing.Size(382, 24)
         Me.LayoutControlItem9.Text = "Categoria:"
         Me.LayoutControlItem9.TextSize = New System.Drawing.Size(119, 13)
         '
@@ -979,17 +998,17 @@ Partial Class RecibosEditForm
         Me.LayoutControlItem6.Control = Me.LegajoSpinEdit
         Me.LayoutControlItem6.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem6.Name = "LayoutControlItem6"
-        Me.LayoutControlItem6.Size = New System.Drawing.Size(181, 24)
+        Me.LayoutControlItem6.Size = New System.Drawing.Size(186, 24)
         Me.LayoutControlItem6.Text = "Codigo Legajo:"
         Me.LayoutControlItem6.TextSize = New System.Drawing.Size(119, 13)
         '
         'LayoutControlItem12
         '
         Me.LayoutControlItem12.Control = Me.NombreTextEdit1
-        Me.LayoutControlItem12.Location = New System.Drawing.Point(564, 72)
+        Me.LayoutControlItem12.Location = New System.Drawing.Point(581, 72)
         Me.LayoutControlItem12.Name = "LayoutControlItem12"
         Me.LayoutControlItem12.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 2, 2, 2)
-        Me.LayoutControlItem12.Size = New System.Drawing.Size(525, 24)
+        Me.LayoutControlItem12.Size = New System.Drawing.Size(540, 24)
         Me.LayoutControlItem12.Text = "Obra Social:"
         Me.LayoutControlItem12.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize
         Me.LayoutControlItem12.TextSize = New System.Drawing.Size(58, 13)
@@ -998,34 +1017,22 @@ Partial Class RecibosEditForm
         'LayoutControlItem8
         '
         Me.LayoutControlItem8.Control = Me.AntiguedadStrTextEdit
-        Me.LayoutControlItem8.Location = New System.Drawing.Point(830, 0)
+        Me.LayoutControlItem8.Location = New System.Drawing.Point(854, 0)
         Me.LayoutControlItem8.Name = "LayoutControlItem8"
         Me.LayoutControlItem8.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 2, 2, 2)
-        Me.LayoutControlItem8.Size = New System.Drawing.Size(259, 24)
+        Me.LayoutControlItem8.Size = New System.Drawing.Size(267, 24)
         Me.LayoutControlItem8.Text = "Antigüedad:"
         Me.LayoutControlItem8.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize
         Me.LayoutControlItem8.TextSize = New System.Drawing.Size(59, 13)
         Me.LayoutControlItem8.TextToControlDistance = 5
         '
-        'LayoutControlItem18
-        '
-        Me.LayoutControlItem18.Control = Me.SueldoSpinEdit
-        Me.LayoutControlItem18.Location = New System.Drawing.Point(338, 48)
-        Me.LayoutControlItem18.Name = "LayoutControlItem18"
-        Me.LayoutControlItem18.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 2, 2, 2)
-        Me.LayoutControlItem18.Size = New System.Drawing.Size(444, 24)
-        Me.LayoutControlItem18.Text = "Sueldo:"
-        Me.LayoutControlItem18.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize
-        Me.LayoutControlItem18.TextSize = New System.Drawing.Size(36, 13)
-        Me.LayoutControlItem18.TextToControlDistance = 5
-        '
         'LayoutControlItem10
         '
         Me.LayoutControlItem10.Control = Me.CondicionliquidacionComoEdit
-        Me.LayoutControlItem10.Location = New System.Drawing.Point(782, 48)
+        Me.LayoutControlItem10.Location = New System.Drawing.Point(805, 48)
         Me.LayoutControlItem10.Name = "LayoutControlItem10"
         Me.LayoutControlItem10.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 2, 2, 2)
-        Me.LayoutControlItem10.Size = New System.Drawing.Size(307, 24)
+        Me.LayoutControlItem10.Size = New System.Drawing.Size(316, 24)
         Me.LayoutControlItem10.Text = "Condicionliquidacion:"
         Me.LayoutControlItem10.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize
         Me.LayoutControlItem10.TextSize = New System.Drawing.Size(0, 0)
@@ -1035,17 +1042,37 @@ Partial Class RecibosEditForm
         'EmptySpaceItem5
         '
         Me.EmptySpaceItem5.AllowHotTrack = False
-        Me.EmptySpaceItem5.Location = New System.Drawing.Point(285, 24)
+        Me.EmptySpaceItem5.Location = New System.Drawing.Point(293, 24)
         Me.EmptySpaceItem5.Name = "EmptySpaceItem5"
-        Me.EmptySpaceItem5.Size = New System.Drawing.Size(804, 24)
+        Me.EmptySpaceItem5.Size = New System.Drawing.Size(828, 24)
         Me.EmptySpaceItem5.TextSize = New System.Drawing.Size(0, 0)
+        '
+        'LayoutControlItem21
+        '
+        Me.LayoutControlItem21.Control = Me.ImporteSpinEdit
+        Me.LayoutControlItem21.Location = New System.Drawing.Point(382, 48)
+        Me.LayoutControlItem21.Name = "LayoutControlItem21"
+        Me.LayoutControlItem21.Padding = New DevExpress.XtraLayout.Utils.Padding(15, 2, 2, 2)
+        Me.LayoutControlItem21.Size = New System.Drawing.Size(299, 24)
+        Me.LayoutControlItem21.Text = "Importe:"
+        Me.LayoutControlItem21.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize
+        Me.LayoutControlItem21.TextSize = New System.Drawing.Size(42, 13)
+        Me.LayoutControlItem21.TextToControlDistance = 5
+        '
+        'EmptySpaceItem8
+        '
+        Me.EmptySpaceItem8.AllowHotTrack = False
+        Me.EmptySpaceItem8.Location = New System.Drawing.Point(681, 48)
+        Me.EmptySpaceItem8.Name = "EmptySpaceItem8"
+        Me.EmptySpaceItem8.Size = New System.Drawing.Size(124, 24)
+        Me.EmptySpaceItem8.TextSize = New System.Drawing.Size(0, 0)
         '
         'LayoutControlItem16
         '
         Me.LayoutControlItem16.Control = Me.TotalRemunerativosSpinEdit
-        Me.LayoutControlItem16.Location = New System.Drawing.Point(723, 557)
+        Me.LayoutControlItem16.Location = New System.Drawing.Point(744, 557)
         Me.LayoutControlItem16.Name = "LayoutControlItem16"
-        Me.LayoutControlItem16.Size = New System.Drawing.Size(127, 40)
+        Me.LayoutControlItem16.Size = New System.Drawing.Size(131, 40)
         Me.LayoutControlItem16.Text = "Total Remunerativos:"
         Me.LayoutControlItem16.TextLocation = DevExpress.Utils.Locations.Top
         Me.LayoutControlItem16.TextSize = New System.Drawing.Size(119, 13)
@@ -1056,9 +1083,9 @@ Partial Class RecibosEditForm
         Me.LayoutControlItem17.AppearanceItemCaption.FontStyleDelta = System.Drawing.FontStyle.Bold
         Me.LayoutControlItem17.AppearanceItemCaption.Options.UseFont = True
         Me.LayoutControlItem17.Control = Me.TotalSpinEdit
-        Me.LayoutControlItem17.Location = New System.Drawing.Point(723, 597)
+        Me.LayoutControlItem17.Location = New System.Drawing.Point(744, 597)
         Me.LayoutControlItem17.Name = "LayoutControlItem17"
-        Me.LayoutControlItem17.Size = New System.Drawing.Size(380, 34)
+        Me.LayoutControlItem17.Size = New System.Drawing.Size(391, 34)
         Me.LayoutControlItem17.Text = "Total:"
         Me.LayoutControlItem17.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize
         Me.LayoutControlItem17.TextSize = New System.Drawing.Size(56, 23)
@@ -1067,19 +1094,19 @@ Partial Class RecibosEditForm
         'LayoutControlItem1
         '
         Me.LayoutControlItem1.Control = Me.gridControl
-        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 246)
+        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 264)
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(1113, 311)
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(1145, 293)
         Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem1.TextVisible = False
         '
         'LayoutControlItem13
         '
         Me.LayoutControlItem13.Control = Me.PeriodoDateEdit
-        Me.LayoutControlItem13.Location = New System.Drawing.Point(316, 24)
+        Me.LayoutControlItem13.Location = New System.Drawing.Point(325, 24)
         Me.LayoutControlItem13.Name = "LayoutControlItem13"
         Me.LayoutControlItem13.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 2, 2, 2)
-        Me.LayoutControlItem13.Size = New System.Drawing.Size(163, 24)
+        Me.LayoutControlItem13.Size = New System.Drawing.Size(168, 24)
         Me.LayoutControlItem13.Text = "Periodo:"
         Me.LayoutControlItem13.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize
         Me.LayoutControlItem13.TextSize = New System.Drawing.Size(40, 13)
@@ -1090,24 +1117,24 @@ Partial Class RecibosEditForm
         Me.LayoutControlItem4.Control = Me.IdTipoLiquidacionLookUpEdit
         Me.LayoutControlItem4.Location = New System.Drawing.Point(0, 24)
         Me.LayoutControlItem4.Name = "LayoutControlItem4"
-        Me.LayoutControlItem4.Size = New System.Drawing.Size(316, 24)
+        Me.LayoutControlItem4.Size = New System.Drawing.Size(325, 24)
         Me.LayoutControlItem4.Text = "Tipo Liquidacion:"
         Me.LayoutControlItem4.TextSize = New System.Drawing.Size(119, 13)
         '
         'EmptySpaceItem2
         '
         Me.EmptySpaceItem2.AllowHotTrack = False
-        Me.EmptySpaceItem2.Location = New System.Drawing.Point(723, 631)
+        Me.EmptySpaceItem2.Location = New System.Drawing.Point(744, 631)
         Me.EmptySpaceItem2.Name = "EmptySpaceItem2"
-        Me.EmptySpaceItem2.Size = New System.Drawing.Size(380, 94)
+        Me.EmptySpaceItem2.Size = New System.Drawing.Size(391, 131)
         Me.EmptySpaceItem2.TextSize = New System.Drawing.Size(0, 0)
         '
         'LayoutControlItem14
         '
         Me.LayoutControlItem14.Control = Me.TotalDescuentosSpinEdit
-        Me.LayoutControlItem14.Location = New System.Drawing.Point(850, 557)
+        Me.LayoutControlItem14.Location = New System.Drawing.Point(875, 557)
         Me.LayoutControlItem14.Name = "LayoutControlItem14"
-        Me.LayoutControlItem14.Size = New System.Drawing.Size(126, 40)
+        Me.LayoutControlItem14.Size = New System.Drawing.Size(129, 40)
         Me.LayoutControlItem14.Text = "Total Descuentos:"
         Me.LayoutControlItem14.TextLocation = DevExpress.Utils.Locations.Top
         Me.LayoutControlItem14.TextSize = New System.Drawing.Size(119, 13)
@@ -1115,9 +1142,9 @@ Partial Class RecibosEditForm
         'LayoutControlItem15
         '
         Me.LayoutControlItem15.Control = Me.TotalNoRemunerativosSpinEdit
-        Me.LayoutControlItem15.Location = New System.Drawing.Point(976, 557)
+        Me.LayoutControlItem15.Location = New System.Drawing.Point(1004, 557)
         Me.LayoutControlItem15.Name = "LayoutControlItem15"
-        Me.LayoutControlItem15.Size = New System.Drawing.Size(127, 40)
+        Me.LayoutControlItem15.Size = New System.Drawing.Size(131, 40)
         Me.LayoutControlItem15.Text = "Total No Remunerativos:"
         Me.LayoutControlItem15.TextLocation = DevExpress.Utils.Locations.Top
         Me.LayoutControlItem15.TextSize = New System.Drawing.Size(119, 13)
@@ -1127,40 +1154,40 @@ Partial Class RecibosEditForm
         Me.EmptySpaceItem3.AllowHotTrack = False
         Me.EmptySpaceItem3.Location = New System.Drawing.Point(0, 557)
         Me.EmptySpaceItem3.Name = "EmptySpaceItem3"
-        Me.EmptySpaceItem3.Size = New System.Drawing.Size(723, 168)
+        Me.EmptySpaceItem3.Size = New System.Drawing.Size(744, 205)
         Me.EmptySpaceItem3.TextSize = New System.Drawing.Size(0, 0)
         '
         'EmptySpaceItem4
         '
         Me.EmptySpaceItem4.AllowHotTrack = False
-        Me.EmptySpaceItem4.Location = New System.Drawing.Point(1103, 557)
+        Me.EmptySpaceItem4.Location = New System.Drawing.Point(1135, 557)
         Me.EmptySpaceItem4.Name = "EmptySpaceItem4"
-        Me.EmptySpaceItem4.Size = New System.Drawing.Size(10, 168)
+        Me.EmptySpaceItem4.Size = New System.Drawing.Size(10, 205)
         Me.EmptySpaceItem4.TextSize = New System.Drawing.Size(0, 0)
         '
         'EmptySpaceItem6
         '
         Me.EmptySpaceItem6.AllowHotTrack = False
-        Me.EmptySpaceItem6.Location = New System.Drawing.Point(479, 24)
+        Me.EmptySpaceItem6.Location = New System.Drawing.Point(493, 24)
         Me.EmptySpaceItem6.Name = "EmptySpaceItem6"
-        Me.EmptySpaceItem6.Size = New System.Drawing.Size(98, 24)
+        Me.EmptySpaceItem6.Size = New System.Drawing.Size(101, 24)
         Me.EmptySpaceItem6.TextSize = New System.Drawing.Size(0, 0)
         '
         'LayoutControlItem3
         '
         Me.LayoutControlItem3.Control = Me.BarDockControl1
-        Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 217)
+        Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 213)
         Me.LayoutControlItem3.Name = "LayoutControlItem3"
-        Me.LayoutControlItem3.Size = New System.Drawing.Size(1113, 29)
+        Me.LayoutControlItem3.Size = New System.Drawing.Size(1145, 51)
         Me.LayoutControlItem3.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem3.TextVisible = False
         '
         'LayoutControlItem20
         '
         Me.LayoutControlItem20.Control = Me.FechaPagoDateEdit
-        Me.LayoutControlItem20.Location = New System.Drawing.Point(577, 24)
+        Me.LayoutControlItem20.Location = New System.Drawing.Point(594, 24)
         Me.LayoutControlItem20.Name = "LayoutControlItem20"
-        Me.LayoutControlItem20.Size = New System.Drawing.Size(259, 24)
+        Me.LayoutControlItem20.Size = New System.Drawing.Size(266, 24)
         Me.LayoutControlItem20.Text = "Fecha Pago:"
         Me.LayoutControlItem20.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize
         Me.LayoutControlItem20.TextSize = New System.Drawing.Size(60, 13)
@@ -1169,9 +1196,9 @@ Partial Class RecibosEditForm
         'EmptySpaceItem7
         '
         Me.EmptySpaceItem7.AllowHotTrack = False
-        Me.EmptySpaceItem7.Location = New System.Drawing.Point(836, 24)
+        Me.EmptySpaceItem7.Location = New System.Drawing.Point(860, 24)
         Me.EmptySpaceItem7.Name = "EmptySpaceItem7"
-        Me.EmptySpaceItem7.Size = New System.Drawing.Size(277, 24)
+        Me.EmptySpaceItem7.Size = New System.Drawing.Size(285, 24)
         Me.EmptySpaceItem7.TextSize = New System.Drawing.Size(0, 0)
         '
         'recibodetalles_DetailsPopUpMenu
@@ -1189,7 +1216,7 @@ Partial Class RecibosEditForm
         Me.Controls.Add(Me.ribbonControl)
         Me.Name = "RecibosEditForm"
         Me.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.Size = New System.Drawing.Size(1143, 872)
+        Me.Size = New System.Drawing.Size(1175, 909)
         CType(Me.ribbonControl, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.mvvmContext, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dataLayout, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1219,9 +1246,9 @@ Partial Class RecibosEditForm
         CType(Me.TotalNoRemunerativosSpinEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TotalSpinEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LegajoSpinEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SueldoSpinEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CondicionliquidacionComoEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PeriodoDateEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ImporteSpinEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.recibodetalles_DetailsBarManager, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1234,9 +1261,10 @@ Partial Class RecibosEditForm
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem12, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem18, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem10, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem21, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmptySpaceItem8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem16, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem17, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1307,7 +1335,6 @@ Partial Class RecibosEditForm
     Friend WithEvents LayoutControlItem16 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem17 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem13 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents LayoutControlItem18 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents EmptySpaceItem2 As DevExpress.XtraLayout.EmptySpaceItem
     Friend WithEvents EmptySpaceItem3 As DevExpress.XtraLayout.EmptySpaceItem
     Friend WithEvents EmptySpaceItem4 As DevExpress.XtraLayout.EmptySpaceItem
@@ -1339,7 +1366,6 @@ Partial Class RecibosEditForm
     Friend WithEvents colNombreYApellido As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colNombre As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents LegajoSpinEdit As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents SueldoSpinEdit As DevExpress.XtraEditors.TextEdit
     Friend WithEvents colFormulas As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colFormulas1 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colCantidad As DevExpress.XtraGrid.Columns.GridColumn
@@ -1362,4 +1388,8 @@ Partial Class RecibosEditForm
     Friend WithEvents bbiVistaPrevia As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents RibbonPageGroup5 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents bbiReportDesigner As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents ImporteSpinEdit As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LayoutControlItem21 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents EmptySpaceItem8 As DevExpress.XtraLayout.EmptySpaceItem
+    Friend WithEvents colFormulas3 As DevExpress.XtraGrid.Columns.GridColumn
 End Class

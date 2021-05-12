@@ -24,6 +24,7 @@ Partial Public Class ReciboViewModel
         If Entity Is Nothing Then
             Return
         End If
+        Recalcular()
         'If message.MessageType = EntityMessageType.Deleted AndAlso Object.Equals(message.PrimaryKey, PrimaryKey) Then
         '    Close()
         'End If
@@ -33,46 +34,66 @@ Partial Public Class ReciboViewModel
 
     Public Overridable Sub Recalcular()
         _formula = New CalcularFormulas(MyBase.Entity)
-        For Each detalle As RecibosDetalles In MyBase.Entity.RecibosDetalles
+        For i As Integer = 0 To 0
+            For Each detalle As RecibosDetalles In MyBase.Entity.RecibosDetalles
 
-            _formula.NewVariable(detalle.Formulas.Variable & "I", detalle.formulaImporte)
-            _formula.NewVariable(detalle.Formulas.Variable & "C", detalle.formulaCantidad)
+                _formula.NewVariable(detalle.Formulas.Variable & "I", detalle.formulaImporte)
+                _formula.NewVariable(detalle.Formulas.Variable & "C", detalle.formulaCantidad)
 
-            detalle.Cantidad = Val(_formula.Formula(detalle.formulaCantidad))
-            Select Case detalle.Formulas.Conceptos.ColumnaRecibo
-                Case Entidades.enmColumnaRecivo.Remunerativo
-                    detalle.Remunerativo = Val(_formula.Formula(detalle.formulaImporte))
-                    detalle.NoRemunerativo = 0
-                    detalle.Descuento = 0
-                Case Entidades.enmColumnaRecivo.NoRemunerativo
-                    detalle.NoRemunerativo = Val(_formula.Formula(detalle.formulaImporte))
-                    detalle.Remunerativo = 0
-                    detalle.Descuento = 0
-                Case Entidades.enmColumnaRecivo.Descuento
-                    detalle.Descuento = Val(_formula.Formula(detalle.formulaImporte))
-                    detalle.Remunerativo = 0
-                    detalle.NoRemunerativo = 0
-                Case Entidades.enmColumnaRecivo.DescuentoNoRemunerativo
-                    detalle.Descuento = Val(_formula.Formula(detalle.formulaImporte))
-                    detalle.Remunerativo = 0
-                    detalle.NoRemunerativo = 0
-            End Select
+                detalle.Cantidad = CDbl(_formula.Formula(detalle.formulaCantidad))
+                Select Case detalle.Formulas.Conceptos.ColumnaRecibo
+                    Case Entidades.enmColumnaRecivo.Remunerativo
+                        detalle.Remunerativo = CDbl(_formula.Formula(detalle.formulaImporte))
+                        detalle.Importe = detalle.Remunerativo
+                        detalle.NoRemunerativo = 0
+                        detalle.Descuento = 0
+                    Case Entidades.enmColumnaRecivo.NoRemunerativo
+                        detalle.NoRemunerativo = CDbl(_formula.Formula(detalle.formulaImporte))
+                        detalle.Importe = detalle.NoRemunerativo
+                        detalle.Remunerativo = 0
+                        detalle.Descuento = 0
+                    Case Entidades.enmColumnaRecivo.Descuento
+                        detalle.Descuento = CDbl(_formula.Formula(detalle.formulaImporte))
+                        detalle.Importe = detalle.Descuento
+                        detalle.Remunerativo = 0
+                        detalle.NoRemunerativo = 0
+                    Case Entidades.enmColumnaRecivo.DescuentoNoRemunerativo
+                        detalle.Descuento = CDbl(_formula.Formula(detalle.formulaImporte))
+                        detalle.Importe = detalle.Descuento
+                        detalle.Remunerativo = 0
+                        detalle.NoRemunerativo = 0
+                End Select
+            Next
+
+
+            MyBase.Entity.TotalRemunerativos = MyBase.Entity.RecibosDetalles.Sum(Function(x) x.Remunerativo)
+            '_formula.NewVariable("REMUN", MyBase.Entity.TotalRemunerativos)
+
+            MyBase.Entity.TotalDescuentos = MyBase.Entity.RecibosDetalles.Sum(Function(x) x.Descuento)
+            ''todo este codigo es por que no descubria el error de DESC hasta que lo remplace por DESCU. DESC debe estar siendo editada en las variable generales
+            Dim desc As Double = MyBase.Entity.RecibosDetalles.Where(Function(w) w.Formulas.Conceptos.ColumnaRecibo = Entidades.enmColumnaRecivo.Descuento).Sum(Function(x) x.Importe)
+            'Debug.Print(desc)
+            _formula.NewVariable("DESCU", desc)
+
+            MyBase.Entity.TotalNoRemunerativos = MyBase.Entity.RecibosDetalles.Sum(Function(x) x.NoRemunerativo)
+            '_formula.NewVariable("NREMUN", MyBase.Entity.TotalNoRemunerativos)
+            MyBase.Entity.Total = MyBase.Entity.TotalRemunerativos - MyBase.Entity.TotalDescuentos + MyBase.Entity.TotalNoRemunerativos
         Next
-        MyBase.Entity.TotalRemunerativos = MyBase.Entity.RecibosDetalles.Sum(Function(x) x.Remunerativo)
-        MyBase.Entity.TotalDescuentos = MyBase.Entity.RecibosDetalles.Sum(Function(x) x.Descuento)
-        MyBase.Entity.TotalNoRemunerativos = MyBase.Entity.RecibosDetalles.Sum(Function(x) x.NoRemunerativo)
-        MyBase.Entity.Total = MyBase.Entity.TotalRemunerativos - MyBase.Entity.TotalDescuentos + MyBase.Entity.TotalNoRemunerativos
         MyBase.Save()
     End Sub
 
     Public Overridable Sub AddDetalleFromPlantilla()
+        If MessageBoxService.ShowMessage("¿Esta seguro de aplicar una plantilla?", "Plantilla", MessageButton.YesNo) <> MessageResult.Yes Then
+            Return
+        End If
         Dim idconvenio As Integer? = 0
+        Dim idTipoLiquidacion As Integer? = 0
         If Not MyBase.Entity Is Nothing Then
             idconvenio = MyBase.Entity.Legajos.IdConvenio
+            idTipoLiquidacion = MyBase.Entity.IdTipoLiquidacion
         End If
         Using db As YiZi.AccesoDatos.Modelo = New YiZi.AccesoDatos.Modelo()
-            Dim lista As List(Of RecibosPlantillas) = db.RecibosPlantillas.Where(Function(x) x.IdConvenio = idconvenio).ToList()
-
+            Dim lista As List(Of RecibosPlantillas) = db.RecibosPlantillas.Where(Function(x) x.IdConvenio = idconvenio And x.IdTipoLiquidacion = idTipoLiquidacion).ToList()
             For Each item As RecibosPlantillas In lista
                 Dim itemDetalle As YiZi.AccesoDatos.RecibosDetalles = New YiZi.AccesoDatos.RecibosDetalles
                 itemDetalle.IdRecibo = MyBase.Entity.Id
@@ -96,6 +117,24 @@ Partial Public Class ReciboViewModel
     End Function
 
     Public Overridable Sub AddDetalleToPlantilla()
+
+        If MessageBoxService.ShowMessage("¿Esta seguro de guardar estos datos como Plantilla?", "Plantilla", MessageButton.YesNo) <> MessageResult.Yes Then
+            Return
+        End If
+
+        Dim idconvenio As Integer? = 0
+        Dim idTipoLiquidacion As Integer? = 0
+        If Not MyBase.Entity Is Nothing Then
+            idconvenio = MyBase.Entity.Legajos.IdConvenio
+            idTipoLiquidacion = MyBase.Entity.IdTipoLiquidacion
+        End If
+        'remuevo las plantillas
+        Using db As YiZi.AccesoDatos.Modelo = New YiZi.AccesoDatos.Modelo()
+            Dim lista As List(Of RecibosPlantillas) = db.RecibosPlantillas.Where(Function(x) x.IdConvenio = idconvenio And x.IdTipoLiquidacion = idTipoLiquidacion).ToList()
+            db.RecibosPlantillas.RemoveRange(lista)
+            db.SaveChanges()
+        End Using
+
         Dim newItemPlantilla As RecibosPlantillas = New RecibosPlantillas
         For Each item As RecibosDetalles In MyBase.Entity.RecibosDetalles
             newItemPlantilla = New RecibosPlantillas
@@ -141,6 +180,15 @@ Partial Public Class ReciboViewModel
         Me.RaisePropertyChanged(Function(m) m.LookUpLegajos)
     End Sub
 
+    Public Overridable Property SelectedLegajo() As Integer
+
+    Protected Overridable Sub OnSelectedLegajoChanged()
+        If Entity.IdLegajo <> SelectedLegajo Or MyBase.IsNew Then
+            Dim _legajo As YiZi.AccesoDatos.Legajos = UnitOfWork.Legajos.Where(Function(x) x.Id = SelectedLegajo).FirstOrDefault()
+            Entity.Legajos = _legajo
+        End If
+        'Me.RaisePropertyChanged(Function(m) m.Entity)
+    End Sub
     Public Overridable Property SelectedItems As IEnumerable(Of RecibosDetalles)
 
     Public Overridable Sub DeleteSelectedItems()
@@ -154,34 +202,35 @@ Partial Public Class ReciboViewModel
     End Sub
 
     Public Overridable Sub VistaPreviaImpresion()
-        Dim source As List(Of YiZi.AccesoDatos.Recibos) = New List(Of YiZi.AccesoDatos.Recibos)
+        ReciboAuxiliar.GenerateReciboReport(MyBase.Entity)
+        'Dim source As List(Of YiZi.AccesoDatos.Recibos) = New List(Of YiZi.AccesoDatos.Recibos)
 
-        source.Add(MyBase.Entity)
-        Dim reporte As xrReciboSueldoX1 = New xrReciboSueldoX1
-        reporte.DataSource = source  'ReciboBindingSource
+        'source.Add(MyBase.Entity)
+        'Dim reporte As xrReciboSueldoX1 = New xrReciboSueldoX1
+        'reporte.DataSource = source  'ReciboBindingSource
 
-        Dim reporteContenedor As xrReciboSueldoX2 = New xrReciboSueldoX2
-        reporteContenedor.Recibo = reporte
+        'Dim reporteContenedor As xrReciboSueldoX2 = New xrReciboSueldoX2
+        'reporteContenedor.Recibo = reporte
 
 
-        ''reporteContenedor
+        '''reporteContenedor
 
-        Dim pad As frmReportesVistaPrevia = New frmReportesVistaPrevia
-        reporteContenedor.ExportOptions.Pdf.DocumentOptions.Title = "Recibo de Sueldo " & MyBase.Entity.Legajos.NombreYApellido.ToString
-        reporteContenedor.Name = MyBase.Entity.Legajos.NombreYApellido.ToString & " " & MyBase.Entity.Periodo.Replace("/", "")
+        'Dim pad As frmReportesVistaPrevia = New frmReportesVistaPrevia
+        'reporteContenedor.ExportOptions.Pdf.DocumentOptions.Title = "Recibo de Sueldo " & MyBase.Entity.Legajos.NombreYApellido.ToString
+        'reporteContenedor.Name = MyBase.Entity.Legajos.NombreYApellido.ToString & " " & MyBase.Entity.Periodo.Replace("/", "")
 
-        reporteContenedor.PaperKind = Printing.PaperKind.Custom
-        reporteContenedor.PageHeight = 2100
-        reporteContenedor.PageWidth = 2970
-        reporteContenedor.Margins = New Printing.Margins(15, 15, 15, 15)
-        reporteContenedor.CreateDocument(False)
-        reporteContenedor.PrintingSystem.Document.ScaleFactor = 0.78
-        ''reporteContenedor.PrintingSystem.Document.AutoFitToPagesWidth = 1
+        'reporteContenedor.PaperKind = Printing.PaperKind.Custom
+        'reporteContenedor.PageHeight = 2100
+        'reporteContenedor.PageWidth = 2970
+        'reporteContenedor.Margins = New Printing.Margins(15, 15, 15, 15)
+        'reporteContenedor.CreateDocument(False)
+        'reporteContenedor.PrintingSystem.Document.ScaleFactor = 0.78
+        '''reporteContenedor.PrintingSystem.Document.AutoFitToPagesWidth = 1
 
-        pad.dvReportes.DocumentSource = reporteContenedor
+        'pad.dvReportes.DocumentSource = reporteContenedor
 
-        ''SetTextWatermark(reporte)
-        pad.ShowDialog()
+        '''SetTextWatermark(reporte)
+        'pad.ShowDialog()
     End Sub
 
     Public Overridable Sub ReportDesigner()

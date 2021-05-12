@@ -40,10 +40,13 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <PropertyGroup>
-    <MyType>WindowsForms</MyType>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>YiZi.LiquidAR.Win.My.MyApplication</StartupObject>
+    <StartupObject>YiZi.LiquidAR.Win.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>YiZi_Icono.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Accessibility" />
@@ -134,12 +137,24 @@
     <Compile Include="Bases\ListadoBase.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Component\LookAndFeelSettings.vb" />
+    <Compile Include="Component\LookAndFeelSettingsHelper.vb" />
+    <Compile Include="CredentialsSource.vb" />
     <Compile Include="frmPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPrincipal.Designer.vb">
       <DependentUpon>frmPrincipal.vb</DependentUpon>
     </Compile>
+    <Compile Include="LoginView.Designer.vb">
+      <DependentUpon>LoginView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LoginView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LoginViewModel.vb" />
+    <Compile Include="PrincipalViewModel.partial.vb" />
+    <Compile Include="Program.vb" />
     <Compile Include="Reportes\frmReportesDesigner.Designer.vb">
       <DependentUpon>frmReportesDesigner.vb</DependentUpon>
     </Compile>
@@ -155,10 +170,31 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
-    <Compile Include="PrincipalViewModel.partial.vb" />
     <Compile Include="PrincipalViewModel.vb" />
+    <Compile Include="Seguridad\LoginMessage.vb" />
+    <Compile Include="Seguridad\ViewModels\Modulos\ModuloCollectionViewModel.vb" />
+    <Compile Include="Seguridad\ViewModels\Modulos\ModuloViewModel.vb" />
+    <Compile Include="Seguridad\ViewModels\Operaciones\OperacionCollectionViewModel.vb" />
+    <Compile Include="Seguridad\ViewModels\Operaciones\OperacionViewModel.vb" />
+    <Compile Include="Seguridad\ViewModels\Roles\RolCollectionViewModel.vb" />
+    <Compile Include="Seguridad\ViewModels\Roles\RolViewModel.partil.vb" />
+    <Compile Include="Seguridad\ViewModels\Roles\RolViewModel.vb" />
+    <Compile Include="Seguridad\View\Roles\RolEditForm.Designer.vb">
+      <DependentUpon>RolEditForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\View\Roles\RolEditForm.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Seguridad\View\Roles\Roles.Designer.vb">
+      <DependentUpon>Roles.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\View\Roles\Roles.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI_Win.vb" />
     <Compile Include="ViewModels\Categorias\CategoriaCollectionViewModel.vb" />
     <Compile Include="ViewModels\Categorias\CategoriaViewModel.vb" />
     <Compile Include="ViewModels\Comportamientos.vb" />
@@ -181,12 +217,16 @@
     <Compile Include="ViewModels\Legajos\LegajoViewModel.vb" />
     <Compile Include="ViewModels\ObrasSociales\ObraSocialCollectionViewModel.vb" />
     <Compile Include="ViewModels\ObrasSociales\ObraSocialViewModel.vb" />
+    <Compile Include="ViewModels\Recibos\ReciboAuxiliar.vb" />
     <Compile Include="ViewModels\Recibos\ReciboCollectionViewModel.vb" />
     <Compile Include="ViewModels\Recibos\ReciboDetalles\NewReciboDetallesViewModel.vb" />
     <Compile Include="ViewModels\Recibos\ReciboDetalles\ReciboDetallesViewModel.vb" />
     <Compile Include="ViewModels\Recibos\ReciboMessage.vb" />
+    <Compile Include="ViewModels\Recibos\RecibosFilterViewModel.vb" />
     <Compile Include="ViewModels\Recibos\ReciboViewModel.partial.vb" />
     <Compile Include="ViewModels\Recibos\ReciboViewModel.vb" />
+    <Compile Include="Seguridad\ViewModels\Usuarios\UsuarioCollectionViewModel.vb" />
+    <Compile Include="Seguridad\ViewModels\Usuarios\UsuarioViewModel.vb" />
     <Compile Include="ViewModels\Sindicatos\SindicatoCollectionViewModel.vb" />
     <Compile Include="ViewModels\Sindicatos\SindicatoViewModel.partial.vb" />
     <Compile Include="ViewModels\Sindicatos\SindicatoViewModel.vb" />
@@ -284,13 +324,13 @@
       <DependentUpon>ObraSocialEditForm.vb</DependentUpon>
     </Compile>
     <Compile Include="Views\ObrasSociales\ObraSocialEditForm.vb">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\ObrasSociales\ObrasSociales.Designer.vb">
       <DependentUpon>ObrasSociales.vb</DependentUpon>
     </Compile>
     <Compile Include="Views\ObrasSociales\ObrasSociales.vb">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\Recibos\CalcularFormulas.vb" />
     <Compile Include="Views\Recibos\ReciboDetalles\ReciboDetalleEditForm.Designer.vb">
@@ -323,11 +363,23 @@
     <Compile Include="Views\Recibos\Reportes\xrReciboSueldoX2.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Seguridad\View\Usuarios\UsuarioEditForm.Designer.vb">
+      <DependentUpon>UsuarioEditForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\View\Usuarios\UsuarioEditForm.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Seguridad\View\Usuarios\Usuarios.Designer.vb">
+      <DependentUpon>Usuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\View\Usuarios\Usuarios.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Views\Sindicatos\SindicatoEditForm.Designer.vb">
       <DependentUpon>SindicatoEditForm.vb</DependentUpon>
     </Compile>
     <Compile Include="Views\Sindicatos\SindicatoEditForm.vb">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\Sindicatos\SindicatoEditForm_.Designer.vb">
       <DependentUpon>SindicatoEditForm_.vb</DependentUpon>
@@ -339,16 +391,20 @@
       <DependentUpon>Sindicatos.vb</DependentUpon>
     </Compile>
     <Compile Include="Views\Sindicatos\Sindicatos.vb">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <EmbeddedResource Include="Bases\EditFormBase.resx">
       <DependentUpon>EditFormBase.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Bases\ListadoBase.resx">
       <DependentUpon>ListadoBase.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginView.resx">
+      <DependentUpon>LoginView.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmReportesDesigner.resx">
       <DependentUpon>frmReportesDesigner.vb</DependentUpon>
@@ -368,6 +424,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Seguridad\View\Roles\RolEditForm.resx">
+      <DependentUpon>RolEditForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Seguridad\View\Roles\Roles.resx">
+      <DependentUpon>Roles.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Categorias\CategoriaEditForm.resx">
       <DependentUpon>CategoriaEditForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -435,6 +497,12 @@
     <EmbeddedResource Include="Views\Recibos\Reportes\xrReciboSueldoX2.resx">
       <DependentUpon>xrReciboSueldoX2.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Seguridad\View\Usuarios\UsuarioEditForm.resx">
+      <DependentUpon>UsuarioEditForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Seguridad\View\Usuarios\Usuarios.resx">
+      <DependentUpon>Usuarios.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Sindicatos\SindicatoEditForm.resx">
       <DependentUpon>SindicatoEditForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -464,9 +532,13 @@
     <None Include="My Project\DataSources\YiZi.AccesoDatos.Provincias.datasource" />
     <None Include="My Project\DataSources\YiZi.AccesoDatos.Recibos.datasource" />
     <None Include="My Project\DataSources\YiZi.AccesoDatos.RecibosDetalles.datasource" />
+    <None Include="My Project\DataSources\YiZi.AccesoDatos.Roles.datasource" />
+    <None Include="My Project\DataSources\YiZi.AccesoDatos.Roles_Modulos_Operaciones.datasource" />
     <None Include="My Project\DataSources\YiZi.AccesoDatos.Sindicatos.datasource" />
     <None Include="My Project\DataSources\YiZi.AccesoDatos.TipoClaveUnica.datasource" />
     <None Include="My Project\DataSources\YiZi.AccesoDatos.TipoLiquidacion.datasource" />
+    <None Include="My Project\DataSources\YiZi.AccesoDatos.Unidades.datasource" />
+    <None Include="My Project\DataSources\YiZi.AccesoDatos.Usuarios.datasource" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
@@ -665,6 +737,61 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\design_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customization_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customization_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\business_dollar.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bo_department.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pivottablecalculationsfieldsitemssetsgroup.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bo_position_v92.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bo_organization.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bo_position_v921.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bo_department1.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calculationoptions.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.png" />
+    <None Include="Resources\images %281%29.png" />
+    <None Include="Resources\bopermission_16x16.png" />
+    <None Include="Resources\bopermission_32x32.png" />
+    <None Include="Resources\customer_16x16.png" />
+    <None Include="Resources\customer_32x32.png" />
+    <None Include="Resources\customer_16x161.png" />
+    <None Include="Resources\customer_32x321.png" />
+    <None Include="Resources\assignto_16x16.png" />
+    <None Include="Resources\assignto_32x32.png" />
+    <None Include="Resources\printarea.svg" />
+    <None Include="Resources\documentpdf.svg" />
+    <None Include="Resources\sendpdf.svg" />
+    <None Include="Resources\exporttopdf_32x32.png" />
+    <None Include="Resources\exporttopdf_16x16.png" />
+    <None Include="Resources\sendpdf_32x32.png" />
+    <None Include="Resources\sendpdf_16x16.png" />
+    <None Include="Resources\close1.svg" />
+    <Content Include="YiZi_Icono.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Seguridad\View\Modulos\" />
+    <Folder Include="Seguridad\View\Operaciones\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -123,6 +123,13 @@
     <Compile Include="Models\TipoLiquidacion.vb" />
     <Compile Include="Models\Unidades.vb" />
     <Compile Include="Models\Variables.vb" />
+    <Compile Include="Seguridad\Modulos.vb" />
+    <Compile Include="Seguridad\Operaciones.vb" />
+    <Compile Include="Seguridad\Operaciones_Modulos.vb" />
+    <Compile Include="Seguridad\Roles.vb" />
+    <Compile Include="Seguridad\Roles_Modulos_Operaciones.vb" />
+    <Compile Include="Seguridad\Roles_Operaciones.vb" />
+    <Compile Include="Seguridad\Usuarios.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -138,6 +145,39 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+    <None Include="My Project\DataSources\Actividades.datasource" />
+    <None Include="My Project\DataSources\Categorias.datasource" />
+    <None Include="My Project\DataSources\Conceptos.datasource" />
+    <None Include="My Project\DataSources\Contactos.datasource" />
+    <None Include="My Project\DataSources\Convenios.datasource" />
+    <None Include="My Project\DataSources\Empresas.datasource" />
+    <None Include="My Project\DataSources\EmpresasActividades.datasource" />
+    <None Include="My Project\DataSources\Entidades.datasource" />
+    <None Include="My Project\DataSources\Entidades.enmColumnaRecivo.datasource" />
+    <None Include="My Project\DataSources\Entidades.enmCondicionLiquidacion.datasource" />
+    <None Include="My Project\DataSources\Formulas.datasource" />
+    <None Include="My Project\DataSources\FormulasPeriodos.datasource" />
+    <None Include="My Project\DataSources\FormulaTipoLiquidacion.datasource" />
+    <None Include="My Project\DataSources\IModeloDbContextUnitOfWork.datasource" />
+    <None Include="My Project\DataSources\Jornadas.datasource" />
+    <None Include="My Project\DataSources\Legajos.datasource" />
+    <None Include="My Project\DataSources\Liquidaciones.datasource" />
+    <None Include="My Project\DataSources\Meses.datasource" />
+    <None Include="My Project\DataSources\Modelo.datasource" />
+    <None Include="My Project\DataSources\ModeloDbContextUnitOfWork.datasource" />
+    <None Include="My Project\DataSources\ObrasSociales.datasource" />
+    <None Include="My Project\DataSources\Provincias.datasource" />
+    <None Include="My Project\DataSources\Provinciasas.datasource" />
+    <None Include="My Project\DataSources\Recibos.datasource" />
+    <None Include="My Project\DataSources\RecibosDetalles.datasource" />
+    <None Include="My Project\DataSources\RecibosPlantillas.datasource" />
+    <None Include="My Project\DataSources\Sindicatos.datasource" />
+    <None Include="My Project\DataSources\TipoClaveUnica.datasource" />
+    <None Include="My Project\DataSources\TipoConceptos.datasource" />
+    <None Include="My Project\DataSources\TipoLiquidacion.datasource" />
+    <None Include="My Project\DataSources\Unidades.datasource" />
+    <None Include="My Project\DataSources\Variables.datasource" />
+    <None Include="My Project\DataSources\YiZi.AccesoDatos.My.MySettings.datasource" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>

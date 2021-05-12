@@ -19,6 +19,33 @@ Namespace YiZi.mvvm.Common.ViewModel
         ''' </summary>
         Changed
     End Enum
+
+    ''' <summary>
+    ''' Representa el tipo de command que solicita permiso de aseguridad.
+    ''' </summary>
+    Public Enum CommandMessageType
+        ''' <summary>
+        ''' Poder agregar nuevo entity. 
+        ''' </summary>
+        CanNew
+        ''' <summary>
+        ''' Poder modificar entity.
+        ''' </summary>
+        CanEdit
+        ''' <summary>
+        ''' Poder quitar entity.
+        ''' </summary>
+        CanDelete
+        ''' <summary>
+        ''' Poder mostrar entity.
+        ''' </summary>
+        CanShow
+        ''' <summary>
+        ''' Poder imprimir entity.
+        ''' </summary>
+        CanPrint
+    End Enum
+
     ''' <summary>
     ''' Provides the information about an entity state change notification that is shown when an entity has been added, removed or modified, and the IUnitOfWork.SaveChanges method has been called.
     ''' </summary>
@@ -108,6 +135,32 @@ Namespace YiZi.mvvm.Common.ViewModel
         Public ReadOnly Property Token As TNavigationToken
             Get
                 Return _Token
+            End Get
+        End Property
+    End Class
+
+    ''' <summary>
+    ''' Clase para solicitar permisos de accion.
+    ''' </summary>
+    ''' <typeparam name="TEntity">La clase que necesita permiso.</typeparam>
+    Public Class RequestSecurityMessage(Of TEntity)
+        Private _entity As TEntity
+        Private _command As CommandMessageType
+
+        Public Sub New(ByVal entity As TEntity, command As CommandMessageType)
+            Me._entity = entity
+            Me._command = command
+        End Sub
+
+        Public ReadOnly Property Entity As TEntity
+            Get
+                Return _entity
+            End Get
+        End Property
+
+        Public ReadOnly Property Command As CommandMessageType
+            Get
+                Return _command
             End Get
         End Property
     End Class

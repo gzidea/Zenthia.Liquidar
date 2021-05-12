@@ -43,6 +43,9 @@ Namespace YiZi.mvvm.Common.DataModel.EntityFramework
         Protected Overridable Sub UpdateCore(ByVal entity As TEntity)
         End Sub
         Protected Overridable Function GetStateCore(ByVal entity As TEntity) As EntityState
+            If entity Is Nothing Then
+                Return EntityState.Eliminado
+            End If
             Return GetEntityState(Context.Entry(entity).State)
         End Function
         Private Shared Function GetEntityState(ByVal entityStates As System.Data.Entity.EntityState) As EntityState

@@ -9,7 +9,8 @@ Partial Public Class Legajos
         Recibos = New HashSet(Of Recibos)()
     End Sub
 
-    <DatabaseGenerated(DatabaseGeneratedOption.None)>
+    <Key>
+    <DatabaseGenerated(DatabaseGeneratedOption.Identity)>
     Public Property Id As Integer
 
     Public Property Legajo As Integer?
@@ -78,12 +79,18 @@ Partial Public Class Legajos
 
     Public ReadOnly Property AntiguedadStr() As String
         Get
+            If Me.FechaIngreso Is Nothing Then
+                Return ""
+            End If
             Return FuncionesComunes.DiferenciasEntreFechasStr(Me.FechaIngreso, Now)
         End Get
     End Property
 
     Public ReadOnly Property AntiguedadInt() As Integer
         Get
+            If Me.FechaIngreso Is Nothing Then
+                Return 0
+            End If
             Return Fix(FuncionesComunes.DiferenciasEntreFechas(Me.FechaIngreso, Now))
         End Get
     End Property

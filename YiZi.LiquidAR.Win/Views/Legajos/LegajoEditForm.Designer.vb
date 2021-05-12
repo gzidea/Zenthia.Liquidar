@@ -31,6 +31,7 @@ Partial Class LegajoEditForm
         Me.bbiResetLayout = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiDelete = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiClose = New DevExpress.XtraBars.BarButtonItem()
+        Me.bbiCustomize = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -185,9 +186,9 @@ Partial Class LegajoEditForm
         'ribbonControl
         '
         Me.ribbonControl.ExpandCollapseItem.Id = 0
-        Me.ribbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl.ExpandCollapseItem, Me.ribbonControl.SearchEditItem, Me.bbiSave, Me.bbiSaveAndClose, Me.bbiSaveAndNew, Me.bbiReset, Me.bbiSaveLayout, Me.bbiResetLayout, Me.bbiDelete, Me.bbiClose, Me.bsiEstado})
+        Me.ribbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl.ExpandCollapseItem, Me.ribbonControl.SearchEditItem, Me.bbiSave, Me.bbiSaveAndClose, Me.bbiSaveAndNew, Me.bbiReset, Me.bbiSaveLayout, Me.bbiResetLayout, Me.bbiDelete, Me.bbiClose, Me.bsiEstado, Me.bbiCustomize})
         Me.ribbonControl.Location = New System.Drawing.Point(0, 0)
-        Me.ribbonControl.MaxItemId = 28
+        Me.ribbonControl.MaxItemId = 29
         Me.ribbonControl.Name = "ribbonControl"
         Me.ribbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.[False]
@@ -252,6 +253,14 @@ Partial Class LegajoEditForm
         Me.bbiClose.ImageOptions.ImageUri.Uri = "Close"
         Me.bbiClose.Name = "bbiClose"
         '
+        'bbiCustomize
+        '
+        Me.bbiCustomize.Caption = "Customizar"
+        Me.bbiCustomize.Id = 28
+        Me.bbiCustomize.ImageOptions.Image = Global.YiZi.LiquidAR.Win.My.Resources.Resources.customization_16x16
+        Me.bbiCustomize.ImageOptions.LargeImage = Global.YiZi.LiquidAR.Win.My.Resources.Resources.customization_32x32
+        Me.bbiCustomize.Name = "bbiCustomize"
+        '
         'RibbonPage1
         '
         Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1, Me.RibbonPageGroup2, Me.RibbonPageGroup3, Me.RibbonPageGroup4})
@@ -281,6 +290,7 @@ Partial Class LegajoEditForm
         '
         'RibbonPageGroup4
         '
+        Me.RibbonPageGroup4.ItemLinks.Add(Me.bbiCustomize)
         Me.RibbonPageGroup4.ItemLinks.Add(Me.bbiSaveLayout)
         Me.RibbonPageGroup4.ItemLinks.Add(Me.bbiResetLayout)
         Me.RibbonPageGroup4.Name = "RibbonPageGroup4"
@@ -310,6 +320,7 @@ Partial Class LegajoEditForm
         Me.dataLayout.Location = New System.Drawing.Point(0, 100)
         Me.dataLayout.Name = "dataLayout"
         Me.dataLayout.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = New System.Drawing.Rectangle(1270, 479, 650, 400)
+        Me.dataLayout.OptionsView.IsReadOnly = DevExpress.Utils.DefaultBoolean.[False]
         Me.dataLayout.Root = Me.Root
         Me.dataLayout.Size = New System.Drawing.Size(934, 519)
         Me.dataLayout.TabIndex = 2
@@ -421,6 +432,7 @@ Partial Class LegajoEditForm
         Me.IdConvenioLookUpEdit.MenuManager = Me.ribbonControl
         Me.IdConvenioLookUpEdit.Name = "IdConvenioLookUpEdit"
         Me.IdConvenioLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.IdConvenioLookUpEdit.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Nombre", "Nombre")})
         Me.IdConvenioLookUpEdit.Properties.DataSource = Me.ConveniosBindingSource
         Me.IdConvenioLookUpEdit.Properties.DisplayMember = "Nombre"
         Me.IdConvenioLookUpEdit.Properties.ValueMember = "Id"
@@ -464,7 +476,7 @@ Partial Class LegajoEditForm
         '
         'TareasTextEdit
         '
-        Me.TareasTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "AntiguedadStr", True))
+        Me.TareasTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "Tareas", True))
         Me.TareasTextEdit.Location = New System.Drawing.Point(100, 303)
         Me.TareasTextEdit.MenuManager = Me.ribbonControl
         Me.TareasTextEdit.Name = "TareasTextEdit"
@@ -474,7 +486,7 @@ Partial Class LegajoEditForm
         '
         'FechaEgresoDateEdit
         '
-        Me.FechaEgresoDateEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "Tareas", True))
+        Me.FechaEgresoDateEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "FechaEgreso", True))
         Me.FechaEgresoDateEdit.EditValue = Nothing
         Me.FechaEgresoDateEdit.Location = New System.Drawing.Point(100, 279)
         Me.FechaEgresoDateEdit.MenuManager = Me.ribbonControl
@@ -1066,4 +1078,5 @@ Partial Class LegajoEditForm
     Friend WithEvents CategoriasBindingSource As BindingSource
     Friend WithEvents SindicatosBindingSource As BindingSource
     Friend WithEvents ObrasSocialesBindingSource As BindingSource
+    Friend WithEvents bbiCustomize As DevExpress.XtraBars.BarButtonItem
 End Class

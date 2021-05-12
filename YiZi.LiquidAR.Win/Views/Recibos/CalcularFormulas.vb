@@ -811,11 +811,16 @@ Public Class CalcularFormulas
 
             Else
                 If (sName = "Remun") Then
-                    sValue = recibo.RecibosDetalles.Sum(Function(x) x.Remunerativo)
+                    'sValue = recibo.RecibosDetalles.Sum(Function(x) x.Remunerativo)
+                    Dim remunerativo As Double = recibo.RecibosDetalles.Where(Function(w) w.Formulas.Conceptos.ColumnaRecibo = YiZi.AccesoDatos.Entidades.enmColumnaRecivo.Remunerativo).Sum(Function(x) x.Importe)
+                    sValue = remunerativo
                 ElseIf (sName = "NoRemun") Then
-                    sValue = recibo.RecibosDetalles.Sum(Function(x) x.NoRemunerativo)
+                    'sValue = recibo.RecibosDetalles.Sum(Function(x) x.NoRemunerativo)
+                    Dim noremunerativo As Double = recibo.RecibosDetalles.Where(Function(w) w.Formulas.Conceptos.ColumnaRecibo = YiZi.AccesoDatos.Entidades.enmColumnaRecivo.NoRemunerativo).Sum(Function(x) x.Importe)
+                    sValue = noremunerativo
                 ElseIf (sName = "Desc") Then
-                    sValue = recibo.RecibosDetalles.Sum(Function(x) x.Descuento)
+                    Dim desc As Double = recibo.RecibosDetalles.Where(Function(w) w.Formulas.Conceptos.ColumnaRecibo = YiZi.AccesoDatos.Entidades.enmColumnaRecivo.Descuento).Sum(Function(x) x.Importe)
+                    sValue = desc
                 ElseIf (sName = "CBASICO") Then
                     sValue = recibo.RecibosDetalles.Where(Function(x) x.Formulas.SumaAlBasico = True).Sum(Function(s) s.Remunerativo)
                 ElseIf (sName = "DTRAB") Then
@@ -850,6 +855,21 @@ Public Class CalcularFormulas
                 ElseIf (sName = "SImpRet") Then
                     sValue = recibo.Legajos.Sindicatos.ImporteRetencion
                 End If
+
+                If sName.Substring(0, 1) = "C" AndAlso sName.Substring(sName.Length() - 1, 1) = "C" Then 'Caso de Cantidad en detalle
+                    Dim _detalle As YiZi.AccesoDatos.RecibosDetalles = recibo.RecibosDetalles.Where(Function(w) w.Formulas.Variable = sName.Substring(0, sName.Length - 1)).FirstOrDefault
+                    If Not _detalle Is Nothing Then
+                        _detalle.Cantidad = CDbl(Formula(_detalle.formulaCantidad))
+                        sValue = _detalle.Cantidad
+                    End If
+                ElseIf sName.Substring(0, 1) = "C" AndAlso sName.Substring(sName.Length() - 1, 1) = "I" Then 'Caso de importe en detalle
+                    Dim _detalle As YiZi.AccesoDatos.RecibosDetalles = recibo.RecibosDetalles.Where(Function(w) w.Formulas.Variable = sName.Substring(0, sName.Length - 1)).FirstOrDefault
+                    If Not _detalle Is Nothing Then
+                        _detalle.Importe = CDbl(Formula(_detalle.formulaImporte))
+                        sValue = _detalle.Importe
+                    End If
+                End If
+
                 If sValue = "" Then
                     For I = 1 To UBound(aVariables)
                         If aVariables(I).Name = sName Then

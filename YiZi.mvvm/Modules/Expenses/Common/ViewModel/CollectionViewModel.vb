@@ -94,6 +94,8 @@ Namespace YiZi.mvvm.Common.ViewModel
     Public MustInherit Class CollectionViewModelBase(Of TEntity As Class, TProjection As Class, TPrimaryKey, TUnitOfWork As IUnitOfWork)
         Inherits ReadOnlyCollectionViewModel(Of TEntity, TProjection, TUnitOfWork)
         Implements ISupportLogicalLayout
+        Implements ISupportParentViewModel
+
         Private ReadOnly Property ChangeTrackerWithKey As EntitiesChangeTracker(Of TPrimaryKey)
             Get
                 Return CType(ChangeTracker, EntitiesChangeTracker(Of TPrimaryKey))
@@ -125,6 +127,11 @@ Namespace YiZi.mvvm.Common.ViewModel
                 RegisterSelectEntityMessage()
             End If
         End Sub
+
+        Public Overridable Sub OnParentViewModelChanged()
+
+        End Sub
+
         ''' <summary>
         ''' Creates and shows a document that contains a single object view model for new entity.
         ''' Since CollectionViewModelBase is a POCO view model, an the instance of this class will also expose the NewCommand property that can be used as a binding source in views.
@@ -136,6 +143,18 @@ Namespace YiZi.mvvm.Common.ViewModel
             End If
             DocumentManagerService.ShowNewEntityDocument(Me, _newEntityInitializer)
         End Sub
+        ''' <summary>
+        ''' Determina si la clase permite agregar nuevos item a la coleccion.
+        ''' este método se utilizará como una devolución de llamada CanExecute para NewCommand
+        ''' </summary>
+        Public Overridable Function CanNew() As Boolean
+            'If ParentViewModel.ToString().Contains("Principal") Then
+            '    Return ParentViewModel.CheckPermissions("Usuarios", "CanNew")
+            'Else
+            '    Return ParentViewModel.ParentViewModel.CheckPermissions(ParentViewModel.ViewName, "CanNew")
+            'End If
+            Return True
+        End Function
         ''' <summary>
         ''' Creates and shows a document that contains a single object view model for the existing entity.
         ''' Since CollectionViewModelBase is a POCO view model, an the instance of this class will also expose the EditCommand property that can be used as a binding source in views.
@@ -206,6 +225,8 @@ Namespace YiZi.mvvm.Common.ViewModel
         Public Overridable Function CanDelete(ByVal projectionEntity As TProjection) As Boolean
             Return projectionEntity IsNot Nothing AndAlso Not IsLoading
         End Function
+
+
         ''' <summary>
         ''' Saves the given entity.
         ''' Since CollectionViewModelBase is a POCO view model, the instance of this class will also expose the SaveCommand property that can be used as a binding source in views.
@@ -244,7 +265,7 @@ Namespace YiZi.mvvm.Common.ViewModel
         ''' Closes the corresponding view.
         ''' Since CollectionViewModelBase is a POCO view model, an the instance of this class will also expose the CloseCommand property that can be used as a binding source in views.
         ''' </summary>
-        <Display(Name:="Cerrar", AutoGenerateField:=False)>
+        <Display(Name:="Cerrar", AutoGenerateField:=True)>
         Public Sub Close()
             If DocumentOwner IsNot Nothing Then
                 DocumentOwner.Close(Me)
@@ -308,6 +329,7 @@ Namespace YiZi.mvvm.Common.ViewModel
             Me.RaiseCanExecuteChanged(Sub(x) x.Edit(projectionEntity))
             Me.RaiseCanExecuteChanged(Sub(x) x.Delete(projectionEntity))
             Me.RaiseCanExecuteChanged(Sub(x) x.Save(projectionEntity))
+            Me.RaiseCanExecuteChanged(Sub(x) x.[New]())
         End Sub
         Protected Sub DestroyDocument(ByVal document As IDocument)
             If document IsNot Nothing Then
@@ -369,6 +391,17 @@ Namespace YiZi.mvvm.Common.ViewModel
             Get
                 Return Nothing
             End Get
+        End Property
+
+        Private _ParentViewModel As Object
+        Public Property ParentViewModel As Object Implements ISupportParentViewModel.ParentViewModel
+            Get
+                Return _ParentViewModel
+            End Get
+            Set(value As Object)
+                _ParentViewModel = value
+                OnParentViewModelChanged()
+            End Set
         End Property
     End Class
 End Namespace

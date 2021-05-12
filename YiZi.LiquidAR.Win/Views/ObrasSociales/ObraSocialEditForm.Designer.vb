@@ -412,6 +412,9 @@ Partial Class ObraSocialEditForm
         Me.IdProvinciaLookUpEdit.MenuManager = Me.ribbonControl
         Me.IdProvinciaLookUpEdit.Name = "IdProvinciaLookUpEdit"
         Me.IdProvinciaLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.IdProvinciaLookUpEdit.Properties.DataSource = Me.ProvinciasBindingSource
+        Me.IdProvinciaLookUpEdit.Properties.DisplayMember = "Nombre"
+        Me.IdProvinciaLookUpEdit.Properties.ValueMember = "Id"
         Me.IdProvinciaLookUpEdit.Size = New System.Drawing.Size(203, 20)
         Me.IdProvinciaLookUpEdit.StyleController = Me.dataLayout
         Me.IdProvinciaLookUpEdit.TabIndex = 9
