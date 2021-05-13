@@ -30,6 +30,19 @@ Public Class RecibosFilterViewModel(Of TEntity As Class, TPrimaryKey, TUnitOfWor
         'GenerarFiltro()
     End Sub
 
+    Protected Overrides Sub OnParentViewModelChanged()
+        If ParentViewModel IsNot Nothing AndAlso Not ParentViewModel.ToString().Contains("Principal") Then
+            SelectedItem = filtersItem.FirstOrDefault()
+        ElseIf ParentViewModel IsNot Nothing AndAlso ParentViewModel.ToString().Contains("Principal") Then
+            If Not ParentViewModel.EmpresaActual Is Nothing Then
+                IdEmpresa = ParentViewModel.EmpresaActual.Id
+                FilterEmpresa = True
+            Else
+                FilterEmpresa = False
+            End If
+        End If
+    End Sub
+
     Private Sub GenerarFiltro()
         Dim filtro As List(Of FilterInfo) = New List(Of FilterInfo)() From {
             New FilterInfo() With {
@@ -39,7 +52,11 @@ Public Class RecibosFilterViewModel(Of TEntity As Class, TPrimaryKey, TUnitOfWor
         }
 
         filtersItem = CreateFilterItems(filtro)
-        SelectedItem = filtersItem.FirstOrDefault()
+        If ParentViewModel IsNot Nothing AndAlso Not ParentViewModel.ToString().Contains("Principal") Then
+            'HAGO ESTO POR QUE CUANDO SE ESTAN CARGANDO LOS MODELOS DA ERROR
+            SelectedItem = filtersItem.FirstOrDefault()
+        End If
+
     End Sub
 
     Private Function getCriteria() As CriteriaOperator

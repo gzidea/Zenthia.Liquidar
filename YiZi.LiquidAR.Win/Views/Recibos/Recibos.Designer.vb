@@ -20,9 +20,9 @@ Partial Class Recibos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim SuperToolTip1 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
-        Dim ToolTipTitleItem1 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
-        Dim ToolTipItem1 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
+        Dim SuperToolTip2 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
+        Dim ToolTipTitleItem2 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
+        Dim ToolTipItem2 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
         Me.gridControl = New DevExpress.XtraGrid.GridControl()
         Me.RecibosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.gridView = New DevExpress.XtraGrid.Views.Grid.GridView()
@@ -243,16 +243,17 @@ Partial Class Recibos
         Me.bbiGenerarPdfRecibos.ImageOptions.Image = Global.YiZi.LiquidAR.Win.My.Resources.Resources.exporttopdf_16x16
         Me.bbiGenerarPdfRecibos.ImageOptions.LargeImage = Global.YiZi.LiquidAR.Win.My.Resources.Resources.exporttopdf_32x32
         Me.bbiGenerarPdfRecibos.Name = "bbiGenerarPdfRecibos"
-        ToolTipTitleItem1.AllowHtmlText = DevExpress.Utils.DefaultBoolean.[True]
-        ToolTipTitleItem1.Text = "<b>Generar Pdf de Recibos</b>"
-        ToolTipItem1.Text = "Seleccione primero los Recibos que quiere generar los PDF"
-        SuperToolTip1.Items.Add(ToolTipTitleItem1)
-        SuperToolTip1.Items.Add(ToolTipItem1)
-        Me.bbiGenerarPdfRecibos.SuperTip = SuperToolTip1
+        ToolTipTitleItem2.AllowHtmlText = DevExpress.Utils.DefaultBoolean.[True]
+        ToolTipTitleItem2.Text = "<b>Generar Pdf de Recibos</b>"
+        ToolTipItem2.Text = "Seleccione primero los Recibos que quiere generar los PDF"
+        SuperToolTip2.Items.Add(ToolTipTitleItem2)
+        SuperToolTip2.Items.Add(ToolTipItem2)
+        Me.bbiGenerarPdfRecibos.SuperTip = SuperToolTip2
         '
         'bbiEnviarPorCorreo
         '
         Me.bbiEnviarPorCorreo.Caption = "Generar y Enviar"
+        Me.bbiEnviarPorCorreo.Enabled = False
         Me.bbiEnviarPorCorreo.Id = 17
         Me.bbiEnviarPorCorreo.ImageOptions.Image = Global.YiZi.LiquidAR.Win.My.Resources.Resources.sendpdf_16x16
         Me.bbiEnviarPorCorreo.ImageOptions.LargeImage = Global.YiZi.LiquidAR.Win.My.Resources.Resources.sendpdf_32x32
@@ -303,7 +304,7 @@ Partial Class Recibos
         '
         'mvvmContext
         '
-        Me.mvvmContext.BindingExpressions.AddRange(New DevExpress.Utils.MVVM.BindingExpression() {DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(YiZi.LiquidAR.Win.ReciboCollectionViewModel), "New", Me.bbiNew), DevExpress.Utils.MVVM.BindingExpression.CreateParameterizedCommandBinding(GetType(YiZi.LiquidAR.Win.ReciboCollectionViewModel), "Edit", "SelectedEntity", Me.bbiEdit), DevExpress.Utils.MVVM.BindingExpression.CreateParameterizedCommandBinding(GetType(YiZi.LiquidAR.Win.ReciboCollectionViewModel), "Delete", "SelectedEntity", Me.bbiDelete), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(YiZi.LiquidAR.Win.ReciboCollectionViewModel), "Refresh", Me.bbiRefresh), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(YiZi.LiquidAR.Win.ReciboCollectionViewModel), "Imprimir", Me.bbiGenerarPdfRecibos), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(YiZi.LiquidAR.Win.ReciboCollectionViewModel), "Close", Me.bbiClose)})
+        Me.mvvmContext.BindingExpressions.AddRange(New DevExpress.Utils.MVVM.BindingExpression() {DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(YiZi.LiquidAR.Win.ReciboCollectionViewModel), "New", Me.bbiNew), DevExpress.Utils.MVVM.BindingExpression.CreateParameterizedCommandBinding(GetType(YiZi.LiquidAR.Win.ReciboCollectionViewModel), "Edit", "SelectedEntity", Me.bbiEdit), DevExpress.Utils.MVVM.BindingExpression.CreateParameterizedCommandBinding(GetType(YiZi.LiquidAR.Win.ReciboCollectionViewModel), "Delete", "SelectedEntity", Me.bbiDelete), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(YiZi.LiquidAR.Win.ReciboCollectionViewModel), "Refresh", Me.bbiRefresh), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(YiZi.LiquidAR.Win.ReciboCollectionViewModel), "Close", Me.bbiClose), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(YiZi.LiquidAR.Win.ReciboCollectionViewModel), "GenerateAndSave", Me.bbiGenerarPdfRecibos)})
         Me.mvvmContext.ContainerControl = Me
         Me.mvvmContext.ViewModelType = GetType(YiZi.LiquidAR.Win.ReciboCollectionViewModel)
         '

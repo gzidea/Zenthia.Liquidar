@@ -1,4 +1,5 @@
 ﻿Imports System.Collections.ObjectModel
+Imports System.ComponentModel.DataAnnotations
 Imports DevExpress.Mvvm
 Imports DevExpress.Mvvm.POCO
 Imports YiZi.AccesoDatos
@@ -19,7 +20,7 @@ Public Class ReciboCollectionViewModel
     Public Overridable Property SelectedItems As IEnumerable(Of YiZi.AccesoDatos.Recibos)
 
     Public Sub OnSelectedItemsChanged()
-
+        Me.RaiseCanExecuteChanged(Sub(x) x.GenerateAndSave())
     End Sub
 
     'Public Overridable Property SelectedPeriod As String
@@ -39,4 +40,21 @@ Public Class ReciboCollectionViewModel
         MyBase.MessageBoxService.ShowMessage("Finalizo el proceso de Generacion de Recibos", "Generacion de Recibos", MessageButton.OK)
         SelectedItems = New YiZi.AccesoDatos.Recibos(-1) {} 'Limpio la seleccion de la Grilla
     End Sub
+
+    <Display(Name:="Generar y Guardar")>
+    Public Sub GenerateAndSave()
+        For Each item As YiZi.AccesoDatos.Recibos In SelectedItems
+            Try
+                ReciboAuxiliar.GenerateReciboReport(item, False)
+            Catch ex As Exception
+                Continue For
+            End Try
+        Next
+        MyBase.MessageBoxService.ShowMessage("Finalizo el proceso de Generacion de Recibos", "Generacion de Recibos", MessageButton.OK)
+        SelectedItems = New YiZi.AccesoDatos.Recibos(-1) {} 'Limpio la seleccion de la Grilla
+    End Sub
+
+    Public Function CanGenerateAndSave() As Boolean
+        Return Not SelectedItems Is Nothing
+    End Function
 End Class
