@@ -30,6 +30,7 @@ Partial Public Class Empresas
     Public Property Id_TipoClaveUnica As Integer?
 
     <StringLength(255)>
+    <CUITValido(ErrorMessage:="Clave fiscal no valida")>
     Public Property ClaveUnica As String
 
     <StringLength(255)>

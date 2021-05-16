@@ -899,6 +899,8 @@ Partial Class RecibosEditForm
         '
         'BarDockControl1
         '
+        Me.BarDockControl1.Appearance.Options.UseTextOptions = True
+        Me.BarDockControl1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.BarDockControl1.CausesValidation = False
         Me.BarDockControl1.Location = New System.Drawing.Point(12, 225)
         Me.BarDockControl1.Manager = Me.recibodetalles_DetailsBarManager

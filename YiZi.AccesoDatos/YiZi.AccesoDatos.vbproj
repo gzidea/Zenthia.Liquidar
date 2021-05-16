@@ -130,6 +130,7 @@
     <Compile Include="Seguridad\Roles_Modulos_Operaciones.vb" />
     <Compile Include="Seguridad\Roles_Operaciones.vb" />
     <Compile Include="Seguridad\Usuarios.vb" />
+    <Compile Include="Validaciones\CUITValido.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">

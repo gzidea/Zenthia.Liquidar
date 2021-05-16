@@ -20,9 +20,9 @@ Partial Class Recibos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim SuperToolTip2 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
-        Dim ToolTipTitleItem2 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
-        Dim ToolTipItem2 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
+        Dim SuperToolTip1 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
+        Dim ToolTipTitleItem1 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
+        Dim ToolTipItem1 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
         Me.gridControl = New DevExpress.XtraGrid.GridControl()
         Me.RecibosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.gridView = New DevExpress.XtraGrid.Views.Grid.GridView()
@@ -243,12 +243,12 @@ Partial Class Recibos
         Me.bbiGenerarPdfRecibos.ImageOptions.Image = Global.YiZi.LiquidAR.Win.My.Resources.Resources.exporttopdf_16x16
         Me.bbiGenerarPdfRecibos.ImageOptions.LargeImage = Global.YiZi.LiquidAR.Win.My.Resources.Resources.exporttopdf_32x32
         Me.bbiGenerarPdfRecibos.Name = "bbiGenerarPdfRecibos"
-        ToolTipTitleItem2.AllowHtmlText = DevExpress.Utils.DefaultBoolean.[True]
-        ToolTipTitleItem2.Text = "<b>Generar Pdf de Recibos</b>"
-        ToolTipItem2.Text = "Seleccione primero los Recibos que quiere generar los PDF"
-        SuperToolTip2.Items.Add(ToolTipTitleItem2)
-        SuperToolTip2.Items.Add(ToolTipItem2)
-        Me.bbiGenerarPdfRecibos.SuperTip = SuperToolTip2
+        ToolTipTitleItem1.AllowHtmlText = DevExpress.Utils.DefaultBoolean.[True]
+        ToolTipTitleItem1.Text = "<b>Generar Pdf de Recibos</b>"
+        ToolTipItem1.Text = "Seleccione primero los Recibos que quiere generar los PDF"
+        SuperToolTip1.Items.Add(ToolTipTitleItem1)
+        SuperToolTip1.Items.Add(ToolTipItem1)
+        Me.bbiGenerarPdfRecibos.SuperTip = SuperToolTip1
         '
         'bbiEnviarPorCorreo
         '
