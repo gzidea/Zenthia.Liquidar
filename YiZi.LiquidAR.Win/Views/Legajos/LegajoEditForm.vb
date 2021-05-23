@@ -25,6 +25,8 @@ Public Class LegajoEditForm
         fluent.SetBinding(CategoriasBindingSource, Function(abs) abs.DataSource, Function(x) x.LookUpCategorias.Entities)
         fluent.SetBinding(JornadasBindingSource, Function(abs) abs.DataSource, Function(x) x.LookUpJornadas.Entities)
 
+        fluent.SetBinding(FormasDePagosBindingSource, Function(abs) abs.DataSource, Function(x) x.LookUpFormasDePagos.Entities)
+        fluent.SetBinding(ProvinciasBindingSource, Function(abs) abs.DataSource, Function(x) x.LookUpProvincias.Entities)
         fluent.SetBinding(SindicatosBindingSource, Function(abs) abs.DataSource, Function(x) x.LookUpSindicatos.Entities)
         fluent.SetBinding(ObrasSocialesBindingSource, Function(abs) abs.DataSource, Function(x) x.LookUpObrasSociales.Entities)
 

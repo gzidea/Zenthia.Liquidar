@@ -112,6 +112,11 @@ Public Interface IModeloDbContextUnitOfWork
     ''' </summary>
     ReadOnly Property RecibosPlantilllas As IRepository(Of RecibosPlantillas, Integer)
 
+    ''' <summary>
+    ''' El repositorio de Recibos Plantilla
+    ''' </summary>
+    ReadOnly Property FormasDePagos As IRepository(Of FormasDePagos, Integer)
+
 #Region "Modulo de Seguridad"
     ''' <summary>
     ''' El repositorio de Usuarios

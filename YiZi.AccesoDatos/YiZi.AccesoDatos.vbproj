@@ -88,6 +88,7 @@
     <Compile Include="Models\Empresas.vb" />
     <Compile Include="Models\EmpresasActividades.vb" />
     <Compile Include="Models\Entidades.vb" />
+    <Compile Include="Models\FormasDePagos.vb" />
     <Compile Include="Models\Formulas.vb" />
     <Compile Include="Models\FormulasPeriodos.vb" />
     <Compile Include="Models\FormulaTipoLiquidacion.vb" />

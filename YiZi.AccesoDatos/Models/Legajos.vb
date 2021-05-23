@@ -55,6 +55,27 @@ Partial Public Class Legajos
 
     Public Property idActividad As Integer?
 
+    Public Property IdFormaDePago As Integer?
+
+    Public Property Adherentes As Integer?
+
+    Public Property Hijos As Integer?
+
+    Public Property Conyuge As Boolean?
+
+    <StringLength(100)>
+    Public Property Domicilio As String
+
+    <StringLength(100)>
+    Public Property Localidad As String
+
+    Public Property IdProvincia As Integer?
+
+    Public Property FechaNacimiento As Date?
+
+    <StringLength(22)>
+    Public Property CBU As String
+
     Public Overridable Property Actividades As Actividades
 
     Public Overridable Property Categorias As Categorias
@@ -69,7 +90,11 @@ Partial Public Class Legajos
 
     Public Overridable Property Sindicatos As Sindicatos
 
+    Public Overridable Property FormasDePagos As FormasDePagos
+
     Public Overridable Property Recibos As ICollection(Of Recibos)
+
+
 
     Public ReadOnly Property NombreYApellido() As String
         Get

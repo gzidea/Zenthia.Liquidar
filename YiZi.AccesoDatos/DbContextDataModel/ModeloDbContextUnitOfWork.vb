@@ -170,4 +170,10 @@ Public Class ModeloDbContextUnitOfWork
             Return GetRepository(Function(x) x.[Set](Of Roles_Modulos_Operaciones)(), Function(x As Roles_Modulos_Operaciones) x.Id)
         End Get
     End Property
+
+    Public ReadOnly Property FormasDePagos As IRepository(Of FormasDePagos, Integer) Implements IModeloDbContextUnitOfWork.FormasDePagos
+        Get
+            Return GetRepository(Function(x) x.[Set](Of FormasDePagos)(), Function(x As FormasDePagos) x.Id)
+        End Get
+    End Property
 End Class

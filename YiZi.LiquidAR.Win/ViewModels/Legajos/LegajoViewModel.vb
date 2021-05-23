@@ -64,6 +64,18 @@ Public Class LegajoViewModel
         End Get
     End Property
 
+    Public ReadOnly Property LookUpProvincias As IEntitiesViewModel(Of YiZi.AccesoDatos.Provincias)
+        Get
+            Return GetLookUpEntitiesViewModel(Function(ByVal x As LegajoViewModel) x.LookUpProvincias, Function(x) x.Provincias)
+        End Get
+    End Property
+
+    Public ReadOnly Property LookUpFormasDePagos As IEntitiesViewModel(Of YiZi.AccesoDatos.FormasDePagos)
+        Get
+            Return GetLookUpEntitiesViewModel(Function(ByVal x As LegajoViewModel) x.LookUpFormasDePagos, Function(x) x.FormasDePagos)
+        End Get
+    End Property
+
     Public ReadOnly Property LookUpSindicatos As IEntitiesViewModel(Of YiZi.AccesoDatos.Sindicatos)
         Get
             Return GetLookUpEntitiesViewModel(Function(ByVal x As LegajoViewModel) x.LookUpSindicatos, Function(x) x.Sindicatos)

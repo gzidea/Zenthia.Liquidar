@@ -36,6 +36,7 @@ Partial Public Class Modelo
     Public Overridable Property Provinciasas As DbSet(Of Provinciasas)
     Public Overridable Property TipoConceptos As DbSet(Of TipoConceptos)
     Public Overridable Property Variables As DbSet(Of Variables)
+    Public Overridable Property FormasDePagos As DbSet(Of FormasDePagos)
 
     '*** ESTO CORRESPONDE AL MODULO DE SEGURIDAD ****
     Public Overridable Property Modulos As DbSet(Of Modulos)
@@ -276,6 +277,11 @@ Partial Public Class Modelo
         modelBuilder.Entity(Of Liquidaciones)() _
             .Property(Function(e) e.ObraSocial) _
             .HasPrecision(19, 4)
+
+        modelBuilder.Entity(Of FormasDePagos)() _
+            .HasMany(Function(e) e.Legajos) _
+            .WithOptional(Function(e) e.FormasDePagos) _
+            .HasForeignKey(Function(e) e.IdFormaDePago)
 
 #Region "Seguridad_Builder"
         '*** ESTO CORRESPONDE AL MODULO DE SEGURIDAD ****

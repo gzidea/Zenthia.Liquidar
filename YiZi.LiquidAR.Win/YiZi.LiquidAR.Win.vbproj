@@ -521,6 +521,7 @@
     <None Include="My Project\DataSources\YiZi.AccesoDatos.Convenios.datasource" />
     <None Include="My Project\DataSources\YiZi.AccesoDatos.Empresas.datasource" />
     <None Include="My Project\DataSources\YiZi.AccesoDatos.EmpresasActividades.datasource" />
+    <None Include="My Project\DataSources\YiZi.AccesoDatos.FormasDePagos.datasource" />
     <None Include="My Project\DataSources\YiZi.AccesoDatos.Formulas.datasource" />
     <None Include="My Project\DataSources\YiZi.AccesoDatos.FormulasPeriodos.datasource" />
     <None Include="My Project\DataSources\YiZi.AccesoDatos.FormulaTipoLiquidacion.datasource" />
