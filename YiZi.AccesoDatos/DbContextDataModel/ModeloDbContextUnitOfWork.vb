@@ -176,4 +176,22 @@ Public Class ModeloDbContextUnitOfWork
             Return GetRepository(Function(x) x.[Set](Of FormasDePagos)(), Function(x As FormasDePagos) x.Id)
         End Get
     End Property
+
+    Public ReadOnly Property LegajosConeptosParticulares As IRepository(Of LegajosConceptosParticulares, Integer) Implements IModeloDbContextUnitOfWork.LegajosConeptosParticulares
+        Get
+            Return GetRepository(Function(x) x.[Set](Of LegajosConceptosParticulares)(), Function(x As LegajosConceptosParticulares) x.Id)
+        End Get
+    End Property
+
+    Public ReadOnly Property LegajosNovedades As IRepository(Of LegajosNovedades, Integer) Implements IModeloDbContextUnitOfWork.LegajosNovedades
+        Get
+            Return GetRepository(Function(x) x.[Set](Of LegajosNovedades)(), Function(x As LegajosNovedades) x.Id)
+        End Get
+    End Property
+
+    Public ReadOnly Property LegajosNovedadesDetalles As IRepository(Of LegajosNovedadesDetalles, Integer) Implements IModeloDbContextUnitOfWork.LegajosNovedadesDetalles
+        Get
+            Return GetRepository(Function(x) x.[Set](Of LegajosNovedadesDetalles)(), Function(x As LegajosNovedadesDetalles) x.Id)
+        End Get
+    End Property
 End Class

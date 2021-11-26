@@ -163,11 +163,13 @@ Namespace YiZi.mvvm.Common.ViewModel
         End Sub
         Protected Overridable Sub OnSelectedEntityChanged()
         End Sub
-        Protected Overridable Sub OnFilterExpressionChanged()
+
+        Public Overridable Sub OnFilterExpressionChanged()
             If IsLoaded OrElse IsLoading Then
                 LoadEntities(True)
             End If
         End Sub
+
         Protected Overrides Function GetFilterExpression() As Expression(Of Func(Of TEntity, Boolean))
             Return FilterExpression
         End Function

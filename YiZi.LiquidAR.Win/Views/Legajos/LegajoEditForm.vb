@@ -1,4 +1,6 @@
 ﻿Imports DevExpress.Utils.MVVM.Services
+Imports DevExpress.XtraGrid.Views.Base
+Imports DevExpress.XtraGrid.Views.Grid
 
 <DevExpress.Utils.MVVM.UI.ViewType("LegajosView")>
 Public Class LegajoEditForm
@@ -35,5 +37,20 @@ Public Class LegajoEditForm
         AddHandler bbiCustomize.ItemClick, Sub(s, e)
                                                dataLayout.ShowCustomizationForm()
                                            End Sub
+
+        'Cargo la grilla con los conceptos particulares del legajo
+
+        fluent.WithEvent(Of GridView, FocusedRowObjectChangedEventArgs)(gridView, "FocusedRowObjectChanged").SetBinding(Function(x) x.LegajosConceptosParticularesDetails.SelectedEntity, Function(args) TryCast(args.Row, YiZi.AccesoDatos.LegajosConceptosParticulares), Sub(gView, entity) gView.FocusedRowHandle = gView.FindRow(entity))
+        fluent.WithEvent(Of RowClickEventArgs)(gridView, "RowClick").EventToCommand(Sub(x) x.LegajosConceptosParticularesDetails.Edit(Nothing), Function(x) x.LegajosConceptosParticularesDetails.SelectedEntity, Function(args) (args.Clicks = 2) AndAlso (args.Button = System.Windows.Forms.MouseButtons.Left))
+        AddHandler gridView.RowClick, Sub(s, e)
+                                          If e.Clicks = 1 AndAlso e.Button = System.Windows.Forms.MouseButtons.Right Then
+                                              LegajosConceptos_DetailsPopUpMenu.ShowPopup(gridControl.PointToScreen(e.Location), s)
+                                          End If
+                                      End Sub
+        fluent.SetBinding(gridControl, Function(gc) gc.DataSource, Function(x) x.LegajosConceptosParticularesDetails.Entities)
+        fluent.BindCommand(bbiDetailsNew, Sub(x) x.LegajosConceptosParticularesDetails.[New]())
+        fluent.BindCommand(bbiDetailsEdit, Sub(x) x.LegajosConceptosParticularesDetails.Edit(Nothing), Function(x) x.LegajosConceptosParticularesDetails.SelectedEntity)
+        fluent.BindCommand(bbiDetailsDelete, Sub(x) x.LegajosConceptosParticularesDetails.Delete(Nothing), Function(x) x.LegajosConceptosParticularesDetails.SelectedEntity)
+        fluent.BindCommand(bbiDetailsRefresh, Sub(x) x.LegajosConceptosParticularesDetails.Refresh())
     End Sub
 End Class

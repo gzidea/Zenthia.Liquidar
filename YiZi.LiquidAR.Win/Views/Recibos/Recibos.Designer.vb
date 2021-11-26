@@ -20,9 +20,10 @@ Partial Class Recibos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim SuperToolTip1 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
-        Dim ToolTipTitleItem1 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
-        Dim ToolTipItem1 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
+        Dim bbiRecalcular As DevExpress.XtraBars.BarButtonItem
+        Dim SuperToolTip2 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
+        Dim ToolTipTitleItem2 As DevExpress.Utils.ToolTipTitleItem = New DevExpress.Utils.ToolTipTitleItem()
+        Dim ToolTipItem2 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
         Me.gridControl = New DevExpress.XtraGrid.GridControl()
         Me.RecibosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.gridView = New DevExpress.XtraGrid.Views.Grid.GridView()
@@ -54,6 +55,7 @@ Partial Class Recibos
         Me.mvvmContext = New DevExpress.Utils.MVVM.MVVMContext(Me.components)
         Me.popupMenu = New DevExpress.XtraBars.PopupMenu(Me.components)
         Me.FiltrosEmpresasRecibos1 = New YiZi.LiquidAR.Win.FiltrosEmpresasRecibos()
+        bbiRecalcular = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.gridControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RecibosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -61,6 +63,13 @@ Partial Class Recibos
         CType(Me.mvvmContext, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.popupMenu, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'bbiRecalcular
+        '
+        bbiRecalcular.Caption = "Recalcular"
+        bbiRecalcular.Id = 19
+        bbiRecalcular.ImageOptions.SvgImage = Global.YiZi.LiquidAR.Win.My.Resources.Resources.calcdefault
+        bbiRecalcular.Name = "bbiRecalcular"
         '
         'gridControl
         '
@@ -86,6 +95,7 @@ Partial Class Recibos
         Me.gridView.OptionsBehavior.Editable = False
         Me.gridView.OptionsSelection.MultiSelect = True
         Me.gridView.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect
+        Me.gridView.OptionsView.ShowFooter = True
         '
         'colPeriodo
         '
@@ -129,6 +139,7 @@ Partial Class Recibos
         Me.colTotalRemunerativos.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.colTotalRemunerativos.FieldName = "TotalRemunerativos"
         Me.colTotalRemunerativos.Name = "colTotalRemunerativos"
+        Me.colTotalRemunerativos.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TotalRemunerativos", "SUMA={0:c2}")})
         Me.colTotalRemunerativos.Visible = True
         Me.colTotalRemunerativos.VisibleIndex = 6
         Me.colTotalRemunerativos.Width = 135
@@ -140,6 +151,7 @@ Partial Class Recibos
         Me.colTotalDescuentos.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.colTotalDescuentos.FieldName = "TotalDescuentos"
         Me.colTotalDescuentos.Name = "colTotalDescuentos"
+        Me.colTotalDescuentos.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TotalDescuentos", "SUMA={0:c2}")})
         Me.colTotalDescuentos.Visible = True
         Me.colTotalDescuentos.VisibleIndex = 7
         Me.colTotalDescuentos.Width = 127
@@ -151,6 +163,7 @@ Partial Class Recibos
         Me.colTotalNoRemunerativos.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.colTotalNoRemunerativos.FieldName = "TotalNoRemunerativos"
         Me.colTotalNoRemunerativos.Name = "colTotalNoRemunerativos"
+        Me.colTotalNoRemunerativos.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TotalNoRemunerativos", "SUMA={0:c2}")})
         Me.colTotalNoRemunerativos.Visible = True
         Me.colTotalNoRemunerativos.VisibleIndex = 8
         Me.colTotalNoRemunerativos.Width = 125
@@ -177,6 +190,7 @@ Partial Class Recibos
         Me.colTotal.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.colTotal.FieldName = "Total"
         Me.colTotal.Name = "colTotal"
+        Me.colTotal.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Total", "SUMA={0:c2}")})
         Me.colTotal.Visible = True
         Me.colTotal.VisibleIndex = 9
         Me.colTotal.Width = 140
@@ -184,9 +198,9 @@ Partial Class Recibos
         'ribbonControl
         '
         Me.ribbonControl.ExpandCollapseItem.Id = 0
-        Me.ribbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl.ExpandCollapseItem, Me.ribbonControl.SearchEditItem, Me.bbiNew, Me.bbiEdit, Me.bbiDelete, Me.bbiRefresh, Me.bsiRecordsCount, Me.bbiImprimirGrilla, Me.bbiGenerarPdfRecibos, Me.bbiEnviarPorCorreo, Me.bbiClose})
+        Me.ribbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl.ExpandCollapseItem, Me.ribbonControl.SearchEditItem, Me.bbiNew, Me.bbiEdit, Me.bbiDelete, Me.bbiRefresh, Me.bsiRecordsCount, Me.bbiImprimirGrilla, Me.bbiGenerarPdfRecibos, Me.bbiEnviarPorCorreo, Me.bbiClose, bbiRecalcular})
         Me.ribbonControl.Location = New System.Drawing.Point(0, 0)
-        Me.ribbonControl.MaxItemId = 19
+        Me.ribbonControl.MaxItemId = 20
         Me.ribbonControl.Name = "ribbonControl"
         Me.ribbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.[False]
@@ -243,12 +257,12 @@ Partial Class Recibos
         Me.bbiGenerarPdfRecibos.ImageOptions.Image = Global.YiZi.LiquidAR.Win.My.Resources.Resources.exporttopdf_16x16
         Me.bbiGenerarPdfRecibos.ImageOptions.LargeImage = Global.YiZi.LiquidAR.Win.My.Resources.Resources.exporttopdf_32x32
         Me.bbiGenerarPdfRecibos.Name = "bbiGenerarPdfRecibos"
-        ToolTipTitleItem1.AllowHtmlText = DevExpress.Utils.DefaultBoolean.[True]
-        ToolTipTitleItem1.Text = "<b>Generar Pdf de Recibos</b>"
-        ToolTipItem1.Text = "Seleccione primero los Recibos que quiere generar los PDF"
-        SuperToolTip1.Items.Add(ToolTipTitleItem1)
-        SuperToolTip1.Items.Add(ToolTipItem1)
-        Me.bbiGenerarPdfRecibos.SuperTip = SuperToolTip1
+        ToolTipTitleItem2.AllowHtmlText = DevExpress.Utils.DefaultBoolean.[True]
+        ToolTipTitleItem2.Text = "<b>Generar Pdf de Recibos</b>"
+        ToolTipItem2.Text = "Seleccione primero los Recibos que quiere generar los PDF"
+        SuperToolTip2.Items.Add(ToolTipTitleItem2)
+        SuperToolTip2.Items.Add(ToolTipItem2)
+        Me.bbiGenerarPdfRecibos.SuperTip = SuperToolTip2
         '
         'bbiEnviarPorCorreo
         '
@@ -278,6 +292,7 @@ Partial Class Recibos
         Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiEdit)
         Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiDelete)
         Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiRefresh)
+        Me.RibbonPageGroup1.ItemLinks.Add(bbiRecalcular, True)
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
         Me.RibbonPageGroup1.Text = "Edicion"
         '
@@ -291,6 +306,7 @@ Partial Class Recibos
         '
         'RibbonPageGroup2
         '
+        Me.RibbonPageGroup2.Alignment = DevExpress.XtraBars.Ribbon.RibbonPageGroupAlignment.Far
         Me.RibbonPageGroup2.ItemLinks.Add(Me.bbiClose)
         Me.RibbonPageGroup2.Name = "RibbonPageGroup2"
         '
@@ -304,7 +320,7 @@ Partial Class Recibos
         '
         'mvvmContext
         '
-        Me.mvvmContext.BindingExpressions.AddRange(New DevExpress.Utils.MVVM.BindingExpression() {DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(YiZi.LiquidAR.Win.ReciboCollectionViewModel), "New", Me.bbiNew), DevExpress.Utils.MVVM.BindingExpression.CreateParameterizedCommandBinding(GetType(YiZi.LiquidAR.Win.ReciboCollectionViewModel), "Edit", "SelectedEntity", Me.bbiEdit), DevExpress.Utils.MVVM.BindingExpression.CreateParameterizedCommandBinding(GetType(YiZi.LiquidAR.Win.ReciboCollectionViewModel), "Delete", "SelectedEntity", Me.bbiDelete), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(YiZi.LiquidAR.Win.ReciboCollectionViewModel), "Refresh", Me.bbiRefresh), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(YiZi.LiquidAR.Win.ReciboCollectionViewModel), "Close", Me.bbiClose), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(YiZi.LiquidAR.Win.ReciboCollectionViewModel), "GenerateAndSave", Me.bbiGenerarPdfRecibos)})
+        Me.mvvmContext.BindingExpressions.AddRange(New DevExpress.Utils.MVVM.BindingExpression() {DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(YiZi.LiquidAR.Win.ReciboCollectionViewModel), "New", Me.bbiNew), DevExpress.Utils.MVVM.BindingExpression.CreateParameterizedCommandBinding(GetType(YiZi.LiquidAR.Win.ReciboCollectionViewModel), "Edit", "SelectedEntity", Me.bbiEdit), DevExpress.Utils.MVVM.BindingExpression.CreateParameterizedCommandBinding(GetType(YiZi.LiquidAR.Win.ReciboCollectionViewModel), "Delete", "SelectedEntity", Me.bbiDelete), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(YiZi.LiquidAR.Win.ReciboCollectionViewModel), "Refresh", Me.bbiRefresh), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(YiZi.LiquidAR.Win.ReciboCollectionViewModel), "Close", Me.bbiClose), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(YiZi.LiquidAR.Win.ReciboCollectionViewModel), "GenerateAndSave", Me.bbiGenerarPdfRecibos), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(YiZi.LiquidAR.Win.ReciboCollectionViewModel), "RecalcularAndSave", bbiRecalcular)})
         Me.mvvmContext.ContainerControl = Me
         Me.mvvmContext.ViewModelType = GetType(YiZi.LiquidAR.Win.ReciboCollectionViewModel)
         '

@@ -5,7 +5,7 @@ Imports System.ComponentModel.DataAnnotations.Schema
 Imports System.Data.Entity.Spatial
 
 Partial Public Class Contactos
-    <DatabaseGenerated(DatabaseGeneratedOption.None)>
+    <DatabaseGenerated(DatabaseGeneratedOption.Identity)>
     Public Property Id As Integer
 
     Public Property Nombre As String
