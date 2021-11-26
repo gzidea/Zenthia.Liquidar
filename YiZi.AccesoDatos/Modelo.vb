@@ -37,9 +37,6 @@ Partial Public Class Modelo
     Public Overridable Property TipoConceptos As DbSet(Of TipoConceptos)
     Public Overridable Property Variables As DbSet(Of Variables)
     Public Overridable Property FormasDePagos As DbSet(Of FormasDePagos)
-    Public Overridable Property LegajosConeptosParticulares As DbSet(Of LegajosConceptosParticulares)
-    Public Overridable Property LegajosNovedades As DbSet(Of LegajosNovedades)
-    Public Overridable Property LegajosNovedadesDetalles As DbSet(Of LegajosNovedadesDetalles)
 
     '*** ESTO CORRESPONDE AL MODULO DE SEGURIDAD ****
     Public Overridable Property Modulos As DbSet(Of Modulos)
@@ -145,11 +142,6 @@ Partial Public Class Modelo
             .WithOptional(Function(e) e.Formulas) _
             .HasForeignKey(Function(e) e.IdFormula)
 
-        modelBuilder.Entity(Of Formulas)() _
-            .HasMany(Function(e) e.LegajosConeptosParticulares) _
-            .WithOptional(Function(e) e.Formulas) _
-            .HasForeignKey(Function(e) e.IdFormula)
-
         modelBuilder.Entity(Of Jornadas)() _
             .HasMany(Function(e) e.Legajos) _
             .WithOptional(Function(e) e.Jornadas) _
@@ -165,17 +157,6 @@ Partial Public Class Modelo
 
         modelBuilder.Entity(Of Legajos)() _
             .HasMany(Function(e) e.Recibos) _
-            .WithOptional(Function(e) e.Legajos) _
-            .HasForeignKey(Function(e) e.IdLegajo)
-
-        modelBuilder.Entity(Of Legajos)() _
-            .HasMany(Function(e) e.LegajosConeptosParticulares) _
-            .WithOptional(Function(e) e.Legajos) _
-            .HasForeignKey(Function(e) e.IdLegajo)
-
-
-        modelBuilder.Entity(Of Legajos)() _
-            .HasMany(Function(e) e.LegajosNovedades) _
             .WithOptional(Function(e) e.Legajos) _
             .HasForeignKey(Function(e) e.IdLegajo)
 
@@ -266,16 +247,6 @@ Partial Public Class Modelo
             .WithOptional(Function(e) e.TipoLiquidacion) _
             .HasForeignKey(Function(e) e.IdTipoLiquidacion)
 
-        modelBuilder.Entity(Of TipoLiquidacion)() _
-            .HasMany(Function(e) e.LegajosConeptosParticulares) _
-            .WithOptional(Function(e) e.TipoLiquidacion) _
-            .HasForeignKey(Function(e) e.IdTipoLiquidacion)
-
-        modelBuilder.Entity(Of TipoLiquidacion)() _
-            .HasMany(Function(e) e.LegajosNovedades) _
-            .WithOptional(Function(e) e.TipoLiquidacion) _
-            .HasForeignKey(Function(e) e.IdTipoLoquidacion)
-
         'modelBuilder.Entity(Of Formulas)().HasRequired(Function(x) x.CantidadUnidad)
 
         modelBuilder.Entity(Of Unidades)() _
@@ -311,28 +282,6 @@ Partial Public Class Modelo
             .HasMany(Function(e) e.Legajos) _
             .WithOptional(Function(e) e.FormasDePagos) _
             .HasForeignKey(Function(e) e.IdFormaDePago)
-
-        modelBuilder.Entity(Of LegajosNovedades)() _
-            .Property(Function(e) e.Periodo) _
-            .IsUnicode(False)
-
-        modelBuilder.Entity(Of LegajosNovedades)() _
-            .HasMany(Function(e) e.LegajosNovedadesDetalles) _
-            .WithOptional(Function(e) e.LegajosNovedades) _
-            .HasForeignKey(Function(e) e.IdLegajoNovedad)
-
-        modelBuilder.Entity(Of LegajosNovedadesDetalles)() _
-            .Property(Function(e) e.Importe) _
-            .HasPrecision(19, 4)
-
-        modelBuilder.Entity(Of LegajosNovedadesDetalles)() _
-            .Property(Function(e) e.Observaciones) _
-            .IsUnicode(False)
-
-        modelBuilder.Entity(Of Formulas)() _
-            .HasMany(Function(e) e.LegajosNovedadesDetalles) _
-            .WithOptional(Function(e) e.Formulas) _
-            .HasForeignKey(Function(e) e.IdFormula)
 
 #Region "Seguridad_Builder"
         '*** ESTO CORRESPONDE AL MODULO DE SEGURIDAD ****

@@ -21,7 +21,6 @@ Public Class ReciboCollectionViewModel
 
     Public Sub OnSelectedItemsChanged()
         Me.RaiseCanExecuteChanged(Sub(x) x.GenerateAndSave())
-        Me.RaiseCanExecuteChanged(Sub(x) x.RecalcularAndSave())
     End Sub
 
     'Public Overridable Property SelectedPeriod As String
@@ -44,15 +43,9 @@ Public Class ReciboCollectionViewModel
 
     <Display(Name:="Generar y Guardar")>
     Public Sub GenerateAndSave()
-        If SelectedItems.Where(Function(x) x.Total Is Nothing).Count <> 0 Then
-            MyBase.MessageBoxService.ShowMessage("Dentro de la seleccion, se encuentran Recibos NO validos." & vbCrLf & "Estos no se generaran", "Generacion de Recibos", MessageButton.OK)
-        End If
-
         For Each item As YiZi.AccesoDatos.Recibos In SelectedItems
             Try
-                If Not item.Total Is Nothing OrElse item.Total = 0 Then
-                    ReciboAuxiliar.GenerateReciboReport(item, False)
-                End If
+                ReciboAuxiliar.GenerateReciboReport(item, False)
             Catch ex As Exception
                 Continue For
             End Try
@@ -60,29 +53,6 @@ Public Class ReciboCollectionViewModel
         MyBase.MessageBoxService.ShowMessage("Finalizo el proceso de Generacion de Recibos", "Generacion de Recibos", MessageButton.OK)
         SelectedItems = New YiZi.AccesoDatos.Recibos(-1) {} 'Limpio la seleccion de la Grilla
     End Sub
-
-    <Display(Name:="Recalcular y Guardar")>
-    Public Sub RecalcularAndSave()
-        For Each item As YiZi.AccesoDatos.Recibos In SelectedItems
-            Try
-                Dim _reciboViewModel As ReciboViewModel = ReciboViewModel.Create()
-                _reciboViewModel.Entity = item
-                _reciboViewModel.Recalcular()
-                _reciboViewModel.Recalcular()
-                MyBase.Save(_reciboViewModel.Entity)
-            Catch ex As Exception
-                Continue For
-            End Try
-        Next
-        MyBase.MessageBoxService.ShowMessage("Finalizo el proceso de Recalculo de Recibos", "Recalculo de Recibos", MessageButton.OK)
-        SelectedItems = New YiZi.AccesoDatos.Recibos(-1) {} 'Limpio la seleccion de la Grilla
-    End Sub
-
-    Public Function CanRecalcularAndSave() As Boolean
-        Return Not SelectedItems Is Nothing
-    End Function
-
-    Public Property Legajos As ICollection(Of Legajos)
 
     Public Function CanGenerateAndSave() As Boolean
         Return Not SelectedItems Is Nothing

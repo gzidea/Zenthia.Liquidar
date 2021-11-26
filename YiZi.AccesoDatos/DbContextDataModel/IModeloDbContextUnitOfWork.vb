@@ -117,20 +117,6 @@ Public Interface IModeloDbContextUnitOfWork
     ''' </summary>
     ReadOnly Property FormasDePagos As IRepository(Of FormasDePagos, Integer)
 
-    ''' <summary>
-    ''' El repositorio de Recibos Plantilla
-    ''' </summary>
-    ReadOnly Property LegajosConeptosParticulares As IRepository(Of LegajosConceptosParticulares, Integer)
-
-    ''' <summary>
-    ''' El repositorio de Recibos Plantilla
-    ''' </summary>
-    ReadOnly Property LegajosNovedades As IRepository(Of LegajosNovedades, Integer)
-
-    ''' <summary>
-    ''' El repositorio de Recibos Plantilla
-    ''' </summary>
-    ReadOnly Property LegajosNovedadesDetalles As IRepository(Of LegajosNovedadesDetalles, Integer)
 #Region "Modulo de Seguridad"
     ''' <summary>
     ''' El repositorio de Usuarios

@@ -9,7 +9,7 @@ Partial Public Class Jornadas
         Legajos = New HashSet(Of Legajos)()
     End Sub
 
-    <DatabaseGenerated(DatabaseGeneratedOption.Identity)>
+    <DatabaseGenerated(DatabaseGeneratedOption.None)>
     Public Property Id As Integer
 
     <StringLength(255)>

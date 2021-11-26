@@ -263,16 +263,6 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo DevExpress.Utils.Svg.SvgImage.
         '''</summary>
-        Friend ReadOnly Property calcdefault() As DevExpress.Utils.Svg.SvgImage
-            Get
-                Dim obj As Object = ResourceManager.GetObject("calcdefault", resourceCulture)
-                Return CType(obj,DevExpress.Utils.Svg.SvgImage)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Busca un recurso adaptado de tipo DevExpress.Utils.Svg.SvgImage.
-        '''</summary>
         Friend ReadOnly Property calculationoptions() As DevExpress.Utils.Svg.SvgImage
             Get
                 Dim obj As Object = ResourceManager.GetObject("calculationoptions", resourceCulture)
@@ -316,16 +306,6 @@ Namespace My.Resources
         Friend ReadOnly Property close1() As DevExpress.Utils.Svg.SvgImage
             Get
                 Dim obj As Object = ResourceManager.GetObject("close1", resourceCulture)
-                Return CType(obj,DevExpress.Utils.Svg.SvgImage)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Busca un recurso adaptado de tipo DevExpress.Utils.Svg.SvgImage.
-        '''</summary>
-        Friend ReadOnly Property close2() As DevExpress.Utils.Svg.SvgImage
-            Get
-                Dim obj As Object = ResourceManager.GetObject("close2", resourceCulture)
                 Return CType(obj,DevExpress.Utils.Svg.SvgImage)
             End Get
         End Property
@@ -571,16 +551,6 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Busca un recurso adaptado de tipo DevExpress.Utils.Svg.SvgImage.
-        '''</summary>
-        Friend ReadOnly Property editquery() As DevExpress.Utils.Svg.SvgImage
-            Get
-                Dim obj As Object = ResourceManager.GetObject("editquery", resourceCulture)
-                Return CType(obj,DevExpress.Utils.Svg.SvgImage)
-            End Get
-        End Property
-        
-        '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
         Friend ReadOnly Property exporttopdf_16x16() As System.Drawing.Bitmap
@@ -597,16 +567,6 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("exporttopdf_32x32", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Busca un recurso adaptado de tipo DevExpress.Utils.Svg.SvgImage.
-        '''</summary>
-        Friend ReadOnly Property exporttoxlsx() As DevExpress.Utils.Svg.SvgImage
-            Get
-                Dim obj As Object = ResourceManager.GetObject("exporttoxlsx", resourceCulture)
-                Return CType(obj,DevExpress.Utils.Svg.SvgImage)
             End Get
         End Property
         
@@ -647,16 +607,6 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("images (1)", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Busca un recurso adaptado de tipo DevExpress.Utils.Svg.SvgImage.
-        '''</summary>
-        Friend ReadOnly Property import() As DevExpress.Utils.Svg.SvgImage
-            Get
-                Dim obj As Object = ResourceManager.GetObject("import", resourceCulture)
-                Return CType(obj,DevExpress.Utils.Svg.SvgImage)
             End Get
         End Property
         
@@ -873,26 +823,6 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo DevExpress.Utils.Svg.SvgImage.
         '''</summary>
-        Friend ReadOnly Property save1() As DevExpress.Utils.Svg.SvgImage
-            Get
-                Dim obj As Object = ResourceManager.GetObject("save1", resourceCulture)
-                Return CType(obj,DevExpress.Utils.Svg.SvgImage)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Busca un recurso adaptado de tipo DevExpress.Utils.Svg.SvgImage.
-        '''</summary>
-        Friend ReadOnly Property save2() As DevExpress.Utils.Svg.SvgImage
-            Get
-                Dim obj As Object = ResourceManager.GetObject("save2", resourceCulture)
-                Return CType(obj,DevExpress.Utils.Svg.SvgImage)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Busca un recurso adaptado de tipo DevExpress.Utils.Svg.SvgImage.
-        '''</summary>
         Friend ReadOnly Property saveandclose2() As DevExpress.Utils.Svg.SvgImage
             Get
                 Dim obj As Object = ResourceManager.GetObject("saveandclose2", resourceCulture)
@@ -977,26 +907,6 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("sendpdf_32x32", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Busca un recurso adaptado de tipo DevExpress.Utils.Svg.SvgImage.
-        '''</summary>
-        Friend ReadOnly Property undo() As DevExpress.Utils.Svg.SvgImage
-            Get
-                Dim obj As Object = ResourceManager.GetObject("undo", resourceCulture)
-                Return CType(obj,DevExpress.Utils.Svg.SvgImage)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Busca un recurso adaptado de tipo DevExpress.Utils.Svg.SvgImage.
-        '''</summary>
-        Friend ReadOnly Property verticalmode() As DevExpress.Utils.Svg.SvgImage
-            Get
-                Dim obj As Object = ResourceManager.GetObject("verticalmode", resourceCulture)
-                Return CType(obj,DevExpress.Utils.Svg.SvgImage)
             End Get
         End Property
     End Module

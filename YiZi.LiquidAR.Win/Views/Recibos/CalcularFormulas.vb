@@ -531,16 +531,12 @@ Public Class CalcularFormulas
             Return 1
         End If
         If Len(sName) Then
-            If sName.Substring(0, 1) = "C" AndAlso (sName.Substring(sName.Length() - 1, 1) = "C" Or sName.Substring(sName.Length() - 1, 1) = "C") Then
-                Return 1
-            Else
-                For I = 1 To UBound(aVariables)
-                    If aVariables(I).Name = sName Then
-                        IsVariable = I
-                        Exit For
-                    End If
-                Next
-            End If
+            For I = 1 To UBound(aVariables)
+                If aVariables(I).Name = sName Then
+                    IsVariable = I
+                    Exit For
+                End If
+            Next
         End If
         ' Si no existe la variable
         ' No se hace nada, que es lo mismo que si no existiera...           (09/Feb/99)
@@ -822,22 +818,13 @@ Public Class CalcularFormulas
                     'sValue = recibo.RecibosDetalles.Sum(Function(x) x.NoRemunerativo)
                     Dim noremunerativo As Double = recibo.RecibosDetalles.Where(Function(w) w.Formulas.Conceptos.ColumnaRecibo = YiZi.AccesoDatos.Entidades.enmColumnaRecivo.NoRemunerativo).Sum(Function(x) x.Importe)
                     sValue = noremunerativo
-                    'ElseIf (sName = "NRemun") Then
-                    '    'sValue = recibo.RecibosDetalles.Sum(Function(x) x.NoRemunerativo)
-                    '    Dim noremunerativo As Double = recibo.RecibosDetalles.Where(Function(w) w.Formulas.Conceptos.ColumnaRecibo = YiZi.AccesoDatos.Entidades.enmColumnaRecivo.NoRemunerativo).Sum(Function(x) x.Importe)
-                    '    sValue = noremunerativo
                 ElseIf (sName = "Desc") Then
                     Dim desc As Double = recibo.RecibosDetalles.Where(Function(w) w.Formulas.Conceptos.ColumnaRecibo = YiZi.AccesoDatos.Entidades.enmColumnaRecivo.Descuento).Sum(Function(x) x.Importe)
                     sValue = desc
                 ElseIf (sName = "CBASICO") Then
                     sValue = recibo.RecibosDetalles.Where(Function(x) x.Formulas.SumaAlBasico = True).Sum(Function(s) s.Remunerativo)
                 ElseIf (sName = "DTRAB") Then
-                    If recibo.Legajos.LegajosNovedades.Where(Function(x) x.Periodo = recibo.Periodo And x.IdTipoLoquidacion = recibo.IdTipoLiquidacion).Count = 0 Then
-                        sValue = recibo.Legajos.Categorias.DiasMinimosImponibles
-                    Else
-                        sValue = recibo.Legajos.LegajosNovedades.Where(Function(x) x.Periodo = recibo.Periodo And x.IdTipoLoquidacion = recibo.IdTipoLiquidacion).FirstOrDefault().DiasTrabajados
-                    End If
-
+                    sValue = recibo.Legajos.Categorias.DiasMinimosImponibles
                 ElseIf (sName = "BASICO") Then
                     sValue = recibo.Legajos.Categorias.Importe * recibo.Legajos.Jornadas.Horas
                 ElseIf (sName = "SBASICO") Then
@@ -847,7 +834,7 @@ Public Class CalcularFormulas
                 ElseIf (sName = "MJORN") Then
                     sValue = recibo.Legajos.Jornadas.Horas
                 ElseIf (sName = "OSBaseC") Then
-                    sValue = CDbl(Formula(recibo.Legajos.ObrasSociales.BaseDeCalculo))
+                    sValue = recibo.Legajos.ObrasSociales.BaseDeCalculo
                 ElseIf (sName = "OSPorApor") Then
                     sValue = recibo.Legajos.ObrasSociales.PorcientoAporte
                 ElseIf (sName = "OSPorRet") Then
@@ -858,7 +845,7 @@ Public Class CalcularFormulas
                     sValue = recibo.Legajos.ObrasSociales.ImporteRetencion
 
                 ElseIf (sName = "SBaseC") Then
-                    sValue = CDbl(Formula(recibo.Legajos.Sindicatos.BaseDeCalculo))
+                    sValue = recibo.Legajos.Sindicatos.BaseDeCalculo
                 ElseIf (sName = "SPorApor") Then
                     sValue = recibo.Legajos.Sindicatos.PorcientoAporte
                 ElseIf (sName = "SPorRet") Then

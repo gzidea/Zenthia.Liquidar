@@ -28,9 +28,7 @@ Partial Class PrincipalViewModel
                                                    New PrincipalModuleDescription("Formulas", "FormulasCollectionView", _TablesGroup, GetPeekCollectionViewModelFactory(Function(x) x.Formulas)),
                                                    New PrincipalModuleDescription("Recibos", "RecibosCollectionView", _TablesGroup, GetPeekCollectionViewModelFactory(Function(x) x.Recibos)),
                                                    New PrincipalModuleDescription("Usuarios", "UsuarioCollectionView", _TablesGroup, GetPeekCollectionViewModelFactory(Function(x) x.Usuarios)),
-                                                   New PrincipalModuleDescription("Roles", "RolCollectionView", _TablesGroup, GetPeekCollectionViewModelFactory(Function(x) x.Roles)),
-                                                   New PrincipalModuleDescription("Novedades", "LegajoNovedadCollectionView", _TablesGroup, GetPeekCollectionViewModelFactory(Function(x) x.LegajosNovedades)),
-                                                   New PrincipalModuleDescription("Novedades", "LegajosNovedadesMultiples", _TablesGroup, GetPeekCollectionViewModelFactory(Function(x) x.LegajosNovedades))}
+                                                   New PrincipalModuleDescription("Roles", "RolCollectionView", _TablesGroup, GetPeekCollectionViewModelFactory(Function(x) x.Roles))}
     End Function
     Protected Overrides Sub OnActiveModuleChanged(ByVal oldModule As PrincipalModuleDescription)
         If ActiveModule IsNot Nothing AndAlso NavigationService IsNot Nothing Then

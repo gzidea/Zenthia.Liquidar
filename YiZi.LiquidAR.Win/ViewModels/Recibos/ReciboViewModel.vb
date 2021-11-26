@@ -36,6 +36,7 @@ Partial Public Class ReciboViewModel
         _formula = New CalcularFormulas(MyBase.Entity)
         For i As Integer = 0 To 0
             For Each detalle As RecibosDetalles In MyBase.Entity.RecibosDetalles
+
                 _formula.NewVariable(detalle.Formulas.Variable & "I", detalle.formulaImporte)
                 _formula.NewVariable(detalle.Formulas.Variable & "C", detalle.formulaCantidad)
 
@@ -85,7 +86,6 @@ Partial Public Class ReciboViewModel
         If MessageBoxService.ShowMessage("¿Esta seguro de aplicar una plantilla?", "Plantilla", MessageButton.YesNo) <> MessageResult.Yes Then
             Return
         End If
-
         Dim idconvenio As Integer? = 0
         Dim idTipoLiquidacion As Integer? = 0
         If Not MyBase.Entity Is Nothing Then

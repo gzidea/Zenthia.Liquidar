@@ -59,11 +59,9 @@ Public Class PrincipalViewModel
         State = AppState.ExitQueued
         System.Diagnostics.Process.Start(System.Windows.Forms.Application.ExecutablePath)
     End Sub
-
     Public Function CanLogout() As Boolean
         Return State = AppState.Authorized
     End Function
-
     'Occurs whenever the end-user clicks a dialog button
     Private Sub OnLogin(ByVal result As MessageResult)
         If result = MessageResult.Cancel Then
@@ -77,7 +75,6 @@ Public Class PrincipalViewModel
             End If
         End If
     End Sub
-
     Protected Sub OnStateChanged()
         Me.RaiseCanExecuteChanged(Sub(x) x.Logout())
         If State = AppState.Authorized Then
@@ -90,7 +87,6 @@ Public Class PrincipalViewModel
     Public Function CheckPermissions(ByVal modulo As String, ByVal operacion As String) As Boolean
         Return CredentialsSource.CheckPermissions(modulo, operacion)
     End Function
-
 End Class
 
 Public Enum AppState

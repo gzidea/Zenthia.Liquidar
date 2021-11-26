@@ -26,7 +26,7 @@ Public Class ReciboAuxiliar
             pad.dvReportes.DocumentSource = reporteContenedor
             pad.ShowDialog()
         Else
-            Dim pathrecibos As String = My.Computer.FileSystem.SpecialDirectories.MyDocuments & "\LiquidAR\" & Trim(recibo.Empresas.Nombre.Replace(vbTab, "")) & "\" & recibo.Periodo & "\" & recibo.TipoLiquidacion.Descripcion & "\"
+            Dim pathrecibos As String = My.Computer.FileSystem.SpecialDirectories.MyDocuments & "\LiquidAR\" & recibo.Empresas.Nombre & "\" & recibo.Periodo & "\" & recibo.TipoLiquidacion.Descripcion & "\"
             If Not Directory.Exists(pathrecibos) Then
                 Directory.CreateDirectory(pathrecibos)
             End If

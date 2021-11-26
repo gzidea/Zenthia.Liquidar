@@ -5,7 +5,7 @@ Imports System.ComponentModel.DataAnnotations.Schema
 Imports System.Data.Entity.Spatial
 
 Partial Public Class EmpresasActividades
-    <DatabaseGenerated(DatabaseGeneratedOption.Identity)>
+    <DatabaseGenerated(DatabaseGeneratedOption.None)>
     Public Property Id As Integer
 
     Public Property IdEmpresa As Integer?

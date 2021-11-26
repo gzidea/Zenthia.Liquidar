@@ -43,7 +43,6 @@ Partial Class Legajos
         Me.mvvmContext = New DevExpress.Utils.MVVM.MVVMContext(Me.components)
         Me.popupMenu = New DevExpress.XtraBars.PopupMenu(Me.components)
         Me.FiltrosEmpresas1 = New YiZi.LiquidAR.Win.FiltrosEmpresas()
-        Me.colTieneNovedades = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.gridControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LegajosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -70,7 +69,7 @@ Partial Class Legajos
         '
         'gridView
         '
-        Me.gridView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colLegajo, Me.colNombreYApellido, Me.colCUIL, Me.colFechaIngreso, Me.colConvenios, Me.colCategorias, Me.colTareas, Me.colObrasSociales, Me.colTieneNovedades})
+        Me.gridView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colLegajo, Me.colNombreYApellido, Me.colCUIL, Me.colFechaIngreso, Me.colConvenios, Me.colCategorias, Me.colTareas, Me.colObrasSociales})
         Me.gridView.GridControl = Me.gridControl
         Me.gridView.Name = "gridView"
         Me.gridView.OptionsBehavior.Editable = False
@@ -233,13 +232,6 @@ Partial Class Legajos
         Me.FiltrosEmpresas1.Size = New System.Drawing.Size(1263, 39)
         Me.FiltrosEmpresas1.TabIndex = 14
         '
-        'colTieneNovedades
-        '
-        Me.colTieneNovedades.FieldName = "TieneNovedades"
-        Me.colTieneNovedades.Name = "colTieneNovedades"
-        Me.colTieneNovedades.Visible = True
-        Me.colTieneNovedades.VisibleIndex = 8
-        '
         'Legajos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -284,5 +276,4 @@ Partial Class Legajos
     Friend WithEvents colObrasSociales As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents popupMenu As DevExpress.XtraBars.PopupMenu
     Friend WithEvents FiltrosEmpresas1 As FiltrosEmpresas
-    Friend WithEvents colTieneNovedades As DevExpress.XtraGrid.Columns.GridColumn
 End Class

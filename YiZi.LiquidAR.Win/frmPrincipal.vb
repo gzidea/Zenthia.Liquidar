@@ -25,8 +25,6 @@ Public Class frmPrincipal
         fluentAPI.BindCommand(aceiRecibos, Sub(x, m) x.Show(m), Function(x) x.Modules(6))
         fluentAPI.BindCommand(aceiUsuarios, Sub(x, m) x.Show(m), Function(x) x.Modules(7))
         fluentAPI.BindCommand(aceiRoles, Sub(x, m) x.Show(m), Function(x) x.Modules(8))
-        fluentAPI.BindCommand(aceiNovedades, Sub(x, m) x.Show(m), Function(x) x.Modules(9))
-        fluentAPI.BindCommand(aceiLegajosNovedades, Sub(x, m) x.Show(m), Function(x) x.Modules(10))
 
         fluentAPI.WithEvent(Of EventArgs)(Me, "Load").
             EventToCommand(Sub(x) x.OnLoaded(Nothing), Function(x) x.DefaultModule)

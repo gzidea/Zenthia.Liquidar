@@ -29,13 +29,12 @@ Partial Class frmPrincipal
         Me.AccordionControlElement2 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.aceiLegajos = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.aceiRecibos = New DevExpress.XtraBars.Navigation.AccordionControlElement()
-        Me.aceiNovedades = New DevExpress.XtraBars.Navigation.AccordionControlElement()
+        Me.AccordionControlElement5 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlElement6 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlElement7 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.aceiConvenios = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlElement10 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.aceiFormulas = New DevExpress.XtraBars.Navigation.AccordionControlElement()
-        Me.aceiLegajosNovedades = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlElement12 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.aceiEmpresas = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.aceiObrasSociales = New DevExpress.XtraBars.Navigation.AccordionControlElement()
@@ -101,7 +100,7 @@ Partial Class frmPrincipal
         '
         'AccordionControlElement2
         '
-        Me.AccordionControlElement2.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.aceiLegajos, Me.aceiRecibos, Me.aceiNovedades, Me.AccordionControlElement6, Me.AccordionControlElement7, Me.aceiLegajosNovedades})
+        Me.AccordionControlElement2.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.aceiLegajos, Me.aceiRecibos, Me.AccordionControlElement5, Me.AccordionControlElement6, Me.AccordionControlElement7})
         Me.AccordionControlElement2.Expanded = True
         Me.AccordionControlElement2.Name = "AccordionControlElement2"
         Me.AccordionControlElement2.Text = "Sueldos"
@@ -122,11 +121,12 @@ Partial Class frmPrincipal
         Me.aceiRecibos.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
         Me.aceiRecibos.Text = "Recibo de sueldo"
         '
-        'aceiNovedades
+        'AccordionControlElement5
         '
-        Me.aceiNovedades.Name = "aceiNovedades"
-        Me.aceiNovedades.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
-        Me.aceiNovedades.Text = "Novedades por Concepto"
+        Me.AccordionControlElement5.Name = "AccordionControlElement5"
+        Me.AccordionControlElement5.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
+        Me.AccordionControlElement5.Text = "Novedades por Concepto"
+        Me.AccordionControlElement5.Visible = False
         '
         'AccordionControlElement6
         '
@@ -163,12 +163,6 @@ Partial Class frmPrincipal
         Me.aceiFormulas.Name = "aceiFormulas"
         Me.aceiFormulas.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
         Me.aceiFormulas.Text = "Formulas"
-        '
-        'aceiLegajosNovedades
-        '
-        Me.aceiLegajosNovedades.Name = "aceiLegajosNovedades"
-        Me.aceiLegajosNovedades.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
-        Me.aceiLegajosNovedades.Text = "Novedades"
         '
         'AccordionControlElement12
         '
@@ -264,7 +258,6 @@ Partial Class frmPrincipal
         Me.rislueEmpresa.DataSource = Me.EmpresasBindingSource
         Me.rislueEmpresa.DisplayMember = "Nombre"
         Me.rislueEmpresa.Name = "rislueEmpresa"
-        Me.rislueEmpresa.NullText = "Seleccione una Empresa"
         Me.rislueEmpresa.PopupView = Me.RepositoryItemSearchLookUpEdit1View
         '
         'EmpresasBindingSource
@@ -414,7 +407,7 @@ Partial Class frmPrincipal
     Friend WithEvents AccordionControlElement2 As DevExpress.XtraBars.Navigation.AccordionControlElement
     Friend WithEvents aceiLegajos As DevExpress.XtraBars.Navigation.AccordionControlElement
     Friend WithEvents aceiRecibos As DevExpress.XtraBars.Navigation.AccordionControlElement
-    Friend WithEvents aceiNovedades As DevExpress.XtraBars.Navigation.AccordionControlElement
+    Friend WithEvents AccordionControlElement5 As DevExpress.XtraBars.Navigation.AccordionControlElement
     Friend WithEvents AccordionControlElement6 As DevExpress.XtraBars.Navigation.AccordionControlElement
     Friend WithEvents AccordionControlElement7 As DevExpress.XtraBars.Navigation.AccordionControlElement
     Friend WithEvents aceiConvenios As DevExpress.XtraBars.Navigation.AccordionControlElement
@@ -448,5 +441,4 @@ Partial Class frmPrincipal
     Friend WithEvents bbiCerrarSesionUsuario As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents aceiRoles As DevExpress.XtraBars.Navigation.AccordionControlElement
     Friend WithEvents lookAndFeelSettingsHelper As LookAndFeelSettingsHelper
-    Friend WithEvents aceiLegajosNovedades As DevExpress.XtraBars.Navigation.AccordionControlElement
 End Class

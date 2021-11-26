@@ -72,7 +72,7 @@ Public Class EmpresaFilterViewModel(Of TEntity As Class, TPrimaryKey, TUnitOfWor
     End Sub
 
     Public Sub SeleccionarFiltro()
-        'SelectedItem = filtersItem.FirstOrDefault()
+        SelectedItem = filtersItem.FirstOrDefault()
     End Sub
 
     'Esto de aca no funciona

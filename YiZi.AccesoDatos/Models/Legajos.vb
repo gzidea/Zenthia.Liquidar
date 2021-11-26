@@ -7,8 +7,6 @@ Imports System.Data.Entity.Spatial
 Partial Public Class Legajos
     Public Sub New()
         Recibos = New HashSet(Of Recibos)()
-        LegajosConeptosParticulares = New HashSet(Of LegajosConceptosParticulares)()
-        LegajosNovedades = New HashSet(Of LegajosNovedades)()
     End Sub
 
     <Key>
@@ -96,18 +94,7 @@ Partial Public Class Legajos
 
     Public Overridable Property Recibos As ICollection(Of Recibos)
 
-    Public Overridable Property LegajosConeptosParticulares As ICollection(Of LegajosConceptosParticulares)
 
-    Public Overridable Property LegajosNovedades As ICollection(Of LegajosNovedades)
-
-    Public ReadOnly Property TieneNovedades() As Boolean
-        Get
-            If LegajosNovedades Is Nothing Then
-                Return False
-            End If
-            Return LegajosNovedades.Where(Function(x) x.Periodo = "032021").Count > 0
-        End Get
-    End Property
 
     Public ReadOnly Property NombreYApellido() As String
         Get

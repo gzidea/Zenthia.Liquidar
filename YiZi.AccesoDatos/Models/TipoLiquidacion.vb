@@ -10,8 +10,6 @@ Partial Public Class TipoLiquidacion
         Recibos = New HashSet(Of Recibos)()
         FormulaTipoLiquidacion = New HashSet(Of FormulaTipoLiquidacion)()
         RecibosPlantillas = New HashSet(Of RecibosPlantillas)()
-        LegajosConeptosParticulares = New HashSet(Of LegajosConceptosParticulares)()
-        LegajosNovedades = New HashSet(Of LegajosNovedades)()
     End Sub
 
     <DatabaseGenerated(DatabaseGeneratedOption.None)>
@@ -25,8 +23,4 @@ Partial Public Class TipoLiquidacion
     Public Overridable Property FormulaTipoLiquidacion As ICollection(Of FormulaTipoLiquidacion)
 
     Public Overridable Property RecibosPlantillas As ICollection(Of RecibosPlantillas)
-
-    Public Overridable Property LegajosConeptosParticulares As ICollection(Of LegajosConceptosParticulares)
-
-    Public Overridable Property LegajosNovedades As ICollection(Of LegajosNovedades)
 End Class

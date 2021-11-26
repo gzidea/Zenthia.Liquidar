@@ -12,7 +12,7 @@ Partial Public Class Empresas
         Recibos = New HashSet(Of Recibos)()
     End Sub
 
-    <DatabaseGenerated(DatabaseGeneratedOption.Identity)>
+    <DatabaseGenerated(DatabaseGeneratedOption.None)>
     Public Property Id As Integer
 
     Public Property Codigo As Integer?
