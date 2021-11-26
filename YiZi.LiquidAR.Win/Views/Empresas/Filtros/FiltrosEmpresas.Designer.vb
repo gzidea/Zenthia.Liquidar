@@ -46,7 +46,6 @@ Partial Class FiltrosEmpresas
         'mvvmContext
         '
         Me.mvvmContext.ContainerControl = Me
-        'Me.mvvmContext.ViewModelType = GetType(YiZi.LiquidAR.Win.EmpresaFilterViewModel(Of YiZi.AccesoDatos.Legajos, Integer, YiZi.AccesoDatos.IModeloDbContextUnitOfWork))
         '
         'LookUpEditEmpresa
         '
@@ -75,11 +74,10 @@ Partial Class FiltrosEmpresas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Controls.Add(Me.LookUpEditEmpresa)
         Me.Controls.Add(Me.LabelControl1)
         Me.Name = "FiltrosEmpresas"
-        Me.Size = New System.Drawing.Size(928, 37)
+        Me.Size = New System.Drawing.Size(930, 39)
         CType(Me.mvvmContext, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LookUpEditEmpresa.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.mvvmContextEmpresas, System.ComponentModel.ISupportInitialize).EndInit()

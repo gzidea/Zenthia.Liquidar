@@ -39,6 +39,17 @@ Partial Class LegajoEditForm
         Me.RibbonPageGroup3 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup4 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.dataLayout = New DevExpress.XtraLayout.LayoutControl()
+        Me.gridControl = New DevExpress.XtraGrid.GridControl()
+        Me.LegajosConeptosParticularesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.gridView = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.colFormulas = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colTipoLiquidacion = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colCantidad = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colImporte = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colVigenteDesde = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colVigenteHasta = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colActivo = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.gridColSep01 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.CBUTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.LegajosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.IdFormaDePagoLookUpEdit = New DevExpress.XtraEditors.LookUpEdit()
@@ -82,6 +93,19 @@ Partial Class LegajoEditForm
         Me.IdEmpresaSearchLookUpEditView = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colNombre = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colClaveUnica = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.barDockControlLeft = New DevExpress.XtraBars.BarDockControl()
+        Me.LegajosConceptos_DetailsBarManager = New DevExpress.XtraBars.BarManager(Me.components)
+        Me.Actividades_DetailsBar = New DevExpress.XtraBars.Bar()
+        Me.bbiDetailsNew = New DevExpress.XtraBars.BarButtonItem()
+        Me.bbiDetailsEdit = New DevExpress.XtraBars.BarButtonItem()
+        Me.bbiDetailsDelete = New DevExpress.XtraBars.BarButtonItem()
+        Me.bbiDetailsRefresh = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarDockControl1 = New DevExpress.XtraBars.BarDockControl()
+        Me.barDockControlBottom = New DevExpress.XtraBars.BarDockControl()
+        Me.barDockControlRight = New DevExpress.XtraBars.BarDockControl()
+        Me.LayoutControlItem30 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem31 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem32 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlGroup1 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
@@ -122,16 +146,24 @@ Partial Class LegajoEditForm
         Me.LayoutControlItem27 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem28 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem15 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.EmptySpaceItem6 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.LayoutControlItem16 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem20 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem9 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.LayoutControlGroup7 = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.EmptySpaceItem6 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem29 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.mvvmContext = New DevExpress.Utils.MVVM.MVVMContext(Me.components)
         Me.EmptySpaceItem8 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.BehaviorManager1 = New DevExpress.Utils.Behaviors.BehaviorManager(Me.components)
+        Me.LegajosConceptos_DetailsPopUpMenu = New DevExpress.XtraBars.PopupMenu(Me.components)
         AdherentesLabel = New System.Windows.Forms.Label()
         CType(Me.ribbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dataLayout, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.dataLayout.SuspendLayout()
+        CType(Me.gridControl, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LegajosConeptosParticularesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CBUTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LegajosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.IdFormaDePagoLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -174,6 +206,10 @@ Partial Class LegajoEditForm
         CType(Me.IdEmpresaSearchLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmpresasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.IdEmpresaSearchLookUpEditView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LegajosConceptos_DetailsBarManager, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem30, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem31, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem32, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -214,12 +250,17 @@ Partial Class LegajoEditForm
         CType(Me.LayoutControlItem27, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem28, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem15, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmptySpaceItem6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem16, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem20, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlGroup7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmptySpaceItem6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem29, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.mvvmContext, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BehaviorManager1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LegajosConceptos_DetailsPopUpMenu, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'AdherentesLabel
@@ -232,7 +273,7 @@ Partial Class LegajoEditForm
         'RibbonStatusBar1
         '
         Me.RibbonStatusBar1.ItemLinks.Add(Me.bsiEstado)
-        Me.RibbonStatusBar1.Location = New System.Drawing.Point(0, 670)
+        Me.RibbonStatusBar1.Location = New System.Drawing.Point(0, 834)
         Me.RibbonStatusBar1.Name = "RibbonStatusBar1"
         Me.RibbonStatusBar1.Ribbon = Me.ribbonControl
         Me.RibbonStatusBar1.Size = New System.Drawing.Size(1250, 27)
@@ -355,9 +396,11 @@ Partial Class LegajoEditForm
         Me.RibbonPageGroup4.ItemLinks.Add(Me.bbiResetLayout)
         Me.RibbonPageGroup4.Name = "RibbonPageGroup4"
         Me.RibbonPageGroup4.Text = "Layer"
+        Me.RibbonPageGroup4.Visible = False
         '
         'dataLayout
         '
+        Me.dataLayout.Controls.Add(Me.gridControl)
         Me.dataLayout.Controls.Add(Me.CBUTextEdit)
         Me.dataLayout.Controls.Add(Me.IdFormaDePagoLookUpEdit)
         Me.dataLayout.Controls.Add(Me.FechaNacimientoDateEdit)
@@ -385,15 +428,107 @@ Partial Class LegajoEditForm
         Me.dataLayout.Controls.Add(Me.LegajoSpinEdit)
         Me.dataLayout.Controls.Add(Me.IdActividadSearchLookUpEdit)
         Me.dataLayout.Controls.Add(Me.IdEmpresaSearchLookUpEdit)
+        Me.dataLayout.Controls.Add(Me.barDockControlLeft)
+        Me.dataLayout.Controls.Add(Me.barDockControlRight)
+        Me.dataLayout.Controls.Add(Me.barDockControlBottom)
+        Me.dataLayout.Controls.Add(Me.BarDockControl1)
         Me.dataLayout.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dataLayout.HiddenItems.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem30, Me.LayoutControlItem31, Me.LayoutControlItem32})
         Me.dataLayout.Location = New System.Drawing.Point(0, 100)
         Me.dataLayout.Name = "dataLayout"
         Me.dataLayout.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = New System.Drawing.Rectangle(1270, 479, 650, 400)
         Me.dataLayout.OptionsView.IsReadOnly = DevExpress.Utils.DefaultBoolean.[False]
         Me.dataLayout.Root = Me.Root
-        Me.dataLayout.Size = New System.Drawing.Size(1250, 570)
+        Me.dataLayout.Size = New System.Drawing.Size(1250, 734)
         Me.dataLayout.TabIndex = 2
         Me.dataLayout.Text = "LayoutControl1"
+        '
+        'gridControl
+        '
+        Me.gridControl.DataSource = Me.LegajosConeptosParticularesBindingSource
+        Me.gridControl.Location = New System.Drawing.Point(24, 593)
+        Me.gridControl.MainView = Me.gridView
+        Me.gridControl.MenuManager = Me.ribbonControl
+        Me.gridControl.Name = "gridControl"
+        Me.gridControl.Size = New System.Drawing.Size(1202, 107)
+        Me.gridControl.TabIndex = 33
+        Me.gridControl.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridView})
+        '
+        'LegajosConeptosParticularesBindingSource
+        '
+        Me.LegajosConeptosParticularesBindingSource.DataSource = GetType(YiZi.AccesoDatos.LegajosConceptosParticulares)
+        '
+        'gridView
+        '
+        Me.gridView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colFormulas, Me.colTipoLiquidacion, Me.colCantidad, Me.colImporte, Me.colVigenteDesde, Me.colVigenteHasta, Me.colActivo, Me.gridColSep01})
+        Me.gridView.GridControl = Me.gridControl
+        Me.gridView.Name = "gridView"
+        Me.gridView.OptionsBehavior.Editable = False
+        Me.gridView.OptionsBehavior.ReadOnly = True
+        Me.gridView.OptionsView.ShowGroupPanel = False
+        '
+        'colFormulas
+        '
+        Me.colFormulas.FieldName = "Formulas.DescripcionCompleta"
+        Me.colFormulas.Name = "colFormulas"
+        Me.colFormulas.Visible = True
+        Me.colFormulas.VisibleIndex = 0
+        Me.colFormulas.Width = 324
+        '
+        'colTipoLiquidacion
+        '
+        Me.colTipoLiquidacion.FieldName = "TipoLiquidacion.Descripcion"
+        Me.colTipoLiquidacion.Name = "colTipoLiquidacion"
+        Me.colTipoLiquidacion.Visible = True
+        Me.colTipoLiquidacion.VisibleIndex = 1
+        Me.colTipoLiquidacion.Width = 99
+        '
+        'colCantidad
+        '
+        Me.colCantidad.FieldName = "Cantidad"
+        Me.colCantidad.Name = "colCantidad"
+        Me.colCantidad.Visible = True
+        Me.colCantidad.VisibleIndex = 2
+        Me.colCantidad.Width = 98
+        '
+        'colImporte
+        '
+        Me.colImporte.FieldName = "Importe"
+        Me.colImporte.Name = "colImporte"
+        Me.colImporte.Visible = True
+        Me.colImporte.VisibleIndex = 3
+        Me.colImporte.Width = 93
+        '
+        'colVigenteDesde
+        '
+        Me.colVigenteDesde.FieldName = "VigenteDesde"
+        Me.colVigenteDesde.Name = "colVigenteDesde"
+        Me.colVigenteDesde.Visible = True
+        Me.colVigenteDesde.VisibleIndex = 4
+        Me.colVigenteDesde.Width = 92
+        '
+        'colVigenteHasta
+        '
+        Me.colVigenteHasta.FieldName = "VigenteHasta"
+        Me.colVigenteHasta.Name = "colVigenteHasta"
+        Me.colVigenteHasta.Visible = True
+        Me.colVigenteHasta.VisibleIndex = 5
+        Me.colVigenteHasta.Width = 88
+        '
+        'colActivo
+        '
+        Me.colActivo.FieldName = "Activo"
+        Me.colActivo.Name = "colActivo"
+        Me.colActivo.Visible = True
+        Me.colActivo.VisibleIndex = 6
+        Me.colActivo.Width = 55
+        '
+        'gridColSep01
+        '
+        Me.gridColSep01.Name = "gridColSep01"
+        Me.gridColSep01.Visible = True
+        Me.gridColSep01.VisibleIndex = 7
+        Me.gridColSep01.Width = 328
         '
         'CBUTextEdit
         '
@@ -824,13 +959,126 @@ Partial Class LegajoEditForm
         Me.colClaveUnica.Visible = True
         Me.colClaveUnica.VisibleIndex = 1
         '
+        'barDockControlLeft
+        '
+        Me.barDockControlLeft.CausesValidation = False
+        Me.barDockControlLeft.Location = New System.Drawing.Point(117, 631)
+        Me.barDockControlLeft.Manager = Me.LegajosConceptos_DetailsBarManager
+        Me.barDockControlLeft.Size = New System.Drawing.Size(1121, 67)
+        '
+        'LegajosConceptos_DetailsBarManager
+        '
+        Me.LegajosConceptos_DetailsBarManager.AllowCustomization = False
+        Me.LegajosConceptos_DetailsBarManager.Bars.AddRange(New DevExpress.XtraBars.Bar() {Me.Actividades_DetailsBar})
+        Me.LegajosConceptos_DetailsBarManager.DockControls.Add(Me.BarDockControl1)
+        Me.LegajosConceptos_DetailsBarManager.DockControls.Add(Me.barDockControlBottom)
+        Me.LegajosConceptos_DetailsBarManager.DockControls.Add(Me.barDockControlLeft)
+        Me.LegajosConceptos_DetailsBarManager.DockControls.Add(Me.barDockControlRight)
+        Me.LegajosConceptos_DetailsBarManager.Form = Me.dataLayout
+        Me.LegajosConceptos_DetailsBarManager.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.bbiDetailsNew, Me.bbiDetailsEdit, Me.bbiDetailsDelete, Me.bbiDetailsRefresh})
+        Me.LegajosConceptos_DetailsBarManager.MainMenu = Me.Actividades_DetailsBar
+        Me.LegajosConceptos_DetailsBarManager.MaxItemId = 5
+        '
+        'Actividades_DetailsBar
+        '
+        Me.Actividades_DetailsBar.BarName = "Actividades_Details"
+        Me.Actividades_DetailsBar.DockCol = 0
+        Me.Actividades_DetailsBar.DockRow = 0
+        Me.Actividades_DetailsBar.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
+        Me.Actividades_DetailsBar.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.bbiDetailsNew), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiDetailsEdit), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiDetailsDelete), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiDetailsRefresh)})
+        Me.Actividades_DetailsBar.OptionsBar.AllowQuickCustomization = False
+        Me.Actividades_DetailsBar.OptionsBar.DrawDragBorder = False
+        Me.Actividades_DetailsBar.Text = "Actividades_Details"
+        '
+        'bbiDetailsNew
+        '
+        Me.bbiDetailsNew.AccessibleDescription = ""
+        Me.bbiDetailsNew.Caption = "Agregar"
+        Me.bbiDetailsNew.Id = 0
+        Me.bbiDetailsNew.ImageOptions.Image = Global.YiZi.LiquidAR.Win.My.Resources.Resources.new_16x16
+        Me.bbiDetailsNew.ImageOptions.LargeImage = Global.YiZi.LiquidAR.Win.My.Resources.Resources.new_32x32
+        Me.bbiDetailsNew.Name = "bbiDetailsNew"
+        Me.bbiDetailsNew.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph
+        '
+        'bbiDetailsEdit
+        '
+        Me.bbiDetailsEdit.Caption = "Modificar"
+        Me.bbiDetailsEdit.Id = 1
+        Me.bbiDetailsEdit.ImageOptions.Image = Global.YiZi.LiquidAR.Win.My.Resources.Resources.edit_16x16
+        Me.bbiDetailsEdit.ImageOptions.LargeImage = Global.YiZi.LiquidAR.Win.My.Resources.Resources.edit_32x32
+        Me.bbiDetailsEdit.Name = "bbiDetailsEdit"
+        Me.bbiDetailsEdit.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph
+        '
+        'bbiDetailsDelete
+        '
+        Me.bbiDetailsDelete.Caption = "Quitar"
+        Me.bbiDetailsDelete.Id = 2
+        Me.bbiDetailsDelete.ImageOptions.Image = Global.YiZi.LiquidAR.Win.My.Resources.Resources.delete_16x16
+        Me.bbiDetailsDelete.ImageOptions.LargeImage = Global.YiZi.LiquidAR.Win.My.Resources.Resources.delete_32x32
+        Me.bbiDetailsDelete.Name = "bbiDetailsDelete"
+        Me.bbiDetailsDelete.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph
+        '
+        'bbiDetailsRefresh
+        '
+        Me.bbiDetailsRefresh.Caption = "Refresh"
+        Me.bbiDetailsRefresh.Id = 3
+        Me.bbiDetailsRefresh.ImageOptions.Image = Global.YiZi.LiquidAR.Win.My.Resources.Resources.refreshallpivottable_16x16
+        Me.bbiDetailsRefresh.ImageOptions.LargeImage = Global.YiZi.LiquidAR.Win.My.Resources.Resources.refreshallpivottable_32x32
+        Me.bbiDetailsRefresh.Name = "bbiDetailsRefresh"
+        Me.bbiDetailsRefresh.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph
+        '
+        'BarDockControl1
+        '
+        Me.BarDockControl1.CausesValidation = False
+        Me.BarDockControl1.Location = New System.Drawing.Point(24, 561)
+        Me.BarDockControl1.Manager = Me.LegajosConceptos_DetailsBarManager
+        Me.BarDockControl1.Size = New System.Drawing.Size(1202, 28)
+        '
+        'barDockControlBottom
+        '
+        Me.barDockControlBottom.CausesValidation = False
+        Me.barDockControlBottom.Location = New System.Drawing.Point(117, 631)
+        Me.barDockControlBottom.Manager = Me.LegajosConceptos_DetailsBarManager
+        Me.barDockControlBottom.Size = New System.Drawing.Size(1121, 43)
+        '
+        'barDockControlRight
+        '
+        Me.barDockControlRight.CausesValidation = False
+        Me.barDockControlRight.Location = New System.Drawing.Point(117, 631)
+        Me.barDockControlRight.Manager = Me.LegajosConceptos_DetailsBarManager
+        Me.barDockControlRight.Size = New System.Drawing.Size(1121, 91)
+        '
+        'LayoutControlItem30
+        '
+        Me.LayoutControlItem30.Control = Me.barDockControlBottom
+        Me.LayoutControlItem30.Location = New System.Drawing.Point(0, 619)
+        Me.LayoutControlItem30.Name = "LayoutControlItem30"
+        Me.LayoutControlItem30.Size = New System.Drawing.Size(1230, 47)
+        Me.LayoutControlItem30.TextSize = New System.Drawing.Size(102, 13)
+        '
+        'LayoutControlItem31
+        '
+        Me.LayoutControlItem31.Control = Me.barDockControlLeft
+        Me.LayoutControlItem31.Location = New System.Drawing.Point(0, 619)
+        Me.LayoutControlItem31.Name = "LayoutControlItem31"
+        Me.LayoutControlItem31.Size = New System.Drawing.Size(1230, 71)
+        Me.LayoutControlItem31.TextSize = New System.Drawing.Size(102, 13)
+        '
+        'LayoutControlItem32
+        '
+        Me.LayoutControlItem32.Control = Me.barDockControlRight
+        Me.LayoutControlItem32.Location = New System.Drawing.Point(0, 619)
+        Me.LayoutControlItem32.Name = "LayoutControlItem32"
+        Me.LayoutControlItem32.Size = New System.Drawing.Size(1230, 95)
+        Me.LayoutControlItem32.TextSize = New System.Drawing.Size(102, 13)
+        '
         'Root
         '
         Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
         Me.Root.GroupBordersVisible = False
-        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlGroup1, Me.LayoutControlGroup2, Me.LayoutControlGroup3, Me.LayoutControlItem15, Me.EmptySpaceItem6, Me.LayoutControlItem16, Me.LayoutControlItem20, Me.EmptySpaceItem9})
+        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlGroup1, Me.LayoutControlGroup2, Me.LayoutControlGroup3, Me.LayoutControlItem15, Me.LayoutControlItem16, Me.LayoutControlItem20, Me.EmptySpaceItem9, Me.LayoutControlGroup7})
         Me.Root.Name = "Root"
-        Me.Root.Size = New System.Drawing.Size(1250, 570)
+        Me.Root.Size = New System.Drawing.Size(1250, 734)
         Me.Root.TextVisible = False
         '
         'LayoutControlGroup1
@@ -1184,14 +1432,6 @@ Partial Class LegajoEditForm
         Me.LayoutControlItem15.Text = "Obrasocial:"
         Me.LayoutControlItem15.TextSize = New System.Drawing.Size(88, 13)
         '
-        'EmptySpaceItem6
-        '
-        Me.EmptySpaceItem6.AllowHotTrack = False
-        Me.EmptySpaceItem6.Location = New System.Drawing.Point(0, 516)
-        Me.EmptySpaceItem6.Name = "EmptySpaceItem6"
-        Me.EmptySpaceItem6.Size = New System.Drawing.Size(1230, 34)
-        Me.EmptySpaceItem6.TextSize = New System.Drawing.Size(0, 0)
-        '
         'LayoutControlItem16
         '
         Me.LayoutControlItem16.Control = Me.IdSindicatoLookUpEdit
@@ -1221,6 +1461,40 @@ Partial Class LegajoEditForm
         Me.EmptySpaceItem9.Size = New System.Drawing.Size(1003, 24)
         Me.EmptySpaceItem9.TextSize = New System.Drawing.Size(0, 0)
         '
+        'LayoutControlGroup7
+        '
+        Me.LayoutControlGroup7.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.EmptySpaceItem6, Me.LayoutControlItem1, Me.LayoutControlItem29})
+        Me.LayoutControlGroup7.Location = New System.Drawing.Point(0, 516)
+        Me.LayoutControlGroup7.Name = "LayoutControlGroup7"
+        Me.LayoutControlGroup7.Size = New System.Drawing.Size(1230, 198)
+        Me.LayoutControlGroup7.Text = "Conceptos particulares"
+        '
+        'EmptySpaceItem6
+        '
+        Me.EmptySpaceItem6.AllowHotTrack = False
+        Me.EmptySpaceItem6.Location = New System.Drawing.Point(0, 143)
+        Me.EmptySpaceItem6.Name = "EmptySpaceItem6"
+        Me.EmptySpaceItem6.Size = New System.Drawing.Size(1206, 10)
+        Me.EmptySpaceItem6.TextSize = New System.Drawing.Size(0, 0)
+        '
+        'LayoutControlItem1
+        '
+        Me.LayoutControlItem1.Control = Me.gridControl
+        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 32)
+        Me.LayoutControlItem1.Name = "LayoutControlItem1"
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(1206, 111)
+        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem1.TextVisible = False
+        '
+        'LayoutControlItem29
+        '
+        Me.LayoutControlItem29.Control = Me.BarDockControl1
+        Me.LayoutControlItem29.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlItem29.Name = "LayoutControlItem29"
+        Me.LayoutControlItem29.Size = New System.Drawing.Size(1206, 32)
+        Me.LayoutControlItem29.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem29.TextVisible = False
+        '
         'mvvmContext
         '
         Me.mvvmContext.BindingExpressions.AddRange(New DevExpress.Utils.MVVM.BindingExpression() {DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(YiZi.LiquidAR.Win.LegajoViewModel), "Save", Me.bbiSave), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(YiZi.LiquidAR.Win.LegajoViewModel), "SaveAndClose", Me.bbiSaveAndClose), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(YiZi.LiquidAR.Win.LegajoViewModel), "SaveAndNew", Me.bbiSaveAndNew), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(YiZi.LiquidAR.Win.LegajoViewModel), "Reset", Me.bbiReset), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(YiZi.LiquidAR.Win.LegajoViewModel), "Delete", Me.bbiDelete), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(YiZi.LiquidAR.Win.LegajoViewModel), "Close", Me.bbiClose), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(YiZi.LiquidAR.Win.LegajoViewModel), "SaveLayout", Me.bbiSaveLayout), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(YiZi.LiquidAR.Win.LegajoViewModel), "ResetLayout", Me.bbiResetLayout)})
@@ -1235,6 +1509,12 @@ Partial Class LegajoEditForm
         Me.EmptySpaceItem8.Size = New System.Drawing.Size(24, 24)
         Me.EmptySpaceItem8.TextSize = New System.Drawing.Size(0, 0)
         '
+        'LegajosConceptos_DetailsPopUpMenu
+        '
+        Me.LegajosConceptos_DetailsPopUpMenu.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.bbiDetailsNew), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiDetailsEdit), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiDetailsDelete, True), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiDetailsRefresh, True)})
+        Me.LegajosConceptos_DetailsPopUpMenu.Manager = Me.LegajosConceptos_DetailsBarManager
+        Me.LegajosConceptos_DetailsPopUpMenu.Name = "LegajosConceptos_DetailsPopUpMenu"
+        '
         'LegajoEditForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1243,10 +1523,13 @@ Partial Class LegajoEditForm
         Me.Controls.Add(Me.RibbonStatusBar1)
         Me.Controls.Add(Me.ribbonControl)
         Me.Name = "LegajoEditForm"
-        Me.Size = New System.Drawing.Size(1250, 697)
+        Me.Size = New System.Drawing.Size(1250, 861)
         CType(Me.ribbonControl, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dataLayout, System.ComponentModel.ISupportInitialize).EndInit()
         Me.dataLayout.ResumeLayout(False)
+        CType(Me.gridControl, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LegajosConeptosParticularesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CBUTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LegajosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.IdFormaDePagoLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1289,6 +1572,10 @@ Partial Class LegajoEditForm
         CType(Me.IdEmpresaSearchLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmpresasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.IdEmpresaSearchLookUpEditView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LegajosConceptos_DetailsBarManager, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem30, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem31, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem32, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1329,12 +1616,17 @@ Partial Class LegajoEditForm
         CType(Me.LayoutControlItem27, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem28, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem15, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmptySpaceItem6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem16, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem20, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlGroup7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmptySpaceItem6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem29, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.mvvmContext, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BehaviorManager1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LegajosConceptos_DetailsPopUpMenu, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1447,4 +1739,33 @@ Partial Class LegajoEditForm
     Friend WithEvents LayoutControlGroup6 As DevExpress.XtraLayout.LayoutControlGroup
     Friend WithEvents LayoutControlItem27 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem28 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents gridControl As DevExpress.XtraGrid.GridControl
+    Friend WithEvents gridView As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents LayoutControlGroup7 As DevExpress.XtraLayout.LayoutControlGroup
+    Friend WithEvents LayoutControlItem1 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents LegajosConeptosParticularesBindingSource As BindingSource
+    Friend WithEvents colFormulas As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colTipoLiquidacion As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colCantidad As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colImporte As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colVigenteDesde As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colVigenteHasta As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colActivo As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents gridColSep01 As DevExpress.XtraGrid.Columns.GridColumn
+    Private WithEvents BarDockControl1 As DevExpress.XtraBars.BarDockControl
+    Private WithEvents LegajosConceptos_DetailsBarManager As DevExpress.XtraBars.BarManager
+    Private WithEvents Actividades_DetailsBar As DevExpress.XtraBars.Bar
+    Private WithEvents bbiDetailsNew As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents bbiDetailsEdit As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents bbiDetailsDelete As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents bbiDetailsRefresh As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
+    Private WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
+    Private WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
+    Friend WithEvents BehaviorManager1 As DevExpress.Utils.Behaviors.BehaviorManager
+    Private WithEvents LegajosConceptos_DetailsPopUpMenu As DevExpress.XtraBars.PopupMenu
+    Friend WithEvents LayoutControlItem29 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents LayoutControlItem30 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents LayoutControlItem31 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents LayoutControlItem32 As DevExpress.XtraLayout.LayoutControlItem
 End Class

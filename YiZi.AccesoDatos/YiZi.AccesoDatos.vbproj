@@ -94,6 +94,9 @@
     <Compile Include="Models\FormulaTipoLiquidacion.vb" />
     <Compile Include="Models\Jornadas.vb" />
     <Compile Include="Models\Legajos.vb" />
+    <Compile Include="Models\LegajosConceptosParticulares.vb" />
+    <Compile Include="Models\LegajosNovedades.vb" />
+    <Compile Include="Models\LegajosNovedadesDetalles.vb" />
     <Compile Include="Models\Liquidaciones.vb" />
     <Compile Include="Models\Meses.vb" />
     <Compile Include="Modelo.vb" />

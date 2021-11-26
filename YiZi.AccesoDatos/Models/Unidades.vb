@@ -1,5 +1,6 @@
 Imports System
 Imports System.Collections.Generic
+Imports System.ComponentModel
 Imports System.ComponentModel.DataAnnotations
 Imports System.ComponentModel.DataAnnotations.Schema
 Imports System.Data.Entity.Spatial
@@ -15,6 +16,10 @@ Partial Public Class Unidades
 
     <StringLength(255)>
     Public Property Descripcion As String
+
+    <StringLength(255)>
+    <DefaultValue(" ")>
+    Public Property CodigoAfip As String
 
     Public Overridable Property Formulas As ICollection(Of Formulas)
 End Class

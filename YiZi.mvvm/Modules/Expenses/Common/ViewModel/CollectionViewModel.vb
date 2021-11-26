@@ -9,6 +9,7 @@ Imports DevExpress.MVVM.POCO
 Imports DevExpress.MVVM.DataAnnotations
 Imports YiZi.mvvm.Common.Utils
 Imports YiZi.mvvm.Common.DataModel
+
 Imports DevExpress.MVVM.Demos.Properties
 
 Namespace YiZi.mvvm.Common.ViewModel
@@ -132,6 +133,8 @@ Namespace YiZi.mvvm.Common.ViewModel
 
         End Sub
 
+
+
         ''' <summary>
         ''' Creates and shows a document that contains a single object view model for new entity.
         ''' Since CollectionViewModelBase is a POCO view model, an the instance of this class will also expose the NewCommand property that can be used as a binding source in views.
@@ -232,7 +235,7 @@ Namespace YiZi.mvvm.Common.ViewModel
         ''' Since CollectionViewModelBase is a POCO view model, the instance of this class will also expose the SaveCommand property that can be used as a binding source in views.
         ''' </summary>
         ''' <param name="projectionEntity">An entity to save.</param>
-        <Display(AutoGenerateField:=False)>
+        <Display(AutoGenerateField:=True)>
         Public Overridable Sub Save(ByVal projectionEntity As TProjection)
             Dim entity = Repository.FindExistingOrAddNewEntity(projectionEntity, Sub(p, e) ApplyProjectionPropertiesToEntity(p, e))
             Try
@@ -245,6 +248,17 @@ Namespace YiZi.mvvm.Common.ViewModel
                 MessageBoxService.ShowMessage(e.ErrorMessage, e.ErrorCaption, MessageButton.OK, MessageIcon.[Error])
             End Try
         End Sub
+
+        ''' <summary>
+        ''' Guarda la entidad dada.
+        ''' Esta funcion es para poder usarla en la edicion in citus de la grilla
+        ''' </summary>
+        'Public Overridable Function Save() As Boolean
+        '    Save(Nothing)
+        '    Return True
+        'End Function
+
+
         ''' <summary>
         ''' Determines whether entity local changes can be saved.
         ''' Since CollectionViewModelBase is a POCO view model, this method will be used as a CanExecute callback for SaveCommand.

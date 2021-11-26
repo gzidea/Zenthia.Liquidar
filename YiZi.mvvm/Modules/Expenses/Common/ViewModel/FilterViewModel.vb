@@ -58,7 +58,6 @@ Public Class FilterViewModel(Of TEntity As Class, TPrimaryKey, TUnitOfWork As IU
                 CollectionViewModel.FilterExpression = GetFilterExpression(criteria)
             Else
                 CollectionViewModel.FilterExpression = Nothing
-
             End If
         End If
     End Sub

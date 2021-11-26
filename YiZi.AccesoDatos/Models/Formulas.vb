@@ -9,7 +9,9 @@ Partial Public Class Formulas
         FormulasPeriodos = New HashSet(Of FormulasPeriodos)()
         FormulaTipoLiquidacion = New HashSet(Of FormulaTipoLiquidacion)()
         RecibosDetalles = New HashSet(Of RecibosDetalles)()
+        LegajosConeptosParticulares = New HashSet(Of LegajosConceptosParticulares)()
         'RecibosPlantillas = New HashSet(Of RecibosPlantillas)()
+        LegajosNovedadesDetalles = New HashSet(Of LegajosNovedadesDetalles)()
     End Sub
 
     <Key>
@@ -55,6 +57,8 @@ Partial Public Class Formulas
 
     Public Property SumaAlBasico As Boolean
 
+    Public Property Novedad As Boolean?
+
     Public Overridable Property Convenios As Convenios
 
     Public Overridable Property Conceptos As Conceptos
@@ -68,6 +72,10 @@ Partial Public Class Formulas
     Public Overridable Property RecibosDetalles As ICollection(Of RecibosDetalles)
 
     Public Overridable Property RecibosPlantillas As ICollection(Of RecibosPlantillas)
+
+    Public Overridable Property LegajosConeptosParticulares As ICollection(Of LegajosConceptosParticulares)
+
+    Public Overridable Property LegajosNovedadesDetalles As ICollection(Of LegajosNovedadesDetalles)
 
     Public ReadOnly Property Variable As String
         Get

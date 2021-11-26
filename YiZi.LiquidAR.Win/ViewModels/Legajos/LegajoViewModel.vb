@@ -3,7 +3,7 @@ Imports YiZi.AccesoDatos
 Imports YiZi.mvvm.Common.DataModel
 Imports YiZi.mvvm.Common.ViewModel
 
-Public Class LegajoViewModel
+Partial Public Class LegajoViewModel
     Inherits SingleObjectViewModel(Of YiZi.AccesoDatos.Legajos, Integer, IModeloDbContextUnitOfWork)
 
 
@@ -28,7 +28,7 @@ Public Class LegajoViewModel
     Private _LookUpEmpresasActividades As IEntitiesViewModel(Of YiZi.AccesoDatos.EmpresasActividades)
     Public ReadOnly Property LookUpEmpresasActividades As IEntitiesViewModel(Of YiZi.AccesoDatos.EmpresasActividades)
         Get
-            return _LookUpEmpresasActividades
+            Return _LookUpEmpresasActividades
         End Get
     End Property
 
