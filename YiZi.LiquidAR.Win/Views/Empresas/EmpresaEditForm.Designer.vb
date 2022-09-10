@@ -38,6 +38,12 @@ Partial Class EmpresaEditForm
         Me.RibbonPageGroup4 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.mvvmContext = New DevExpress.Utils.MVVM.MVVMContext(Me.components)
         Me.dataLayout = New DevExpress.XtraLayout.LayoutControl()
+        Me.IdTipoEmpresaAfipSearchLookUpEdit = New DevExpress.XtraEditors.SearchLookUpEdit()
+        Me.EmpresasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TipoEmpresaAfipBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.IdTipoEmpresaAfipSearchLookUpEditView = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.colCodigoAfip = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colDescripcion = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.contactosGridControl = New DevExpress.XtraGrid.GridControl()
         Me.ContactosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.contactosGridView = New DevExpress.XtraGrid.Views.Grid.GridView()
@@ -50,7 +56,6 @@ Partial Class EmpresaEditForm
         Me.colEmpresas = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.XtraUserControl1 = New DevExpress.XtraEditors.XtraUserControl()
         Me.EmailTextEdit = New DevExpress.XtraEditors.TextEdit()
-        Me.EmpresasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ActividadesGridControl = New DevExpress.XtraGrid.GridControl()
         Me.EmpresasActividadesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ActividadesGridView = New DevExpress.XtraGrid.Views.Grid.GridView()
@@ -99,6 +104,9 @@ Partial Class EmpresaEditForm
         Me.LayoutControlItem11 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem2 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.LayoutControlItem15 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.EmptySpaceItem3 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.EmptySpaceItem4 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.actividades_DetailsPopUpMenu = New DevExpress.XtraBars.PopupMenu(Me.components)
         Me.Contactos_DetailsBarManager = New DevExpress.XtraBars.BarManager(Me.components)
         Me.Contactos_DetailsBar = New DevExpress.XtraBars.Bar()
@@ -115,11 +123,14 @@ Partial Class EmpresaEditForm
         CType(Me.mvvmContext, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dataLayout, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.dataLayout.SuspendLayout()
+        CType(Me.IdTipoEmpresaAfipSearchLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmpresasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TipoEmpresaAfipBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.IdTipoEmpresaAfipSearchLookUpEditView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.contactosGridControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ContactosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.contactosGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmailTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmpresasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ActividadesGridControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmpresasActividadesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ActividadesGridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -156,6 +167,9 @@ Partial Class EmpresaEditForm
         CType(Me.LayoutControlItem11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem15, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmptySpaceItem3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmptySpaceItem4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.actividades_DetailsPopUpMenu, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Contactos_DetailsBarManager, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Contactos_DetailsPopUpMenu, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -164,10 +178,10 @@ Partial Class EmpresaEditForm
         'RibbonStatusBar1
         '
         Me.RibbonStatusBar1.ItemLinks.Add(Me.bsiEstado)
-        Me.RibbonStatusBar1.Location = New System.Drawing.Point(0, 633)
+        Me.RibbonStatusBar1.Location = New System.Drawing.Point(0, 670)
         Me.RibbonStatusBar1.Name = "RibbonStatusBar1"
         Me.RibbonStatusBar1.Ribbon = Me.ribbonControl
-        Me.RibbonStatusBar1.Size = New System.Drawing.Size(918, 27)
+        Me.RibbonStatusBar1.Size = New System.Drawing.Size(955, 27)
         '
         'bsiEstado
         '
@@ -185,7 +199,7 @@ Partial Class EmpresaEditForm
         Me.ribbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.[False]
         Me.ribbonControl.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
-        Me.ribbonControl.Size = New System.Drawing.Size(918, 100)
+        Me.ribbonControl.Size = New System.Drawing.Size(955, 100)
         Me.ribbonControl.StatusBar = Me.RibbonStatusBar1
         Me.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -287,6 +301,7 @@ Partial Class EmpresaEditForm
         '
         'dataLayout
         '
+        Me.dataLayout.Controls.Add(Me.IdTipoEmpresaAfipSearchLookUpEdit)
         Me.dataLayout.Controls.Add(Me.contactosGridControl)
         Me.dataLayout.Controls.Add(Me.XtraUserControl1)
         Me.dataLayout.Controls.Add(Me.EmailTextEdit)
@@ -304,20 +319,65 @@ Partial Class EmpresaEditForm
         Me.dataLayout.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dataLayout.Location = New System.Drawing.Point(0, 100)
         Me.dataLayout.Name = "dataLayout"
-        Me.dataLayout.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = New System.Drawing.Rectangle(769, 359, 923, 675)
+        Me.dataLayout.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = New System.Drawing.Rectangle(801, 446, 923, 675)
         Me.dataLayout.Root = Me.Root
-        Me.dataLayout.Size = New System.Drawing.Size(918, 533)
+        Me.dataLayout.Size = New System.Drawing.Size(955, 570)
         Me.dataLayout.TabIndex = 4
         Me.dataLayout.Text = "LayoutControl1"
+        '
+        'IdTipoEmpresaAfipSearchLookUpEdit
+        '
+        Me.IdTipoEmpresaAfipSearchLookUpEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.EmpresasBindingSource, "IdTipoEmpresaAfip", True))
+        Me.IdTipoEmpresaAfipSearchLookUpEdit.Location = New System.Drawing.Point(603, 108)
+        Me.IdTipoEmpresaAfipSearchLookUpEdit.MenuManager = Me.ribbonControl
+        Me.IdTipoEmpresaAfipSearchLookUpEdit.Name = "IdTipoEmpresaAfipSearchLookUpEdit"
+        Me.IdTipoEmpresaAfipSearchLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.IdTipoEmpresaAfipSearchLookUpEdit.Properties.DataSource = Me.TipoEmpresaAfipBindingSource
+        Me.IdTipoEmpresaAfipSearchLookUpEdit.Properties.DisplayMember = "Descripcion"
+        Me.IdTipoEmpresaAfipSearchLookUpEdit.Properties.PopupView = Me.IdTipoEmpresaAfipSearchLookUpEditView
+        Me.IdTipoEmpresaAfipSearchLookUpEdit.Properties.ValueMember = "Id"
+        Me.IdTipoEmpresaAfipSearchLookUpEdit.Size = New System.Drawing.Size(340, 20)
+        Me.IdTipoEmpresaAfipSearchLookUpEdit.StyleController = Me.dataLayout
+        Me.IdTipoEmpresaAfipSearchLookUpEdit.TabIndex = 23
+        '
+        'EmpresasBindingSource
+        '
+        Me.EmpresasBindingSource.DataSource = GetType(YiZi.AccesoDatos.Empresas)
+        '
+        'TipoEmpresaAfipBindingSource
+        '
+        Me.TipoEmpresaAfipBindingSource.DataSource = GetType(YiZi.AccesoDatos.TipoEmpresaAfip)
+        '
+        'IdTipoEmpresaAfipSearchLookUpEditView
+        '
+        Me.IdTipoEmpresaAfipSearchLookUpEditView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colCodigoAfip, Me.colDescripcion})
+        Me.IdTipoEmpresaAfipSearchLookUpEditView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
+        Me.IdTipoEmpresaAfipSearchLookUpEditView.Name = "IdTipoEmpresaAfipSearchLookUpEditView"
+        Me.IdTipoEmpresaAfipSearchLookUpEditView.OptionsSelection.EnableAppearanceFocusedCell = False
+        Me.IdTipoEmpresaAfipSearchLookUpEditView.OptionsView.ShowGroupPanel = False
+        '
+        'colCodigoAfip
+        '
+        Me.colCodigoAfip.FieldName = "CodigoAfip"
+        Me.colCodigoAfip.Name = "colCodigoAfip"
+        Me.colCodigoAfip.Visible = True
+        Me.colCodigoAfip.VisibleIndex = 0
+        '
+        'colDescripcion
+        '
+        Me.colDescripcion.FieldName = "Descripcion"
+        Me.colDescripcion.Name = "colDescripcion"
+        Me.colDescripcion.Visible = True
+        Me.colDescripcion.VisibleIndex = 1
         '
         'contactosGridControl
         '
         Me.contactosGridControl.DataSource = Me.ContactosBindingSource
-        Me.contactosGridControl.Location = New System.Drawing.Point(24, 208)
+        Me.contactosGridControl.Location = New System.Drawing.Point(24, 212)
         Me.contactosGridControl.MainView = Me.contactosGridView
         Me.contactosGridControl.MenuManager = Me.ribbonControl
         Me.contactosGridControl.Name = "contactosGridControl"
-        Me.contactosGridControl.Size = New System.Drawing.Size(870, 301)
+        Me.contactosGridControl.Size = New System.Drawing.Size(907, 334)
         Me.contactosGridControl.TabIndex = 20
         Me.contactosGridControl.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.contactosGridView})
         '
@@ -383,7 +443,7 @@ Partial Class EmpresaEditForm
         '
         'XtraUserControl1
         '
-        Me.XtraUserControl1.Location = New System.Drawing.Point(751, 84)
+        Me.XtraUserControl1.Location = New System.Drawing.Point(781, 84)
         Me.XtraUserControl1.Name = "XtraUserControl1"
         Me.XtraUserControl1.Size = New System.Drawing.Size(1, 20)
         Me.XtraUserControl1.TabIndex = 17
@@ -391,25 +451,21 @@ Partial Class EmpresaEditForm
         'EmailTextEdit
         '
         Me.EmailTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.EmpresasBindingSource, "Email", True))
-        Me.EmailTextEdit.Location = New System.Drawing.Point(348, 84)
+        Me.EmailTextEdit.Location = New System.Drawing.Point(359, 84)
         Me.EmailTextEdit.MenuManager = Me.ribbonControl
         Me.EmailTextEdit.Name = "EmailTextEdit"
-        Me.EmailTextEdit.Size = New System.Drawing.Size(399, 20)
+        Me.EmailTextEdit.Size = New System.Drawing.Size(418, 20)
         Me.EmailTextEdit.StyleController = Me.dataLayout
         Me.EmailTextEdit.TabIndex = 16
-        '
-        'EmpresasBindingSource
-        '
-        Me.EmpresasBindingSource.DataSource = GetType(YiZi.AccesoDatos.Empresas)
         '
         'ActividadesGridControl
         '
         Me.ActividadesGridControl.DataSource = Me.EmpresasActividadesBindingSource
-        Me.ActividadesGridControl.Location = New System.Drawing.Point(24, 206)
+        Me.ActividadesGridControl.Location = New System.Drawing.Point(24, 210)
         Me.ActividadesGridControl.MainView = Me.ActividadesGridView
         Me.ActividadesGridControl.MenuManager = Me.ribbonControl
         Me.ActividadesGridControl.Name = "ActividadesGridControl"
-        Me.ActividadesGridControl.Size = New System.Drawing.Size(870, 303)
+        Me.ActividadesGridControl.Size = New System.Drawing.Size(907, 336)
         Me.ActividadesGridControl.TabIndex = 14
         Me.ActividadesGridControl.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.ActividadesGridView})
         '
@@ -453,10 +509,10 @@ Partial Class EmpresaEditForm
         'ClaveUnicaTextEdit
         '
         Me.ClaveUnicaTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.EmpresasBindingSource, "ClaveUnica", True))
-        Me.ClaveUnicaTextEdit.Location = New System.Drawing.Point(348, 108)
+        Me.ClaveUnicaTextEdit.Location = New System.Drawing.Point(359, 108)
         Me.ClaveUnicaTextEdit.MenuManager = Me.ribbonControl
         Me.ClaveUnicaTextEdit.Name = "ClaveUnicaTextEdit"
-        Me.ClaveUnicaTextEdit.Size = New System.Drawing.Size(558, 20)
+        Me.ClaveUnicaTextEdit.Size = New System.Drawing.Size(135, 20)
         Me.ClaveUnicaTextEdit.StyleController = Me.dataLayout
         Me.ClaveUnicaTextEdit.TabIndex = 12
         '
@@ -470,7 +526,7 @@ Partial Class EmpresaEditForm
         Me.Id_TipoClaveUnicaLookUpEdit.Properties.DataSource = Me.TipoClaveUnicaBindingSource
         Me.Id_TipoClaveUnicaLookUpEdit.Properties.DisplayMember = "Descripcion"
         Me.Id_TipoClaveUnicaLookUpEdit.Properties.ValueMember = "Id"
-        Me.Id_TipoClaveUnicaLookUpEdit.Size = New System.Drawing.Size(198, 20)
+        Me.Id_TipoClaveUnicaLookUpEdit.Size = New System.Drawing.Size(209, 20)
         Me.Id_TipoClaveUnicaLookUpEdit.StyleController = Me.dataLayout
         Me.Id_TipoClaveUnicaLookUpEdit.TabIndex = 11
         '
@@ -481,14 +537,14 @@ Partial Class EmpresaEditForm
         'Id_ProvinciaLookUpEdit
         '
         Me.Id_ProvinciaLookUpEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.EmpresasBindingSource, "Id_Provincia", True))
-        Me.Id_ProvinciaLookUpEdit.Location = New System.Drawing.Point(671, 60)
+        Me.Id_ProvinciaLookUpEdit.Location = New System.Drawing.Point(705, 60)
         Me.Id_ProvinciaLookUpEdit.MenuManager = Me.ribbonControl
         Me.Id_ProvinciaLookUpEdit.Name = "Id_ProvinciaLookUpEdit"
         Me.Id_ProvinciaLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.Id_ProvinciaLookUpEdit.Properties.DataSource = Me.ProvinciasBindingSource
         Me.Id_ProvinciaLookUpEdit.Properties.DisplayMember = "Nombre"
         Me.Id_ProvinciaLookUpEdit.Properties.ValueMember = "Id"
-        Me.Id_ProvinciaLookUpEdit.Size = New System.Drawing.Size(235, 20)
+        Me.Id_ProvinciaLookUpEdit.Size = New System.Drawing.Size(238, 20)
         Me.Id_ProvinciaLookUpEdit.StyleController = Me.dataLayout
         Me.Id_ProvinciaLookUpEdit.TabIndex = 10
         '
@@ -502,7 +558,7 @@ Partial Class EmpresaEditForm
         Me.TelefonoTextEdit.Location = New System.Drawing.Point(75, 84)
         Me.TelefonoTextEdit.MenuManager = Me.ribbonControl
         Me.TelefonoTextEdit.Name = "TelefonoTextEdit"
-        Me.TelefonoTextEdit.Size = New System.Drawing.Size(198, 20)
+        Me.TelefonoTextEdit.Size = New System.Drawing.Size(209, 20)
         Me.TelefonoTextEdit.StyleController = Me.dataLayout
         Me.TelefonoTextEdit.TabIndex = 9
         '
@@ -512,7 +568,7 @@ Partial Class EmpresaEditForm
         Me.LocalidadTextEdit.Location = New System.Drawing.Point(75, 60)
         Me.LocalidadTextEdit.MenuManager = Me.ribbonControl
         Me.LocalidadTextEdit.Name = "LocalidadTextEdit"
-        Me.LocalidadTextEdit.Size = New System.Drawing.Size(529, 20)
+        Me.LocalidadTextEdit.Size = New System.Drawing.Size(553, 20)
         Me.LocalidadTextEdit.StyleController = Me.dataLayout
         Me.LocalidadTextEdit.TabIndex = 8
         '
@@ -522,17 +578,17 @@ Partial Class EmpresaEditForm
         Me.DireccionTextEdit.Location = New System.Drawing.Point(75, 36)
         Me.DireccionTextEdit.MenuManager = Me.ribbonControl
         Me.DireccionTextEdit.Name = "DireccionTextEdit"
-        Me.DireccionTextEdit.Size = New System.Drawing.Size(831, 20)
+        Me.DireccionTextEdit.Size = New System.Drawing.Size(868, 20)
         Me.DireccionTextEdit.StyleController = Me.dataLayout
         Me.DireccionTextEdit.TabIndex = 7
         '
         'NombreTextEdit
         '
         Me.NombreTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.EmpresasBindingSource, "Nombre", True))
-        Me.NombreTextEdit.Location = New System.Drawing.Point(260, 12)
+        Me.NombreTextEdit.Location = New System.Drawing.Point(267, 12)
         Me.NombreTextEdit.MenuManager = Me.ribbonControl
         Me.NombreTextEdit.Name = "NombreTextEdit"
-        Me.NombreTextEdit.Size = New System.Drawing.Size(646, 20)
+        Me.NombreTextEdit.Size = New System.Drawing.Size(676, 20)
         Me.NombreTextEdit.StyleController = Me.dataLayout
         Me.NombreTextEdit.TabIndex = 6
         '
@@ -544,7 +600,7 @@ Partial Class EmpresaEditForm
         Me.CodigoSpinEdit.MenuManager = Me.ribbonControl
         Me.CodigoSpinEdit.Name = "CodigoSpinEdit"
         Me.CodigoSpinEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.CodigoSpinEdit.Size = New System.Drawing.Size(110, 20)
+        Me.CodigoSpinEdit.Size = New System.Drawing.Size(117, 20)
         Me.CodigoSpinEdit.StyleController = Me.dataLayout
         Me.CodigoSpinEdit.TabIndex = 5
         '
@@ -553,14 +609,14 @@ Partial Class EmpresaEditForm
         Me.barDockControlTop.CausesValidation = False
         Me.barDockControlTop.Location = New System.Drawing.Point(24, 177)
         Me.barDockControlTop.Manager = Nothing
-        Me.barDockControlTop.Size = New System.Drawing.Size(870, 25)
+        Me.barDockControlTop.Size = New System.Drawing.Size(907, 29)
         '
         'BarDockControl2
         '
         Me.BarDockControl2.CausesValidation = False
         Me.BarDockControl2.Location = New System.Drawing.Point(24, 177)
         Me.BarDockControl2.Manager = Me.actividades_DetailsBarManager
-        Me.BarDockControl2.Size = New System.Drawing.Size(870, 27)
+        Me.BarDockControl2.Size = New System.Drawing.Size(907, 31)
         '
         'actividades_DetailsBarManager
         '
@@ -629,15 +685,15 @@ Partial Class EmpresaEditForm
         Me.BarDockControl1.Dock = System.Windows.Forms.DockStyle.Top
         Me.BarDockControl1.Location = New System.Drawing.Point(0, 0)
         Me.BarDockControl1.Manager = Me.actividades_DetailsBarManager
-        Me.BarDockControl1.Size = New System.Drawing.Size(870, 24)
+        Me.BarDockControl1.Size = New System.Drawing.Size(907, 24)
         '
         'barDockControlBottom
         '
         Me.barDockControlBottom.CausesValidation = False
         Me.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.barDockControlBottom.Location = New System.Drawing.Point(0, 25)
+        Me.barDockControlBottom.Location = New System.Drawing.Point(0, 29)
         Me.barDockControlBottom.Manager = Me.actividades_DetailsBarManager
-        Me.barDockControlBottom.Size = New System.Drawing.Size(870, 0)
+        Me.barDockControlBottom.Size = New System.Drawing.Size(907, 0)
         '
         'barDockControlLeft
         '
@@ -645,23 +701,23 @@ Partial Class EmpresaEditForm
         Me.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left
         Me.barDockControlLeft.Location = New System.Drawing.Point(0, 24)
         Me.barDockControlLeft.Manager = Me.actividades_DetailsBarManager
-        Me.barDockControlLeft.Size = New System.Drawing.Size(0, 1)
+        Me.barDockControlLeft.Size = New System.Drawing.Size(0, 5)
         '
         'barDockControlRight
         '
         Me.barDockControlRight.CausesValidation = False
         Me.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right
-        Me.barDockControlRight.Location = New System.Drawing.Point(870, 24)
+        Me.barDockControlRight.Location = New System.Drawing.Point(907, 24)
         Me.barDockControlRight.Manager = Me.actividades_DetailsBarManager
-        Me.barDockControlRight.Size = New System.Drawing.Size(0, 1)
+        Me.barDockControlRight.Size = New System.Drawing.Size(0, 5)
         '
         'Root
         '
         Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
         Me.Root.GroupBordersVisible = False
-        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem2, Me.LayoutControlItem4, Me.LayoutControlItem6, Me.LayoutControlItem8, Me.e, Me.LayoutControlItem3, Me.LayoutControlItem5, Me.LayoutControlItem7, Me.EmptySpaceItem1, Me.LayoutControlItem9, Me.LayoutControlItem11, Me.LayoutControlItem1, Me.EmptySpaceItem2})
+        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem2, Me.LayoutControlItem4, Me.LayoutControlItem6, Me.LayoutControlItem8, Me.e, Me.LayoutControlItem3, Me.LayoutControlItem5, Me.LayoutControlItem7, Me.EmptySpaceItem1, Me.LayoutControlItem9, Me.LayoutControlItem11, Me.LayoutControlItem1, Me.EmptySpaceItem2, Me.LayoutControlItem15, Me.EmptySpaceItem3, Me.EmptySpaceItem4})
         Me.Root.Name = "Root"
-        Me.Root.Size = New System.Drawing.Size(918, 533)
+        Me.Root.Size = New System.Drawing.Size(955, 570)
         Me.Root.TextVisible = False
         '
         'LayoutControlItem2
@@ -669,7 +725,7 @@ Partial Class EmpresaEditForm
         Me.LayoutControlItem2.Control = Me.CodigoSpinEdit
         Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem2.Name = "LayoutControlItem2"
-        Me.LayoutControlItem2.Size = New System.Drawing.Size(177, 24)
+        Me.LayoutControlItem2.Size = New System.Drawing.Size(184, 24)
         Me.LayoutControlItem2.Text = "Codigo:"
         Me.LayoutControlItem2.TextSize = New System.Drawing.Size(60, 13)
         '
@@ -678,7 +734,7 @@ Partial Class EmpresaEditForm
         Me.LayoutControlItem4.Control = Me.DireccionTextEdit
         Me.LayoutControlItem4.Location = New System.Drawing.Point(0, 24)
         Me.LayoutControlItem4.Name = "LayoutControlItem4"
-        Me.LayoutControlItem4.Size = New System.Drawing.Size(898, 24)
+        Me.LayoutControlItem4.Size = New System.Drawing.Size(935, 24)
         Me.LayoutControlItem4.Text = "Direccion:"
         Me.LayoutControlItem4.TextSize = New System.Drawing.Size(60, 13)
         '
@@ -687,7 +743,7 @@ Partial Class EmpresaEditForm
         Me.LayoutControlItem6.Control = Me.TelefonoTextEdit
         Me.LayoutControlItem6.Location = New System.Drawing.Point(0, 72)
         Me.LayoutControlItem6.Name = "LayoutControlItem6"
-        Me.LayoutControlItem6.Size = New System.Drawing.Size(265, 24)
+        Me.LayoutControlItem6.Size = New System.Drawing.Size(276, 24)
         Me.LayoutControlItem6.Text = "Telefono:"
         Me.LayoutControlItem6.TextSize = New System.Drawing.Size(60, 13)
         '
@@ -696,7 +752,7 @@ Partial Class EmpresaEditForm
         Me.LayoutControlItem8.Control = Me.Id_TipoClaveUnicaLookUpEdit
         Me.LayoutControlItem8.Location = New System.Drawing.Point(0, 96)
         Me.LayoutControlItem8.Name = "LayoutControlItem8"
-        Me.LayoutControlItem8.Size = New System.Drawing.Size(265, 24)
+        Me.LayoutControlItem8.Size = New System.Drawing.Size(276, 24)
         Me.LayoutControlItem8.Text = "Tipo Clave:"
         Me.LayoutControlItem8.TextSize = New System.Drawing.Size(60, 13)
         '
@@ -705,7 +761,7 @@ Partial Class EmpresaEditForm
         Me.e.Location = New System.Drawing.Point(0, 130)
         Me.e.Name = "e"
         Me.e.SelectedTabPage = Me.actividadesLayout
-        Me.e.Size = New System.Drawing.Size(898, 383)
+        Me.e.Size = New System.Drawing.Size(935, 420)
         Me.e.TabPages.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.actividadesLayout, Me.LayoutControlGroup2})
         '
         'actividadesLayout
@@ -713,15 +769,15 @@ Partial Class EmpresaEditForm
         Me.actividadesLayout.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem10, Me.actividadToolbarLayout})
         Me.actividadesLayout.Location = New System.Drawing.Point(0, 0)
         Me.actividadesLayout.Name = "actividadesLayout"
-        Me.actividadesLayout.Size = New System.Drawing.Size(874, 336)
+        Me.actividadesLayout.Size = New System.Drawing.Size(911, 373)
         Me.actividadesLayout.Text = "Actividades"
         '
         'LayoutControlItem10
         '
         Me.LayoutControlItem10.Control = Me.ActividadesGridControl
-        Me.LayoutControlItem10.Location = New System.Drawing.Point(0, 29)
+        Me.LayoutControlItem10.Location = New System.Drawing.Point(0, 33)
         Me.LayoutControlItem10.Name = "LayoutControlItem10"
-        Me.LayoutControlItem10.Size = New System.Drawing.Size(874, 307)
+        Me.LayoutControlItem10.Size = New System.Drawing.Size(911, 340)
         Me.LayoutControlItem10.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem10.TextVisible = False
         '
@@ -730,7 +786,7 @@ Partial Class EmpresaEditForm
         Me.actividadToolbarLayout.Control = Me.barDockControlTop
         Me.actividadToolbarLayout.Location = New System.Drawing.Point(0, 0)
         Me.actividadToolbarLayout.Name = "actividadToolbarLayout"
-        Me.actividadToolbarLayout.Size = New System.Drawing.Size(874, 29)
+        Me.actividadToolbarLayout.Size = New System.Drawing.Size(911, 33)
         Me.actividadToolbarLayout.TextSize = New System.Drawing.Size(0, 0)
         Me.actividadToolbarLayout.TextVisible = False
         '
@@ -739,15 +795,15 @@ Partial Class EmpresaEditForm
         Me.LayoutControlGroup2.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem12, Me.LayoutControlItem13})
         Me.LayoutControlGroup2.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup2.Name = "LayoutControlGroup2"
-        Me.LayoutControlGroup2.Size = New System.Drawing.Size(874, 336)
+        Me.LayoutControlGroup2.Size = New System.Drawing.Size(911, 373)
         Me.LayoutControlGroup2.Text = "Contactos"
         '
         'LayoutControlItem12
         '
         Me.LayoutControlItem12.Control = Me.contactosGridControl
-        Me.LayoutControlItem12.Location = New System.Drawing.Point(0, 31)
+        Me.LayoutControlItem12.Location = New System.Drawing.Point(0, 35)
         Me.LayoutControlItem12.Name = "LayoutControlItem12"
-        Me.LayoutControlItem12.Size = New System.Drawing.Size(874, 305)
+        Me.LayoutControlItem12.Size = New System.Drawing.Size(911, 338)
         Me.LayoutControlItem12.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem12.TextVisible = False
         '
@@ -756,17 +812,17 @@ Partial Class EmpresaEditForm
         Me.LayoutControlItem13.Control = Me.BarDockControl2
         Me.LayoutControlItem13.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem13.Name = "LayoutControlItem13"
-        Me.LayoutControlItem13.Size = New System.Drawing.Size(874, 31)
+        Me.LayoutControlItem13.Size = New System.Drawing.Size(911, 35)
         Me.LayoutControlItem13.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem13.TextVisible = False
         '
         'LayoutControlItem3
         '
         Me.LayoutControlItem3.Control = Me.NombreTextEdit
-        Me.LayoutControlItem3.Location = New System.Drawing.Point(177, 0)
+        Me.LayoutControlItem3.Location = New System.Drawing.Point(184, 0)
         Me.LayoutControlItem3.Name = "LayoutControlItem3"
         Me.LayoutControlItem3.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 2, 2, 2)
-        Me.LayoutControlItem3.Size = New System.Drawing.Size(721, 24)
+        Me.LayoutControlItem3.Size = New System.Drawing.Size(751, 24)
         Me.LayoutControlItem3.Text = "Nombre:"
         Me.LayoutControlItem3.TextSize = New System.Drawing.Size(60, 13)
         '
@@ -775,51 +831,51 @@ Partial Class EmpresaEditForm
         Me.LayoutControlItem5.Control = Me.LocalidadTextEdit
         Me.LayoutControlItem5.Location = New System.Drawing.Point(0, 48)
         Me.LayoutControlItem5.Name = "LayoutControlItem5"
-        Me.LayoutControlItem5.Size = New System.Drawing.Size(596, 24)
+        Me.LayoutControlItem5.Size = New System.Drawing.Size(620, 24)
         Me.LayoutControlItem5.Text = "Localidad:"
         Me.LayoutControlItem5.TextSize = New System.Drawing.Size(60, 13)
         '
         'LayoutControlItem7
         '
         Me.LayoutControlItem7.Control = Me.Id_ProvinciaLookUpEdit
-        Me.LayoutControlItem7.Location = New System.Drawing.Point(596, 48)
+        Me.LayoutControlItem7.Location = New System.Drawing.Point(630, 48)
         Me.LayoutControlItem7.Name = "LayoutControlItem7"
-        Me.LayoutControlItem7.Size = New System.Drawing.Size(302, 24)
+        Me.LayoutControlItem7.Size = New System.Drawing.Size(305, 24)
         Me.LayoutControlItem7.Text = "Provincia:"
         Me.LayoutControlItem7.TextSize = New System.Drawing.Size(60, 13)
         '
         'EmptySpaceItem1
         '
         Me.EmptySpaceItem1.AllowHotTrack = False
-        Me.EmptySpaceItem1.Location = New System.Drawing.Point(744, 72)
+        Me.EmptySpaceItem1.Location = New System.Drawing.Point(774, 72)
         Me.EmptySpaceItem1.Name = "EmptySpaceItem1"
-        Me.EmptySpaceItem1.Size = New System.Drawing.Size(154, 24)
+        Me.EmptySpaceItem1.Size = New System.Drawing.Size(161, 24)
         Me.EmptySpaceItem1.TextSize = New System.Drawing.Size(0, 0)
         '
         'LayoutControlItem9
         '
         Me.LayoutControlItem9.Control = Me.ClaveUnicaTextEdit
-        Me.LayoutControlItem9.Location = New System.Drawing.Point(265, 96)
+        Me.LayoutControlItem9.Location = New System.Drawing.Point(276, 96)
         Me.LayoutControlItem9.Name = "LayoutControlItem9"
         Me.LayoutControlItem9.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 2, 2, 2)
-        Me.LayoutControlItem9.Size = New System.Drawing.Size(633, 24)
+        Me.LayoutControlItem9.Size = New System.Drawing.Size(210, 24)
         Me.LayoutControlItem9.Text = "Clave Unica:"
         Me.LayoutControlItem9.TextSize = New System.Drawing.Size(60, 13)
         '
         'LayoutControlItem11
         '
         Me.LayoutControlItem11.Control = Me.EmailTextEdit
-        Me.LayoutControlItem11.Location = New System.Drawing.Point(265, 72)
+        Me.LayoutControlItem11.Location = New System.Drawing.Point(276, 72)
         Me.LayoutControlItem11.Name = "LayoutControlItem11"
         Me.LayoutControlItem11.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 2, 2, 2)
-        Me.LayoutControlItem11.Size = New System.Drawing.Size(474, 24)
+        Me.LayoutControlItem11.Size = New System.Drawing.Size(493, 24)
         Me.LayoutControlItem11.Text = "Email:"
         Me.LayoutControlItem11.TextSize = New System.Drawing.Size(60, 13)
         '
         'LayoutControlItem1
         '
         Me.LayoutControlItem1.Control = Me.XtraUserControl1
-        Me.LayoutControlItem1.Location = New System.Drawing.Point(739, 72)
+        Me.LayoutControlItem1.Location = New System.Drawing.Point(769, 72)
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
         Me.LayoutControlItem1.Size = New System.Drawing.Size(5, 24)
         Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
@@ -830,8 +886,35 @@ Partial Class EmpresaEditForm
         Me.EmptySpaceItem2.AllowHotTrack = False
         Me.EmptySpaceItem2.Location = New System.Drawing.Point(0, 120)
         Me.EmptySpaceItem2.Name = "EmptySpaceItem2"
-        Me.EmptySpaceItem2.Size = New System.Drawing.Size(898, 10)
+        Me.EmptySpaceItem2.Size = New System.Drawing.Size(935, 10)
         Me.EmptySpaceItem2.TextSize = New System.Drawing.Size(0, 0)
+        '
+        'LayoutControlItem15
+        '
+        Me.LayoutControlItem15.Control = Me.IdTipoEmpresaAfipSearchLookUpEdit
+        Me.LayoutControlItem15.Location = New System.Drawing.Point(496, 96)
+        Me.LayoutControlItem15.Name = "LayoutControlItem15"
+        Me.LayoutControlItem15.Size = New System.Drawing.Size(439, 24)
+        Me.LayoutControlItem15.Text = "Tipo Empresa Afip:"
+        Me.LayoutControlItem15.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize
+        Me.LayoutControlItem15.TextSize = New System.Drawing.Size(90, 13)
+        Me.LayoutControlItem15.TextToControlDistance = 5
+        '
+        'EmptySpaceItem3
+        '
+        Me.EmptySpaceItem3.AllowHotTrack = False
+        Me.EmptySpaceItem3.Location = New System.Drawing.Point(486, 96)
+        Me.EmptySpaceItem3.Name = "EmptySpaceItem3"
+        Me.EmptySpaceItem3.Size = New System.Drawing.Size(10, 24)
+        Me.EmptySpaceItem3.TextSize = New System.Drawing.Size(0, 0)
+        '
+        'EmptySpaceItem4
+        '
+        Me.EmptySpaceItem4.AllowHotTrack = False
+        Me.EmptySpaceItem4.Location = New System.Drawing.Point(620, 48)
+        Me.EmptySpaceItem4.Name = "EmptySpaceItem4"
+        Me.EmptySpaceItem4.Size = New System.Drawing.Size(10, 24)
+        Me.EmptySpaceItem4.TextSize = New System.Drawing.Size(0, 0)
         '
         'actividades_DetailsPopUpMenu
         '
@@ -906,15 +989,15 @@ Partial Class EmpresaEditForm
         Me.BarDockControl3.Dock = System.Windows.Forms.DockStyle.Top
         Me.BarDockControl3.Location = New System.Drawing.Point(0, 0)
         Me.BarDockControl3.Manager = Me.Contactos_DetailsBarManager
-        Me.BarDockControl3.Size = New System.Drawing.Size(870, 24)
+        Me.BarDockControl3.Size = New System.Drawing.Size(907, 24)
         '
         'BarDockControl4
         '
         Me.BarDockControl4.CausesValidation = False
         Me.BarDockControl4.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.BarDockControl4.Location = New System.Drawing.Point(0, 27)
+        Me.BarDockControl4.Location = New System.Drawing.Point(0, 31)
         Me.BarDockControl4.Manager = Me.Contactos_DetailsBarManager
-        Me.BarDockControl4.Size = New System.Drawing.Size(870, 0)
+        Me.BarDockControl4.Size = New System.Drawing.Size(907, 0)
         '
         'BarDockControl5
         '
@@ -922,15 +1005,15 @@ Partial Class EmpresaEditForm
         Me.BarDockControl5.Dock = System.Windows.Forms.DockStyle.Left
         Me.BarDockControl5.Location = New System.Drawing.Point(0, 24)
         Me.BarDockControl5.Manager = Me.Contactos_DetailsBarManager
-        Me.BarDockControl5.Size = New System.Drawing.Size(0, 3)
+        Me.BarDockControl5.Size = New System.Drawing.Size(0, 7)
         '
         'BarDockControl6
         '
         Me.BarDockControl6.CausesValidation = False
         Me.BarDockControl6.Dock = System.Windows.Forms.DockStyle.Right
-        Me.BarDockControl6.Location = New System.Drawing.Point(870, 24)
+        Me.BarDockControl6.Location = New System.Drawing.Point(907, 24)
         Me.BarDockControl6.Manager = Me.Contactos_DetailsBarManager
-        Me.BarDockControl6.Size = New System.Drawing.Size(0, 3)
+        Me.BarDockControl6.Size = New System.Drawing.Size(0, 7)
         '
         'Contactos_DetailsPopUpMenu
         '
@@ -946,16 +1029,19 @@ Partial Class EmpresaEditForm
         Me.Controls.Add(Me.RibbonStatusBar1)
         Me.Controls.Add(Me.ribbonControl)
         Me.Name = "EmpresaEditForm"
-        Me.Size = New System.Drawing.Size(918, 660)
+        Me.Size = New System.Drawing.Size(955, 697)
         CType(Me.ribbonControl, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.mvvmContext, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dataLayout, System.ComponentModel.ISupportInitialize).EndInit()
         Me.dataLayout.ResumeLayout(False)
+        CType(Me.IdTipoEmpresaAfipSearchLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmpresasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TipoEmpresaAfipBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.IdTipoEmpresaAfipSearchLookUpEditView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.contactosGridControl, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ContactosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.contactosGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmailTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmpresasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ActividadesGridControl, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmpresasActividadesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ActividadesGridView, System.ComponentModel.ISupportInitialize).EndInit()
@@ -994,6 +1080,9 @@ Partial Class EmpresaEditForm
         CType(Me.LayoutControlItem11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem15, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmptySpaceItem3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmptySpaceItem4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.actividades_DetailsPopUpMenu, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Contactos_DetailsBarManager, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Contactos_DetailsPopUpMenu, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1093,4 +1182,12 @@ Partial Class EmpresaEditForm
     Friend WithEvents bbiDelete As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents bbiClose As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents bsiEstado As DevExpress.XtraBars.BarStaticItem
+    Friend WithEvents IdTipoEmpresaAfipSearchLookUpEdit As DevExpress.XtraEditors.SearchLookUpEdit
+    Friend WithEvents IdTipoEmpresaAfipSearchLookUpEditView As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents LayoutControlItem15 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents EmptySpaceItem3 As DevExpress.XtraLayout.EmptySpaceItem
+    Friend WithEvents EmptySpaceItem4 As DevExpress.XtraLayout.EmptySpaceItem
+    Friend WithEvents TipoEmpresaAfipBindingSource As BindingSource
+    Friend WithEvents colCodigoAfip As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colDescripcion As DevExpress.XtraGrid.Columns.GridColumn
 End Class

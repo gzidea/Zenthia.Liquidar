@@ -10,6 +10,7 @@ Partial Public Class Empresas
         EmpresasActividades = New HashSet(Of EmpresasActividades)()
         Legajos = New HashSet(Of Legajos)()
         Recibos = New HashSet(Of Recibos)()
+        LSDRegistro01 = New HashSet(Of LSDRegistro01)()
     End Sub
 
     <DatabaseGenerated(DatabaseGeneratedOption.Identity)>
@@ -39,15 +40,21 @@ Partial Public Class Empresas
     <StringLength(255)>
     Public Property Telefono As String
 
+    Public Property IdTipoEmpresaAfip As Nullable(Of Integer)
+
     Public Overridable Property Contactos As ICollection(Of Contactos)
 
     Public Overridable Property Provincias As Provincias
 
     Public Overridable Property TipoClaveUnica As TipoClaveUnica
 
+    Public Overridable Property TipoEmpresaAfip As TipoEmpresaAfip
+
     Public Overridable Property EmpresasActividades As ICollection(Of EmpresasActividades)
 
     Public Overridable Property Legajos As ICollection(Of Legajos)
 
     Public Overridable Property Recibos As ICollection(Of Recibos)
+
+    Public Overridable Property LSDRegistro01 As ICollection(Of LSDRegistro01)
 End Class

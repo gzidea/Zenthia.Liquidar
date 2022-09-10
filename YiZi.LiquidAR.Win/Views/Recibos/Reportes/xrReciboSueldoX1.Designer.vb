@@ -71,6 +71,7 @@ Partial Public Class xrReciboSueldoX1
         Me.XrLabel37 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel36 = New DevExpress.XtraReports.UI.XRLabel()
         Me.PageFooter = New DevExpress.XtraReports.UI.PageFooterBand()
+        Me.xlbLocalidad = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel27 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel28 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel29 = New DevExpress.XtraReports.UI.XRLabel()
@@ -80,7 +81,6 @@ Partial Public Class xrReciboSueldoX1
         Me.xlblTotalEnLetras = New DevExpress.XtraReports.UI.XRLabel()
         Me.xlblLugarYFechaDePago = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrCrossBandBox1 = New DevExpress.XtraReports.UI.XRCrossBandBox()
-        Me.xlbLocalidad = New DevExpress.XtraReports.UI.XRLabel()
         CType(Me.ObjectDataSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
@@ -219,7 +219,7 @@ Partial Public Class xrReciboSueldoX1
         Me.Detail1.HeightF = 58.42!
         Me.Detail1.HierarchyPrintOptions.Indent = 50.8!
         Me.Detail1.Name = "Detail1"
-        Me.Detail1.SortFields.AddRange(New DevExpress.XtraReports.UI.GroupField() {New DevExpress.XtraReports.UI.GroupField("Formulas.Codigo", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)})
+        Me.Detail1.SortFields.AddRange(New DevExpress.XtraReports.UI.GroupField() {New DevExpress.XtraReports.UI.GroupField("Formulas.Orden", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending), New DevExpress.XtraReports.UI.GroupField("Formulas.Codigo", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)})
         Me.Detail1.StylePriority.UseBorders = False
         Me.Detail1.StylePriority.UseBorderWidth = False
         '
@@ -874,6 +874,25 @@ Partial Public Class xrReciboSueldoX1
         Me.PageFooter.HeightF = 380.2475!
         Me.PageFooter.Name = "PageFooter"
         '
+        'xlbLocalidad
+        '
+        Me.xlbLocalidad.Borders = DevExpress.XtraPrinting.BorderSide.None
+        Me.xlbLocalidad.Dpi = 254.0!
+        Me.xlbLocalidad.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Empresas].[Localidad]")})
+        Me.xlbLocalidad.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.xlbLocalidad.LocationFloat = New DevExpress.Utils.PointFloat(63.5!, 213.9624!)
+        Me.xlbLocalidad.Multiline = True
+        Me.xlbLocalidad.Name = "xlbLocalidad"
+        Me.xlbLocalidad.Padding = New DevExpress.XtraPrinting.PaddingInfo(20, 5, 0, 0, 254.0!)
+        Me.xlbLocalidad.SizeF = New System.Drawing.SizeF(413.5625!, 53.12846!)
+        Me.xlbLocalidad.StylePriority.UseBorders = False
+        Me.xlbLocalidad.StylePriority.UseFont = False
+        Me.xlbLocalidad.StylePriority.UsePadding = False
+        Me.xlbLocalidad.StylePriority.UseTextAlignment = False
+        Me.xlbLocalidad.Text = "RECONQUISTA"
+        Me.xlbLocalidad.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        Me.xlbLocalidad.Visible = False
+        '
         'XrLabel27
         '
         Me.XrLabel27.BackColor = System.Drawing.Color.LightGray
@@ -1029,25 +1048,6 @@ Partial Public Class xrReciboSueldoX1
         Me.XrCrossBandBox1.StartBand = Me.PageHeader
         Me.XrCrossBandBox1.StartPointFloat = New DevExpress.Utils.PointFloat(0!, 0!)
         Me.XrCrossBandBox1.WidthF = 1858.188!
-        '
-        'xlbLocalidad
-        '
-        Me.xlbLocalidad.Borders = DevExpress.XtraPrinting.BorderSide.None
-        Me.xlbLocalidad.Dpi = 254.0!
-        Me.xlbLocalidad.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Empresas].[Localidad]")})
-        Me.xlbLocalidad.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.xlbLocalidad.LocationFloat = New DevExpress.Utils.PointFloat(63.5!, 213.9624!)
-        Me.xlbLocalidad.Multiline = True
-        Me.xlbLocalidad.Name = "xlbLocalidad"
-        Me.xlbLocalidad.Padding = New DevExpress.XtraPrinting.PaddingInfo(20, 5, 0, 0, 254.0!)
-        Me.xlbLocalidad.SizeF = New System.Drawing.SizeF(413.5625!, 53.12846!)
-        Me.xlbLocalidad.StylePriority.UseBorders = False
-        Me.xlbLocalidad.StylePriority.UseFont = False
-        Me.xlbLocalidad.StylePriority.UsePadding = False
-        Me.xlbLocalidad.StylePriority.UseTextAlignment = False
-        Me.xlbLocalidad.Text = "RECONQUISTA"
-        Me.xlbLocalidad.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        Me.xlbLocalidad.Visible = False
         '
         'xrReciboSueldoX1
         '

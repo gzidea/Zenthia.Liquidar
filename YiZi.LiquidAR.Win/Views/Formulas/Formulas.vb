@@ -32,4 +32,15 @@ Public Class Formulas
         'fluentAPI.WithEvent(Of CustomColumnDisplayTextEventArgs)(gridView, "CustomColumnDisplayText").Confirmation()
         fluentAPI.SetBinding(bsiRecordsCount, Function(item) item.Caption, Function(x) x.Entities.Count, Function(count) String.Format("Registros : {0}", count))
     End Sub
+
+    Private Sub bbiExportar_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiExportar.ItemClick
+        Dim dialogo As SaveFileDialog = New SaveFileDialog()
+        Dim file As String = ""
+
+        dialogo.Filter = "Archivo Excel | *.xlsx"
+        If dialogo.ShowDialog = DialogResult.OK Then
+            file = dialogo.FileName
+        End If
+        gridView.ExportToXlsx(file)
+    End Sub
 End Class

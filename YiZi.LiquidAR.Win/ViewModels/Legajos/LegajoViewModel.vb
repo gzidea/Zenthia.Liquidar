@@ -70,6 +70,12 @@ Partial Public Class LegajoViewModel
         End Get
     End Property
 
+    Public ReadOnly Property LookUpEstadosCiviles As IEntitiesViewModel(Of YiZi.AccesoDatos.EstadosCiviles)
+        Get
+            Return GetLookUpEntitiesViewModel(Function(ByVal x As LegajoViewModel) x.LookUpEstadosCiviles, Function(x) x.EstadosCiviles)
+        End Get
+    End Property
+
     Public ReadOnly Property LookUpFormasDePagos As IEntitiesViewModel(Of YiZi.AccesoDatos.FormasDePagos)
         Get
             Return GetLookUpEntitiesViewModel(Function(ByVal x As LegajoViewModel) x.LookUpFormasDePagos, Function(x) x.FormasDePagos)
@@ -85,6 +91,42 @@ Partial Public Class LegajoViewModel
     Public ReadOnly Property LookUpObrasSociales As IEntitiesViewModel(Of YiZi.AccesoDatos.ObrasSociales)
         Get
             Return GetLookUpEntitiesViewModel(Function(ByVal x As LegajoViewModel) x.LookUpObrasSociales, Function(x) x.ObrasSociales)
+        End Get
+    End Property
+
+    Public ReadOnly Property LookUpCodigosDeRevistas As IEntitiesViewModel(Of YiZi.AccesoDatos.CodigosDeRevistas)
+        Get
+            Return GetLookUpEntitiesViewModel(Function(ByVal x As LegajoViewModel) x.LookUpCodigosDeRevistas, Function(x) x.CodigosDeRevistas)
+        End Get
+    End Property
+
+    Public ReadOnly Property LookUpCodigosDeActivdadEmpleados As IEntitiesViewModel(Of YiZi.AccesoDatos.CodigosDeActivdadEmpleados)
+        Get
+            Return GetLookUpEntitiesViewModel(Function(ByVal x As LegajoViewModel) x.LookUpCodigosDeActivdadEmpleados, Function(x) x.CodigosDeActivdadEmpleados)
+        End Get
+    End Property
+
+    Public ReadOnly Property LookUpCodigosDeCondiciones As IEntitiesViewModel(Of YiZi.AccesoDatos.CodigosDeCondiciones)
+        Get
+            Return GetLookUpEntitiesViewModel(Function(ByVal x As LegajoViewModel) x.LookUpCodigosDeCondiciones, Function(x) x.CodigosDeCondiciones)
+        End Get
+    End Property
+
+    Public ReadOnly Property LookUpCodigosDeLocalidades As IEntitiesViewModel(Of YiZi.AccesoDatos.CodigosDeLocalidades)
+        Get
+            Return GetLookUpEntitiesViewModel(Function(ByVal x As LegajoViewModel) x.LookUpCodigosDeLocalidades, Function(x) x.CodigosDeLocalidades)
+        End Get
+    End Property
+
+    Public ReadOnly Property LookUpCodigosDeModalidadDeContratacion As IEntitiesViewModel(Of YiZi.AccesoDatos.CodigosDeModalidadDeContratacion)
+        Get
+            Return GetLookUpEntitiesViewModel(Function(ByVal x As LegajoViewModel) x.LookUpCodigosDeModalidadDeContratacion, Function(x) x.CodigosDeModalidadDeContratacion)
+        End Get
+    End Property
+
+    Public ReadOnly Property LookUpCodigosDeSiniestrados As IEntitiesViewModel(Of YiZi.AccesoDatos.CodigosDeSiniestrados)
+        Get
+            Return GetLookUpEntitiesViewModel(Function(ByVal x As LegajoViewModel) x.LookUpCodigosDeSiniestrados, Function(x) x.CodigosDeSiniestrados)
         End Get
     End Property
 

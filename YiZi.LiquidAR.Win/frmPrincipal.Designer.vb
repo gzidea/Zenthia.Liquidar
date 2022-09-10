@@ -33,9 +33,11 @@ Partial Class frmPrincipal
         Me.AccordionControlElement6 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlElement7 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.aceiConvenios = New DevExpress.XtraBars.Navigation.AccordionControlElement()
-        Me.AccordionControlElement10 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
+        Me.aceiConceptosGenerales = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.aceiFormulas = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.aceiLegajosNovedades = New DevExpress.XtraBars.Navigation.AccordionControlElement()
+        Me.AccordionControlElement1 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
+        Me.aceiLibroDeSueldoDigital = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.AccordionControlElement12 = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.aceiEmpresas = New DevExpress.XtraBars.Navigation.AccordionControlElement()
         Me.aceiObrasSociales = New DevExpress.XtraBars.Navigation.AccordionControlElement()
@@ -101,7 +103,7 @@ Partial Class frmPrincipal
         '
         'AccordionControlElement2
         '
-        Me.AccordionControlElement2.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.aceiLegajos, Me.aceiRecibos, Me.aceiNovedades, Me.AccordionControlElement6, Me.AccordionControlElement7, Me.aceiLegajosNovedades})
+        Me.AccordionControlElement2.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.aceiLegajos, Me.aceiRecibos, Me.aceiNovedades, Me.AccordionControlElement6, Me.AccordionControlElement7, Me.aceiLegajosNovedades, Me.AccordionControlElement1})
         Me.AccordionControlElement2.Expanded = True
         Me.AccordionControlElement2.Name = "AccordionControlElement2"
         Me.AccordionControlElement2.Text = "Sueldos"
@@ -137,7 +139,7 @@ Partial Class frmPrincipal
         '
         'AccordionControlElement7
         '
-        Me.AccordionControlElement7.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.aceiConvenios, Me.AccordionControlElement10, Me.aceiFormulas})
+        Me.AccordionControlElement7.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.aceiConvenios, Me.aceiConceptosGenerales, Me.aceiFormulas})
         Me.AccordionControlElement7.Expanded = True
         Me.AccordionControlElement7.ImageOptions.SvgImage = Global.YiZi.LiquidAR.Win.My.Resources.Resources.calculationoptions
         Me.AccordionControlElement7.ImageOptions.SvgImageSize = New System.Drawing.Size(16, 16)
@@ -150,11 +152,11 @@ Partial Class frmPrincipal
         Me.aceiConvenios.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
         Me.aceiConvenios.Text = "Convenios /  Categorias"
         '
-        'AccordionControlElement10
+        'aceiConceptosGenerales
         '
-        Me.AccordionControlElement10.Name = "AccordionControlElement10"
-        Me.AccordionControlElement10.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
-        Me.AccordionControlElement10.Text = "Conceptos generales"
+        Me.aceiConceptosGenerales.Name = "aceiConceptosGenerales"
+        Me.aceiConceptosGenerales.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
+        Me.aceiConceptosGenerales.Text = "Conceptos generales"
         '
         'aceiFormulas
         '
@@ -169,6 +171,19 @@ Partial Class frmPrincipal
         Me.aceiLegajosNovedades.Name = "aceiLegajosNovedades"
         Me.aceiLegajosNovedades.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
         Me.aceiLegajosNovedades.Text = "Novedades"
+        Me.aceiLegajosNovedades.Visible = False
+        '
+        'AccordionControlElement1
+        '
+        Me.AccordionControlElement1.Elements.AddRange(New DevExpress.XtraBars.Navigation.AccordionControlElement() {Me.aceiLibroDeSueldoDigital})
+        Me.AccordionControlElement1.Name = "AccordionControlElement1"
+        Me.AccordionControlElement1.Text = "Libro de Sueldo Digital"
+        '
+        'aceiLibroDeSueldoDigital
+        '
+        Me.aceiLibroDeSueldoDigital.Name = "aceiLibroDeSueldoDigital"
+        Me.aceiLibroDeSueldoDigital.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item
+        Me.aceiLibroDeSueldoDigital.Text = "Libros de Sueldos Digitales"
         '
         'AccordionControlElement12
         '
@@ -418,7 +433,7 @@ Partial Class frmPrincipal
     Friend WithEvents AccordionControlElement6 As DevExpress.XtraBars.Navigation.AccordionControlElement
     Friend WithEvents AccordionControlElement7 As DevExpress.XtraBars.Navigation.AccordionControlElement
     Friend WithEvents aceiConvenios As DevExpress.XtraBars.Navigation.AccordionControlElement
-    Friend WithEvents AccordionControlElement10 As DevExpress.XtraBars.Navigation.AccordionControlElement
+    Friend WithEvents aceiConceptosGenerales As DevExpress.XtraBars.Navigation.AccordionControlElement
     Friend WithEvents aceiFormulas As DevExpress.XtraBars.Navigation.AccordionControlElement
     Friend WithEvents AccordionControlElement12 As DevExpress.XtraBars.Navigation.AccordionControlElement
     Friend WithEvents aceiEmpresas As DevExpress.XtraBars.Navigation.AccordionControlElement
@@ -449,4 +464,6 @@ Partial Class frmPrincipal
     Friend WithEvents aceiRoles As DevExpress.XtraBars.Navigation.AccordionControlElement
     Friend WithEvents lookAndFeelSettingsHelper As LookAndFeelSettingsHelper
     Friend WithEvents aceiLegajosNovedades As DevExpress.XtraBars.Navigation.AccordionControlElement
+    Friend WithEvents AccordionControlElement1 As DevExpress.XtraBars.Navigation.AccordionControlElement
+    Friend WithEvents aceiLibroDeSueldoDigital As DevExpress.XtraBars.Navigation.AccordionControlElement
 End Class

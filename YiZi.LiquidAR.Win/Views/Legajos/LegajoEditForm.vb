@@ -29,8 +29,15 @@ Public Class LegajoEditForm
 
         fluent.SetBinding(FormasDePagosBindingSource, Function(abs) abs.DataSource, Function(x) x.LookUpFormasDePagos.Entities)
         fluent.SetBinding(ProvinciasBindingSource, Function(abs) abs.DataSource, Function(x) x.LookUpProvincias.Entities)
+        fluent.SetBinding(EstadosCivilesBindingSource, Function(abs) abs.DataSource, Function(x) x.LookUpEstadosCiviles.Entities)
         fluent.SetBinding(SindicatosBindingSource, Function(abs) abs.DataSource, Function(x) x.LookUpSindicatos.Entities)
         fluent.SetBinding(ObrasSocialesBindingSource, Function(abs) abs.DataSource, Function(x) x.LookUpObrasSociales.Entities)
+        fluent.SetBinding(CodigosDeRevistasBindingSource, Function(abs) abs.DataSource, Function(x) x.LookUpCodigosDeRevistas.Entities)
+        fluent.SetBinding(CodigosDeActivdadEmpleadosBindingSource, Function(abs) abs.DataSource, Function(x) x.LookUpCodigosDeActivdadEmpleados.Entities)
+        fluent.SetBinding(CodigosDeCondicionesBindingSource, Function(abs) abs.DataSource, Function(x) x.LookUpCodigosDeCondiciones.Entities)
+        fluent.SetBinding(CodigosDeLocalidadesBindingSource, Function(abs) abs.DataSource, Function(x) x.LookUpCodigosDeLocalidades.Entities)
+        fluent.SetBinding(CodigosDeModalidadDeContratacionBindingSource, Function(abs) abs.DataSource, Function(x) x.LookUpCodigosDeModalidadDeContratacion.Entities)
+        fluent.SetBinding(CodigosDeSiniestradosBindingSource, Function(abs) abs.DataSource, Function(x) x.LookUpCodigosDeSiniestrados.Entities)
 
         fluent.SetBinding(dataLayout, Function(abs) abs.Enabled, Function(x) x.CanEdit)
 

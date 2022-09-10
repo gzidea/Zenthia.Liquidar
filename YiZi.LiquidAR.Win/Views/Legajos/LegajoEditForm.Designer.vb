@@ -39,6 +39,50 @@ Partial Class LegajoEditForm
         Me.RibbonPageGroup3 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup4 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.dataLayout = New DevExpress.XtraLayout.LayoutControl()
+        Me.IdCodigoLocalidadSearchLookUpEdit = New DevExpress.XtraEditors.SearchLookUpEdit()
+        Me.LegajosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CodigosDeLocalidadesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.IdCodigoLocalidadSearchLookUpEditView = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.colCodigo = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colDescripcion7 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.IdCodigoSiniestradoSearchLookUpEdit = New DevExpress.XtraEditors.SearchLookUpEdit()
+        Me.CodigosDeSiniestradosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.IdCodigoSiniestradoSearchLookUpEditView = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.colId6 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colDescripcion6 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.IdCodigoModalidadContratacionSearchLookUpEdit = New DevExpress.XtraEditors.SearchLookUpEdit()
+        Me.CodigosDeModalidadDeContratacionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.IdCodigoModalidadContratacionSearchLookUpEditView = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.colId5 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colDescripcion5 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.IdCodigoActividadSearchLookUpEdit = New DevExpress.XtraEditors.SearchLookUpEdit()
+        Me.CodigosDeActivdadEmpleadosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.IdCodigoActividadSearchLookUpEditView = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.colId4 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colDescripcion4 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.IdCodigoCondicionSearchLookUpEdit = New DevExpress.XtraEditors.SearchLookUpEdit()
+        Me.CodigosDeCondicionesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.IdCodigoCondicionSearchLookUpEditView = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.colId3 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colDescripcion3 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.DescripcionCompletaTextEdit = New DevExpress.XtraEditors.TextEdit()
+        Me.DiaInicioRevista2SpinEdit = New DevExpress.XtraEditors.SpinEdit()
+        Me.DiaInicioRevista3SpinEdit = New DevExpress.XtraEditors.SpinEdit()
+        Me.DiaInicioRevista1SpinEdit1 = New DevExpress.XtraEditors.SpinEdit()
+        Me.IdSituacionRevista3SearchLookUpEdit = New DevExpress.XtraEditors.SearchLookUpEdit()
+        Me.CodigosDeRevistasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.IdSituacionRevista3SearchLookUpEditView = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.colId2 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colDescripcion2 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.IdSituacionRevista2SearchLookUpEdit = New DevExpress.XtraEditors.SearchLookUpEdit()
+        Me.IdSituacionRevista2SearchLookUpEditView = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.colId1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colDescripcion1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.IdSituacionRevista1SearchLookUpEdit = New DevExpress.XtraEditors.SearchLookUpEdit()
+        Me.IdSituacionRevista1SearchLookUpEditView = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.colId = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colDescripcion = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.FechaIngresoReconocidaDateEdit = New DevExpress.XtraEditors.DateEdit()
         Me.gridControl = New DevExpress.XtraGrid.GridControl()
         Me.LegajosConeptosParticularesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.gridView = New DevExpress.XtraGrid.Views.Grid.GridView()
@@ -51,7 +95,6 @@ Partial Class LegajoEditForm
         Me.colActivo = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.gridColSep01 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.CBUTextEdit = New DevExpress.XtraEditors.TextEdit()
-        Me.LegajosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.IdFormaDePagoLookUpEdit = New DevExpress.XtraEditors.LookUpEdit()
         Me.FormasDePagosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.FechaNacimientoDateEdit = New DevExpress.XtraEditors.DateEdit()
@@ -93,6 +136,8 @@ Partial Class LegajoEditForm
         Me.IdEmpresaSearchLookUpEditView = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colNombre = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colClaveUnica = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.IdEstadoCivilSpinEdit = New DevExpress.XtraEditors.LookUpEdit()
+        Me.EstadosCivilesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.barDockControlLeft = New DevExpress.XtraBars.BarDockControl()
         Me.LegajosConceptos_DetailsBarManager = New DevExpress.XtraBars.BarManager(Me.components)
         Me.Actividades_DetailsBar = New DevExpress.XtraBars.Bar()
@@ -122,9 +167,29 @@ Partial Class LegajoEditForm
         Me.LayoutControlItem23 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem26 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem11 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.LayoutControlItem34 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlGroup2 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.TabbedControlGroup1 = New DevExpress.XtraLayout.TabbedControlGroup()
+        Me.LayoutControlGroup8 = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.LayoutControlItem37 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem38 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem36 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem40 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem39 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem41 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.EmptySpaceItem9 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.EmptySpaceItem12 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.EmptySpaceItem13 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.EmptySpaceItem14 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.LayoutControlItem43 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem42 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem44 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem45 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem46 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.SimpleSeparator1 = New DevExpress.XtraLayout.SimpleSeparator()
+        Me.LayoutControlItem47 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlGroup3 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem8 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem9 = New DevExpress.XtraLayout.LayoutControlItem()
@@ -148,9 +213,9 @@ Partial Class LegajoEditForm
         Me.LayoutControlItem15 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem16 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem20 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.EmptySpaceItem9 = New DevExpress.XtraLayout.EmptySpaceItem()
-        Me.LayoutControlGroup7 = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.LayoutControlItem35 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem6 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.LayoutControlGroup7 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem29 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.mvvmContext = New DevExpress.Utils.MVVM.MVVMContext(Me.components)
@@ -161,11 +226,39 @@ Partial Class LegajoEditForm
         CType(Me.ribbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dataLayout, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.dataLayout.SuspendLayout()
+        CType(Me.IdCodigoLocalidadSearchLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LegajosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CodigosDeLocalidadesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.IdCodigoLocalidadSearchLookUpEditView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.IdCodigoSiniestradoSearchLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CodigosDeSiniestradosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.IdCodigoSiniestradoSearchLookUpEditView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.IdCodigoModalidadContratacionSearchLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CodigosDeModalidadDeContratacionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.IdCodigoModalidadContratacionSearchLookUpEditView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.IdCodigoActividadSearchLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CodigosDeActivdadEmpleadosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.IdCodigoActividadSearchLookUpEditView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.IdCodigoCondicionSearchLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CodigosDeCondicionesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.IdCodigoCondicionSearchLookUpEditView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DescripcionCompletaTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DiaInicioRevista2SpinEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DiaInicioRevista3SpinEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DiaInicioRevista1SpinEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.IdSituacionRevista3SearchLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CodigosDeRevistasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.IdSituacionRevista3SearchLookUpEditView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.IdSituacionRevista2SearchLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.IdSituacionRevista2SearchLookUpEditView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.IdSituacionRevista1SearchLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.IdSituacionRevista1SearchLookUpEditView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FechaIngresoReconocidaDateEdit.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FechaIngresoReconocidaDateEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gridControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LegajosConeptosParticularesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CBUTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LegajosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.IdFormaDePagoLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FormasDePagosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FechaNacimientoDateEdit.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -206,6 +299,8 @@ Partial Class LegajoEditForm
         CType(Me.IdEmpresaSearchLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmpresasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.IdEmpresaSearchLookUpEditView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.IdEstadoCivilSpinEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EstadosCivilesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LegajosConceptos_DetailsBarManager, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem30, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem31, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -226,9 +321,29 @@ Partial Class LegajoEditForm
         CType(Me.LayoutControlItem23, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem26, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem11, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem34, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TabbedControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlGroup8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem37, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem38, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem36, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem40, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem39, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem41, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmptySpaceItem9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmptySpaceItem12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmptySpaceItem13, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmptySpaceItem14, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem43, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem42, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem44, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem45, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem46, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SimpleSeparator1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem47, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem9, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -252,9 +367,9 @@ Partial Class LegajoEditForm
         CType(Me.LayoutControlItem15, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem16, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem20, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmptySpaceItem9, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlGroup7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem35, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlGroup7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem29, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.mvvmContext, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -273,10 +388,10 @@ Partial Class LegajoEditForm
         'RibbonStatusBar1
         '
         Me.RibbonStatusBar1.ItemLinks.Add(Me.bsiEstado)
-        Me.RibbonStatusBar1.Location = New System.Drawing.Point(0, 834)
+        Me.RibbonStatusBar1.Location = New System.Drawing.Point(0, 661)
         Me.RibbonStatusBar1.Name = "RibbonStatusBar1"
         Me.RibbonStatusBar1.Ribbon = Me.ribbonControl
-        Me.RibbonStatusBar1.Size = New System.Drawing.Size(1250, 27)
+        Me.RibbonStatusBar1.Size = New System.Drawing.Size(1261, 27)
         '
         'bsiEstado
         '
@@ -294,7 +409,7 @@ Partial Class LegajoEditForm
         Me.ribbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.[False]
         Me.ribbonControl.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
-        Me.ribbonControl.Size = New System.Drawing.Size(1250, 100)
+        Me.ribbonControl.Size = New System.Drawing.Size(1261, 100)
         Me.ribbonControl.StatusBar = Me.RibbonStatusBar1
         Me.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -400,6 +515,19 @@ Partial Class LegajoEditForm
         '
         'dataLayout
         '
+        Me.dataLayout.Controls.Add(Me.IdCodigoLocalidadSearchLookUpEdit)
+        Me.dataLayout.Controls.Add(Me.IdCodigoSiniestradoSearchLookUpEdit)
+        Me.dataLayout.Controls.Add(Me.IdCodigoModalidadContratacionSearchLookUpEdit)
+        Me.dataLayout.Controls.Add(Me.IdCodigoActividadSearchLookUpEdit)
+        Me.dataLayout.Controls.Add(Me.IdCodigoCondicionSearchLookUpEdit)
+        Me.dataLayout.Controls.Add(Me.DescripcionCompletaTextEdit)
+        Me.dataLayout.Controls.Add(Me.DiaInicioRevista2SpinEdit)
+        Me.dataLayout.Controls.Add(Me.DiaInicioRevista3SpinEdit)
+        Me.dataLayout.Controls.Add(Me.DiaInicioRevista1SpinEdit1)
+        Me.dataLayout.Controls.Add(Me.IdSituacionRevista3SearchLookUpEdit)
+        Me.dataLayout.Controls.Add(Me.IdSituacionRevista2SearchLookUpEdit)
+        Me.dataLayout.Controls.Add(Me.IdSituacionRevista1SearchLookUpEdit)
+        Me.dataLayout.Controls.Add(Me.FechaIngresoReconocidaDateEdit)
         Me.dataLayout.Controls.Add(Me.gridControl)
         Me.dataLayout.Controls.Add(Me.CBUTextEdit)
         Me.dataLayout.Controls.Add(Me.IdFormaDePagoLookUpEdit)
@@ -428,6 +556,7 @@ Partial Class LegajoEditForm
         Me.dataLayout.Controls.Add(Me.LegajoSpinEdit)
         Me.dataLayout.Controls.Add(Me.IdActividadSearchLookUpEdit)
         Me.dataLayout.Controls.Add(Me.IdEmpresaSearchLookUpEdit)
+        Me.dataLayout.Controls.Add(Me.IdEstadoCivilSpinEdit)
         Me.dataLayout.Controls.Add(Me.barDockControlLeft)
         Me.dataLayout.Controls.Add(Me.barDockControlRight)
         Me.dataLayout.Controls.Add(Me.barDockControlBottom)
@@ -436,21 +565,416 @@ Partial Class LegajoEditForm
         Me.dataLayout.HiddenItems.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem30, Me.LayoutControlItem31, Me.LayoutControlItem32})
         Me.dataLayout.Location = New System.Drawing.Point(0, 100)
         Me.dataLayout.Name = "dataLayout"
-        Me.dataLayout.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = New System.Drawing.Rectangle(1270, 479, 650, 400)
+        Me.dataLayout.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = New System.Drawing.Rectangle(593, 480, 650, 400)
         Me.dataLayout.OptionsView.IsReadOnly = DevExpress.Utils.DefaultBoolean.[False]
         Me.dataLayout.Root = Me.Root
-        Me.dataLayout.Size = New System.Drawing.Size(1250, 734)
+        Me.dataLayout.Size = New System.Drawing.Size(1261, 561)
         Me.dataLayout.TabIndex = 2
         Me.dataLayout.Text = "LayoutControl1"
+        '
+        'IdCodigoLocalidadSearchLookUpEdit
+        '
+        Me.IdCodigoLocalidadSearchLookUpEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "IdCodigoLocalidad", True))
+        Me.IdCodigoLocalidadSearchLookUpEdit.Location = New System.Drawing.Point(144, 494)
+        Me.IdCodigoLocalidadSearchLookUpEdit.MenuManager = Me.ribbonControl
+        Me.IdCodigoLocalidadSearchLookUpEdit.Name = "IdCodigoLocalidadSearchLookUpEdit"
+        Me.IdCodigoLocalidadSearchLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.IdCodigoLocalidadSearchLookUpEdit.Properties.DataSource = Me.CodigosDeLocalidadesBindingSource
+        Me.IdCodigoLocalidadSearchLookUpEdit.Properties.DisplayMember = "DescripcionCompleta"
+        Me.IdCodigoLocalidadSearchLookUpEdit.Properties.PopupView = Me.IdCodigoLocalidadSearchLookUpEditView
+        Me.IdCodigoLocalidadSearchLookUpEdit.Properties.ValueMember = "Id"
+        Me.IdCodigoLocalidadSearchLookUpEdit.Size = New System.Drawing.Size(637, 20)
+        Me.IdCodigoLocalidadSearchLookUpEdit.StyleController = Me.dataLayout
+        Me.IdCodigoLocalidadSearchLookUpEdit.TabIndex = 73
+        '
+        'LegajosBindingSource
+        '
+        Me.LegajosBindingSource.DataSource = GetType(YiZi.AccesoDatos.Legajos)
+        '
+        'CodigosDeLocalidadesBindingSource
+        '
+        Me.CodigosDeLocalidadesBindingSource.DataSource = GetType(YiZi.AccesoDatos.CodigosDeLocalidades)
+        '
+        'IdCodigoLocalidadSearchLookUpEditView
+        '
+        Me.IdCodigoLocalidadSearchLookUpEditView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colCodigo, Me.colDescripcion7})
+        Me.IdCodigoLocalidadSearchLookUpEditView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
+        Me.IdCodigoLocalidadSearchLookUpEditView.Name = "IdCodigoLocalidadSearchLookUpEditView"
+        Me.IdCodigoLocalidadSearchLookUpEditView.OptionsSelection.EnableAppearanceFocusedCell = False
+        Me.IdCodigoLocalidadSearchLookUpEditView.OptionsView.ShowGroupPanel = False
+        '
+        'colCodigo
+        '
+        Me.colCodigo.FieldName = "Codigo"
+        Me.colCodigo.Name = "colCodigo"
+        Me.colCodigo.Visible = True
+        Me.colCodigo.VisibleIndex = 0
+        Me.colCodigo.Width = 68
+        '
+        'colDescripcion7
+        '
+        Me.colDescripcion7.FieldName = "Descripcion"
+        Me.colDescripcion7.Name = "colDescripcion7"
+        Me.colDescripcion7.Visible = True
+        Me.colDescripcion7.VisibleIndex = 1
+        Me.colDescripcion7.Width = 1547
+        '
+        'IdCodigoSiniestradoSearchLookUpEdit
+        '
+        Me.IdCodigoSiniestradoSearchLookUpEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "IdCodigoSiniestrado", True))
+        Me.IdCodigoSiniestradoSearchLookUpEdit.Location = New System.Drawing.Point(144, 470)
+        Me.IdCodigoSiniestradoSearchLookUpEdit.MenuManager = Me.ribbonControl
+        Me.IdCodigoSiniestradoSearchLookUpEdit.Name = "IdCodigoSiniestradoSearchLookUpEdit"
+        Me.IdCodigoSiniestradoSearchLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.IdCodigoSiniestradoSearchLookUpEdit.Properties.DataSource = Me.CodigosDeSiniestradosBindingSource
+        Me.IdCodigoSiniestradoSearchLookUpEdit.Properties.DisplayMember = "DescripcionCompleta"
+        Me.IdCodigoSiniestradoSearchLookUpEdit.Properties.PopupView = Me.IdCodigoSiniestradoSearchLookUpEditView
+        Me.IdCodigoSiniestradoSearchLookUpEdit.Properties.ValueMember = "Id"
+        Me.IdCodigoSiniestradoSearchLookUpEdit.Size = New System.Drawing.Size(637, 20)
+        Me.IdCodigoSiniestradoSearchLookUpEdit.StyleController = Me.dataLayout
+        Me.IdCodigoSiniestradoSearchLookUpEdit.TabIndex = 68
+        '
+        'CodigosDeSiniestradosBindingSource
+        '
+        Me.CodigosDeSiniestradosBindingSource.DataSource = GetType(YiZi.AccesoDatos.CodigosDeSiniestrados)
+        '
+        'IdCodigoSiniestradoSearchLookUpEditView
+        '
+        Me.IdCodigoSiniestradoSearchLookUpEditView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colId6, Me.colDescripcion6})
+        Me.IdCodigoSiniestradoSearchLookUpEditView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
+        Me.IdCodigoSiniestradoSearchLookUpEditView.Name = "IdCodigoSiniestradoSearchLookUpEditView"
+        Me.IdCodigoSiniestradoSearchLookUpEditView.OptionsSelection.EnableAppearanceFocusedCell = False
+        Me.IdCodigoSiniestradoSearchLookUpEditView.OptionsView.ShowGroupPanel = False
+        '
+        'colId6
+        '
+        Me.colId6.FieldName = "Id"
+        Me.colId6.Name = "colId6"
+        Me.colId6.Visible = True
+        Me.colId6.VisibleIndex = 0
+        Me.colId6.Width = 74
+        '
+        'colDescripcion6
+        '
+        Me.colDescripcion6.FieldName = "Descripcion"
+        Me.colDescripcion6.Name = "colDescripcion6"
+        Me.colDescripcion6.Visible = True
+        Me.colDescripcion6.VisibleIndex = 1
+        Me.colDescripcion6.Width = 1541
+        '
+        'IdCodigoModalidadContratacionSearchLookUpEdit
+        '
+        Me.IdCodigoModalidadContratacionSearchLookUpEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "IdCodigoModalidadContratacion", True))
+        Me.IdCodigoModalidadContratacionSearchLookUpEdit.Location = New System.Drawing.Point(144, 446)
+        Me.IdCodigoModalidadContratacionSearchLookUpEdit.MenuManager = Me.ribbonControl
+        Me.IdCodigoModalidadContratacionSearchLookUpEdit.Name = "IdCodigoModalidadContratacionSearchLookUpEdit"
+        Me.IdCodigoModalidadContratacionSearchLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.IdCodigoModalidadContratacionSearchLookUpEdit.Properties.DataSource = Me.CodigosDeModalidadDeContratacionBindingSource
+        Me.IdCodigoModalidadContratacionSearchLookUpEdit.Properties.DisplayMember = "DescripcionCompleta"
+        Me.IdCodigoModalidadContratacionSearchLookUpEdit.Properties.PopupView = Me.IdCodigoModalidadContratacionSearchLookUpEditView
+        Me.IdCodigoModalidadContratacionSearchLookUpEdit.Properties.ValueMember = "Id"
+        Me.IdCodigoModalidadContratacionSearchLookUpEdit.Size = New System.Drawing.Size(637, 20)
+        Me.IdCodigoModalidadContratacionSearchLookUpEdit.StyleController = Me.dataLayout
+        Me.IdCodigoModalidadContratacionSearchLookUpEdit.TabIndex = 67
+        '
+        'CodigosDeModalidadDeContratacionBindingSource
+        '
+        Me.CodigosDeModalidadDeContratacionBindingSource.DataSource = GetType(YiZi.AccesoDatos.CodigosDeModalidadDeContratacion)
+        '
+        'IdCodigoModalidadContratacionSearchLookUpEditView
+        '
+        Me.IdCodigoModalidadContratacionSearchLookUpEditView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colId5, Me.colDescripcion5})
+        Me.IdCodigoModalidadContratacionSearchLookUpEditView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
+        Me.IdCodigoModalidadContratacionSearchLookUpEditView.Name = "IdCodigoModalidadContratacionSearchLookUpEditView"
+        Me.IdCodigoModalidadContratacionSearchLookUpEditView.OptionsSelection.EnableAppearanceFocusedCell = False
+        Me.IdCodigoModalidadContratacionSearchLookUpEditView.OptionsView.ShowGroupPanel = False
+        '
+        'colId5
+        '
+        Me.colId5.FieldName = "Id"
+        Me.colId5.Name = "colId5"
+        Me.colId5.Visible = True
+        Me.colId5.VisibleIndex = 0
+        Me.colId5.Width = 62
+        '
+        'colDescripcion5
+        '
+        Me.colDescripcion5.FieldName = "Descripcion"
+        Me.colDescripcion5.Name = "colDescripcion5"
+        Me.colDescripcion5.Visible = True
+        Me.colDescripcion5.VisibleIndex = 1
+        Me.colDescripcion5.Width = 1553
+        '
+        'IdCodigoActividadSearchLookUpEdit
+        '
+        Me.IdCodigoActividadSearchLookUpEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "IdCodigoActividad", True))
+        Me.IdCodigoActividadSearchLookUpEdit.Location = New System.Drawing.Point(144, 422)
+        Me.IdCodigoActividadSearchLookUpEdit.MenuManager = Me.ribbonControl
+        Me.IdCodigoActividadSearchLookUpEdit.Name = "IdCodigoActividadSearchLookUpEdit"
+        Me.IdCodigoActividadSearchLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.IdCodigoActividadSearchLookUpEdit.Properties.DataSource = Me.CodigosDeActivdadEmpleadosBindingSource
+        Me.IdCodigoActividadSearchLookUpEdit.Properties.DisplayMember = "DescripcionCompleta"
+        Me.IdCodigoActividadSearchLookUpEdit.Properties.PopupView = Me.IdCodigoActividadSearchLookUpEditView
+        Me.IdCodigoActividadSearchLookUpEdit.Properties.ValueMember = "Id"
+        Me.IdCodigoActividadSearchLookUpEdit.Size = New System.Drawing.Size(637, 20)
+        Me.IdCodigoActividadSearchLookUpEdit.StyleController = Me.dataLayout
+        Me.IdCodigoActividadSearchLookUpEdit.TabIndex = 66
+        '
+        'CodigosDeActivdadEmpleadosBindingSource
+        '
+        Me.CodigosDeActivdadEmpleadosBindingSource.DataSource = GetType(YiZi.AccesoDatos.CodigosDeActivdadEmpleados)
+        '
+        'IdCodigoActividadSearchLookUpEditView
+        '
+        Me.IdCodigoActividadSearchLookUpEditView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colId4, Me.colDescripcion4})
+        Me.IdCodigoActividadSearchLookUpEditView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
+        Me.IdCodigoActividadSearchLookUpEditView.Name = "IdCodigoActividadSearchLookUpEditView"
+        Me.IdCodigoActividadSearchLookUpEditView.OptionsSelection.EnableAppearanceFocusedCell = False
+        Me.IdCodigoActividadSearchLookUpEditView.OptionsView.ShowGroupPanel = False
+        '
+        'colId4
+        '
+        Me.colId4.FieldName = "Id"
+        Me.colId4.Name = "colId4"
+        Me.colId4.Visible = True
+        Me.colId4.VisibleIndex = 0
+        Me.colId4.Width = 49
+        '
+        'colDescripcion4
+        '
+        Me.colDescripcion4.FieldName = "Descripcion"
+        Me.colDescripcion4.Name = "colDescripcion4"
+        Me.colDescripcion4.Visible = True
+        Me.colDescripcion4.VisibleIndex = 1
+        Me.colDescripcion4.Width = 1566
+        '
+        'IdCodigoCondicionSearchLookUpEdit
+        '
+        Me.IdCodigoCondicionSearchLookUpEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "IdCodigoCondicion", True))
+        Me.IdCodigoCondicionSearchLookUpEdit.Location = New System.Drawing.Point(144, 398)
+        Me.IdCodigoCondicionSearchLookUpEdit.MenuManager = Me.ribbonControl
+        Me.IdCodigoCondicionSearchLookUpEdit.Name = "IdCodigoCondicionSearchLookUpEdit"
+        Me.IdCodigoCondicionSearchLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.IdCodigoCondicionSearchLookUpEdit.Properties.DataSource = Me.CodigosDeCondicionesBindingSource
+        Me.IdCodigoCondicionSearchLookUpEdit.Properties.DisplayMember = "DescripcionCompleta"
+        Me.IdCodigoCondicionSearchLookUpEdit.Properties.PopupView = Me.IdCodigoCondicionSearchLookUpEditView
+        Me.IdCodigoCondicionSearchLookUpEdit.Properties.ValueMember = "Id"
+        Me.IdCodigoCondicionSearchLookUpEdit.Size = New System.Drawing.Size(637, 20)
+        Me.IdCodigoCondicionSearchLookUpEdit.StyleController = Me.dataLayout
+        Me.IdCodigoCondicionSearchLookUpEdit.TabIndex = 65
+        '
+        'CodigosDeCondicionesBindingSource
+        '
+        Me.CodigosDeCondicionesBindingSource.DataSource = GetType(YiZi.AccesoDatos.CodigosDeCondiciones)
+        '
+        'IdCodigoCondicionSearchLookUpEditView
+        '
+        Me.IdCodigoCondicionSearchLookUpEditView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colId3, Me.colDescripcion3})
+        Me.IdCodigoCondicionSearchLookUpEditView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
+        Me.IdCodigoCondicionSearchLookUpEditView.Name = "IdCodigoCondicionSearchLookUpEditView"
+        Me.IdCodigoCondicionSearchLookUpEditView.OptionsSelection.EnableAppearanceFocusedCell = False
+        Me.IdCodigoCondicionSearchLookUpEditView.OptionsView.ShowGroupPanel = False
+        '
+        'colId3
+        '
+        Me.colId3.FieldName = "Id"
+        Me.colId3.Name = "colId3"
+        Me.colId3.Visible = True
+        Me.colId3.VisibleIndex = 0
+        Me.colId3.Width = 38
+        '
+        'colDescripcion3
+        '
+        Me.colDescripcion3.FieldName = "Descripcion"
+        Me.colDescripcion3.Name = "colDescripcion3"
+        Me.colDescripcion3.Visible = True
+        Me.colDescripcion3.VisibleIndex = 1
+        Me.colDescripcion3.Width = 1577
+        '
+        'DescripcionCompletaTextEdit
+        '
+        Me.DescripcionCompletaTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "CodigoDeRevistaActual.DescripcionCompleta", True))
+        Me.DescripcionCompletaTextEdit.Location = New System.Drawing.Point(144, 363)
+        Me.DescripcionCompletaTextEdit.MenuManager = Me.ribbonControl
+        Me.DescripcionCompletaTextEdit.Name = "DescripcionCompletaTextEdit"
+        Me.DescripcionCompletaTextEdit.Size = New System.Drawing.Size(468, 20)
+        Me.DescripcionCompletaTextEdit.StyleController = Me.dataLayout
+        Me.DescripcionCompletaTextEdit.TabIndex = 64
+        '
+        'DiaInicioRevista2SpinEdit
+        '
+        Me.DiaInicioRevista2SpinEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "DiaInicioRevista2", True))
+        Me.DiaInicioRevista2SpinEdit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
+        Me.DiaInicioRevista2SpinEdit.Location = New System.Drawing.Point(726, 305)
+        Me.DiaInicioRevista2SpinEdit.MenuManager = Me.ribbonControl
+        Me.DiaInicioRevista2SpinEdit.Name = "DiaInicioRevista2SpinEdit"
+        Me.DiaInicioRevista2SpinEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.DiaInicioRevista2SpinEdit.Size = New System.Drawing.Size(55, 20)
+        Me.DiaInicioRevista2SpinEdit.StyleController = Me.dataLayout
+        Me.DiaInicioRevista2SpinEdit.TabIndex = 54
+        '
+        'DiaInicioRevista3SpinEdit
+        '
+        Me.DiaInicioRevista3SpinEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "DiaInicioRevista3", True))
+        Me.DiaInicioRevista3SpinEdit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
+        Me.DiaInicioRevista3SpinEdit.Location = New System.Drawing.Point(726, 329)
+        Me.DiaInicioRevista3SpinEdit.MenuManager = Me.ribbonControl
+        Me.DiaInicioRevista3SpinEdit.Name = "DiaInicioRevista3SpinEdit"
+        Me.DiaInicioRevista3SpinEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.DiaInicioRevista3SpinEdit.Size = New System.Drawing.Size(55, 20)
+        Me.DiaInicioRevista3SpinEdit.StyleController = Me.dataLayout
+        Me.DiaInicioRevista3SpinEdit.TabIndex = 53
+        '
+        'DiaInicioRevista1SpinEdit1
+        '
+        Me.DiaInicioRevista1SpinEdit1.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "DiaInicioRevista1", True))
+        Me.DiaInicioRevista1SpinEdit1.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
+        Me.DiaInicioRevista1SpinEdit1.Location = New System.Drawing.Point(726, 281)
+        Me.DiaInicioRevista1SpinEdit1.MenuManager = Me.ribbonControl
+        Me.DiaInicioRevista1SpinEdit1.Name = "DiaInicioRevista1SpinEdit1"
+        Me.DiaInicioRevista1SpinEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.DiaInicioRevista1SpinEdit1.Size = New System.Drawing.Size(55, 20)
+        Me.DiaInicioRevista1SpinEdit1.StyleController = Me.dataLayout
+        Me.DiaInicioRevista1SpinEdit1.TabIndex = 52
+        '
+        'IdSituacionRevista3SearchLookUpEdit
+        '
+        Me.IdSituacionRevista3SearchLookUpEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "IdSituacionRevista3", True))
+        Me.IdSituacionRevista3SearchLookUpEdit.Location = New System.Drawing.Point(144, 329)
+        Me.IdSituacionRevista3SearchLookUpEdit.MenuManager = Me.ribbonControl
+        Me.IdSituacionRevista3SearchLookUpEdit.Name = "IdSituacionRevista3SearchLookUpEdit"
+        Me.IdSituacionRevista3SearchLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.IdSituacionRevista3SearchLookUpEdit.Properties.DataSource = Me.CodigosDeRevistasBindingSource
+        Me.IdSituacionRevista3SearchLookUpEdit.Properties.DisplayMember = "DescripcionCompleta"
+        Me.IdSituacionRevista3SearchLookUpEdit.Properties.PopupView = Me.IdSituacionRevista3SearchLookUpEditView
+        Me.IdSituacionRevista3SearchLookUpEdit.Properties.ValueMember = "Id"
+        Me.IdSituacionRevista3SearchLookUpEdit.Size = New System.Drawing.Size(468, 20)
+        Me.IdSituacionRevista3SearchLookUpEdit.StyleController = Me.dataLayout
+        Me.IdSituacionRevista3SearchLookUpEdit.TabIndex = 50
+        '
+        'CodigosDeRevistasBindingSource
+        '
+        Me.CodigosDeRevistasBindingSource.DataSource = GetType(YiZi.AccesoDatos.CodigosDeRevistas)
+        '
+        'IdSituacionRevista3SearchLookUpEditView
+        '
+        Me.IdSituacionRevista3SearchLookUpEditView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colId2, Me.colDescripcion2})
+        Me.IdSituacionRevista3SearchLookUpEditView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
+        Me.IdSituacionRevista3SearchLookUpEditView.Name = "IdSituacionRevista3SearchLookUpEditView"
+        Me.IdSituacionRevista3SearchLookUpEditView.OptionsSelection.EnableAppearanceFocusedCell = False
+        Me.IdSituacionRevista3SearchLookUpEditView.OptionsView.ShowGroupPanel = False
+        '
+        'colId2
+        '
+        Me.colId2.FieldName = "Id"
+        Me.colId2.Name = "colId2"
+        Me.colId2.Visible = True
+        Me.colId2.VisibleIndex = 0
+        Me.colId2.Width = 38
+        '
+        'colDescripcion2
+        '
+        Me.colDescripcion2.FieldName = "Descripcion"
+        Me.colDescripcion2.Name = "colDescripcion2"
+        Me.colDescripcion2.Visible = True
+        Me.colDescripcion2.VisibleIndex = 1
+        Me.colDescripcion2.Width = 1577
+        '
+        'IdSituacionRevista2SearchLookUpEdit
+        '
+        Me.IdSituacionRevista2SearchLookUpEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "IdSituacionRevista2", True))
+        Me.IdSituacionRevista2SearchLookUpEdit.Location = New System.Drawing.Point(144, 305)
+        Me.IdSituacionRevista2SearchLookUpEdit.MenuManager = Me.ribbonControl
+        Me.IdSituacionRevista2SearchLookUpEdit.Name = "IdSituacionRevista2SearchLookUpEdit"
+        Me.IdSituacionRevista2SearchLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.IdSituacionRevista2SearchLookUpEdit.Properties.DataSource = Me.CodigosDeRevistasBindingSource
+        Me.IdSituacionRevista2SearchLookUpEdit.Properties.DisplayMember = "DescripcionCompleta"
+        Me.IdSituacionRevista2SearchLookUpEdit.Properties.PopupView = Me.IdSituacionRevista2SearchLookUpEditView
+        Me.IdSituacionRevista2SearchLookUpEdit.Properties.ValueMember = "Id"
+        Me.IdSituacionRevista2SearchLookUpEdit.Size = New System.Drawing.Size(468, 20)
+        Me.IdSituacionRevista2SearchLookUpEdit.StyleController = Me.dataLayout
+        Me.IdSituacionRevista2SearchLookUpEdit.TabIndex = 49
+        '
+        'IdSituacionRevista2SearchLookUpEditView
+        '
+        Me.IdSituacionRevista2SearchLookUpEditView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colId1, Me.colDescripcion1})
+        Me.IdSituacionRevista2SearchLookUpEditView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
+        Me.IdSituacionRevista2SearchLookUpEditView.Name = "IdSituacionRevista2SearchLookUpEditView"
+        Me.IdSituacionRevista2SearchLookUpEditView.OptionsSelection.EnableAppearanceFocusedCell = False
+        Me.IdSituacionRevista2SearchLookUpEditView.OptionsView.ShowGroupPanel = False
+        '
+        'colId1
+        '
+        Me.colId1.FieldName = "Id"
+        Me.colId1.Name = "colId1"
+        Me.colId1.Visible = True
+        Me.colId1.VisibleIndex = 0
+        '
+        'colDescripcion1
+        '
+        Me.colDescripcion1.FieldName = "Descripcion"
+        Me.colDescripcion1.Name = "colDescripcion1"
+        Me.colDescripcion1.Visible = True
+        Me.colDescripcion1.VisibleIndex = 1
+        '
+        'IdSituacionRevista1SearchLookUpEdit
+        '
+        Me.IdSituacionRevista1SearchLookUpEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "IdSituacionRevista1", True))
+        Me.IdSituacionRevista1SearchLookUpEdit.Location = New System.Drawing.Point(144, 281)
+        Me.IdSituacionRevista1SearchLookUpEdit.MenuManager = Me.ribbonControl
+        Me.IdSituacionRevista1SearchLookUpEdit.Name = "IdSituacionRevista1SearchLookUpEdit"
+        Me.IdSituacionRevista1SearchLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.IdSituacionRevista1SearchLookUpEdit.Properties.DataSource = Me.CodigosDeRevistasBindingSource
+        Me.IdSituacionRevista1SearchLookUpEdit.Properties.DisplayMember = "DescripcionCompleta"
+        Me.IdSituacionRevista1SearchLookUpEdit.Properties.PopupView = Me.IdSituacionRevista1SearchLookUpEditView
+        Me.IdSituacionRevista1SearchLookUpEdit.Properties.ValueMember = "Id"
+        Me.IdSituacionRevista1SearchLookUpEdit.Size = New System.Drawing.Size(468, 20)
+        Me.IdSituacionRevista1SearchLookUpEdit.StyleController = Me.dataLayout
+        Me.IdSituacionRevista1SearchLookUpEdit.TabIndex = 48
+        '
+        'IdSituacionRevista1SearchLookUpEditView
+        '
+        Me.IdSituacionRevista1SearchLookUpEditView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colId, Me.colDescripcion})
+        Me.IdSituacionRevista1SearchLookUpEditView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
+        Me.IdSituacionRevista1SearchLookUpEditView.Name = "IdSituacionRevista1SearchLookUpEditView"
+        Me.IdSituacionRevista1SearchLookUpEditView.OptionsSelection.EnableAppearanceFocusedCell = False
+        Me.IdSituacionRevista1SearchLookUpEditView.OptionsView.ShowGroupPanel = False
+        '
+        'colId
+        '
+        Me.colId.FieldName = "Id"
+        Me.colId.Name = "colId"
+        Me.colId.Visible = True
+        Me.colId.VisibleIndex = 0
+        '
+        'colDescripcion
+        '
+        Me.colDescripcion.FieldName = "Descripcion"
+        Me.colDescripcion.Name = "colDescripcion"
+        Me.colDescripcion.Visible = True
+        Me.colDescripcion.VisibleIndex = 1
+        '
+        'FechaIngresoReconocidaDateEdit
+        '
+        Me.FechaIngresoReconocidaDateEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "FechaIngresoReconocida", True))
+        Me.FechaIngresoReconocidaDateEdit.EditValue = Nothing
+        Me.FechaIngresoReconocidaDateEdit.Location = New System.Drawing.Point(489, 281)
+        Me.FechaIngresoReconocidaDateEdit.MenuManager = Me.ribbonControl
+        Me.FechaIngresoReconocidaDateEdit.Name = "FechaIngresoReconocidaDateEdit"
+        Me.FechaIngresoReconocidaDateEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.FechaIngresoReconocidaDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.FechaIngresoReconocidaDateEdit.Size = New System.Drawing.Size(163, 20)
+        Me.FechaIngresoReconocidaDateEdit.StyleController = Me.dataLayout
+        Me.FechaIngresoReconocidaDateEdit.TabIndex = 43
         '
         'gridControl
         '
         Me.gridControl.DataSource = Me.LegajosConeptosParticularesBindingSource
-        Me.gridControl.Location = New System.Drawing.Point(24, 593)
+        Me.gridControl.Location = New System.Drawing.Point(24, 313)
         Me.gridControl.MainView = Me.gridView
         Me.gridControl.MenuManager = Me.ribbonControl
         Me.gridControl.Name = "gridControl"
-        Me.gridControl.Size = New System.Drawing.Size(1202, 107)
+        Me.gridControl.Size = New System.Drawing.Size(1213, 224)
         Me.gridControl.TabIndex = 33
         Me.gridControl.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridView})
         '
@@ -533,21 +1057,17 @@ Partial Class LegajoEditForm
         'CBUTextEdit
         '
         Me.CBUTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "CBU", True))
-        Me.CBUTextEdit.Location = New System.Drawing.Point(901, 408)
+        Me.CBUTextEdit.Location = New System.Drawing.Point(940, 434)
         Me.CBUTextEdit.MenuManager = Me.ribbonControl
         Me.CBUTextEdit.Name = "CBUTextEdit"
-        Me.CBUTextEdit.Size = New System.Drawing.Size(313, 20)
+        Me.CBUTextEdit.Size = New System.Drawing.Size(285, 20)
         Me.CBUTextEdit.StyleController = Me.dataLayout
         Me.CBUTextEdit.TabIndex = 32
-        '
-        'LegajosBindingSource
-        '
-        Me.LegajosBindingSource.DataSource = GetType(YiZi.AccesoDatos.Legajos)
         '
         'IdFormaDePagoLookUpEdit
         '
         Me.IdFormaDePagoLookUpEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "IdFormaDePago", True))
-        Me.IdFormaDePagoLookUpEdit.Location = New System.Drawing.Point(901, 384)
+        Me.IdFormaDePagoLookUpEdit.Location = New System.Drawing.Point(940, 410)
         Me.IdFormaDePagoLookUpEdit.MenuManager = Me.ribbonControl
         Me.IdFormaDePagoLookUpEdit.Name = "IdFormaDePagoLookUpEdit"
         Me.IdFormaDePagoLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -555,7 +1075,7 @@ Partial Class LegajoEditForm
         Me.IdFormaDePagoLookUpEdit.Properties.DataSource = Me.FormasDePagosBindingSource
         Me.IdFormaDePagoLookUpEdit.Properties.DisplayMember = "Descripcion"
         Me.IdFormaDePagoLookUpEdit.Properties.ValueMember = "Id"
-        Me.IdFormaDePagoLookUpEdit.Size = New System.Drawing.Size(313, 20)
+        Me.IdFormaDePagoLookUpEdit.Size = New System.Drawing.Size(285, 20)
         Me.IdFormaDePagoLookUpEdit.StyleController = Me.dataLayout
         Me.IdFormaDePagoLookUpEdit.TabIndex = 31
         '
@@ -567,12 +1087,12 @@ Partial Class LegajoEditForm
         '
         Me.FechaNacimientoDateEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "FechaNacimiento", True))
         Me.FechaNacimientoDateEdit.EditValue = Nothing
-        Me.FechaNacimientoDateEdit.Location = New System.Drawing.Point(706, 186)
+        Me.FechaNacimientoDateEdit.Location = New System.Drawing.Point(738, 186)
         Me.FechaNacimientoDateEdit.MenuManager = Me.ribbonControl
         Me.FechaNacimientoDateEdit.Name = "FechaNacimientoDateEdit"
         Me.FechaNacimientoDateEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.FechaNacimientoDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.FechaNacimientoDateEdit.Size = New System.Drawing.Size(144, 20)
+        Me.FechaNacimientoDateEdit.Size = New System.Drawing.Size(114, 20)
         Me.FechaNacimientoDateEdit.StyleController = Me.dataLayout
         Me.FechaNacimientoDateEdit.TabIndex = 30
         '
@@ -580,30 +1100,30 @@ Partial Class LegajoEditForm
         '
         Me.HijosSpinEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "Hijos", True))
         Me.HijosSpinEdit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.HijosSpinEdit.Location = New System.Drawing.Point(475, 186)
+        Me.HijosSpinEdit.Location = New System.Drawing.Point(472, 186)
         Me.HijosSpinEdit.MenuManager = Me.ribbonControl
         Me.HijosSpinEdit.Name = "HijosSpinEdit"
         Me.HijosSpinEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.HijosSpinEdit.Size = New System.Drawing.Size(79, 20)
+        Me.HijosSpinEdit.Size = New System.Drawing.Size(82, 20)
         Me.HijosSpinEdit.StyleController = Me.dataLayout
         Me.HijosSpinEdit.TabIndex = 29
         '
         'ConyugeCheckEdit
         '
         Me.ConyugeCheckEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "Conyuge", True))
-        Me.ConyugeCheckEdit.Location = New System.Drawing.Point(324, 186)
+        Me.ConyugeCheckEdit.Location = New System.Drawing.Point(325, 186)
         Me.ConyugeCheckEdit.MenuManager = Me.ribbonControl
         Me.ConyugeCheckEdit.Name = "ConyugeCheckEdit"
         Me.ConyugeCheckEdit.Properties.Caption = "Conyuge"
         Me.ConyugeCheckEdit.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.ConyugeCheckEdit.Size = New System.Drawing.Size(107, 20)
+        Me.ConyugeCheckEdit.Size = New System.Drawing.Size(103, 20)
         Me.ConyugeCheckEdit.StyleController = Me.dataLayout
         Me.ConyugeCheckEdit.TabIndex = 28
         '
         'IdProvinciaLookUpEdit
         '
         Me.IdProvinciaLookUpEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "IdProvincia", True))
-        Me.IdProvinciaLookUpEdit.Location = New System.Drawing.Point(965, 210)
+        Me.IdProvinciaLookUpEdit.Location = New System.Drawing.Point(973, 210)
         Me.IdProvinciaLookUpEdit.MenuManager = Me.ribbonControl
         Me.IdProvinciaLookUpEdit.Name = "IdProvinciaLookUpEdit"
         Me.IdProvinciaLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -611,7 +1131,7 @@ Partial Class LegajoEditForm
         Me.IdProvinciaLookUpEdit.Properties.DataSource = Me.ProvinciasBindingSource
         Me.IdProvinciaLookUpEdit.Properties.DisplayMember = "Nombre"
         Me.IdProvinciaLookUpEdit.Properties.ValueMember = "Id"
-        Me.IdProvinciaLookUpEdit.Size = New System.Drawing.Size(261, 20)
+        Me.IdProvinciaLookUpEdit.Size = New System.Drawing.Size(264, 20)
         Me.IdProvinciaLookUpEdit.StyleController = Me.dataLayout
         Me.IdProvinciaLookUpEdit.TabIndex = 27
         '
@@ -622,20 +1142,20 @@ Partial Class LegajoEditForm
         'LocalidadTextEdit
         '
         Me.LocalidadTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "Localidad", True))
-        Me.LocalidadTextEdit.Location = New System.Drawing.Point(570, 210)
+        Me.LocalidadTextEdit.Location = New System.Drawing.Point(576, 210)
         Me.LocalidadTextEdit.MenuManager = Me.ribbonControl
         Me.LocalidadTextEdit.Name = "LocalidadTextEdit"
-        Me.LocalidadTextEdit.Size = New System.Drawing.Size(331, 20)
+        Me.LocalidadTextEdit.Size = New System.Drawing.Size(333, 20)
         Me.LocalidadTextEdit.StyleController = Me.dataLayout
         Me.LocalidadTextEdit.TabIndex = 26
         '
         'DomicilioTextEdit
         '
         Me.DomicilioTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "Domicilio", True))
-        Me.DomicilioTextEdit.Location = New System.Drawing.Point(115, 210)
+        Me.DomicilioTextEdit.Location = New System.Drawing.Point(144, 210)
         Me.DomicilioTextEdit.MenuManager = Me.ribbonControl
         Me.DomicilioTextEdit.Name = "DomicilioTextEdit"
-        Me.DomicilioTextEdit.Size = New System.Drawing.Size(390, 20)
+        Me.DomicilioTextEdit.Size = New System.Drawing.Size(367, 20)
         Me.DomicilioTextEdit.StyleController = Me.dataLayout
         Me.DomicilioTextEdit.TabIndex = 25
         '
@@ -643,11 +1163,11 @@ Partial Class LegajoEditForm
         '
         Me.AdherentesSpinEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "Adherentes", True))
         Me.AdherentesSpinEdit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.AdherentesSpinEdit.Location = New System.Drawing.Point(103, 504)
+        Me.AdherentesSpinEdit.Location = New System.Drawing.Point(566, 353)
         Me.AdherentesSpinEdit.MenuManager = Me.ribbonControl
         Me.AdherentesSpinEdit.Name = "AdherentesSpinEdit"
         Me.AdherentesSpinEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.AdherentesSpinEdit.Size = New System.Drawing.Size(132, 20)
+        Me.AdherentesSpinEdit.Size = New System.Drawing.Size(205, 20)
         Me.AdherentesSpinEdit.StyleController = Me.dataLayout
         Me.AdherentesSpinEdit.TabIndex = 24
         '
@@ -655,13 +1175,13 @@ Partial Class LegajoEditForm
         '
         Me.AdicionalSpinEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "Adicional", True))
         Me.AdicionalSpinEdit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.AdicionalSpinEdit.Location = New System.Drawing.Point(127, 432)
+        Me.AdicionalSpinEdit.Location = New System.Drawing.Point(156, 458)
         Me.AdicionalSpinEdit.MenuManager = Me.ribbonControl
         Me.AdicionalSpinEdit.Name = "AdicionalSpinEdit"
         Me.AdicionalSpinEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.AdicionalSpinEdit.Properties.DisplayFormat.FormatString = "c2"
         Me.AdicionalSpinEdit.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.AdicionalSpinEdit.Size = New System.Drawing.Size(189, 20)
+        Me.AdicionalSpinEdit.Size = New System.Drawing.Size(170, 20)
         Me.AdicionalSpinEdit.StyleController = Me.dataLayout
         Me.AdicionalSpinEdit.TabIndex = 23
         '
@@ -669,30 +1189,30 @@ Partial Class LegajoEditForm
         '
         Me.SueldoSpinEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "Sueldo", True))
         Me.SueldoSpinEdit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.SueldoSpinEdit.Location = New System.Drawing.Point(127, 408)
+        Me.SueldoSpinEdit.Location = New System.Drawing.Point(156, 434)
         Me.SueldoSpinEdit.MenuManager = Me.ribbonControl
         Me.SueldoSpinEdit.Name = "SueldoSpinEdit"
         Me.SueldoSpinEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.SueldoSpinEdit.Properties.DisplayFormat.FormatString = "c2"
         Me.SueldoSpinEdit.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.SueldoSpinEdit.Size = New System.Drawing.Size(189, 20)
+        Me.SueldoSpinEdit.Size = New System.Drawing.Size(170, 20)
         Me.SueldoSpinEdit.StyleController = Me.dataLayout
         Me.SueldoSpinEdit.TabIndex = 22
         '
         'AntiguedadStrTextEdit
         '
         Me.AntiguedadStrTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "AntiguedadStr", True))
-        Me.AntiguedadStrTextEdit.Location = New System.Drawing.Point(442, 279)
+        Me.AntiguedadStrTextEdit.Location = New System.Drawing.Point(778, 281)
         Me.AntiguedadStrTextEdit.MenuManager = Me.ribbonControl
         Me.AntiguedadStrTextEdit.Name = "AntiguedadStrTextEdit"
-        Me.AntiguedadStrTextEdit.Size = New System.Drawing.Size(273, 20)
+        Me.AntiguedadStrTextEdit.Size = New System.Drawing.Size(197, 20)
         Me.AntiguedadStrTextEdit.StyleController = Me.dataLayout
         Me.AntiguedadStrTextEdit.TabIndex = 21
         '
         'IdSindicatoLookUpEdit
         '
         Me.IdSindicatoLookUpEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "IdSindicato", True))
-        Me.IdSindicatoLookUpEdit.Location = New System.Drawing.Point(682, 480)
+        Me.IdSindicatoLookUpEdit.Location = New System.Drawing.Point(835, 353)
         Me.IdSindicatoLookUpEdit.MenuManager = Me.ribbonControl
         Me.IdSindicatoLookUpEdit.Name = "IdSindicatoLookUpEdit"
         Me.IdSindicatoLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -700,7 +1220,7 @@ Partial Class LegajoEditForm
         Me.IdSindicatoLookUpEdit.Properties.DataSource = Me.SindicatosBindingSource
         Me.IdSindicatoLookUpEdit.Properties.DisplayMember = "Nombre"
         Me.IdSindicatoLookUpEdit.Properties.ValueMember = "Id"
-        Me.IdSindicatoLookUpEdit.Size = New System.Drawing.Size(556, 20)
+        Me.IdSindicatoLookUpEdit.Size = New System.Drawing.Size(402, 20)
         Me.IdSindicatoLookUpEdit.StyleController = Me.dataLayout
         Me.IdSindicatoLookUpEdit.TabIndex = 20
         '
@@ -711,7 +1231,7 @@ Partial Class LegajoEditForm
         'IdObrasocialLookUpEdit
         '
         Me.IdObrasocialLookUpEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "IdObrasocial", True))
-        Me.IdObrasocialLookUpEdit.Location = New System.Drawing.Point(103, 480)
+        Me.IdObrasocialLookUpEdit.Location = New System.Drawing.Point(144, 353)
         Me.IdObrasocialLookUpEdit.MenuManager = Me.ribbonControl
         Me.IdObrasocialLookUpEdit.Name = "IdObrasocialLookUpEdit"
         Me.IdObrasocialLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -719,7 +1239,7 @@ Partial Class LegajoEditForm
         Me.IdObrasocialLookUpEdit.Properties.DataSource = Me.ObrasSocialesBindingSource
         Me.IdObrasocialLookUpEdit.Properties.DisplayMember = "Nombre"
         Me.IdObrasocialLookUpEdit.Properties.ValueMember = "Id"
-        Me.IdObrasocialLookUpEdit.Size = New System.Drawing.Size(515, 20)
+        Me.IdObrasocialLookUpEdit.Size = New System.Drawing.Size(298, 20)
         Me.IdObrasocialLookUpEdit.StyleController = Me.dataLayout
         Me.IdObrasocialLookUpEdit.TabIndex = 19
         '
@@ -730,7 +1250,7 @@ Partial Class LegajoEditForm
         'IdJornadaLookUpEdit
         '
         Me.IdJornadaLookUpEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "IdJornada", True))
-        Me.IdJornadaLookUpEdit.Location = New System.Drawing.Point(471, 432)
+        Me.IdJornadaLookUpEdit.Location = New System.Drawing.Point(508, 458)
         Me.IdJornadaLookUpEdit.MenuManager = Me.ribbonControl
         Me.IdJornadaLookUpEdit.Name = "IdJornadaLookUpEdit"
         Me.IdJornadaLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -738,7 +1258,7 @@ Partial Class LegajoEditForm
         Me.IdJornadaLookUpEdit.Properties.DataSource = Me.JornadasBindingSource
         Me.IdJornadaLookUpEdit.Properties.DisplayMember = "Descripcion"
         Me.IdJornadaLookUpEdit.Properties.ValueMember = "Id"
-        Me.IdJornadaLookUpEdit.Size = New System.Drawing.Size(311, 20)
+        Me.IdJornadaLookUpEdit.Size = New System.Drawing.Size(284, 20)
         Me.IdJornadaLookUpEdit.StyleController = Me.dataLayout
         Me.IdJornadaLookUpEdit.TabIndex = 18
         '
@@ -749,7 +1269,7 @@ Partial Class LegajoEditForm
         'IdConvenioLookUpEdit
         '
         Me.IdConvenioLookUpEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "IdConvenio", True))
-        Me.IdConvenioLookUpEdit.Location = New System.Drawing.Point(471, 384)
+        Me.IdConvenioLookUpEdit.Location = New System.Drawing.Point(508, 410)
         Me.IdConvenioLookUpEdit.MenuManager = Me.ribbonControl
         Me.IdConvenioLookUpEdit.Name = "IdConvenioLookUpEdit"
         Me.IdConvenioLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -757,7 +1277,7 @@ Partial Class LegajoEditForm
         Me.IdConvenioLookUpEdit.Properties.DataSource = Me.ConveniosBindingSource
         Me.IdConvenioLookUpEdit.Properties.DisplayMember = "Nombre"
         Me.IdConvenioLookUpEdit.Properties.ValueMember = "Id"
-        Me.IdConvenioLookUpEdit.Size = New System.Drawing.Size(311, 20)
+        Me.IdConvenioLookUpEdit.Size = New System.Drawing.Size(284, 20)
         Me.IdConvenioLookUpEdit.StyleController = Me.dataLayout
         Me.IdConvenioLookUpEdit.TabIndex = 17
         '
@@ -768,7 +1288,7 @@ Partial Class LegajoEditForm
         'IdCategoriaLookUpEdit
         '
         Me.IdCategoriaLookUpEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "IdCategoria", True))
-        Me.IdCategoriaLookUpEdit.Location = New System.Drawing.Point(471, 408)
+        Me.IdCategoriaLookUpEdit.Location = New System.Drawing.Point(508, 434)
         Me.IdCategoriaLookUpEdit.MenuManager = Me.ribbonControl
         Me.IdCategoriaLookUpEdit.Name = "IdCategoriaLookUpEdit"
         Me.IdCategoriaLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -776,7 +1296,7 @@ Partial Class LegajoEditForm
         Me.IdCategoriaLookUpEdit.Properties.DataSource = Me.CategoriasBindingSource
         Me.IdCategoriaLookUpEdit.Properties.DisplayMember = "Descripcion"
         Me.IdCategoriaLookUpEdit.Properties.ValueMember = "Id"
-        Me.IdCategoriaLookUpEdit.Size = New System.Drawing.Size(311, 20)
+        Me.IdCategoriaLookUpEdit.Size = New System.Drawing.Size(284, 20)
         Me.IdCategoriaLookUpEdit.StyleController = Me.dataLayout
         Me.IdCategoriaLookUpEdit.TabIndex = 16
         '
@@ -787,21 +1307,21 @@ Partial Class LegajoEditForm
         'FueraconvenioCheckEdit
         '
         Me.FueraconvenioCheckEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "Fueraconvenio", True))
-        Me.FueraconvenioCheckEdit.Location = New System.Drawing.Point(36, 384)
+        Me.FueraconvenioCheckEdit.Location = New System.Drawing.Point(36, 410)
         Me.FueraconvenioCheckEdit.MenuManager = Me.ribbonControl
         Me.FueraconvenioCheckEdit.Name = "FueraconvenioCheckEdit"
         Me.FueraconvenioCheckEdit.Properties.Caption = "Fuera"
-        Me.FueraconvenioCheckEdit.Size = New System.Drawing.Size(280, 20)
+        Me.FueraconvenioCheckEdit.Size = New System.Drawing.Size(290, 20)
         Me.FueraconvenioCheckEdit.StyleController = Me.dataLayout
         Me.FueraconvenioCheckEdit.TabIndex = 14
         '
         'TareasTextEdit
         '
         Me.TareasTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "Tareas", True))
-        Me.TareasTextEdit.Location = New System.Drawing.Point(115, 327)
+        Me.TareasTextEdit.Location = New System.Drawing.Point(144, 329)
         Me.TareasTextEdit.MenuManager = Me.ribbonControl
         Me.TareasTextEdit.Name = "TareasTextEdit"
-        Me.TareasTextEdit.Size = New System.Drawing.Size(1111, 20)
+        Me.TareasTextEdit.Size = New System.Drawing.Size(1093, 20)
         Me.TareasTextEdit.StyleController = Me.dataLayout
         Me.TareasTextEdit.TabIndex = 13
         '
@@ -809,12 +1329,12 @@ Partial Class LegajoEditForm
         '
         Me.FechaEgresoDateEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "FechaEgreso", True))
         Me.FechaEgresoDateEdit.EditValue = Nothing
-        Me.FechaEgresoDateEdit.Location = New System.Drawing.Point(115, 303)
+        Me.FechaEgresoDateEdit.Location = New System.Drawing.Point(144, 305)
         Me.FechaEgresoDateEdit.MenuManager = Me.ribbonControl
         Me.FechaEgresoDateEdit.Name = "FechaEgresoDateEdit"
         Me.FechaEgresoDateEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.FechaEgresoDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.FechaEgresoDateEdit.Size = New System.Drawing.Size(188, 20)
+        Me.FechaEgresoDateEdit.Size = New System.Drawing.Size(165, 20)
         Me.FechaEgresoDateEdit.StyleController = Me.dataLayout
         Me.FechaEgresoDateEdit.TabIndex = 12
         '
@@ -822,42 +1342,42 @@ Partial Class LegajoEditForm
         '
         Me.FechaIngresoDateEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "FechaIngreso", True))
         Me.FechaIngresoDateEdit.EditValue = Nothing
-        Me.FechaIngresoDateEdit.Location = New System.Drawing.Point(115, 279)
+        Me.FechaIngresoDateEdit.Location = New System.Drawing.Point(144, 281)
         Me.FechaIngresoDateEdit.MenuManager = Me.ribbonControl
         Me.FechaIngresoDateEdit.Name = "FechaIngresoDateEdit"
         Me.FechaIngresoDateEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.FechaIngresoDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.FechaIngresoDateEdit.Size = New System.Drawing.Size(188, 20)
+        Me.FechaIngresoDateEdit.Size = New System.Drawing.Size(165, 20)
         Me.FechaIngresoDateEdit.StyleController = Me.dataLayout
         Me.FechaIngresoDateEdit.TabIndex = 11
         '
         'CUILTextEdit
         '
         Me.CUILTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "CUIL", True))
-        Me.CUILTextEdit.Location = New System.Drawing.Point(115, 186)
+        Me.CUILTextEdit.Location = New System.Drawing.Point(144, 186)
         Me.CUILTextEdit.MenuManager = Me.ribbonControl
         Me.CUILTextEdit.Name = "CUILTextEdit"
-        Me.CUILTextEdit.Size = New System.Drawing.Size(144, 20)
+        Me.CUILTextEdit.Size = New System.Drawing.Size(114, 20)
         Me.CUILTextEdit.StyleController = Me.dataLayout
         Me.CUILTextEdit.TabIndex = 10
         '
         'ApellidosTextEdit
         '
         Me.ApellidosTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "Apellidos", True))
-        Me.ApellidosTextEdit.Location = New System.Drawing.Point(674, 162)
+        Me.ApellidosTextEdit.Location = New System.Drawing.Point(678, 162)
         Me.ApellidosTextEdit.MenuManager = Me.ribbonControl
         Me.ApellidosTextEdit.Name = "ApellidosTextEdit"
-        Me.ApellidosTextEdit.Size = New System.Drawing.Size(552, 20)
+        Me.ApellidosTextEdit.Size = New System.Drawing.Size(559, 20)
         Me.ApellidosTextEdit.StyleController = Me.dataLayout
         Me.ApellidosTextEdit.TabIndex = 9
         '
         'NombresTextEdit
         '
         Me.NombresTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "Nombres", True))
-        Me.NombresTextEdit.Location = New System.Drawing.Point(115, 162)
+        Me.NombresTextEdit.Location = New System.Drawing.Point(144, 162)
         Me.NombresTextEdit.MenuManager = Me.ribbonControl
         Me.NombresTextEdit.Name = "NombresTextEdit"
-        Me.NombresTextEdit.Size = New System.Drawing.Size(496, 20)
+        Me.NombresTextEdit.Size = New System.Drawing.Size(471, 20)
         Me.NombresTextEdit.StyleController = Me.dataLayout
         Me.NombresTextEdit.TabIndex = 8
         '
@@ -865,18 +1385,18 @@ Partial Class LegajoEditForm
         '
         Me.LegajoSpinEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "Legajo", True))
         Me.LegajoSpinEdit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.LegajoSpinEdit.Location = New System.Drawing.Point(115, 138)
+        Me.LegajoSpinEdit.Location = New System.Drawing.Point(144, 138)
         Me.LegajoSpinEdit.MenuManager = Me.ribbonControl
         Me.LegajoSpinEdit.Name = "LegajoSpinEdit"
         Me.LegajoSpinEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.LegajoSpinEdit.Size = New System.Drawing.Size(107, 20)
+        Me.LegajoSpinEdit.Size = New System.Drawing.Size(77, 20)
         Me.LegajoSpinEdit.StyleController = Me.dataLayout
         Me.LegajoSpinEdit.TabIndex = 7
         '
         'IdActividadSearchLookUpEdit
         '
         Me.IdActividadSearchLookUpEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "idActividad", True))
-        Me.IdActividadSearchLookUpEdit.Location = New System.Drawing.Point(115, 69)
+        Me.IdActividadSearchLookUpEdit.Location = New System.Drawing.Point(144, 69)
         Me.IdActividadSearchLookUpEdit.MenuManager = Me.ribbonControl
         Me.IdActividadSearchLookUpEdit.Name = "IdActividadSearchLookUpEdit"
         Me.IdActividadSearchLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -884,7 +1404,7 @@ Partial Class LegajoEditForm
         Me.IdActividadSearchLookUpEdit.Properties.DisplayMember = "Actividades.Descripcion"
         Me.IdActividadSearchLookUpEdit.Properties.PopupView = Me.IdActividadSearchLookUpEditView
         Me.IdActividadSearchLookUpEdit.Properties.ValueMember = "Actividades.Id"
-        Me.IdActividadSearchLookUpEdit.Size = New System.Drawing.Size(1111, 20)
+        Me.IdActividadSearchLookUpEdit.Size = New System.Drawing.Size(1093, 20)
         Me.IdActividadSearchLookUpEdit.StyleController = Me.dataLayout
         Me.IdActividadSearchLookUpEdit.TabIndex = 6
         '
@@ -921,7 +1441,7 @@ Partial Class LegajoEditForm
         'IdEmpresaSearchLookUpEdit
         '
         Me.IdEmpresaSearchLookUpEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "IdEmpresa", True))
-        Me.IdEmpresaSearchLookUpEdit.Location = New System.Drawing.Point(115, 45)
+        Me.IdEmpresaSearchLookUpEdit.Location = New System.Drawing.Point(144, 45)
         Me.IdEmpresaSearchLookUpEdit.MenuManager = Me.ribbonControl
         Me.IdEmpresaSearchLookUpEdit.Name = "IdEmpresaSearchLookUpEdit"
         Me.IdEmpresaSearchLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -929,7 +1449,7 @@ Partial Class LegajoEditForm
         Me.IdEmpresaSearchLookUpEdit.Properties.DisplayMember = "Nombre"
         Me.IdEmpresaSearchLookUpEdit.Properties.PopupView = Me.IdEmpresaSearchLookUpEditView
         Me.IdEmpresaSearchLookUpEdit.Properties.ValueMember = "Id"
-        Me.IdEmpresaSearchLookUpEdit.Size = New System.Drawing.Size(1111, 20)
+        Me.IdEmpresaSearchLookUpEdit.Size = New System.Drawing.Size(1093, 20)
         Me.IdEmpresaSearchLookUpEdit.StyleController = Me.dataLayout
         Me.IdEmpresaSearchLookUpEdit.TabIndex = 5
         '
@@ -958,6 +1478,28 @@ Partial Class LegajoEditForm
         Me.colClaveUnica.Name = "colClaveUnica"
         Me.colClaveUnica.Visible = True
         Me.colClaveUnica.VisibleIndex = 1
+        '
+        'IdEstadoCivilSpinEdit
+        '
+        Me.IdEstadoCivilSpinEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosBindingSource, "IdEstadoCivil", True))
+        Me.IdEstadoCivilSpinEdit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
+        Me.IdEstadoCivilSpinEdit.Location = New System.Drawing.Point(1016, 186)
+        Me.IdEstadoCivilSpinEdit.MenuManager = Me.ribbonControl
+        Me.IdEstadoCivilSpinEdit.Name = "IdEstadoCivilSpinEdit"
+        Me.IdEstadoCivilSpinEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.IdEstadoCivilSpinEdit.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Descripcion", "Descripcion"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Abreviacion", "Abr.")})
+        Me.IdEstadoCivilSpinEdit.Properties.DataSource = Me.EstadosCivilesBindingSource
+        Me.IdEstadoCivilSpinEdit.Properties.DisplayMember = "Descripcion"
+        Me.IdEstadoCivilSpinEdit.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered
+        Me.IdEstadoCivilSpinEdit.Properties.NullText = ""
+        Me.IdEstadoCivilSpinEdit.Properties.ValueMember = "Id"
+        Me.IdEstadoCivilSpinEdit.Size = New System.Drawing.Size(221, 20)
+        Me.IdEstadoCivilSpinEdit.StyleController = Me.dataLayout
+        Me.IdEstadoCivilSpinEdit.TabIndex = 38
+        '
+        'EstadosCivilesBindingSource
+        '
+        Me.EstadosCivilesBindingSource.DataSource = GetType(YiZi.AccesoDatos.EstadosCiviles)
         '
         'barDockControlLeft
         '
@@ -1030,9 +1572,9 @@ Partial Class LegajoEditForm
         'BarDockControl1
         '
         Me.BarDockControl1.CausesValidation = False
-        Me.BarDockControl1.Location = New System.Drawing.Point(24, 561)
+        Me.BarDockControl1.Location = New System.Drawing.Point(24, 281)
         Me.BarDockControl1.Manager = Me.LegajosConceptos_DetailsBarManager
-        Me.BarDockControl1.Size = New System.Drawing.Size(1202, 28)
+        Me.BarDockControl1.Size = New System.Drawing.Size(1213, 28)
         '
         'barDockControlBottom
         '
@@ -1076,17 +1618,17 @@ Partial Class LegajoEditForm
         '
         Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
         Me.Root.GroupBordersVisible = False
-        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlGroup1, Me.LayoutControlGroup2, Me.LayoutControlGroup3, Me.LayoutControlItem15, Me.LayoutControlItem16, Me.LayoutControlItem20, Me.EmptySpaceItem9, Me.LayoutControlGroup7})
+        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlGroup1, Me.LayoutControlGroup2, Me.TabbedControlGroup1})
         Me.Root.Name = "Root"
-        Me.Root.Size = New System.Drawing.Size(1250, 734)
+        Me.Root.Size = New System.Drawing.Size(1261, 561)
         Me.Root.TextVisible = False
         '
         'LayoutControlGroup1
         '
-        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem4, Me.LayoutControlItem5, Me.LayoutControlItem7, Me.EmptySpaceItem1, Me.LayoutControlItem6, Me.EmptySpaceItem2, Me.LayoutControlItem21, Me.LayoutControlItem24, Me.LayoutControlItem25, Me.EmptySpaceItem10, Me.LayoutControlItem22, Me.LayoutControlItem23, Me.LayoutControlItem26, Me.EmptySpaceItem11})
+        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem4, Me.LayoutControlItem5, Me.LayoutControlItem7, Me.EmptySpaceItem1, Me.LayoutControlItem6, Me.EmptySpaceItem2, Me.LayoutControlItem21, Me.LayoutControlItem24, Me.LayoutControlItem25, Me.EmptySpaceItem10, Me.LayoutControlItem22, Me.LayoutControlItem23, Me.LayoutControlItem26, Me.EmptySpaceItem11, Me.LayoutControlItem34})
         Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 93)
         Me.LayoutControlGroup1.Name = "LayoutControlGroup1"
-        Me.LayoutControlGroup1.Size = New System.Drawing.Size(1230, 141)
+        Me.LayoutControlGroup1.Size = New System.Drawing.Size(1241, 141)
         Me.LayoutControlGroup1.Text = "Datos personales"
         '
         'LayoutControlItem4
@@ -1094,43 +1636,43 @@ Partial Class LegajoEditForm
         Me.LayoutControlItem4.Control = Me.LegajoSpinEdit
         Me.LayoutControlItem4.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem4.Name = "LayoutControlItem4"
-        Me.LayoutControlItem4.Size = New System.Drawing.Size(202, 24)
+        Me.LayoutControlItem4.Size = New System.Drawing.Size(201, 24)
         Me.LayoutControlItem4.Text = "Legajo:"
-        Me.LayoutControlItem4.TextSize = New System.Drawing.Size(88, 13)
+        Me.LayoutControlItem4.TextSize = New System.Drawing.Size(117, 13)
         '
         'LayoutControlItem5
         '
         Me.LayoutControlItem5.Control = Me.NombresTextEdit
         Me.LayoutControlItem5.Location = New System.Drawing.Point(0, 24)
         Me.LayoutControlItem5.Name = "LayoutControlItem5"
-        Me.LayoutControlItem5.Size = New System.Drawing.Size(591, 24)
+        Me.LayoutControlItem5.Size = New System.Drawing.Size(595, 24)
         Me.LayoutControlItem5.Text = "Nombres:"
-        Me.LayoutControlItem5.TextSize = New System.Drawing.Size(88, 13)
+        Me.LayoutControlItem5.TextSize = New System.Drawing.Size(117, 13)
         '
         'LayoutControlItem7
         '
         Me.LayoutControlItem7.Control = Me.CUILTextEdit
         Me.LayoutControlItem7.Location = New System.Drawing.Point(0, 48)
         Me.LayoutControlItem7.Name = "LayoutControlItem7"
-        Me.LayoutControlItem7.Size = New System.Drawing.Size(239, 24)
+        Me.LayoutControlItem7.Size = New System.Drawing.Size(238, 24)
         Me.LayoutControlItem7.Text = "CUIL:"
-        Me.LayoutControlItem7.TextSize = New System.Drawing.Size(88, 13)
+        Me.LayoutControlItem7.TextSize = New System.Drawing.Size(117, 13)
         '
         'EmptySpaceItem1
         '
         Me.EmptySpaceItem1.AllowHotTrack = False
-        Me.EmptySpaceItem1.Location = New System.Drawing.Point(202, 0)
+        Me.EmptySpaceItem1.Location = New System.Drawing.Point(201, 0)
         Me.EmptySpaceItem1.Name = "EmptySpaceItem1"
-        Me.EmptySpaceItem1.Size = New System.Drawing.Size(1004, 24)
+        Me.EmptySpaceItem1.Size = New System.Drawing.Size(1016, 24)
         Me.EmptySpaceItem1.TextSize = New System.Drawing.Size(0, 0)
         '
         'LayoutControlItem6
         '
         Me.LayoutControlItem6.Control = Me.ApellidosTextEdit
-        Me.LayoutControlItem6.Location = New System.Drawing.Point(591, 24)
+        Me.LayoutControlItem6.Location = New System.Drawing.Point(595, 24)
         Me.LayoutControlItem6.Name = "LayoutControlItem6"
         Me.LayoutControlItem6.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 2, 2, 2)
-        Me.LayoutControlItem6.Size = New System.Drawing.Size(615, 24)
+        Me.LayoutControlItem6.Size = New System.Drawing.Size(622, 24)
         Me.LayoutControlItem6.Text = "Apellidos:"
         Me.LayoutControlItem6.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize
         Me.LayoutControlItem6.TextSize = New System.Drawing.Size(46, 13)
@@ -1141,7 +1683,7 @@ Partial Class LegajoEditForm
         Me.EmptySpaceItem2.AllowHotTrack = False
         Me.EmptySpaceItem2.Location = New System.Drawing.Point(534, 48)
         Me.EmptySpaceItem2.Name = "EmptySpaceItem2"
-        Me.EmptySpaceItem2.Size = New System.Drawing.Size(57, 24)
+        Me.EmptySpaceItem2.Size = New System.Drawing.Size(60, 24)
         Me.EmptySpaceItem2.TextSize = New System.Drawing.Size(0, 0)
         '
         'LayoutControlItem21
@@ -1149,16 +1691,16 @@ Partial Class LegajoEditForm
         Me.LayoutControlItem21.Control = Me.DomicilioTextEdit
         Me.LayoutControlItem21.Location = New System.Drawing.Point(0, 72)
         Me.LayoutControlItem21.Name = "LayoutControlItem21"
-        Me.LayoutControlItem21.Size = New System.Drawing.Size(485, 24)
+        Me.LayoutControlItem21.Size = New System.Drawing.Size(491, 24)
         Me.LayoutControlItem21.Text = "Domicilio:"
-        Me.LayoutControlItem21.TextSize = New System.Drawing.Size(88, 13)
+        Me.LayoutControlItem21.TextSize = New System.Drawing.Size(117, 13)
         '
         'LayoutControlItem24
         '
         Me.LayoutControlItem24.Control = Me.ConyugeCheckEdit
-        Me.LayoutControlItem24.Location = New System.Drawing.Point(300, 48)
+        Me.LayoutControlItem24.Location = New System.Drawing.Point(301, 48)
         Me.LayoutControlItem24.Name = "LayoutControlItem24"
-        Me.LayoutControlItem24.Size = New System.Drawing.Size(111, 24)
+        Me.LayoutControlItem24.Size = New System.Drawing.Size(107, 24)
         Me.LayoutControlItem24.Text = "Conyuge:"
         Me.LayoutControlItem24.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem24.TextVisible = False
@@ -1166,10 +1708,10 @@ Partial Class LegajoEditForm
         'LayoutControlItem25
         '
         Me.LayoutControlItem25.Control = Me.HijosSpinEdit
-        Me.LayoutControlItem25.Location = New System.Drawing.Point(411, 48)
+        Me.LayoutControlItem25.Location = New System.Drawing.Point(408, 48)
         Me.LayoutControlItem25.Name = "LayoutControlItem25"
         Me.LayoutControlItem25.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 2, 2, 2)
-        Me.LayoutControlItem25.Size = New System.Drawing.Size(123, 24)
+        Me.LayoutControlItem25.Size = New System.Drawing.Size(126, 24)
         Me.LayoutControlItem25.Text = "Hijos:"
         Me.LayoutControlItem25.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize
         Me.LayoutControlItem25.TextSize = New System.Drawing.Size(27, 13)
@@ -1178,18 +1720,18 @@ Partial Class LegajoEditForm
         'EmptySpaceItem10
         '
         Me.EmptySpaceItem10.AllowHotTrack = False
-        Me.EmptySpaceItem10.Location = New System.Drawing.Point(239, 48)
+        Me.EmptySpaceItem10.Location = New System.Drawing.Point(238, 48)
         Me.EmptySpaceItem10.Name = "EmptySpaceItem10"
-        Me.EmptySpaceItem10.Size = New System.Drawing.Size(61, 24)
+        Me.EmptySpaceItem10.Size = New System.Drawing.Size(63, 24)
         Me.EmptySpaceItem10.TextSize = New System.Drawing.Size(0, 0)
         '
         'LayoutControlItem22
         '
         Me.LayoutControlItem22.Control = Me.LocalidadTextEdit
-        Me.LayoutControlItem22.Location = New System.Drawing.Point(485, 72)
+        Me.LayoutControlItem22.Location = New System.Drawing.Point(491, 72)
         Me.LayoutControlItem22.Name = "LayoutControlItem22"
         Me.LayoutControlItem22.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 2, 2, 2)
-        Me.LayoutControlItem22.Size = New System.Drawing.Size(396, 24)
+        Me.LayoutControlItem22.Size = New System.Drawing.Size(398, 24)
         Me.LayoutControlItem22.Text = "Localidad:"
         Me.LayoutControlItem22.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize
         Me.LayoutControlItem22.TextSize = New System.Drawing.Size(48, 13)
@@ -1198,10 +1740,10 @@ Partial Class LegajoEditForm
         'LayoutControlItem23
         '
         Me.LayoutControlItem23.Control = Me.IdProvinciaLookUpEdit
-        Me.LayoutControlItem23.Location = New System.Drawing.Point(881, 72)
+        Me.LayoutControlItem23.Location = New System.Drawing.Point(889, 72)
         Me.LayoutControlItem23.Name = "LayoutControlItem23"
         Me.LayoutControlItem23.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 2, 2, 2)
-        Me.LayoutControlItem23.Size = New System.Drawing.Size(325, 24)
+        Me.LayoutControlItem23.Size = New System.Drawing.Size(328, 24)
         Me.LayoutControlItem23.Text = "Provincia:"
         Me.LayoutControlItem23.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize
         Me.LayoutControlItem23.TextSize = New System.Drawing.Size(47, 13)
@@ -1210,26 +1752,37 @@ Partial Class LegajoEditForm
         'LayoutControlItem26
         '
         Me.LayoutControlItem26.Control = Me.FechaNacimientoDateEdit
-        Me.LayoutControlItem26.Location = New System.Drawing.Point(591, 48)
+        Me.LayoutControlItem26.Location = New System.Drawing.Point(594, 48)
         Me.LayoutControlItem26.Name = "LayoutControlItem26"
-        Me.LayoutControlItem26.Size = New System.Drawing.Size(239, 24)
+        Me.LayoutControlItem26.Size = New System.Drawing.Size(238, 24)
         Me.LayoutControlItem26.Text = "Fecha Nacimiento:"
-        Me.LayoutControlItem26.TextSize = New System.Drawing.Size(88, 13)
+        Me.LayoutControlItem26.TextSize = New System.Drawing.Size(117, 13)
         '
         'EmptySpaceItem11
         '
         Me.EmptySpaceItem11.AllowHotTrack = False
-        Me.EmptySpaceItem11.Location = New System.Drawing.Point(830, 48)
+        Me.EmptySpaceItem11.Location = New System.Drawing.Point(832, 48)
         Me.EmptySpaceItem11.Name = "EmptySpaceItem11"
-        Me.EmptySpaceItem11.Size = New System.Drawing.Size(376, 24)
+        Me.EmptySpaceItem11.Size = New System.Drawing.Size(96, 24)
         Me.EmptySpaceItem11.TextSize = New System.Drawing.Size(0, 0)
+        '
+        'LayoutControlItem34
+        '
+        Me.LayoutControlItem34.Control = Me.IdEstadoCivilSpinEdit
+        Me.LayoutControlItem34.Location = New System.Drawing.Point(928, 48)
+        Me.LayoutControlItem34.Name = "LayoutControlItem34"
+        Me.LayoutControlItem34.Size = New System.Drawing.Size(289, 24)
+        Me.LayoutControlItem34.Text = "Estado Civil:"
+        Me.LayoutControlItem34.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize
+        Me.LayoutControlItem34.TextSize = New System.Drawing.Size(59, 13)
+        Me.LayoutControlItem34.TextToControlDistance = 5
         '
         'LayoutControlGroup2
         '
         Me.LayoutControlGroup2.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem2, Me.LayoutControlItem3})
         Me.LayoutControlGroup2.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup2.Name = "LayoutControlGroup2"
-        Me.LayoutControlGroup2.Size = New System.Drawing.Size(1230, 93)
+        Me.LayoutControlGroup2.Size = New System.Drawing.Size(1241, 93)
         Me.LayoutControlGroup2.Text = "Empresa y Activdad"
         '
         'LayoutControlItem2
@@ -1237,25 +1790,195 @@ Partial Class LegajoEditForm
         Me.LayoutControlItem2.Control = Me.IdEmpresaSearchLookUpEdit
         Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem2.Name = "LayoutControlItem2"
-        Me.LayoutControlItem2.Size = New System.Drawing.Size(1206, 24)
+        Me.LayoutControlItem2.Size = New System.Drawing.Size(1217, 24)
         Me.LayoutControlItem2.Text = "Empresa:"
-        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(88, 13)
+        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(117, 13)
         '
         'LayoutControlItem3
         '
         Me.LayoutControlItem3.Control = Me.IdActividadSearchLookUpEdit
         Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 24)
         Me.LayoutControlItem3.Name = "LayoutControlItem3"
-        Me.LayoutControlItem3.Size = New System.Drawing.Size(1206, 24)
+        Me.LayoutControlItem3.Size = New System.Drawing.Size(1217, 24)
         Me.LayoutControlItem3.Text = "Actividad:"
-        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(88, 13)
+        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(117, 13)
+        '
+        'TabbedControlGroup1
+        '
+        Me.TabbedControlGroup1.Location = New System.Drawing.Point(0, 234)
+        Me.TabbedControlGroup1.Name = "TabbedControlGroup1"
+        Me.TabbedControlGroup1.SelectedTabPage = Me.LayoutControlGroup3
+        Me.TabbedControlGroup1.Size = New System.Drawing.Size(1241, 307)
+        Me.TabbedControlGroup1.TabPages.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlGroup3, Me.LayoutControlGroup7, Me.LayoutControlGroup8})
+        '
+        'LayoutControlGroup8
+        '
+        Me.LayoutControlGroup8.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem37, Me.LayoutControlItem38, Me.LayoutControlItem36, Me.LayoutControlItem40, Me.LayoutControlItem39, Me.LayoutControlItem41, Me.EmptySpaceItem9, Me.EmptySpaceItem12, Me.EmptySpaceItem13, Me.EmptySpaceItem14, Me.LayoutControlItem43, Me.LayoutControlItem42, Me.LayoutControlItem44, Me.LayoutControlItem45, Me.LayoutControlItem46, Me.SimpleSeparator1, Me.LayoutControlItem47})
+        Me.LayoutControlGroup8.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlGroup8.Name = "LayoutControlGroup8"
+        Me.LayoutControlGroup8.Size = New System.Drawing.Size(1217, 260)
+        Me.LayoutControlGroup8.Text = "SICOSS"
+        '
+        'LayoutControlItem37
+        '
+        Me.LayoutControlItem37.Control = Me.IdSituacionRevista2SearchLookUpEdit
+        Me.LayoutControlItem37.Location = New System.Drawing.Point(0, 24)
+        Me.LayoutControlItem37.Name = "LayoutControlItem37"
+        Me.LayoutControlItem37.Size = New System.Drawing.Size(592, 24)
+        Me.LayoutControlItem37.Text = "Situacion Revista 2:"
+        Me.LayoutControlItem37.TextSize = New System.Drawing.Size(117, 13)
+        '
+        'LayoutControlItem38
+        '
+        Me.LayoutControlItem38.Control = Me.IdSituacionRevista3SearchLookUpEdit
+        Me.LayoutControlItem38.Location = New System.Drawing.Point(0, 48)
+        Me.LayoutControlItem38.Name = "LayoutControlItem38"
+        Me.LayoutControlItem38.Size = New System.Drawing.Size(592, 24)
+        Me.LayoutControlItem38.Text = "Situacion Revista 3:"
+        Me.LayoutControlItem38.TextSize = New System.Drawing.Size(117, 13)
+        '
+        'LayoutControlItem36
+        '
+        Me.LayoutControlItem36.Control = Me.IdSituacionRevista1SearchLookUpEdit
+        Me.LayoutControlItem36.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlItem36.Name = "LayoutControlItem36"
+        Me.LayoutControlItem36.Size = New System.Drawing.Size(592, 24)
+        Me.LayoutControlItem36.Text = "Situacion Revista 1:"
+        Me.LayoutControlItem36.TextSize = New System.Drawing.Size(117, 13)
+        '
+        'LayoutControlItem40
+        '
+        Me.LayoutControlItem40.Control = Me.DiaInicioRevista1SpinEdit1
+        Me.LayoutControlItem40.Location = New System.Drawing.Point(602, 0)
+        Me.LayoutControlItem40.Name = "LayoutControlItem40"
+        Me.LayoutControlItem40.Size = New System.Drawing.Size(159, 24)
+        Me.LayoutControlItem40.Text = "Dia Inicio Revista 1:"
+        Me.LayoutControlItem40.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize
+        Me.LayoutControlItem40.TextSize = New System.Drawing.Size(95, 13)
+        Me.LayoutControlItem40.TextToControlDistance = 5
+        '
+        'LayoutControlItem39
+        '
+        Me.LayoutControlItem39.Control = Me.DiaInicioRevista2SpinEdit
+        Me.LayoutControlItem39.Location = New System.Drawing.Point(602, 24)
+        Me.LayoutControlItem39.Name = "LayoutControlItem39"
+        Me.LayoutControlItem39.Size = New System.Drawing.Size(159, 24)
+        Me.LayoutControlItem39.Text = "Dia Inicio Revista 2:"
+        Me.LayoutControlItem39.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize
+        Me.LayoutControlItem39.TextSize = New System.Drawing.Size(95, 13)
+        Me.LayoutControlItem39.TextToControlDistance = 5
+        '
+        'LayoutControlItem41
+        '
+        Me.LayoutControlItem41.Control = Me.DiaInicioRevista3SpinEdit
+        Me.LayoutControlItem41.Location = New System.Drawing.Point(602, 48)
+        Me.LayoutControlItem41.Name = "LayoutControlItem41"
+        Me.LayoutControlItem41.Size = New System.Drawing.Size(159, 58)
+        Me.LayoutControlItem41.Text = "Dia Inicio Revista 3:"
+        Me.LayoutControlItem41.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize
+        Me.LayoutControlItem41.TextSize = New System.Drawing.Size(95, 13)
+        Me.LayoutControlItem41.TextToControlDistance = 5
+        '
+        'EmptySpaceItem9
+        '
+        Me.EmptySpaceItem9.AllowHotTrack = False
+        Me.EmptySpaceItem9.Location = New System.Drawing.Point(761, 0)
+        Me.EmptySpaceItem9.Name = "EmptySpaceItem9"
+        Me.EmptySpaceItem9.Size = New System.Drawing.Size(456, 237)
+        Me.EmptySpaceItem9.TextSize = New System.Drawing.Size(0, 0)
+        '
+        'EmptySpaceItem12
+        '
+        Me.EmptySpaceItem12.AllowHotTrack = False
+        Me.EmptySpaceItem12.Location = New System.Drawing.Point(592, 0)
+        Me.EmptySpaceItem12.Name = "EmptySpaceItem12"
+        Me.EmptySpaceItem12.Size = New System.Drawing.Size(10, 106)
+        Me.EmptySpaceItem12.TextSize = New System.Drawing.Size(0, 0)
+        '
+        'EmptySpaceItem13
+        '
+        Me.EmptySpaceItem13.AllowHotTrack = False
+        Me.EmptySpaceItem13.Location = New System.Drawing.Point(0, 237)
+        Me.EmptySpaceItem13.Name = "EmptySpaceItem13"
+        Me.EmptySpaceItem13.Size = New System.Drawing.Size(1217, 23)
+        Me.EmptySpaceItem13.TextSize = New System.Drawing.Size(0, 0)
+        '
+        'EmptySpaceItem14
+        '
+        Me.EmptySpaceItem14.AllowHotTrack = False
+        Me.EmptySpaceItem14.Location = New System.Drawing.Point(0, 72)
+        Me.EmptySpaceItem14.Name = "EmptySpaceItem14"
+        Me.EmptySpaceItem14.Size = New System.Drawing.Size(592, 10)
+        Me.EmptySpaceItem14.TextSize = New System.Drawing.Size(0, 0)
+        '
+        'LayoutControlItem43
+        '
+        Me.LayoutControlItem43.Control = Me.DescripcionCompletaTextEdit
+        Me.LayoutControlItem43.Location = New System.Drawing.Point(0, 82)
+        Me.LayoutControlItem43.Name = "LayoutControlItem43"
+        Me.LayoutControlItem43.Size = New System.Drawing.Size(592, 24)
+        Me.LayoutControlItem43.Text = "Descripcion Completa:"
+        Me.LayoutControlItem43.TextSize = New System.Drawing.Size(117, 13)
+        '
+        'LayoutControlItem42
+        '
+        Me.LayoutControlItem42.Control = Me.IdCodigoCondicionSearchLookUpEdit
+        Me.LayoutControlItem42.Location = New System.Drawing.Point(0, 117)
+        Me.LayoutControlItem42.Name = "LayoutControlItem42"
+        Me.LayoutControlItem42.Size = New System.Drawing.Size(761, 24)
+        Me.LayoutControlItem42.Text = "Condicion:"
+        Me.LayoutControlItem42.TextSize = New System.Drawing.Size(117, 13)
+        '
+        'LayoutControlItem44
+        '
+        Me.LayoutControlItem44.Control = Me.IdCodigoActividadSearchLookUpEdit
+        Me.LayoutControlItem44.Location = New System.Drawing.Point(0, 141)
+        Me.LayoutControlItem44.Name = "LayoutControlItem44"
+        Me.LayoutControlItem44.Size = New System.Drawing.Size(761, 24)
+        Me.LayoutControlItem44.Text = "Actividad:"
+        Me.LayoutControlItem44.TextSize = New System.Drawing.Size(117, 13)
+        '
+        'LayoutControlItem45
+        '
+        Me.LayoutControlItem45.Control = Me.IdCodigoModalidadContratacionSearchLookUpEdit
+        Me.LayoutControlItem45.Location = New System.Drawing.Point(0, 165)
+        Me.LayoutControlItem45.Name = "LayoutControlItem45"
+        Me.LayoutControlItem45.Size = New System.Drawing.Size(761, 24)
+        Me.LayoutControlItem45.Text = "Modalidad Contratacion:"
+        Me.LayoutControlItem45.TextSize = New System.Drawing.Size(117, 13)
+        '
+        'LayoutControlItem46
+        '
+        Me.LayoutControlItem46.Control = Me.IdCodigoSiniestradoSearchLookUpEdit
+        Me.LayoutControlItem46.Location = New System.Drawing.Point(0, 189)
+        Me.LayoutControlItem46.Name = "LayoutControlItem46"
+        Me.LayoutControlItem46.Size = New System.Drawing.Size(761, 24)
+        Me.LayoutControlItem46.Text = "Codigo Siniestrado:"
+        Me.LayoutControlItem46.TextSize = New System.Drawing.Size(117, 13)
+        '
+        'SimpleSeparator1
+        '
+        Me.SimpleSeparator1.AllowHotTrack = False
+        Me.SimpleSeparator1.Location = New System.Drawing.Point(0, 106)
+        Me.SimpleSeparator1.Name = "SimpleSeparator1"
+        Me.SimpleSeparator1.Size = New System.Drawing.Size(761, 11)
+        Me.SimpleSeparator1.Spacing = New DevExpress.XtraLayout.Utils.Padding(0, 0, 5, 5)
+        '
+        'LayoutControlItem47
+        '
+        Me.LayoutControlItem47.Control = Me.IdCodigoLocalidadSearchLookUpEdit
+        Me.LayoutControlItem47.Location = New System.Drawing.Point(0, 213)
+        Me.LayoutControlItem47.Name = "LayoutControlItem47"
+        Me.LayoutControlItem47.Size = New System.Drawing.Size(761, 24)
+        Me.LayoutControlItem47.Text = "Codigo Localidad:"
+        Me.LayoutControlItem47.TextSize = New System.Drawing.Size(117, 13)
         '
         'LayoutControlGroup3
         '
-        Me.LayoutControlGroup3.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem8, Me.LayoutControlItem9, Me.LayoutControlItem10, Me.LayoutControlGroup4, Me.LayoutControlGroup5, Me.EmptySpaceItem3, Me.LayoutControlItem17, Me.EmptySpaceItem4, Me.EmptySpaceItem5, Me.LayoutControlGroup6})
-        Me.LayoutControlGroup3.Location = New System.Drawing.Point(0, 234)
+        Me.LayoutControlGroup3.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem8, Me.LayoutControlItem9, Me.LayoutControlItem10, Me.LayoutControlGroup4, Me.LayoutControlGroup5, Me.EmptySpaceItem3, Me.LayoutControlItem17, Me.EmptySpaceItem4, Me.EmptySpaceItem5, Me.LayoutControlGroup6, Me.LayoutControlItem15, Me.LayoutControlItem16, Me.LayoutControlItem20, Me.LayoutControlItem35, Me.EmptySpaceItem6})
+        Me.LayoutControlGroup3.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup3.Name = "LayoutControlGroup3"
-        Me.LayoutControlGroup3.Size = New System.Drawing.Size(1230, 234)
+        Me.LayoutControlGroup3.Size = New System.Drawing.Size(1217, 260)
         Me.LayoutControlGroup3.Text = "Datos Laborales"
         '
         'LayoutControlItem8
@@ -1263,34 +1986,34 @@ Partial Class LegajoEditForm
         Me.LayoutControlItem8.Control = Me.FechaIngresoDateEdit
         Me.LayoutControlItem8.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem8.Name = "LayoutControlItem8"
-        Me.LayoutControlItem8.Size = New System.Drawing.Size(283, 24)
+        Me.LayoutControlItem8.Size = New System.Drawing.Size(289, 24)
         Me.LayoutControlItem8.Text = "Fecha Ingreso:"
-        Me.LayoutControlItem8.TextSize = New System.Drawing.Size(88, 13)
+        Me.LayoutControlItem8.TextSize = New System.Drawing.Size(117, 13)
         '
         'LayoutControlItem9
         '
         Me.LayoutControlItem9.Control = Me.FechaEgresoDateEdit
         Me.LayoutControlItem9.Location = New System.Drawing.Point(0, 24)
         Me.LayoutControlItem9.Name = "LayoutControlItem9"
-        Me.LayoutControlItem9.Size = New System.Drawing.Size(283, 24)
+        Me.LayoutControlItem9.Size = New System.Drawing.Size(289, 24)
         Me.LayoutControlItem9.Text = "Fecha Egreso:"
-        Me.LayoutControlItem9.TextSize = New System.Drawing.Size(88, 13)
+        Me.LayoutControlItem9.TextSize = New System.Drawing.Size(117, 13)
         '
         'LayoutControlItem10
         '
         Me.LayoutControlItem10.Control = Me.TareasTextEdit
         Me.LayoutControlItem10.Location = New System.Drawing.Point(0, 48)
         Me.LayoutControlItem10.Name = "LayoutControlItem10"
-        Me.LayoutControlItem10.Size = New System.Drawing.Size(1206, 24)
+        Me.LayoutControlItem10.Size = New System.Drawing.Size(1217, 24)
         Me.LayoutControlItem10.Text = "Tareas:"
-        Me.LayoutControlItem10.TextSize = New System.Drawing.Size(88, 13)
+        Me.LayoutControlItem10.TextSize = New System.Drawing.Size(117, 13)
         '
         'LayoutControlGroup4
         '
         Me.LayoutControlGroup4.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem11, Me.LayoutControlItem18, Me.LayoutControlItem19, Me.EmptySpaceItem7})
-        Me.LayoutControlGroup4.Location = New System.Drawing.Point(0, 72)
+        Me.LayoutControlGroup4.Location = New System.Drawing.Point(0, 96)
         Me.LayoutControlGroup4.Name = "LayoutControlGroup4"
-        Me.LayoutControlGroup4.Size = New System.Drawing.Size(344, 117)
+        Me.LayoutControlGroup4.Size = New System.Drawing.Size(352, 164)
         Me.LayoutControlGroup4.Text = "Fuera de Convenio"
         '
         'LayoutControlItem11
@@ -1298,7 +2021,7 @@ Partial Class LegajoEditForm
         Me.LayoutControlItem11.Control = Me.FueraconvenioCheckEdit
         Me.LayoutControlItem11.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem11.Name = "LayoutControlItem11"
-        Me.LayoutControlItem11.Size = New System.Drawing.Size(284, 24)
+        Me.LayoutControlItem11.Size = New System.Drawing.Size(294, 24)
         Me.LayoutControlItem11.Text = "Fueraconvenio:"
         Me.LayoutControlItem11.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem11.TextVisible = False
@@ -1308,33 +2031,33 @@ Partial Class LegajoEditForm
         Me.LayoutControlItem18.Control = Me.SueldoSpinEdit
         Me.LayoutControlItem18.Location = New System.Drawing.Point(0, 24)
         Me.LayoutControlItem18.Name = "LayoutControlItem18"
-        Me.LayoutControlItem18.Size = New System.Drawing.Size(284, 24)
+        Me.LayoutControlItem18.Size = New System.Drawing.Size(294, 24)
         Me.LayoutControlItem18.Text = "Sueldo:"
-        Me.LayoutControlItem18.TextSize = New System.Drawing.Size(88, 13)
+        Me.LayoutControlItem18.TextSize = New System.Drawing.Size(117, 13)
         '
         'LayoutControlItem19
         '
         Me.LayoutControlItem19.Control = Me.AdicionalSpinEdit
         Me.LayoutControlItem19.Location = New System.Drawing.Point(0, 48)
         Me.LayoutControlItem19.Name = "LayoutControlItem19"
-        Me.LayoutControlItem19.Size = New System.Drawing.Size(284, 24)
+        Me.LayoutControlItem19.Size = New System.Drawing.Size(294, 71)
         Me.LayoutControlItem19.Text = "Adicional:"
-        Me.LayoutControlItem19.TextSize = New System.Drawing.Size(88, 13)
+        Me.LayoutControlItem19.TextSize = New System.Drawing.Size(117, 13)
         '
         'EmptySpaceItem7
         '
         Me.EmptySpaceItem7.AllowHotTrack = False
-        Me.EmptySpaceItem7.Location = New System.Drawing.Point(284, 0)
+        Me.EmptySpaceItem7.Location = New System.Drawing.Point(294, 0)
         Me.EmptySpaceItem7.Name = "EmptySpaceItem7"
-        Me.EmptySpaceItem7.Size = New System.Drawing.Size(36, 72)
+        Me.EmptySpaceItem7.Size = New System.Drawing.Size(34, 119)
         Me.EmptySpaceItem7.TextSize = New System.Drawing.Size(0, 0)
         '
         'LayoutControlGroup5
         '
         Me.LayoutControlGroup5.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem13, Me.LayoutControlItem12, Me.LayoutControlItem14})
-        Me.LayoutControlGroup5.Location = New System.Drawing.Point(344, 72)
+        Me.LayoutControlGroup5.Location = New System.Drawing.Point(352, 96)
         Me.LayoutControlGroup5.Name = "LayoutControlGroup5"
-        Me.LayoutControlGroup5.Size = New System.Drawing.Size(430, 117)
+        Me.LayoutControlGroup5.Size = New System.Drawing.Size(432, 164)
         Me.LayoutControlGroup5.Text = "Con convenio colectivo"
         '
         'LayoutControlItem13
@@ -1342,67 +2065,69 @@ Partial Class LegajoEditForm
         Me.LayoutControlItem13.Control = Me.IdCategoriaLookUpEdit
         Me.LayoutControlItem13.Location = New System.Drawing.Point(0, 24)
         Me.LayoutControlItem13.Name = "LayoutControlItem13"
-        Me.LayoutControlItem13.Size = New System.Drawing.Size(406, 24)
+        Me.LayoutControlItem13.Size = New System.Drawing.Size(408, 24)
         Me.LayoutControlItem13.Text = "Categoria:"
-        Me.LayoutControlItem13.TextSize = New System.Drawing.Size(88, 13)
+        Me.LayoutControlItem13.TextSize = New System.Drawing.Size(117, 13)
         '
         'LayoutControlItem12
         '
         Me.LayoutControlItem12.Control = Me.IdConvenioLookUpEdit
         Me.LayoutControlItem12.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem12.Name = "LayoutControlItem12"
-        Me.LayoutControlItem12.Size = New System.Drawing.Size(406, 24)
+        Me.LayoutControlItem12.Size = New System.Drawing.Size(408, 24)
         Me.LayoutControlItem12.Text = "Convenio:"
-        Me.LayoutControlItem12.TextSize = New System.Drawing.Size(88, 13)
+        Me.LayoutControlItem12.TextSize = New System.Drawing.Size(117, 13)
         '
         'LayoutControlItem14
         '
         Me.LayoutControlItem14.Control = Me.IdJornadaLookUpEdit
         Me.LayoutControlItem14.Location = New System.Drawing.Point(0, 48)
         Me.LayoutControlItem14.Name = "LayoutControlItem14"
-        Me.LayoutControlItem14.Size = New System.Drawing.Size(406, 24)
+        Me.LayoutControlItem14.Size = New System.Drawing.Size(408, 71)
         Me.LayoutControlItem14.Text = "Jornada:"
-        Me.LayoutControlItem14.TextSize = New System.Drawing.Size(88, 13)
+        Me.LayoutControlItem14.TextSize = New System.Drawing.Size(117, 13)
         '
         'EmptySpaceItem3
         '
         Me.EmptySpaceItem3.AllowHotTrack = False
-        Me.EmptySpaceItem3.Location = New System.Drawing.Point(283, 24)
+        Me.EmptySpaceItem3.Location = New System.Drawing.Point(289, 24)
         Me.EmptySpaceItem3.Name = "EmptySpaceItem3"
-        Me.EmptySpaceItem3.Size = New System.Drawing.Size(923, 24)
+        Me.EmptySpaceItem3.Size = New System.Drawing.Size(928, 24)
         Me.EmptySpaceItem3.TextSize = New System.Drawing.Size(0, 0)
         '
         'LayoutControlItem17
         '
         Me.LayoutControlItem17.Control = Me.AntiguedadStrTextEdit
-        Me.LayoutControlItem17.Location = New System.Drawing.Point(327, 0)
+        Me.LayoutControlItem17.Location = New System.Drawing.Point(690, 0)
         Me.LayoutControlItem17.Name = "LayoutControlItem17"
-        Me.LayoutControlItem17.Size = New System.Drawing.Size(368, 24)
+        Me.LayoutControlItem17.Size = New System.Drawing.Size(265, 24)
         Me.LayoutControlItem17.Text = "Antiguedad:"
-        Me.LayoutControlItem17.TextSize = New System.Drawing.Size(88, 13)
+        Me.LayoutControlItem17.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize
+        Me.LayoutControlItem17.TextSize = New System.Drawing.Size(59, 13)
+        Me.LayoutControlItem17.TextToControlDistance = 5
         '
         'EmptySpaceItem4
         '
         Me.EmptySpaceItem4.AllowHotTrack = False
-        Me.EmptySpaceItem4.Location = New System.Drawing.Point(283, 0)
+        Me.EmptySpaceItem4.Location = New System.Drawing.Point(289, 0)
         Me.EmptySpaceItem4.Name = "EmptySpaceItem4"
-        Me.EmptySpaceItem4.Size = New System.Drawing.Size(44, 24)
+        Me.EmptySpaceItem4.Size = New System.Drawing.Size(40, 24)
         Me.EmptySpaceItem4.TextSize = New System.Drawing.Size(0, 0)
         '
         'EmptySpaceItem5
         '
         Me.EmptySpaceItem5.AllowHotTrack = False
-        Me.EmptySpaceItem5.Location = New System.Drawing.Point(695, 0)
+        Me.EmptySpaceItem5.Location = New System.Drawing.Point(955, 0)
         Me.EmptySpaceItem5.Name = "EmptySpaceItem5"
-        Me.EmptySpaceItem5.Size = New System.Drawing.Size(511, 24)
+        Me.EmptySpaceItem5.Size = New System.Drawing.Size(262, 24)
         Me.EmptySpaceItem5.TextSize = New System.Drawing.Size(0, 0)
         '
         'LayoutControlGroup6
         '
         Me.LayoutControlGroup6.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem27, Me.LayoutControlItem28})
-        Me.LayoutControlGroup6.Location = New System.Drawing.Point(774, 72)
+        Me.LayoutControlGroup6.Location = New System.Drawing.Point(784, 96)
         Me.LayoutControlGroup6.Name = "LayoutControlGroup6"
-        Me.LayoutControlGroup6.Size = New System.Drawing.Size(432, 117)
+        Me.LayoutControlGroup6.Size = New System.Drawing.Size(433, 164)
         Me.LayoutControlGroup6.Text = "Forma de pago"
         '
         'LayoutControlItem27
@@ -1410,35 +2135,35 @@ Partial Class LegajoEditForm
         Me.LayoutControlItem27.Control = Me.IdFormaDePagoLookUpEdit
         Me.LayoutControlItem27.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem27.Name = "LayoutControlItem27"
-        Me.LayoutControlItem27.Size = New System.Drawing.Size(408, 24)
+        Me.LayoutControlItem27.Size = New System.Drawing.Size(409, 24)
         Me.LayoutControlItem27.Text = "Forma De Pago:"
-        Me.LayoutControlItem27.TextSize = New System.Drawing.Size(88, 13)
+        Me.LayoutControlItem27.TextSize = New System.Drawing.Size(117, 13)
         '
         'LayoutControlItem28
         '
         Me.LayoutControlItem28.Control = Me.CBUTextEdit
         Me.LayoutControlItem28.Location = New System.Drawing.Point(0, 24)
         Me.LayoutControlItem28.Name = "LayoutControlItem28"
-        Me.LayoutControlItem28.Size = New System.Drawing.Size(408, 48)
+        Me.LayoutControlItem28.Size = New System.Drawing.Size(409, 95)
         Me.LayoutControlItem28.Text = "CBU:"
-        Me.LayoutControlItem28.TextSize = New System.Drawing.Size(88, 13)
+        Me.LayoutControlItem28.TextSize = New System.Drawing.Size(117, 13)
         '
         'LayoutControlItem15
         '
         Me.LayoutControlItem15.Control = Me.IdObrasocialLookUpEdit
-        Me.LayoutControlItem15.Location = New System.Drawing.Point(0, 468)
+        Me.LayoutControlItem15.Location = New System.Drawing.Point(0, 72)
         Me.LayoutControlItem15.Name = "LayoutControlItem15"
-        Me.LayoutControlItem15.Size = New System.Drawing.Size(610, 24)
+        Me.LayoutControlItem15.Size = New System.Drawing.Size(422, 24)
         Me.LayoutControlItem15.Text = "Obrasocial:"
-        Me.LayoutControlItem15.TextSize = New System.Drawing.Size(88, 13)
+        Me.LayoutControlItem15.TextSize = New System.Drawing.Size(117, 13)
         '
         'LayoutControlItem16
         '
         Me.LayoutControlItem16.Control = Me.IdSindicatoLookUpEdit
-        Me.LayoutControlItem16.Location = New System.Drawing.Point(610, 468)
+        Me.LayoutControlItem16.Location = New System.Drawing.Point(751, 72)
         Me.LayoutControlItem16.Name = "LayoutControlItem16"
         Me.LayoutControlItem16.Padding = New DevExpress.XtraLayout.Utils.Padding(10, 2, 2, 2)
-        Me.LayoutControlItem16.Size = New System.Drawing.Size(620, 24)
+        Me.LayoutControlItem16.Size = New System.Drawing.Size(466, 24)
         Me.LayoutControlItem16.Text = "Sindicato:"
         Me.LayoutControlItem16.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize
         Me.LayoutControlItem16.TextSize = New System.Drawing.Size(47, 13)
@@ -1447,42 +2172,45 @@ Partial Class LegajoEditForm
         'LayoutControlItem20
         '
         Me.LayoutControlItem20.Control = Me.AdherentesSpinEdit
-        Me.LayoutControlItem20.Location = New System.Drawing.Point(0, 492)
+        Me.LayoutControlItem20.Location = New System.Drawing.Point(422, 72)
         Me.LayoutControlItem20.Name = "LayoutControlItem20"
-        Me.LayoutControlItem20.Size = New System.Drawing.Size(227, 24)
+        Me.LayoutControlItem20.Size = New System.Drawing.Size(329, 24)
         Me.LayoutControlItem20.Text = "Adherentes:"
-        Me.LayoutControlItem20.TextSize = New System.Drawing.Size(88, 13)
+        Me.LayoutControlItem20.TextSize = New System.Drawing.Size(117, 13)
         '
-        'EmptySpaceItem9
+        'LayoutControlItem35
         '
-        Me.EmptySpaceItem9.AllowHotTrack = False
-        Me.EmptySpaceItem9.Location = New System.Drawing.Point(227, 492)
-        Me.EmptySpaceItem9.Name = "EmptySpaceItem9"
-        Me.EmptySpaceItem9.Size = New System.Drawing.Size(1003, 24)
-        Me.EmptySpaceItem9.TextSize = New System.Drawing.Size(0, 0)
-        '
-        'LayoutControlGroup7
-        '
-        Me.LayoutControlGroup7.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.EmptySpaceItem6, Me.LayoutControlItem1, Me.LayoutControlItem29})
-        Me.LayoutControlGroup7.Location = New System.Drawing.Point(0, 516)
-        Me.LayoutControlGroup7.Name = "LayoutControlGroup7"
-        Me.LayoutControlGroup7.Size = New System.Drawing.Size(1230, 198)
-        Me.LayoutControlGroup7.Text = "Conceptos particulares"
+        Me.LayoutControlItem35.Control = Me.FechaIngresoReconocidaDateEdit
+        Me.LayoutControlItem35.Location = New System.Drawing.Point(329, 0)
+        Me.LayoutControlItem35.Name = "LayoutControlItem35"
+        Me.LayoutControlItem35.Size = New System.Drawing.Size(303, 24)
+        Me.LayoutControlItem35.Text = "Fecha Ingreso Reconocida:"
+        Me.LayoutControlItem35.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize
+        Me.LayoutControlItem35.TextSize = New System.Drawing.Size(131, 13)
+        Me.LayoutControlItem35.TextToControlDistance = 5
         '
         'EmptySpaceItem6
         '
         Me.EmptySpaceItem6.AllowHotTrack = False
-        Me.EmptySpaceItem6.Location = New System.Drawing.Point(0, 143)
+        Me.EmptySpaceItem6.Location = New System.Drawing.Point(632, 0)
         Me.EmptySpaceItem6.Name = "EmptySpaceItem6"
-        Me.EmptySpaceItem6.Size = New System.Drawing.Size(1206, 10)
+        Me.EmptySpaceItem6.Size = New System.Drawing.Size(58, 24)
         Me.EmptySpaceItem6.TextSize = New System.Drawing.Size(0, 0)
+        '
+        'LayoutControlGroup7
+        '
+        Me.LayoutControlGroup7.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1, Me.LayoutControlItem29})
+        Me.LayoutControlGroup7.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlGroup7.Name = "LayoutControlGroup7"
+        Me.LayoutControlGroup7.Size = New System.Drawing.Size(1217, 260)
+        Me.LayoutControlGroup7.Text = "Conceptos particulares"
         '
         'LayoutControlItem1
         '
         Me.LayoutControlItem1.Control = Me.gridControl
         Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 32)
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(1206, 111)
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(1217, 228)
         Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem1.TextVisible = False
         '
@@ -1491,7 +2219,7 @@ Partial Class LegajoEditForm
         Me.LayoutControlItem29.Control = Me.BarDockControl1
         Me.LayoutControlItem29.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem29.Name = "LayoutControlItem29"
-        Me.LayoutControlItem29.Size = New System.Drawing.Size(1206, 32)
+        Me.LayoutControlItem29.Size = New System.Drawing.Size(1217, 32)
         Me.LayoutControlItem29.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem29.TextVisible = False
         '
@@ -1523,15 +2251,43 @@ Partial Class LegajoEditForm
         Me.Controls.Add(Me.RibbonStatusBar1)
         Me.Controls.Add(Me.ribbonControl)
         Me.Name = "LegajoEditForm"
-        Me.Size = New System.Drawing.Size(1250, 861)
+        Me.Size = New System.Drawing.Size(1261, 688)
         CType(Me.ribbonControl, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dataLayout, System.ComponentModel.ISupportInitialize).EndInit()
         Me.dataLayout.ResumeLayout(False)
+        CType(Me.IdCodigoLocalidadSearchLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LegajosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CodigosDeLocalidadesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.IdCodigoLocalidadSearchLookUpEditView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.IdCodigoSiniestradoSearchLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CodigosDeSiniestradosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.IdCodigoSiniestradoSearchLookUpEditView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.IdCodigoModalidadContratacionSearchLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CodigosDeModalidadDeContratacionBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.IdCodigoModalidadContratacionSearchLookUpEditView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.IdCodigoActividadSearchLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CodigosDeActivdadEmpleadosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.IdCodigoActividadSearchLookUpEditView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.IdCodigoCondicionSearchLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CodigosDeCondicionesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.IdCodigoCondicionSearchLookUpEditView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DescripcionCompletaTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DiaInicioRevista2SpinEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DiaInicioRevista3SpinEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DiaInicioRevista1SpinEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.IdSituacionRevista3SearchLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CodigosDeRevistasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.IdSituacionRevista3SearchLookUpEditView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.IdSituacionRevista2SearchLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.IdSituacionRevista2SearchLookUpEditView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.IdSituacionRevista1SearchLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.IdSituacionRevista1SearchLookUpEditView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.FechaIngresoReconocidaDateEdit.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.FechaIngresoReconocidaDateEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gridControl, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LegajosConeptosParticularesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CBUTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LegajosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.IdFormaDePagoLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.FormasDePagosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.FechaNacimientoDateEdit.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1572,6 +2328,8 @@ Partial Class LegajoEditForm
         CType(Me.IdEmpresaSearchLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmpresasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.IdEmpresaSearchLookUpEditView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.IdEstadoCivilSpinEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EstadosCivilesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LegajosConceptos_DetailsBarManager, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem30, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem31, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1592,9 +2350,29 @@ Partial Class LegajoEditForm
         CType(Me.LayoutControlItem23, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem26, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem11, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem34, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TabbedControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlGroup8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem37, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem38, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem36, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem40, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem39, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem41, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmptySpaceItem9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmptySpaceItem12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmptySpaceItem13, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmptySpaceItem14, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem43, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem42, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem44, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem45, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem46, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SimpleSeparator1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem47, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem9, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1618,9 +2396,9 @@ Partial Class LegajoEditForm
         CType(Me.LayoutControlItem15, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem16, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem20, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmptySpaceItem9, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlGroup7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem35, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlGroup7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem29, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.mvvmContext, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1702,7 +2480,6 @@ Partial Class LegajoEditForm
     Friend WithEvents LayoutControlItem17 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents EmptySpaceItem4 As DevExpress.XtraLayout.EmptySpaceItem
     Friend WithEvents EmptySpaceItem5 As DevExpress.XtraLayout.EmptySpaceItem
-    Friend WithEvents EmptySpaceItem6 As DevExpress.XtraLayout.EmptySpaceItem
     Friend WithEvents AdicionalSpinEdit As DevExpress.XtraEditors.SpinEdit
     Friend WithEvents SueldoSpinEdit As DevExpress.XtraEditors.SpinEdit
     Friend WithEvents LayoutControlItem18 As DevExpress.XtraLayout.LayoutControlItem
@@ -1717,7 +2494,6 @@ Partial Class LegajoEditForm
     Friend WithEvents AdherentesSpinEdit As DevExpress.XtraEditors.SpinEdit
     Friend WithEvents LayoutControlItem20 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents EmptySpaceItem8 As DevExpress.XtraLayout.EmptySpaceItem
-    Friend WithEvents EmptySpaceItem9 As DevExpress.XtraLayout.EmptySpaceItem
     Friend WithEvents HijosSpinEdit As DevExpress.XtraEditors.SpinEdit
     Friend WithEvents ConyugeCheckEdit As DevExpress.XtraEditors.CheckEdit
     Friend WithEvents IdProvinciaLookUpEdit As DevExpress.XtraEditors.LookUpEdit
@@ -1741,8 +2517,6 @@ Partial Class LegajoEditForm
     Friend WithEvents LayoutControlItem28 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents gridControl As DevExpress.XtraGrid.GridControl
     Friend WithEvents gridView As DevExpress.XtraGrid.Views.Grid.GridView
-    Friend WithEvents LayoutControlGroup7 As DevExpress.XtraLayout.LayoutControlGroup
-    Friend WithEvents LayoutControlItem1 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LegajosConeptosParticularesBindingSource As BindingSource
     Friend WithEvents colFormulas As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colTipoLiquidacion As DevExpress.XtraGrid.Columns.GridColumn
@@ -1764,8 +2538,77 @@ Partial Class LegajoEditForm
     Private WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
     Friend WithEvents BehaviorManager1 As DevExpress.Utils.Behaviors.BehaviorManager
     Private WithEvents LegajosConceptos_DetailsPopUpMenu As DevExpress.XtraBars.PopupMenu
-    Friend WithEvents LayoutControlItem29 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem30 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem31 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem32 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents IdEstadoCivilSpinEdit As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents LayoutControlItem34 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents EstadosCivilesBindingSource As BindingSource
+    Friend WithEvents TabbedControlGroup1 As DevExpress.XtraLayout.TabbedControlGroup
+    Friend WithEvents LayoutControlGroup7 As DevExpress.XtraLayout.LayoutControlGroup
+    Friend WithEvents LayoutControlItem1 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents LayoutControlItem29 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents FechaIngresoReconocidaDateEdit As DevExpress.XtraEditors.DateEdit
+    Friend WithEvents LayoutControlItem35 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents EmptySpaceItem6 As DevExpress.XtraLayout.EmptySpaceItem
+    Friend WithEvents IdSituacionRevista1SearchLookUpEdit As DevExpress.XtraEditors.SearchLookUpEdit
+    Friend WithEvents IdSituacionRevista1SearchLookUpEditView As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents LayoutControlItem36 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents LayoutControlGroup8 As DevExpress.XtraLayout.LayoutControlGroup
+    Friend WithEvents IdSituacionRevista3SearchLookUpEdit As DevExpress.XtraEditors.SearchLookUpEdit
+    Friend WithEvents IdSituacionRevista3SearchLookUpEditView As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents IdSituacionRevista2SearchLookUpEdit As DevExpress.XtraEditors.SearchLookUpEdit
+    Friend WithEvents IdSituacionRevista2SearchLookUpEditView As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents LayoutControlItem37 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents LayoutControlItem38 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents DiaInicioRevista2SpinEdit As DevExpress.XtraEditors.SpinEdit
+    Friend WithEvents DiaInicioRevista3SpinEdit As DevExpress.XtraEditors.SpinEdit
+    Friend WithEvents DiaInicioRevista1SpinEdit1 As DevExpress.XtraEditors.SpinEdit
+    Friend WithEvents LayoutControlItem40 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents LayoutControlItem39 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents LayoutControlItem41 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents EmptySpaceItem9 As DevExpress.XtraLayout.EmptySpaceItem
+    Friend WithEvents EmptySpaceItem12 As DevExpress.XtraLayout.EmptySpaceItem
+    Friend WithEvents CodigosDeRevistasBindingSource As BindingSource
+    Friend WithEvents EmptySpaceItem13 As DevExpress.XtraLayout.EmptySpaceItem
+    Friend WithEvents EmptySpaceItem14 As DevExpress.XtraLayout.EmptySpaceItem
+    Friend WithEvents DescripcionCompletaTextEdit As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LayoutControlItem43 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents IdCodigoSiniestradoSearchLookUpEdit As DevExpress.XtraEditors.SearchLookUpEdit
+    Friend WithEvents IdCodigoSiniestradoSearchLookUpEditView As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents IdCodigoModalidadContratacionSearchLookUpEdit As DevExpress.XtraEditors.SearchLookUpEdit
+    Friend WithEvents IdCodigoModalidadContratacionSearchLookUpEditView As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents IdCodigoActividadSearchLookUpEdit As DevExpress.XtraEditors.SearchLookUpEdit
+    Friend WithEvents IdCodigoActividadSearchLookUpEditView As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents IdCodigoCondicionSearchLookUpEdit As DevExpress.XtraEditors.SearchLookUpEdit
+    Friend WithEvents IdCodigoCondicionSearchLookUpEditView As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents LayoutControlItem42 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents LayoutControlItem44 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents LayoutControlItem45 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents LayoutControlItem46 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents SimpleSeparator1 As DevExpress.XtraLayout.SimpleSeparator
+    Friend WithEvents CodigosDeActivdadEmpleadosBindingSource As BindingSource
+    Friend WithEvents CodigosDeCondicionesBindingSource As BindingSource
+    Friend WithEvents CodigosDeSiniestradosBindingSource As BindingSource
+    Friend WithEvents CodigosDeModalidadDeContratacionBindingSource As BindingSource
+    Friend WithEvents colId6 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colDescripcion6 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colId5 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colDescripcion5 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colId4 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colDescripcion4 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colId3 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colDescripcion3 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colId2 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colDescripcion2 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colId1 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colDescripcion1 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colId As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colDescripcion As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents IdCodigoLocalidadSearchLookUpEdit As DevExpress.XtraEditors.SearchLookUpEdit
+    Friend WithEvents IdCodigoLocalidadSearchLookUpEditView As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents LayoutControlItem47 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents CodigosDeLocalidadesBindingSource As BindingSource
+    Friend WithEvents colCodigo As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colDescripcion7 As DevExpress.XtraGrid.Columns.GridColumn
 End Class

@@ -32,6 +32,10 @@ Partial Public Class ReciboViewModel
 
     Public _formula As CalcularFormulas
 
+    Public Function CanRecalcular() As Boolean
+        Return True ' Entity.RecibosDetalles.Count > 0
+    End Function
+
     Public Overridable Sub Recalcular()
         _formula = New CalcularFormulas(MyBase.Entity)
         For i As Integer = 0 To 0
@@ -81,15 +85,77 @@ Partial Public Class ReciboViewModel
         MyBase.Save()
     End Sub
 
-    Public Overridable Sub AddDetalleFromPlantilla()
+    Public Function CanGenerarDetalle() As Boolean
+        Return True 'Not Entity.RecibosDetalles.Count > 0
+    End Function
+
+    Public Overridable Sub GenerarDetalle()
         If MessageBoxService.ShowMessage("¿Esta seguro de aplicar una plantilla?", "Plantilla", MessageButton.YesNo) <> MessageResult.Yes Then
             Return
         End If
 
         Dim idconvenio As Integer? = 0
+        Dim idLegajo As Integer? = 0
+        Dim idTipoLiquidacion As Integer? = 0
+        Dim numeroMes As Integer? = 0
+
+        If Not MyBase.Entity Is Nothing Then
+            idconvenio = MyBase.Entity.Legajos.IdConvenio
+            idLegajo = MyBase.Entity.IdLegajo
+            idTipoLiquidacion = MyBase.Entity.IdTipoLiquidacion
+            numeroMes = Integer.Parse(MyBase.Entity.Periodo.Substring(0, 2))
+        End If
+
+        Using db As YiZi.AccesoDatos.Modelo = New YiZi.AccesoDatos.Modelo()
+            Dim lista As List(Of YiZi.AccesoDatos.Formulas) = db.Formulas.Where(Function(x) x.IdConvenio = idconvenio And x.Activo = True And x.Visible = True _
+                                                                                    And x.FormulaTipoLiquidacion.Where(Function(tl) tl.IdTipoLiquidacion = idTipoLiquidacion And tl.Seleccionado = True).Count > 0 _
+                                                                                    And x.FormulasPeriodos.Where(Function(p) p.NumeroMes = numeroMes And p.Seleccionado = True).Count > 0).ToList
+            For Each formula As YiZi.AccesoDatos.Formulas In lista
+                Dim itemDetalle As YiZi.AccesoDatos.RecibosDetalles = New YiZi.AccesoDatos.RecibosDetalles
+                itemDetalle.IdRecibo = MyBase.Entity.Id
+                itemDetalle.IdConcepto = formula.Id
+                'Dim formula As YiZi.AccesoDatos.Formulas = getFormula(item.IdFormula)
+                itemDetalle.formulaCantidad = formula.FormulaCantidad
+                itemDetalle.formulaImporte = formula.FormulaImporte
+                itemDetalle.Remunerativo = 100
+                MyBase.Entity.RecibosDetalles.Add(itemDetalle)
+            Next
+
+            Dim listaparticulares As List(Of YiZi.AccesoDatos.LegajosConceptosParticulares) = db.LegajosConeptosParticulares.Where(Function(x) x.IdLegajo = idLegajo).ToList()
+            For Each item As YiZi.AccesoDatos.LegajosConceptosParticulares In listaparticulares
+                Dim itemDetalle As YiZi.AccesoDatos.RecibosDetalles = New YiZi.AccesoDatos.RecibosDetalles
+                itemDetalle.IdRecibo = MyBase.Entity.Id
+                itemDetalle.IdConcepto = item.IdFormula
+                Dim formula As YiZi.AccesoDatos.Formulas = getFormula(item.IdFormula)
+                If item.Cantidad <> 0 Then
+                    itemDetalle.formulaCantidad = item.Cantidad
+                Else
+                    itemDetalle.formulaCantidad = formula.FormulaCantidad
+                End If
+                If item.Importe <> 0 Then
+                    itemDetalle.formulaImporte = item.Importe
+                Else
+                    itemDetalle.formulaImporte = formula.FormulaImporte
+                End If
+
+                itemDetalle.Remunerativo = 100
+                MyBase.Entity.RecibosDetalles.Add(itemDetalle)
+            Next
+            MyBase.Save()
+        End Using
+    End Sub
+
+    Public Function CanAddDetalleFromPlantilla() As Boolean
+        Return True 'Not Entity.RecibosDetalles.Count > 0
+    End Function
+
+    Public Overridable Sub AddDetalleFromPlantilla()
+        Dim idconvenio As Integer? = 0
+        Dim idLegajo As Integer? = 0
         Dim idTipoLiquidacion As Integer? = 0
         If Not MyBase.Entity Is Nothing Then
             idconvenio = MyBase.Entity.Legajos.IdConvenio
+            idLegajo = MyBase.Entity.IdLegajo
             idTipoLiquidacion = MyBase.Entity.IdTipoLiquidacion
         End If
         Using db As YiZi.AccesoDatos.Modelo = New YiZi.AccesoDatos.Modelo()
@@ -104,8 +170,43 @@ Partial Public Class ReciboViewModel
                 itemDetalle.Remunerativo = 100
                 MyBase.Entity.RecibosDetalles.Add(itemDetalle)
             Next
+            Dim listaparticulares As List(Of YiZi.AccesoDatos.LegajosConceptosParticulares) = db.LegajosConeptosParticulares.Where(Function(x) x.IdLegajo = idLegajo).ToList()
+            For Each item As YiZi.AccesoDatos.LegajosConceptosParticulares In listaparticulares
+                Dim itemDetalle As YiZi.AccesoDatos.RecibosDetalles = New YiZi.AccesoDatos.RecibosDetalles
+                itemDetalle.IdRecibo = MyBase.Entity.Id
+                itemDetalle.IdConcepto = item.IdFormula
+                Dim formula As YiZi.AccesoDatos.Formulas = getFormula(item.IdFormula)
+                If item.Cantidad <> 0 Then
+                    itemDetalle.formulaCantidad = item.Cantidad
+                Else
+                    itemDetalle.formulaCantidad = formula.FormulaCantidad
+                End If
+                If item.Importe <> 0 Then
+                    itemDetalle.formulaImporte = item.Importe
+                Else
+                    itemDetalle.formulaImporte = formula.FormulaImporte
+                End If
+
+                itemDetalle.Remunerativo = 100
+                MyBase.Entity.RecibosDetalles.Add(itemDetalle)
+            Next
         End Using
         MyBase.Save()
+    End Sub
+
+    Public Function CanDelAll() As Boolean
+        Return True 'Entity.RecibosDetalles.Count > 0
+    End Function
+
+    Public Overridable Sub DelAll()
+        If MessageBoxService.ShowMessage("¿Esta seguro de quitar todos los items?", "Detalle", MessageButton.YesNo) <> MessageResult.Yes Then
+            Return
+        End If
+        Using db As YiZi.AccesoDatos.Modelo = New YiZi.AccesoDatos.Modelo()
+            Dim lista As List(Of RecibosDetalles) = db.RecibosDetalles.Where(Function(x) x.IdRecibo = Entity.Id).ToList
+            db.RecibosDetalles.RemoveRange(lista)
+            db.SaveChanges()
+        End Using
     End Sub
 
     Public Overridable Function getFormula(idFormula As Integer?) As YiZi.AccesoDatos.Formulas
@@ -114,6 +215,10 @@ Partial Public Class ReciboViewModel
             resultado = db.Formulas.Where(Function(x) x.Id = idFormula).FirstOrDefault
         End Using
         Return resultado
+    End Function
+
+    Public Function CanAddDetalleToPlantilla() As Boolean
+        Return True 'Entity.RecibosDetalles.Count > 0
     End Function
 
     Public Overridable Sub AddDetalleToPlantilla()

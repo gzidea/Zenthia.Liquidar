@@ -141,7 +141,7 @@ Namespace YiZi.mvvm.Common.ViewModel
         ''' Since SingleObjectViewModelBase is a POCO view model, an instance of this class will also expose the ResetCommand property that can be used as a binding source in views.
         ''' </summary>
         <Display(Name:="Deshacer")>
-        Public Sub Reset()
+        Public Overridable Sub Reset()
             Dim confirmationResult As MessageResult = MessageBoxService.ShowMessage(CommonResources.Confirmation_Reset, CommonResources.Confirmation_Caption, MessageButton.OKCancel)
             If confirmationResult = MessageResult.OK Then
                 Reload()
@@ -151,7 +151,7 @@ Namespace YiZi.mvvm.Common.ViewModel
         ''' Determines whether entity has local changes.
         ''' Since SingleObjectViewModelBase is a POCO view model, this method will be used as a CanExecute callback for ResetCommand.
         ''' </summary>
-        Public Function CanReset() As Boolean
+        Public Overridable Function CanReset() As Boolean
             Return NeedReset()
         End Function
         Private ReadOnly Property ViewName As String

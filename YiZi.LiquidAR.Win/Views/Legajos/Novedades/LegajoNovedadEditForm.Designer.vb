@@ -38,6 +38,11 @@ Partial Class LegajoNovedadEditForm
         Me.RibbonPageGroup4 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.mvvmContext = New DevExpress.Utils.MVVM.MVVMContext(Me.components)
         Me.layoutData = New DevExpress.XtraLayout.LayoutControl()
+        Me.IdTipoLoquidacionSearchLookUpEdit = New DevExpress.XtraEditors.SearchLookUpEdit()
+        Me.LegajosNovedadesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TipoLiquidacionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.IdTipoLoquidacionSearchLookUpEditView = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.colDescripcion = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.gridControl = New DevExpress.XtraGrid.GridControl()
         Me.LegajosNovedadesDetallesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.gridView = New DevExpress.XtraGrid.Views.Grid.GridView()
@@ -48,7 +53,6 @@ Partial Class LegajoNovedadEditForm
         Me.colLegajosNovedades = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colFormulas1 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.DiasVacacionesSpinEdit = New DevExpress.XtraEditors.SpinEdit()
-        Me.LegajosNovedadesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DiasTrabajadosSpinEdit = New DevExpress.XtraEditors.SpinEdit()
         Me.HorasTrabajadasSpinEdit = New DevExpress.XtraEditors.SpinEdit()
         Me.PeriodoTextEdit = New DevExpress.XtraEditors.TextEdit()
@@ -73,7 +77,6 @@ Partial Class LegajoNovedadEditForm
         Me.LayoutControlItem8 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlGroup1 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
@@ -84,23 +87,25 @@ Partial Class LegajoNovedadEditForm
         Me.EmptySpaceItem2 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem3 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem4 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.LayoutControlItem12 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.EmptySpaceItem5 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.categorias_DetailsPopUpMenu = New DevExpress.XtraBars.PopupMenu(Me.components)
         Me.BehaviorManager1 = New DevExpress.Utils.Behaviors.BehaviorManager(Me.components)
-        Me.IdTipoLoquidacionSearchLookUpEditView = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.IdTipoLoquidacionSearchLookUpEdit = New DevExpress.XtraEditors.SearchLookUpEdit()
-        Me.LayoutControlItem12 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.EmptySpaceItem5 = New DevExpress.XtraLayout.EmptySpaceItem()
-        Me.TipoLiquidacionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.colDescripcion = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.FechaPagoDateEdit = New DevExpress.XtraEditors.DateEdit()
+        Me.LayoutControlItem13 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.ribbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.mvvmContext, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.layoutData, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.layoutData.SuspendLayout()
+        CType(Me.IdTipoLoquidacionSearchLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LegajosNovedadesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TipoLiquidacionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.IdTipoLoquidacionSearchLookUpEditView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gridControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LegajosNovedadesDetallesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DiasVacacionesSpinEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LegajosNovedadesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DiasTrabajadosSpinEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HorasTrabajadasSpinEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PeriodoTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -113,7 +118,6 @@ Partial Class LegajoNovedadEditForm
         CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -124,22 +128,23 @@ Partial Class LegajoNovedadEditForm
         CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmptySpaceItem5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.categorias_DetailsPopUpMenu, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BehaviorManager1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.IdTipoLoquidacionSearchLookUpEditView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.IdTipoLoquidacionSearchLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem12, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmptySpaceItem5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TipoLiquidacionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FechaPagoDateEdit.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FechaPagoDateEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem13, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RibbonStatusBar1
         '
         Me.RibbonStatusBar1.ItemLinks.Add(Me.bsiEstado)
-        Me.RibbonStatusBar1.Location = New System.Drawing.Point(0, 768)
+        Me.RibbonStatusBar1.Location = New System.Drawing.Point(0, 805)
         Me.RibbonStatusBar1.Name = "RibbonStatusBar1"
         Me.RibbonStatusBar1.Ribbon = Me.ribbonControl
-        Me.RibbonStatusBar1.Size = New System.Drawing.Size(1098, 27)
+        Me.RibbonStatusBar1.Size = New System.Drawing.Size(1135, 27)
         '
         'bsiEstado
         '
@@ -157,7 +162,7 @@ Partial Class LegajoNovedadEditForm
         Me.ribbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.[False]
         Me.ribbonControl.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
-        Me.ribbonControl.Size = New System.Drawing.Size(1098, 100)
+        Me.ribbonControl.Size = New System.Drawing.Size(1135, 100)
         Me.ribbonControl.StatusBar = Me.RibbonStatusBar1
         Me.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -259,6 +264,7 @@ Partial Class LegajoNovedadEditForm
         '
         'layoutData
         '
+        Me.layoutData.Controls.Add(Me.FechaPagoDateEdit)
         Me.layoutData.Controls.Add(Me.IdTipoLoquidacionSearchLookUpEdit)
         Me.layoutData.Controls.Add(Me.gridControl)
         Me.layoutData.Controls.Add(Me.DiasVacacionesSpinEdit)
@@ -276,18 +282,56 @@ Partial Class LegajoNovedadEditForm
         Me.layoutData.Name = "layoutData"
         Me.layoutData.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = New System.Drawing.Rectangle(1270, 468, 650, 400)
         Me.layoutData.Root = Me.Root
-        Me.layoutData.Size = New System.Drawing.Size(1098, 668)
+        Me.layoutData.Size = New System.Drawing.Size(1135, 705)
         Me.layoutData.TabIndex = 4
         Me.layoutData.Text = "LayoutControl1"
+        '
+        'IdTipoLoquidacionSearchLookUpEdit
+        '
+        Me.IdTipoLoquidacionSearchLookUpEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosNovedadesBindingSource, "IdTipoLoquidacion", True))
+        Me.IdTipoLoquidacionSearchLookUpEdit.Location = New System.Drawing.Point(104, 36)
+        Me.IdTipoLoquidacionSearchLookUpEdit.MenuManager = Me.ribbonControl
+        Me.IdTipoLoquidacionSearchLookUpEdit.Name = "IdTipoLoquidacionSearchLookUpEdit"
+        Me.IdTipoLoquidacionSearchLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.IdTipoLoquidacionSearchLookUpEdit.Properties.DataSource = Me.TipoLiquidacionBindingSource
+        Me.IdTipoLoquidacionSearchLookUpEdit.Properties.DisplayMember = "Descripcion"
+        Me.IdTipoLoquidacionSearchLookUpEdit.Properties.PopupView = Me.IdTipoLoquidacionSearchLookUpEditView
+        Me.IdTipoLoquidacionSearchLookUpEdit.Properties.ValueMember = "Id"
+        Me.IdTipoLoquidacionSearchLookUpEdit.Size = New System.Drawing.Size(391, 20)
+        Me.IdTipoLoquidacionSearchLookUpEdit.StyleController = Me.layoutData
+        Me.IdTipoLoquidacionSearchLookUpEdit.TabIndex = 15
+        '
+        'LegajosNovedadesBindingSource
+        '
+        Me.LegajosNovedadesBindingSource.DataSource = GetType(YiZi.AccesoDatos.LegajosNovedades)
+        '
+        'TipoLiquidacionBindingSource
+        '
+        Me.TipoLiquidacionBindingSource.DataSource = GetType(YiZi.AccesoDatos.TipoLiquidacion)
+        '
+        'IdTipoLoquidacionSearchLookUpEditView
+        '
+        Me.IdTipoLoquidacionSearchLookUpEditView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colDescripcion})
+        Me.IdTipoLoquidacionSearchLookUpEditView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
+        Me.IdTipoLoquidacionSearchLookUpEditView.Name = "IdTipoLoquidacionSearchLookUpEditView"
+        Me.IdTipoLoquidacionSearchLookUpEditView.OptionsSelection.EnableAppearanceFocusedCell = False
+        Me.IdTipoLoquidacionSearchLookUpEditView.OptionsView.ShowGroupPanel = False
+        '
+        'colDescripcion
+        '
+        Me.colDescripcion.FieldName = "Descripcion"
+        Me.colDescripcion.Name = "colDescripcion"
+        Me.colDescripcion.Visible = True
+        Me.colDescripcion.VisibleIndex = 0
         '
         'gridControl
         '
         Me.gridControl.DataSource = Me.LegajosNovedadesDetallesBindingSource
-        Me.gridControl.Location = New System.Drawing.Point(24, 202)
+        Me.gridControl.Location = New System.Drawing.Point(24, 171)
         Me.gridControl.MainView = Me.gridView
         Me.gridControl.MenuManager = Me.ribbonControl
         Me.gridControl.Name = "gridControl"
-        Me.gridControl.Size = New System.Drawing.Size(1050, 442)
+        Me.gridControl.Size = New System.Drawing.Size(1087, 510)
         Me.gridControl.TabIndex = 10
         Me.gridControl.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridView})
         '
@@ -358,13 +402,9 @@ Partial Class LegajoNovedadEditForm
         Me.DiasVacacionesSpinEdit.MenuManager = Me.ribbonControl
         Me.DiasVacacionesSpinEdit.Name = "DiasVacacionesSpinEdit"
         Me.DiasVacacionesSpinEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.DiasVacacionesSpinEdit.Size = New System.Drawing.Size(305, 20)
+        Me.DiasVacacionesSpinEdit.Size = New System.Drawing.Size(319, 20)
         Me.DiasVacacionesSpinEdit.StyleController = Me.layoutData
         Me.DiasVacacionesSpinEdit.TabIndex = 9
-        '
-        'LegajosNovedadesBindingSource
-        '
-        Me.LegajosNovedadesBindingSource.DataSource = GetType(YiZi.AccesoDatos.LegajosNovedades)
         '
         'DiasTrabajadosSpinEdit
         '
@@ -374,7 +414,7 @@ Partial Class LegajoNovedadEditForm
         Me.DiasTrabajadosSpinEdit.MenuManager = Me.ribbonControl
         Me.DiasTrabajadosSpinEdit.Name = "DiasTrabajadosSpinEdit"
         Me.DiasTrabajadosSpinEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.DiasTrabajadosSpinEdit.Size = New System.Drawing.Size(305, 20)
+        Me.DiasTrabajadosSpinEdit.Size = New System.Drawing.Size(319, 20)
         Me.DiasTrabajadosSpinEdit.StyleController = Me.layoutData
         Me.DiasTrabajadosSpinEdit.TabIndex = 8
         '
@@ -382,21 +422,21 @@ Partial Class LegajoNovedadEditForm
         '
         Me.HorasTrabajadasSpinEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosNovedadesBindingSource, "HorasTrabajadas", True))
         Me.HorasTrabajadasSpinEdit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.HorasTrabajadasSpinEdit.Location = New System.Drawing.Point(635, 60)
+        Me.HorasTrabajadasSpinEdit.Location = New System.Drawing.Point(653, 60)
         Me.HorasTrabajadasSpinEdit.MenuManager = Me.ribbonControl
         Me.HorasTrabajadasSpinEdit.Name = "HorasTrabajadasSpinEdit"
         Me.HorasTrabajadasSpinEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.HorasTrabajadasSpinEdit.Size = New System.Drawing.Size(276, 20)
+        Me.HorasTrabajadasSpinEdit.Size = New System.Drawing.Size(289, 20)
         Me.HorasTrabajadasSpinEdit.StyleController = Me.layoutData
         Me.HorasTrabajadasSpinEdit.TabIndex = 7
         '
         'PeriodoTextEdit
         '
         Me.PeriodoTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosNovedadesBindingSource, "Periodo", True))
-        Me.PeriodoTextEdit.Location = New System.Drawing.Point(588, 36)
+        Me.PeriodoTextEdit.Location = New System.Drawing.Point(606, 36)
         Me.PeriodoTextEdit.MenuManager = Me.ribbonControl
         Me.PeriodoTextEdit.Name = "PeriodoTextEdit"
-        Me.PeriodoTextEdit.Size = New System.Drawing.Size(200, 20)
+        Me.PeriodoTextEdit.Size = New System.Drawing.Size(131, 20)
         Me.PeriodoTextEdit.StyleController = Me.layoutData
         Me.PeriodoTextEdit.TabIndex = 6
         '
@@ -414,7 +454,7 @@ Partial Class LegajoNovedadEditForm
         Me.IdLegajoSpinEdit.Properties.NullText = ""
         Me.IdLegajoSpinEdit.Properties.PopupView = Me.SearchLookUpEdit1View
         Me.IdLegajoSpinEdit.Properties.ValueMember = "Id"
-        Me.IdLegajoSpinEdit.Size = New System.Drawing.Size(982, 20)
+        Me.IdLegajoSpinEdit.Size = New System.Drawing.Size(1019, 20)
         Me.IdLegajoSpinEdit.StyleController = Me.layoutData
         Me.IdLegajoSpinEdit.TabIndex = 5
         '
@@ -524,7 +564,7 @@ Partial Class LegajoNovedadEditForm
         Me.BarDockControl1.CausesValidation = False
         Me.BarDockControl1.Location = New System.Drawing.Point(24, 141)
         Me.BarDockControl1.Manager = Me.categorias_DetailsBarManager
-        Me.BarDockControl1.Size = New System.Drawing.Size(1050, 57)
+        Me.BarDockControl1.Size = New System.Drawing.Size(1087, 26)
         '
         'barDockControlBottom
         '
@@ -571,9 +611,9 @@ Partial Class LegajoNovedadEditForm
         '
         Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
         Me.Root.GroupBordersVisible = False
-        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem2, Me.LayoutControlItem5, Me.LayoutControlGroup1, Me.EmptySpaceItem1, Me.LayoutControlItem4, Me.LayoutControlItem6, Me.EmptySpaceItem2, Me.EmptySpaceItem3, Me.EmptySpaceItem4, Me.LayoutControlItem12, Me.LayoutControlItem3, Me.EmptySpaceItem5})
+        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem2, Me.LayoutControlItem5, Me.LayoutControlGroup1, Me.EmptySpaceItem1, Me.LayoutControlItem4, Me.LayoutControlItem6, Me.EmptySpaceItem2, Me.EmptySpaceItem3, Me.EmptySpaceItem4, Me.LayoutControlItem12, Me.LayoutControlItem3, Me.EmptySpaceItem5, Me.LayoutControlItem13})
         Me.Root.Name = "Root"
-        Me.Root.Size = New System.Drawing.Size(1098, 668)
+        Me.Root.Size = New System.Drawing.Size(1135, 705)
         Me.Root.TextVisible = False
         '
         'LayoutControlItem2
@@ -581,27 +621,16 @@ Partial Class LegajoNovedadEditForm
         Me.LayoutControlItem2.Control = Me.IdLegajoSpinEdit
         Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem2.Name = "LayoutControlItem2"
-        Me.LayoutControlItem2.Size = New System.Drawing.Size(1078, 24)
+        Me.LayoutControlItem2.Size = New System.Drawing.Size(1115, 24)
         Me.LayoutControlItem2.Text = "Legajo:"
         Me.LayoutControlItem2.TextSize = New System.Drawing.Size(89, 13)
-        '
-        'LayoutControlItem3
-        '
-        Me.LayoutControlItem3.Control = Me.PeriodoTextEdit
-        Me.LayoutControlItem3.Location = New System.Drawing.Point(531, 24)
-        Me.LayoutControlItem3.Name = "LayoutControlItem3"
-        Me.LayoutControlItem3.Size = New System.Drawing.Size(249, 24)
-        Me.LayoutControlItem3.Text = "Periodo:"
-        Me.LayoutControlItem3.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize
-        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(40, 13)
-        Me.LayoutControlItem3.TextToControlDistance = 5
         '
         'LayoutControlItem5
         '
         Me.LayoutControlItem5.Control = Me.DiasTrabajadosSpinEdit
         Me.LayoutControlItem5.Location = New System.Drawing.Point(0, 48)
         Me.LayoutControlItem5.Name = "LayoutControlItem5"
-        Me.LayoutControlItem5.Size = New System.Drawing.Size(401, 24)
+        Me.LayoutControlItem5.Size = New System.Drawing.Size(415, 24)
         Me.LayoutControlItem5.Text = "Dias Trabajados:"
         Me.LayoutControlItem5.TextSize = New System.Drawing.Size(89, 13)
         '
@@ -611,15 +640,15 @@ Partial Class LegajoNovedadEditForm
         Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1, Me.LayoutControlItem7})
         Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 96)
         Me.LayoutControlGroup1.Name = "LayoutControlGroup1"
-        Me.LayoutControlGroup1.Size = New System.Drawing.Size(1078, 552)
+        Me.LayoutControlGroup1.Size = New System.Drawing.Size(1115, 589)
         Me.LayoutControlGroup1.Text = " "
         '
         'LayoutControlItem1
         '
         Me.LayoutControlItem1.Control = Me.gridControl
-        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 61)
+        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 30)
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(1054, 446)
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(1091, 514)
         Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem1.TextVisible = False
         '
@@ -628,24 +657,24 @@ Partial Class LegajoNovedadEditForm
         Me.LayoutControlItem7.Control = Me.BarDockControl1
         Me.LayoutControlItem7.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem7.Name = "LayoutControlItem7"
-        Me.LayoutControlItem7.Size = New System.Drawing.Size(1054, 61)
+        Me.LayoutControlItem7.Size = New System.Drawing.Size(1091, 30)
         Me.LayoutControlItem7.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem7.TextVisible = False
         '
         'EmptySpaceItem1
         '
         Me.EmptySpaceItem1.AllowHotTrack = False
-        Me.EmptySpaceItem1.Location = New System.Drawing.Point(471, 24)
+        Me.EmptySpaceItem1.Location = New System.Drawing.Point(487, 24)
         Me.EmptySpaceItem1.Name = "EmptySpaceItem1"
-        Me.EmptySpaceItem1.Size = New System.Drawing.Size(60, 24)
+        Me.EmptySpaceItem1.Size = New System.Drawing.Size(62, 24)
         Me.EmptySpaceItem1.TextSize = New System.Drawing.Size(0, 0)
         '
         'LayoutControlItem4
         '
         Me.LayoutControlItem4.Control = Me.HorasTrabajadasSpinEdit
-        Me.LayoutControlItem4.Location = New System.Drawing.Point(531, 48)
+        Me.LayoutControlItem4.Location = New System.Drawing.Point(549, 48)
         Me.LayoutControlItem4.Name = "LayoutControlItem4"
-        Me.LayoutControlItem4.Size = New System.Drawing.Size(372, 24)
+        Me.LayoutControlItem4.Size = New System.Drawing.Size(385, 24)
         Me.LayoutControlItem4.Text = "Horas Trabajadas:"
         Me.LayoutControlItem4.TextSize = New System.Drawing.Size(89, 13)
         '
@@ -654,33 +683,61 @@ Partial Class LegajoNovedadEditForm
         Me.LayoutControlItem6.Control = Me.DiasVacacionesSpinEdit
         Me.LayoutControlItem6.Location = New System.Drawing.Point(0, 72)
         Me.LayoutControlItem6.Name = "LayoutControlItem6"
-        Me.LayoutControlItem6.Size = New System.Drawing.Size(401, 24)
+        Me.LayoutControlItem6.Size = New System.Drawing.Size(415, 24)
         Me.LayoutControlItem6.Text = "Dias Vacaciones:"
         Me.LayoutControlItem6.TextSize = New System.Drawing.Size(89, 13)
         '
         'EmptySpaceItem2
         '
         Me.EmptySpaceItem2.AllowHotTrack = False
-        Me.EmptySpaceItem2.Location = New System.Drawing.Point(401, 48)
+        Me.EmptySpaceItem2.Location = New System.Drawing.Point(415, 48)
         Me.EmptySpaceItem2.Name = "EmptySpaceItem2"
-        Me.EmptySpaceItem2.Size = New System.Drawing.Size(130, 24)
+        Me.EmptySpaceItem2.Size = New System.Drawing.Size(134, 24)
         Me.EmptySpaceItem2.TextSize = New System.Drawing.Size(0, 0)
         '
         'EmptySpaceItem3
         '
         Me.EmptySpaceItem3.AllowHotTrack = False
-        Me.EmptySpaceItem3.Location = New System.Drawing.Point(903, 48)
+        Me.EmptySpaceItem3.Location = New System.Drawing.Point(934, 48)
         Me.EmptySpaceItem3.Name = "EmptySpaceItem3"
-        Me.EmptySpaceItem3.Size = New System.Drawing.Size(175, 24)
+        Me.EmptySpaceItem3.Size = New System.Drawing.Size(181, 24)
         Me.EmptySpaceItem3.TextSize = New System.Drawing.Size(0, 0)
         '
         'EmptySpaceItem4
         '
         Me.EmptySpaceItem4.AllowHotTrack = False
-        Me.EmptySpaceItem4.Location = New System.Drawing.Point(401, 72)
+        Me.EmptySpaceItem4.Location = New System.Drawing.Point(415, 72)
         Me.EmptySpaceItem4.Name = "EmptySpaceItem4"
-        Me.EmptySpaceItem4.Size = New System.Drawing.Size(677, 24)
+        Me.EmptySpaceItem4.Size = New System.Drawing.Size(700, 24)
         Me.EmptySpaceItem4.TextSize = New System.Drawing.Size(0, 0)
+        '
+        'LayoutControlItem12
+        '
+        Me.LayoutControlItem12.Control = Me.IdTipoLoquidacionSearchLookUpEdit
+        Me.LayoutControlItem12.Location = New System.Drawing.Point(0, 24)
+        Me.LayoutControlItem12.Name = "LayoutControlItem12"
+        Me.LayoutControlItem12.Size = New System.Drawing.Size(487, 24)
+        Me.LayoutControlItem12.Text = "Tipo Loquidacion:"
+        Me.LayoutControlItem12.TextSize = New System.Drawing.Size(89, 13)
+        '
+        'LayoutControlItem3
+        '
+        Me.LayoutControlItem3.Control = Me.PeriodoTextEdit
+        Me.LayoutControlItem3.Location = New System.Drawing.Point(549, 24)
+        Me.LayoutControlItem3.Name = "LayoutControlItem3"
+        Me.LayoutControlItem3.Size = New System.Drawing.Size(180, 24)
+        Me.LayoutControlItem3.Text = "Periodo:"
+        Me.LayoutControlItem3.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize
+        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(40, 13)
+        Me.LayoutControlItem3.TextToControlDistance = 5
+        '
+        'EmptySpaceItem5
+        '
+        Me.EmptySpaceItem5.AllowHotTrack = False
+        Me.EmptySpaceItem5.Location = New System.Drawing.Point(729, 24)
+        Me.EmptySpaceItem5.Name = "EmptySpaceItem5"
+        Me.EmptySpaceItem5.Size = New System.Drawing.Size(51, 24)
+        Me.EmptySpaceItem5.TextSize = New System.Drawing.Size(0, 0)
         '
         'categorias_DetailsPopUpMenu
         '
@@ -688,56 +745,29 @@ Partial Class LegajoNovedadEditForm
         Me.categorias_DetailsPopUpMenu.Manager = Me.categorias_DetailsBarManager
         Me.categorias_DetailsPopUpMenu.Name = "categorias_DetailsPopUpMenu"
         '
-        'IdTipoLoquidacionSearchLookUpEditView
+        'FechaPagoDateEdit
         '
-        Me.IdTipoLoquidacionSearchLookUpEditView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colDescripcion})
-        Me.IdTipoLoquidacionSearchLookUpEditView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
-        Me.IdTipoLoquidacionSearchLookUpEditView.Name = "IdTipoLoquidacionSearchLookUpEditView"
-        Me.IdTipoLoquidacionSearchLookUpEditView.OptionsSelection.EnableAppearanceFocusedCell = False
-        Me.IdTipoLoquidacionSearchLookUpEditView.OptionsView.ShowGroupPanel = False
+        Me.FechaPagoDateEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosNovedadesBindingSource, "FechaPago", True))
+        Me.FechaPagoDateEdit.EditValue = Nothing
+        Me.FechaPagoDateEdit.Location = New System.Drawing.Point(857, 36)
+        Me.FechaPagoDateEdit.MenuManager = Me.ribbonControl
+        Me.FechaPagoDateEdit.Name = "FechaPagoDateEdit"
+        Me.FechaPagoDateEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.FechaPagoDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.FechaPagoDateEdit.Size = New System.Drawing.Size(266, 20)
+        Me.FechaPagoDateEdit.StyleController = Me.layoutData
+        Me.FechaPagoDateEdit.TabIndex = 20
         '
-        'IdTipoLoquidacionSearchLookUpEdit
+        'LayoutControlItem13
         '
-        Me.IdTipoLoquidacionSearchLookUpEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LegajosNovedadesBindingSource, "IdTipoLoquidacion", True))
-        Me.IdTipoLoquidacionSearchLookUpEdit.Location = New System.Drawing.Point(104, 36)
-        Me.IdTipoLoquidacionSearchLookUpEdit.MenuManager = Me.ribbonControl
-        Me.IdTipoLoquidacionSearchLookUpEdit.Name = "IdTipoLoquidacionSearchLookUpEdit"
-        Me.IdTipoLoquidacionSearchLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.IdTipoLoquidacionSearchLookUpEdit.Properties.DataSource = Me.TipoLiquidacionBindingSource
-        Me.IdTipoLoquidacionSearchLookUpEdit.Properties.DisplayMember = "Descripcion"
-        Me.IdTipoLoquidacionSearchLookUpEdit.Properties.PopupView = Me.IdTipoLoquidacionSearchLookUpEditView
-        Me.IdTipoLoquidacionSearchLookUpEdit.Properties.ValueMember = "Id"
-        Me.IdTipoLoquidacionSearchLookUpEdit.Size = New System.Drawing.Size(375, 20)
-        Me.IdTipoLoquidacionSearchLookUpEdit.StyleController = Me.layoutData
-        Me.IdTipoLoquidacionSearchLookUpEdit.TabIndex = 15
-        '
-        'LayoutControlItem12
-        '
-        Me.LayoutControlItem12.Control = Me.IdTipoLoquidacionSearchLookUpEdit
-        Me.LayoutControlItem12.Location = New System.Drawing.Point(0, 24)
-        Me.LayoutControlItem12.Name = "LayoutControlItem12"
-        Me.LayoutControlItem12.Size = New System.Drawing.Size(471, 24)
-        Me.LayoutControlItem12.Text = "Tipo Loquidacion:"
-        Me.LayoutControlItem12.TextSize = New System.Drawing.Size(89, 13)
-        '
-        'EmptySpaceItem5
-        '
-        Me.EmptySpaceItem5.AllowHotTrack = False
-        Me.EmptySpaceItem5.Location = New System.Drawing.Point(780, 24)
-        Me.EmptySpaceItem5.Name = "EmptySpaceItem5"
-        Me.EmptySpaceItem5.Size = New System.Drawing.Size(298, 24)
-        Me.EmptySpaceItem5.TextSize = New System.Drawing.Size(0, 0)
-        '
-        'TipoLiquidacionBindingSource
-        '
-        Me.TipoLiquidacionBindingSource.DataSource = GetType(YiZi.AccesoDatos.TipoLiquidacion)
-        '
-        'colDescripcion
-        '
-        Me.colDescripcion.FieldName = "Descripcion"
-        Me.colDescripcion.Name = "colDescripcion"
-        Me.colDescripcion.Visible = True
-        Me.colDescripcion.VisibleIndex = 0
+        Me.LayoutControlItem13.Control = Me.FechaPagoDateEdit
+        Me.LayoutControlItem13.Location = New System.Drawing.Point(780, 24)
+        Me.LayoutControlItem13.Name = "LayoutControlItem13"
+        Me.LayoutControlItem13.Size = New System.Drawing.Size(335, 24)
+        Me.LayoutControlItem13.Text = "Fecha Pago:"
+        Me.LayoutControlItem13.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize
+        Me.LayoutControlItem13.TextSize = New System.Drawing.Size(60, 13)
+        Me.LayoutControlItem13.TextToControlDistance = 5
         '
         'LegajoNovedadEditForm
         '
@@ -747,16 +777,19 @@ Partial Class LegajoNovedadEditForm
         Me.Controls.Add(Me.RibbonStatusBar1)
         Me.Controls.Add(Me.ribbonControl)
         Me.Name = "LegajoNovedadEditForm"
-        Me.Size = New System.Drawing.Size(1098, 795)
+        Me.Size = New System.Drawing.Size(1135, 832)
         CType(Me.ribbonControl, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.mvvmContext, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.layoutData, System.ComponentModel.ISupportInitialize).EndInit()
         Me.layoutData.ResumeLayout(False)
+        CType(Me.IdTipoLoquidacionSearchLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LegajosNovedadesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TipoLiquidacionBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.IdTipoLoquidacionSearchLookUpEditView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gridControl, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LegajosNovedadesDetallesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DiasVacacionesSpinEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LegajosNovedadesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DiasTrabajadosSpinEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.HorasTrabajadasSpinEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PeriodoTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -769,7 +802,6 @@ Partial Class LegajoNovedadEditForm
         CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -780,13 +812,14 @@ Partial Class LegajoNovedadEditForm
         CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmptySpaceItem5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.categorias_DetailsPopUpMenu, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BehaviorManager1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.IdTipoLoquidacionSearchLookUpEditView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.IdTipoLoquidacionSearchLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem12, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmptySpaceItem5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TipoLiquidacionBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.FechaPagoDateEdit.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.FechaPagoDateEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem13, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -864,4 +897,6 @@ Partial Class LegajoNovedadEditForm
     Friend WithEvents EmptySpaceItem5 As DevExpress.XtraLayout.EmptySpaceItem
     Friend WithEvents TipoLiquidacionBindingSource As BindingSource
     Friend WithEvents colDescripcion As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents FechaPagoDateEdit As DevExpress.XtraEditors.DateEdit
+    Friend WithEvents LayoutControlItem13 As DevExpress.XtraLayout.LayoutControlItem
 End Class

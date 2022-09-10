@@ -194,4 +194,82 @@ Public Class ModeloDbContextUnitOfWork
             Return GetRepository(Function(x) x.[Set](Of LegajosNovedadesDetalles)(), Function(x As LegajosNovedadesDetalles) x.Id)
         End Get
     End Property
+
+    Public ReadOnly Property TipoEmpresaAfip As IRepository(Of TipoEmpresaAfip, Integer) Implements IModeloDbContextUnitOfWork.TipoEmpresaAfip
+        Get
+            Return GetRepository(Function(x) x.[Set](Of TipoEmpresaAfip)(), Function(x As TipoEmpresaAfip) x.Id)
+        End Get
+    End Property
+
+    Public ReadOnly Property IdentificacionEnvio As IRepository(Of IdentificacionEnvio, Integer) Implements IModeloDbContextUnitOfWork.IdentificacionEnvio
+        Get
+            Return GetRepository(Function(x) x.[Set](Of IdentificacionEnvio)(), Function(x As IdentificacionEnvio) x.Id)
+        End Get
+    End Property
+
+    Public ReadOnly Property LSDRegistro01 As IRepository(Of LSDRegistro01, Integer) Implements IModeloDbContextUnitOfWork.LSDRegistro01
+        Get
+            Return GetRepository(Function(x) x.[Set](Of LSDRegistro01)(), Function(x As LSDRegistro01) x.Id)
+        End Get
+    End Property
+
+    Public ReadOnly Property LSDRegistro02 As IRepository(Of LSDRegistro02, Integer) Implements IModeloDbContextUnitOfWork.LSDRegistro02
+        Get
+            Return GetRepository(Function(x) x.[Set](Of LSDRegistro02)(), Function(x As LSDRegistro02) x.Id)
+        End Get
+    End Property
+
+    Public ReadOnly Property LSDRegistro03 As IRepository(Of LSDRegistro03, Integer) Implements IModeloDbContextUnitOfWork.LSDRegistro03
+        Get
+            Return GetRepository(Function(x) x.[Set](Of LSDRegistro03)(), Function(x As LSDRegistro03) x.Id)
+        End Get
+    End Property
+
+    Public ReadOnly Property LSDRegistro04 As IRepository(Of LSDRegistro04, Integer) Implements IModeloDbContextUnitOfWork.LSDRegistro04
+        Get
+            Return GetRepository(Function(x) x.[Set](Of LSDRegistro04)(), Function(x As LSDRegistro04) x.Id)
+        End Get
+    End Property
+
+    Public ReadOnly Property CodigosDeActivdadEmpleados As IRepository(Of CodigosDeActivdadEmpleados, Integer) Implements IModeloDbContextUnitOfWork.CodigosDeActivdadEmpleados
+        Get
+            Return GetRepository(Function(x) x.[Set](Of CodigosDeActivdadEmpleados)(), Function(x As CodigosDeActivdadEmpleados) x.Id)
+        End Get
+    End Property
+
+    Public ReadOnly Property CodigosDeCondiciones As IRepository(Of CodigosDeCondiciones, Integer) Implements IModeloDbContextUnitOfWork.CodigosDeCondiciones
+        Get
+            Return GetRepository(Function(x) x.[Set](Of CodigosDeCondiciones)(), Function(x As CodigosDeCondiciones) x.Id)
+        End Get
+    End Property
+
+    Public ReadOnly Property CodigosDeLocalidades As IRepository(Of CodigosDeLocalidades, Integer) Implements IModeloDbContextUnitOfWork.CodigosDeLocalidades
+        Get
+            Return GetRepository(Function(x) x.[Set](Of CodigosDeLocalidades)(), Function(x As CodigosDeLocalidades) x.Id)
+        End Get
+    End Property
+
+    Public ReadOnly Property CodigosDeModalidadDeContratacion As IRepository(Of CodigosDeModalidadDeContratacion, Integer) Implements IModeloDbContextUnitOfWork.CodigosDeModalidadDeContratacion
+        Get
+            Return GetRepository(Function(x) x.[Set](Of CodigosDeModalidadDeContratacion)(), Function(x As CodigosDeModalidadDeContratacion) x.Id)
+        End Get
+    End Property
+
+    Public ReadOnly Property CodigosDeRevistas As IRepository(Of CodigosDeRevistas, Integer) Implements IModeloDbContextUnitOfWork.CodigosDeRevistas
+        Get
+            Return GetRepository(Function(x) x.[Set](Of CodigosDeRevistas)(), Function(x As CodigosDeRevistas) x.Id)
+        End Get
+    End Property
+
+    Public ReadOnly Property CodigosDeSiniestrados As IRepository(Of CodigosDeSiniestrados, Integer) Implements IModeloDbContextUnitOfWork.CodigosDeSiniestrados
+        Get
+            Return GetRepository(Function(x) x.[Set](Of CodigosDeSiniestrados)(), Function(x As CodigosDeSiniestrados) x.Id)
+        End Get
+    End Property
+
+    Public ReadOnly Property EstadosCiviles As IRepository(Of EstadosCiviles, Integer) Implements IModeloDbContextUnitOfWork.EstadosCiviles
+        Get
+            Return GetRepository(Function(x) x.[Set](Of EstadosCiviles)(), Function(x As EstadosCiviles) x.Id)
+        End Get
+    End Property
 End Class

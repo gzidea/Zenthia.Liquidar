@@ -26,4 +26,10 @@ Partial Public Class EmpresaViewModel
         End Get
     End Property
 
+    Public ReadOnly Property LookUpTipoEmpresaAfip As IEntitiesViewModel(Of TipoEmpresaAfip)
+        Get
+            Return GetLookUpEntitiesViewModel(Function(x As EmpresaViewModel) x.LookUpTipoEmpresaAfip, Function(x) x.TipoEmpresaAfip)
+        End Get
+    End Property
+
 End Class

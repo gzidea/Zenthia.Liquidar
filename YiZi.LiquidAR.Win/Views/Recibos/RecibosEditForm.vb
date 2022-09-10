@@ -48,6 +48,8 @@ Public Class RecibosEditForm
         fluent.BindCommand(bbiAddToPlantilla, Sub(x) x.AddDetalleToPlantilla())
         fluent.BindCommand(bbiAddFromPlantilla, Sub(x) x.AddDetalleFromPlantilla())
         fluent.BindCommand(bbiRecalcular, Sub(x) x.Recalcular())
+        fluent.BindCommand(bbiGenerarDetalle, Sub(x) x.GenerarDetalle())
+        fluent.BindCommand(bbiDelAll, Sub(x) x.DelAll())
 
         fluent.SetBinding(bsiEstado, Function(item) item.Caption, Function(x) x.Estado, Function(estado) String.Format("Estado : {0}", estado))
 

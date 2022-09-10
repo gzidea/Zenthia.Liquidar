@@ -20,6 +20,8 @@ Partial Public Class Formulas
 
     Public Property Codigo As Integer?
 
+    Public Property CodigoAfip As Integer?
+
     Public Property IdConcepto As Integer?
 
     Public Property IdConvenio As Integer?
@@ -58,6 +60,8 @@ Partial Public Class Formulas
     Public Property SumaAlBasico As Boolean
 
     Public Property Novedad As Boolean?
+
+    Public Property Auxiliar As Boolean
 
     Public Overridable Property Convenios As Convenios
 

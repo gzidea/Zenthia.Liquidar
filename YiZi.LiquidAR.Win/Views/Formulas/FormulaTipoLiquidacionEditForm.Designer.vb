@@ -45,6 +45,9 @@ Partial Class FormulaTipoLiquidacionEditForm
         Me.IdFormulaSearchLookUpEdit = New DevExpress.XtraEditors.SearchLookUpEdit()
         Me.FormulasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.IdFormulaSearchLookUpEditView = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.colCodigo = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colConvenios = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colDescripcion = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
@@ -264,10 +267,32 @@ Partial Class FormulaTipoLiquidacionEditForm
         '
         'IdFormulaSearchLookUpEditView
         '
+        Me.IdFormulaSearchLookUpEditView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colCodigo, Me.colConvenios, Me.colDescripcion})
         Me.IdFormulaSearchLookUpEditView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
         Me.IdFormulaSearchLookUpEditView.Name = "IdFormulaSearchLookUpEditView"
         Me.IdFormulaSearchLookUpEditView.OptionsSelection.EnableAppearanceFocusedCell = False
         Me.IdFormulaSearchLookUpEditView.OptionsView.ShowGroupPanel = False
+        '
+        'colCodigo
+        '
+        Me.colCodigo.FieldName = "Codigo"
+        Me.colCodigo.Name = "colCodigo"
+        Me.colCodigo.Visible = True
+        Me.colCodigo.VisibleIndex = 0
+        '
+        'colConvenios
+        '
+        Me.colConvenios.FieldName = "Convenios.Nombre"
+        Me.colConvenios.Name = "colConvenios"
+        Me.colConvenios.Visible = True
+        Me.colConvenios.VisibleIndex = 1
+        '
+        'colDescripcion
+        '
+        Me.colDescripcion.FieldName = "Conceptos.Descripcion"
+        Me.colDescripcion.Name = "colDescripcion"
+        Me.colDescripcion.Visible = True
+        Me.colDescripcion.VisibleIndex = 2
         '
         'Root
         '
@@ -383,4 +408,7 @@ Partial Class FormulaTipoLiquidacionEditForm
     Friend WithEvents EmptySpaceItem1 As DevExpress.XtraLayout.EmptySpaceItem
     Friend WithEvents LayoutControlItem5 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents mvvmContext As DevExpress.Utils.MVVM.MVVMContext
+    Friend WithEvents colCodigo As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colConvenios As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colDescripcion As DevExpress.XtraGrid.Columns.GridColumn
 End Class

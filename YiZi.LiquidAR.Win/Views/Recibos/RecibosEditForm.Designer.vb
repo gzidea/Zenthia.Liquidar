@@ -20,6 +20,7 @@ Partial Class RecibosEditForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RecibosEditForm))
         Me.RibbonStatusBar1 = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
         Me.bsiEstado = New DevExpress.XtraBars.BarStaticItem()
         Me.ribbonControl = New DevExpress.XtraBars.Ribbon.RibbonControl()
@@ -87,9 +88,11 @@ Partial Class RecibosEditForm
         Me.bbiRecibodetalle_DetailsNew = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiRecibodetalle_DetailsEdit = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiRecibodetalle_DetailsDelete = New DevExpress.XtraBars.BarButtonItem()
+        Me.bbiDelAll = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiRecibodetalle_DetailsRefresh = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiAddToPlantilla = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiAddFromPlantilla = New DevExpress.XtraBars.BarButtonItem()
+        Me.bbiGenerarDetalle = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiRecalcular = New DevExpress.XtraBars.BarButtonItem()
         Me.BarDockControl1 = New DevExpress.XtraBars.BarDockControl()
         Me.barDockControlBottom = New DevExpress.XtraBars.BarDockControl()
@@ -124,6 +127,7 @@ Partial Class RecibosEditForm
         Me.LayoutControlItem20 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem7 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.recibodetalles_DetailsPopUpMenu = New DevExpress.XtraBars.PopupMenu(Me.components)
+        Me.colFormulas4 = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.ribbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.mvvmContext, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dataLayout, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -415,11 +419,11 @@ Partial Class RecibosEditForm
         'gridControl
         '
         Me.gridControl.DataSource = Me.RecibosDetallesBindingSource
-        Me.gridControl.Location = New System.Drawing.Point(12, 276)
+        Me.gridControl.Location = New System.Drawing.Point(12, 258)
         Me.gridControl.MainView = Me.gridView
         Me.gridControl.MenuManager = Me.ribbonControl
         Me.gridControl.Name = "gridControl"
-        Me.gridControl.Size = New System.Drawing.Size(1141, 289)
+        Me.gridControl.Size = New System.Drawing.Size(1141, 307)
         Me.gridControl.TabIndex = 5
         Me.gridControl.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridView})
         '
@@ -429,7 +433,7 @@ Partial Class RecibosEditForm
         '
         'gridView
         '
-        Me.gridView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colFormulas, Me.colFormulas1, Me.colCantidad, Me.colFormulas2, Me.colRemunerativo, Me.colDescuento, Me.colNoRemunerativo, Me.colFormulas3, Me.columnaSep01})
+        Me.gridView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colFormulas4, Me.colFormulas, Me.colFormulas1, Me.colCantidad, Me.colFormulas2, Me.colRemunerativo, Me.colDescuento, Me.colNoRemunerativo, Me.colFormulas3, Me.columnaSep01})
         Me.gridView.GridControl = Me.gridControl
         Me.gridView.Name = "gridView"
         Me.gridView.OptionsBehavior.Editable = False
@@ -437,6 +441,7 @@ Partial Class RecibosEditForm
         Me.gridView.OptionsSelection.MultiSelect = True
         Me.gridView.OptionsView.ShowGroupExpandCollapseButtons = False
         Me.gridView.OptionsView.ShowGroupPanel = False
+        Me.gridView.SortInfo.AddRange(New DevExpress.XtraGrid.Columns.GridColumnSortInfo() {New DevExpress.XtraGrid.Columns.GridColumnSortInfo(Me.colFormulas4, DevExpress.Data.ColumnSortOrder.Ascending), New DevExpress.XtraGrid.Columns.GridColumnSortInfo(Me.colFormulas, DevExpress.Data.ColumnSortOrder.Ascending)})
         '
         'colFormulas
         '
@@ -444,8 +449,8 @@ Partial Class RecibosEditForm
         Me.colFormulas.FieldName = "Formulas.Codigo"
         Me.colFormulas.Name = "colFormulas"
         Me.colFormulas.Visible = True
-        Me.colFormulas.VisibleIndex = 0
-        Me.colFormulas.Width = 42
+        Me.colFormulas.VisibleIndex = 1
+        Me.colFormulas.Width = 66
         '
         'colFormulas1
         '
@@ -453,8 +458,8 @@ Partial Class RecibosEditForm
         Me.colFormulas1.FieldName = "Formulas.DescripcionCompleta"
         Me.colFormulas1.Name = "colFormulas1"
         Me.colFormulas1.Visible = True
-        Me.colFormulas1.VisibleIndex = 1
-        Me.colFormulas1.Width = 420
+        Me.colFormulas1.VisibleIndex = 2
+        Me.colFormulas1.Width = 576
         '
         'colCantidad
         '
@@ -464,8 +469,8 @@ Partial Class RecibosEditForm
         Me.colCantidad.FieldName = "Cantidad"
         Me.colCantidad.Name = "colCantidad"
         Me.colCantidad.Visible = True
-        Me.colCantidad.VisibleIndex = 2
-        Me.colCantidad.Width = 48
+        Me.colCantidad.VisibleIndex = 3
+        Me.colCantidad.Width = 64
         '
         'colFormulas2
         '
@@ -473,8 +478,8 @@ Partial Class RecibosEditForm
         Me.colFormulas2.FieldName = "Formulas.Unidades.Descripcion"
         Me.colFormulas2.Name = "colFormulas2"
         Me.colFormulas2.Visible = True
-        Me.colFormulas2.VisibleIndex = 3
-        Me.colFormulas2.Width = 52
+        Me.colFormulas2.VisibleIndex = 4
+        Me.colFormulas2.Width = 69
         '
         'colRemunerativo
         '
@@ -484,8 +489,8 @@ Partial Class RecibosEditForm
         Me.colRemunerativo.FieldName = "Remunerativo"
         Me.colRemunerativo.Name = "colRemunerativo"
         Me.colRemunerativo.Visible = True
-        Me.colRemunerativo.VisibleIndex = 4
-        Me.colRemunerativo.Width = 98
+        Me.colRemunerativo.VisibleIndex = 5
+        Me.colRemunerativo.Width = 133
         '
         'colDescuento
         '
@@ -495,8 +500,8 @@ Partial Class RecibosEditForm
         Me.colDescuento.FieldName = "Descuento"
         Me.colDescuento.Name = "colDescuento"
         Me.colDescuento.Visible = True
-        Me.colDescuento.VisibleIndex = 5
-        Me.colDescuento.Width = 113
+        Me.colDescuento.VisibleIndex = 6
+        Me.colDescuento.Width = 154
         '
         'colNoRemunerativo
         '
@@ -506,8 +511,8 @@ Partial Class RecibosEditForm
         Me.colNoRemunerativo.FieldName = "NoRemunerativo"
         Me.colNoRemunerativo.Name = "colNoRemunerativo"
         Me.colNoRemunerativo.Visible = True
-        Me.colNoRemunerativo.VisibleIndex = 6
-        Me.colNoRemunerativo.Width = 102
+        Me.colNoRemunerativo.VisibleIndex = 7
+        Me.colNoRemunerativo.Width = 139
         '
         'colFormulas3
         '
@@ -515,14 +520,15 @@ Partial Class RecibosEditForm
         Me.colFormulas3.FieldName = "Formulas.Variable"
         Me.colFormulas3.Name = "colFormulas3"
         Me.colFormulas3.Visible = True
-        Me.colFormulas3.VisibleIndex = 7
+        Me.colFormulas3.VisibleIndex = 8
+        Me.colFormulas3.Width = 101
         '
         'columnaSep01
         '
         Me.columnaSep01.Name = "columnaSep01"
         Me.columnaSep01.Visible = True
-        Me.columnaSep01.VisibleIndex = 8
-        Me.columnaSep01.Width = 177
+        Me.columnaSep01.VisibleIndex = 9
+        Me.columnaSep01.Width = 256
         '
         'NombreTextEdit1
         '
@@ -817,9 +823,9 @@ Partial Class RecibosEditForm
         Me.recibodetalles_DetailsBarManager.DockControls.Add(Me.barDockControlLeft)
         Me.recibodetalles_DetailsBarManager.DockControls.Add(Me.barDockControlRight)
         Me.recibodetalles_DetailsBarManager.Form = Me.dataLayout
-        Me.recibodetalles_DetailsBarManager.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.bbiRecibodetalle_DetailsNew, Me.bbiRecibodetalle_DetailsEdit, Me.bbiRecibodetalle_DetailsDelete, Me.bbiRecibodetalle_DetailsRefresh, Me.bbiAddToPlantilla, Me.bbiAddFromPlantilla, Me.bbiRecalcular})
+        Me.recibodetalles_DetailsBarManager.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.bbiRecibodetalle_DetailsNew, Me.bbiRecibodetalle_DetailsEdit, Me.bbiRecibodetalle_DetailsDelete, Me.bbiRecibodetalle_DetailsRefresh, Me.bbiAddToPlantilla, Me.bbiAddFromPlantilla, Me.bbiRecalcular, Me.bbiGenerarDetalle, Me.bbiDelAll})
         Me.recibodetalles_DetailsBarManager.MainMenu = Me.Actividades_DetailsBar
-        Me.recibodetalles_DetailsBarManager.MaxItemId = 8
+        Me.recibodetalles_DetailsBarManager.MaxItemId = 10
         '
         'Actividades_DetailsBar
         '
@@ -827,7 +833,7 @@ Partial Class RecibosEditForm
         Me.Actividades_DetailsBar.DockCol = 0
         Me.Actividades_DetailsBar.DockRow = 0
         Me.Actividades_DetailsBar.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
-        Me.Actividades_DetailsBar.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.bbiRecibodetalle_DetailsNew, True), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiRecibodetalle_DetailsEdit), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiRecibodetalle_DetailsDelete), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiRecibodetalle_DetailsRefresh), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiAddToPlantilla, True), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiAddFromPlantilla), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiRecalcular, True)})
+        Me.Actividades_DetailsBar.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.bbiRecibodetalle_DetailsNew, True), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiRecibodetalle_DetailsEdit), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiRecibodetalle_DetailsDelete), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiDelAll), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiRecibodetalle_DetailsRefresh, True), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiAddToPlantilla, True), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiAddFromPlantilla), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiGenerarDetalle), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiRecalcular, True)})
         Me.Actividades_DetailsBar.OptionsBar.AllowQuickCustomization = False
         Me.Actividades_DetailsBar.OptionsBar.DrawDragBorder = False
         Me.Actividades_DetailsBar.Text = "Actividades_Details"
@@ -860,6 +866,15 @@ Partial Class RecibosEditForm
         Me.bbiRecibodetalle_DetailsDelete.Name = "bbiRecibodetalle_DetailsDelete"
         Me.bbiRecibodetalle_DetailsDelete.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph
         '
+        'bbiDelAll
+        '
+        Me.bbiDelAll.Caption = "Quitar todo"
+        Me.bbiDelAll.Id = 9
+        Me.bbiDelAll.ImageOptions.Image = CType(resources.GetObject("bbiDelAll.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiDelAll.ImageOptions.LargeImage = CType(resources.GetObject("bbiDelAll.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.bbiDelAll.Name = "bbiDelAll"
+        Me.bbiDelAll.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph
+        '
         'bbiRecibodetalle_DetailsRefresh
         '
         Me.bbiRecibodetalle_DetailsRefresh.Caption = "Refresh"
@@ -887,6 +902,15 @@ Partial Class RecibosEditForm
         Me.bbiAddFromPlantilla.Name = "bbiAddFromPlantilla"
         Me.bbiAddFromPlantilla.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph
         '
+        'bbiGenerarDetalle
+        '
+        Me.bbiGenerarDetalle.Caption = "Generar detalle"
+        Me.bbiGenerarDetalle.Id = 8
+        Me.bbiGenerarDetalle.ImageOptions.Image = CType(resources.GetObject("bbiGenerarDetalle.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiGenerarDetalle.ImageOptions.LargeImage = CType(resources.GetObject("bbiGenerarDetalle.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.bbiGenerarDetalle.Name = "bbiGenerarDetalle"
+        Me.bbiGenerarDetalle.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph
+        '
         'bbiRecalcular
         '
         Me.bbiRecalcular.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right
@@ -904,7 +928,7 @@ Partial Class RecibosEditForm
         Me.BarDockControl1.CausesValidation = False
         Me.BarDockControl1.Location = New System.Drawing.Point(12, 225)
         Me.BarDockControl1.Manager = Me.recibodetalles_DetailsBarManager
-        Me.BarDockControl1.Size = New System.Drawing.Size(1141, 47)
+        Me.BarDockControl1.Size = New System.Drawing.Size(1141, 29)
         '
         'barDockControlBottom
         '
@@ -1096,9 +1120,9 @@ Partial Class RecibosEditForm
         'LayoutControlItem1
         '
         Me.LayoutControlItem1.Control = Me.gridControl
-        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 264)
+        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 246)
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(1145, 293)
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(1145, 311)
         Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem1.TextVisible = False
         '
@@ -1180,7 +1204,7 @@ Partial Class RecibosEditForm
         Me.LayoutControlItem3.Control = Me.BarDockControl1
         Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 213)
         Me.LayoutControlItem3.Name = "LayoutControlItem3"
-        Me.LayoutControlItem3.Size = New System.Drawing.Size(1145, 51)
+        Me.LayoutControlItem3.Size = New System.Drawing.Size(1145, 33)
         Me.LayoutControlItem3.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem3.TextVisible = False
         '
@@ -1208,6 +1232,15 @@ Partial Class RecibosEditForm
         Me.recibodetalles_DetailsPopUpMenu.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.bbiRecibodetalle_DetailsNew), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiRecibodetalle_DetailsEdit), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiRecibodetalle_DetailsDelete, True), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiRecibodetalle_DetailsRefresh, True), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiRecalcular, True)})
         Me.recibodetalles_DetailsPopUpMenu.Manager = Me.recibodetalles_DetailsBarManager
         Me.recibodetalles_DetailsPopUpMenu.Name = "recibodetalles_DetailsPopUpMenu"
+        '
+        'colFormulas4
+        '
+        Me.colFormulas4.Caption = "Orden"
+        Me.colFormulas4.FieldName = "Formulas.Orden"
+        Me.colFormulas4.Name = "colFormulas4"
+        Me.colFormulas4.Visible = True
+        Me.colFormulas4.VisibleIndex = 0
+        Me.colFormulas4.Width = 57
         '
         'RecibosEditForm
         '
@@ -1394,4 +1427,7 @@ Partial Class RecibosEditForm
     Friend WithEvents LayoutControlItem21 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents EmptySpaceItem8 As DevExpress.XtraLayout.EmptySpaceItem
     Friend WithEvents colFormulas3 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents bbiGenerarDetalle As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents bbiDelAll As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents colFormulas4 As DevExpress.XtraGrid.Columns.GridColumn
 End Class

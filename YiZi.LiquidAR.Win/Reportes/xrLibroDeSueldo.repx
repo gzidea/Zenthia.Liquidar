@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XtraReportsLayoutSerializer SerializerVersion="20.1.7.0" Ref="1" ControlType="DevExpress.XtraReports.UI.XtraReport, DevExpress.XtraReports.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Name="xrLibroDeSueldo" SnapGridSize="25" ReportUnit="TenthsOfAMillimeter" Margins="250, 50, 59, 14" PaperKind="A4" PageWidth="2100" PageHeight="2970" Version="20.1" DataSource="#Ref-0" Dpi="254" Font="Arial, 9.75pt">
+  <Bands>
+    <Item1 Ref="2" ControlType="TopMarginBand" Name="TopMargin" HeightF="58.65886" Dpi="254" />
+    <Item2 Ref="3" ControlType="BottomMarginBand" Name="BottomMargin" HeightF="14.3316" Dpi="254" />
+    <Item3 Ref="4" ControlType="DetailBand" Name="Detail" HeightF="192.5578" Dpi="254" Borders="None">
+      <HierarchyPrintOptions Ref="5" Indent="50.8" />
+      <Controls>
+        <Item1 Ref="6" ControlType="XRLabel" Name="XrLabel14" TextFormatString="{0:$0.00}" Multiline="true" TextAlignment="MiddleLeft" SizeF="140.0607,32.85245" LocationFloat="1174.701,80.03647" Dpi="254" Font="Arial, 6.75pt, charSet=0" Padding="5,5,0,0,254" Borders="None">
+          <ExpressionBindings>
+            <Item1 Ref="7" EventName="BeforePrint" PropertyName="Text" Expression="[Legajos].[Categorias].[Importe]" />
+          </ExpressionBindings>
+          <StylePriority Ref="8" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+        </Item1>
+        <Item2 Ref="9" ControlType="XRLabel" Name="XrLabel42" Multiline="true" Text="Con Aportes" TextAlignment="MiddleCenter" SizeF="219.9308,29.39813" LocationFloat="1118.35,152.5468" Dpi="254" Font="Arial, 6.75pt, charSet=0" Padding="5,5,0,0,254" Borders="None">
+          <StylePriority Ref="10" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+        </Item2>
+        <Item3 Ref="11" ControlType="XRLabel" Name="XrLabel41" Multiline="true" TextAlignment="MiddleLeft" SizeF="219.265,32.85245" LocationFloat="1457.224,80.03647" Dpi="254" Font="Arial, 6.75pt, charSet=0" Padding="5,5,0,0,254" Borders="None">
+          <ExpressionBindings>
+            <Item1 Ref="12" EventName="BeforePrint" PropertyName="Text" Expression="[Legajos].[Jornadas].[Descripcion]" />
+          </ExpressionBindings>
+          <StylePriority Ref="13" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+        </Item3>
+        <Item4 Ref="14" ControlType="XRLabel" Name="XrLabel40" Multiline="true" Text="Jornada:" TextAlignment="MiddleLeft" SizeF="118.9437,32.85245" LocationFloat="1338.28,80.03647" Dpi="254" Font="Arial, 6.75pt, charSet=0" Padding="5,5,0,0,254" Borders="None">
+          <StylePriority Ref="15" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+        </Item4>
+        <Item5 Ref="16" ControlType="XRLabel" Name="XrLabel39" Multiline="true" Text="Basico:" TextAlignment="MiddleLeft" SizeF="95.42517,32.85245" LocationFloat="1079.276,80.03647" Dpi="254" Font="Arial, 6.75pt, charSet=0" Padding="5,5,0,0,254" Borders="None">
+          <StylePriority Ref="17" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+        </Item5>
+        <Item6 Ref="18" ControlType="XRLabel" Name="XrLabel38" Multiline="true" TextAlignment="MiddleLeft" SizeF="219.265,32.85245" LocationFloat="847.9707,80.03647" Dpi="254" Font="Arial, 6.75pt, charSet=0" Padding="5,5,0,0,254" Borders="None">
+          <ExpressionBindings>
+            <Item1 Ref="19" EventName="BeforePrint" PropertyName="Text" Expression="Iif(Contains([Legajos].[FechaEgreso], '30/12/1899'), '' , [Legajos].[FechaEgreso])" />
+          </ExpressionBindings>
+          <StylePriority Ref="20" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+        </Item6>
+        <Item7 Ref="21" ControlType="XRLabel" Name="XrLabel37" TextFormatString="{0:dd/MM/yyyy}" Multiline="true" TextAlignment="MiddleLeft" SizeF="219.265,32.85245" LocationFloat="396.2976,80.03647" Dpi="254" Font="Arial, 6.75pt, charSet=0" Padding="5,5,0,0,254" Borders="None">
+          <ExpressionBindings>
+            <Item1 Ref="22" EventName="BeforePrint" PropertyName="Text" Expression="[Legajos].[FechaIngreso]" />
+          </ExpressionBindings>
+          <StylePriority Ref="23" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+        </Item7>
+        <Item8 Ref="24" ControlType="XRLabel" Name="XrLabel36" Multiline="true" Text="Fecha Egreso:" TextAlignment="MiddleLeft" SizeF="176.2701,32.85245" LocationFloat="671.7006,80.03647" Dpi="254" Font="Arial, 6.75pt, charSet=0" Padding="5,5,0,0,254" Borders="None">
+          <StylePriority Ref="25" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+        </Item8>
+        <Item9 Ref="26" ControlType="XRLabel" Name="XrLabel35" Multiline="true" Text="Fecha Ingreso:" TextAlignment="MiddleLeft" SizeF="176.2701,32.85245" LocationFloat="220.0275,80.03647" Dpi="254" Font="Arial, 6.75pt, charSet=0" Padding="5,5,0,0,254" Borders="None">
+          <StylePriority Ref="27" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+        </Item9>
+        <Item10 Ref="28" ControlType="XRLabel" Name="XrLabel34" Multiline="true" TextAlignment="MiddleLeft" SizeF="389.7743,32.85245" LocationFloat="976.2201,47.18403" Dpi="254" Font="Arial, 6.75pt, charSet=0" Padding="5,5,0,0,254" Borders="None">
+          <ExpressionBindings>
+            <Item1 Ref="29" EventName="BeforePrint" PropertyName="Text" Expression="[Legajos].[Categorias].[Descripcion]" />
+          </ExpressionBindings>
+          <StylePriority Ref="30" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+        </Item10>
+        <Item11 Ref="31" ControlType="XRLabel" Name="XrLabel33" Multiline="true" Text="Cargo:" TextAlignment="MiddleLeft" SizeF="88.07568,32.85245" LocationFloat="888.1443,47.18403" Dpi="254" Font="Arial, 6.75pt, charSet=0" Padding="5,5,0,0,254" Borders="None">
+          <StylePriority Ref="32" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+        </Item11>
+        <Item12 Ref="33" ControlType="XRLabel" Name="XrLabel32" Multiline="true" TextAlignment="MiddleLeft" SizeF="649.094,32.85245" LocationFloat="220.0275,47.18403" Dpi="254" Font="Arial, 6.75pt, charSet=0" Padding="5,5,0,0,254" Borders="None">
+          <ExpressionBindings>
+            <Item1 Ref="34" EventName="BeforePrint" PropertyName="Text" Expression="[Legajos].[Domicilio] + '-' + [Legajos].[Localidad]" />
+          </ExpressionBindings>
+          <StylePriority Ref="35" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+        </Item12>
+        <Item13 Ref="36" ControlType="XRLabel" Name="XrLabel24" Multiline="true" Text="Descuentos" TextAlignment="MiddleCenter" SizeF="222.329,55.15624" LocationFloat="1558.211,126.7887" Dpi="254" Font="Arial, 6.75pt, charSet=0" Padding="5,5,0,0,254" Borders="None">
+          <StylePriority Ref="37" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+        </Item13>
+        <Item14 Ref="38" ControlType="XRLabel" Name="XrLabel23" Multiline="true" Text="Sin Aportes" TextAlignment="MiddleCenter" SizeF="219.9308,29.39813" LocationFloat="1338.28,152.5468" Dpi="254" Font="Arial, 6.75pt, charSet=0" Padding="5,5,0,0,254" Borders="None">
+          <StylePriority Ref="39" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+        </Item14>
+        <Item15 Ref="40" ControlType="XRLabel" Name="XrLabel22" Multiline="true" Text="Remuneraciones" TextAlignment="MiddleCenter" SizeF="439.8617,25.7581" LocationFloat="1118.349,126.7887" Dpi="254" Font="Arial, 6.75pt, charSet=0" Padding="5,5,0,0,254" Borders="None">
+          <StylePriority Ref="41" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+        </Item15>
+        <Item16 Ref="42" ControlType="XRLabel" Name="XrLabel21" Multiline="true" TextAlignment="MiddleCenter" SizeF="86.06836,55.15624" LocationFloat="1032.281,126.7887" Dpi="254" Font="Arial, 6.75pt, charSet=0" Padding="5,5,0,0,254" Borders="None">
+          <StylePriority Ref="43" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+        </Item16>
+        <Item17 Ref="44" ControlType="XRLabel" Name="XrLabel20" Multiline="true" Text="Detalle" TextAlignment="MiddleCenter" SizeF="812.2534,55.15623" LocationFloat="220.0275,126.7887" Dpi="254" Font="Arial, 6.75pt, charSet=0" Padding="5,5,0,0,254" Borders="None">
+          <StylePriority Ref="45" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+        </Item17>
+        <Item18 Ref="46" ControlType="XRLabel" Name="XrLabel19" Multiline="true" Text="Codigo" TextAlignment="MiddleCenter" SizeF="114.1941,55.15623" LocationFloat="105.8333,126.7887" Dpi="254" Font="Arial, 6.75pt, charSet=0" Padding="5,5,0,0,254" Borders="None">
+          <StylePriority Ref="47" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+        </Item18>
+        <Item19 Ref="48" ControlType="XRLine" Name="XrLine3" SizeF="1780.54,7.71701" LocationFloat="4.485801E-05,184.8408" Dpi="254" />
+        <Item20 Ref="49" ControlType="XRLine" Name="XrLine2" SizeF="1780.54,7.71701" LocationFloat="2.460058,119.0717" Dpi="254" />
+        <Item21 Ref="50" ControlType="XRLine" Name="XrLine1" SizeF="1780.54,7.71701" LocationFloat="2.459917,0" Dpi="254" />
+        <Item22 Ref="51" ControlType="XRLabel" Name="XrLabel17" Multiline="true" Text="C.U.I.L.:" TextAlignment="MiddleLeft" SizeF="100.2025,32.85245" LocationFloat="1282.841,14.3316" Dpi="254" Font="Arial, 6.75pt, charSet=0" Padding="5,5,0,0,254" Borders="None">
+          <StylePriority Ref="52" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+        </Item22>
+        <Item23 Ref="53" ControlType="XRLabel" Name="XrLabel18" Multiline="true" TextAlignment="MiddleLeft" SizeF="175.1678,32.85245" LocationFloat="1383.043,14.3316" Dpi="254" Font="Arial, 6.75pt, charSet=0" Padding="5,5,0,0,254" Borders="None">
+          <ExpressionBindings>
+            <Item1 Ref="54" EventName="BeforePrint" PropertyName="Text" Expression="[Legajos].[CUIL]" />
+          </ExpressionBindings>
+          <StylePriority Ref="55" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+        </Item23>
+        <Item24 Ref="56" ControlType="XRLabel" Name="XrLabel15" Multiline="true" Text="N° de Documento:" TextAlignment="MiddleLeft" SizeF="211.5479,32.85245" LocationFloat="888.1443,14.3316" Dpi="254" Font="Arial, 6.75pt, charSet=0" Padding="5,5,0,0,254" Borders="None">
+          <StylePriority Ref="57" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+        </Item24>
+        <Item25 Ref="58" ControlType="XRLabel" Name="XrLabel16" Multiline="true" TextAlignment="MiddleLeft" SizeF="168.553,32.85245" LocationFloat="1099.693,14.3316" Dpi="254" Font="Arial, 6.75pt, charSet=0" Padding="5,5,0,0,254" Borders="None">
+          <ExpressionBindings>
+            <Item1 Ref="59" EventName="BeforePrint" PropertyName="Text" Expression="Substring([Legajos].[CUIL], 3, Len([Legajos].[CUIL])-5)" />
+          </ExpressionBindings>
+          <StylePriority Ref="60" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+        </Item25>
+        <Item26 Ref="61" ControlType="XRLabel" Name="XrLabel4" Multiline="true" TextAlignment="MiddleLeft" SizeF="437.5461,32.85245" LocationFloat="431.5754,14.3316" Dpi="254" Font="Arial, 6.75pt, charSet=0" Padding="5,5,0,0,254" Borders="None">
+          <ExpressionBindings>
+            <Item1 Ref="62" EventName="BeforePrint" PropertyName="Text" Expression="[Legajos].[NombreYApellido]" />
+          </ExpressionBindings>
+          <StylePriority Ref="63" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+        </Item26>
+        <Item27 Ref="64" ControlType="XRLabel" Name="XrLabel2" Multiline="true" Text="Apellido y Nombre:" TextAlignment="MiddleLeft" SizeF="211.5479,32.85245" LocationFloat="220.0275,14.3316" Dpi="254" Font="Arial, 6.75pt, charSet=0" Padding="5,5,0,0,254" Borders="None">
+          <StylePriority Ref="65" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+        </Item27>
+        <Item28 Ref="66" ControlType="XRLabel" Name="XrLabel3" Multiline="true" TextAlignment="MiddleLeft" SizeF="91.38297,32.85245" LocationFloat="91.38295,14.3316" Dpi="254" Font="Arial, 6.75pt, charSet=0" Padding="5,5,0,0,254" Borders="None">
+          <ExpressionBindings>
+            <Item1 Ref="67" EventName="BeforePrint" PropertyName="Text" Expression="[Legajos].[Legajo]" />
+          </ExpressionBindings>
+          <StylePriority Ref="68" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+        </Item28>
+        <Item29 Ref="69" ControlType="XRLabel" Name="XrLabel1" Multiline="true" Text="Legajo:" TextAlignment="MiddleLeft" SizeF="91.38297,32.85245" LocationFloat="0,14.3316" Dpi="254" Font="Arial, 6.75pt, charSet=0" Padding="5,5,0,0,254" Borders="None">
+          <StylePriority Ref="70" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+        </Item29>
+      </Controls>
+      <StylePriority Ref="71" UseBorders="false" />
+    </Item3>
+    <Item4 Ref="72" ControlType="DetailReportBand" Name="DetailReport" Level="0" DataMember="RecibosDetalles" DataSource="#Ref-0" Dpi="254">
+      <Bands>
+        <Item1 Ref="73" ControlType="DetailBand" Name="Detail1" HeightF="32.30207" Dpi="254">
+          <HierarchyPrintOptions Ref="74" Indent="50.8" />
+          <Controls>
+            <Item1 Ref="75" ControlType="XRTable" Name="XrTable1" SizeF="1674.707,31.74998" LocationFloat="105.8334,0" Dpi="254" Padding="5,5,0,0,254">
+              <Rows>
+                <Item1 Ref="76" ControlType="XRTableRow" Name="XrTableRow1" Weight="0.611111094156901" TextAlignment="MiddleLeft" Dpi="254">
+                  <Cells>
+                    <Item1 Ref="77" ControlType="XRTableCell" Name="XrTableCell1" Weight="0.38480713836881869" Multiline="true" Text="XrTableCell1" Dpi="254" Font="Arial, 6.75pt, charSet=0">
+                      <ExpressionBindings>
+                        <Item1 Ref="78" EventName="BeforePrint" PropertyName="Text" Expression="[Formulas].[Codigo]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="79" UseFont="false" />
+                    </Item1>
+                    <Item2 Ref="80" ControlType="XRTableCell" Name="XrTableCell2" Weight="2.737102068658873" Multiline="true" Text="XrTableCell2" Dpi="254" Font="Arial, 6.75pt, charSet=0">
+                      <ExpressionBindings>
+                        <Item1 Ref="81" EventName="BeforePrint" PropertyName="Text" Expression="[Formulas].[DescripcionCompleta]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="82" UseFont="false" />
+                    </Item2>
+                    <Item3 Ref="83" ControlType="XRTableCell" Name="XrTableCell5" Weight="0.29003123058997815" TextFormatString="{0:#.00}" Multiline="true" Text="XrTableCell5" Dpi="254" Font="Arial, 6.75pt, charSet=0">
+                      <ExpressionBindings>
+                        <Item1 Ref="84" EventName="BeforePrint" PropertyName="Text" Expression="[Cantidad]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="85" UseFont="false" />
+                    </Item3>
+                    <Item4 Ref="86" ControlType="XRTableCell" Name="XrTableCell6" Weight="0.74111479822966064" TextFormatString="{0:$#,#.##}" Multiline="true" Text="XrTableCell6" TextAlignment="MiddleRight" Dpi="254" Font="Arial, 6.75pt, charSet=0">
+                      <ExpressionBindings>
+                        <Item1 Ref="87" EventName="BeforePrint" PropertyName="Text" Expression="[Remunerativo]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="88" UseFont="false" UseTextAlignment="false" />
+                    </Item4>
+                    <Item5 Ref="89" ControlType="XRTableCell" Name="XrTableCell4" Weight="0.75778636089929" TextFormatString="{0:$#,#.##}" Multiline="true" Text="XrTableCell4" TextAlignment="MiddleRight" Dpi="254" Font="Arial, 6.75pt, charSet=0">
+                      <ExpressionBindings>
+                        <Item1 Ref="90" EventName="BeforePrint" PropertyName="Text" Expression="[NoRemunerativo]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="91" UseFont="false" UseTextAlignment="false" />
+                    </Item5>
+                    <Item6 Ref="92" ControlType="XRTableCell" Name="XrTableCell3" Weight="0.73252497020468132" TextFormatString="{0:$#,#.##}" Multiline="true" Text="XrTableCell3" TextAlignment="MiddleRight" Dpi="254" Font="Arial, 6.75pt, charSet=0">
+                      <ExpressionBindings>
+                        <Item1 Ref="93" EventName="BeforePrint" PropertyName="Text" Expression="[Descuento]" />
+                      </ExpressionBindings>
+                      <StylePriority Ref="94" UseFont="false" UseTextAlignment="false" />
+                    </Item6>
+                  </Cells>
+                  <StylePriority Ref="95" UseTextAlignment="false" />
+                </Item1>
+              </Rows>
+            </Item1>
+          </Controls>
+        </Item1>
+        <Item2 Ref="96" ControlType="GroupFooterBand" Name="GroupFooter2" HeightF="88.5926" Dpi="254">
+          <Controls>
+            <Item1 Ref="97" ControlType="XRLine" Name="XrLine4" SizeF="662.1904,8.917324" LocationFloat="1118.35,41.967" Dpi="254" />
+            <Item2 Ref="98" ControlType="XRLabel" Name="XrLabel31" TextFormatString="{0:$0,0.00}" Multiline="true" TextAlignment="MiddleRight" SizeF="217.3816,33.10763" LocationFloat="1563.158,8.859413" Dpi="254" Font="Arial, 6.75pt, charSet=0" Padding="5,5,0,0,254" Borders="None">
+              <Summary Ref="99" Running="Group" />
+              <ExpressionBindings>
+                <Item1 Ref="100" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([Descuento])" />
+              </ExpressionBindings>
+              <StylePriority Ref="101" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+            </Item2>
+            <Item3 Ref="102" ControlType="XRLabel" Name="XrLabel30" TextFormatString="{0:$0,0.00}" Multiline="true" TextAlignment="MiddleRight" SizeF="224.8783,33.10763" LocationFloat="1338.28,8.859413" Dpi="254" Font="Arial, 6.75pt, charSet=0" Padding="5,5,0,0,254" Borders="None">
+              <Summary Ref="103" Running="Group" />
+              <ExpressionBindings>
+                <Item1 Ref="104" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([NoRemunerativo])" />
+              </ExpressionBindings>
+              <StylePriority Ref="105" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+            </Item3>
+            <Item4 Ref="106" ControlType="XRLabel" Name="XrLabel29" TextFormatString="{0:$0,0.00}" Multiline="true" TextAlignment="MiddleRight" SizeF="219.9308,33.10763" LocationFloat="1118.349,8.859413" Dpi="254" Font="Arial, 6.75pt, charSet=0" Padding="5,5,0,0,254" Borders="None">
+              <Summary Ref="107" Running="Group" />
+              <ExpressionBindings>
+                <Item1 Ref="108" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([Remunerativo])" />
+              </ExpressionBindings>
+              <StylePriority Ref="109" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+            </Item4>
+            <Item5 Ref="110" ControlType="XRLabel" Name="XrLabel28" TextFormatString="{0:$#,#.##}" Multiline="true" Text="Totales Legajo:" TextAlignment="MiddleRight" SizeF="217.3816,33.10763" LocationFloat="1563.158,53.48497" Dpi="254" Font="Arial, 6.75pt, style=Bold, charSet=0" Padding="5,5,0,0,254" Borders="None">
+              <ExpressionBindings>
+                <Item1 Ref="111" EventName="BeforePrint" PropertyName="Text" Expression="[Recibos.Total]" />
+              </ExpressionBindings>
+              <StylePriority Ref="112" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+            </Item5>
+            <Item6 Ref="113" ControlType="XRLabel" Name="XrLabel27" Multiline="true" Text="Neto Cobrado:" TextAlignment="MiddleLeft" SizeF="264.6621,33.10763" LocationFloat="0,53.48492" Dpi="254" Font="Arial, 6.75pt, charSet=0" Padding="5,5,0,0,254" Borders="None">
+              <StylePriority Ref="114" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+            </Item6>
+            <Item7 Ref="115" ControlType="XRLabel" Name="XrLabel26" Multiline="true" Text="Totales del Legajo:" TextAlignment="MiddleLeft" SizeF="264.6621,33.10763" LocationFloat="2.460013,8.859413" Dpi="254" Font="Arial, 6.75pt, charSet=0" Padding="5,5,0,0,254" Borders="None">
+              <StylePriority Ref="116" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+            </Item7>
+          </Controls>
+        </Item2>
+        <Item3 Ref="117" ControlType="GroupHeaderBand" Name="GroupHeader1" HeightF="27.03741" Dpi="254">
+          <Controls>
+            <Item1 Ref="118" ControlType="XRLabel" Name="XrLabel48" Multiline="true" TextAlignment="MiddleLeft" SizeF="555.6978,25.7581" LocationFloat="5.314598,1.279285" Dpi="254" Font="Arial, 6.75pt, charSet=0" Padding="5,5,0,0,254" Borders="None">
+              <ExpressionBindings>
+                <Item1 Ref="119" EventName="BeforePrint" PropertyName="Text" Expression="[Recibos].[TipoLiquidacion].[Descripcion]" />
+              </ExpressionBindings>
+              <StylePriority Ref="120" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+            </Item1>
+          </Controls>
+        </Item3>
+      </Bands>
+    </Item4>
+    <Item5 Ref="121" ControlType="PageHeaderBand" Name="PageHeader" HeightF="252.525" Dpi="254">
+      <Controls>
+        <Item1 Ref="122" ControlType="XRLabel" Name="XrLabel7" Multiline="true" Text="Empresa:" TextAlignment="MiddleLeft" SizeF="1628.382,44.97914" LocationFloat="152.1581,156.1041" Dpi="254" Font="Times New Roman, 9pt, charSet=0" Padding="5,5,0,0,254">
+          <ExpressionBindings>
+            <Item1 Ref="123" EventName="BeforePrint" PropertyName="Text" Expression="[Empresas].[EmpresasActividades].[Actividades].[Descripcion]" />
+          </ExpressionBindings>
+          <StylePriority Ref="124" UseFont="false" UseTextAlignment="false" />
+        </Item1>
+        <Item2 Ref="125" ControlType="XRLabel" Name="labelPeriodoLiquidado" Multiline="true" Text="LIQUIDACION DEL MES DE" TextAlignment="MiddleCenter" SizeF="1780.54,44.97916" LocationFloat="0,207.5458" Dpi="254" Font="Arial Narrow, 9pt, charSet=0" Padding="5,5,0,0,254">
+          <StylePriority Ref="126" UseFont="false" UseTextAlignment="false" />
+        </Item2>
+        <Item3 Ref="127" ControlType="XRLabel" Name="XrLabel9" Multiline="true" Text="C.U.I.T.:" TextAlignment="MiddleCenter" SizeF="129.7334,44.97915" LocationFloat="716.8932,111.125" Dpi="254" Font="Arial, 8.25pt, charSet=0" Padding="5,5,0,0,254">
+          <StylePriority Ref="128" UseFont="false" UseTextAlignment="false" />
+        </Item3>
+        <Item4 Ref="129" ControlType="XRLabel" Name="XrLabel8" Multiline="true" Text="Actividad:" TextAlignment="MiddleCenter" SizeF="146.8435,44.97916" LocationFloat="5.314598,156.1042" Dpi="254" Font="Arial, 8.25pt, charSet=0" Padding="5,5,0,0,254">
+          <StylePriority Ref="130" UseFont="false" UseTextAlignment="false" />
+        </Item4>
+        <Item5 Ref="131" ControlType="XRLabel" Name="XrLabel5" Multiline="true" Text="LIBRO ESPECIAL DE SUELDOS" TextAlignment="MiddleCenter" SizeF="1780.54,55.5625" LocationFloat="0,0" Dpi="254" Font="Arial, 11.25pt, charSet=0" Padding="5,5,0,0,254">
+          <StylePriority Ref="132" UseFont="false" UseTextAlignment="false" />
+        </Item5>
+        <Item6 Ref="133" ControlType="XRLabel" Name="XrLabel12" Multiline="true" Text="Ley 20.744 ART. 52 - HOJAS MÓVILES" TextAlignment="MiddleCenter" SizeF="1780.54,42.04169" LocationFloat="0,55.5625" Dpi="254" Font="Arial, 8.25pt, charSet=0" Padding="5,5,0,0,254">
+          <StylePriority Ref="134" UseFont="false" UseTextAlignment="false" />
+        </Item6>
+        <Item7 Ref="135" ControlType="XRLabel" Name="XrLabel6" Multiline="true" Text="Razon Social:" TextAlignment="MiddleLeft" SizeF="193.7902,44.97915" LocationFloat="0,111.125" Dpi="254" Font="Arial, 8.25pt, charSet=0" Padding="5,5,0,0,254">
+          <StylePriority Ref="136" UseFont="false" UseTextAlignment="false" />
+        </Item7>
+        <Item8 Ref="137" ControlType="XRLabel" Name="XrLabel10" Multiline="true" Text="Empresa:" TextAlignment="MiddleLeft" SizeF="523.103,44.97916" LocationFloat="193.7902,111.125" Dpi="254" Font="Times New Roman, 9pt, charSet=0" Padding="5,5,0,0,254">
+          <ExpressionBindings>
+            <Item1 Ref="138" EventName="BeforePrint" PropertyName="Text" Expression="[Empresas].[Nombre]" />
+          </ExpressionBindings>
+          <StylePriority Ref="139" UseFont="false" UseTextAlignment="false" />
+        </Item8>
+        <Item9 Ref="140" ControlType="XRLabel" Name="XrLabel11" Multiline="true" Text="Empresa:" TextAlignment="MiddleLeft" SizeF="705.6021,44.97916" LocationFloat="1077.398,111.125" Dpi="254" Font="Times New Roman, 9pt, charSet=0" Padding="5,5,0,0,254">
+          <ExpressionBindings>
+            <Item1 Ref="141" EventName="BeforePrint" PropertyName="Text" Expression="[Empresas].[Direccion]" />
+          </ExpressionBindings>
+          <StylePriority Ref="142" UseFont="false" UseTextAlignment="false" />
+        </Item9>
+        <Item10 Ref="143" ControlType="XRLabel" Name="XrLabel13" Multiline="true" Text="Empresa:" TextAlignment="MiddleLeft" SizeF="230.7713,44.97914" LocationFloat="846.6266,111.125" Dpi="254" Font="Times New Roman, 9pt, charSet=0" Padding="5,5,0,0,254">
+          <ExpressionBindings>
+            <Item1 Ref="144" EventName="BeforePrint" PropertyName="Text" Expression="[Empresas].[ClaveUnica]" />
+          </ExpressionBindings>
+          <StylePriority Ref="145" UseFont="false" UseTextAlignment="false" />
+        </Item10>
+      </Controls>
+    </Item5>
+    <Item6 Ref="146" ControlType="GroupFooterBand" Name="GroupFooter1" HeightF="87.91843" Dpi="254">
+      <Controls>
+        <Item1 Ref="147" ControlType="XRLine" Name="XrLine5" SizeF="662.1904,8.917324" LocationFloat="1118.35,41.967" Dpi="254" />
+        <Item2 Ref="148" ControlType="XRLabel" Name="XrLabel44" TextFormatString="{0:$#,#.##}" Multiline="true" TextAlignment="MiddleRight" SizeF="219.9308,33.10763" LocationFloat="1118.349,8.859413" Dpi="254" Font="Arial, 8.25pt, style=Bold, charSet=0" Padding="5,5,0,0,254" Borders="None">
+          <Summary Ref="149" Running="Group" />
+          <ExpressionBindings>
+            <Item1 Ref="150" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([TotalRemunerativos])" />
+          </ExpressionBindings>
+          <StylePriority Ref="151" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+        </Item2>
+        <Item3 Ref="152" ControlType="XRLabel" Name="XrLabel45" TextFormatString="{0:$#,#.##}" Multiline="true" TextAlignment="MiddleRight" SizeF="224.8783,33.10763" LocationFloat="1338.28,8.859413" Dpi="254" Font="Arial, 8.25pt, style=Bold, charSet=0" Padding="5,5,0,0,254" Borders="None">
+          <Summary Ref="153" Running="Group" />
+          <ExpressionBindings>
+            <Item1 Ref="154" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([TotalNoRemunerativos])" />
+          </ExpressionBindings>
+          <StylePriority Ref="155" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+        </Item3>
+        <Item4 Ref="156" ControlType="XRLabel" Name="XrLabel46" TextFormatString="{0:$#,#.##}" Multiline="true" TextAlignment="MiddleRight" SizeF="217.3816,33.10763" LocationFloat="1563.158,8.859413" Dpi="254" Font="Arial, 8.25pt, style=Bold, charSet=0" Padding="5,5,0,0,254" Borders="None">
+          <Summary Ref="157" Running="Group" />
+          <ExpressionBindings>
+            <Item1 Ref="158" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([TotalDescuentos])" />
+          </ExpressionBindings>
+          <StylePriority Ref="159" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+        </Item4>
+        <Item5 Ref="160" ControlType="XRLabel" Name="XrLabel47" TextFormatString="{0:$#,#.##}" Multiline="true" Text="Totales Legajo:" TextAlignment="MiddleRight" SizeF="217.3816,33.10763" LocationFloat="1563.158,53.48497" Dpi="254" Font="Arial, 8.25pt, style=Bold, charSet=0" Padding="5,5,0,0,254" Borders="None">
+          <Summary Ref="161" Running="Group" />
+          <ExpressionBindings>
+            <Item1 Ref="162" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([Total])" />
+          </ExpressionBindings>
+          <StylePriority Ref="163" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+        </Item5>
+        <Item6 Ref="164" ControlType="XRLabel" Name="XrLabel43" Multiline="true" Text="Total Neto Combrado en el Periodo:" TextAlignment="MiddleLeft" SizeF="558.5524,33.10763" LocationFloat="2.459915,53.48495" Dpi="254" Font="Arial, 8.25pt, style=Bold, charSet=0" Padding="5,5,0,0,254" Borders="None">
+          <StylePriority Ref="165" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+        </Item6>
+        <Item7 Ref="166" ControlType="XRLabel" Name="XrLabel25" Multiline="true" Text="Totales del Periodo:" TextAlignment="MiddleLeft" SizeF="351.253,39.52175" LocationFloat="5.314598,2.445308" Dpi="254" Font="Arial, 8.25pt, style=Bold, charSet=0" Padding="5,5,0,0,254" Borders="None">
+          <StylePriority Ref="167" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+        </Item7>
+      </Controls>
+    </Item6>
+  </Bands>
+  <ComponentStorage>
+    <Item1 Ref="0" ObjectType="DevExpress.DataAccess.ObjectBinding.ObjectDataSource,DevExpress.DataAccess.v20.1" Name="ObjectDataSource1" Base64="PE9iamVjdERhdGFTb3VyY2UgTmFtZT0iT2JqZWN0RGF0YVNvdXJjZTEiPjxEYXRhU291cmNlIFR5cGU9IllpWmkuQWNjZXNvRGF0b3MuUmVjaWJvcywgWWlaaS5BY2Nlc29EYXRvcywgVmVyc2lvbj0xLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPW51bGwiIC8+PC9PYmplY3REYXRhU291cmNlPg==" />
+  </ComponentStorage>
+</XtraReportsLayoutSerializer>

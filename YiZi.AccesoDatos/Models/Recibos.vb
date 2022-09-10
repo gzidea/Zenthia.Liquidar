@@ -16,8 +16,10 @@ Partial Public Class Recibos
 
     Public Property IdLegajo As Integer?
 
+    <Column(TypeName:="datetime")>
     Public Property Fecha As Date?
 
+    <Column(TypeName:="datetime")>
     Public Property FechaPago As Date
 
     <StringLength(255)>
@@ -36,6 +38,9 @@ Partial Public Class Recibos
 
     <Column(TypeName:="money")>
     Public Property Total As Decimal?
+
+    <Column(TypeName:="money")>
+    Public Property Basico As Decimal?
 
     Public Overridable Property Empresas As Empresas
 

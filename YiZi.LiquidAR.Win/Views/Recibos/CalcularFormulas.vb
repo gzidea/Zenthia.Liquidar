@@ -531,7 +531,7 @@ Public Class CalcularFormulas
             Return 1
         End If
         If Len(sName) Then
-            If sName.Substring(0, 1) = "C" AndAlso (sName.Substring(sName.Length() - 1, 1) = "C" Or sName.Substring(sName.Length() - 1, 1) = "C") Then
+            If sName.Substring(0, 1) = "C" AndAlso (sName.Substring(sName.Length() - 1, 1) = "C" Or sName.Substring(sName.Length() - 1, 1) = "I") Then
                 Return 1
             Else
                 For I = 1 To UBound(aVariables)

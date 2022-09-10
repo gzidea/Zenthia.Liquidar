@@ -19,6 +19,8 @@ Public Class EmpresaEditForm
         fluent.SetObjectDataSourceBinding(EmpresasBindingSource, Function(x) x.Entity, Sub(x) x.Update())
         fluent.SetBinding(ProvinciasBindingSource, Function(abs) abs.DataSource, Function(x) x.LookUpProvincia.Entities)
         fluent.SetBinding(TipoClaveUnicaBindingSource, Function(abs) abs.DataSource, Function(x) x.LookUpTipoClaveUnica.Entities)
+        fluent.SetBinding(TipoEmpresaAfipBindingSource, Function(abs) abs.DataSource, Function(x) x.LookUpTipoEmpresaAfip.Entities)
+
         '//// Configuro la grilla de actividades \\\\
         fluent.WithEvent(Of GridView, FocusedRowObjectChangedEventArgs)(ActividadesGridView, "FocusedRowObjectChanged").SetBinding(Function(x) x.EmpresaActividadesDetails.SelectedEntity, Function(args) TryCast(args.Row, YiZi.AccesoDatos.EmpresasActividades), Sub(gView, entity) gView.FocusedRowHandle = gView.FindRow(entity))
         fluent.WithEvent(Of RowClickEventArgs)(ActividadesGridView, "RowClick").EventToCommand(Sub(x) x.EmpresaActividadesDetails.Edit(Nothing), Function(x) x.EmpresaActividadesDetails.SelectedEntity, Function(args) (args.Clicks = 2) AndAlso (args.Button = System.Windows.Forms.MouseButtons.Left))

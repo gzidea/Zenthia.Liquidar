@@ -1,4 +1,5 @@
-﻿Imports DevExpress.Mvvm.POCO
+﻿Imports System.ComponentModel.DataAnnotations
+Imports DevExpress.Mvvm.POCO
 Imports YiZi.AccesoDatos
 Imports YiZi.mvvm.Common.DataModel
 Imports YiZi.mvvm.Common.ViewModel
@@ -24,4 +25,17 @@ Public Class FormulaCollectionViewModel
             _DisplayText = value
         End Set
     End Property
+
+    <Display(Name:="Duplicar formula")>
+    Public Overridable Sub DuplicarFormulaSeleccionada()
+
+
+        Using db As YiZi.AccesoDatos.Modelo = New YiZi.AccesoDatos.Modelo()
+            Dim _newFormula As New YiZi.AccesoDatos.Formulas
+            db.Formulas.Attach(MyBase.SelectedEntity)
+            db.SaveChanges()
+        End Using
+    End Sub
+
+
 End Class

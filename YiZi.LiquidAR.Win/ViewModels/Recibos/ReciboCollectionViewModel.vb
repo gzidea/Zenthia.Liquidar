@@ -87,4 +87,15 @@ Public Class ReciboCollectionViewModel
     Public Function CanGenerateAndSave() As Boolean
         Return Not SelectedItems Is Nothing
     End Function
+
+    Public Overridable Sub ReportDesigner()
+        Dim reporte As xrLibroDeSueldo = New xrLibroDeSueldo
+        reporte.DataSource = Me.Entities
+        reporte.labelPeriodoLiquidado.Text = "Periodo de Liquidacion:" & MonthName(Me.Entities.FirstOrDefault().Periodo.Substring(0, 2), False).ToUpper() & " " & Me.Entities.FirstOrDefault().Periodo.Substring(2, 4)
+
+        Dim pad As frmReportesVistaPrevia = New frmReportesVistaPrevia
+        pad.dvReportes.DocumentSource = reporte
+        pad.ShowDialog()
+    End Sub
+
 End Class

@@ -25,4 +25,12 @@ Public Class FormulaTipoLiquidacionViewModal
             Return GetLookUpEntitiesViewModel(Function(x As FormulaTipoLiquidacionViewModal) x.LookUpTiposLiquidaciones, Function(x) x.TipoLiquidaciones)
         End Get
     End Property
+    Public Sub SaveAndClone(entidad As FormulaTipoLiquidacion, id As Integer)
+        CreateAndInitializeEntity(Function(x)
+                                      x.IdFormula = id
+                                      x.IdTipoLiquidacion = entidad.IdTipoLiquidacion
+                                      x.Seleccionado = entidad.Seleccionado
+                                  End Function)
+        MyBase.Save()
+    End Sub
 End Class

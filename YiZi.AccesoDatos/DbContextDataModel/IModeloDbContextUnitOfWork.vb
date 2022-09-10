@@ -131,6 +131,45 @@ Public Interface IModeloDbContextUnitOfWork
     ''' El repositorio de Recibos Plantilla
     ''' </summary>
     ReadOnly Property LegajosNovedadesDetalles As IRepository(Of LegajosNovedadesDetalles, Integer)
+
+    ''' <summary>
+    ''' El repositorio de Tipos de Empresa en AFIP
+    ''' </summary>
+    ReadOnly Property TipoEmpresaAfip As IRepository(Of TipoEmpresaAfip, Integer)
+
+    ''' <summary>
+    ''' El repositorio de Identificacion de envio
+    ''' </summary>
+    ReadOnly Property IdentificacionEnvio As IRepository(Of IdentificacionEnvio, Integer)
+
+    ''' <summary>
+    ''' Libro de Sueldo - Registros01
+    ''' </summary>
+    ReadOnly Property LSDRegistro01 As IRepository(Of LSDRegistro01, Integer)
+
+    ''' <summary>
+    ''' Libro de Sueldo - Registros02
+    ''' </summary>
+    ReadOnly Property LSDRegistro02 As IRepository(Of LSDRegistro02, Integer)
+
+    ReadOnly Property LSDRegistro03 As IRepository(Of LSDRegistro03, Integer)
+
+    ReadOnly Property LSDRegistro04 As IRepository(Of LSDRegistro04, Integer)
+
+    ReadOnly Property CodigosDeActivdadEmpleados As IRepository(Of CodigosDeActivdadEmpleados, Integer)
+
+    ReadOnly Property CodigosDeCondiciones As IRepository(Of CodigosDeCondiciones, Integer)
+
+    ReadOnly Property CodigosDeLocalidades As IRepository(Of CodigosDeLocalidades, Integer)
+
+    ReadOnly Property CodigosDeModalidadDeContratacion As IRepository(Of CodigosDeModalidadDeContratacion, Integer)
+
+    ReadOnly Property CodigosDeRevistas As IRepository(Of CodigosDeRevistas, Integer)
+
+    ReadOnly Property CodigosDeSiniestrados As IRepository(Of CodigosDeSiniestrados, Integer)
+
+    ReadOnly Property EstadosCiviles As IRepository(Of EstadosCiviles, Integer)
+
 #Region "Modulo de Seguridad"
     ''' <summary>
     ''' El repositorio de Usuarios

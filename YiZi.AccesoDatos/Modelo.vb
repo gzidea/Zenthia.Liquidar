@@ -22,6 +22,7 @@ Partial Public Class Modelo
     Public Overridable Property FormulaTipoLiquidacion As DbSet(Of FormulaTipoLiquidacion)
     Public Overridable Property Jornadas As DbSet(Of Jornadas)
     Public Overridable Property Legajos As DbSet(Of Legajos)
+    Public Overridable Property EstadosCiviles As DbSet(Of EstadosCiviles)
     Public Overridable Property Meses As DbSet(Of Meses)
     Public Overridable Property ObrasSociales As DbSet(Of ObrasSociales)
     Public Overridable Property Provincias As DbSet(Of Provincias)
@@ -40,6 +41,18 @@ Partial Public Class Modelo
     Public Overridable Property LegajosConeptosParticulares As DbSet(Of LegajosConceptosParticulares)
     Public Overridable Property LegajosNovedades As DbSet(Of LegajosNovedades)
     Public Overridable Property LegajosNovedadesDetalles As DbSet(Of LegajosNovedadesDetalles)
+    Public Overridable Property TipoEmpresaAfip As DbSet(Of TipoEmpresaAfip)
+    Public Overridable Property IdentificacionEnvio As DbSet(Of IdentificacionEnvio)
+    Public Overridable Property LSDRegistro01 As DbSet(Of LSDRegistro01)
+    Public Overridable Property LSDRegistro02 As DbSet(Of LSDRegistro02)
+    Public Overridable Property LSDRegistro03 As DbSet(Of LSDRegistro03)
+    Public Overridable Property LSDRegistro04 As DbSet(Of LSDRegistro04)
+    Public Overridable Property CodigosDeActivdadEmpleados As DbSet(Of CodigosDeActivdadEmpleados)
+    Public Overridable Property CodigosDeCondiciones As DbSet(Of CodigosDeCondiciones)
+    Public Overridable Property CodigosDeLocalidades As DbSet(Of CodigosDeLocalidades)
+    Public Overridable Property CodigosDeModalidadDeContratacion As DbSet(Of CodigosDeModalidadDeContratacion)
+    Public Overridable Property CodigosDeRevistas As DbSet(Of CodigosDeRevistas)
+    Public Overridable Property CodigosDeSiniestrados As DbSet(Of CodigosDeSiniestrados)
 
     '*** ESTO CORRESPONDE AL MODULO DE SEGURIDAD ****
     Public Overridable Property Modulos As DbSet(Of Modulos)
@@ -107,6 +120,11 @@ Partial Public Class Modelo
             .HasForeignKey(Function(e) e.Id_Empresa)
 
         modelBuilder.Entity(Of Empresas)() _
+            .HasMany(Function(e) e.LSDRegistro01) _
+            .WithOptional(Function(e) e.Empresas) _
+            .HasForeignKey(Function(e) e.IdEmpresa)
+
+        modelBuilder.Entity(Of Empresas)() _
             .HasMany(Function(e) e.EmpresasActividades) _
             .WithOptional(Function(e) e.Empresas) _
             .HasForeignKey(Function(e) e.IdEmpresa)
@@ -120,6 +138,11 @@ Partial Public Class Modelo
             .HasMany(Function(e) e.Recibos) _
             .WithOptional(Function(e) e.Empresas) _
             .HasForeignKey(Function(e) e.IdEmpresa)
+
+        modelBuilder.Entity(Of IdentificacionEnvio)() _
+            .HasMany(Function(e) e.LSDRegistro01) _
+            .WithOptional(Function(e) e.IdentificacionEnvio) _
+            .HasForeignKey(Function(e) e.IdIdentificacionEnvio)
 
         modelBuilder.Entity(Of Formulas)() _
             .Property(Function(e) e.Importe) _
@@ -169,6 +192,11 @@ Partial Public Class Modelo
             .HasForeignKey(Function(e) e.IdLegajo)
 
         modelBuilder.Entity(Of Legajos)() _
+            .HasMany(Function(e) e.LSDRegistro02) _
+            .WithOptional(Function(e) e.Legajos) _
+            .HasForeignKey(Function(e) e.IdLegajo)
+
+        modelBuilder.Entity(Of Legajos)() _
             .HasMany(Function(e) e.LegajosConeptosParticulares) _
             .WithOptional(Function(e) e.Legajos) _
             .HasForeignKey(Function(e) e.IdLegajo)
@@ -178,6 +206,11 @@ Partial Public Class Modelo
             .HasMany(Function(e) e.LegajosNovedades) _
             .WithOptional(Function(e) e.Legajos) _
             .HasForeignKey(Function(e) e.IdLegajo)
+
+        modelBuilder.Entity(Of EstadosCiviles)() _
+            .HasMany(Function(e) e.Legajos) _
+            .WithOptional(Function(e) e.EstadosCiviles) _
+            .HasForeignKey(Function(e) e.IdEstadoCivil)
 
         modelBuilder.Entity(Of Meses)() _
             .HasMany(Function(e) e.FormulasPeriodos) _
@@ -212,6 +245,11 @@ Partial Public Class Modelo
             .WithOptional(Function(e) e.Provincias) _
             .HasForeignKey(Function(e) e.IdProvincia)
 
+        modelBuilder.Entity(Of Provincias)() _
+            .HasMany(Function(e) e.Legajos) _
+            .WithOptional(Function(e) e.Provincias) _
+            .HasForeignKey(Function(e) e.IdProvincia)
+
         modelBuilder.Entity(Of Recibos)() _
             .Property(Function(e) e.TotalRemunerativos) _
             .HasPrecision(19, 4)
@@ -222,6 +260,10 @@ Partial Public Class Modelo
 
         modelBuilder.Entity(Of Recibos)() _
             .Property(Function(e) e.TotalDescuentos) _
+            .HasPrecision(19, 4)
+
+        modelBuilder.Entity(Of Recibos)() _
+            .Property(Function(e) e.Basico) _
             .HasPrecision(19, 4)
 
         modelBuilder.Entity(Of Recibos)() _
@@ -251,6 +293,16 @@ Partial Public Class Modelo
             .WithOptional(Function(e) e.TipoClaveUnica) _
             .HasForeignKey(Function(e) e.Id_TipoClaveUnica)
 
+        modelBuilder.Entity(Of TipoEmpresaAfip)() _
+            .HasMany(Function(e) e.Empresas) _
+            .WithOptional(Function(e) e.TipoEmpresaAfip) _
+            .HasForeignKey(Function(e) e.IdTipoEmpresaAfip)
+
+        modelBuilder.Entity(Of TipoEmpresaAfip)() _
+            .HasMany(Function(e) e.LSDRegistro04) _
+            .WithOptional(Function(e) e.TipoEmpresaAfip) _
+            .HasForeignKey(Function(e) e.IdTipoEmpresaAfip)
+
         modelBuilder.Entity(Of TipoLiquidacion)() _
             .HasMany(Function(e) e.FormulaTipoLiquidacion) _
             .WithOptional(Function(e) e.TipoLiquidacion) _
@@ -275,6 +327,11 @@ Partial Public Class Modelo
             .HasMany(Function(e) e.LegajosNovedades) _
             .WithOptional(Function(e) e.TipoLiquidacion) _
             .HasForeignKey(Function(e) e.IdTipoLoquidacion)
+
+        modelBuilder.Entity(Of TipoLiquidacion)() _
+            .HasMany(Function(e) e.LSDRegistro01) _
+            .WithOptional(Function(e) e.TipoLiquidacion) _
+            .HasForeignKey(Function(e) e.IdTipoLiquidacion)
 
         'modelBuilder.Entity(Of Formulas)().HasRequired(Function(x) x.CantidadUnidad)
 
@@ -333,6 +390,110 @@ Partial Public Class Modelo
             .HasMany(Function(e) e.LegajosNovedadesDetalles) _
             .WithOptional(Function(e) e.Formulas) _
             .HasForeignKey(Function(e) e.IdFormula)
+
+        modelBuilder.Entity(Of LSDRegistro01)() _
+            .HasMany(Function(e) e.LSDRegistro02) _
+            .WithOptional(Function(e) e.LSDRegistro01) _
+            .HasForeignKey(Function(e) e.IdLSDRegistro01)
+
+        modelBuilder.Entity(Of LSDRegistro01)() _
+            .HasMany(Function(e) e.LSDRegistro03) _
+            .WithOptional(Function(e) e.LSDRegistro01) _
+            .HasForeignKey(Function(e) e.IdLSDRegistro01)
+
+        modelBuilder.Entity(Of LSDRegistro01)() _
+            .HasMany(Function(e) e.LSDRegistro04) _
+            .WithOptional(Function(e) e.LSDRegistro01) _
+            .HasForeignKey(Function(e) e.IdLSDRegistro01)
+
+        modelBuilder.Entity(Of CodigosDeActivdadEmpleados)() _
+            .HasMany(Function(e) e.LSDRegistro04) _
+            .WithOptional(Function(e) e.CodigosDeActivdadEmpleados) _
+            .HasForeignKey(Function(e) e.IdCodigoActividad)
+
+        modelBuilder.Entity(Of CodigosDeActivdadEmpleados)() _
+            .HasMany(Function(e) e.Legajos) _
+            .WithOptional(Function(e) e.CodigoDeActividad) _
+            .HasForeignKey(Function(e) e.IdCodigoActividad)
+
+        modelBuilder.Entity(Of CodigosDeCondiciones)() _
+            .HasMany(Function(e) e.LSDRegistro04) _
+            .WithOptional(Function(e) e.CodigosDeCondiciones) _
+            .HasForeignKey(Function(e) e.IdCodigoCondicion)
+
+        modelBuilder.Entity(Of CodigosDeCondiciones)() _
+            .HasMany(Function(e) e.Legajos) _
+            .WithOptional(Function(e) e.CodigoDeCondicion) _
+            .HasForeignKey(Function(e) e.IdCodigoCondicion)
+
+        modelBuilder.Entity(Of CodigosDeLocalidades)() _
+            .HasMany(Function(e) e.LSDRegistro04) _
+            .WithOptional(Function(e) e.CodigosDeLocalidades) _
+            .HasForeignKey(Function(e) e.IdCodigoLocalidad)
+
+        modelBuilder.Entity(Of CodigosDeLocalidades)() _
+            .HasMany(Function(e) e.Legajos) _
+            .WithOptional(Function(e) e.CodigoDeLocalidad) _
+            .HasForeignKey(Function(e) e.IdCodigoLocalidad)
+
+        modelBuilder.Entity(Of CodigosDeModalidadDeContratacion)() _
+            .HasMany(Function(e) e.LSDRegistro04) _
+            .WithOptional(Function(e) e.CodigosDeModalidadDeContratacion) _
+            .HasForeignKey(Function(e) e.IdCodigoModalidadContratacion)
+
+        modelBuilder.Entity(Of CodigosDeModalidadDeContratacion)() _
+            .HasMany(Function(e) e.Legajos) _
+            .WithOptional(Function(e) e.CodigoDeModalidadDeContratacion) _
+            .HasForeignKey(Function(e) e.IdCodigoModalidadContratacion)
+
+        modelBuilder.Entity(Of CodigosDeRevistas)() _
+            .HasMany(Function(e) e.LSDRegistro04SituacionActual) _
+            .WithOptional(Function(e) e.CodigoDeSituacion) _
+            .HasForeignKey(Function(e) e.IdCodigoSituacion)
+
+        modelBuilder.Entity(Of CodigosDeRevistas)() _
+            .HasMany(Function(e) e.LSDRegistro04Situacion1) _
+            .WithOptional(Function(e) e.CodigosDeRevistas1) _
+            .HasForeignKey(Function(e) e.IdSituacionRevista1)
+
+        modelBuilder.Entity(Of CodigosDeRevistas)() _
+            .HasMany(Function(e) e.LSDRegistro04Situacion2) _
+            .WithOptional(Function(e) e.CodigosDeRevistas2) _
+            .HasForeignKey(Function(e) e.IdSituacionRevista2)
+
+        modelBuilder.Entity(Of CodigosDeRevistas)() _
+            .HasMany(Function(e) e.LSDRegistro04Situacion3) _
+            .WithOptional(Function(e) e.CodigosDeRevistas3) _
+            .HasForeignKey(Function(e) e.IdSituacionRevista3)
+
+        modelBuilder.Entity(Of CodigosDeRevistas)() _
+            .HasMany(Function(e) e.LegajosSituacion1) _
+            .WithOptional(Function(e) e.CodigoDeRevista1) _
+            .HasForeignKey(Function(e) e.IdSituacionRevista1)
+
+        modelBuilder.Entity(Of CodigosDeRevistas)() _
+            .HasMany(Function(e) e.LegajosSituacion2) _
+            .WithOptional(Function(e) e.CodigoDeRevista2) _
+            .HasForeignKey(Function(e) e.IdSituacionRevista2)
+
+        modelBuilder.Entity(Of CodigosDeRevistas)() _
+            .HasMany(Function(e) e.LegajosSituacion3) _
+            .WithOptional(Function(e) e.CodigoDeRevista3) _
+            .HasForeignKey(Function(e) e.IdSituacionRevista3)
+
+
+        modelBuilder.Entity(Of CodigosDeSiniestrados)() _
+            .HasMany(Function(e) e.LSDRegistro04) _
+            .WithOptional(Function(e) e.CodigosDeSiniestrados) _
+            .HasForeignKey(Function(e) e.IdCodigoSiniestrado)
+
+        modelBuilder.Entity(Of CodigosDeSiniestrados)() _
+            .HasMany(Function(e) e.Legajos) _
+            .WithOptional(Function(e) e.CodigoDeSieniestrado) _
+            .HasForeignKey(Function(e) e.IdCodigoSiniestrado)
+
+        'modelBuilder.Entity(Of LSDRegistro04)() _
+        '    .HasRequired(Function(x) x.IdCodigoActividad)
 
 #Region "Seguridad_Builder"
         '*** ESTO CORRESPONDE AL MODULO DE SEGURIDAD ****

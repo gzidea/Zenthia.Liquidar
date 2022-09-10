@@ -9,6 +9,7 @@ Partial Public Class Provincias
         Empresas = New HashSet(Of Empresas)()
         ObrasSociales = New HashSet(Of ObrasSociales)()
         Sindicatos = New HashSet(Of Sindicatos)()
+        Legajos = New HashSet(Of Legajos)()
     End Sub
 
     <DatabaseGenerated(DatabaseGeneratedOption.None)>
@@ -25,4 +26,6 @@ Partial Public Class Provincias
     Public Overridable Property ObrasSociales As ICollection(Of ObrasSociales)
 
     Public Overridable Property Sindicatos As ICollection(Of Sindicatos)
+
+    Public Overridable Property Legajos As ICollection(Of Legajos)
 End Class

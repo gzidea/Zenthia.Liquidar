@@ -25,4 +25,13 @@ Public Class FormulaPeriodoViewModel
             Return GetLookUpEntitiesViewModel(Function(x As FormulaPeriodoViewModel) x.LookUpPeriodos, Function(x) x.Periodos)
         End Get
     End Property
+
+    Public Sub SaveAndClone(entidad As FormulasPeriodos, id As Integer)
+        CreateAndInitializeEntity(Function(x)
+                                      x.IdFormula = id
+                                      x.NumeroMes = entidad.NumeroMes
+                                      x.Seleccionado = entidad.Seleccionado
+                                  End Function)
+        MyBase.Save()
+    End Sub
 End Class
