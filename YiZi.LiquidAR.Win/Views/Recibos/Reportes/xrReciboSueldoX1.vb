@@ -71,13 +71,13 @@ Public Class xrReciboSueldoX1
     Private Sub Detail1_BeforePrint(sender As Object, e As PrintEventArgs) Handles Detail1.BeforePrint
 
         'Debug.Print(CDbl(TryCast(DetailReport.GetCurrentRow, YiZi.AccesoDatos.RecibosDetalles).Importe))
-        Dim importe As Double = TryCast(DetailReport.GetCurrentRow, YiZi.AccesoDatos.RecibosDetalles).Remunerativo +
-            TryCast(DetailReport.GetCurrentRow, YiZi.AccesoDatos.RecibosDetalles).Descuento +
-            TryCast(DetailReport.GetCurrentRow, YiZi.AccesoDatos.RecibosDetalles).NoRemunerativo
+        'Dim importe As Double = TryCast(DetailReport.GetCurrentRow, YiZi.AccesoDatos.RecibosDetalles).Remunerativo +
+        '    TryCast(DetailReport.GetCurrentRow, YiZi.AccesoDatos.RecibosDetalles).Descuento +
+        '    TryCast(DetailReport.GetCurrentRow, YiZi.AccesoDatos.RecibosDetalles).NoRemunerativo
 
-        If importe = 0 Then
-            e.Cancel = True
-            Return
-        End If
+        'If importe = 0 Then
+        '    e.Cancel = True
+        '    Return
+        'End If
     End Sub
 End Class

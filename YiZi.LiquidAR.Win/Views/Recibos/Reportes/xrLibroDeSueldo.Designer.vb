@@ -84,10 +84,7 @@ Partial Public Class xrLibroDeSueldo
         Me.ObjectDataSource1 = New DevExpress.DataAccess.ObjectBinding.ObjectDataSource(Me.components)
         Me.PageHeader = New DevExpress.XtraReports.UI.PageHeaderBand()
         Me.XrLabel16 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel7 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.labelPeriodoLiquidado = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel9 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel8 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel5 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel12 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel6 = New DevExpress.XtraReports.UI.XRLabel()
@@ -102,6 +99,10 @@ Partial Public Class xrLibroDeSueldo
         Me.XrLabel47 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel43 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel25 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.GroupHeader2 = New DevExpress.XtraReports.UI.GroupHeaderBand()
+        Me.XrLabel8 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel7 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.labelPeriodoLiquidado = New DevExpress.XtraReports.UI.XRLabel()
         CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ObjectDataSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -857,9 +858,9 @@ Partial Public Class xrLibroDeSueldo
         '
         'PageHeader
         '
-        Me.PageHeader.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel16, Me.XrLabel7, Me.labelPeriodoLiquidado, Me.XrLabel9, Me.XrLabel8, Me.XrLabel5, Me.XrLabel12, Me.XrLabel6, Me.XrLabel10, Me.XrLabel11, Me.XrLabel13})
+        Me.PageHeader.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel16, Me.XrLabel9, Me.XrLabel5, Me.XrLabel12, Me.XrLabel6, Me.XrLabel10, Me.XrLabel11, Me.XrLabel13})
         Me.PageHeader.Dpi = 254.0!
-        Me.PageHeader.HeightF = 297.5043!
+        Me.PageHeader.HeightF = 214.5825!
         Me.PageHeader.Name = "PageHeader"
         '
         'XrLabel16
@@ -876,35 +877,6 @@ Partial Public Class xrLibroDeSueldo
         Me.XrLabel16.Text = "Direccion:"
         Me.XrLabel16.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
         '
-        'XrLabel7
-        '
-        Me.XrLabel7.Dpi = 254.0!
-        Me.XrLabel7.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Empresas].[EmpresasActividades].[Actividades].[Descripcion]")})
-        Me.XrLabel7.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel7.LocationFloat = New DevExpress.Utils.PointFloat(152.1581!, 201.0834!)
-        Me.XrLabel7.Multiline = True
-        Me.XrLabel7.Name = "XrLabel7"
-        Me.XrLabel7.Padding = New DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254.0!)
-        Me.XrLabel7.SizeF = New System.Drawing.SizeF(1628.382!, 44.97914!)
-        Me.XrLabel7.StylePriority.UseFont = False
-        Me.XrLabel7.StylePriority.UseTextAlignment = False
-        Me.XrLabel7.Text = "Empresa:"
-        Me.XrLabel7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        '
-        'labelPeriodoLiquidado
-        '
-        Me.labelPeriodoLiquidado.Dpi = 254.0!
-        Me.labelPeriodoLiquidado.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelPeriodoLiquidado.LocationFloat = New DevExpress.Utils.PointFloat(0!, 252.5251!)
-        Me.labelPeriodoLiquidado.Multiline = True
-        Me.labelPeriodoLiquidado.Name = "labelPeriodoLiquidado"
-        Me.labelPeriodoLiquidado.Padding = New DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254.0!)
-        Me.labelPeriodoLiquidado.SizeF = New System.Drawing.SizeF(1780.54!, 44.97916!)
-        Me.labelPeriodoLiquidado.StylePriority.UseFont = False
-        Me.labelPeriodoLiquidado.StylePriority.UseTextAlignment = False
-        Me.labelPeriodoLiquidado.Text = "LIQUIDACION DEL MES DE"
-        Me.labelPeriodoLiquidado.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
-        '
         'XrLabel9
         '
         Me.XrLabel9.Dpi = 254.0!
@@ -918,20 +890,6 @@ Partial Public Class xrLibroDeSueldo
         Me.XrLabel9.StylePriority.UseTextAlignment = False
         Me.XrLabel9.Text = "C.U.I.T.:"
         Me.XrLabel9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
-        '
-        'XrLabel8
-        '
-        Me.XrLabel8.Dpi = 254.0!
-        Me.XrLabel8.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel8.LocationFloat = New DevExpress.Utils.PointFloat(5.314598!, 201.0835!)
-        Me.XrLabel8.Multiline = True
-        Me.XrLabel8.Name = "XrLabel8"
-        Me.XrLabel8.Padding = New DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254.0!)
-        Me.XrLabel8.SizeF = New System.Drawing.SizeF(146.8435!, 44.97916!)
-        Me.XrLabel8.StylePriority.UseFont = False
-        Me.XrLabel8.StylePriority.UseTextAlignment = False
-        Me.XrLabel8.Text = "Actividad:"
-        Me.XrLabel8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
         '
         'XrLabel5
         '
@@ -1144,9 +1102,60 @@ Partial Public Class xrLibroDeSueldo
         Me.XrLabel25.Text = "Totales Periodo:"
         Me.XrLabel25.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
         '
+        'GroupHeader2
+        '
+        Me.GroupHeader2.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.labelPeriodoLiquidado, Me.XrLabel8, Me.XrLabel7})
+        Me.GroupHeader2.Dpi = 254.0!
+        Me.GroupHeader2.GroupFields.AddRange(New DevExpress.XtraReports.UI.GroupField() {New DevExpress.XtraReports.UI.GroupField("Legajos.Actividades.Descripcion", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)})
+        Me.GroupHeader2.HeightF = 89.9584!
+        Me.GroupHeader2.Name = "GroupHeader2"
+        '
+        'XrLabel8
+        '
+        Me.XrLabel8.Dpi = 254.0!
+        Me.XrLabel8.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel8.LocationFloat = New DevExpress.Utils.PointFloat(6.495834!, 0.00008010864!)
+        Me.XrLabel8.Multiline = True
+        Me.XrLabel8.Name = "XrLabel8"
+        Me.XrLabel8.Padding = New DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254.0!)
+        Me.XrLabel8.SizeF = New System.Drawing.SizeF(146.8435!, 44.97916!)
+        Me.XrLabel8.StylePriority.UseFont = False
+        Me.XrLabel8.StylePriority.UseTextAlignment = False
+        Me.XrLabel8.Text = "Actividad:"
+        Me.XrLabel8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+        '
+        'XrLabel7
+        '
+        Me.XrLabel7.Dpi = 254.0!
+        Me.XrLabel7.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Legajos].[Actividades].[Descripcion]")})
+        Me.XrLabel7.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel7.LocationFloat = New DevExpress.Utils.PointFloat(153.1141!, 0!)
+        Me.XrLabel7.Multiline = True
+        Me.XrLabel7.Name = "XrLabel7"
+        Me.XrLabel7.Padding = New DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254.0!)
+        Me.XrLabel7.SizeF = New System.Drawing.SizeF(1628.382!, 44.97914!)
+        Me.XrLabel7.StylePriority.UseFont = False
+        Me.XrLabel7.StylePriority.UseTextAlignment = False
+        Me.XrLabel7.Text = "Empresa:"
+        Me.XrLabel7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        '
+        'labelPeriodoLiquidado
+        '
+        Me.labelPeriodoLiquidado.Dpi = 254.0!
+        Me.labelPeriodoLiquidado.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelPeriodoLiquidado.LocationFloat = New DevExpress.Utils.PointFloat(6.495808!, 44.97924!)
+        Me.labelPeriodoLiquidado.Multiline = True
+        Me.labelPeriodoLiquidado.Name = "labelPeriodoLiquidado"
+        Me.labelPeriodoLiquidado.Padding = New DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254.0!)
+        Me.labelPeriodoLiquidado.SizeF = New System.Drawing.SizeF(1780.54!, 44.97916!)
+        Me.labelPeriodoLiquidado.StylePriority.UseFont = False
+        Me.labelPeriodoLiquidado.StylePriority.UseTextAlignment = False
+        Me.labelPeriodoLiquidado.Text = "LIQUIDACION DEL MES DE"
+        Me.labelPeriodoLiquidado.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+        '
         'xrLibroDeSueldo
         '
-        Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.TopMargin, Me.BottomMargin, Me.Detail, Me.DetailReport, Me.PageHeader, Me.GroupFooter1})
+        Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.TopMargin, Me.BottomMargin, Me.Detail, Me.DetailReport, Me.PageHeader, Me.GroupFooter1, Me.GroupHeader2})
         Me.ComponentStorage.AddRange(New System.ComponentModel.IComponent() {Me.ObjectDataSource1})
         Me.DataSource = Me.ObjectDataSource1
         Me.Dpi = 254.0!
@@ -1185,10 +1194,8 @@ Partial Public Class xrLibroDeSueldo
     Friend WithEvents XrLabel11 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel13 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel9 As DevExpress.XtraReports.UI.XRLabel
-    Friend WithEvents XrLabel8 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel5 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel12 As DevExpress.XtraReports.UI.XRLabel
-    Friend WithEvents labelPeriodoLiquidado As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel4 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel2 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel3 As DevExpress.XtraReports.UI.XRLabel
@@ -1212,7 +1219,6 @@ Partial Public Class xrLibroDeSueldo
     Friend WithEvents XrLabel29 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel28 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel27 As DevExpress.XtraReports.UI.XRLabel
-    Friend WithEvents XrLabel7 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel32 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel42 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel41 As DevExpress.XtraReports.UI.XRLabel
@@ -1239,4 +1245,8 @@ Partial Public Class xrLibroDeSueldo
     Friend WithEvents XrPageInfo1 As DevExpress.XtraReports.UI.XRPageInfo
     Friend WithEvents XrLabel15 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel16 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents GroupHeader2 As DevExpress.XtraReports.UI.GroupHeaderBand
+    Friend WithEvents XrLabel8 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents XrLabel7 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents labelPeriodoLiquidado As DevExpress.XtraReports.UI.XRLabel
 End Class

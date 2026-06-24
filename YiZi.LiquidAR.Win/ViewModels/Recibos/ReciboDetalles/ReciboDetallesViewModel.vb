@@ -29,7 +29,7 @@ Public Class ReciboDetallesViewModel
 
     Public ReadOnly Property LookUpFormula As IEntitiesViewModel(Of YiZi.AccesoDatos.Formulas)
         Get
-            If MyBase.Entity.Recibos Is Nothing Then
+            If MyBase.Entity?.Recibos Is Nothing Then
                 Return Nothing
             End If
             Dim IdConvenio As Integer = MyBase.Entity.Recibos.Legajos.IdConvenio.Value

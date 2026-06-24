@@ -38,6 +38,9 @@ Partial Public Class RecibosDetalles
     '<Column(TypeName:="money")>
     Public Property NoRemunerativo As Decimal?
 
+    '<Column(TypeName:="money")>
+    Public Property Contribuciones As Decimal?
+
     Public Overridable Property Formulas As Formulas
 
     Public Overridable Property Recibos As Recibos

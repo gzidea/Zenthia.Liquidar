@@ -32,43 +32,51 @@ Partial Class EmpresaActividadEditForm
         Me.bbiDelete = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiClose = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
+        Me.RibbonPageGroup5 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup3 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup4 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.mvvmContext = New DevExpress.Utils.MVVM.MVVMContext(Me.components)
         Me.dataLayout = New DevExpress.XtraLayout.LayoutControl()
-        Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.IdActividadSearchLookUpEdit = New DevExpress.XtraEditors.SearchLookUpEdit()
         Me.EmpresasActividadesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.IdEmpresaLookUpEdit = New DevExpress.XtraEditors.LookUpEdit()
-        Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.ActivoCheckEdit = New DevExpress.XtraEditors.CheckEdit()
-        Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.EmptySpaceItem1 = New DevExpress.XtraLayout.EmptySpaceItem()
-        Me.EmpresasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ActividadesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.IdActividadSearchLookUpEditView = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.IdActividadSearchLookUpEdit = New DevExpress.XtraEditors.SearchLookUpEdit()
-        Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-        Me.RibbonPageGroup5 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.colCodigoAfip = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colDescripcion = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.ActivoCheckEdit = New DevExpress.XtraEditors.CheckEdit()
+        Me.IdEmpresaLookUpEdit = New DevExpress.XtraEditors.LookUpEdit()
+        Me.EmpresasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TextEdit1 = New DevExpress.XtraEditors.TextEdit()
+        Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.EmptySpaceItem1 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.EmptySpaceItem2 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.EmptySpaceItem3 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         CType(Me.ribbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.mvvmContext, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dataLayout, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.dataLayout.SuspendLayout()
-        CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.IdActividadSearchLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmpresasActividadesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.IdEmpresaLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ActivoCheckEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmpresasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ActividadesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.IdActividadSearchLookUpEditView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.IdActividadSearchLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ActivoCheckEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.IdEmpresaLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmpresasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmptySpaceItem3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RibbonStatusBar1
@@ -161,6 +169,14 @@ Partial Class EmpresaActividadEditForm
         Me.RibbonPage1.Name = "RibbonPage1"
         Me.RibbonPage1.Text = "RibbonPage1"
         '
+        'RibbonPageGroup5
+        '
+        Me.RibbonPageGroup5.ItemLinks.Add(Me.bbiSave)
+        Me.RibbonPageGroup5.ItemLinks.Add(Me.bbiSaveAndClose)
+        Me.RibbonPageGroup5.ItemLinks.Add(Me.bbiSaveAndNew)
+        Me.RibbonPageGroup5.Name = "RibbonPageGroup5"
+        Me.RibbonPageGroup5.Text = "Guardar"
+        '
         'RibbonPageGroup2
         '
         Me.RibbonPageGroup2.ItemLinks.Add(Me.bbiReset)
@@ -192,6 +208,7 @@ Partial Class EmpresaActividadEditForm
         Me.dataLayout.Controls.Add(Me.IdActividadSearchLookUpEdit)
         Me.dataLayout.Controls.Add(Me.ActivoCheckEdit)
         Me.dataLayout.Controls.Add(Me.IdEmpresaLookUpEdit)
+        Me.dataLayout.Controls.Add(Me.TextEdit1)
         Me.dataLayout.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dataLayout.Location = New System.Drawing.Point(0, 100)
         Me.dataLayout.Name = "dataLayout"
@@ -201,74 +218,24 @@ Partial Class EmpresaActividadEditForm
         Me.dataLayout.TabIndex = 2
         Me.dataLayout.Text = "LayoutControl1"
         '
-        'Root
+        'IdActividadSearchLookUpEdit
         '
-        Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
-        Me.Root.GroupBordersVisible = False
-        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem2, Me.LayoutControlItem4, Me.EmptySpaceItem1, Me.LayoutControlItem3})
-        Me.Root.Name = "Root"
-        Me.Root.Size = New System.Drawing.Size(675, 190)
-        Me.Root.TextVisible = False
+        Me.IdActividadSearchLookUpEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.EmpresasActividadesBindingSource, "IdActividad", True))
+        Me.IdActividadSearchLookUpEdit.Location = New System.Drawing.Point(95, 36)
+        Me.IdActividadSearchLookUpEdit.MenuManager = Me.ribbonControl
+        Me.IdActividadSearchLookUpEdit.Name = "IdActividadSearchLookUpEdit"
+        Me.IdActividadSearchLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.IdActividadSearchLookUpEdit.Properties.DataSource = Me.ActividadesBindingSource
+        Me.IdActividadSearchLookUpEdit.Properties.DisplayMember = "Descripcion"
+        Me.IdActividadSearchLookUpEdit.Properties.PopupView = Me.IdActividadSearchLookUpEditView
+        Me.IdActividadSearchLookUpEdit.Properties.ValueMember = "Id"
+        Me.IdActividadSearchLookUpEdit.Size = New System.Drawing.Size(568, 20)
+        Me.IdActividadSearchLookUpEdit.StyleController = Me.dataLayout
+        Me.IdActividadSearchLookUpEdit.TabIndex = 8
         '
         'EmpresasActividadesBindingSource
         '
         Me.EmpresasActividadesBindingSource.DataSource = GetType(YiZi.AccesoDatos.EmpresasActividades)
-        '
-        'IdEmpresaLookUpEdit
-        '
-        Me.IdEmpresaLookUpEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.EmpresasActividadesBindingSource, "IdEmpresa", True))
-        Me.IdEmpresaLookUpEdit.Location = New System.Drawing.Point(72, 12)
-        Me.IdEmpresaLookUpEdit.MenuManager = Me.ribbonControl
-        Me.IdEmpresaLookUpEdit.Name = "IdEmpresaLookUpEdit"
-        Me.IdEmpresaLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.IdEmpresaLookUpEdit.Properties.DataSource = Me.EmpresasBindingSource
-        Me.IdEmpresaLookUpEdit.Properties.DisplayMember = "Nombre"
-        Me.IdEmpresaLookUpEdit.Properties.ValueMember = "Id"
-        Me.IdEmpresaLookUpEdit.Size = New System.Drawing.Size(591, 20)
-        Me.IdEmpresaLookUpEdit.StyleController = Me.dataLayout
-        Me.IdEmpresaLookUpEdit.TabIndex = 5
-        '
-        'LayoutControlItem2
-        '
-        Me.LayoutControlItem2.Control = Me.IdEmpresaLookUpEdit
-        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 0)
-        Me.LayoutControlItem2.Name = "LayoutControlItem2"
-        Me.LayoutControlItem2.Size = New System.Drawing.Size(655, 24)
-        Me.LayoutControlItem2.Text = "Empresa:"
-        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(48, 13)
-        '
-        'ActivoCheckEdit
-        '
-        Me.ActivoCheckEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.EmpresasActividadesBindingSource, "Activo", True))
-        Me.ActivoCheckEdit.Location = New System.Drawing.Point(12, 60)
-        Me.ActivoCheckEdit.MenuManager = Me.ribbonControl
-        Me.ActivoCheckEdit.Name = "ActivoCheckEdit"
-        Me.ActivoCheckEdit.Properties.Caption = "Actividad Activa"
-        Me.ActivoCheckEdit.Size = New System.Drawing.Size(651, 20)
-        Me.ActivoCheckEdit.StyleController = Me.dataLayout
-        Me.ActivoCheckEdit.TabIndex = 7
-        '
-        'LayoutControlItem4
-        '
-        Me.LayoutControlItem4.Control = Me.ActivoCheckEdit
-        Me.LayoutControlItem4.Location = New System.Drawing.Point(0, 48)
-        Me.LayoutControlItem4.Name = "LayoutControlItem4"
-        Me.LayoutControlItem4.Size = New System.Drawing.Size(655, 24)
-        Me.LayoutControlItem4.Text = "Activo:"
-        Me.LayoutControlItem4.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem4.TextVisible = False
-        '
-        'EmptySpaceItem1
-        '
-        Me.EmptySpaceItem1.AllowHotTrack = False
-        Me.EmptySpaceItem1.Location = New System.Drawing.Point(0, 72)
-        Me.EmptySpaceItem1.Name = "EmptySpaceItem1"
-        Me.EmptySpaceItem1.Size = New System.Drawing.Size(655, 98)
-        Me.EmptySpaceItem1.TextSize = New System.Drawing.Size(0, 0)
-        '
-        'EmpresasBindingSource
-        '
-        Me.EmpresasBindingSource.DataSource = GetType(YiZi.AccesoDatos.Empresas)
         '
         'ActividadesBindingSource
         '
@@ -281,46 +248,6 @@ Partial Class EmpresaActividadEditForm
         Me.IdActividadSearchLookUpEditView.Name = "IdActividadSearchLookUpEditView"
         Me.IdActividadSearchLookUpEditView.OptionsSelection.EnableAppearanceFocusedCell = False
         Me.IdActividadSearchLookUpEditView.OptionsView.ShowGroupPanel = False
-        '
-        'IdActividadSearchLookUpEdit
-        '
-        Me.IdActividadSearchLookUpEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.EmpresasActividadesBindingSource, "IdActividad", True))
-        Me.IdActividadSearchLookUpEdit.Location = New System.Drawing.Point(72, 36)
-        Me.IdActividadSearchLookUpEdit.MenuManager = Me.ribbonControl
-        Me.IdActividadSearchLookUpEdit.Name = "IdActividadSearchLookUpEdit"
-        Me.IdActividadSearchLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.IdActividadSearchLookUpEdit.Properties.DataSource = Me.ActividadesBindingSource
-        Me.IdActividadSearchLookUpEdit.Properties.DisplayMember = "Descripcion"
-        Me.IdActividadSearchLookUpEdit.Properties.PopupView = Me.IdActividadSearchLookUpEditView
-        Me.IdActividadSearchLookUpEdit.Properties.ValueMember = "Id"
-        Me.IdActividadSearchLookUpEdit.Size = New System.Drawing.Size(591, 20)
-        Me.IdActividadSearchLookUpEdit.StyleController = Me.dataLayout
-        Me.IdActividadSearchLookUpEdit.TabIndex = 8
-        '
-        'LayoutControlItem3
-        '
-        Me.LayoutControlItem3.Control = Me.IdActividadSearchLookUpEdit
-        Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 24)
-        Me.LayoutControlItem3.Name = "LayoutControlItem3"
-        Me.LayoutControlItem3.Size = New System.Drawing.Size(655, 24)
-        Me.LayoutControlItem3.Text = "Actividad:"
-        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(48, 13)
-        '
-        'RibbonPageGroup1
-        '
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiSave)
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiSaveAndClose)
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiSaveAndNew)
-        Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
-        Me.RibbonPageGroup1.Text = "Guardar"
-        '
-        'RibbonPageGroup5
-        '
-        Me.RibbonPageGroup5.ItemLinks.Add(Me.bbiSave)
-        Me.RibbonPageGroup5.ItemLinks.Add(Me.bbiSaveAndClose)
-        Me.RibbonPageGroup5.ItemLinks.Add(Me.bbiSaveAndNew)
-        Me.RibbonPageGroup5.Name = "RibbonPageGroup5"
-        Me.RibbonPageGroup5.Text = "Guardar"
         '
         'colCodigoAfip
         '
@@ -338,6 +265,123 @@ Partial Class EmpresaActividadEditForm
         Me.colDescripcion.VisibleIndex = 1
         Me.colDescripcion.Width = 964
         '
+        'ActivoCheckEdit
+        '
+        Me.ActivoCheckEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.EmpresasActividadesBindingSource, "Activo", True))
+        Me.ActivoCheckEdit.Location = New System.Drawing.Point(12, 94)
+        Me.ActivoCheckEdit.MenuManager = Me.ribbonControl
+        Me.ActivoCheckEdit.Name = "ActivoCheckEdit"
+        Me.ActivoCheckEdit.Properties.Caption = "Actividad Activa"
+        Me.ActivoCheckEdit.Size = New System.Drawing.Size(651, 20)
+        Me.ActivoCheckEdit.StyleController = Me.dataLayout
+        Me.ActivoCheckEdit.TabIndex = 7
+        '
+        'IdEmpresaLookUpEdit
+        '
+        Me.IdEmpresaLookUpEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.EmpresasActividadesBindingSource, "IdEmpresa", True))
+        Me.IdEmpresaLookUpEdit.Location = New System.Drawing.Point(95, 12)
+        Me.IdEmpresaLookUpEdit.MenuManager = Me.ribbonControl
+        Me.IdEmpresaLookUpEdit.Name = "IdEmpresaLookUpEdit"
+        Me.IdEmpresaLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.IdEmpresaLookUpEdit.Properties.DataSource = Me.EmpresasBindingSource
+        Me.IdEmpresaLookUpEdit.Properties.DisplayMember = "Nombre"
+        Me.IdEmpresaLookUpEdit.Properties.ValueMember = "Id"
+        Me.IdEmpresaLookUpEdit.Size = New System.Drawing.Size(568, 20)
+        Me.IdEmpresaLookUpEdit.StyleController = Me.dataLayout
+        Me.IdEmpresaLookUpEdit.TabIndex = 5
+        '
+        'EmpresasBindingSource
+        '
+        Me.EmpresasBindingSource.DataSource = GetType(YiZi.AccesoDatos.Empresas)
+        '
+        'TextEdit1
+        '
+        Me.TextEdit1.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.EmpresasActividadesBindingSource, "ValorSeguro", True))
+        Me.TextEdit1.Location = New System.Drawing.Point(95, 70)
+        Me.TextEdit1.MenuManager = Me.ribbonControl
+        Me.TextEdit1.Name = "TextEdit1"
+        Me.TextEdit1.Size = New System.Drawing.Size(180, 20)
+        Me.TextEdit1.StyleController = Me.dataLayout
+        Me.TextEdit1.TabIndex = 9
+        '
+        'Root
+        '
+        Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
+        Me.Root.GroupBordersVisible = False
+        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem2, Me.LayoutControlItem4, Me.EmptySpaceItem1, Me.LayoutControlItem3, Me.EmptySpaceItem2, Me.LayoutControlItem1, Me.EmptySpaceItem3})
+        Me.Root.Name = "Root"
+        Me.Root.Size = New System.Drawing.Size(675, 190)
+        Me.Root.TextVisible = False
+        '
+        'LayoutControlItem2
+        '
+        Me.LayoutControlItem2.Control = Me.IdEmpresaLookUpEdit
+        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlItem2.Name = "LayoutControlItem2"
+        Me.LayoutControlItem2.Size = New System.Drawing.Size(655, 24)
+        Me.LayoutControlItem2.Text = "Empresa:"
+        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(80, 13)
+        '
+        'LayoutControlItem4
+        '
+        Me.LayoutControlItem4.Control = Me.ActivoCheckEdit
+        Me.LayoutControlItem4.Location = New System.Drawing.Point(0, 82)
+        Me.LayoutControlItem4.Name = "LayoutControlItem4"
+        Me.LayoutControlItem4.Size = New System.Drawing.Size(655, 24)
+        Me.LayoutControlItem4.Text = "Activo:"
+        Me.LayoutControlItem4.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem4.TextVisible = False
+        '
+        'EmptySpaceItem1
+        '
+        Me.EmptySpaceItem1.AllowHotTrack = False
+        Me.EmptySpaceItem1.Location = New System.Drawing.Point(0, 106)
+        Me.EmptySpaceItem1.Name = "EmptySpaceItem1"
+        Me.EmptySpaceItem1.Size = New System.Drawing.Size(655, 64)
+        Me.EmptySpaceItem1.TextSize = New System.Drawing.Size(0, 0)
+        '
+        'LayoutControlItem3
+        '
+        Me.LayoutControlItem3.Control = Me.IdActividadSearchLookUpEdit
+        Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 24)
+        Me.LayoutControlItem3.Name = "LayoutControlItem3"
+        Me.LayoutControlItem3.Size = New System.Drawing.Size(655, 24)
+        Me.LayoutControlItem3.Text = "Actividad:"
+        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(80, 13)
+        '
+        'EmptySpaceItem2
+        '
+        Me.EmptySpaceItem2.AllowHotTrack = False
+        Me.EmptySpaceItem2.Location = New System.Drawing.Point(0, 48)
+        Me.EmptySpaceItem2.Name = "EmptySpaceItem2"
+        Me.EmptySpaceItem2.Size = New System.Drawing.Size(655, 10)
+        Me.EmptySpaceItem2.TextSize = New System.Drawing.Size(0, 0)
+        '
+        'LayoutControlItem1
+        '
+        Me.LayoutControlItem1.Control = Me.TextEdit1
+        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 58)
+        Me.LayoutControlItem1.Name = "LayoutControlItem1"
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(267, 24)
+        Me.LayoutControlItem1.Text = "Valor de Seguro:"
+        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(80, 13)
+        '
+        'EmptySpaceItem3
+        '
+        Me.EmptySpaceItem3.AllowHotTrack = False
+        Me.EmptySpaceItem3.Location = New System.Drawing.Point(267, 58)
+        Me.EmptySpaceItem3.Name = "EmptySpaceItem3"
+        Me.EmptySpaceItem3.Size = New System.Drawing.Size(388, 24)
+        Me.EmptySpaceItem3.TextSize = New System.Drawing.Size(0, 0)
+        '
+        'RibbonPageGroup1
+        '
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiSave)
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiSaveAndClose)
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiSaveAndNew)
+        Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
+        Me.RibbonPageGroup1.Text = "Guardar"
+        '
         'EmpresaActividadEditForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -351,18 +395,22 @@ Partial Class EmpresaActividadEditForm
         CType(Me.mvvmContext, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dataLayout, System.ComponentModel.ISupportInitialize).EndInit()
         Me.dataLayout.ResumeLayout(False)
-        CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.IdActividadSearchLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmpresasActividadesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.IdEmpresaLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ActivoCheckEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmpresasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ActividadesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.IdActividadSearchLookUpEditView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.IdActividadSearchLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ActivoCheckEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.IdEmpresaLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmpresasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmptySpaceItem3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -401,4 +449,8 @@ Partial Class EmpresaActividadEditForm
     Friend WithEvents RibbonPageGroup1 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents colCodigoAfip As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colDescripcion As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents TextEdit1 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents EmptySpaceItem2 As DevExpress.XtraLayout.EmptySpaceItem
+    Friend WithEvents LayoutControlItem1 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents EmptySpaceItem3 As DevExpress.XtraLayout.EmptySpaceItem
 End Class

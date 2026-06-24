@@ -50,21 +50,31 @@ Partial Public Class ReciboViewModel
                         detalle.Importe = detalle.Remunerativo
                         detalle.NoRemunerativo = 0
                         detalle.Descuento = 0
+                        detalle.Contribuciones = 0
                     Case Entidades.enmColumnaRecivo.NoRemunerativo
                         detalle.NoRemunerativo = CDbl(_formula.Formula(detalle.formulaImporte))
                         detalle.Importe = detalle.NoRemunerativo
                         detalle.Remunerativo = 0
                         detalle.Descuento = 0
+                        detalle.Contribuciones = 0
                     Case Entidades.enmColumnaRecivo.Descuento
                         detalle.Descuento = CDbl(_formula.Formula(detalle.formulaImporte))
                         detalle.Importe = detalle.Descuento
                         detalle.Remunerativo = 0
                         detalle.NoRemunerativo = 0
+                        detalle.Contribuciones = 0
                     Case Entidades.enmColumnaRecivo.DescuentoNoRemunerativo
                         detalle.Descuento = CDbl(_formula.Formula(detalle.formulaImporte))
                         detalle.Importe = detalle.Descuento
                         detalle.Remunerativo = 0
                         detalle.NoRemunerativo = 0
+                        detalle.Contribuciones = 0
+                    Case Entidades.enmColumnaRecivo.Contribuciones
+                        detalle.Contribuciones = CDbl(_formula.Formula(detalle.formulaImporte))
+                        detalle.Importe = detalle.Descuento
+                        detalle.Remunerativo = 0
+                        detalle.NoRemunerativo = 0
+                        detalle.Descuento = 0
                 End Select
             Next
 
@@ -77,10 +87,16 @@ Partial Public Class ReciboViewModel
             Dim desc As Double = MyBase.Entity.RecibosDetalles.Where(Function(w) w.Formulas.Conceptos.ColumnaRecibo = Entidades.enmColumnaRecivo.Descuento).Sum(Function(x) x.Importe)
             'Debug.Print(desc)
             _formula.NewVariable("DESCU", desc)
-
+            MyBase.Entity.TotalDescuentos = MyBase.Entity.RecibosDetalles.Sum(Function(x) x.Descuento)
             MyBase.Entity.TotalNoRemunerativos = MyBase.Entity.RecibosDetalles.Sum(Function(x) x.NoRemunerativo)
-            '_formula.NewVariable("NREMUN", MyBase.Entity.TotalNoRemunerativos)
+            MyBase.Entity.TotalContribuciones = MyBase.Entity.RecibosDetalles.Sum(Function(x) x.Contribuciones)
+
             MyBase.Entity.Total = MyBase.Entity.TotalRemunerativos - MyBase.Entity.TotalDescuentos + MyBase.Entity.TotalNoRemunerativos
+            MyBase.Entity.NetoACobrar = MyBase.Entity.TotalRemunerativos - MyBase.Entity.TotalDescuentos + MyBase.Entity.TotalNoRemunerativos
+
+            MyBase.Entity.SueldoBruto = MyBase.Entity.TotalRemunerativos + MyBase.Entity.TotalNoRemunerativos
+
+            MyBase.Entity.TotalCostoLaboral = MyBase.Entity.SueldoBruto + MyBase.Entity.TotalContribuciones
         Next
         MyBase.Save()
     End Sub
@@ -290,6 +306,9 @@ Partial Public Class ReciboViewModel
     Protected Overridable Sub OnSelectedLegajoChanged()
         If Entity.IdLegajo <> SelectedLegajo Or MyBase.IsNew Then
             Dim _legajo As YiZi.AccesoDatos.Legajos = UnitOfWork.Legajos.Where(Function(x) x.Id = SelectedLegajo).FirstOrDefault()
+            Dim _empresaactividad As YiZi.AccesoDatos.EmpresasActividades = UnitOfWork.EmpresasActividades.Where(Function(x) x.IdEmpresa = _legajo.IdEmpresa And x.IdActividad = _legajo.idActividad).FirstOrDefault()
+            '_legajo.EmpresaActividad = _empresaactividad
+            Entity.ImporteSeguro = If(_empresaactividad?.ValorSeguro, 0)
             Entity.Legajos = _legajo
         End If
         'Me.RaisePropertyChanged(Function(m) m.Entity)
@@ -342,8 +361,22 @@ Partial Public Class ReciboViewModel
         Dim source As List(Of YiZi.AccesoDatos.Recibos) = New List(Of YiZi.AccesoDatos.Recibos)
 
         source.Add(MyBase.Entity)
-        Dim reporte As xrReciboSueldoX1 = New xrReciboSueldoX1
+        Dim reporte As xrNuevoReciboDeSueldo = New xrNuevoReciboDeSueldo
         reporte.DataSource = source
+
+        Dim reporteRemunYAportes As xrRemunYAportes = New xrRemunYAportes
+        reporteRemunYAportes.DataSource = source
+
+        Dim reporteContribuiones As xrRemunYAportes = New xrRemunYAportes
+        reporteContribuiones.DataSource = source
+
+        Dim reporteAportes As xrRemunYAportes = New xrRemunYAportes
+        reporteAportes.DataSource = source
+        reporte.DetalleAportes = reporteAportes
+
+        reporte.DetalleContribuciones = reporteContribuiones
+        reporte.DetalleRemun = reporteRemunYAportes
+
         Dim pad As frmReportesDesigner = New frmReportesDesigner
         pad.ReportDesigner1.OpenReport(reporte)
         pad.ShowDialog()

@@ -1,5 +1,6 @@
 ﻿Imports System.Collections.ObjectModel
 Imports System.ComponentModel.DataAnnotations
+Imports System.Drawing.Printing
 Imports DevExpress.Mvvm
 Imports DevExpress.Mvvm.POCO
 Imports YiZi.AccesoDatos
@@ -61,6 +62,35 @@ Public Class ReciboCollectionViewModel
         SelectedItems = New YiZi.AccesoDatos.Recibos(-1) {} 'Limpio la seleccion de la Grilla
     End Sub
 
+    <Display(Name:="Generar e Imprimir")>
+    Public Sub GenerateAndPrint()
+        If SelectedItems.Where(Function(x) x.Total Is Nothing).Count <> 0 Then
+            MyBase.MessageBoxService.ShowMessage("Dentro de la seleccion, se encuentran Recibos NO validos." & vbCrLf & "Estos no se generaran", "Generacion de Recibos", MessageButton.OK)
+        End If
+
+        Dim printerSettings As New PrinterSettings()
+
+        Using dialog As New PrintDialog()
+            dialog.PrinterSettings = printerSettings
+            If dialog.ShowDialog() <> DialogResult.OK Then
+                Exit Sub
+            End If
+            printerSettings = dialog.PrinterSettings
+        End Using
+
+        For Each item As YiZi.AccesoDatos.Recibos In SelectedItems
+            Try
+                If Not item.Total Is Nothing OrElse item.Total = 0 Then
+                    ReciboAuxiliar.GenerateReciboReport(item, False, printerSettings)
+                End If
+            Catch ex As Exception
+                Continue For
+            End Try
+        Next
+        MyBase.MessageBoxService.ShowMessage("Finalizo el proceso de Generacion de Recibos", "Generacion de Recibos", MessageButton.OK)
+        SelectedItems = New YiZi.AccesoDatos.Recibos(-1) {} 'Limpio la seleccion de la Grilla
+    End Sub
+
     <Display(Name:="Recalcular y Guardar")>
     Public Sub RecalcularAndSave()
         For Each item As YiZi.AccesoDatos.Recibos In SelectedItems
@@ -84,18 +114,35 @@ Public Class ReciboCollectionViewModel
 
     Public Property Legajos As ICollection(Of Legajos)
 
+    'Public Function CanGenerateAndPrint() As Boolean
+    '    Return Not SelectedItems Is Nothing
+    'End Function
+
     Public Function CanGenerateAndSave() As Boolean
         Return Not SelectedItems Is Nothing
     End Function
 
     Public Overridable Sub ReportDesigner()
         Dim reporte As xrLibroDeSueldo = New xrLibroDeSueldo
+        'Dim reporte As xrLibroDeSueldoV2 = New xrLibroDeSueldoV2
         reporte.DataSource = Me.Entities
         reporte.labelPeriodoLiquidado.Text = "Periodo de Liquidacion:" & MonthName(Me.Entities.FirstOrDefault().Periodo.Substring(0, 2), False).ToUpper() & " " & Me.Entities.FirstOrDefault().Periodo.Substring(2, 4)
 
         Dim pad As frmReportesVistaPrevia = New frmReportesVistaPrevia
         pad.dvReportes.DocumentSource = reporte
         pad.ShowDialog()
+    End Sub
+
+    <Display(Name:="Quitar todo")>
+    Public Sub QuitarTodo()
+        If MessageBoxService.ShowMessage("¿Esta seguro de borrar todos los item´s seleccionados?", "Quitar todo", MessageButton.YesNo) <> MessageResult.Yes Then
+            Return
+        End If
+        MyBase.canShowDialogDelete = False
+        For Each item As YiZi.AccesoDatos.Recibos In SelectedItems
+            MyBase.Delete(Entities.Where(Function(x) x.Id = item.Id).FirstOrDefault())
+        Next
+        MyBase.canShowDialogDelete = True
     End Sub
 
 End Class

@@ -158,7 +158,7 @@ Public Class LSDRegistro01ViewModel
                 reg02.FechaDePago = recibo.FechaPago.Year.ToString & recibo.FechaPago.Month.ToString.PadLeft(2, "0") & recibo.FechaPago.Day.ToString.PadLeft(2, "0")
 
                 _formula = New CalcularFormulas(recibo)
-                Dim recibodetalles As IEnumerable(Of YiZi.AccesoDatos.RecibosDetalles) = db.RecibosDetalles.Where(Function(x) x.IdRecibo = recibo.Id)
+                Dim recibodetalles As IEnumerable(Of YiZi.AccesoDatos.RecibosDetalles) = db.RecibosDetalles.Where(Function(x) x.IdRecibo = recibo.Id).OrderBy(Function(y) y.Formulas.Orden)
                 If recibo.Total <> 0 Then
                     For Each recibodetalle As YiZi.AccesoDatos.RecibosDetalles In recibodetalles.ToList()
                         If reg01.LSDRegistro03.Count > 0 AndAlso reg01.LSDRegistro03.Where(Function(x) x.CodigoConcepto = recibodetalle.Formulas.CodigoAfip.ToString() And x.CUIL = legajo.CUIL.Replace("-", "")).Count > 0 Then
@@ -173,12 +173,20 @@ Public Class LSDRegistro01ViewModel
                                 reg03.Unidad = "D"
                                 reg03.Importe = recibodetalle.Importe
                             ElseIf recibodetalle.Formulas.CodigoAfip.ToString() = "810002" Then 'ESTE LO RESOLVERIA AGREGNADO UN CONCEPTO QUE DE CALCULO AUXILIAR QUE NO SUME EN EL RECIBO PERO SE LO PUEDA TOMAR PARA ADICIONAR LA OS
-                                reg03.CodigoConcepto = recibodetalle.Formulas.Codigo.ToString()
+                                If reg01.IdEmpresa = 4 Then
+                                    reg03.CodigoConcepto = recibodetalle.Formulas.CodigoAfip.ToString()
+                                Else
+                                    reg03.CodigoConcepto = recibodetalle.Formulas.Codigo.ToString()
+                                End If
                                 reg03.Cantidad = recibodetalle.Cantidad + legajo.Adherentes * 1.5
                                 reg03.Unidad = recibodetalle.Formulas.Unidades.CodigoAfip
                                 reg03.Importe = recibodetalle.Importe + (recibodetalle.Importe / 3) * legajo.Adherentes * 1.5
                             Else
-                                reg03.CodigoConcepto = recibodetalle.Formulas.Codigo.ToString()
+                                If reg01.IdEmpresa = 4 Then
+                                    reg03.CodigoConcepto = recibodetalle.Formulas.CodigoAfip.ToString()
+                                Else
+                                    reg03.CodigoConcepto = recibodetalle.Formulas.Codigo.ToString()
+                                End If
                                 reg03.Cantidad = recibodetalle.Cantidad
                                 reg03.Unidad = recibodetalle.Formulas.Unidades.CodigoAfip
                                 reg03.Importe = recibodetalle.Importe
@@ -247,14 +255,14 @@ Public Class LSDRegistro01ViewModel
                 reg04.BaseImponible1 = recibo.TotalRemunerativos '+ recibo.TotalNoRemunerativos 'Val(_formula.Formula("REMUN"))
                 reg04.BaseImponible2 = recibo.TotalRemunerativos '+ recibo.TotalNoRemunerativos
                 reg04.BaseImponible3 = recibo.TotalRemunerativos '+ recibo.TotalNoRemunerativos
-                reg04.BaseImponible4 = recibo.TotalRemunerativos '+ recibo.TotalNoRemunerativos
+                reg04.BaseImponible4 = recibo.TotalRemunerativos + recibo.TotalNoRemunerativos
                 reg04.BaseImponible5 = recibo.TotalRemunerativos '+ recibo.TotalNoRemunerativos
                 reg04.BaseImponible6 = 0
                 reg04.BaseImponible7 = 0
-                reg04.BaseImponible8 = recibo.TotalRemunerativos '+ recibo.TotalNoRemunerativos
+                reg04.BaseImponible8 = recibo.TotalRemunerativos + recibo.TotalNoRemunerativos
                 reg04.BaseImponible9 = recibo.TotalRemunerativos + recibo.TotalNoRemunerativos
 
-                Dim reg04Anterior As LSDRegistro04 = db.LSDRegistro04.Where(Function(x) x.LSDRegistro01.NumeroDeLiquidacion = reg01.NumeroDeLiquidacion - 1 And x.LSDRegistro01.Periodo = reg01.Periodo And x.CUIL = reg04.CUIL).FirstOrDefault()
+                Dim reg04Anterior As LSDRegistro04 = db.LSDRegistro04.Where(Function(x) x.LSDRegistro01.NumeroDeLiquidacion < reg01.NumeroDeLiquidacion And x.LSDRegistro01.Periodo = reg01.Periodo And x.CUIL = reg04.CUIL).OrderByDescending(Function(y) y.Id).Take(1).ToList().FirstOrDefault()
                 If Not reg04Anterior Is Nothing Then
                     reg04.RemuneracionBruta += reg04Anterior.RemuneracionBruta
                     reg04.BaseImponible1 += reg04Anterior.BaseImponible1
@@ -270,8 +278,14 @@ Public Class LSDRegistro01ViewModel
 
                 reg04.BCDiferencialAporteSegSocial = 0
                 reg04.BCDiferencialContribSegSocial = 0
-                reg04.BaseImponible10 = 0
-                reg04.ImporteADetraer = 0
+                If reg01.IdTipoLiquidacion <> 1 And reg04.RemuneracionBruta <> 0 Then
+                    reg04.ImporteADetraer = 7003.68
+                Else
+                    reg04.ImporteADetraer = 0
+                End If
+
+                reg04.BaseImponible10 = reg04.BaseImponible2 - reg04.ImporteADetraer
+
                 reg01.LSDRegistro04.Add(reg04)
                 reg01.LSDRegistro02.Add(reg02)
             Next
@@ -302,9 +316,10 @@ Public Class LSDRegistro01ViewModel
     End Sub
 
     Public Overrides Function CanSave() As Boolean
-        Return (Not changedCustomPropertiesReg04 Is Nothing AndAlso Not changedCustomPropertiesReg04.Count = 0) Or
-            (Not changedCustomPropertiesReg03 Is Nothing AndAlso Not changedCustomPropertiesReg03.Count = 0) Or
-            (Not changedCustomPropertiesReg02 Is Nothing AndAlso Not changedCustomPropertiesReg02.Count = 0)
+        ''Return (Not changedCustomPropertiesReg04 Is Nothing AndAlso Not changedCustomPropertiesReg04.Count = 0) Or
+        ''    (Not changedCustomPropertiesReg03 Is Nothing AndAlso Not changedCustomPropertiesReg03.Count = 0) Or
+        ''    (Not changedCustomPropertiesReg02 Is Nothing AndAlso Not changedCustomPropertiesReg02.Count = 0)
+        Return True
     End Function
 
     Public Overrides Sub Reset()

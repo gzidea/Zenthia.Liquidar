@@ -120,7 +120,6 @@ Partial Public Class xrReciboSueldoX2
         Me.xrSubReportReciboOriginal.Dpi = 254.0!
         Me.xrSubReportReciboOriginal.LocationFloat = New DevExpress.Utils.PointFloat(0!, 0!)
         Me.xrSubReportReciboOriginal.Name = "xrSubReportReciboOriginal"
-        Me.xrSubReportReciboOriginal.ReportSource = New YiZi.LiquidAR.Win.xrReciboSueldoX1()
         Me.xrSubReportReciboOriginal.SizeF = New System.Drawing.SizeF(1860.0!, 3246.604!)
         '
         'xrSubReportReciboDuplicado
@@ -128,7 +127,6 @@ Partial Public Class xrReciboSueldoX2
         Me.xrSubReportReciboDuplicado.Dpi = 254.0!
         Me.xrSubReportReciboDuplicado.LocationFloat = New DevExpress.Utils.PointFloat(1871.182!, 0!)
         Me.xrSubReportReciboDuplicado.Name = "xrSubReportReciboDuplicado"
-        Me.xrSubReportReciboDuplicado.ReportSource = New YiZi.LiquidAR.Win.xrReciboSueldoX1()
         Me.xrSubReportReciboDuplicado.SizeF = New System.Drawing.SizeF(1861.0!, 3246.604!)
         '
         'xrReciboSueldoX2
@@ -151,12 +149,12 @@ Partial Public Class xrReciboSueldoX2
     Friend WithEvents TopMargin As DevExpress.XtraReports.UI.TopMarginBand
     Friend WithEvents BottomMargin As DevExpress.XtraReports.UI.BottomMarginBand
     Friend WithEvents Detail As DevExpress.XtraReports.UI.DetailBand
-    Friend WithEvents PageHeader As DevExpress.XtraReports.UI.PageHeaderBand
-    Friend WithEvents xrSubReportReciboOriginal As DevExpress.XtraReports.UI.XRSubreport
-    Friend WithEvents xrSubReportReciboDuplicado As DevExpress.XtraReports.UI.XRSubreport
-    Friend WithEvents XrLine1 As DevExpress.XtraReports.UI.XRLine
-    Friend WithEvents XrLabel42 As DevExpress.XtraReports.UI.XRLabel
-    Friend WithEvents XrLine2 As DevExpress.XtraReports.UI.XRLine
     Friend WithEvents XrLabel1 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLine3 As DevExpress.XtraReports.UI.XRLine
+    Friend WithEvents XrLabel42 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents XrLine2 As DevExpress.XtraReports.UI.XRLine
+    Friend WithEvents XrLine1 As DevExpress.XtraReports.UI.XRLine
+    Friend WithEvents xrSubReportReciboOriginal As DevExpress.XtraReports.UI.XRSubreport
+    Friend WithEvents xrSubReportReciboDuplicado As DevExpress.XtraReports.UI.XRSubreport
+    Friend WithEvents PageHeader As DevExpress.XtraReports.UI.PageHeaderBand
 End Class

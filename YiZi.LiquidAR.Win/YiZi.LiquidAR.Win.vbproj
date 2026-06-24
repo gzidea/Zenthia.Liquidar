@@ -75,45 +75,42 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Accessibility" />
-    <Reference Include="DevExpress.Charts.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.CodeParser.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Charts.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v20.1" />
     <Reference Include="DevExpress.Data.Desktop.v20.1" />
-    <Reference Include="DevExpress.Data.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Devexpress dll sin crack\DevExpress.Data.v20.1.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.DataAccess.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.DataAccess.v20.1.UI, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Diagram.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Mvvm.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Office.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Pdf.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Pdf.v20.1.Drawing, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.PivotGrid.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Printing.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.RichEdit.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.RichEdit.v20.1.Export, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Sparkline.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v20.1.UI, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Diagram.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Mvvm.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v20.1.Drawing, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v20.1.Export, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v20.1" />
-    <Reference Include="DevExpress.Utils.v20.1.UI, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Xpo.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v20.1.UI, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v20.1" />
-    <Reference Include="DevExpress.XtraCharts.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraDiagram.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraDiagram.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v20.1" />
-    <Reference Include="DevExpress.XtraGauges.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraGrid.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraLayout.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraPrinting.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraReports.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraReports.v20.1.Extensions, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraRichEdit.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraTreeList.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraWizard.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v20.1.Extensions, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraWizard.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -154,6 +151,7 @@
     <Reference Include="UIAutomationClient" />
     <Reference Include="UIAutomationProvider" />
     <Reference Include="UIAutomationTypes" />
+    <Reference Include="Web.DemoData.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
@@ -469,6 +467,18 @@
     <Compile Include="Views\Recibos\RecibosEditForm.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Views\Recibos\Reportes\xrAportes.Designer.vb">
+      <DependentUpon>xrAportes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Recibos\Reportes\xrAportes.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\Recibos\Reportes\xrContribuciones.Designer.vb">
+      <DependentUpon>xrContribuciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Recibos\Reportes\xrContribuciones.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Views\Recibos\Reportes\xrLibroDeSueldo.Designer.vb">
       <DependentUpon>xrLibroDeSueldo.vb</DependentUpon>
     </Compile>
@@ -479,6 +489,12 @@
       <DependentUpon>xrLibroDeSueldoV2.vb</DependentUpon>
     </Compile>
     <Compile Include="Views\Recibos\Reportes\xrLibroDeSueldoV2.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\Recibos\Reportes\xrNuevoReciboDeSueldo.Designer.vb">
+      <DependentUpon>xrNuevoReciboDeSueldo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Recibos\Reportes\xrNuevoReciboDeSueldo.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Views\Recibos\Reportes\xrReciboSueldoX1.Designer.vb">
@@ -504,6 +520,12 @@
     </Compile>
     <Compile Include="Seguridad\View\Usuarios\Usuarios.vb">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Recibos\Reportes\xrRemunYAportes.Designer.vb">
+      <DependentUpon>xrRemunYAportes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Recibos\Reportes\xrRemunYAportes.vb">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Views\Sindicatos\SindicatoEditForm.Designer.vb">
       <DependentUpon>SindicatoEditForm.vb</DependentUpon>
@@ -540,6 +562,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmReportesDesigner.resx">
       <DependentUpon>frmReportesDesigner.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmReportesVistaPrevia.resx">
       <DependentUpon>frmReportesVistaPrevia.vb</DependentUpon>
@@ -598,6 +621,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Formulas\FormulaEditForm.resx">
       <DependentUpon>FormulaEditForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Formulas\Formulas.resx">
       <DependentUpon>Formulas.vb</DependentUpon>
@@ -610,6 +634,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Legajos\Filtros\FiltrosLegajosNovedades.resx">
       <DependentUpon>FiltrosLegajosNovedades.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Legajos\LegajoConceptoEditForm.vb.resx">
       <DependentUpon>LegajoConceptoEditForm.vb.vb</DependentUpon>
@@ -654,11 +679,20 @@
     <EmbeddedResource Include="Views\Recibos\RecibosEditForm.resx">
       <DependentUpon>RecibosEditForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Recibos\Reportes\xrAportes.resx">
+      <DependentUpon>xrAportes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Recibos\Reportes\xrContribuciones.resx">
+      <DependentUpon>xrContribuciones.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Recibos\Reportes\xrLibroDeSueldo.resx">
       <DependentUpon>xrLibroDeSueldo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Recibos\Reportes\xrLibroDeSueldoV2.resx">
       <DependentUpon>xrLibroDeSueldoV2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Recibos\Reportes\xrNuevoReciboDeSueldo.resx">
+      <DependentUpon>xrNuevoReciboDeSueldo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Recibos\Reportes\xrReciboSueldoX1.resx">
       <DependentUpon>xrReciboSueldoX1.vb</DependentUpon>
@@ -671,6 +705,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Seguridad\View\Usuarios\Usuarios.resx">
       <DependentUpon>Usuarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Recibos\Reportes\xrRemunYAportes.resx">
+      <DependentUpon>xrRemunYAportes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Sindicatos\SindicatoEditForm.resx">
       <DependentUpon>SindicatoEditForm.vb</DependentUpon>
@@ -773,7 +810,7 @@
       <Name>YiZi.AccesoDatos</Name>
     </ProjectReference>
     <ProjectReference Include="..\YiZi.mvvm\YiZi.mvvm.vbproj">
-      <Project>{c636c3eb-8bbb-44ca-a14d-8329b1ad8851}</Project>
+      <Project>{C636C3EB-8BBB-44CA-A14D-8329B1AD8851}</Project>
       <Name>YiZi.mvvm</Name>
     </ProjectReference>
   </ItemGroup>
@@ -986,6 +1023,8 @@
     <None Include="Resources\import.svg" />
     <None Include="Resources\editquery.svg" />
     <None Include="Resources\printlayoutview.svg" />
+    <None Include="Resources\printviapdf_32x32.png" />
+    <None Include="Resources\printviapdf_16x16.png" />
     <Content Include="YiZi_Icono.ico" />
   </ItemGroup>
   <ItemGroup>

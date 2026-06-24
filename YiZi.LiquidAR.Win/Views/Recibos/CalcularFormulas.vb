@@ -490,6 +490,7 @@ Public Class CalcularFormulas
         NewVariable("CBASICO", 0)
         NewVariable("DTRAB", 0)
         NewVariable("BASICO", 0)
+        NewVariable("ISEGURO", 0)
         NewVariable("SBASICO", 0)
         NewVariable("ANTIG", 0)
         NewVariable("MJORN", 0)
@@ -503,6 +504,7 @@ Public Class CalcularFormulas
         NewVariable("SPorRet", 0)
         NewVariable("SImpApor", 0)
         NewVariable("SImpRet", 0)
+        NewVariable("IDETRAER", 0)
     End Sub
 
     Public Function ContieneConstante(ByVal sName As String) As Boolean
@@ -840,6 +842,10 @@ Public Class CalcularFormulas
 
                 ElseIf (sName = "BASICO") Then
                     sValue = recibo.Legajos.Categorias.Importe * recibo.Legajos.Jornadas.Horas
+                ElseIf (sName = "ISEGURO") Then
+                    sValue = recibo.ImporteSeguro
+                ElseIf (sName = "IDETRAER") Then
+                    sValue = -(7003.68 * recibo.Legajos.Jornadas.Horas) * If(recibo.IdTipoLiquidacion = 6, 1.5, 1)
                 ElseIf (sName = "SBASICO") Then
                     sValue = (recibo.Legajos.Categorias.Importe * recibo.Legajos.Jornadas.Horas) / 30
                 ElseIf (sName = "ANTIG") Then

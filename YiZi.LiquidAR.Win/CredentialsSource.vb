@@ -15,6 +15,7 @@
     End Sub
 
     Friend Shared Function Check(ByVal login As String, ByVal pwd As String) As Boolean
+
         Return Object.Equals(credentials(login), GetHash(pwd))
     End Function
 

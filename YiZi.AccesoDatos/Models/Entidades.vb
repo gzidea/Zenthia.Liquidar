@@ -5,6 +5,7 @@
         Descuento = 1
         NoRemunerativo = 2
         DescuentoNoRemunerativo = 3
+        Contribuciones = 4
     End Enum
 
     <Flags>

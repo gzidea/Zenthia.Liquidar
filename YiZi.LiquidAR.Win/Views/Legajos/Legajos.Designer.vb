@@ -31,6 +31,7 @@ Partial Class Legajos
         Me.colCategorias = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colTareas = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colObrasSociales = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colTieneNovedades = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.ribbonControl = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.bbiNew = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiEdit = New DevExpress.XtraBars.BarButtonItem()
@@ -43,7 +44,7 @@ Partial Class Legajos
         Me.mvvmContext = New DevExpress.Utils.MVVM.MVVMContext(Me.components)
         Me.popupMenu = New DevExpress.XtraBars.PopupMenu(Me.components)
         Me.FiltrosEmpresas1 = New YiZi.LiquidAR.Win.FiltrosEmpresas()
-        Me.colTieneNovedades = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colFechaNacimiento = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.gridControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LegajosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -70,7 +71,7 @@ Partial Class Legajos
         '
         'gridView
         '
-        Me.gridView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colLegajo, Me.colNombreYApellido, Me.colCUIL, Me.colFechaIngreso, Me.colConvenios, Me.colCategorias, Me.colTareas, Me.colObrasSociales, Me.colTieneNovedades})
+        Me.gridView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colLegajo, Me.colNombreYApellido, Me.colCUIL, Me.colFechaIngreso, Me.colConvenios, Me.colCategorias, Me.colTareas, Me.colObrasSociales, Me.colTieneNovedades, Me.colFechaNacimiento})
         Me.gridView.GridControl = Me.gridControl
         Me.gridView.Name = "gridView"
         Me.gridView.OptionsBehavior.Editable = False
@@ -81,7 +82,7 @@ Partial Class Legajos
         Me.colLegajo.Name = "colLegajo"
         Me.colLegajo.Visible = True
         Me.colLegajo.VisibleIndex = 0
-        Me.colLegajo.Width = 49
+        Me.colLegajo.Width = 43
         '
         'colNombreYApellido
         '
@@ -89,55 +90,63 @@ Partial Class Legajos
         Me.colNombreYApellido.Name = "colNombreYApellido"
         Me.colNombreYApellido.Visible = True
         Me.colNombreYApellido.VisibleIndex = 1
-        Me.colNombreYApellido.Width = 267
+        Me.colNombreYApellido.Width = 238
         '
         'colCUIL
         '
         Me.colCUIL.FieldName = "CUIL"
         Me.colCUIL.Name = "colCUIL"
         Me.colCUIL.Visible = True
-        Me.colCUIL.VisibleIndex = 2
-        Me.colCUIL.Width = 88
+        Me.colCUIL.VisibleIndex = 3
+        Me.colCUIL.Width = 74
         '
         'colFechaIngreso
         '
         Me.colFechaIngreso.FieldName = "FechaIngreso"
         Me.colFechaIngreso.Name = "colFechaIngreso"
         Me.colFechaIngreso.Visible = True
-        Me.colFechaIngreso.VisibleIndex = 3
-        Me.colFechaIngreso.Width = 87
+        Me.colFechaIngreso.VisibleIndex = 4
+        Me.colFechaIngreso.Width = 73
         '
         'colConvenios
         '
         Me.colConvenios.FieldName = "Convenios.Nombre"
         Me.colConvenios.Name = "colConvenios"
         Me.colConvenios.Visible = True
-        Me.colConvenios.VisibleIndex = 4
-        Me.colConvenios.Width = 234
+        Me.colConvenios.VisibleIndex = 5
+        Me.colConvenios.Width = 199
         '
         'colCategorias
         '
         Me.colCategorias.FieldName = "Categorias.Descripcion"
         Me.colCategorias.Name = "colCategorias"
         Me.colCategorias.Visible = True
-        Me.colCategorias.VisibleIndex = 5
-        Me.colCategorias.Width = 164
+        Me.colCategorias.VisibleIndex = 6
+        Me.colCategorias.Width = 140
         '
         'colTareas
         '
         Me.colTareas.FieldName = "Tareas"
         Me.colTareas.Name = "colTareas"
         Me.colTareas.Visible = True
-        Me.colTareas.VisibleIndex = 6
-        Me.colTareas.Width = 164
+        Me.colTareas.VisibleIndex = 7
+        Me.colTareas.Width = 140
         '
         'colObrasSociales
         '
         Me.colObrasSociales.FieldName = "ObrasSociales.Nombre"
         Me.colObrasSociales.Name = "colObrasSociales"
         Me.colObrasSociales.Visible = True
-        Me.colObrasSociales.VisibleIndex = 7
-        Me.colObrasSociales.Width = 185
+        Me.colObrasSociales.VisibleIndex = 8
+        Me.colObrasSociales.Width = 158
+        '
+        'colTieneNovedades
+        '
+        Me.colTieneNovedades.FieldName = "TieneNovedades"
+        Me.colTieneNovedades.Name = "colTieneNovedades"
+        Me.colTieneNovedades.Visible = True
+        Me.colTieneNovedades.VisibleIndex = 9
+        Me.colTieneNovedades.Width = 76
         '
         'ribbonControl
         '
@@ -233,12 +242,13 @@ Partial Class Legajos
         Me.FiltrosEmpresas1.Size = New System.Drawing.Size(1263, 39)
         Me.FiltrosEmpresas1.TabIndex = 14
         '
-        'colTieneNovedades
+        'colFechaNacimiento
         '
-        Me.colTieneNovedades.FieldName = "TieneNovedades"
-        Me.colTieneNovedades.Name = "colTieneNovedades"
-        Me.colTieneNovedades.Visible = True
-        Me.colTieneNovedades.VisibleIndex = 8
+        Me.colFechaNacimiento.FieldName = "FechaNacimiento"
+        Me.colFechaNacimiento.Name = "colFechaNacimiento"
+        Me.colFechaNacimiento.Visible = True
+        Me.colFechaNacimiento.VisibleIndex = 2
+        Me.colFechaNacimiento.Width = 97
         '
         'Legajos
         '
@@ -285,4 +295,5 @@ Partial Class Legajos
     Friend WithEvents popupMenu As DevExpress.XtraBars.PopupMenu
     Friend WithEvents FiltrosEmpresas1 As FiltrosEmpresas
     Friend WithEvents colTieneNovedades As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colFechaNacimiento As DevExpress.XtraGrid.Columns.GridColumn
 End Class

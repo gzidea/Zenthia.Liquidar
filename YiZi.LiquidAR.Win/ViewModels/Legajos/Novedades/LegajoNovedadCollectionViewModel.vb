@@ -85,9 +85,12 @@ Public Class LegajoNovedadCollectionViewModel
         'Dim document As IDocument = DocumentManagerService.FindDocumentByIdOrCreate(DocumentType, Function(x) CreateDocument(DocumentType))
         'document.Show()
 
+
         For Each legajoNovedad As YiZi.AccesoDatos.LegajosNovedades In SelectedItems
             Using db As YiZi.AccesoDatos.Modelo = New YiZi.AccesoDatos.Modelo()
                 If db.Recibos.Where(Function(x) x.Legajos.Id = legajoNovedad.IdLegajo And x.Periodo = legajoNovedad.Periodo And x.IdTipoLiquidacion = legajoNovedad.IdTipoLoquidacion).Count = 0 Then
+                    Dim _empresaactividad As YiZi.AccesoDatos.EmpresasActividades = db.EmpresasActividades.Where(Function(x) x.IdEmpresa = legajoNovedad.Legajos.IdEmpresa And x.IdActividad = legajoNovedad.Legajos.idActividad).FirstOrDefault()
+
                     Dim recibo As New YiZi.AccesoDatos.Recibos
                     recibo.IdLegajo = legajoNovedad.IdLegajo
                     'Si habilito esto me da un error
@@ -97,6 +100,7 @@ Public Class LegajoNovedadCollectionViewModel
                     recibo.IdTipoLiquidacion = legajoNovedad.IdTipoLoquidacion
                     recibo.Fecha = Now
                     recibo.FechaPago = legajoNovedad.FechaPago
+                    recibo.ImporteSeguro = If(_empresaactividad?.ValorSeguro, 0)
                     db.Recibos.Add(recibo)
                     Dim id As Integer = db.SaveChanges()
                     If id > 0 Then
@@ -119,7 +123,7 @@ Public Class LegajoNovedadCollectionViewModel
                         Next
 
                         '**** Ahora cargo el resto de los conceptos ****
-                        formulas = db.Formulas.Where(Function(x) x.IdConvenio = idconvenio And x.Activo = True And x.Novedad = False).ToList
+                        formulas = db.Formulas.Where(Function(x) x.IdConvenio = idconvenio And x.Activo = True And x.Novedad <> True).ToList
                         For Each formula As YiZi.AccesoDatos.Formulas In formulas
 
                             If formula.FormulaTipoLiquidacion.Where(Function(x) x.IdTipoLiquidacion = legajoNovedad.IdTipoLoquidacion And x.Seleccionado = True).Count > 0 And
@@ -212,6 +216,18 @@ Public Class LegajoNovedadCollectionViewModel
     Public Function CanGenerarNovedades() As Boolean
         Return (Not SelectedLegajos Is Nothing AndAlso Not SelectedLegajos.Count = 0) AndAlso (Not SelectedPeriodo = "011")
     End Function
+
+    <Display(Name:="Quitar todo")>
+    Public Sub QuitarTodo()
+        If MessageBoxService.ShowMessage("¿Esta seguro de borrar todos los item´s seleccionados?", "Quitar todo", MessageButton.YesNo) <> MessageResult.Yes Then
+            Return
+        End If
+        MyBase.canShowDialogDelete = False
+        For Each legajoNovedad As YiZi.AccesoDatos.LegajosNovedades In SelectedItems
+            MyBase.Delete(Entities.Where(Function(x) x.Id = legajoNovedad.Id).FirstOrDefault())
+        Next
+        MyBase.canShowDialogDelete = True
+    End Sub
 End Class
 
 

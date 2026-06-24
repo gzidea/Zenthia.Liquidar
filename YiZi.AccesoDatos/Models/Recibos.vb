@@ -34,13 +34,28 @@ Partial Public Class Recibos
     Public Property TotalNoRemunerativos As Decimal?
 
     <Column(TypeName:="money")>
+    Public Property SueldoBruto As Decimal?
+
+    <Column(TypeName:="money")>
     Public Property TotalDescuentos As Decimal?
+
+    <Column(TypeName:="money")>
+    Public Property TotalContribuciones As Decimal?
+
+    <Column(TypeName:="money")>
+    Public Property NetoACobrar As Decimal?
 
     <Column(TypeName:="money")>
     Public Property Total As Decimal?
 
     <Column(TypeName:="money")>
+    Public Property TotalCostoLaboral As Decimal?
+
+    <Column(TypeName:="money")>
     Public Property Basico As Decimal?
+
+    <Column(TypeName:="money")>
+    Public Property ImporteSeguro As Decimal?
 
     Public Overridable Property Empresas As Empresas
 

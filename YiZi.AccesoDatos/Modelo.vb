@@ -492,8 +492,18 @@ Partial Public Class Modelo
             .WithOptional(Function(e) e.CodigoDeSieniestrado) _
             .HasForeignKey(Function(e) e.IdCodigoSiniestrado)
 
-        'modelBuilder.Entity(Of LSDRegistro04)() _
-        '    .HasRequired(Function(x) x.IdCodigoActividad)
+        'modelBuilder.Entity(Of EmpresasActividades)() _
+        '.HasKey(Function(ea) New With {Key ea.IdEmpresa, Key ea.IdActividad})
+
+        'modelBuilder.Entity(Of EmpresasActividades)() _
+        '    .HasMany(Function(e) e.Legajos) _
+        '    .WithOptional(Function(e) e.EmpresaActividad) _
+        '    .HasForeignKey(Function(e) New With {Key e.IdEmpresa, Key e.idActividad})
+
+        'modelBuilder.Entity(Of Legajos)() _
+        '.HasOptional(Function(l) l.EmpresaActividad) _
+        '.WithMany() _
+        '.HasForeignKey(Function(l) New With {Key .IdEmpresa = l.IdEmpresa, Key .IdActividad = l.idActividad})
 
 #Region "Seguridad_Builder"
         '*** ESTO CORRESPONDE AL MODULO DE SEGURIDAD ****

@@ -61,7 +61,7 @@ Public Class RecibosFilterViewModel(Of TEntity As Class, TPrimaryKey, TUnitOfWor
 
     Private Function getCriteria() As CriteriaOperator
         If FilterEmpresa And FilterPeriodo Then
-            Return New BinaryOperator("Empresas.Id", IdEmpresa) And New BinaryOperator("Periodo", _periodostring)
+            Return New BinaryOperator("Empresas.Id", IdEmpresa) And New BinaryOperator("Periodo", _periodostring) 'And New BinaryOperator("Legajos.idActividad", IdActividad)
         ElseIf FilterEmpresa And Not FilterPeriodo Then
             Return New BinaryOperator("Empresas.Id", IdEmpresa)
         ElseIf FilterPeriodo And Not FilterEmpresa Then
@@ -76,6 +76,14 @@ Public Class RecibosFilterViewModel(Of TEntity As Class, TPrimaryKey, TUnitOfWor
     Public Overridable Property FilterEmpresa As Boolean
 
     Public Sub OnFilterEmpresaChanged()
+        GenerarFiltro()
+    End Sub
+
+    Public Overridable Property IdActividad As Integer
+
+    Public Overridable Property FilterActividad As Boolean
+
+    Public Sub OnFilterActividadChanged()
         GenerarFiltro()
     End Sub
 

@@ -12,9 +12,13 @@ Partial Public Class EmpresasActividades
 
     Public Property IdActividad As Integer?
 
+    Public Property ValorSeguro As Decimal
+
     Public Property Activo As Boolean
 
     Public Overridable Property Actividades As Actividades
 
     Public Overridable Property Empresas As Empresas
+
+    'Public Overridable Property Legajos As ICollection(Of Legajos)
 End Class

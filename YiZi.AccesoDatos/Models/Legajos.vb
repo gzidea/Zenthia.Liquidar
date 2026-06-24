@@ -115,6 +115,8 @@ Partial Public Class Legajos
 
     Public Overridable Property Provincias As Provincias
 
+    'Public Overridable Property EmpresaActividad As EmpresasActividades
+
 #Region "Objetos Libro De Sueldo"
 
     Public Overridable ReadOnly Property CodigoDeRevistaActual As CodigosDeRevistas

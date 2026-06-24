@@ -192,6 +192,18 @@ Namespace YiZi.mvvm.Common.ViewModel
         Public Overridable Function CanEdit(ByVal projectionEntity As TProjection) As Boolean
             Return projectionEntity IsNot Nothing AndAlso Not IsLoading
         End Function
+
+        'Esta propiedad agrego para que me muestre o no la confirmacion de borrar item.
+        Private _canshowDialogDelete As Boolean
+        Public Property canShowDialogDelete() As Boolean
+            Get
+                Return _canshowDialogDelete
+            End Get
+            Set(ByVal value As Boolean)
+                _canshowDialogDelete = value
+            End Set
+        End Property
+
         ''' <summary>
         ''' Deletes a given entity from the repository and saves changes if confirmed by the user.
         ''' Since CollectionViewModelBase is a POCO view model, an the instance of this class will also expose the DeleteCommand property that can be used as a binding source in views.
@@ -199,8 +211,10 @@ Namespace YiZi.mvvm.Common.ViewModel
         ''' <param name="projectionEntity">An entity to edit.</param>
         <Display(Name:="Quitar")>
         Public Overridable Sub Delete(ByVal projectionEntity As TProjection)
-            If MessageBoxService.ShowMessage(String.Format(CommonResources.Confirmation_Delete, GetType(TEntity).Name), CommonResources.Confirmation_Caption, MessageButton.YesNo) <> MessageResult.Yes Then
-                Return
+            If canShowDialogDelete = True Then
+                If MessageBoxService.ShowMessage(String.Format(CommonResources.Confirmation_Delete, GetType(TEntity).Name), CommonResources.Confirmation_Caption, MessageButton.YesNo) <> MessageResult.Yes Then
+                    Return
+                End If
             End If
             Try
                 Dim wasRemoved As Boolean = Entities.Remove(projectionEntity)

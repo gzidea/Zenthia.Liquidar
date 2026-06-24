@@ -61,7 +61,9 @@ Partial Class EmpresaEditForm
         Me.ActividadesGridView = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colActividades = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colActividades1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colValorSeguro = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colActivo = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.ClaveUnicaTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.Id_TipoClaveUnicaLookUpEdit = New DevExpress.XtraEditors.LookUpEdit()
         Me.TipoClaveUnicaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -475,7 +477,7 @@ Partial Class EmpresaEditForm
         '
         'ActividadesGridView
         '
-        Me.ActividadesGridView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colActividades, Me.colActividades1, Me.colActivo})
+        Me.ActividadesGridView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colActividades, Me.colActividades1, Me.colValorSeguro, Me.colActivo, Me.GridColumn1})
         Me.ActividadesGridView.GridControl = Me.ActividadesGridControl
         Me.ActividadesGridView.Name = "ActividadesGridView"
         '
@@ -484,27 +486,52 @@ Partial Class EmpresaEditForm
         Me.colActividades.Caption = "Afip"
         Me.colActividades.FieldName = "Actividades.CodigoAfip"
         Me.colActividades.Name = "colActividades"
+        Me.colActividades.OptionsColumn.AllowEdit = False
+        Me.colActividades.OptionsColumn.ReadOnly = True
         Me.colActividades.Visible = True
         Me.colActividades.VisibleIndex = 0
-        Me.colActividades.Width = 65
+        Me.colActividades.Width = 59
         '
         'colActividades1
         '
         Me.colActividades1.Caption = "Descripcion"
         Me.colActividades1.FieldName = "Actividades.Descripcion"
         Me.colActividades1.Name = "colActividades1"
+        Me.colActividades1.OptionsColumn.AllowEdit = False
+        Me.colActividades1.OptionsColumn.ReadOnly = True
         Me.colActividades1.Visible = True
         Me.colActividades1.VisibleIndex = 1
-        Me.colActividades1.Width = 655
+        Me.colActividades1.Width = 540
+        '
+        'colValorSeguro
+        '
+        Me.colValorSeguro.DisplayFormat.FormatString = "C2"
+        Me.colValorSeguro.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.colValorSeguro.FieldName = "ValorSeguro"
+        Me.colValorSeguro.Name = "colValorSeguro"
+        Me.colValorSeguro.OptionsColumn.AllowEdit = False
+        Me.colValorSeguro.OptionsColumn.ReadOnly = True
+        Me.colValorSeguro.Visible = True
+        Me.colValorSeguro.VisibleIndex = 2
+        Me.colValorSeguro.Width = 140
         '
         'colActivo
         '
         Me.colActivo.Caption = "Activo"
         Me.colActivo.FieldName = "Activo"
         Me.colActivo.Name = "colActivo"
+        Me.colActivo.OptionsColumn.AllowEdit = False
+        Me.colActivo.OptionsColumn.ReadOnly = True
         Me.colActivo.Visible = True
-        Me.colActivo.VisibleIndex = 2
-        Me.colActivo.Width = 88
+        Me.colActivo.VisibleIndex = 3
+        Me.colActivo.Width = 58
+        '
+        'GridColumn1
+        '
+        Me.GridColumn1.Name = "GridColumn1"
+        Me.GridColumn1.Visible = True
+        Me.GridColumn1.VisibleIndex = 4
+        Me.GridColumn1.Width = 85
         '
         'ClaveUnicaTextEdit
         '
@@ -1190,4 +1217,6 @@ Partial Class EmpresaEditForm
     Friend WithEvents TipoEmpresaAfipBindingSource As BindingSource
     Friend WithEvents colCodigoAfip As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colDescripcion As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colValorSeguro As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn1 As DevExpress.XtraGrid.Columns.GridColumn
 End Class
