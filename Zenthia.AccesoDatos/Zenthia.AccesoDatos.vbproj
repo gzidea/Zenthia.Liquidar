@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5A1F0EC3-F7D0-46C1-9682-27B523330136}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Zenthia.AccesoDatos</RootNamespace>
+    <AssemblyName>Zenthia.AccesoDatos</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Zenthia.AccesoDatos.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Zenthia.AccesoDatos.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DbContextDataModel\IModeloDbContextUnitOfWork.vb" />
+    <Compile Include="DbContextDataModel\ModeloDbContextUnitOfWork.vb" />
+    <Compile Include="DbContextDataModel\UnitOfWorkSource.vb" />
+    <Compile Include="FuncionesComunes.vb" />
+    <Compile Include="Models\Actividades.vb" />
+    <Compile Include="Models\Bancos.vb" />
+    <Compile Include="Models\Categorias.vb" />
+    <Compile Include="Models\CodigosDeActivdadEmpleados.vb" />
+    <Compile Include="Models\CodigosDeCondiciones.vb" />
+    <Compile Include="Models\CodigosDeLocalidades.vb" />
+    <Compile Include="Models\CodigosDeModalidadDeContratacion.vb" />
+    <Compile Include="Models\CodigosDeRevistas.vb" />
+    <Compile Include="Models\CodigosDeSiniestrados.vb" />
+    <Compile Include="Models\Conceptos.vb" />
+    <Compile Include="Models\Contactos.vb" />
+    <Compile Include="Models\Convenios.vb" />
+    <Compile Include="Models\Empresas.vb" />
+    <Compile Include="Models\EmpresasActividades.vb" />
+    <Compile Include="Models\EmpresasBancos.vb" />
+    <Compile Include="Models\Entidades.vb" />
+    <Compile Include="Models\EstadosCiviles.vb" />
+    <Compile Include="Models\FormasDePagos.vb" />
+    <Compile Include="Models\Formulas.vb" />
+    <Compile Include="Models\FormulasPeriodos.vb" />
+    <Compile Include="Models\FormulaTipoLiquidacion.vb" />
+    <Compile Include="Models\GruposCostos.vb" />
+    <Compile Include="Models\IdentificacionEnvio.vb" />
+    <Compile Include="Models\Jornadas.vb" />
+    <Compile Include="Models\Legajos.vb" />
+    <Compile Include="Models\LegajosConceptosParticulares.vb" />
+    <Compile Include="Models\LegajosNovedades.vb" />
+    <Compile Include="Models\LegajosNovedadesDetalles.vb" />
+    <Compile Include="Models\Liquidaciones.vb" />
+    <Compile Include="Models\LSDRegistro01.vb" />
+    <Compile Include="Models\LSDRegistro02.vb" />
+    <Compile Include="Models\LSDRegistro03.vb" />
+    <Compile Include="Models\LSDRegistro04.vb" />
+    <Compile Include="Models\Meses.vb" />
+    <Compile Include="Modelo.vb" />
+    <Compile Include="Models\RecibosGruposCostos.vb" />
+    <Compile Include="Models\RecibosPlantillas.vb" />
+    <Compile Include="Models\TipoEmpresaAfip.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Models\ObrasSociales.vb" />
+    <Compile Include="Models\Provincias.vb" />
+    <Compile Include="Models\Provinciasas.vb" />
+    <Compile Include="Models\Recibos.vb" />
+    <Compile Include="Models\RecibosDetalles.vb" />
+    <Compile Include="Models\Sindicatos.vb" />
+    <Compile Include="Models\TipoClaveUnica.vb" />
+    <Compile Include="Models\TipoConceptos.vb" />
+    <Compile Include="Models\TipoLiquidacion.vb" />
+    <Compile Include="Models\Unidades.vb" />
+    <Compile Include="Models\Variables.vb" />
+    <Compile Include="Seguridad\Modulos.vb" />
+    <Compile Include="Seguridad\Operaciones.vb" />
+    <Compile Include="Seguridad\Operaciones_Modulos.vb" />
+    <Compile Include="Seguridad\Roles.vb" />
+    <Compile Include="Seguridad\Roles_Modulos_Operaciones.vb" />
+    <Compile Include="Seguridad\Roles_Operaciones.vb" />
+    <Compile Include="Seguridad\Usuarios.vb" />
+    <Compile Include="Validaciones\CUITValido.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\DataSources\Actividades.datasource" />
+    <None Include="My Project\DataSources\Categorias.datasource" />
+    <None Include="My Project\DataSources\Conceptos.datasource" />
+    <None Include="My Project\DataSources\Contactos.datasource" />
+    <None Include="My Project\DataSources\Convenios.datasource" />
+    <None Include="My Project\DataSources\Empresas.datasource" />
+    <None Include="My Project\DataSources\EmpresasActividades.datasource" />
+    <None Include="My Project\DataSources\Entidades.datasource" />
+    <None Include="My Project\DataSources\Entidades.enmColumnaRecivo.datasource" />
+    <None Include="My Project\DataSources\Entidades.enmCondicionLiquidacion.datasource" />
+    <None Include="My Project\DataSources\Formulas.datasource" />
+    <None Include="My Project\DataSources\FormulasPeriodos.datasource" />
+    <None Include="My Project\DataSources\FormulaTipoLiquidacion.datasource" />
+    <None Include="My Project\DataSources\IModeloDbContextUnitOfWork.datasource" />
+    <None Include="My Project\DataSources\Jornadas.datasource" />
+    <None Include="My Project\DataSources\Legajos.datasource" />
+    <None Include="My Project\DataSources\Liquidaciones.datasource" />
+    <None Include="My Project\DataSources\Meses.datasource" />
+    <None Include="My Project\DataSources\Modelo.datasource" />
+    <None Include="My Project\DataSources\ModeloDbContextUnitOfWork.datasource" />
+    <None Include="My Project\DataSources\ObrasSociales.datasource" />
+    <None Include="My Project\DataSources\Provincias.datasource" />
+    <None Include="My Project\DataSources\Provinciasas.datasource" />
+    <None Include="My Project\DataSources\Recibos.datasource" />
+    <None Include="My Project\DataSources\RecibosDetalles.datasource" />
+    <None Include="My Project\DataSources\RecibosPlantillas.datasource" />
+    <None Include="My Project\DataSources\Sindicatos.datasource" />
+    <None Include="My Project\DataSources\TipoClaveUnica.datasource" />
+    <None Include="My Project\DataSources\TipoConceptos.datasource" />
+    <None Include="My Project\DataSources\TipoLiquidacion.datasource" />
+    <None Include="My Project\DataSources\Unidades.datasource" />
+    <None Include="My Project\DataSources\Variables.datasource" />
+    <None Include="My Project\DataSources\Zenthia.AccesoDatos.My.MySettings.datasource" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Zenthia.mvvm\Zenthia.mvvm.vbproj">
+      <Project>{c636c3eb-8bbb-44ca-a14d-8329b1ad8851}</Project>
+      <Name>Zenthia.mvvm</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>

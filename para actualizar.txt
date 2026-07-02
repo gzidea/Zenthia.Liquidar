@@ -1,0 +1,32 @@
+CREATE TABLE [YiZi.SalaryJL].dbo.GruposCostos (
+	Id int IDENTITY(1,1) NOT NULL,
+	Descripcion varchar(100) COLLATE Modern_Spanish_CI_AS NOT NULL,
+	Titulo varchar(100) COLLATE Modern_Spanish_CI_AS NOT NULL,
+	CONSTRAINT ConceptoGrupos_PK PRIMARY KEY (Id)
+);
+
+CREATE TABLE [YiZi.SalaryJL].dbo.RecibosGruposCostos (
+	IdRecibo int NOT NULL,
+	IdGrupoCosto int NOT NULL,
+	Empleador money DEFAULT 0 NULL,
+	Trabajador money DEFAULT 0 NULL,
+	Id int IDENTITY(1,1) NOT NULL,
+	CONSTRAINT RecibosGruposCostos_PK PRIMARY KEY (Id)
+);
+
+CREATE TABLE [YiZi.SalaryJL].dbo.Bancos (
+	Id int IDENTITY(1,1) NOT NULL,
+	CodigoEntidad int DEFAULT 0 NOT NULL,
+	Denominacion varchar(250) COLLATE Modern_Spanish_CI_AS NULL,
+	Abreviacion varchar(20) COLLATE Modern_Spanish_CI_AS NULL,
+	CONSTRAINT Bancos_PK PRIMARY KEY (Id)
+);
+
+
+CREATE TABLE [YiZi.SalaryJL].dbo.EmpresasBancos (
+	Id int IDENTITY(1,1) NOT NULL,
+	IdEmpresa int NOT NULL,
+	IdBanco int NOT NULL,
+	Activo bit NULL,
+	CONSTRAINT EmpresasBancos_PK PRIMARY KEY (Id)
+);
