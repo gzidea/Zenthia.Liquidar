@@ -4,9 +4,9 @@ Imports Zenthia.mvvm.Common.DataModel
 Imports Zenthia.mvvm.Common.ViewModel
 
 Public Class LoginViewModel
-    Public ReadOnly Property LookUpUsers() As IEnumerable(Of String)
+    Public ReadOnly Property LookUpUsers() As IEnumerable(Of Zenthia.AccesoDatos.Usuarios)
         Get
-            Return CredentialsSource.GetUserNames()
+            Return CredentialsSource.GetUsuarios()
         End Get
     End Property
 

@@ -40,6 +40,16 @@ Public Class EmpresaEditForm
                                                End Sub
         fluent.SetBinding(contactosGridControl, Function(gc) gc.DataSource, Function(x) x.EmpresaContactosDetails.Entities)
 
+        '//// Configuro la grilla de Bancos \\\\
+        fluent.WithEvent(Of GridView, FocusedRowObjectChangedEventArgs)(bancosGridView, "FocusedRowObjectChanged").SetBinding(Function(x) x.EmpresaBancosDetails.SelectedEntity, Function(args) TryCast(args.Row, Zenthia.AccesoDatos.EmpresasBancos), Sub(gView, entity) gView.FocusedRowHandle = gView.FindRow(entity))
+        fluent.WithEvent(Of RowClickEventArgs)(bancosGridView, "RowClick").EventToCommand(Sub(x) x.EmpresaBancosDetails.Edit(Nothing), Function(x) x.EmpresaBancosDetails.SelectedEntity, Function(args) (args.Clicks = 2) AndAlso (args.Button = System.Windows.Forms.MouseButtons.Left))
+        AddHandler bancosGridView.RowClick, Sub(s, e)
+                                                If e.Clicks = 1 AndAlso e.Button = System.Windows.Forms.MouseButtons.Right Then
+                                                    Bancos_DetailsPopUpMenu.ShowPopup(bancosGridControl.PointToScreen(e.Location), s)
+                                                End If
+                                            End Sub
+        fluent.SetBinding(bancosGridControl, Function(gc) gc.DataSource, Function(x) x.EmpresaBancosDetails.Entities)
+
         fluent.BindCommand(bbiActividades_DetailsNew, Sub(x) x.EmpresaActividadesDetails.[New]())
         fluent.BindCommand(bbiActividades_DetailsEdit, Sub(x) x.EmpresaActividadesDetails.Edit(Nothing), Function(x) x.EmpresaActividadesDetails.SelectedEntity)
         fluent.BindCommand(bbiActividades_DetailsDelete, Sub(x) x.EmpresaActividadesDetails.Delete(Nothing), Function(x) x.EmpresaActividadesDetails.SelectedEntity)

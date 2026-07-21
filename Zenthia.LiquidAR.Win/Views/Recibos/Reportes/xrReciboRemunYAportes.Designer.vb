@@ -32,18 +32,6 @@ Partial Public Class xrReciboRemunYAportes
         Me.XrTableCell10 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell9 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.ReportFooter = New DevExpress.XtraReports.UI.ReportFooterBand()
-        Me.GroupHeader1 = New DevExpress.XtraReports.UI.GroupHeaderBand()
-        Me.XrTable1 = New DevExpress.XtraReports.UI.XRTable()
-        Me.XrTableRow2 = New DevExpress.XtraReports.UI.XRTableRow()
-        Me.XrTableCell3 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell4 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell6 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell5 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.xrTableSueldoBruto = New DevExpress.XtraReports.UI.XRTable()
-        Me.XrTableRow1 = New DevExpress.XtraReports.UI.XRTableRow()
-        Me.XrTableCell1 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrTableCell2 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.GroupFooter1 = New DevExpress.XtraReports.UI.GroupFooterBand()
         Me.XrTable3 = New DevExpress.XtraReports.UI.XRTable()
         Me.XrTableRow4 = New DevExpress.XtraReports.UI.XRTableRow()
         Me.XrTableCell11 = New DevExpress.XtraReports.UI.XRTableCell()
@@ -59,12 +47,23 @@ Partial Public Class xrReciboRemunYAportes
         Me.XrTableRow6 = New DevExpress.XtraReports.UI.XRTableRow()
         Me.XrTableCell19 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell21 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.GroupHeader1 = New DevExpress.XtraReports.UI.GroupHeaderBand()
+        Me.XrTable1 = New DevExpress.XtraReports.UI.XRTable()
+        Me.XrTableRow2 = New DevExpress.XtraReports.UI.XRTableRow()
+        Me.XrTableCell3 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell4 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell6 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell5 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.xrTableSueldoBruto = New DevExpress.XtraReports.UI.XRTable()
+        Me.XrTableRow1 = New DevExpress.XtraReports.UI.XRTableRow()
+        Me.XrTableCell1 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableCell2 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.ObjectDataSource1 = New DevExpress.DataAccess.ObjectBinding.ObjectDataSource(Me.components)
         CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.xrTableSueldoBruto, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrTable3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrTable4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.xrTableSueldoBruto, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ObjectDataSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
@@ -77,7 +76,7 @@ Partial Public Class xrReciboRemunYAportes
         'BottomMargin
         '
         Me.BottomMargin.Dpi = 254.0!
-        Me.BottomMargin.HeightF = 1.008013!
+        Me.BottomMargin.HeightF = 1.0!
         Me.BottomMargin.Name = "BottomMargin"
         '
         'Detail
@@ -89,7 +88,7 @@ Partial Public Class xrReciboRemunYAportes
         '
         'DetailReport
         '
-        Me.DetailReport.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.Detail1, Me.ReportFooter, Me.GroupHeader1, Me.GroupFooter1})
+        Me.DetailReport.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.Detail1, Me.ReportFooter, Me.GroupHeader1})
         Me.DetailReport.Borders = CType((((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Top) _
             Or DevExpress.XtraPrinting.BorderSide.Right) _
             Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
@@ -142,7 +141,6 @@ Partial Public Class xrReciboRemunYAportes
         '
         'XrTableCell7
         '
-        Me.XrTableCell7.CanGrow = False
         Me.XrTableCell7.Dpi = 254.0!
         Me.XrTableCell7.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Formulas].[DescripcionCompleta]")})
         Me.XrTableCell7.Multiline = True
@@ -190,145 +188,10 @@ Partial Public Class xrReciboRemunYAportes
         '
         'ReportFooter
         '
+        Me.ReportFooter.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrTable3, Me.XrTable4})
         Me.ReportFooter.Dpi = 254.0!
-        Me.ReportFooter.HeightF = 0!
+        Me.ReportFooter.HeightF = 136.6349!
         Me.ReportFooter.Name = "ReportFooter"
-        '
-        'GroupHeader1
-        '
-        Me.GroupHeader1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrTable1, Me.xrTableSueldoBruto})
-        Me.GroupHeader1.Dpi = 254.0!
-        Me.GroupHeader1.HeightF = 87.81644!
-        Me.GroupHeader1.Name = "GroupHeader1"
-        '
-        'XrTable1
-        '
-        Me.XrTable1.Dpi = 254.0!
-        Me.XrTable1.LocationFloat = New DevExpress.Utils.PointFloat(0!, 51.02678!)
-        Me.XrTable1.Name = "XrTable1"
-        Me.XrTable1.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
-        Me.XrTable1.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow2})
-        Me.XrTable1.SizeF = New System.Drawing.SizeF(1833.0!, 36.78966!)
-        '
-        'XrTableRow2
-        '
-        Me.XrTableRow2.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.XrTableRow2.BorderColor = System.Drawing.Color.FromArgb(CType(CType(199, Byte), Integer), CType(CType(206, Byte), Integer), CType(CType(214, Byte), Integer))
-        Me.XrTableRow2.Borders = CType((((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Top) _
-            Or DevExpress.XtraPrinting.BorderSide.Right) _
-            Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
-        Me.XrTableRow2.BorderWidth = 0.5!
-        Me.XrTableRow2.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell3, Me.XrTableCell4, Me.XrTableCell6, Me.XrTableCell5})
-        Me.XrTableRow2.Dpi = 254.0!
-        Me.XrTableRow2.Font = New System.Drawing.Font("Arial", 8.0!)
-        Me.XrTableRow2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(99, Byte), Integer))
-        Me.XrTableRow2.Name = "XrTableRow2"
-        Me.XrTableRow2.StylePriority.UseBackColor = False
-        Me.XrTableRow2.StylePriority.UseBorderColor = False
-        Me.XrTableRow2.StylePriority.UseBorders = False
-        Me.XrTableRow2.StylePriority.UseBorderWidth = False
-        Me.XrTableRow2.StylePriority.UseFont = False
-        Me.XrTableRow2.StylePriority.UseForeColor = False
-        Me.XrTableRow2.StylePriority.UseTextAlignment = False
-        Me.XrTableRow2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
-        Me.XrTableRow2.Weight = 0.74871762106237094R
-        '
-        'XrTableCell3
-        '
-        Me.XrTableCell3.Dpi = 254.0!
-        Me.XrTableCell3.Multiline = True
-        Me.XrTableCell3.Name = "XrTableCell3"
-        Me.XrTableCell3.Text = "CONCEPTO"
-        Me.XrTableCell3.Weight = 2.0843948304722364R
-        '
-        'XrTableCell4
-        '
-        Me.XrTableCell4.Dpi = 254.0!
-        Me.XrTableCell4.Multiline = True
-        Me.XrTableCell4.Name = "XrTableCell4"
-        Me.XrTableCell4.Text = "UNIDAD"
-        Me.XrTableCell4.Weight = 0.47307331276934661R
-        '
-        'XrTableCell6
-        '
-        Me.XrTableCell6.Dpi = 254.0!
-        Me.XrTableCell6.Multiline = True
-        Me.XrTableCell6.Name = "XrTableCell6"
-        Me.XrTableCell6.Text = "BASE"
-        Me.XrTableCell6.Weight = 0.660612232808983R
-        '
-        'XrTableCell5
-        '
-        Me.XrTableCell5.Dpi = 254.0!
-        Me.XrTableCell5.Multiline = True
-        Me.XrTableCell5.Name = "XrTableCell5"
-        Me.XrTableCell5.Text = "MONTO"
-        Me.XrTableCell5.Weight = 0.81662678230084373R
-        '
-        'xrTableSueldoBruto
-        '
-        Me.xrTableSueldoBruto.BackColor = System.Drawing.Color.Navy
-        Me.xrTableSueldoBruto.BorderColor = System.Drawing.Color.Navy
-        Me.xrTableSueldoBruto.Dpi = 254.0!
-        Me.xrTableSueldoBruto.ForeColor = System.Drawing.Color.White
-        Me.xrTableSueldoBruto.LocationFloat = New DevExpress.Utils.PointFloat(0!, 0!)
-        Me.xrTableSueldoBruto.Name = "xrTableSueldoBruto"
-        Me.xrTableSueldoBruto.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
-        Me.xrTableSueldoBruto.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow1})
-        Me.xrTableSueldoBruto.SizeF = New System.Drawing.SizeF(1832.926!, 51.02678!)
-        Me.xrTableSueldoBruto.StylePriority.UseBackColor = False
-        Me.xrTableSueldoBruto.StylePriority.UseBorderColor = False
-        Me.xrTableSueldoBruto.StylePriority.UseForeColor = False
-        '
-        'XrTableRow1
-        '
-        Me.XrTableRow1.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(99, Byte), Integer))
-        Me.XrTableRow1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(199, Byte), Integer), CType(CType(206, Byte), Integer), CType(CType(214, Byte), Integer))
-        Me.XrTableRow1.Borders = DevExpress.XtraPrinting.BorderSide.None
-        Me.XrTableRow1.BorderWidth = 1.0!
-        Me.XrTableRow1.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell1, Me.XrTableCell2})
-        Me.XrTableRow1.Dpi = 254.0!
-        Me.XrTableRow1.Font = New System.Drawing.Font("Arial", 10.0!)
-        Me.XrTableRow1.Name = "XrTableRow1"
-        Me.XrTableRow1.StylePriority.UseBackColor = False
-        Me.XrTableRow1.StylePriority.UseBorderColor = False
-        Me.XrTableRow1.StylePriority.UseBorders = False
-        Me.XrTableRow1.StylePriority.UseBorderWidth = False
-        Me.XrTableRow1.StylePriority.UseFont = False
-        Me.XrTableRow1.Weight = 0.51923077221669467R
-        '
-        'XrTableCell1
-        '
-        Me.XrTableCell1.Borders = DevExpress.XtraPrinting.BorderSide.Right
-        Me.XrTableCell1.BorderWidth = 0.5!
-        Me.XrTableCell1.Dpi = 254.0!
-        Me.XrTableCell1.Multiline = True
-        Me.XrTableCell1.Name = "XrTableCell1"
-        Me.XrTableCell1.StylePriority.UseBorders = False
-        Me.XrTableCell1.StylePriority.UseBorderWidth = False
-        Me.XrTableCell1.StylePriority.UseTextAlignment = False
-        Me.XrTableCell1.Text = "SUELDO BRUTO"
-        Me.XrTableCell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
-        Me.XrTableCell1.Weight = 1.5951990691134568R
-        '
-        'XrTableCell2
-        '
-        Me.XrTableCell2.Dpi = 254.0!
-        Me.XrTableCell2.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Recibos].[SueldoBruto]")})
-        Me.XrTableCell2.Multiline = True
-        Me.XrTableCell2.Name = "XrTableCell2"
-        Me.XrTableCell2.StylePriority.UseTextAlignment = False
-        Me.XrTableCell2.Text = "XrTableCell2"
-        Me.XrTableCell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
-        Me.XrTableCell2.TextFormatString = "{0:c2}"
-        Me.XrTableCell2.Weight = 0.40472021663736146R
-        '
-        'GroupFooter1
-        '
-        Me.GroupFooter1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrTable3, Me.XrTable4})
-        Me.GroupFooter1.Dpi = 254.0!
-        Me.GroupFooter1.HeightF = 136.4197!
-        Me.GroupFooter1.Name = "GroupFooter1"
         '
         'XrTable3
         '
@@ -509,6 +372,135 @@ Partial Public Class xrReciboRemunYAportes
         Me.XrTableCell21.TextFormatString = "{0:c2}"
         Me.XrTableCell21.Weight = 0.60707976954957654R
         '
+        'GroupHeader1
+        '
+        Me.GroupHeader1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrTable1, Me.xrTableSueldoBruto})
+        Me.GroupHeader1.Dpi = 254.0!
+        Me.GroupHeader1.HeightF = 87.81644!
+        Me.GroupHeader1.Name = "GroupHeader1"
+        '
+        'XrTable1
+        '
+        Me.XrTable1.Dpi = 254.0!
+        Me.XrTable1.LocationFloat = New DevExpress.Utils.PointFloat(0!, 51.02678!)
+        Me.XrTable1.Name = "XrTable1"
+        Me.XrTable1.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
+        Me.XrTable1.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow2})
+        Me.XrTable1.SizeF = New System.Drawing.SizeF(1833.0!, 36.78966!)
+        '
+        'XrTableRow2
+        '
+        Me.XrTableRow2.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.XrTableRow2.BorderColor = System.Drawing.Color.FromArgb(CType(CType(199, Byte), Integer), CType(CType(206, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.XrTableRow2.Borders = CType((((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Top) _
+            Or DevExpress.XtraPrinting.BorderSide.Right) _
+            Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
+        Me.XrTableRow2.BorderWidth = 0.5!
+        Me.XrTableRow2.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell3, Me.XrTableCell4, Me.XrTableCell6, Me.XrTableCell5})
+        Me.XrTableRow2.Dpi = 254.0!
+        Me.XrTableRow2.Font = New System.Drawing.Font("Arial", 8.0!)
+        Me.XrTableRow2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(99, Byte), Integer))
+        Me.XrTableRow2.Name = "XrTableRow2"
+        Me.XrTableRow2.StylePriority.UseBackColor = False
+        Me.XrTableRow2.StylePriority.UseBorderColor = False
+        Me.XrTableRow2.StylePriority.UseBorders = False
+        Me.XrTableRow2.StylePriority.UseBorderWidth = False
+        Me.XrTableRow2.StylePriority.UseFont = False
+        Me.XrTableRow2.StylePriority.UseForeColor = False
+        Me.XrTableRow2.StylePriority.UseTextAlignment = False
+        Me.XrTableRow2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+        Me.XrTableRow2.Weight = 0.74871762106237094R
+        '
+        'XrTableCell3
+        '
+        Me.XrTableCell3.Dpi = 254.0!
+        Me.XrTableCell3.Multiline = True
+        Me.XrTableCell3.Name = "XrTableCell3"
+        Me.XrTableCell3.Text = "CONCEPTO"
+        Me.XrTableCell3.Weight = 2.0843948304722364R
+        '
+        'XrTableCell4
+        '
+        Me.XrTableCell4.Dpi = 254.0!
+        Me.XrTableCell4.Multiline = True
+        Me.XrTableCell4.Name = "XrTableCell4"
+        Me.XrTableCell4.Text = "UNIDAD"
+        Me.XrTableCell4.Weight = 0.47307331276934661R
+        '
+        'XrTableCell6
+        '
+        Me.XrTableCell6.Dpi = 254.0!
+        Me.XrTableCell6.Multiline = True
+        Me.XrTableCell6.Name = "XrTableCell6"
+        Me.XrTableCell6.Text = "BASE"
+        Me.XrTableCell6.Weight = 0.660612232808983R
+        '
+        'XrTableCell5
+        '
+        Me.XrTableCell5.Dpi = 254.0!
+        Me.XrTableCell5.Multiline = True
+        Me.XrTableCell5.Name = "XrTableCell5"
+        Me.XrTableCell5.Text = "MONTO"
+        Me.XrTableCell5.Weight = 0.81662678230084373R
+        '
+        'xrTableSueldoBruto
+        '
+        Me.xrTableSueldoBruto.BackColor = System.Drawing.Color.Navy
+        Me.xrTableSueldoBruto.BorderColor = System.Drawing.Color.Navy
+        Me.xrTableSueldoBruto.Dpi = 254.0!
+        Me.xrTableSueldoBruto.ForeColor = System.Drawing.Color.White
+        Me.xrTableSueldoBruto.LocationFloat = New DevExpress.Utils.PointFloat(0!, 0!)
+        Me.xrTableSueldoBruto.Name = "xrTableSueldoBruto"
+        Me.xrTableSueldoBruto.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
+        Me.xrTableSueldoBruto.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow1})
+        Me.xrTableSueldoBruto.SizeF = New System.Drawing.SizeF(1832.926!, 51.02678!)
+        Me.xrTableSueldoBruto.StylePriority.UseBackColor = False
+        Me.xrTableSueldoBruto.StylePriority.UseBorderColor = False
+        Me.xrTableSueldoBruto.StylePriority.UseForeColor = False
+        '
+        'XrTableRow1
+        '
+        Me.XrTableRow1.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(99, Byte), Integer))
+        Me.XrTableRow1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(199, Byte), Integer), CType(CType(206, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.XrTableRow1.Borders = DevExpress.XtraPrinting.BorderSide.None
+        Me.XrTableRow1.BorderWidth = 1.0!
+        Me.XrTableRow1.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell1, Me.XrTableCell2})
+        Me.XrTableRow1.Dpi = 254.0!
+        Me.XrTableRow1.Font = New System.Drawing.Font("Arial", 10.0!)
+        Me.XrTableRow1.Name = "XrTableRow1"
+        Me.XrTableRow1.StylePriority.UseBackColor = False
+        Me.XrTableRow1.StylePriority.UseBorderColor = False
+        Me.XrTableRow1.StylePriority.UseBorders = False
+        Me.XrTableRow1.StylePriority.UseBorderWidth = False
+        Me.XrTableRow1.StylePriority.UseFont = False
+        Me.XrTableRow1.Weight = 0.51923077221669467R
+        '
+        'XrTableCell1
+        '
+        Me.XrTableCell1.Borders = DevExpress.XtraPrinting.BorderSide.Right
+        Me.XrTableCell1.BorderWidth = 0.5!
+        Me.XrTableCell1.Dpi = 254.0!
+        Me.XrTableCell1.Multiline = True
+        Me.XrTableCell1.Name = "XrTableCell1"
+        Me.XrTableCell1.StylePriority.UseBorders = False
+        Me.XrTableCell1.StylePriority.UseBorderWidth = False
+        Me.XrTableCell1.StylePriority.UseTextAlignment = False
+        Me.XrTableCell1.Text = "SUELDO BRUTO"
+        Me.XrTableCell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+        Me.XrTableCell1.Weight = 1.5951990691134568R
+        '
+        'XrTableCell2
+        '
+        Me.XrTableCell2.Dpi = 254.0!
+        Me.XrTableCell2.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Recibos].[SueldoBruto]")})
+        Me.XrTableCell2.Multiline = True
+        Me.XrTableCell2.Name = "XrTableCell2"
+        Me.XrTableCell2.StylePriority.UseTextAlignment = False
+        Me.XrTableCell2.Text = "XrTableCell2"
+        Me.XrTableCell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+        Me.XrTableCell2.TextFormatString = "{0:c2}"
+        Me.XrTableCell2.Weight = 0.40472021663736146R
+        '
         'ObjectDataSource1
         '
         Me.ObjectDataSource1.DataSource = GetType(Zenthia.AccesoDatos.Recibos)
@@ -517,6 +509,10 @@ Partial Public Class xrReciboRemunYAportes
         'xrReciboRemunYAportes
         '
         Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.TopMargin, Me.BottomMargin, Me.Detail, Me.DetailReport})
+        Me.Borders = CType((((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Top) _
+            Or DevExpress.XtraPrinting.BorderSide.Right) _
+            Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
+        Me.BorderWidth = 2.0!
         Me.ComponentStorage.AddRange(New System.ComponentModel.IComponent() {Me.ObjectDataSource1})
         Me.DataSource = Me.ObjectDataSource1
         Me.Dpi = 254.0!
@@ -529,10 +525,10 @@ Partial Public Class xrReciboRemunYAportes
         Me.SnapGridSize = 25.0!
         Me.Version = "20.1"
         CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.xrTableSueldoBruto, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XrTable3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XrTable4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.xrTableSueldoBruto, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ObjectDataSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
@@ -562,7 +558,10 @@ Partial Public Class xrReciboRemunYAportes
     Friend WithEvents XrTableRow1 As DevExpress.XtraReports.UI.XRTableRow
     Friend WithEvents XrTableCell1 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableCell2 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents GroupFooter1 As DevExpress.XtraReports.UI.GroupFooterBand
+    Friend WithEvents XrTable4 As DevExpress.XtraReports.UI.XRTable
+    Friend WithEvents XrTableRow6 As DevExpress.XtraReports.UI.XRTableRow
+    Friend WithEvents XrTableCell19 As DevExpress.XtraReports.UI.XRTableCell
+    Friend WithEvents XrTableCell21 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTable3 As DevExpress.XtraReports.UI.XRTable
     Friend WithEvents XrTableRow4 As DevExpress.XtraReports.UI.XRTableRow
     Friend WithEvents XrTableCell11 As DevExpress.XtraReports.UI.XRTableCell
@@ -574,8 +573,4 @@ Partial Public Class xrReciboRemunYAportes
     Friend WithEvents XrTableCell16 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableCell17 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableCell18 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTable4 As DevExpress.XtraReports.UI.XRTable
-    Friend WithEvents XrTableRow6 As DevExpress.XtraReports.UI.XRTableRow
-    Friend WithEvents XrTableCell19 As DevExpress.XtraReports.UI.XRTableCell
-    Friend WithEvents XrTableCell21 As DevExpress.XtraReports.UI.XRTableCell
 End Class

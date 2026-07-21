@@ -1,6 +1,9 @@
-﻿Imports DevExpress.Mvvm
+﻿Imports System.ComponentModel.DataAnnotations
+Imports DevExpress.Mvvm
 Imports DevExpress.Mvvm.POCO
+Imports DevExpress.XtraReports.UI
 Imports Zenthia.AccesoDatos
+Imports Zenthia.LiquidAR.Win.YiZi.mvvm.ViewModel
 Imports Zenthia.mvvm.Common.DataModel
 Imports Zenthia.mvvm.Common.ViewModel
 
@@ -331,12 +334,24 @@ Partial Public Class ReciboViewModel
         If Entity.IdLegajo <> SelectedLegajo Or MyBase.IsNew Then
             Dim _legajo As Zenthia.AccesoDatos.Legajos = UnitOfWork.Legajos.Where(Function(x) x.Id = SelectedLegajo).FirstOrDefault()
             Dim _empresaactividad As Zenthia.AccesoDatos.EmpresasActividades = UnitOfWork.EmpresasActividades.Where(Function(x) x.IdEmpresa = _legajo.IdEmpresa And x.IdActividad = _legajo.idActividad).FirstOrDefault()
-            '_legajo.EmpresaActividad = _empresaactividad
             Entity.ImporteSeguro = If(_empresaactividad?.ValorSeguro, 0)
+
+            Dim periodoAnterior As String = getPeriodoAnterior()
+            Dim _lsd As Zenthia.AccesoDatos.LSDRegistro01 = UnitOfWork.LSDRegistro01.Where(Function(x) x.IdEmpresa = SelectedEmpresa And x.Periodo = periodoAnterior).FirstOrDefault()
+            Entity.FechaPagoAportes = _lsd.FechaPago
+            If Not IsNothing(_lsd.Banco) Then
+                Entity.BancoPagoAportes = _lsd.Banco.Abreviacion
+            End If
             Entity.Legajos = _legajo
         End If
         'Me.RaisePropertyChanged(Function(m) m.Entity)
     End Sub
+
+    Private Function getPeriodoAnterior() As String
+        Dim fechaPeriodoAnterior = CDate("01/" + Entity.Periodo.Substring(0, 2) + "/" + Entity.Periodo.Substring(2, 4)).AddMonths(-1)
+        Return fechaPeriodoAnterior.Month.ToString().PadLeft(2, "0") + fechaPeriodoAnterior.Year.ToString().PadLeft(4, "0")
+    End Function
+
     Public Overridable Property SelectedItems As IEnumerable(Of RecibosDetalles)
 
     Public Overridable Sub DeleteSelectedItems()
@@ -350,7 +365,10 @@ Partial Public Class ReciboViewModel
     End Sub
 
     Public Overridable Sub VistaPreviaImpresion()
-        ReciboAuxiliar.GenerateReciboReport(MyBase.Entity)
+        'ReciboAuxiliar.GenerateReciboReport(MyBase.Entity)
+
+        ReciboAuxiliar.GenerateReport(MyBase.Entity, True)
+
         'Dim source As List(Of Zenthia.AccesoDatos.Recibos) = New List(Of Zenthia.AccesoDatos.Recibos)
 
         'source.Add(MyBase.Entity)
@@ -380,6 +398,44 @@ Partial Public Class ReciboViewModel
         '''SetTextWatermark(reporte)
         'pad.ShowDialog()
     End Sub
+
+    <Display(Name:="Imprimir Recibo")>
+    Public Sub ImprimirRecibo()
+        If Me.Entity Is Nothing Then
+            Return
+        End If
+
+        Dim datos = New List(Of Zenthia.AccesoDatos.Recibos) From {Me.Entity}
+        Dim vmSelector = SelectorReporteViewModel.Create(ProcesoReporte.ReciboSueldo, datos)
+        'vmSelector.Inicializar(ProcesoReporte.ReciboSueldo, datos)
+
+        Dim result = DialogService.ShowDialog(MessageButton.OKCancel, "Seleccionar Reporte", "SelectorReporteView", vmSelector)
+
+        If result = MessageResult.Cancel Then
+            Return
+        End If
+
+        If vmSelector.ReporteSeleccionado Is Nothing Then
+            MessageBoxService.ShowMessage("Debe seleccionar un reporte.", "Aviso", MessageButton.OK, MessageIcon.Warning)
+            Return
+        End If
+
+        Dim factory As New ReporteFactory()
+        Dim reporte = factory.CrearReporte(Of xrDosRecibosEnUnA4)(vmSelector.ReporteSeleccionado.Id, datos)
+        reporte.ShowPreviewDialog()
+    End Sub
+
+    Public Function CanImprimirRecibo() As Boolean
+        Return Me.Entity IsNot Nothing
+    End Function
+
+    Protected ReadOnly Property DialogService As IDialogService
+        Get
+            Return Me.GetRequiredService(Of IDialogService)()
+        End Get
+    End Property
+
+
 
     Public Overridable Sub ReportDesigner()
         Dim source As List(Of Zenthia.AccesoDatos.Recibos) = New List(Of Zenthia.AccesoDatos.Recibos)

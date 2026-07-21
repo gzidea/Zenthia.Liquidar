@@ -4,6 +4,28 @@ Imports DevExpress.XtraReports.UI
 
 Public Class ReciboAuxiliar
 
+    Private Shared Function GenerarA4(ByVal recibo As Zenthia.AccesoDatos.Recibos) As xrReciboA4
+        Dim source As List(Of Zenthia.AccesoDatos.Recibos) = New List(Of Zenthia.AccesoDatos.Recibos)
+        source.Add(recibo)
+
+        Dim subReporte As xrReciboA4 = New xrReciboA4
+        subReporte.DataSource = source
+
+        Dim reporteContribuciones As xrReciboContribuciones = New xrReciboContribuciones
+        reporteContribuciones.DataSource = source
+
+        Dim reporteRemunYAportes As xrReciboRemunYAportes = New xrReciboRemunYAportes
+        reporteRemunYAportes.DataSource = source
+
+        Dim reporteResumenCostos As xrReciboResumenCostos = New xrReciboResumenCostos
+        reporteResumenCostos.DataSource = source
+
+        subReporte.DetalleContribuciones = reporteContribuciones
+        subReporte.DetalleRemunYAportes = reporteRemunYAportes
+        subReporte.ResumenDeCostos = reporteResumenCostos
+        Return subReporte
+    End Function
+
     Private Shared Function Generar(ByVal recibo As Zenthia.AccesoDatos.Recibos) As xrNuevoReciboDeSueldo
         Dim source As List(Of Zenthia.AccesoDatos.Recibos) = New List(Of Zenthia.AccesoDatos.Recibos)
         source.Add(recibo)
@@ -63,5 +85,38 @@ Public Class ReciboAuxiliar
         End If
     End Function
 
+    Public Shared Function GenerateReport(ByVal recibo As Zenthia.AccesoDatos.Recibos, Optional ByVal VistaPrevia As Boolean = True, Optional ByVal printerSettings As PrinterSettings = Nothing) As Boolean
+        Dim source As List(Of Zenthia.AccesoDatos.Recibos) = New List(Of Zenthia.AccesoDatos.Recibos)
+        source.Add(recibo)
 
+        Dim factory As New ReporteFactory()
+        Dim reporte = factory.CrearReportePredeterminado(Of xrDosRecibosEnUnA4)(Zenthia.AccesoDatos.ProcesoReporte.ReciboSueldo, source)
+
+        reporte.ExportOptions.Pdf.DocumentOptions.Title = "Recibo de Sueldo " & recibo.Legajos.NombreYApellido.ToString
+        reporte.Name = recibo.Legajos.NombreYApellido.ToString & " " & recibo.Periodo.Replace("/", "")
+
+        'reporte.Margins = New Printing.Margins(15, 15, 15, 15)
+        reporte.CreateDocument(False)
+        reporte.PrintingSystem.Document.ScaleFactor = 1
+        'reporte.PrintingSystem.Document.AutoFitToPagesWidth = 1
+
+        If VistaPrevia = True Then
+            Dim pad As frmReportesVistaPrevia = New frmReportesVistaPrevia
+            pad.dvReportes.DocumentSource = reporte
+            pad.ShowDialog()
+        Else
+            If printerSettings IsNot Nothing Then
+                Dim tool As New ReportPrintTool(reporte)
+                tool.Print(printerSettings.PrinterName)
+                reporte.Print()
+            Else
+                Dim pathrecibos As String = My.Computer.FileSystem.SpecialDirectories.MyDocuments & "\LiquidAR\" & Trim(recibo.Empresas.Nombre.Replace(vbTab, "")) & "\" & recibo.Periodo & "\" & recibo.TipoLiquidacion.Descripcion & "\"
+                If Not Directory.Exists(pathrecibos) Then
+                    Directory.CreateDirectory(pathrecibos)
+                End If
+                reporte.ExportToPdf(pathrecibos & reporte.Name & ".pdf")
+            End If
+        End If
+        Return True
+    End Function
 End Class

@@ -89,6 +89,7 @@ Partial Class RecibosEditForm
         Me.TotalSpinEdit1 = New DevExpress.XtraEditors.TextEdit()
         Me.TotalSpinEdit2 = New DevExpress.XtraEditors.TextEdit()
         Me.TotalDescuentosSpinEdit1 = New DevExpress.XtraEditors.TextEdit()
+        Me.TextEdit1 = New DevExpress.XtraEditors.TextEdit()
         Me.barDockControlLeft = New DevExpress.XtraBars.BarDockControl()
         Me.recibodetalles_DetailsBarManager = New DevExpress.XtraBars.BarManager(Me.components)
         Me.Actividades_DetailsBar = New DevExpress.XtraBars.Bar()
@@ -104,7 +105,6 @@ Partial Class RecibosEditForm
         Me.BarDockControl1 = New DevExpress.XtraBars.BarDockControl()
         Me.barDockControlBottom = New DevExpress.XtraBars.BarDockControl()
         Me.barDockControlRight = New DevExpress.XtraBars.BarDockControl()
-        Me.TextEdit1 = New DevExpress.XtraEditors.TextEdit()
         Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlGroup1 = New DevExpress.XtraLayout.LayoutControlGroup()
@@ -149,8 +149,8 @@ Partial Class RecibosEditForm
         Me.SimpleSeparator2 = New DevExpress.XtraLayout.SimpleSeparator()
         Me.LayoutControlItem24 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem13 = New DevExpress.XtraLayout.EmptySpaceItem()
-        Me.recibodetalles_DetailsPopUpMenu = New DevExpress.XtraBars.PopupMenu(Me.components)
         Me.EmptySpaceItem14 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.recibodetalles_DetailsPopUpMenu = New DevExpress.XtraBars.PopupMenu(Me.components)
         CType(Me.ribbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.mvvmContext, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dataLayout, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -186,8 +186,8 @@ Partial Class RecibosEditForm
         CType(Me.TotalSpinEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TotalSpinEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TotalDescuentosSpinEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.recibodetalles_DetailsBarManager, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.recibodetalles_DetailsBarManager, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -232,8 +232,8 @@ Partial Class RecibosEditForm
         CType(Me.SimpleSeparator2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem24, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem13, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.recibodetalles_DetailsPopUpMenu, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem14, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.recibodetalles_DetailsPopUpMenu, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RibbonStatusBar1
@@ -361,6 +361,7 @@ Partial Class RecibosEditForm
         Me.bbiReportDesigner.ImageOptions.Image = Global.Zenthia.LiquidAR.Win.My.Resources.Resources.design_16x16
         Me.bbiReportDesigner.ImageOptions.LargeImage = Global.Zenthia.LiquidAR.Win.My.Resources.Resources.design_32x32
         Me.bbiReportDesigner.Name = "bbiReportDesigner"
+        Me.bbiReportDesigner.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
         '
         'RibbonPage1
         '
@@ -406,7 +407,7 @@ Partial Class RecibosEditForm
         '
         'mvvmContext
         '
-        Me.mvvmContext.BindingExpressions.AddRange(New DevExpress.Utils.MVVM.BindingExpression() {DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.ReciboViewModel), "Save", Me.bbiSave), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.ReciboViewModel), "SaveAndClose", Me.bbiSaveAndClose), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.ReciboViewModel), "SaveAndNew", Me.bbiSaveAndNew), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.ReciboViewModel), "Reset", Me.bbiReset), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.ReciboViewModel), "Delete", Me.bbiDelete), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.ReciboViewModel), "Close", Me.bbiClose), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.ReciboViewModel), "SaveLayout", Nothing), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.ReciboViewModel), "ResetLayout", Me.bbiResetLayout), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.ReciboViewModel), "Recalcular", Me.bbiSaveLayout), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.ReciboViewModel), "VistaPreviaImpresion", Me.bbiVistaPrevia), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.ReciboViewModel), "ReportDesigner", Me.bbiReportDesigner)})
+        Me.mvvmContext.BindingExpressions.AddRange(New DevExpress.Utils.MVVM.BindingExpression() {DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.ReciboViewModel), "Save", Me.bbiSave), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.ReciboViewModel), "SaveAndClose", Me.bbiSaveAndClose), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.ReciboViewModel), "SaveAndNew", Me.bbiSaveAndNew), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.ReciboViewModel), "Reset", Me.bbiReset), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.ReciboViewModel), "Delete", Me.bbiDelete), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.ReciboViewModel), "Close", Me.bbiClose), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.ReciboViewModel), "SaveLayout", Nothing), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.ReciboViewModel), "ResetLayout", Me.bbiResetLayout), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.ReciboViewModel), "Recalcular", Me.bbiSaveLayout), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.ReciboViewModel), "ReportDesigner", Me.bbiReportDesigner), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.ReciboViewModel), "ImprimirRecibo", Me.bbiVistaPrevia)})
         Me.mvvmContext.ContainerControl = Me
         Me.mvvmContext.ViewModelType = GetType(Zenthia.LiquidAR.Win.ReciboViewModel)
         '
@@ -468,11 +469,11 @@ Partial Class RecibosEditForm
         'gridControl
         '
         Me.gridControl.DataSource = Me.RecibosDetallesBindingSource
-        Me.gridControl.Location = New System.Drawing.Point(12, 237)
+        Me.gridControl.Location = New System.Drawing.Point(12, 243)
         Me.gridControl.MainView = Me.gridView
         Me.gridControl.MenuManager = Me.ribbonControl
         Me.gridControl.Name = "gridControl"
-        Me.gridControl.Size = New System.Drawing.Size(1141, 300)
+        Me.gridControl.Size = New System.Drawing.Size(1141, 294)
         Me.gridControl.TabIndex = 5
         Me.gridControl.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridView})
         '
@@ -973,6 +974,19 @@ Partial Class RecibosEditForm
         Me.TotalDescuentosSpinEdit1.StyleController = Me.dataLayout
         Me.TotalDescuentosSpinEdit1.TabIndex = 17
         '
+        'TextEdit1
+        '
+        Me.TextEdit1.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.RecibosBindingSource, "ImporteSeguro", True))
+        Me.TextEdit1.Location = New System.Drawing.Point(773, 36)
+        Me.TextEdit1.MenuManager = Me.ribbonControl
+        Me.TextEdit1.Name = "TextEdit1"
+        Me.TextEdit1.Properties.DisplayFormat.FormatString = "C2"
+        Me.TextEdit1.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.TextEdit1.Properties.ReadOnly = True
+        Me.TextEdit1.Size = New System.Drawing.Size(90, 20)
+        Me.TextEdit1.StyleController = Me.dataLayout
+        Me.TextEdit1.TabIndex = 37
+        '
         'barDockControlLeft
         '
         Me.barDockControlLeft.CausesValidation = False
@@ -1095,7 +1109,7 @@ Partial Class RecibosEditForm
         Me.BarDockControl1.CausesValidation = False
         Me.BarDockControl1.Location = New System.Drawing.Point(12, 213)
         Me.BarDockControl1.Manager = Me.recibodetalles_DetailsBarManager
-        Me.BarDockControl1.Size = New System.Drawing.Size(1141, 20)
+        Me.BarDockControl1.Size = New System.Drawing.Size(1141, 26)
         '
         'barDockControlBottom
         '
@@ -1112,19 +1126,6 @@ Partial Class RecibosEditForm
         Me.barDockControlRight.Location = New System.Drawing.Point(134, 676)
         Me.barDockControlRight.Manager = Me.recibodetalles_DetailsBarManager
         Me.barDockControlRight.Size = New System.Drawing.Size(0, 20)
-        '
-        'TextEdit1
-        '
-        Me.TextEdit1.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.RecibosBindingSource, "ImporteSeguro", True))
-        Me.TextEdit1.Location = New System.Drawing.Point(773, 36)
-        Me.TextEdit1.MenuManager = Me.ribbonControl
-        Me.TextEdit1.Name = "TextEdit1"
-        Me.TextEdit1.Properties.DisplayFormat.FormatString = "C2"
-        Me.TextEdit1.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.TextEdit1.Properties.ReadOnly = True
-        Me.TextEdit1.Size = New System.Drawing.Size(90, 20)
-        Me.TextEdit1.StyleController = Me.dataLayout
-        Me.TextEdit1.TabIndex = 37
         '
         'Root
         '
@@ -1294,9 +1295,9 @@ Partial Class RecibosEditForm
         'LayoutControlItem1
         '
         Me.LayoutControlItem1.Control = Me.gridControl
-        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 225)
+        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 231)
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(1145, 304)
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(1145, 298)
         Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem1.TextVisible = False
         '
@@ -1358,7 +1359,7 @@ Partial Class RecibosEditForm
         Me.LayoutControlItem3.Control = Me.BarDockControl1
         Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 201)
         Me.LayoutControlItem3.Name = "LayoutControlItem3"
-        Me.LayoutControlItem3.Size = New System.Drawing.Size(1145, 24)
+        Me.LayoutControlItem3.Size = New System.Drawing.Size(1145, 30)
         Me.LayoutControlItem3.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem3.TextVisible = False
         '
@@ -1596,12 +1597,6 @@ Partial Class RecibosEditForm
         Me.EmptySpaceItem13.Size = New System.Drawing.Size(19, 24)
         Me.EmptySpaceItem13.TextSize = New System.Drawing.Size(0, 0)
         '
-        'recibodetalles_DetailsPopUpMenu
-        '
-        Me.recibodetalles_DetailsPopUpMenu.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.bbiRecibodetalle_DetailsNew), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiRecibodetalle_DetailsEdit), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiRecibodetalle_DetailsDelete, True), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiRecibodetalle_DetailsRefresh, True), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiRecalcular, True)})
-        Me.recibodetalles_DetailsPopUpMenu.Manager = Me.recibodetalles_DetailsBarManager
-        Me.recibodetalles_DetailsPopUpMenu.Name = "recibodetalles_DetailsPopUpMenu"
-        '
         'EmptySpaceItem14
         '
         Me.EmptySpaceItem14.AllowHotTrack = False
@@ -1609,6 +1604,12 @@ Partial Class RecibosEditForm
         Me.EmptySpaceItem14.Name = "EmptySpaceItem14"
         Me.EmptySpaceItem14.Size = New System.Drawing.Size(23, 24)
         Me.EmptySpaceItem14.TextSize = New System.Drawing.Size(0, 0)
+        '
+        'recibodetalles_DetailsPopUpMenu
+        '
+        Me.recibodetalles_DetailsPopUpMenu.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.bbiRecibodetalle_DetailsNew), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiRecibodetalle_DetailsEdit), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiRecibodetalle_DetailsDelete, True), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiRecibodetalle_DetailsRefresh, True), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiRecalcular, True)})
+        Me.recibodetalles_DetailsPopUpMenu.Manager = Me.recibodetalles_DetailsBarManager
+        Me.recibodetalles_DetailsPopUpMenu.Name = "recibodetalles_DetailsPopUpMenu"
         '
         'RecibosEditForm
         '
@@ -1656,8 +1657,8 @@ Partial Class RecibosEditForm
         CType(Me.TotalSpinEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TotalSpinEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TotalDescuentosSpinEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.recibodetalles_DetailsBarManager, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.recibodetalles_DetailsBarManager, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1702,8 +1703,8 @@ Partial Class RecibosEditForm
         CType(Me.SimpleSeparator2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem24, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem13, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.recibodetalles_DetailsPopUpMenu, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem14, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.recibodetalles_DetailsPopUpMenu, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

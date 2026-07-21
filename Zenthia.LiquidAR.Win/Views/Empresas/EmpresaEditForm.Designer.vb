@@ -60,9 +60,9 @@ Partial Class EmpresaEditForm
         Me.RibbonPageGroup4 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.mvvmContext = New DevExpress.Utils.MVVM.MVVMContext(Me.components)
         Me.dataLayout = New DevExpress.XtraLayout.LayoutControl()
-        Me.BancosGridControl = New DevExpress.XtraGrid.GridControl()
+        Me.bancosGridControl = New DevExpress.XtraGrid.GridControl()
         Me.EmpresasBancosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BancosView = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.bancosGridView = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colBancos = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colBancos1 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colBancos2 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -80,6 +80,7 @@ Partial Class EmpresaEditForm
         Me.barDockControlLeft = New DevExpress.XtraBars.BarDockControl()
         Me.barDockControlRight = New DevExpress.XtraBars.BarDockControl()
         Me.barDockControlTop = New DevExpress.XtraBars.BarDockControl()
+        Me.BarButtonItem7 = New DevExpress.XtraBars.BarButtonItem()
         Me.IdTipoEmpresaAfipSearchLookUpEdit = New DevExpress.XtraEditors.SearchLookUpEdit()
         Me.EmpresasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TipoEmpresaAfipBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -233,15 +234,17 @@ Partial Class EmpresaEditForm
         Me.BarDockControl14 = New DevExpress.XtraBars.BarDockControl()
         Me.BarDockControl15 = New DevExpress.XtraBars.BarDockControl()
         Me.BarDockControl16 = New DevExpress.XtraBars.BarDockControl()
+        Me.Bancos_DetailsPopupMenu = New DevExpress.XtraBars.PopupMenu(Me.components)
+        Me.Bar2 = New DevExpress.XtraBars.Bar()
         CType(Me.RepositoryItemRibbonSearchEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemRibbonSearchEdit3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ribbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.mvvmContext, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dataLayout, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.dataLayout.SuspendLayout()
-        CType(Me.BancosGridControl, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.bancosGridControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmpresasBancosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BancosView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.bancosGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.actividades_DetailsBarManager, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.barDockControlTop.SuspendLayout()
         CType(Me.IdTipoEmpresaAfipSearchLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -305,6 +308,7 @@ Partial Class EmpresaEditForm
         CType(Me.actividades_DetailsBarManager2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.barDockControlTop2.SuspendLayout()
         CType(Me.Bancos_DetailsBarManager, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Bancos_DetailsPopupMenu, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RepositoryItemRibbonSearchEdit1
@@ -444,6 +448,7 @@ Partial Class EmpresaEditForm
         Me.RibbonPageGroup4.ItemLinks.Add(Me.bbiResetLayout)
         Me.RibbonPageGroup4.Name = "RibbonPageGroup4"
         Me.RibbonPageGroup4.Text = "Layer"
+        Me.RibbonPageGroup4.Visible = False
         '
         'mvvmContext
         '
@@ -453,7 +458,7 @@ Partial Class EmpresaEditForm
         '
         'dataLayout
         '
-        Me.dataLayout.Controls.Add(Me.BancosGridControl)
+        Me.dataLayout.Controls.Add(Me.bancosGridControl)
         Me.dataLayout.Controls.Add(Me.StandaloneBarDockControl1)
         Me.dataLayout.Controls.Add(Me.IdTipoEmpresaAfipSearchLookUpEdit)
         Me.dataLayout.Controls.Add(Me.contactosGridControl)
@@ -468,8 +473,8 @@ Partial Class EmpresaEditForm
         Me.dataLayout.Controls.Add(Me.DireccionTextEdit)
         Me.dataLayout.Controls.Add(Me.NombreTextEdit)
         Me.dataLayout.Controls.Add(Me.CodigoSpinEdit)
-        Me.dataLayout.Controls.Add(Me.BarDockControl2)
         Me.dataLayout.Controls.Add(Me.barDockControlTop)
+        Me.dataLayout.Controls.Add(Me.BarDockControl2)
         Me.dataLayout.Controls.Add(Me.barDockControlBanco)
         Me.dataLayout.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dataLayout.Location = New System.Drawing.Point(0, 100)
@@ -480,26 +485,26 @@ Partial Class EmpresaEditForm
         Me.dataLayout.TabIndex = 4
         Me.dataLayout.Text = "LayoutControl1"
         '
-        'BancosGridControl
+        'bancosGridControl
         '
-        Me.BancosGridControl.DataSource = Me.EmpresasBancosBindingSource
-        Me.BancosGridControl.Location = New System.Drawing.Point(24, 195)
-        Me.BancosGridControl.MainView = Me.BancosView
-        Me.BancosGridControl.MenuManager = Me.ribbonControl
-        Me.BancosGridControl.Name = "BancosGridControl"
-        Me.BancosGridControl.Size = New System.Drawing.Size(907, 351)
-        Me.BancosGridControl.TabIndex = 29
-        Me.BancosGridControl.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.BancosView})
+        Me.bancosGridControl.DataSource = Me.EmpresasBancosBindingSource
+        Me.bancosGridControl.Location = New System.Drawing.Point(24, 195)
+        Me.bancosGridControl.MainView = Me.bancosGridView
+        Me.bancosGridControl.MenuManager = Me.ribbonControl
+        Me.bancosGridControl.Name = "bancosGridControl"
+        Me.bancosGridControl.Size = New System.Drawing.Size(907, 351)
+        Me.bancosGridControl.TabIndex = 29
+        Me.bancosGridControl.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.bancosGridView})
         '
         'EmpresasBancosBindingSource
         '
         Me.EmpresasBancosBindingSource.DataSource = GetType(Zenthia.AccesoDatos.EmpresasBancos)
         '
-        'BancosView
+        'bancosGridView
         '
-        Me.BancosView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colBancos, Me.colBancos1, Me.colBancos2, Me.colActivo1, Me.GridColumn2})
-        Me.BancosView.GridControl = Me.BancosGridControl
-        Me.BancosView.Name = "BancosView"
+        Me.bancosGridView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colBancos, Me.colBancos1, Me.colBancos2, Me.colActivo1, Me.GridColumn2})
+        Me.bancosGridView.GridControl = Me.bancosGridControl
+        Me.bancosGridView.Name = "bancosGridView"
         '
         'colBancos
         '
@@ -550,7 +555,7 @@ Partial Class EmpresaEditForm
         Me.StandaloneBarDockControl1.Location = New System.Drawing.Point(24, 167)
         Me.StandaloneBarDockControl1.Manager = Me.actividades_DetailsBarManager
         Me.StandaloneBarDockControl1.Name = "StandaloneBarDockControl1"
-        Me.StandaloneBarDockControl1.Size = New System.Drawing.Size(326, 24)
+        Me.StandaloneBarDockControl1.Size = New System.Drawing.Size(907, 24)
         Me.StandaloneBarDockControl1.Text = "StandaloneBarDockControl1"
         '
         'actividades_DetailsBarManager
@@ -563,9 +568,9 @@ Partial Class EmpresaEditForm
         Me.actividades_DetailsBarManager.DockControls.Add(Me.barDockControlRight)
         Me.actividades_DetailsBarManager.DockControls.Add(Me.StandaloneBarDockControl1)
         Me.actividades_DetailsBarManager.Form = Me.barDockControlTop
-        Me.actividades_DetailsBarManager.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.bbiActividades_DetailsNew, Me.bbiActividades_DetailsEdit, Me.bbiActividades_DetailsDelete, Me.bbiActividades_DetailsRefresh})
+        Me.actividades_DetailsBarManager.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.bbiActividades_DetailsNew, Me.bbiActividades_DetailsEdit, Me.bbiActividades_DetailsDelete, Me.bbiActividades_DetailsRefresh, Me.BarButtonItem7})
         Me.actividades_DetailsBarManager.MainMenu = Me.Actividades_DetailsBar
-        Me.actividades_DetailsBarManager.MaxItemId = 5
+        Me.actividades_DetailsBarManager.MaxItemId = 6
         '
         'Actividades_DetailsBar
         '
@@ -653,6 +658,12 @@ Partial Class EmpresaEditForm
         Me.barDockControlTop.Location = New System.Drawing.Point(24, 167)
         Me.barDockControlTop.Manager = Nothing
         Me.barDockControlTop.Size = New System.Drawing.Size(907, 25)
+        '
+        'BarButtonItem7
+        '
+        Me.BarButtonItem7.Caption = "BarButtonItem7"
+        Me.BarButtonItem7.Id = 5
+        Me.BarButtonItem7.Name = "BarButtonItem7"
         '
         'IdTipoEmpresaAfipSearchLookUpEdit
         '
@@ -1021,7 +1032,7 @@ Partial Class EmpresaEditForm
         '
         Me.e.Location = New System.Drawing.Point(0, 120)
         Me.e.Name = "e"
-        Me.e.SelectedTabPage = Me.layoutControlGroupBancos
+        Me.e.SelectedTabPage = Me.actividadesLayout
         Me.e.Size = New System.Drawing.Size(935, 430)
         Me.e.TabPages.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.actividadesLayout, Me.LayoutControlGroup2, Me.layoutControlGroupBancos})
         '
@@ -1044,7 +1055,7 @@ Partial Class EmpresaEditForm
         '
         'LayoutControlItem17
         '
-        Me.LayoutControlItem17.Control = Me.BancosGridControl
+        Me.LayoutControlItem17.Control = Me.bancosGridControl
         Me.LayoutControlItem17.Location = New System.Drawing.Point(0, 28)
         Me.LayoutControlItem17.Name = "LayoutControlItem17"
         Me.LayoutControlItem17.Size = New System.Drawing.Size(911, 355)
@@ -1844,7 +1855,7 @@ Partial Class EmpresaEditForm
         Me.Bancos_DetailsBarManager.Form = Me.BarDockControl2
         Me.Bancos_DetailsBarManager.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.bbiBancos_Agregar, Me.bbiBancos_Modificar, Me.bbiBancos_Quitar, Me.bbiBancos_Refresh})
         Me.Bancos_DetailsBarManager.MainMenu = Me.Bancos_Details
-        Me.Bancos_DetailsBarManager.MaxItemId = 4
+        Me.Bancos_DetailsBarManager.MaxItemId = 10
         '
         'Bancos_Details
         '
@@ -1860,38 +1871,37 @@ Partial Class EmpresaEditForm
         '
         'bbiBancos_Agregar
         '
-        Me.bbiBancos_Agregar.AccessibleDescription = ""
         Me.bbiBancos_Agregar.Caption = "Agregar"
-        Me.bbiBancos_Agregar.Id = 0
-        Me.bbiBancos_Agregar.ImageOptions.Image = Global.Zenthia.LiquidAR.Win.My.Resources.Resources.new_16x161
-        Me.bbiBancos_Agregar.ImageOptions.LargeImage = Global.Zenthia.LiquidAR.Win.My.Resources.Resources.new_32x321
+        Me.bbiBancos_Agregar.Id = 4
+        Me.bbiBancos_Agregar.ImageOptions.Image = Global.Zenthia.LiquidAR.Win.My.Resources.Resources.new_16x16
+        Me.bbiBancos_Agregar.ImageOptions.LargeImage = Global.Zenthia.LiquidAR.Win.My.Resources.Resources.new_32x32
         Me.bbiBancos_Agregar.Name = "bbiBancos_Agregar"
         Me.bbiBancos_Agregar.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph
         '
         'bbiBancos_Modificar
         '
         Me.bbiBancos_Modificar.Caption = "Modificar"
-        Me.bbiBancos_Modificar.Id = 1
-        Me.bbiBancos_Modificar.ImageOptions.Image = Global.Zenthia.LiquidAR.Win.My.Resources.Resources.edit_16x161
-        Me.bbiBancos_Modificar.ImageOptions.LargeImage = Global.Zenthia.LiquidAR.Win.My.Resources.Resources.edit_32x321
+        Me.bbiBancos_Modificar.Id = 5
+        Me.bbiBancos_Modificar.ImageOptions.Image = Global.Zenthia.LiquidAR.Win.My.Resources.Resources.edit_16x16
+        Me.bbiBancos_Modificar.ImageOptions.LargeImage = Global.Zenthia.LiquidAR.Win.My.Resources.Resources.edit_32x32
         Me.bbiBancos_Modificar.Name = "bbiBancos_Modificar"
         Me.bbiBancos_Modificar.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph
         '
         'bbiBancos_Quitar
         '
         Me.bbiBancos_Quitar.Caption = "Quitar"
-        Me.bbiBancos_Quitar.Id = 2
-        Me.bbiBancos_Quitar.ImageOptions.Image = Global.Zenthia.LiquidAR.Win.My.Resources.Resources.delete_16x161
-        Me.bbiBancos_Quitar.ImageOptions.LargeImage = Global.Zenthia.LiquidAR.Win.My.Resources.Resources.delete_32x321
+        Me.bbiBancos_Quitar.Id = 6
+        Me.bbiBancos_Quitar.ImageOptions.Image = Global.Zenthia.LiquidAR.Win.My.Resources.Resources.delete_16x16
+        Me.bbiBancos_Quitar.ImageOptions.LargeImage = Global.Zenthia.LiquidAR.Win.My.Resources.Resources.delete_32x32
         Me.bbiBancos_Quitar.Name = "bbiBancos_Quitar"
         Me.bbiBancos_Quitar.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph
         '
         'bbiBancos_Refresh
         '
-        Me.bbiBancos_Refresh.Caption = "Refresh"
-        Me.bbiBancos_Refresh.Id = 3
-        Me.bbiBancos_Refresh.ImageOptions.Image = Global.Zenthia.LiquidAR.Win.My.Resources.Resources.refreshallpivottable_16x161
-        Me.bbiBancos_Refresh.ImageOptions.LargeImage = Global.Zenthia.LiquidAR.Win.My.Resources.Resources.refreshallpivottable_32x321
+        Me.bbiBancos_Refresh.Caption = "Refrescar"
+        Me.bbiBancos_Refresh.Id = 7
+        Me.bbiBancos_Refresh.ImageOptions.Image = Global.Zenthia.LiquidAR.Win.My.Resources.Resources.refreshallpivottable_16x16
+        Me.bbiBancos_Refresh.ImageOptions.LargeImage = Global.Zenthia.LiquidAR.Win.My.Resources.Resources.refreshallpivottable_32x32
         Me.bbiBancos_Refresh.Name = "bbiBancos_Refresh"
         Me.bbiBancos_Refresh.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph
         '
@@ -1927,6 +1937,20 @@ Partial Class EmpresaEditForm
         Me.BarDockControl16.Manager = Me.Bancos_DetailsBarManager
         Me.BarDockControl16.Size = New System.Drawing.Size(0, 22)
         '
+        'Bancos_DetailsPopupMenu
+        '
+        Me.Bancos_DetailsPopupMenu.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.bbiBancos_Agregar), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiBancos_Modificar), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiBancos_Quitar, True), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiBancos_Refresh, True)})
+        Me.Bancos_DetailsPopupMenu.Manager = Me.Bancos_DetailsBarManager
+        Me.Bancos_DetailsPopupMenu.Name = "Bancos_DetailsPopupMenu"
+        '
+        'Bar2
+        '
+        Me.Bar2.BarName = "Personalizada 3"
+        Me.Bar2.DockCol = 0
+        Me.Bar2.DockRow = 0
+        Me.Bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
+        Me.Bar2.Text = "Personalizada 3"
+        '
         'EmpresaEditForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1943,9 +1967,9 @@ Partial Class EmpresaEditForm
         CType(Me.dataLayout, System.ComponentModel.ISupportInitialize).EndInit()
         Me.dataLayout.ResumeLayout(False)
         Me.dataLayout.PerformLayout()
-        CType(Me.BancosGridControl, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.bancosGridControl, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmpresasBancosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BancosView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.bancosGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.actividades_DetailsBarManager, System.ComponentModel.ISupportInitialize).EndInit()
         Me.barDockControlTop.ResumeLayout(False)
         Me.barDockControlTop.PerformLayout()
@@ -2013,6 +2037,7 @@ Partial Class EmpresaEditForm
         Me.barDockControlTop2.ResumeLayout(False)
         Me.barDockControlTop2.PerformLayout()
         CType(Me.Bancos_DetailsBarManager, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Bancos_DetailsPopupMenu, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2193,17 +2218,13 @@ Partial Class EmpresaEditForm
     Private WithEvents BarDockControl13 As DevExpress.XtraBars.BarDockControl
     Private WithEvents Bancos_DetailsBarManager As DevExpress.XtraBars.BarManager
     Private WithEvents Bancos_Details As DevExpress.XtraBars.Bar
-    Private WithEvents bbiBancos_Agregar As DevExpress.XtraBars.BarButtonItem
-    Private WithEvents bbiBancos_Modificar As DevExpress.XtraBars.BarButtonItem
-    Private WithEvents bbiBancos_Quitar As DevExpress.XtraBars.BarButtonItem
-    Private WithEvents bbiBancos_Refresh As DevExpress.XtraBars.BarButtonItem
     Private WithEvents BarDockControl14 As DevExpress.XtraBars.BarDockControl
     Private WithEvents BarDockControl15 As DevExpress.XtraBars.BarDockControl
     Private WithEvents BarDockControl16 As DevExpress.XtraBars.BarDockControl
     Friend WithEvents StandaloneBarDockControl1 As DevExpress.XtraBars.StandaloneBarDockControl
     Friend WithEvents LayoutControlItem18 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents BancosGridControl As DevExpress.XtraGrid.GridControl
-    Friend WithEvents BancosView As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents bancosGridControl As DevExpress.XtraGrid.GridControl
+    Friend WithEvents bancosGridView As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents LayoutControlItem17 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents EmpresasBancosBindingSource As BindingSource
     Friend WithEvents colBancos As DevExpress.XtraGrid.Columns.GridColumn
@@ -2211,4 +2232,11 @@ Partial Class EmpresaEditForm
     Friend WithEvents colBancos2 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colActivo1 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn2 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents bbiBancos_Agregar As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents bbiBancos_Modificar As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents bbiBancos_Quitar As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents Bancos_DetailsPopupMenu As DevExpress.XtraBars.PopupMenu
+    Friend WithEvents Bar2 As DevExpress.XtraBars.Bar
+    Friend WithEvents BarButtonItem7 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents bbiBancos_Refresh As DevExpress.XtraBars.BarButtonItem
 End Class

@@ -52,6 +52,42 @@ Partial Friend NotInheritable Class Settings
             Return defaultInstance
         End Get
     End Property
+    
+    <Global.System.Configuration.UserScopedSettingAttribute(),  _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+    Public Property TemaSeleccionado() As String
+        Get
+            Return CType(Me("TemaSeleccionado"),String)
+        End Get
+        Set
+            Me("TemaSeleccionado") = value
+        End Set
+    End Property
+    
+    <Global.System.Configuration.UserScopedSettingAttribute(),  _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+    Public Property PaletaSeleccionada() As String
+        Get
+            Return CType(Me("PaletaSeleccionada"),String)
+        End Get
+        Set
+            Me("PaletaSeleccionada") = value
+        End Set
+    End Property
+    
+    <Global.System.Configuration.UserScopedSettingAttribute(),  _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+    Public Property NovedadesWizard() As String
+        Get
+            Return CType(Me("NovedadesWizard"),String)
+        End Get
+        Set
+            Me("NovedadesWizard") = value
+        End Set
+    End Property
 End Class
 
 Namespace My

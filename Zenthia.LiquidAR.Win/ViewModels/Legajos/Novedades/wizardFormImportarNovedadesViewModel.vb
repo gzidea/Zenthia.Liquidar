@@ -7,11 +7,13 @@ Imports System.ComponentModel
 Imports System.Runtime.CompilerServices
 Imports Syncfusion.XlsIO
 Imports System.Collections.ObjectModel
+Imports Newtonsoft.Json
+Imports System.Data.Entity
 
 Partial Public Class wizardFormImportarNovedadesViewModel
-
+    Private _setting As List(Of NovedadesWizardSetting)
     Public Sub New()
-        'record = New RecordProperty(0, 0, "", "", "")
+        _setting = CargarConfiguraciones()
     End Sub
 
     Public Overridable ReadOnly Property ListaEmpresas As List(Of Zenthia.AccesoDatos.Empresas)
@@ -73,13 +75,29 @@ Partial Public Class wizardFormImportarNovedadesViewModel
         conceptosColumnas = New ObservableCollection(Of ConceptoNovedadColumna)
         Dim idconvenio As Integer? = SelectedConvenio.Id
         Using db As Zenthia.AccesoDatos.Modelo = New Zenthia.AccesoDatos.Modelo()
-            listaConveniosConNovedad = db.Formulas.Where(Function(x) x.IdConvenio = idconvenio And x.Activo = True And x.Novedad = True).ToList()
+            Dim novedadSetting = _setting.Where(Function(x) x.IdEmpresa = SelectedEmpresa.Id And x.IdConvenio = idconvenio).FirstOrDefault()
+            If IsNothing(novedadSetting) Then
+                novedadSetting = CrearConfiguracionesDefault(SelectedConvenio.Id, SelectedEmpresa.Id)
+            End If
+
+            Me.RowInicio = novedadSetting.RowInicio
+            Me.RowFin = novedadSetting.RowFin
+            Me.ColumnaLegajo = novedadSetting.ColumnaLegajo
+            Me.ColumnaDiasNormales = novedadSetting.ColumnaDiasNormales
+            Me.ColumnaHorasNormales = novedadSetting.ColumnaHorasNormales
+
+            listaConveniosConNovedad = db.Formulas.Include("Conceptos").Where(Function(x) x.IdConvenio = idconvenio And x.Activo = True And x.Novedad = True).ToList()
             For Each item As Zenthia.AccesoDatos.Formulas In listaConveniosConNovedad
+                Dim detalleNovedadSetting = novedadSetting.Conceptos.Where(Function(c) c.IdFormula = item.Id).FirstOrDefault()
+                If IsNothing(detalleNovedadSetting) Then
+                    detalleNovedadSetting = CrearConfiguracionesConceptosDefault(novedadSetting, item.Id)
+                End If
                 Dim conceptoNovedad As New ConceptoNovedadColumna
                 conceptoNovedad.IdFormula = item.Id
                 conceptoNovedad.Concepto = item.DescripcionCompleta
                 conceptoNovedad.Variable = item.Variable
-                conceptoNovedad.ColumnaCantidad = ""
+                conceptoNovedad.ColumnaCantidad = detalleNovedadSetting.ColumnaCantidad
+                conceptoNovedad.ColumnaImporte = detalleNovedadSetting.ColumnaImporte
                 conceptosColumnas.Add(conceptoNovedad)
             Next
             RaisePropertyChanged(Function(x) x.conceptosColumnas)
@@ -87,6 +105,48 @@ Partial Public Class wizardFormImportarNovedadesViewModel
 
         RaisePropertyChanged(Function(x) x.SelectedConvenio)
     End Sub
+
+    Private Function CrearConfiguracionesConceptosDefault(novedadSetting As NovedadesWizardSetting, idFormula As Integer) As NovedadesWizardSettingDetalle
+        Dim detalle As New NovedadesWizardSettingDetalle With {
+            .IdFormula = idFormula,
+            .ColumnaImporte = "",
+            .ColumnaCantidad = ""
+        }
+        novedadSetting.Conceptos.Add(detalle)
+        Return detalle
+    End Function
+
+    Private Function CrearConfiguracionesDefault(idConvenio As Integer, idEmpresa As Integer) As NovedadesWizardSetting
+        Dim configs As New NovedadesWizardSetting With {
+            .IdConvenio = idConvenio,
+            .IdEmpresa = idEmpresa,
+            .RowInicio = 0,
+            .RowFin = 0,
+            .ColumnaLegajo = "",
+            .ColumnaDiasNormales = "",
+            .ColumnaHorasNormales = "",
+            .Conceptos = New List(Of NovedadesWizardSettingDetalle)
+        }
+        _setting.Add(configs)
+        Return configs
+    End Function
+
+    Public Sub GuardarConfiguraciones(configs As List(Of NovedadesWizardSetting))
+        Dim json As String = JsonConvert.SerializeObject(configs, Formatting.Indented)
+
+        My.Settings.NovedadesWizard = json
+        My.Settings.Save()
+    End Sub
+
+    Public Function CargarConfiguraciones() As List(Of NovedadesWizardSetting)
+        Dim json As String = My.Settings.NovedadesWizard
+
+        If String.IsNullOrWhiteSpace(json) Then
+            Return New List(Of NovedadesWizardSetting)()
+        End If
+
+        Return JsonConvert.DeserializeObject(Of List(Of NovedadesWizardSetting))(json)
+    End Function
 
     Public Overridable Property SelectedLiquidacion As Zenthia.AccesoDatos.TipoLiquidacion
     Public Sub OnSelectedLiquidacionChanged()
@@ -201,12 +261,33 @@ Partial Public Class wizardFormImportarNovedadesViewModel
                         Next
                     End Using
                     workbook.Close(False)
+                    VolcarLosDatosASettingYGuardar()
                 Catch ex As Exception
+                    'Lo agrego tambien aqui por si le di importar y el archivo estaba abierto daria un error.
+                    VolcarLosDatosASettingYGuardar()
                     Throw ex
                 End Try
             End Using
-
         End If
+    End Sub
+
+    Private Sub VolcarLosDatosASettingYGuardar()
+        Dim novedadSetting As NovedadesWizardSetting = _setting.Where(Function(s) s.IdConvenio = SelectedConvenio.Id And s.IdEmpresa = SelectedEmpresa.Id).FirstOrDefault()
+        If Not IsNothing(novedadSetting) Then
+            novedadSetting.RowInicio = RowInicio
+            novedadSetting.RowFin = RowFin
+            novedadSetting.ColumnaLegajo = ColumnaLegajo
+            novedadSetting.ColumnaDiasNormales = ColumnaDiasNormales
+            novedadSetting.ColumnaHorasNormales = ColumnaHorasNormales
+            For Each item As ConceptoNovedadColumna In conceptosColumnas
+                Dim concepto As NovedadesWizardSettingDetalle = novedadSetting.Conceptos.Where(Function(f) f.IdFormula = item.IdFormula).FirstOrDefault()
+                If Not IsNothing(concepto) Then
+                    concepto.ColumnaCantidad = item.ColumnaCantidad
+                    concepto.ColumnaImporte = item.ColumnaImporte
+                End If
+            Next
+        End If
+        Me.GuardarConfiguraciones(_setting)
     End Sub
 End Class
 

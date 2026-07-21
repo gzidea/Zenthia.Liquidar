@@ -1,4 +1,5 @@
 ﻿Imports System.ComponentModel
+Imports DevExpress.LookAndFeel
 Imports DevExpress.Mvvm
 Imports DevExpress.Utils.MVVM.Services
 
@@ -61,5 +62,15 @@ Public Class frmPrincipal
             bbiUsuariosControl.Caption = loginUser.Nombre
         End If
 
+    End Sub
+
+    Private Sub OnStyleChanged(sender As Object, e As EventArgs)
+        My.Settings.TemaSeleccionado = UserLookAndFeel.Default.ActiveSkinName
+        My.Settings.PaletaSeleccionada = UserLookAndFeel.Default.ActiveSvgPaletteName
+        My.Settings.Save()
+    End Sub
+
+    Private Sub frmPrincipal_Load(sender As Object, e As EventArgs) Handles Me.Load
+        AddHandler DevExpress.LookAndFeel.UserLookAndFeel.Default.StyleChanged, AddressOf OnStyleChanged
     End Sub
 End Class

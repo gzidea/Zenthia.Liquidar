@@ -167,40 +167,41 @@ Public Class LSDRegistro01ViewModel
                         If reg01.LSDRegistro03.Count > 0 AndAlso reg01.LSDRegistro03.Where(Function(x) x.CodigoConcepto = recibodetalle.Formulas.CodigoAfip.ToString() And x.CUIL = legajo.CUIL.Replace("-", "")).Count > 0 Then
                             reg01.LSDRegistro03.Where(Function(x) x.CodigoConcepto = recibodetalle.Formulas.CodigoAfip.ToString() And x.CUIL = legajo.CUIL.Replace("-", "")).FirstOrDefault().Importe += recibodetalle.Importe
                         Else
-                            Dim reg03 As New Zenthia.AccesoDatos.LSDRegistro03
-                            reg03.IdLSDRegistro01 = Me.Entity.Id
-                            reg03.CUIL = legajo.CUIL.Replace("-", "")
-                            If recibodetalle.Formulas.CodigoAfip.ToString() = "110000555" Then  'EN EL CASO DE GENERAR PARA LA QUINCENA POR LO PRONTO TENGO QUE POR CODIGO "110000"
-                                reg03.CodigoConcepto = "110000"
-                                reg03.Cantidad = 15
-                                reg03.Unidad = "D"
-                                reg03.Importe = recibodetalle.Importe
-                            ElseIf recibodetalle.Formulas.CodigoAfip.ToString() = "810002" Then 'ESTE LO RESOLVERIA AGREGNADO UN CONCEPTO QUE DE CALCULO AUXILIAR QUE NO SUME EN EL RECIBO PERO SE LO PUEDA TOMAR PARA ADICIONAR LA OS
-                                If reg01.IdEmpresa = 4 Then
-                                    reg03.CodigoConcepto = recibodetalle.Formulas.CodigoAfip.ToString()
+                            If recibodetalle.Formulas.Conceptos.ColumnaRecibo <> Entidades.enmColumnaRecivo.Contribuciones Then
+                                Dim reg03 As New Zenthia.AccesoDatos.LSDRegistro03
+                                reg03.IdLSDRegistro01 = Me.Entity.Id
+                                reg03.CUIL = legajo.CUIL.Replace("-", "")
+                                If recibodetalle.Formulas.CodigoAfip.ToString() = "110000555" Then  'EN EL CASO DE GENERAR PARA LA QUINCENA POR LO PRONTO TENGO QUE POR CODIGO "110000"
+                                    reg03.CodigoConcepto = "110000"
+                                    reg03.Cantidad = 15
+                                    reg03.Unidad = "D"
+                                    reg03.Importe = recibodetalle.Importe
+                                ElseIf recibodetalle.Formulas.CodigoAfip.ToString() = "810002" Then 'ESTE LO RESOLVERIA AGREGNADO UN CONCEPTO QUE DE CALCULO AUXILIAR QUE NO SUME EN EL RECIBO PERO SE LO PUEDA TOMAR PARA ADICIONAR LA OS
+                                    If reg01.IdEmpresa = 4 Then
+                                        reg03.CodigoConcepto = recibodetalle.Formulas.CodigoAfip.ToString()
+                                    Else
+                                        reg03.CodigoConcepto = recibodetalle.Formulas.Codigo.ToString()
+                                    End If
+                                    reg03.Cantidad = recibodetalle.Cantidad + legajo.Adherentes * 1.5
+                                    reg03.Unidad = recibodetalle.Formulas.Unidades.CodigoAfip
+                                    reg03.Importe = recibodetalle.Importe + (recibodetalle.Importe / 3) * legajo.Adherentes * 1.5
                                 Else
-                                    reg03.CodigoConcepto = recibodetalle.Formulas.Codigo.ToString()
+                                    If reg01.IdEmpresa = 4 Then
+                                        reg03.CodigoConcepto = recibodetalle.Formulas.CodigoAfip.ToString()
+                                    Else
+                                        reg03.CodigoConcepto = recibodetalle.Formulas.Codigo.ToString()
+                                    End If
+                                    reg03.Cantidad = recibodetalle.Cantidad
+                                    reg03.Unidad = recibodetalle.Formulas.Unidades.CodigoAfip
+                                    reg03.Importe = recibodetalle.Importe
                                 End If
-                                reg03.Cantidad = recibodetalle.Cantidad + legajo.Adherentes * 1.5
-                                reg03.Unidad = recibodetalle.Formulas.Unidades.CodigoAfip
-                                reg03.Importe = recibodetalle.Importe + (recibodetalle.Importe / 3) * legajo.Adherentes * 1.5
-                            Else
-                                If reg01.IdEmpresa = 4 Then
-                                    reg03.CodigoConcepto = recibodetalle.Formulas.CodigoAfip.ToString()
-                                Else
-                                    reg03.CodigoConcepto = recibodetalle.Formulas.Codigo.ToString()
+
+
+                                reg03.DebitoCredito = IIf(recibodetalle.Descuento <> 0, "D", "C").ToString()
+                                If reg03.Importe <> 0 Then 'ESTE CONTROL LO TENGO QUE RESOLVER POR QUE VAN A VER CONCEPTOS EN 0 MAS ADELANTE
+                                    reg01.LSDRegistro03.Add(reg03)
                                 End If
-                                reg03.Cantidad = recibodetalle.Cantidad
-                                reg03.Unidad = recibodetalle.Formulas.Unidades.CodigoAfip
-                                reg03.Importe = recibodetalle.Importe
                             End If
-
-
-                            reg03.DebitoCredito = IIf(recibodetalle.Descuento <> 0, "D", "C").ToString()
-                            If reg03.Importe <> 0 Then 'ESTE CONTROL LO TENGO QUE RESOLVER POR QUE VAN A VER CONCEPTOS EN 0 MAS ADELANTE
-                                reg01.LSDRegistro03.Add(reg03)
-                            End If
-
                         End If
                     Next
                 Else
@@ -294,11 +295,16 @@ Public Class LSDRegistro01ViewModel
             Next
             db.SaveChanges()
         End Using
-
+        Me.Entity.Generado = True
+        MyBase.Save()
+        Me.RaiseCanExecuteChanged(Sub(x) x.ExportarRegistrosTxt())
     End Sub
 
     Public Function CanGenerateReciboAndSave() As Boolean
-        Return (Me.Entity.Generado = False)
+        'Return (changedCustomPropertiesReg04 IsNot Nothing AndAlso changedCustomPropertiesReg04.Count > 0)
+        'changedCustomPropertiesReg03.Clear()
+        'changedCustomPropertiesReg02.Clear()
+        Return True
     End Function
 
     Public Overrides Sub Save()
@@ -318,13 +324,6 @@ Public Class LSDRegistro01ViewModel
         Me.RaiseCanExecuteChanged(Sub(x) x.Save())
     End Sub
 
-    Public Overrides Function CanSave() As Boolean
-        ''Return (Not changedCustomPropertiesReg04 Is Nothing AndAlso Not changedCustomPropertiesReg04.Count = 0) Or
-        ''    (Not changedCustomPropertiesReg03 Is Nothing AndAlso Not changedCustomPropertiesReg03.Count = 0) Or
-        ''    (Not changedCustomPropertiesReg02 Is Nothing AndAlso Not changedCustomPropertiesReg02.Count = 0)
-        Return True
-    End Function
-
     Public Overrides Sub Reset()
         'For Each item As Zenthia.AccesoDatos.LSDRegistro04 In changedCustomPropertiesReg04
         LSDRegistro04Details.Refresh()
@@ -336,6 +335,10 @@ Public Class LSDRegistro01ViewModel
         changedCustomPropertiesReg02.Clear()
         MyBase.Reset()
     End Sub
+
+    Public Function CanExportarRegistrosTxt() As Boolean
+        Return (Me.Entity.Generado = True)
+    End Function
 
     <Display(Name:="Exportar Registros")>
     Public Sub ExportarRegistrosTxt()
@@ -473,6 +476,9 @@ Public Class LSDRegistro01ViewModel
                     End If
                 Next
             End Using
+            Me.Entity.Exportado = True
+            MyBase.Save()
+            Me.RaiseCanExecuteChanged(Sub(x) x.RegistrarPago())
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -488,6 +494,10 @@ Public Class LSDRegistro01ViewModel
             Return Me.GetService(Of IMessageBoxService)()
         End Get
     End Property
+
+    Public Function CanRegistrarPago() As Boolean
+        Return (Me.Entity.Exportado = True)
+    End Function
 
     <Display(Name:="Registra el pago con la fecha y banco que se realizo")>
     Public Sub RegistrarPago()
@@ -505,8 +515,11 @@ Public Class LSDRegistro01ViewModel
             If IsNothing(registroPagoViewModel.FechaPago) Then
                 Return
             End If
-
+            Entity.FechaPago = registroPagoViewModel.FechaPago
+            Entity.IdBanco = registroPagoViewModel.IdBanco
+            MyBase.Save()
         End If
     End Sub
+
 
 End Class

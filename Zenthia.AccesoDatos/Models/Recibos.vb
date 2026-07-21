@@ -58,6 +58,11 @@ Partial Public Class Recibos
     <Column(TypeName:="money")>
     Public Property ImporteSeguro As Decimal?
 
+    <Column(TypeName:="datetime")>
+    Public Property FechaPagoAportes As Date?
+
+    Public Property BancoPagoAportes As String
+
     Public Overridable Property Empresas As Empresas
 
     Public Overridable Property Legajos As Legajos

@@ -117,6 +117,7 @@
     <Compile Include="Modelo.vb" />
     <Compile Include="Models\RecibosGruposCostos.vb" />
     <Compile Include="Models\RecibosPlantillas.vb" />
+    <Compile Include="Models\Reportes.vb" />
     <Compile Include="Models\TipoEmpresaAfip.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

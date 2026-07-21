@@ -1,7 +1,11 @@
 ﻿Imports System.Drawing.Printing
 Imports DevExpress.XtraCharts
 
-Public Class xrNuevoReciboDeSueldo
+Public Class xrReciboA4
+    Public Sub New()
+        InitializeComponent()
+    End Sub
+
     Private _detalleRemunYAportes As xrReciboRemunYAportes
     Private _detalleContribuciones As xrReciboContribuciones
     Private _resumenDeCostos As xrReciboResumenCostos
@@ -12,7 +16,7 @@ Public Class xrNuevoReciboDeSueldo
         End Get
         Set(value As xrReciboRemunYAportes)
             _detalleRemunYAportes = value
-            Me.xrSubReportRemunYAportes.ReportSource = value
+
         End Set
     End Property
 
@@ -22,7 +26,7 @@ Public Class xrNuevoReciboDeSueldo
         End Get
         Set(value As xrReciboContribuciones)
             _detalleContribuciones = value
-            Me.xrSubReportContribuciones.ReportSource = value
+
         End Set
     End Property
 
@@ -49,9 +53,13 @@ Public Class xrNuevoReciboDeSueldo
         fechaLarga = fechaTexto
     End Function
 
-    Private Sub Detail_BeforePrint(sender As Object, e As PrintEventArgs) Handles Detail.BeforePrint
+    'Private Sub ConfigurarAnchors()
+    '    xrSubReportRemunYAportes.WidthF = 2076.42 ' ej. 950
+    '    xrSubReportRemunYAportes.AnchorHorizontal = DevExpress.XtraReports.UI.HorizontalAnchorStyles.Both
 
-    End Sub
+    '    xrSubReportContribuciones.WidthF = 2076.42 ' ej. 950
+    '    xrSubReportContribuciones.AnchorHorizontal = DevExpress.XtraReports.UI.HorizontalAnchorStyles.Both
+    'End Sub
 
     Private Sub PageFooter_BeforePrint(sender As Object, e As PrintEventArgs) Handles PageFooter.BeforePrint
         Dim recibo As List(Of Zenthia.AccesoDatos.Recibos) = CType(Me.DataSource, List(Of Zenthia.AccesoDatos.Recibos))

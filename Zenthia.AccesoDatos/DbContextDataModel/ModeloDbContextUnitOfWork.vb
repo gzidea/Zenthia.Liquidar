@@ -291,6 +291,12 @@ Public Class ModeloDbContextUnitOfWork
         End Get
     End Property
 
+    Public ReadOnly Property Reportes As IRepository(Of Reportes, Integer) Implements IModeloDbContextUnitOfWork.Reportes
+        Get
+            Return GetRepository(Function(x) x.[Set](Of Reportes)(), Function(x As Reportes) x.Id)
+        End Get
+    End Property
+
     Public Function Dispose() As Object Implements IModeloDbContextUnitOfWork.Dispose
         Throw New NotImplementedException()
     End Function

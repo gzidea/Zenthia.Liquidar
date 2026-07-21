@@ -32,13 +32,6 @@ Partial Public Class xrNuevoReciboDeSueldo
         Me.TopMargin = New DevExpress.XtraReports.UI.TopMarginBand()
         Me.BottomMargin = New DevExpress.XtraReports.UI.BottomMarginBand()
         Me.Detail = New DevExpress.XtraReports.UI.DetailBand()
-        Me.xrSubReportResumenCostos = New DevExpress.XtraReports.UI.XRSubreport()
-        Me.XrTable2 = New DevExpress.XtraReports.UI.XRTable()
-        Me.XrTableRow5 = New DevExpress.XtraReports.UI.XRTableRow()
-        Me.XrTableCell25 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.XrLabel4 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrTableCell26 = New DevExpress.XtraReports.UI.XRTableCell()
-        Me.xrChartResumenDeCostos = New DevExpress.XtraReports.UI.XRChart()
         Me.ObjectDataSource1 = New DevExpress.DataAccess.ObjectBinding.ObjectDataSource(Me.components)
         Me.xrSubReportRemunYAportes = New DevExpress.XtraReports.UI.XRSubreport()
         Me.xrSubReportContribuciones = New DevExpress.XtraReports.UI.XRSubreport()
@@ -77,14 +70,21 @@ Partial Public Class xrNuevoReciboDeSueldo
         Me.XrLabel3 = New DevExpress.XtraReports.UI.XRLabel()
         Me.PageFooter = New DevExpress.XtraReports.UI.PageFooterBand()
         Me.XrControlStyle1 = New DevExpress.XtraReports.UI.XRControlStyle()
+        Me.XrTable2 = New DevExpress.XtraReports.UI.XRTable()
+        Me.XrTableRow5 = New DevExpress.XtraReports.UI.XRTableRow()
+        Me.XrTableCell25 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrLabel4 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrTableCell26 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.xrChartResumenDeCostos = New DevExpress.XtraReports.UI.XRChart()
+        Me.xrSubReportResumenCostos = New DevExpress.XtraReports.UI.XRSubreport()
+        CType(Me.ObjectDataSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.xrChartResumenDeCostos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(SimpleDiagram1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Series1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(PieSeriesLabel1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(PieSeriesView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ObjectDataSource1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'TopMargin
@@ -96,127 +96,16 @@ Partial Public Class xrNuevoReciboDeSueldo
         'BottomMargin
         '
         Me.BottomMargin.Dpi = 254.0!
-        Me.BottomMargin.HeightF = 177.9979!
+        Me.BottomMargin.HeightF = 181.8956!
         Me.BottomMargin.Name = "BottomMargin"
         '
         'Detail
         '
-        Me.Detail.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.xrSubReportResumenCostos, Me.XrTable2, Me.xrSubReportRemunYAportes, Me.xrSubReportContribuciones})
+        Me.Detail.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.xrSubReportRemunYAportes, Me.xrSubReportContribuciones})
         Me.Detail.Dpi = 254.0!
-        Me.Detail.HeightF = 648.0227!
+        Me.Detail.HeightF = 110.4835!
         Me.Detail.HierarchyPrintOptions.Indent = 50.8!
         Me.Detail.Name = "Detail"
-        '
-        'xrSubReportResumenCostos
-        '
-        Me.xrSubReportResumenCostos.Dpi = 254.0!
-        Me.xrSubReportResumenCostos.LocationFloat = New DevExpress.Utils.PointFloat(13.58329!, 120.4835!)
-        Me.xrSubReportResumenCostos.Name = "xrSubReportResumenCostos"
-        Me.xrSubReportResumenCostos.ReportSource = New Zenthia.LiquidAR.Win.xrReciboResumenCostos()
-        Me.xrSubReportResumenCostos.SizeF = New System.Drawing.SizeF(1276.414!, 473.1013!)
-        '
-        'XrTable2
-        '
-        Me.XrTable2.BorderColor = System.Drawing.Color.FromArgb(CType(CType(216, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.XrTable2.BorderWidth = 0.5!
-        Me.XrTable2.Dpi = 254.0!
-        Me.XrTable2.LocationFloat = New DevExpress.Utils.PointFloat(10.0!, 115.4835!)
-        Me.XrTable2.Name = "XrTable2"
-        Me.XrTable2.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
-        Me.XrTable2.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow5})
-        Me.XrTable2.SizeF = New System.Drawing.SizeF(1833.0!, 526.5208!)
-        Me.XrTable2.StylePriority.UseBorderColor = False
-        Me.XrTable2.StylePriority.UseBorderWidth = False
-        '
-        'XrTableRow5
-        '
-        Me.XrTableRow5.Borders = CType((((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Top) _
-            Or DevExpress.XtraPrinting.BorderSide.Right) _
-            Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
-        Me.XrTableRow5.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell25, Me.XrTableCell26})
-        Me.XrTableRow5.Dpi = 254.0!
-        Me.XrTableRow5.Name = "XrTableRow5"
-        Me.XrTableRow5.StylePriority.UseBorders = False
-        Me.XrTableRow5.Weight = 1.0R
-        '
-        'XrTableCell25
-        '
-        Me.XrTableCell25.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel4})
-        Me.XrTableCell25.Dpi = 254.0!
-        Me.XrTableCell25.Multiline = True
-        Me.XrTableCell25.Name = "XrTableCell25"
-        Me.XrTableCell25.Text = "XrTableCell25"
-        Me.XrTableCell25.Weight = 2.1574699571669469R
-        '
-        'XrLabel4
-        '
-        Me.XrLabel4.Borders = DevExpress.XtraPrinting.BorderSide.None
-        Me.XrLabel4.Dpi = 254.0!
-        Me.XrLabel4.Font = New System.Drawing.Font("Arial", 6.0!)
-        Me.XrLabel4.LocationFloat = New DevExpress.Utils.PointFloat(0!, 476.1012!)
-        Me.XrLabel4.Multiline = True
-        Me.XrLabel4.Name = "XrLabel4"
-        Me.XrLabel4.Padding = New DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254.0!)
-        Me.XrLabel4.SizeF = New System.Drawing.SizeF(1279.997!, 44.979!)
-        Me.XrLabel4.StylePriority.UseBorders = False
-        Me.XrLabel4.StylePriority.UseFont = False
-        Me.XrLabel4.StylePriority.UseTextAlignment = False
-        Me.XrLabel4.Text = "Nota: Los valores pueden cambiar segun la CCT"
-        Me.XrLabel4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        '
-        'XrTableCell26
-        '
-        Me.XrTableCell26.BorderWidth = 0.5!
-        Me.XrTableCell26.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.xrChartResumenDeCostos})
-        Me.XrTableCell26.Dpi = 254.0!
-        Me.XrTableCell26.Multiline = True
-        Me.XrTableCell26.Name = "XrTableCell26"
-        Me.XrTableCell26.StylePriority.UseBorderWidth = False
-        Me.XrTableCell26.Text = "XrTableCell26"
-        Me.XrTableCell26.Weight = 0.91299486224944426R
-        '
-        'xrChartResumenDeCostos
-        '
-        Me.xrChartResumenDeCostos.BackColor = System.Drawing.Color.Transparent
-        Me.xrChartResumenDeCostos.BorderColor = System.Drawing.Color.FromArgb(CType(CType(216, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.xrChartResumenDeCostos.Borders = DevExpress.XtraPrinting.BorderSide.None
-        Me.xrChartResumenDeCostos.BorderWidth = 0.5!
-        Me.xrChartResumenDeCostos.DataSource = Me.ObjectDataSource1
-        SimpleDiagram1.LayoutDirection = DevExpress.XtraCharts.LayoutDirection.Vertical
-        Me.xrChartResumenDeCostos.Diagram = SimpleDiagram1
-        Me.xrChartResumenDeCostos.Dpi = 254.0!
-        Me.xrChartResumenDeCostos.Legend.AlignmentHorizontal = DevExpress.XtraCharts.LegendAlignmentHorizontal.Center
-        Me.xrChartResumenDeCostos.Legend.AlignmentVertical = DevExpress.XtraCharts.LegendAlignmentVertical.BottomOutside
-        Me.xrChartResumenDeCostos.Legend.Border.Visibility = DevExpress.Utils.DefaultBoolean.[False]
-        Me.xrChartResumenDeCostos.Legend.Direction = DevExpress.XtraCharts.LegendDirection.RightToLeft
-        Me.xrChartResumenDeCostos.Legend.Font = New System.Drawing.Font("Tahoma", 5.0!)
-        Me.xrChartResumenDeCostos.Legend.Margins.Bottom = 0
-        Me.xrChartResumenDeCostos.Legend.Margins.Left = 0
-        Me.xrChartResumenDeCostos.Legend.Margins.Right = 0
-        Me.xrChartResumenDeCostos.Legend.Margins.Top = 0
-        Me.xrChartResumenDeCostos.Legend.MarkerSize = New System.Drawing.Size(8, 8)
-        Me.xrChartResumenDeCostos.Legend.Name = "Default Legend"
-        Me.xrChartResumenDeCostos.Legend.TextColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(162, Byte), Integer))
-        Me.xrChartResumenDeCostos.Legend.VerticalIndent = 1
-        Me.xrChartResumenDeCostos.Legend.Visibility = DevExpress.Utils.DefaultBoolean.[True]
-        Me.xrChartResumenDeCostos.LocationFloat = New DevExpress.Utils.PointFloat(0!, 4.999992!)
-        Me.xrChartResumenDeCostos.Name = "xrChartResumenDeCostos"
-        PieSeriesLabel1.Position = DevExpress.XtraCharts.PieSeriesLabelPosition.Radial
-        PieSeriesLabel1.TextPattern = "{V}%"
-        Series1.Label = PieSeriesLabel1
-        Series1.LabelsVisibility = DevExpress.Utils.DefaultBoolean.[True]
-        Series1.Name = "Serie1"
-        Series1.Points.AddRange(New DevExpress.XtraCharts.SeriesPoint() {SeriesPoint1, SeriesPoint2, SeriesPoint3, SeriesPoint4})
-        Series1.View = PieSeriesView1
-        Me.xrChartResumenDeCostos.SeriesSerializable = New DevExpress.XtraCharts.Series() {Series1}
-        Me.xrChartResumenDeCostos.SizeF = New System.Drawing.SizeF(537.0378!, 516.0803!)
-        Me.xrChartResumenDeCostos.StylePriority.UseBackColor = False
-        Me.xrChartResumenDeCostos.StylePriority.UseBorderColor = False
-        Me.xrChartResumenDeCostos.StylePriority.UseBorders = False
-        Me.xrChartResumenDeCostos.StylePriority.UseBorderWidth = False
-        ChartTitle1.Font = New System.Drawing.Font("Tahoma", 10.0!)
-        ChartTitle1.Text = "Costo total Empleador"
-        Me.xrChartResumenDeCostos.Titles.AddRange(New DevExpress.XtraCharts.ChartTitle() {ChartTitle1})
         '
         'ObjectDataSource1
         '
@@ -496,6 +385,7 @@ Partial Public Class xrNuevoReciboDeSueldo
         'XrTableCell22
         '
         Me.XrTableCell22.Dpi = 254.0!
+        Me.XrTableCell22.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[BancoPagoAportes]")})
         Me.XrTableCell22.Multiline = True
         Me.XrTableCell22.Name = "XrTableCell22"
         Me.XrTableCell22.Weight = 0.52284433803012276R
@@ -503,9 +393,9 @@ Partial Public Class xrNuevoReciboDeSueldo
         'XrTableCell23
         '
         Me.XrTableCell23.Dpi = 254.0!
+        Me.XrTableCell23.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[FechaPagoAportes]")})
         Me.XrTableCell23.Multiline = True
         Me.XrTableCell23.Name = "XrTableCell23"
-        Me.XrTableCell23.Text = "XrTableCell23"
         Me.XrTableCell23.Weight = 0.58108480359510462R
         '
         'XrLabel1
@@ -553,13 +443,125 @@ Partial Public Class xrNuevoReciboDeSueldo
         '
         'PageFooter
         '
+        Me.PageFooter.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.xrSubReportResumenCostos, Me.XrTable2})
         Me.PageFooter.Dpi = 254.0!
-        Me.PageFooter.HeightF = 0!
+        Me.PageFooter.HeightF = 526.5208!
         Me.PageFooter.Name = "PageFooter"
         '
         'XrControlStyle1
         '
         Me.XrControlStyle1.Name = "XrControlStyle1"
+        '
+        'XrTable2
+        '
+        Me.XrTable2.BorderColor = System.Drawing.Color.FromArgb(CType(CType(216, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(223, Byte), Integer))
+        Me.XrTable2.BorderWidth = 0.5!
+        Me.XrTable2.Dpi = 254.0!
+        Me.XrTable2.LocationFloat = New DevExpress.Utils.PointFloat(10.0!, 0!)
+        Me.XrTable2.Name = "XrTable2"
+        Me.XrTable2.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
+        Me.XrTable2.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow5})
+        Me.XrTable2.SizeF = New System.Drawing.SizeF(1833.0!, 526.5208!)
+        Me.XrTable2.StylePriority.UseBorderColor = False
+        Me.XrTable2.StylePriority.UseBorderWidth = False
+        '
+        'XrTableRow5
+        '
+        Me.XrTableRow5.Borders = CType((((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Top) _
+            Or DevExpress.XtraPrinting.BorderSide.Right) _
+            Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
+        Me.XrTableRow5.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell25, Me.XrTableCell26})
+        Me.XrTableRow5.Dpi = 254.0!
+        Me.XrTableRow5.Name = "XrTableRow5"
+        Me.XrTableRow5.StylePriority.UseBorders = False
+        Me.XrTableRow5.Weight = 1.0R
+        '
+        'XrTableCell25
+        '
+        Me.XrTableCell25.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel4})
+        Me.XrTableCell25.Dpi = 254.0!
+        Me.XrTableCell25.Multiline = True
+        Me.XrTableCell25.Name = "XrTableCell25"
+        Me.XrTableCell25.Text = "XrTableCell25"
+        Me.XrTableCell25.Weight = 2.1574699571669469R
+        '
+        'XrLabel4
+        '
+        Me.XrLabel4.Borders = DevExpress.XtraPrinting.BorderSide.None
+        Me.XrLabel4.Dpi = 254.0!
+        Me.XrLabel4.Font = New System.Drawing.Font("Arial", 6.0!)
+        Me.XrLabel4.LocationFloat = New DevExpress.Utils.PointFloat(3.0!, 476.1012!)
+        Me.XrLabel4.Multiline = True
+        Me.XrLabel4.Name = "XrLabel4"
+        Me.XrLabel4.Padding = New DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254.0!)
+        Me.XrLabel4.SizeF = New System.Drawing.SizeF(1279.997!, 44.979!)
+        Me.XrLabel4.StylePriority.UseBorders = False
+        Me.XrLabel4.StylePriority.UseFont = False
+        Me.XrLabel4.StylePriority.UseTextAlignment = False
+        Me.XrLabel4.Text = "Nota: Los valores pueden cambiar segun la CCT"
+        Me.XrLabel4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        '
+        'XrTableCell26
+        '
+        Me.XrTableCell26.BorderWidth = 0.5!
+        Me.XrTableCell26.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.xrChartResumenDeCostos})
+        Me.XrTableCell26.Dpi = 254.0!
+        Me.XrTableCell26.Multiline = True
+        Me.XrTableCell26.Name = "XrTableCell26"
+        Me.XrTableCell26.StylePriority.UseBorderWidth = False
+        Me.XrTableCell26.Text = "XrTableCell26"
+        Me.XrTableCell26.Weight = 0.91299486224944426R
+        '
+        'xrChartResumenDeCostos
+        '
+        Me.xrChartResumenDeCostos.BackColor = System.Drawing.Color.Transparent
+        Me.xrChartResumenDeCostos.BorderColor = System.Drawing.Color.FromArgb(CType(CType(216, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(223, Byte), Integer))
+        Me.xrChartResumenDeCostos.Borders = DevExpress.XtraPrinting.BorderSide.None
+        Me.xrChartResumenDeCostos.BorderWidth = 0.5!
+        Me.xrChartResumenDeCostos.DataSource = Me.ObjectDataSource1
+        SimpleDiagram1.LayoutDirection = DevExpress.XtraCharts.LayoutDirection.Vertical
+        Me.xrChartResumenDeCostos.Diagram = SimpleDiagram1
+        Me.xrChartResumenDeCostos.Dpi = 254.0!
+        Me.xrChartResumenDeCostos.Legend.AlignmentHorizontal = DevExpress.XtraCharts.LegendAlignmentHorizontal.Center
+        Me.xrChartResumenDeCostos.Legend.AlignmentVertical = DevExpress.XtraCharts.LegendAlignmentVertical.BottomOutside
+        Me.xrChartResumenDeCostos.Legend.Border.Visibility = DevExpress.Utils.DefaultBoolean.[False]
+        Me.xrChartResumenDeCostos.Legend.Direction = DevExpress.XtraCharts.LegendDirection.RightToLeft
+        Me.xrChartResumenDeCostos.Legend.Font = New System.Drawing.Font("Tahoma", 5.0!)
+        Me.xrChartResumenDeCostos.Legend.Margins.Bottom = 0
+        Me.xrChartResumenDeCostos.Legend.Margins.Left = 0
+        Me.xrChartResumenDeCostos.Legend.Margins.Right = 0
+        Me.xrChartResumenDeCostos.Legend.Margins.Top = 0
+        Me.xrChartResumenDeCostos.Legend.MarkerSize = New System.Drawing.Size(8, 8)
+        Me.xrChartResumenDeCostos.Legend.Name = "Default Legend"
+        Me.xrChartResumenDeCostos.Legend.TextColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(162, Byte), Integer))
+        Me.xrChartResumenDeCostos.Legend.VerticalIndent = 1
+        Me.xrChartResumenDeCostos.Legend.Visibility = DevExpress.Utils.DefaultBoolean.[True]
+        Me.xrChartResumenDeCostos.LocationFloat = New DevExpress.Utils.PointFloat(0!, 4.999992!)
+        Me.xrChartResumenDeCostos.Name = "xrChartResumenDeCostos"
+        PieSeriesLabel1.Position = DevExpress.XtraCharts.PieSeriesLabelPosition.Radial
+        PieSeriesLabel1.TextPattern = "{V}%"
+        Series1.Label = PieSeriesLabel1
+        Series1.LabelsVisibility = DevExpress.Utils.DefaultBoolean.[True]
+        Series1.Name = "Serie1"
+        Series1.Points.AddRange(New DevExpress.XtraCharts.SeriesPoint() {SeriesPoint1, SeriesPoint2, SeriesPoint3, SeriesPoint4})
+        Series1.View = PieSeriesView1
+        Me.xrChartResumenDeCostos.SeriesSerializable = New DevExpress.XtraCharts.Series() {Series1}
+        Me.xrChartResumenDeCostos.SizeF = New System.Drawing.SizeF(537.0378!, 516.0803!)
+        Me.xrChartResumenDeCostos.StylePriority.UseBackColor = False
+        Me.xrChartResumenDeCostos.StylePriority.UseBorderColor = False
+        Me.xrChartResumenDeCostos.StylePriority.UseBorders = False
+        Me.xrChartResumenDeCostos.StylePriority.UseBorderWidth = False
+        ChartTitle1.Font = New System.Drawing.Font("Tahoma", 10.0!)
+        ChartTitle1.Text = "Costo total Empleador"
+        Me.xrChartResumenDeCostos.Titles.AddRange(New DevExpress.XtraCharts.ChartTitle() {ChartTitle1})
+        '
+        'xrSubReportResumenCostos
+        '
+        Me.xrSubReportResumenCostos.Dpi = 254.0!
+        Me.xrSubReportResumenCostos.LocationFloat = New DevExpress.Utils.PointFloat(13.58329!, 4.419525!)
+        Me.xrSubReportResumenCostos.Name = "xrSubReportResumenCostos"
+        Me.xrSubReportResumenCostos.ReportSource = New Zenthia.LiquidAR.Win.xrReciboResumenCostos()
+        Me.xrSubReportResumenCostos.SizeF = New System.Drawing.SizeF(1276.414!, 473.1013!)
         '
         'xrNuevoReciboDeSueldo
         '
@@ -568,7 +570,7 @@ Partial Public Class xrNuevoReciboDeSueldo
         Me.DataSource = Me.ObjectDataSource1
         Me.Dpi = 254.0!
         Me.Font = New System.Drawing.Font("Arial", 9.75!)
-        Me.Margins = New System.Drawing.Printing.Margins(0, 0, 0, 178)
+        Me.Margins = New System.Drawing.Printing.Margins(0, 0, 0, 182)
         Me.PageHeight = 3100
         Me.PageWidth = 1860
         Me.PaperKind = System.Drawing.Printing.PaperKind.Custom
@@ -576,14 +578,14 @@ Partial Public Class xrNuevoReciboDeSueldo
         Me.SnapGridSize = 25.0!
         Me.StyleSheet.AddRange(New DevExpress.XtraReports.UI.XRControlStyle() {Me.XrControlStyle1})
         Me.Version = "20.1"
+        CType(Me.ObjectDataSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(SimpleDiagram1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(PieSeriesLabel1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(PieSeriesView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Series1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.xrChartResumenDeCostos, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ObjectDataSource1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
     End Sub

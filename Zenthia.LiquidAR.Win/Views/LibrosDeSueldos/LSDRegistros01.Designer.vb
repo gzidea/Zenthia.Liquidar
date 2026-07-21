@@ -46,6 +46,9 @@ Partial Class LSDRegistros01
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.mvvmContext = New DevExpress.Utils.MVVM.MVVMContext(Me.components)
         Me.popupMenu = New DevExpress.XtraBars.PopupMenu(Me.components)
+        Me.colExportado = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colFechaPago = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colBanco = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.gridControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LSDRegistro01BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -72,7 +75,7 @@ Partial Class LSDRegistros01
         '
         'gridView
         '
-        Me.gridView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colId, Me.colIdEmpresa, Me.colEmpresas, Me.colEmpresas1, Me.colIdIdentificacionEnvio, Me.colIdentificacionEnvio, Me.colPeriodo, Me.colIdTipoLiquidacion, Me.colTipoLiquidacion, Me.colNumeroDeLiquidacion, Me.colDiasBases, Me.colCantidadDeRegistros04, Me.colGenerado})
+        Me.gridView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colId, Me.colIdEmpresa, Me.colEmpresas, Me.colEmpresas1, Me.colIdIdentificacionEnvio, Me.colIdentificacionEnvio, Me.colPeriodo, Me.colIdTipoLiquidacion, Me.colTipoLiquidacion, Me.colNumeroDeLiquidacion, Me.colDiasBases, Me.colCantidadDeRegistros04, Me.colGenerado, Me.colExportado, Me.colFechaPago, Me.colBanco})
         Me.gridView.GridControl = Me.gridControl
         Me.gridView.Name = "gridView"
         Me.gridView.OptionsBehavior.Editable = False
@@ -158,6 +161,8 @@ Partial Class LSDRegistros01
         '
         Me.colGenerado.FieldName = "Generado"
         Me.colGenerado.Name = "colGenerado"
+        Me.colGenerado.OptionsColumn.AllowEdit = False
+        Me.colGenerado.OptionsColumn.ReadOnly = True
         Me.colGenerado.Visible = True
         Me.colGenerado.VisibleIndex = 8
         '
@@ -237,6 +242,37 @@ Partial Class LSDRegistros01
         Me.popupMenu.Name = "popupMenu"
         Me.popupMenu.Ribbon = Me.ribbonControl
         '
+        'colExportado
+        '
+        Me.colExportado.FieldName = "Exportado"
+        Me.colExportado.Name = "colExportado"
+        Me.colExportado.OptionsColumn.AllowEdit = False
+        Me.colExportado.OptionsColumn.ReadOnly = True
+        Me.colExportado.Visible = True
+        Me.colExportado.VisibleIndex = 9
+        '
+        'colFechaPago
+        '
+        Me.colFechaPago.Caption = "Fecha de Pago"
+        Me.colFechaPago.DisplayFormat.FormatString = "d"
+        Me.colFechaPago.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        Me.colFechaPago.FieldName = "FechaPago"
+        Me.colFechaPago.Name = "colFechaPago"
+        Me.colFechaPago.OptionsColumn.AllowEdit = False
+        Me.colFechaPago.OptionsColumn.ReadOnly = True
+        Me.colFechaPago.Visible = True
+        Me.colFechaPago.VisibleIndex = 10
+        '
+        'colBanco
+        '
+        Me.colBanco.Caption = "Banco"
+        Me.colBanco.FieldName = "Banco.Abreviacion"
+        Me.colBanco.Name = "colBanco"
+        Me.colBanco.OptionsColumn.AllowEdit = False
+        Me.colBanco.OptionsColumn.ReadOnly = True
+        Me.colBanco.Visible = True
+        Me.colBanco.VisibleIndex = 11
+        '
         'LSDRegistros01
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -282,4 +318,7 @@ Partial Class LSDRegistros01
     Friend WithEvents colIdentificacionEnvio As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colTipoLiquidacion As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colEmpresas1 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colExportado As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colFechaPago As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colBanco As DevExpress.XtraGrid.Columns.GridColumn
 End Class

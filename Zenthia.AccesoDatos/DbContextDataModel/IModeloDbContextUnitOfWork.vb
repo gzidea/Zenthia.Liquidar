@@ -176,6 +176,11 @@ Public Interface IModeloDbContextUnitOfWork
     ''' </summary>
     ReadOnly Property GruposCostos As IRepository(Of GruposCostos, Integer)
 
+    ''' <summary>
+    ''' El repositorio de Rportes.
+    ''' </summary>
+    ReadOnly Property Reportes As IRepository(Of Reportes, Integer)
+
 #Region "Modulo de Seguridad"
     ''' <summary>
     ''' El repositorio de Usuarios

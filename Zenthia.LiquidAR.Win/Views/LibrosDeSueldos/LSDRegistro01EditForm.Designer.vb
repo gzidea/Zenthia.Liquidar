@@ -20,6 +20,7 @@ Partial Class LSDRegistro01EditForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LSDRegistro01EditForm))
         Me.RibbonStatusBar1 = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
         Me.bsiEstado = New DevExpress.XtraBars.BarStaticItem()
         Me.ribbonControl = New DevExpress.XtraBars.Ribbon.RibbonControl()
@@ -34,12 +35,14 @@ Partial Class LSDRegistro01EditForm
         Me.bbiPersonalizarLayer = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiGenerarRegistros = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiExportar = New DevExpress.XtraBars.BarButtonItem()
+        Me.bbiRegistrarPago = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup3 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup4 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.ribbonPageGroupOpciones = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.RibbonPageGroup5 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.mvvmContext = New DevExpress.Utils.MVVM.MVVMContext(Me.components)
         Me.layoutControl = New DevExpress.XtraLayout.LayoutControl()
         Me.gridControlReg04 = New DevExpress.XtraGrid.GridControl()
@@ -129,7 +132,6 @@ Partial Class LSDRegistro01EditForm
         Me.colCodigosDeModalidadDeContratacion = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colCodigosDeSiniestrados = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colCodigosDeLocalidades = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.gridControlReg03 = New DevExpress.XtraGrid.GridControl()
         Me.LSDRegistro03BindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.gridViewReg03 = New DevExpress.XtraGrid.Views.Grid.GridView()
@@ -173,6 +175,8 @@ Partial Class LSDRegistro01EditForm
         Me.colClaveUnica = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colNombre = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.PeriodoTextEdit = New DevExpress.XtraEditors.TextEdit()
+        Me.TextEdit1 = New DevExpress.XtraEditors.TextEdit()
+        Me.TextEdit2 = New DevExpress.XtraEditors.TextEdit()
         Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
@@ -190,9 +194,11 @@ Partial Class LSDRegistro01EditForm
         Me.LayoutControlItem11 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem2 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.SimpleSeparator1 = New DevExpress.XtraLayout.SimpleSeparator()
-        Me.LayoutControlItem10 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.RibbonPageGroup5 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-        Me.bbiRegistrarPago = New DevExpress.XtraBars.BarButtonItem()
+        Me.LayoutControlItem12 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.EmptySpaceItem3 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.LayoutControlItem13 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.EmptySpaceItem6 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.EmptySpaceItem4 = New DevExpress.XtraLayout.EmptySpaceItem()
         CType(Me.ribbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.mvvmContext, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.layoutControl, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -238,6 +244,8 @@ Partial Class LSDRegistro01EditForm
         CType(Me.EmpresasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.IdEmpresaSearchLookUpEditView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PeriodoTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -255,7 +263,11 @@ Partial Class LSDRegistro01EditForm
         CType(Me.LayoutControlItem11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SimpleSeparator1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem10, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmptySpaceItem3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem13, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmptySpaceItem6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmptySpaceItem4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RibbonStatusBar1
@@ -353,13 +365,23 @@ Partial Class LSDRegistro01EditForm
         '
         Me.bbiGenerarRegistros.Caption = "Generar"
         Me.bbiGenerarRegistros.Id = 11
+        Me.bbiGenerarRegistros.ImageOptions.Image = Global.Zenthia.LiquidAR.Win.My.Resources.Resources.next_16x16
+        Me.bbiGenerarRegistros.ImageOptions.LargeImage = Global.Zenthia.LiquidAR.Win.My.Resources.Resources.next_32x32
         Me.bbiGenerarRegistros.Name = "bbiGenerarRegistros"
         '
         'bbiExportar
         '
         Me.bbiExportar.Caption = "Exportar"
         Me.bbiExportar.Id = 12
+        Me.bbiExportar.ImageOptions.SvgImage = CType(resources.GetObject("bbiExportar.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
         Me.bbiExportar.Name = "bbiExportar"
+        '
+        'bbiRegistrarPago
+        '
+        Me.bbiRegistrarPago.Caption = "Registrar Pago"
+        Me.bbiRegistrarPago.Id = 13
+        Me.bbiRegistrarPago.ImageOptions.SvgImage = CType(resources.GetObject("bbiRegistrarPago.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
+        Me.bbiRegistrarPago.Name = "bbiRegistrarPago"
         '
         'RibbonPage1
         '
@@ -395,12 +417,18 @@ Partial Class LSDRegistro01EditForm
         Me.RibbonPageGroup4.ItemLinks.Add(Me.bbiResetLayout)
         Me.RibbonPageGroup4.Name = "RibbonPageGroup4"
         Me.RibbonPageGroup4.Text = "Layer"
+        Me.RibbonPageGroup4.Visible = False
         '
         'ribbonPageGroupOpciones
         '
         Me.ribbonPageGroupOpciones.ItemLinks.Add(Me.bbiGenerarRegistros)
         Me.ribbonPageGroupOpciones.ItemLinks.Add(Me.bbiExportar)
         Me.ribbonPageGroupOpciones.Name = "ribbonPageGroupOpciones"
+        '
+        'RibbonPageGroup5
+        '
+        Me.RibbonPageGroup5.ItemLinks.Add(Me.bbiRegistrarPago)
+        Me.RibbonPageGroup5.Name = "RibbonPageGroup5"
         '
         'mvvmContext
         '
@@ -411,7 +439,6 @@ Partial Class LSDRegistro01EditForm
         'layoutControl
         '
         Me.layoutControl.Controls.Add(Me.gridControlReg04)
-        Me.layoutControl.Controls.Add(Me.SimpleButton1)
         Me.layoutControl.Controls.Add(Me.gridControlReg03)
         Me.layoutControl.Controls.Add(Me.gridControlReg02)
         Me.layoutControl.Controls.Add(Me.CantidadDeRegistros04SpinEdit)
@@ -421,6 +448,8 @@ Partial Class LSDRegistro01EditForm
         Me.layoutControl.Controls.Add(Me.IdIdentificacionEnvioSearchLookUpEdit)
         Me.layoutControl.Controls.Add(Me.IdEmpresaSearchLookUpEdit)
         Me.layoutControl.Controls.Add(Me.PeriodoTextEdit)
+        Me.layoutControl.Controls.Add(Me.TextEdit1)
+        Me.layoutControl.Controls.Add(Me.TextEdit2)
         Me.layoutControl.Dock = System.Windows.Forms.DockStyle.Fill
         Me.layoutControl.Location = New System.Drawing.Point(5, 105)
         Me.layoutControl.Name = "layoutControl"
@@ -438,7 +467,7 @@ Partial Class LSDRegistro01EditForm
         Me.gridControlReg04.MenuManager = Me.ribbonControl
         Me.gridControlReg04.Name = "gridControlReg04"
         Me.gridControlReg04.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.rislueCodigoSituacion, Me.rislueCondicion, Me.RepositoryItemSearchLookUpEdit1, Me.rislueModalidadContratacion, Me.rislueCodigoSieniestro, Me.rislueCodigosLocalidades})
-        Me.gridControlReg04.Size = New System.Drawing.Size(1140, 321)
+        Me.gridControlReg04.Size = New System.Drawing.Size(1140, 347)
         Me.gridControlReg04.TabIndex = 15
         Me.gridControlReg04.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridViewReg04})
         '
@@ -1098,15 +1127,6 @@ Partial Class LSDRegistro01EditForm
         Me.colCodigosDeLocalidades.Name = "colCodigosDeLocalidades"
         Me.colCodigosDeLocalidades.Width = 135
         '
-        'SimpleButton1
-        '
-        Me.SimpleButton1.Location = New System.Drawing.Point(12, 561)
-        Me.SimpleButton1.Name = "SimpleButton1"
-        Me.SimpleButton1.Size = New System.Drawing.Size(1164, 22)
-        Me.SimpleButton1.StyleController = Me.layoutControl
-        Me.SimpleButton1.TabIndex = 14
-        Me.SimpleButton1.Text = "SimpleButton1"
-        '
         'gridControlReg03
         '
         Me.gridControlReg03.DataSource = Me.LSDRegistro03BindingSource
@@ -1114,7 +1134,7 @@ Partial Class LSDRegistro01EditForm
         Me.gridControlReg03.MainView = Me.gridViewReg03
         Me.gridControlReg03.MenuManager = Me.ribbonControl
         Me.gridControlReg03.Name = "gridControlReg03"
-        Me.gridControlReg03.Size = New System.Drawing.Size(1140, 321)
+        Me.gridControlReg03.Size = New System.Drawing.Size(1140, 347)
         Me.gridControlReg03.TabIndex = 13
         Me.gridControlReg03.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridViewReg03})
         '
@@ -1203,7 +1223,7 @@ Partial Class LSDRegistro01EditForm
         Me.gridControlReg02.MainView = Me.gridViewReg02
         Me.gridControlReg02.MenuManager = Me.ribbonControl
         Me.gridControlReg02.Name = "gridControlReg02"
-        Me.gridControlReg02.Size = New System.Drawing.Size(1140, 321)
+        Me.gridControlReg02.Size = New System.Drawing.Size(1140, 347)
         Me.gridControlReg02.TabIndex = 12
         Me.gridControlReg02.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridViewReg02})
         '
@@ -1296,7 +1316,7 @@ Partial Class LSDRegistro01EditForm
         Me.CantidadDeRegistros04SpinEdit.MenuManager = Me.ribbonControl
         Me.CantidadDeRegistros04SpinEdit.Name = "CantidadDeRegistros04SpinEdit"
         Me.CantidadDeRegistros04SpinEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.CantidadDeRegistros04SpinEdit.Size = New System.Drawing.Size(606, 20)
+        Me.CantidadDeRegistros04SpinEdit.Size = New System.Drawing.Size(595, 20)
         Me.CantidadDeRegistros04SpinEdit.StyleController = Me.layoutControl
         Me.CantidadDeRegistros04SpinEdit.TabIndex = 11
         '
@@ -1312,7 +1332,7 @@ Partial Class LSDRegistro01EditForm
         Me.DiasBasesSpinEdit.MenuManager = Me.ribbonControl
         Me.DiasBasesSpinEdit.Name = "DiasBasesSpinEdit"
         Me.DiasBasesSpinEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.DiasBasesSpinEdit.Size = New System.Drawing.Size(606, 20)
+        Me.DiasBasesSpinEdit.Size = New System.Drawing.Size(595, 20)
         Me.DiasBasesSpinEdit.StyleController = Me.layoutControl
         Me.DiasBasesSpinEdit.TabIndex = 10
         '
@@ -1324,7 +1344,7 @@ Partial Class LSDRegistro01EditForm
         Me.NumeroDeLiquidacionSpinEdit.MenuManager = Me.ribbonControl
         Me.NumeroDeLiquidacionSpinEdit.Name = "NumeroDeLiquidacionSpinEdit"
         Me.NumeroDeLiquidacionSpinEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.NumeroDeLiquidacionSpinEdit.Size = New System.Drawing.Size(606, 20)
+        Me.NumeroDeLiquidacionSpinEdit.Size = New System.Drawing.Size(595, 20)
         Me.NumeroDeLiquidacionSpinEdit.StyleController = Me.layoutControl
         Me.NumeroDeLiquidacionSpinEdit.TabIndex = 9
         '
@@ -1339,7 +1359,7 @@ Partial Class LSDRegistro01EditForm
         Me.IdTipoLiquidacionSearchLookUpEdit.Properties.DisplayMember = "Descripcion"
         Me.IdTipoLiquidacionSearchLookUpEdit.Properties.PopupView = Me.IdTipoLiquidacionSearchLookUpEditView
         Me.IdTipoLiquidacionSearchLookUpEdit.Properties.ValueMember = "Id"
-        Me.IdTipoLiquidacionSearchLookUpEdit.Size = New System.Drawing.Size(606, 20)
+        Me.IdTipoLiquidacionSearchLookUpEdit.Size = New System.Drawing.Size(595, 20)
         Me.IdTipoLiquidacionSearchLookUpEdit.StyleController = Me.layoutControl
         Me.IdTipoLiquidacionSearchLookUpEdit.TabIndex = 8
         '
@@ -1373,7 +1393,7 @@ Partial Class LSDRegistro01EditForm
         Me.IdIdentificacionEnvioSearchLookUpEdit.Properties.DisplayMember = "Descripcion"
         Me.IdIdentificacionEnvioSearchLookUpEdit.Properties.PopupView = Me.IdIdentificacionEnvioSearchLookUpEditView
         Me.IdIdentificacionEnvioSearchLookUpEdit.Properties.ValueMember = "Id"
-        Me.IdIdentificacionEnvioSearchLookUpEdit.Size = New System.Drawing.Size(606, 20)
+        Me.IdIdentificacionEnvioSearchLookUpEdit.Size = New System.Drawing.Size(595, 20)
         Me.IdIdentificacionEnvioSearchLookUpEdit.StyleController = Me.layoutControl
         Me.IdIdentificacionEnvioSearchLookUpEdit.TabIndex = 6
         '
@@ -1416,7 +1436,7 @@ Partial Class LSDRegistro01EditForm
         Me.IdEmpresaSearchLookUpEdit.Properties.DisplayMember = "Nombre"
         Me.IdEmpresaSearchLookUpEdit.Properties.PopupView = Me.IdEmpresaSearchLookUpEditView
         Me.IdEmpresaSearchLookUpEdit.Properties.ValueMember = "Id"
-        Me.IdEmpresaSearchLookUpEdit.Size = New System.Drawing.Size(606, 20)
+        Me.IdEmpresaSearchLookUpEdit.Size = New System.Drawing.Size(595, 20)
         Me.IdEmpresaSearchLookUpEdit.StyleController = Me.layoutControl
         Me.IdEmpresaSearchLookUpEdit.TabIndex = 5
         '
@@ -1456,15 +1476,39 @@ Partial Class LSDRegistro01EditForm
         Me.PeriodoTextEdit.Name = "PeriodoTextEdit"
         Me.PeriodoTextEdit.Properties.Mask.EditMask = "yyyymm"
         Me.PeriodoTextEdit.Properties.Mask.UseMaskAsDisplayFormat = True
-        Me.PeriodoTextEdit.Size = New System.Drawing.Size(606, 20)
+        Me.PeriodoTextEdit.Size = New System.Drawing.Size(595, 20)
         Me.PeriodoTextEdit.StyleController = Me.layoutControl
         Me.PeriodoTextEdit.TabIndex = 7
+        '
+        'TextEdit1
+        '
+        Me.TextEdit1.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LSDRegistro01BindingSource, "FechaPago", True, System.Windows.Forms.DataSourceUpdateMode.OnValidation, Nothing, "D"))
+        Me.TextEdit1.Location = New System.Drawing.Point(851, 60)
+        Me.TextEdit1.MenuManager = Me.ribbonControl
+        Me.TextEdit1.Name = "TextEdit1"
+        Me.TextEdit1.Properties.DisplayFormat.FormatString = "d"
+        Me.TextEdit1.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        Me.TextEdit1.Properties.ReadOnly = True
+        Me.TextEdit1.Size = New System.Drawing.Size(230, 20)
+        Me.TextEdit1.StyleController = Me.layoutControl
+        Me.TextEdit1.TabIndex = 16
+        '
+        'TextEdit2
+        '
+        Me.TextEdit2.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.LSDRegistro01BindingSource, "Banco.Denominacion", True))
+        Me.TextEdit2.Location = New System.Drawing.Point(851, 84)
+        Me.TextEdit2.MenuManager = Me.ribbonControl
+        Me.TextEdit2.Name = "TextEdit2"
+        Me.TextEdit2.Properties.ReadOnly = True
+        Me.TextEdit2.Size = New System.Drawing.Size(325, 20)
+        Me.TextEdit2.StyleController = Me.layoutControl
+        Me.TextEdit2.TabIndex = 17
         '
         'Root
         '
         Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
         Me.Root.GroupBordersVisible = False
-        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem2, Me.LayoutControlItem3, Me.LayoutControlItem4, Me.LayoutControlItem5, Me.LayoutControlItem6, Me.LayoutControlItem7, Me.LayoutControlItem8, Me.tabbedControlGroup, Me.EmptySpaceItem2, Me.SimpleSeparator1, Me.LayoutControlItem10})
+        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem2, Me.LayoutControlItem3, Me.LayoutControlItem4, Me.LayoutControlItem5, Me.LayoutControlItem6, Me.LayoutControlItem7, Me.LayoutControlItem8, Me.tabbedControlGroup, Me.EmptySpaceItem2, Me.SimpleSeparator1, Me.LayoutControlItem12, Me.EmptySpaceItem3, Me.LayoutControlItem13, Me.EmptySpaceItem6, Me.EmptySpaceItem4})
         Me.Root.Name = "Root"
         Me.Root.Size = New System.Drawing.Size(1188, 595)
         Me.Root.TextVisible = False
@@ -1474,7 +1518,7 @@ Partial Class LSDRegistro01EditForm
         Me.LayoutControlItem2.Control = Me.IdEmpresaSearchLookUpEdit
         Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem2.Name = "LayoutControlItem2"
-        Me.LayoutControlItem2.Size = New System.Drawing.Size(725, 24)
+        Me.LayoutControlItem2.Size = New System.Drawing.Size(714, 24)
         Me.LayoutControlItem2.Text = "Empresa:"
         Me.LayoutControlItem2.TextSize = New System.Drawing.Size(112, 13)
         '
@@ -1483,7 +1527,7 @@ Partial Class LSDRegistro01EditForm
         Me.LayoutControlItem3.Control = Me.IdIdentificacionEnvioSearchLookUpEdit
         Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 24)
         Me.LayoutControlItem3.Name = "LayoutControlItem3"
-        Me.LayoutControlItem3.Size = New System.Drawing.Size(725, 24)
+        Me.LayoutControlItem3.Size = New System.Drawing.Size(714, 24)
         Me.LayoutControlItem3.Text = "Identificacion Envio:"
         Me.LayoutControlItem3.TextSize = New System.Drawing.Size(112, 13)
         '
@@ -1492,7 +1536,7 @@ Partial Class LSDRegistro01EditForm
         Me.LayoutControlItem4.Control = Me.PeriodoTextEdit
         Me.LayoutControlItem4.Location = New System.Drawing.Point(0, 48)
         Me.LayoutControlItem4.Name = "LayoutControlItem4"
-        Me.LayoutControlItem4.Size = New System.Drawing.Size(725, 24)
+        Me.LayoutControlItem4.Size = New System.Drawing.Size(714, 24)
         Me.LayoutControlItem4.Text = "Periodo:"
         Me.LayoutControlItem4.TextSize = New System.Drawing.Size(112, 13)
         '
@@ -1501,7 +1545,7 @@ Partial Class LSDRegistro01EditForm
         Me.LayoutControlItem5.Control = Me.IdTipoLiquidacionSearchLookUpEdit
         Me.LayoutControlItem5.Location = New System.Drawing.Point(0, 72)
         Me.LayoutControlItem5.Name = "LayoutControlItem5"
-        Me.LayoutControlItem5.Size = New System.Drawing.Size(725, 24)
+        Me.LayoutControlItem5.Size = New System.Drawing.Size(714, 24)
         Me.LayoutControlItem5.Text = "Tipo Liquidacion:"
         Me.LayoutControlItem5.TextSize = New System.Drawing.Size(112, 13)
         '
@@ -1510,7 +1554,7 @@ Partial Class LSDRegistro01EditForm
         Me.LayoutControlItem6.Control = Me.NumeroDeLiquidacionSpinEdit
         Me.LayoutControlItem6.Location = New System.Drawing.Point(0, 96)
         Me.LayoutControlItem6.Name = "LayoutControlItem6"
-        Me.LayoutControlItem6.Size = New System.Drawing.Size(725, 24)
+        Me.LayoutControlItem6.Size = New System.Drawing.Size(714, 24)
         Me.LayoutControlItem6.Text = "Numero De Liquidacion:"
         Me.LayoutControlItem6.TextSize = New System.Drawing.Size(112, 13)
         '
@@ -1519,7 +1563,7 @@ Partial Class LSDRegistro01EditForm
         Me.LayoutControlItem7.Control = Me.DiasBasesSpinEdit
         Me.LayoutControlItem7.Location = New System.Drawing.Point(0, 120)
         Me.LayoutControlItem7.Name = "LayoutControlItem7"
-        Me.LayoutControlItem7.Size = New System.Drawing.Size(725, 24)
+        Me.LayoutControlItem7.Size = New System.Drawing.Size(714, 24)
         Me.LayoutControlItem7.Text = "Dias Bases:"
         Me.LayoutControlItem7.TextSize = New System.Drawing.Size(112, 13)
         '
@@ -1528,7 +1572,7 @@ Partial Class LSDRegistro01EditForm
         Me.LayoutControlItem8.Control = Me.CantidadDeRegistros04SpinEdit
         Me.LayoutControlItem8.Location = New System.Drawing.Point(0, 144)
         Me.LayoutControlItem8.Name = "LayoutControlItem8"
-        Me.LayoutControlItem8.Size = New System.Drawing.Size(725, 24)
+        Me.LayoutControlItem8.Size = New System.Drawing.Size(714, 24)
         Me.LayoutControlItem8.Text = "Cant. De Registros04:"
         Me.LayoutControlItem8.TextSize = New System.Drawing.Size(112, 13)
         '
@@ -1537,7 +1581,7 @@ Partial Class LSDRegistro01EditForm
         Me.tabbedControlGroup.Location = New System.Drawing.Point(0, 177)
         Me.tabbedControlGroup.Name = "tabbedControlGroup"
         Me.tabbedControlGroup.SelectedTabPage = Me.layoutControlGroupReg02
-        Me.tabbedControlGroup.Size = New System.Drawing.Size(1168, 372)
+        Me.tabbedControlGroup.Size = New System.Drawing.Size(1168, 398)
         Me.tabbedControlGroup.TabPages.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.layoutControlGroupReg02, Me.LayoutControlGroup1, Me.LayoutControlGroup2})
         Me.tabbedControlGroup.Text = "Registro 02"
         '
@@ -1546,7 +1590,7 @@ Partial Class LSDRegistro01EditForm
         Me.layoutControlGroupReg02.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1})
         Me.layoutControlGroupReg02.Location = New System.Drawing.Point(0, 0)
         Me.layoutControlGroupReg02.Name = "layoutControlGroupReg02"
-        Me.layoutControlGroupReg02.Size = New System.Drawing.Size(1144, 325)
+        Me.layoutControlGroupReg02.Size = New System.Drawing.Size(1144, 351)
         Me.layoutControlGroupReg02.Text = "Registro 02"
         '
         'LayoutControlItem1
@@ -1554,7 +1598,7 @@ Partial Class LSDRegistro01EditForm
         Me.LayoutControlItem1.Control = Me.gridControlReg02
         Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(1144, 325)
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(1144, 351)
         Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem1.TextVisible = False
         '
@@ -1563,7 +1607,7 @@ Partial Class LSDRegistro01EditForm
         Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem9})
         Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup1.Name = "LayoutControlGroup1"
-        Me.LayoutControlGroup1.Size = New System.Drawing.Size(1144, 325)
+        Me.LayoutControlGroup1.Size = New System.Drawing.Size(1144, 351)
         Me.LayoutControlGroup1.Text = "Registro 03"
         '
         'LayoutControlItem9
@@ -1571,7 +1615,7 @@ Partial Class LSDRegistro01EditForm
         Me.LayoutControlItem9.Control = Me.gridControlReg03
         Me.LayoutControlItem9.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem9.Name = "LayoutControlItem9"
-        Me.LayoutControlItem9.Size = New System.Drawing.Size(1144, 325)
+        Me.LayoutControlItem9.Size = New System.Drawing.Size(1144, 351)
         Me.LayoutControlItem9.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem9.TextVisible = False
         '
@@ -1580,7 +1624,7 @@ Partial Class LSDRegistro01EditForm
         Me.LayoutControlGroup2.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem11})
         Me.LayoutControlGroup2.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlGroup2.Name = "LayoutControlGroup2"
-        Me.LayoutControlGroup2.Size = New System.Drawing.Size(1144, 325)
+        Me.LayoutControlGroup2.Size = New System.Drawing.Size(1144, 351)
         Me.LayoutControlGroup2.Text = "Registro 04"
         '
         'LayoutControlItem11
@@ -1588,16 +1632,16 @@ Partial Class LSDRegistro01EditForm
         Me.LayoutControlItem11.Control = Me.gridControlReg04
         Me.LayoutControlItem11.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem11.Name = "LayoutControlItem11"
-        Me.LayoutControlItem11.Size = New System.Drawing.Size(1144, 325)
+        Me.LayoutControlItem11.Size = New System.Drawing.Size(1144, 351)
         Me.LayoutControlItem11.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem11.TextVisible = False
         '
         'EmptySpaceItem2
         '
         Me.EmptySpaceItem2.AllowHotTrack = False
-        Me.EmptySpaceItem2.Location = New System.Drawing.Point(725, 0)
+        Me.EmptySpaceItem2.Location = New System.Drawing.Point(724, 0)
         Me.EmptySpaceItem2.Name = "EmptySpaceItem2"
-        Me.EmptySpaceItem2.Size = New System.Drawing.Size(443, 168)
+        Me.EmptySpaceItem2.Size = New System.Drawing.Size(444, 48)
         Me.EmptySpaceItem2.TextSize = New System.Drawing.Size(0, 0)
         '
         'SimpleSeparator1
@@ -1608,26 +1652,47 @@ Partial Class LSDRegistro01EditForm
         Me.SimpleSeparator1.Size = New System.Drawing.Size(1168, 9)
         Me.SimpleSeparator1.Spacing = New DevExpress.XtraLayout.Utils.Padding(0, 0, 4, 4)
         '
-        'LayoutControlItem10
+        'LayoutControlItem12
         '
-        Me.LayoutControlItem10.Control = Me.SimpleButton1
-        Me.LayoutControlItem10.Location = New System.Drawing.Point(0, 549)
-        Me.LayoutControlItem10.Name = "LayoutControlItem10"
-        Me.LayoutControlItem10.Size = New System.Drawing.Size(1168, 26)
-        Me.LayoutControlItem10.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem10.TextVisible = False
+        Me.LayoutControlItem12.Control = Me.TextEdit1
+        Me.LayoutControlItem12.Location = New System.Drawing.Point(724, 48)
+        Me.LayoutControlItem12.Name = "LayoutControlItem12"
+        Me.LayoutControlItem12.Size = New System.Drawing.Size(349, 24)
+        Me.LayoutControlItem12.Text = "Fecha de Pago:"
+        Me.LayoutControlItem12.TextSize = New System.Drawing.Size(112, 13)
         '
-        'RibbonPageGroup5
+        'EmptySpaceItem3
         '
-        Me.RibbonPageGroup5.ItemLinks.Add(Me.bbiRegistrarPago)
-        Me.RibbonPageGroup5.Name = "RibbonPageGroup5"
-        Me.RibbonPageGroup5.Text = "RibbonPageGroup5"
+        Me.EmptySpaceItem3.AllowHotTrack = False
+        Me.EmptySpaceItem3.Location = New System.Drawing.Point(1073, 48)
+        Me.EmptySpaceItem3.Name = "EmptySpaceItem3"
+        Me.EmptySpaceItem3.Size = New System.Drawing.Size(95, 24)
+        Me.EmptySpaceItem3.TextSize = New System.Drawing.Size(0, 0)
         '
-        'bbiRegistrarPago
+        'LayoutControlItem13
         '
-        Me.bbiRegistrarPago.Caption = "Registrar Pago"
-        Me.bbiRegistrarPago.Id = 13
-        Me.bbiRegistrarPago.Name = "bbiRegistrarPago"
+        Me.LayoutControlItem13.Control = Me.TextEdit2
+        Me.LayoutControlItem13.Location = New System.Drawing.Point(724, 72)
+        Me.LayoutControlItem13.Name = "LayoutControlItem13"
+        Me.LayoutControlItem13.Size = New System.Drawing.Size(444, 24)
+        Me.LayoutControlItem13.Text = "Banco:"
+        Me.LayoutControlItem13.TextSize = New System.Drawing.Size(112, 13)
+        '
+        'EmptySpaceItem6
+        '
+        Me.EmptySpaceItem6.AllowHotTrack = False
+        Me.EmptySpaceItem6.Location = New System.Drawing.Point(724, 96)
+        Me.EmptySpaceItem6.Name = "EmptySpaceItem6"
+        Me.EmptySpaceItem6.Size = New System.Drawing.Size(444, 72)
+        Me.EmptySpaceItem6.TextSize = New System.Drawing.Size(0, 0)
+        '
+        'EmptySpaceItem4
+        '
+        Me.EmptySpaceItem4.AllowHotTrack = False
+        Me.EmptySpaceItem4.Location = New System.Drawing.Point(714, 0)
+        Me.EmptySpaceItem4.Name = "EmptySpaceItem4"
+        Me.EmptySpaceItem4.Size = New System.Drawing.Size(10, 168)
+        Me.EmptySpaceItem4.TextSize = New System.Drawing.Size(0, 0)
         '
         'LSDRegistro01EditForm
         '
@@ -1684,6 +1749,8 @@ Partial Class LSDRegistro01EditForm
         CType(Me.EmpresasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.IdEmpresaSearchLookUpEditView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PeriodoTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1701,7 +1768,11 @@ Partial Class LSDRegistro01EditForm
         CType(Me.LayoutControlItem11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SimpleSeparator1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem10, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmptySpaceItem3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem13, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmptySpaceItem6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmptySpaceItem4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1783,8 +1854,6 @@ Partial Class LSDRegistro01EditForm
     Friend WithEvents colPeriodoAjuste As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colLSDRegistro02 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents PeriodoTextEdit As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents LayoutControlItem10 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlGroup2 As DevExpress.XtraLayout.LayoutControlGroup
     Friend WithEvents gridControlReg04 As DevExpress.XtraGrid.GridControl
     Friend WithEvents LSDRegistro04BindingSource As BindingSource
@@ -1880,4 +1949,11 @@ Partial Class LSDRegistro01EditForm
     Friend WithEvents colLegajos4 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents bbiRegistrarPago As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents RibbonPageGroup5 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents TextEdit1 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TextEdit2 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LayoutControlItem12 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents EmptySpaceItem3 As DevExpress.XtraLayout.EmptySpaceItem
+    Friend WithEvents LayoutControlItem13 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents EmptySpaceItem6 As DevExpress.XtraLayout.EmptySpaceItem
+    Friend WithEvents EmptySpaceItem4 As DevExpress.XtraLayout.EmptySpaceItem
 End Class

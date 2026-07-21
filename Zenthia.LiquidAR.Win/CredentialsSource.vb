@@ -36,6 +36,13 @@
         Return usuario
     End Function
 
+    Friend Shared Function GetUsuarios() As System.Collections.Generic.IEnumerable(Of Zenthia.AccesoDatos.Usuarios)
+        Using db As Zenthia.AccesoDatos.Modelo = New Zenthia.AccesoDatos.Modelo()
+            Return db.Usuarios.ToList()
+        End Using
+
+    End Function
+
     Friend Shared Function CheckPermissions(ByVal modulo As String, ByVal operacion As String) As Boolean
         Dim permiso As Boolean = False
         Dim IdOperacion As Integer = 0

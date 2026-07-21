@@ -54,7 +54,7 @@ Public Class LSDRegistro01EditForm
         fluent.WithEvent(Of CellValueChangedEventArgs)(gridViewReg02, "CellValueChanged").EventToCommand(Sub(x) x.ChangeCustomPropertyGrid02(Nothing), New Func(Of CellValueChangedEventArgs, Object)(Function(e) e.RowHandle))
     End Sub
 
-    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
+    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) 
         Dim fluent = mvvmContext.OfType(Of LSDRegistro01ViewModel)()
         Dim i As Integer = fluent.ViewModel.Entity.LSDRegistro02.Count
         Dim j As Integer = fluent.ViewModel.Entity.LSDRegistro03.Count

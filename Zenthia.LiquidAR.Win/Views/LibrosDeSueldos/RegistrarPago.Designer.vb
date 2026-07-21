@@ -22,8 +22,6 @@ Partial Class RegistrarPago
         Me.components = New System.ComponentModel.Container()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
         Me.lookUpEditBanco = New DevExpress.XtraEditors.SearchLookUpEdit()
-        Me.LSDRegistro01BindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.EmpresasBancosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SearchLookUpEdit1View = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colActivo = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.dateEditFechaPago = New DevExpress.XtraEditors.DateEdit()
@@ -33,14 +31,14 @@ Partial Class RegistrarPago
         Me.EmptySpaceItem2 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem3 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.mvvmContext = New DevExpress.Utils.MVVM.MVVMContext(Me.components)
+        Me.LSDRegistro01BindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.EmpresasBancosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.colBancos = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colBancos1 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.mvvmContext = New DevExpress.Utils.MVVM.MVVMContext(Me.components)
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
         CType(Me.lookUpEditBanco.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LSDRegistro01BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmpresasBancosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SearchLookUpEdit1View, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dateEditFechaPago.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dateEditFechaPago.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -51,6 +49,8 @@ Partial Class RegistrarPago
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.mvvmContext, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LSDRegistro01BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmpresasBancosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LayoutControl1
@@ -78,14 +78,6 @@ Partial Class RegistrarPago
         Me.lookUpEditBanco.Size = New System.Drawing.Size(427, 20)
         Me.lookUpEditBanco.StyleController = Me.LayoutControl1
         Me.lookUpEditBanco.TabIndex = 4
-        '
-        'LSDRegistro01BindingSource
-        '
-        Me.LSDRegistro01BindingSource.DataSource = GetType(Zenthia.AccesoDatos.LSDRegistro01)
-        '
-        'EmpresasBancosBindingSource
-        '
-        Me.EmpresasBancosBindingSource.DataSource = GetType(Zenthia.AccesoDatos.EmpresasBancos)
         '
         'SearchLookUpEdit1View
         '
@@ -165,6 +157,19 @@ Partial Class RegistrarPago
         Me.EmptySpaceItem3.Size = New System.Drawing.Size(234, 24)
         Me.EmptySpaceItem3.TextSize = New System.Drawing.Size(0, 0)
         '
+        'mvvmContext
+        '
+        Me.mvvmContext.ContainerControl = Me
+        Me.mvvmContext.ViewModelType = GetType(Zenthia.LiquidAR.Win.RegistrarPagoViewModel)
+        '
+        'LSDRegistro01BindingSource
+        '
+        Me.LSDRegistro01BindingSource.DataSource = GetType(Zenthia.AccesoDatos.LSDRegistro01)
+        '
+        'EmpresasBancosBindingSource
+        '
+        Me.EmpresasBancosBindingSource.DataSource = GetType(Zenthia.AccesoDatos.EmpresasBancos)
+        '
         'colBancos
         '
         Me.colBancos.FieldName = "Bancos.CodigoEntidad"
@@ -179,11 +184,6 @@ Partial Class RegistrarPago
         Me.colBancos1.Visible = True
         Me.colBancos1.VisibleIndex = 1
         '
-        'mvvmContext
-        '
-        Me.mvvmContext.ContainerControl = Me
-        Me.mvvmContext.ViewModelType = GetType(Zenthia.LiquidAR.Win.RegistrarPagoViewModel)
-        '
         'RegistrarPago
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -194,8 +194,6 @@ Partial Class RegistrarPago
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
         CType(Me.lookUpEditBanco.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LSDRegistro01BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmpresasBancosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SearchLookUpEdit1View, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dateEditFechaPago.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dateEditFechaPago.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -206,6 +204,8 @@ Partial Class RegistrarPago
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.mvvmContext, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LSDRegistro01BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmpresasBancosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

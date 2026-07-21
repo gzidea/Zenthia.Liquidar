@@ -25,16 +25,10 @@ Public Class ReciboCollectionViewModel
         Me.RaiseCanExecuteChanged(Sub(x) x.RecalcularAndSave())
     End Sub
 
-    'Public Overridable Property SelectedPeriod As String
-
-    'Private Sub OnSelectedPeriodChanged()
-    '    Dim filtro As String = MyBase.GetFilterExpression().ToString
-    'End Sub
-
     Public Sub Imprimir()
         For Each item As Zenthia.AccesoDatos.Recibos In SelectedItems
             Try
-                ReciboAuxiliar.GenerateReciboReport(item, False)
+                ReciboAuxiliar.GenerateReport(item, False)
             Catch ex As Exception
                 Continue For
             End Try
@@ -52,7 +46,7 @@ Public Class ReciboCollectionViewModel
         For Each item As Zenthia.AccesoDatos.Recibos In SelectedItems
             Try
                 If Not item.Total Is Nothing OrElse item.Total = 0 Then
-                    ReciboAuxiliar.GenerateReciboReport(item, False)
+                    ReciboAuxiliar.GenerateReport(item, False)
                 End If
             Catch ex As Exception
                 Continue For
@@ -81,7 +75,7 @@ Public Class ReciboCollectionViewModel
         For Each item As Zenthia.AccesoDatos.Recibos In SelectedItems
             Try
                 If Not item.Total Is Nothing OrElse item.Total = 0 Then
-                    ReciboAuxiliar.GenerateReciboReport(item, False, printerSettings)
+                    ReciboAuxiliar.GenerateReport(item, False, printerSettings)
                 End If
             Catch ex As Exception
                 Continue For

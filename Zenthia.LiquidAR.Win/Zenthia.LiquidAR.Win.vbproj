@@ -79,6 +79,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Accessibility" />
+    <Reference Include="DevExpress.BonusSkins.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Charts.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.CodeParser.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v20.1" />
@@ -183,6 +184,9 @@
     <Compile Include="Bases\ListadoBase.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Component\LoginTextEdit.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Component\LookAndFeelSettings.vb" />
     <Compile Include="Component\LookAndFeelSettingsHelper.vb" />
     <Compile Include="CredentialsSource.vb" />
@@ -220,6 +224,16 @@
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="PrincipalViewModel.vb" />
+    <Compile Include="Reportes\IReporteConEventos.vb" />
+    <Compile Include="Reportes\ReporteFactory.vb" />
+    <Compile Include="Reportes\ReportesViewModel.vb" />
+    <Compile Include="Reportes\SelectorReporteView.Designer.vb">
+      <DependentUpon>SelectorReporteView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\SelectorReporteView.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reportes\SelectorReporteViewModel.vb" />
     <Compile Include="Seguridad\LoginMessage.vb" />
     <Compile Include="Seguridad\ViewModels\Modulos\ModuloCollectionViewModel.vb" />
     <Compile Include="Seguridad\ViewModels\Modulos\ModuloViewModel.vb" />
@@ -274,6 +288,7 @@
     <Compile Include="ViewModels\Legajos\Novedades\LegajoNovedadCollectionViewModel.vb" />
     <Compile Include="ViewModels\Legajos\Novedades\LegajoNovedadViewModel.partial.vb" />
     <Compile Include="ViewModels\Legajos\Novedades\LegajoNovedadViewModel.vb" />
+    <Compile Include="ViewModels\Legajos\Novedades\NovedadesWizardSetting.vb" />
     <Compile Include="ViewModels\Legajos\Novedades\wizardFormImportarNovedadesViewModel.vb" />
     <Compile Include="ViewModels\LibrosDeSueldos\LSDRegistro01CollectionViewModelvb.vb" />
     <Compile Include="ViewModels\LibrosDeSueldos\LSDRegistro01ViewModel.vb" />
@@ -512,6 +527,12 @@
     <Compile Include="Views\Recibos\Reportes\xrContribuciones.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Views\Recibos\Reportes\xrDosRecibosEnUnA4.Designer.vb">
+      <DependentUpon>xrDosRecibosEnUnA4.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Recibos\Reportes\xrDosRecibosEnUnA4.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Views\Recibos\Reportes\xrLibroDeSueldo.Designer.vb">
       <DependentUpon>xrLibroDeSueldo.vb</DependentUpon>
     </Compile>
@@ -530,6 +551,12 @@
     <Compile Include="Views\Recibos\Reportes\xrNuevoReciboDeSueldo.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Views\Recibos\Reportes\xrReciboA4.Designer.vb">
+      <DependentUpon>xrReciboA4.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Recibos\Reportes\xrReciboA4.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Views\Recibos\Reportes\xrReciboContribuciones.Designer.vb">
       <DependentUpon>xrReciboContribuciones.vb</DependentUpon>
     </Compile>
@@ -540,6 +567,12 @@
       <DependentUpon>xrReciboRemunYAportes.vb</DependentUpon>
     </Compile>
     <Compile Include="Views\Recibos\Reportes\xrReciboRemunYAportes.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\Recibos\Reportes\xrReciboResumenCostosA4.Designer.vb">
+      <DependentUpon>xrReciboResumenCostosA4.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Recibos\Reportes\xrReciboResumenCostosA4.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Views\Recibos\Reportes\xrReciboSueldoX1.Designer.vb">
@@ -630,6 +663,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reportes\SelectorReporteView.resx">
+      <DependentUpon>SelectorReporteView.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Seguridad\View\Roles\RolEditForm.resx">
       <DependentUpon>RolEditForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -748,6 +784,9 @@
     <EmbeddedResource Include="Views\Recibos\Reportes\xrContribuciones.resx">
       <DependentUpon>xrContribuciones.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Recibos\Reportes\xrDosRecibosEnUnA4.resx">
+      <DependentUpon>xrDosRecibosEnUnA4.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Recibos\Reportes\xrLibroDeSueldo.resx">
       <DependentUpon>xrLibroDeSueldo.vb</DependentUpon>
     </EmbeddedResource>
@@ -757,11 +796,17 @@
     <EmbeddedResource Include="Views\Recibos\Reportes\xrNuevoReciboDeSueldo.resx">
       <DependentUpon>xrNuevoReciboDeSueldo.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Recibos\Reportes\xrReciboA4.resx">
+      <DependentUpon>xrReciboA4.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Recibos\Reportes\xrReciboContribuciones.resx">
       <DependentUpon>xrReciboContribuciones.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Recibos\Reportes\xrReciboRemunYAportes.resx">
       <DependentUpon>xrReciboRemunYAportes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Recibos\Reportes\xrReciboResumenCostosA4.resx">
+      <DependentUpon>xrReciboResumenCostosA4.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Recibos\Reportes\xrReciboSueldoX1.resx">
       <DependentUpon>xrReciboSueldoX1.vb</DependentUpon>
@@ -831,6 +876,7 @@
     <None Include="My Project\DataSources\Zenthia.AccesoDatos.Provincias.datasource" />
     <None Include="My Project\DataSources\Zenthia.AccesoDatos.Recibos.datasource" />
     <None Include="My Project\DataSources\Zenthia.AccesoDatos.RecibosDetalles.datasource" />
+    <None Include="My Project\DataSources\Zenthia.AccesoDatos.Reportes.datasource" />
     <None Include="My Project\DataSources\Zenthia.AccesoDatos.Roles.datasource" />
     <None Include="My Project\DataSources\Zenthia.AccesoDatos.Roles_Modulos_Operaciones.datasource" />
     <None Include="My Project\DataSources\Zenthia.AccesoDatos.Sindicatos.datasource" />
@@ -1100,9 +1146,12 @@
     <None Include="Resources\printlayoutview.svg" />
     <None Include="Resources\printviapdf_32x32.png" />
     <None Include="Resources\printviapdf_16x16.png" />
+    <None Include="Resources\next_32x32.png" />
+    <None Include="Resources\next_16x16.png" />
     <Content Include="Zenthia_Icono.ico" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Forms\" />
     <Folder Include="Seguridad\View\Modulos\" />
     <Folder Include="Seguridad\View\Operaciones\" />
   </ItemGroup>

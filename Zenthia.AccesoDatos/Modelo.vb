@@ -57,6 +57,7 @@ Partial Public Class Modelo
     Public Overridable Property RecibosGruposCostos As DbSet(Of RecibosGruposCostos)
     Public Overridable Property Bancos As DbSet(Of Bancos)
     Public Overridable Property EmpresasBancos As DbSet(Of EmpresasBancos)
+    Public Overridable Property Reportes As DbSet(Of Reportes)
 
     '*** ESTO CORRESPONDE AL MODULO DE SEGURIDAD ****
     Public Overridable Property Modulos As DbSet(Of Modulos)
@@ -526,7 +527,9 @@ Partial Public Class Modelo
             .WithRequired(Function(e) e.Empresas) _
             .HasForeignKey(Function(e) e.IdEmpresa)
 
-
+        modelBuilder.Entity(Of EmpresasActividades)() _
+            .Property(Function(e) e.ValorSeguro) _
+            .HasPrecision(19, 4)
 #Region "Seguridad_Builder"
         '*** ESTO CORRESPONDE AL MODULO DE SEGURIDAD ****
         modelBuilder.Entity(Of Modulos)() _

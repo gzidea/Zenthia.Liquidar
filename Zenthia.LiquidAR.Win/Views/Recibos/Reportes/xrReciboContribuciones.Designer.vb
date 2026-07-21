@@ -25,7 +25,7 @@ Partial Public Class xrReciboContribuciones
         Me.Detail = New DevExpress.XtraReports.UI.DetailBand()
         Me.DetailReport = New DevExpress.XtraReports.UI.DetailReportBand()
         Me.Detail1 = New DevExpress.XtraReports.UI.DetailBand()
-        Me.XrTable2 = New DevExpress.XtraReports.UI.XRTable()
+        Me.xrTableDetalle = New DevExpress.XtraReports.UI.XRTable()
         Me.XrTableRow3 = New DevExpress.XtraReports.UI.XRTableRow()
         Me.XrTableCell7 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell8 = New DevExpress.XtraReports.UI.XRTableCell()
@@ -33,7 +33,7 @@ Partial Public Class xrReciboContribuciones
         Me.XrTableCell9 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.ReportFooter = New DevExpress.XtraReports.UI.ReportFooterBand()
         Me.GroupHeader1 = New DevExpress.XtraReports.UI.GroupHeaderBand()
-        Me.XrTable1 = New DevExpress.XtraReports.UI.XRTable()
+        Me.xrTableEncavezados = New DevExpress.XtraReports.UI.XRTable()
         Me.XrTableRow2 = New DevExpress.XtraReports.UI.XRTableRow()
         Me.XrTableCell3 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell4 = New DevExpress.XtraReports.UI.XRTableCell()
@@ -44,15 +44,15 @@ Partial Public Class xrReciboContribuciones
         Me.XrTableCell1 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell2 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.GroupFooter1 = New DevExpress.XtraReports.UI.GroupFooterBand()
-        Me.XrTable3 = New DevExpress.XtraReports.UI.XRTable()
+        Me.xrTableSubTotal = New DevExpress.XtraReports.UI.XRTable()
         Me.XrTableRow4 = New DevExpress.XtraReports.UI.XRTableRow()
         Me.XrTableCell11 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell13 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.ObjectDataSource1 = New DevExpress.DataAccess.ObjectBinding.ObjectDataSource(Me.components)
-        CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.xrTableDetalle, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.xrTableEncavezados, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.xrTableSueldoBruto, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.XrTable3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.xrTableSubTotal, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ObjectDataSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
@@ -95,7 +95,7 @@ Partial Public Class xrReciboContribuciones
             Or DevExpress.XtraPrinting.BorderSide.Right) _
             Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
         Me.Detail1.BorderWidth = 2.0!
-        Me.Detail1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrTable2})
+        Me.Detail1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.xrTableDetalle})
         Me.Detail1.Dpi = 254.0!
         Me.Detail1.HeightF = 43.46726!
         Me.Detail1.HierarchyPrintOptions.Indent = 50.8!
@@ -104,14 +104,14 @@ Partial Public Class xrReciboContribuciones
         Me.Detail1.StylePriority.UseBorders = False
         Me.Detail1.StylePriority.UseBorderWidth = False
         '
-        'XrTable2
+        'xrTableDetalle
         '
-        Me.XrTable2.Dpi = 254.0!
-        Me.XrTable2.LocationFloat = New DevExpress.Utils.PointFloat(0!, 0!)
-        Me.XrTable2.Name = "XrTable2"
-        Me.XrTable2.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
-        Me.XrTable2.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow3})
-        Me.XrTable2.SizeF = New System.Drawing.SizeF(1833.0!, 43.46726!)
+        Me.xrTableDetalle.Dpi = 254.0!
+        Me.xrTableDetalle.LocationFloat = New DevExpress.Utils.PointFloat(0!, 0!)
+        Me.xrTableDetalle.Name = "xrTableDetalle"
+        Me.xrTableDetalle.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
+        Me.xrTableDetalle.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow3})
+        Me.xrTableDetalle.SizeF = New System.Drawing.SizeF(1833.0!, 43.46726!)
         '
         'XrTableRow3
         '
@@ -182,19 +182,19 @@ Partial Public Class xrReciboContribuciones
         '
         'GroupHeader1
         '
-        Me.GroupHeader1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrTable1, Me.xrTableSueldoBruto})
+        Me.GroupHeader1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.xrTableEncavezados, Me.xrTableSueldoBruto})
         Me.GroupHeader1.Dpi = 254.0!
         Me.GroupHeader1.HeightF = 87.81644!
         Me.GroupHeader1.Name = "GroupHeader1"
         '
-        'XrTable1
+        'xrTableEncavezados
         '
-        Me.XrTable1.Dpi = 254.0!
-        Me.XrTable1.LocationFloat = New DevExpress.Utils.PointFloat(0!, 51.02678!)
-        Me.XrTable1.Name = "XrTable1"
-        Me.XrTable1.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
-        Me.XrTable1.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow2})
-        Me.XrTable1.SizeF = New System.Drawing.SizeF(1833.0!, 36.78966!)
+        Me.xrTableEncavezados.Dpi = 254.0!
+        Me.xrTableEncavezados.LocationFloat = New DevExpress.Utils.PointFloat(0!, 51.02678!)
+        Me.xrTableEncavezados.Name = "xrTableEncavezados"
+        Me.xrTableEncavezados.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
+        Me.xrTableEncavezados.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow2})
+        Me.xrTableEncavezados.SizeF = New System.Drawing.SizeF(1833.0!, 36.78966!)
         '
         'XrTableRow2
         '
@@ -253,6 +253,7 @@ Partial Public Class xrReciboContribuciones
         '
         'xrTableSueldoBruto
         '
+        Me.xrTableSueldoBruto.AnchorHorizontal = CType((DevExpress.XtraReports.UI.HorizontalAnchorStyles.Left Or DevExpress.XtraReports.UI.HorizontalAnchorStyles.Right), DevExpress.XtraReports.UI.HorizontalAnchorStyles)
         Me.xrTableSueldoBruto.BackColor = System.Drawing.Color.Navy
         Me.xrTableSueldoBruto.BorderColor = System.Drawing.Color.Navy
         Me.xrTableSueldoBruto.Dpi = 254.0!
@@ -314,27 +315,27 @@ Partial Public Class xrReciboContribuciones
         '
         'GroupFooter1
         '
-        Me.GroupFooter1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrTable3})
+        Me.GroupFooter1.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.xrTableSubTotal})
         Me.GroupFooter1.Dpi = 254.0!
         Me.GroupFooter1.HeightF = 52.50301!
         Me.GroupFooter1.Name = "GroupFooter1"
         '
-        'XrTable3
+        'xrTableSubTotal
         '
-        Me.XrTable3.BorderColor = System.Drawing.Color.FromArgb(CType(CType(199, Byte), Integer), CType(CType(206, Byte), Integer), CType(CType(214, Byte), Integer))
-        Me.XrTable3.Borders = CType((((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Top) _
+        Me.xrTableSubTotal.BorderColor = System.Drawing.Color.FromArgb(CType(CType(199, Byte), Integer), CType(CType(206, Byte), Integer), CType(CType(214, Byte), Integer))
+        Me.xrTableSubTotal.Borders = CType((((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Top) _
             Or DevExpress.XtraPrinting.BorderSide.Right) _
             Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
-        Me.XrTable3.BorderWidth = 0.5!
-        Me.XrTable3.Dpi = 254.0!
-        Me.XrTable3.LocationFloat = New DevExpress.Utils.PointFloat(0!, 0!)
-        Me.XrTable3.Name = "XrTable3"
-        Me.XrTable3.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
-        Me.XrTable3.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow4})
-        Me.XrTable3.SizeF = New System.Drawing.SizeF(1833.0!, 52.50301!)
-        Me.XrTable3.StylePriority.UseBorderColor = False
-        Me.XrTable3.StylePriority.UseBorders = False
-        Me.XrTable3.StylePriority.UseBorderWidth = False
+        Me.xrTableSubTotal.BorderWidth = 0.5!
+        Me.xrTableSubTotal.Dpi = 254.0!
+        Me.xrTableSubTotal.LocationFloat = New DevExpress.Utils.PointFloat(0!, 0!)
+        Me.xrTableSubTotal.Name = "xrTableSubTotal"
+        Me.xrTableSubTotal.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
+        Me.xrTableSubTotal.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow4})
+        Me.xrTableSubTotal.SizeF = New System.Drawing.SizeF(1833.0!, 52.50301!)
+        Me.xrTableSubTotal.StylePriority.UseBorderColor = False
+        Me.xrTableSubTotal.StylePriority.UseBorders = False
+        Me.xrTableSubTotal.StylePriority.UseBorderWidth = False
         '
         'XrTableRow4
         '
@@ -395,10 +396,10 @@ Partial Public Class xrReciboContribuciones
         Me.ReportUnit = DevExpress.XtraReports.UI.ReportUnit.TenthsOfAMillimeter
         Me.SnapGridSize = 25.0!
         Me.Version = "20.1"
-        CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.xrTableDetalle, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.xrTableEncavezados, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.xrTableSueldoBruto, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.XrTable3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.xrTableSubTotal, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ObjectDataSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
@@ -409,7 +410,7 @@ Partial Public Class xrReciboContribuciones
     Friend WithEvents Detail As DevExpress.XtraReports.UI.DetailBand
     Friend WithEvents DetailReport As DevExpress.XtraReports.UI.DetailReportBand
     Friend WithEvents Detail1 As DevExpress.XtraReports.UI.DetailBand
-    Friend WithEvents XrTable2 As DevExpress.XtraReports.UI.XRTable
+    Friend WithEvents xrTableDetalle As DevExpress.XtraReports.UI.XRTable
     Friend WithEvents XrTableRow3 As DevExpress.XtraReports.UI.XRTableRow
     Friend WithEvents XrTableCell7 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableCell8 As DevExpress.XtraReports.UI.XRTableCell
@@ -417,7 +418,7 @@ Partial Public Class xrReciboContribuciones
     Friend WithEvents XrTableCell9 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents ReportFooter As DevExpress.XtraReports.UI.ReportFooterBand
     Friend WithEvents GroupHeader1 As DevExpress.XtraReports.UI.GroupHeaderBand
-    Friend WithEvents XrTable1 As DevExpress.XtraReports.UI.XRTable
+    Friend WithEvents xrTableEncavezados As DevExpress.XtraReports.UI.XRTable
     Friend WithEvents XrTableRow2 As DevExpress.XtraReports.UI.XRTableRow
     Friend WithEvents XrTableCell3 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableCell4 As DevExpress.XtraReports.UI.XRTableCell
@@ -429,7 +430,7 @@ Partial Public Class xrReciboContribuciones
     Friend WithEvents XrTableCell2 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents ObjectDataSource1 As DevExpress.DataAccess.ObjectBinding.ObjectDataSource
     Friend WithEvents GroupFooter1 As DevExpress.XtraReports.UI.GroupFooterBand
-    Friend WithEvents XrTable3 As DevExpress.XtraReports.UI.XRTable
+    Friend WithEvents xrTableSubTotal As DevExpress.XtraReports.UI.XRTable
     Friend WithEvents XrTableRow4 As DevExpress.XtraReports.UI.XRTableRow
     Friend WithEvents XrTableCell11 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrTableCell13 As DevExpress.XtraReports.UI.XRTableCell

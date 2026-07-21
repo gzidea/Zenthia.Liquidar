@@ -19,4 +19,10 @@ Public Class UsuarioViewModel
             Return GetLookUpEntitiesViewModel(Function(x As UsuarioViewModel) x.LookUpRoles, Function(x) x.Roles)
         End Get
     End Property
+
+    Public ReadOnly Property LookUpUsuarios As IEntitiesViewModel(Of Zenthia.AccesoDatos.Usuarios)
+        Get
+            Return GetLookUpEntitiesViewModel(Function(x As UsuarioViewModel) x.LookUpUsuarios, Function(x) x.Usuarios)
+        End Get
+    End Property
 End Class

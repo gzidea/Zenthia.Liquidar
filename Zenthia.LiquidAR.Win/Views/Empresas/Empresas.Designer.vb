@@ -200,6 +200,7 @@ Partial Class Empresas
         Me.BarButtonItem1.Caption = "BarButtonItem1"
         Me.BarButtonItem1.Id = 15
         Me.BarButtonItem1.Name = "BarButtonItem1"
+        Me.BarButtonItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
         '
         'RibbonPage1
         '
