@@ -16,7 +16,7 @@ Partial Public Class LegajosConceptosParticulares
 
     Public Property IdTipoLiquidacion As Integer?
 
-    <Column(TypeName:="money")>
+    ' <Column(TypeName:="money")>
     Public Property Importe As Decimal?
 
     Public Property Cantidad As Double?

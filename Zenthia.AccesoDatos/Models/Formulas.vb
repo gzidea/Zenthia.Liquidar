@@ -29,7 +29,7 @@ Partial Public Class Formulas
     <StringLength(255)>
     Public Property Descripcion As String
 
-    <Column(TypeName:="money")>
+    '<Column(TypeName:="money")>
     Public Property Importe As Decimal?
 
     Public Property Cantidad As Double?

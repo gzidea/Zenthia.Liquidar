@@ -26,21 +26,21 @@ Partial Public Class Liquidaciones
     <Column(Order:=2)>
     Public Property Impreso As Boolean
 
-    <Column(TypeName:="money")>
+    '<Column(TypeName:="money")>
     Public Property TotalRemunerativo As Decimal?
 
-    <Column(TypeName:="money")>
+    '<Column(TypeName:="money")>
     Public Property TotalNoRemunerativo As Decimal?
 
-    <Column(TypeName:="money")>
+    '<Column(TypeName:="money")>
     Public Property TotalDescuento As Decimal?
 
-    <Column(TypeName:="money")>
+    '<Column(TypeName:="money")>
     Public Property Jubilacion As Decimal?
 
-    <Column(TypeName:="money")>
+    '<Column(TypeName:="money")>
     Public Property Sindicato As Decimal?
 
-    <Column(TypeName:="money")>
+    '<Column(TypeName:="money")>
     Public Property ObraSocial As Decimal?
 End Class

@@ -44,10 +44,10 @@ Partial Public Class Sindicatos
 
     Public Property PorcientoRetencion As Double?
 
-    <Column(TypeName:="money")>
+    '<Column(TypeName:="money")>
     Public Property ImporteAporte As Decimal?
 
-    <Column(TypeName:="money")>
+    '<Column(TypeName:="money")>
     Public Property ImporteRetencion As Decimal?
 
     <StringLength(255)>

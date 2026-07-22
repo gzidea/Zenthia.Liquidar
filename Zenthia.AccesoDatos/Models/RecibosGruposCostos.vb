@@ -14,14 +14,13 @@ Public Class RecibosGruposCostos
 
     Public Overridable Property GrupoCosto As GruposCostos
 
-    <Column(TypeName:="money")>
+    '<Column(TypeName:="money")>
     Public Property Empleador As Decimal?
 
-    <Column(TypeName:="money")>
+    '<Column(TypeName:="money")>
     Public Property Trabajador As Decimal?
 
     <NotMapped>
-    <Column(TypeName:="money")>
     Public ReadOnly Property Total As Decimal
         Get
             Return If(Trabajador, 0D) + If(Empleador, 0D)

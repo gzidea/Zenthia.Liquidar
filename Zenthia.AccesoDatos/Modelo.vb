@@ -3,6 +3,7 @@ Imports System.Data.Entity
 Imports System.ComponentModel.DataAnnotations.Schema
 Imports System.Linq
 
+<DbConfigurationType(GetType(ModeloDbConfiguration))>
 Partial Public Class Modelo
     Inherits DbContext
 
@@ -530,6 +531,20 @@ Partial Public Class Modelo
         modelBuilder.Entity(Of EmpresasActividades)() _
             .Property(Function(e) e.ValorSeguro) _
             .HasPrecision(19, 4)
+
+        'Esto agregar para la migracion a postgress
+        modelBuilder.Entity(Of Recibos)().Property(Function(e) e.SueldoBruto).HasPrecision(19, 4)
+        modelBuilder.Entity(Of Recibos)().Property(Function(e) e.TotalContribuciones).HasPrecision(19, 4)
+        modelBuilder.Entity(Of Recibos)().Property(Function(e) e.NetoACobrar).HasPrecision(19, 4)
+        modelBuilder.Entity(Of Recibos)().Property(Function(e) e.Total).HasPrecision(19, 4)
+        modelBuilder.Entity(Of Recibos)().Property(Function(e) e.TotalCostoLaboral).HasPrecision(19, 4)
+        modelBuilder.Entity(Of Recibos)().Property(Function(e) e.ImporteSeguro).HasPrecision(19, 4)
+
+        modelBuilder.Entity(Of RecibosGruposCostos)().Property(Function(e) e.Empleador).HasPrecision(19, 4)
+        modelBuilder.Entity(Of RecibosGruposCostos)().Property(Function(e) e.Trabajador).HasPrecision(19, 4)
+
+        modelBuilder.Entity(Of LegajosConceptosParticulares)().Property(Function(e) e.Importe).HasPrecision(19, 4)
+
 #Region "Seguridad_Builder"
         '*** ESTO CORRESPONDE AL MODULO DE SEGURIDAD ****
         modelBuilder.Entity(Of Modulos)() _

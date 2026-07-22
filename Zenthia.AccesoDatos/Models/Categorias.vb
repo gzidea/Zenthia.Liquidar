@@ -20,13 +20,13 @@ Partial Public Class Categorias
 
     Public Property CondicionLiquidacion As Integer?
 
-    <Column(TypeName:="money")>
+    '<Column(TypeName:="money")>
     Public Property Importe As Decimal?
 
-    <Column(TypeName:="money")>
+    '<Column(TypeName:="money")>
     Public Property Adicional1 As Decimal?
 
-    <Column(TypeName:="money")>
+    '<Column(TypeName:="money")>
     Public Property Adicional2 As Decimal?
 
     Public Property HorasNormales As Integer?

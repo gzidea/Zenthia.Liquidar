@@ -13,7 +13,7 @@ Partial Public Class LegajosNovedadesDetalles
 
     Public Property Cantidad As Double?
 
-    <Column(TypeName:="money")>
+    '<Column(TypeName:="money")>
     Public Property Importe As Decimal?
 
     <StringLength(255)>

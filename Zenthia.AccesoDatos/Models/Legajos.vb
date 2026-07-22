@@ -49,10 +49,10 @@ Partial Public Class Legajos
 
     Public Property IdObrasocial As Integer?
 
-    <Column(TypeName:="money")>
+    '<Column(TypeName:="money")>
     Public Property Sueldo As Decimal?
 
-    <Column(TypeName:="money")>
+    '<Column(TypeName:="money")>
     Public Property Adicional As Decimal?
 
     Public Property IdJornada As Integer?

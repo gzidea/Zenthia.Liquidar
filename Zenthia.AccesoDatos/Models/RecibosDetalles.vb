@@ -29,7 +29,7 @@ Partial Public Class RecibosDetalles
     Public Property Base As Decimal?
 
     '<Column(TypeName:="money")>
-    Public Property Importe As Double?
+    Public Property Importe As Decimal?
 
     '<Column(TypeName:="money")>
     Public Property Remunerativo As Decimal?

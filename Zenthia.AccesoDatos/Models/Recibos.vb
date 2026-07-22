@@ -17,10 +17,10 @@ Partial Public Class Recibos
 
     Public Property IdLegajo As Integer?
 
-    <Column(TypeName:="datetime")>
+    <Column(TypeName:="timestamp")>
     Public Property Fecha As Date?
 
-    <Column(TypeName:="datetime")>
+    <Column(TypeName:="timestamp")>
     Public Property FechaPago As Date
 
     <StringLength(255)>
@@ -28,37 +28,37 @@ Partial Public Class Recibos
 
     Public Property IdTipoLiquidacion As Integer?
 
-    <Column(TypeName:="money")>
+    '<Column(TypeName:="money")>
     Public Property TotalRemunerativos As Decimal?
 
-    <Column(TypeName:="money")>
+    '<Column(TypeName:="money")>
     Public Property TotalNoRemunerativos As Decimal?
 
-    <Column(TypeName:="money")>
+    '<Column(TypeName:="money")>
     Public Property SueldoBruto As Decimal?
 
-    <Column(TypeName:="money")>
+    '<Column(TypeName:="money")>
     Public Property TotalDescuentos As Decimal?
 
-    <Column(TypeName:="money")>
+    '<Column(TypeName:="money")>
     Public Property TotalContribuciones As Decimal?
 
-    <Column(TypeName:="money")>
+    '<Column(TypeName:="money")>
     Public Property NetoACobrar As Decimal?
 
-    <Column(TypeName:="money")>
+    '<Column(TypeName:="money")>
     Public Property Total As Decimal?
 
-    <Column(TypeName:="money")>
+    '<Column(TypeName:="money")>
     Public Property TotalCostoLaboral As Decimal?
 
-    <Column(TypeName:="money")>
+    '<Column(TypeName:="money")>
     Public Property Basico As Decimal?
 
-    <Column(TypeName:="money")>
+    '<Column(TypeName:="money")>
     Public Property ImporteSeguro As Decimal?
 
-    <Column(TypeName:="datetime")>
+    <Column(TypeName:="timestamp")>
     Public Property FechaPagoAportes As Date?
 
     Public Property BancoPagoAportes As String

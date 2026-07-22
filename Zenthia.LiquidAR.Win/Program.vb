@@ -14,6 +14,16 @@ Friend NotInheritable Class Program
     Shared Sub Main()
         SkinManager.EnableFormSkins()
         Application.EnableVisualStyles()
+        ''' --- TEMPORAL: forzar creación de schema en Neon ---
+        ''Try
+        ''    Using db As New AccesoDatos.Modelo()
+        ''        db.Database.Initialize(force:=True)
+        ''    End Using
+        ''    MessageBox.Show("Schema creado correctamente en Postgres.")
+        ''Catch ex As Exception
+        ''    MessageBox.Show("Error creando schema: " & ex.ToString())
+        ''End Try
+        ''' --- FIN TEMPORAL ---
         AplicarTemaGuardado()
         Application.SetCompatibleTextRenderingDefault(False)
         Application.Run(New frmPrincipal())
