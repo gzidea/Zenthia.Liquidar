@@ -20,8 +20,14 @@ Partial Class Convenios
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Convenios))
         Me.gridControl = New DevExpress.XtraGrid.GridControl()
+        Me.ConveniosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.gridView = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.colCodigo = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colNombre = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colDescripcion = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.ribbonControl = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.bbiNew = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiEdit = New DevExpress.XtraBars.BarButtonItem()
@@ -32,17 +38,15 @@ Partial Class Convenios
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonStatusBar1 = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
         Me.mvvmContext = New DevExpress.Utils.MVVM.MVVMContext(Me.components)
-        Me.ConveniosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.colCodigo = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colNombre = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colDescripcion = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.popupMenu = New DevExpress.XtraBars.PopupMenu(Me.components)
+        Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.bbiClose = New DevExpress.XtraBars.BarButtonItem()
+        Me.RibbonPageGroup3 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         CType(Me.gridControl, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ConveniosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ribbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.mvvmContext, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ConveniosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.popupMenu, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -58,6 +62,10 @@ Partial Class Convenios
         Me.gridControl.TabIndex = 11
         Me.gridControl.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridView})
         '
+        'ConveniosBindingSource
+        '
+        Me.ConveniosBindingSource.DataSource = GetType(Zenthia.AccesoDatos.Convenios)
+        '
         'gridView
         '
         Me.gridView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colCodigo, Me.colNombre, Me.colDescripcion, Me.GridColumn1})
@@ -65,12 +73,43 @@ Partial Class Convenios
         Me.gridView.Name = "gridView"
         Me.gridView.OptionsBehavior.Editable = False
         '
+        'colCodigo
+        '
+        Me.colCodigo.FieldName = "Codigo"
+        Me.colCodigo.Name = "colCodigo"
+        Me.colCodigo.Visible = True
+        Me.colCodigo.VisibleIndex = 0
+        Me.colCodigo.Width = 72
+        '
+        'colNombre
+        '
+        Me.colNombre.FieldName = "Nombre"
+        Me.colNombre.Name = "colNombre"
+        Me.colNombre.Visible = True
+        Me.colNombre.VisibleIndex = 1
+        Me.colNombre.Width = 192
+        '
+        'colDescripcion
+        '
+        Me.colDescripcion.FieldName = "Descripcion"
+        Me.colDescripcion.Name = "colDescripcion"
+        Me.colDescripcion.Visible = True
+        Me.colDescripcion.VisibleIndex = 2
+        Me.colDescripcion.Width = 360
+        '
+        'GridColumn1
+        '
+        Me.GridColumn1.Name = "GridColumn1"
+        Me.GridColumn1.Visible = True
+        Me.GridColumn1.VisibleIndex = 3
+        Me.GridColumn1.Width = 146
+        '
         'ribbonControl
         '
         Me.ribbonControl.ExpandCollapseItem.Id = 0
-        Me.ribbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl.ExpandCollapseItem, Me.ribbonControl.SearchEditItem, Me.bbiNew, Me.bbiEdit, Me.bbiDelete, Me.bbiRefresh, Me.bsiRecordsCount})
+        Me.ribbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl.ExpandCollapseItem, Me.ribbonControl.SearchEditItem, Me.bbiNew, Me.bbiEdit, Me.bbiDelete, Me.bbiRefresh, Me.bsiRecordsCount, Me.bbiClose})
         Me.ribbonControl.Location = New System.Drawing.Point(0, 0)
-        Me.ribbonControl.MaxItemId = 15
+        Me.ribbonControl.MaxItemId = 16
         Me.ribbonControl.Name = "ribbonControl"
         Me.ribbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.[False]
@@ -115,7 +154,7 @@ Partial Class Convenios
         '
         'RibbonPage1
         '
-        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1})
+        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1, Me.RibbonPageGroup2, Me.RibbonPageGroup3})
         Me.RibbonPage1.Name = "RibbonPage1"
         Me.RibbonPage1.Text = "RibbonPage1"
         '
@@ -123,9 +162,9 @@ Partial Class Convenios
         '
         Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiNew)
         Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiEdit)
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiDelete)
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiRefresh)
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiDelete, True)
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
+        Me.RibbonPageGroup1.Text = "Edicion"
         '
         'RibbonStatusBar1
         '
@@ -137,44 +176,9 @@ Partial Class Convenios
         '
         'mvvmContext
         '
-        Me.mvvmContext.BindingExpressions.AddRange(New DevExpress.Utils.MVVM.BindingExpression() {DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.ConvenioCollectionViewModel), "New", Me.bbiNew), DevExpress.Utils.MVVM.BindingExpression.CreateParameterizedCommandBinding(GetType(Zenthia.LiquidAR.Win.ConvenioCollectionViewModel), "Edit", "SelectedEntity", Me.bbiEdit), DevExpress.Utils.MVVM.BindingExpression.CreateParameterizedCommandBinding(GetType(Zenthia.LiquidAR.Win.ConvenioCollectionViewModel), "Delete", "SelectedEntity", Me.bbiDelete), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.ConvenioCollectionViewModel), "Refresh", Me.bbiRefresh)})
+        Me.mvvmContext.BindingExpressions.AddRange(New DevExpress.Utils.MVVM.BindingExpression() {DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.ConvenioCollectionViewModel), "New", Me.bbiNew), DevExpress.Utils.MVVM.BindingExpression.CreateParameterizedCommandBinding(GetType(Zenthia.LiquidAR.Win.ConvenioCollectionViewModel), "Edit", "SelectedEntity", Me.bbiEdit), DevExpress.Utils.MVVM.BindingExpression.CreateParameterizedCommandBinding(GetType(Zenthia.LiquidAR.Win.ConvenioCollectionViewModel), "Delete", "SelectedEntity", Me.bbiDelete), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.ConvenioCollectionViewModel), "Refresh", Me.bbiRefresh), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.ConvenioCollectionViewModel), "Close", Me.bbiClose)})
         Me.mvvmContext.ContainerControl = Me
         Me.mvvmContext.ViewModelType = GetType(Zenthia.LiquidAR.Win.ConvenioCollectionViewModel)
-        '
-        'ConveniosBindingSource
-        '
-        Me.ConveniosBindingSource.DataSource = GetType(Zenthia.AccesoDatos.Convenios)
-        '
-        'colCodigo
-        '
-        Me.colCodigo.FieldName = "Codigo"
-        Me.colCodigo.Name = "colCodigo"
-        Me.colCodigo.Visible = True
-        Me.colCodigo.VisibleIndex = 0
-        Me.colCodigo.Width = 72
-        '
-        'colNombre
-        '
-        Me.colNombre.FieldName = "Nombre"
-        Me.colNombre.Name = "colNombre"
-        Me.colNombre.Visible = True
-        Me.colNombre.VisibleIndex = 1
-        Me.colNombre.Width = 192
-        '
-        'colDescripcion
-        '
-        Me.colDescripcion.FieldName = "Descripcion"
-        Me.colDescripcion.Name = "colDescripcion"
-        Me.colDescripcion.Visible = True
-        Me.colDescripcion.VisibleIndex = 2
-        Me.colDescripcion.Width = 360
-        '
-        'GridColumn1
-        '
-        Me.GridColumn1.Name = "GridColumn1"
-        Me.GridColumn1.Visible = True
-        Me.GridColumn1.VisibleIndex = 3
-        Me.GridColumn1.Width = 146
         '
         'popupMenu
         '
@@ -184,6 +188,25 @@ Partial Class Convenios
         Me.popupMenu.ItemLinks.Add(Me.bbiRefresh, True)
         Me.popupMenu.Name = "popupMenu"
         Me.popupMenu.Ribbon = Me.ribbonControl
+        '
+        'RibbonPageGroup2
+        '
+        Me.RibbonPageGroup2.Alignment = DevExpress.XtraBars.Ribbon.RibbonPageGroupAlignment.Far
+        Me.RibbonPageGroup2.ItemLinks.Add(Me.bbiClose)
+        Me.RibbonPageGroup2.Name = "RibbonPageGroup2"
+        '
+        'bbiClose
+        '
+        Me.bbiClose.Caption = "Cerrar"
+        Me.bbiClose.Id = 15
+        Me.bbiClose.ImageOptions.SvgImage = CType(resources.GetObject("bbiClose.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
+        Me.bbiClose.Name = "bbiClose"
+        '
+        'RibbonPageGroup3
+        '
+        Me.RibbonPageGroup3.ItemLinks.Add(Me.bbiRefresh)
+        Me.RibbonPageGroup3.Name = "RibbonPageGroup3"
+        Me.RibbonPageGroup3.Text = "Consulta"
         '
         'Convenios
         '
@@ -195,10 +218,10 @@ Partial Class Convenios
         Me.Name = "Convenios"
         Me.Size = New System.Drawing.Size(795, 538)
         CType(Me.gridControl, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ConveniosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ribbonControl, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.mvvmContext, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ConveniosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.popupMenu, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -223,4 +246,7 @@ Partial Class Convenios
     Friend WithEvents colDescripcion As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn1 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents popupMenu As DevExpress.XtraBars.PopupMenu
+    Friend WithEvents bbiClose As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents RibbonPageGroup2 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents RibbonPageGroup3 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
 End Class

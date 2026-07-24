@@ -49,6 +49,9 @@ Partial Class CategoriaEditForm
         Me.ConveniosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.IdConvenioSearchLookUpEditView = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colDescripcion = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.ImporteSpinEdit = New DevExpress.XtraEditors.CalcEdit()
+        Me.Adicional1SpinEdit = New DevExpress.XtraEditors.CalcEdit()
+        Me.Adicional2SpinEdit = New DevExpress.XtraEditors.CalcEdit()
         Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
@@ -64,9 +67,6 @@ Partial Class CategoriaEditForm
         Me.LayoutControlItem10 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem11 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem4 = New DevExpress.XtraLayout.EmptySpaceItem()
-        Me.ImporteSpinEdit = New DevExpress.XtraEditors.CalcEdit()
-        Me.Adicional1SpinEdit = New DevExpress.XtraEditors.CalcEdit()
-        Me.Adicional2SpinEdit = New DevExpress.XtraEditors.CalcEdit()
         CType(Me.ribbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.mvvmContext, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dataLayout, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -81,6 +81,9 @@ Partial Class CategoriaEditForm
         CType(Me.IdConvenioSearchLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ConveniosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.IdConvenioSearchLookUpEditView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ImporteSpinEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Adicional1SpinEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Adicional2SpinEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -96,9 +99,6 @@ Partial Class CategoriaEditForm
         CType(Me.LayoutControlItem10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ImporteSpinEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Adicional1SpinEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Adicional2SpinEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RibbonStatusBar1
@@ -208,9 +208,9 @@ Partial Class CategoriaEditForm
         '
         'RibbonPageGroup3
         '
+        Me.RibbonPageGroup3.Alignment = DevExpress.XtraBars.Ribbon.RibbonPageGroupAlignment.Far
         Me.RibbonPageGroup3.ItemLinks.Add(Me.bbiClose)
         Me.RibbonPageGroup3.Name = "RibbonPageGroup3"
-        Me.RibbonPageGroup3.Text = "Cerrar"
         '
         'RibbonPageGroup4
         '
@@ -218,6 +218,7 @@ Partial Class CategoriaEditForm
         Me.RibbonPageGroup4.ItemLinks.Add(Me.bbiResetLayout)
         Me.RibbonPageGroup4.Name = "RibbonPageGroup4"
         Me.RibbonPageGroup4.Text = "Layer"
+        Me.RibbonPageGroup4.Visible = False
         '
         'mvvmContext
         '
@@ -353,6 +354,53 @@ Partial Class CategoriaEditForm
         Me.colDescripcion.Name = "colDescripcion"
         Me.colDescripcion.Visible = True
         Me.colDescripcion.VisibleIndex = 0
+        '
+        'ImporteSpinEdit
+        '
+        Me.ImporteSpinEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.CategoriasBindingSource, "Importe", True))
+        Me.ImporteSpinEdit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
+        Me.ImporteSpinEdit.Location = New System.Drawing.Point(99, 130)
+        Me.ImporteSpinEdit.MenuManager = Me.ribbonControl
+        Me.ImporteSpinEdit.Name = "ImporteSpinEdit"
+        Me.ImporteSpinEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.ImporteSpinEdit.Properties.DisplayFormat.FormatString = "c2"
+        Me.ImporteSpinEdit.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.ImporteSpinEdit.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered
+        Me.ImporteSpinEdit.Properties.Precision = 2
+        Me.ImporteSpinEdit.Size = New System.Drawing.Size(202, 20)
+        Me.ImporteSpinEdit.StyleController = Me.dataLayout
+        Me.ImporteSpinEdit.TabIndex = 9
+        '
+        'Adicional1SpinEdit
+        '
+        Me.Adicional1SpinEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.CategoriasBindingSource, "Adicional1", True))
+        Me.Adicional1SpinEdit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
+        Me.Adicional1SpinEdit.Location = New System.Drawing.Point(99, 154)
+        Me.Adicional1SpinEdit.MenuManager = Me.ribbonControl
+        Me.Adicional1SpinEdit.Name = "Adicional1SpinEdit"
+        Me.Adicional1SpinEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.Adicional1SpinEdit.Properties.DisplayFormat.FormatString = "c2"
+        Me.Adicional1SpinEdit.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.Adicional1SpinEdit.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered
+        Me.Adicional1SpinEdit.Properties.Precision = 2
+        Me.Adicional1SpinEdit.Size = New System.Drawing.Size(202, 20)
+        Me.Adicional1SpinEdit.StyleController = Me.dataLayout
+        Me.Adicional1SpinEdit.TabIndex = 10
+        '
+        'Adicional2SpinEdit
+        '
+        Me.Adicional2SpinEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.CategoriasBindingSource, "Adicional2", True))
+        Me.Adicional2SpinEdit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
+        Me.Adicional2SpinEdit.Location = New System.Drawing.Point(370, 154)
+        Me.Adicional2SpinEdit.MenuManager = Me.ribbonControl
+        Me.Adicional2SpinEdit.Name = "Adicional2SpinEdit"
+        Me.Adicional2SpinEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.Adicional2SpinEdit.Properties.DisplayFormat.FormatString = "c2"
+        Me.Adicional2SpinEdit.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.Adicional2SpinEdit.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered
+        Me.Adicional2SpinEdit.Size = New System.Drawing.Size(208, 20)
+        Me.Adicional2SpinEdit.StyleController = Me.dataLayout
+        Me.Adicional2SpinEdit.TabIndex = 11
         '
         'Root
         '
@@ -494,53 +542,6 @@ Partial Class CategoriaEditForm
         Me.EmptySpaceItem4.Size = New System.Drawing.Size(277, 24)
         Me.EmptySpaceItem4.TextSize = New System.Drawing.Size(0, 0)
         '
-        'ImporteSpinEdit
-        '
-        Me.ImporteSpinEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.CategoriasBindingSource, "Importe", True))
-        Me.ImporteSpinEdit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.ImporteSpinEdit.Location = New System.Drawing.Point(99, 130)
-        Me.ImporteSpinEdit.MenuManager = Me.ribbonControl
-        Me.ImporteSpinEdit.Name = "ImporteSpinEdit"
-        Me.ImporteSpinEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.ImporteSpinEdit.Properties.DisplayFormat.FormatString = "c2"
-        Me.ImporteSpinEdit.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.ImporteSpinEdit.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered
-        Me.ImporteSpinEdit.Properties.Precision = 2
-        Me.ImporteSpinEdit.Size = New System.Drawing.Size(202, 20)
-        Me.ImporteSpinEdit.StyleController = Me.dataLayout
-        Me.ImporteSpinEdit.TabIndex = 9
-        '
-        'Adicional1SpinEdit
-        '
-        Me.Adicional1SpinEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.CategoriasBindingSource, "Adicional1", True))
-        Me.Adicional1SpinEdit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.Adicional1SpinEdit.Location = New System.Drawing.Point(99, 154)
-        Me.Adicional1SpinEdit.MenuManager = Me.ribbonControl
-        Me.Adicional1SpinEdit.Name = "Adicional1SpinEdit"
-        Me.Adicional1SpinEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.Adicional1SpinEdit.Properties.DisplayFormat.FormatString = "c2"
-        Me.Adicional1SpinEdit.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.Adicional1SpinEdit.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered
-        Me.Adicional1SpinEdit.Properties.Precision = 2
-        Me.Adicional1SpinEdit.Size = New System.Drawing.Size(202, 20)
-        Me.Adicional1SpinEdit.StyleController = Me.dataLayout
-        Me.Adicional1SpinEdit.TabIndex = 10
-        '
-        'Adicional2SpinEdit
-        '
-        Me.Adicional2SpinEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.CategoriasBindingSource, "Adicional2", True))
-        Me.Adicional2SpinEdit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.Adicional2SpinEdit.Location = New System.Drawing.Point(370, 154)
-        Me.Adicional2SpinEdit.MenuManager = Me.ribbonControl
-        Me.Adicional2SpinEdit.Name = "Adicional2SpinEdit"
-        Me.Adicional2SpinEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.Adicional2SpinEdit.Properties.DisplayFormat.FormatString = "c2"
-        Me.Adicional2SpinEdit.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.Adicional2SpinEdit.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered
-        Me.Adicional2SpinEdit.Size = New System.Drawing.Size(208, 20)
-        Me.Adicional2SpinEdit.StyleController = Me.dataLayout
-        Me.Adicional2SpinEdit.TabIndex = 11
-        '
         'CategoriaEditForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -564,6 +565,9 @@ Partial Class CategoriaEditForm
         CType(Me.IdConvenioSearchLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ConveniosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.IdConvenioSearchLookUpEditView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ImporteSpinEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Adicional1SpinEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Adicional2SpinEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
@@ -579,9 +583,6 @@ Partial Class CategoriaEditForm
         CType(Me.LayoutControlItem10, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ImporteSpinEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Adicional1SpinEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Adicional2SpinEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

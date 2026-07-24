@@ -73,6 +73,8 @@ Partial Class SindicatoEditForm
         Me.LayoutControlItem6 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem3 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.LayoutControlItem9 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.EmptySpaceItem4 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.EmptySpaceItem5 = New DevExpress.XtraLayout.EmptySpaceItem()
         PorcientoAporteLabel = New System.Windows.Forms.Label()
         ImporteAporteLabel = New System.Windows.Forms.Label()
         PorcientoRetencionLabel = New System.Windows.Forms.Label()
@@ -112,6 +114,8 @@ Partial Class SindicatoEditForm
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmptySpaceItem4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmptySpaceItem5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PorcientoAporteLabel
@@ -175,28 +179,28 @@ Partial Class SindicatoEditForm
         '
         'bbiSave
         '
-        Me.bbiSave.Caption = "Save"
+        Me.bbiSave.Caption = "Guardar"
         Me.bbiSave.Id = 1
         Me.bbiSave.ImageOptions.ImageUri.Uri = "Save"
         Me.bbiSave.Name = "bbiSave"
         '
         'bbiSaveAndClose
         '
-        Me.bbiSaveAndClose.Caption = "SaveAndClose"
+        Me.bbiSaveAndClose.Caption = "Guardar y Cerrar"
         Me.bbiSaveAndClose.Id = 2
         Me.bbiSaveAndClose.ImageOptions.ImageUri.Uri = "SaveAndClose"
         Me.bbiSaveAndClose.Name = "bbiSaveAndClose"
         '
         'bbiSaveAndNew
         '
-        Me.bbiSaveAndNew.Caption = "SaveAndNew"
+        Me.bbiSaveAndNew.Caption = "Guardar y Nuevo"
         Me.bbiSaveAndNew.Id = 3
         Me.bbiSaveAndNew.ImageOptions.ImageUri.Uri = "SaveAndNew"
         Me.bbiSaveAndNew.Name = "bbiSaveAndNew"
         '
         'bbiReset
         '
-        Me.bbiReset.Caption = "Reset Changes"
+        Me.bbiReset.Caption = "Deshacer"
         Me.bbiReset.Id = 4
         Me.bbiReset.ImageOptions.ImageUri.Uri = "Reset"
         Me.bbiReset.Name = "bbiReset"
@@ -217,14 +221,14 @@ Partial Class SindicatoEditForm
         '
         'bbiDelete
         '
-        Me.bbiDelete.Caption = "Delete"
+        Me.bbiDelete.Caption = "Quitar"
         Me.bbiDelete.Id = 7
         Me.bbiDelete.ImageOptions.ImageUri.Uri = "Delete"
         Me.bbiDelete.Name = "bbiDelete"
         '
         'bbiClose
         '
-        Me.bbiClose.Caption = "Close"
+        Me.bbiClose.Caption = "Cerrar"
         Me.bbiClose.Id = 8
         Me.bbiClose.ImageOptions.ImageUri.Uri = "Close"
         Me.bbiClose.Name = "bbiClose"
@@ -265,9 +269,9 @@ Partial Class SindicatoEditForm
         '
         'RibbonPageGroup3
         '
+        Me.RibbonPageGroup3.Alignment = DevExpress.XtraBars.Ribbon.RibbonPageGroupAlignment.Far
         Me.RibbonPageGroup3.ItemLinks.Add(Me.bbiClose)
         Me.RibbonPageGroup3.Name = "RibbonPageGroup3"
-        Me.RibbonPageGroup3.Text = "Cerrar"
         '
         'RibbonPageGroup4
         '
@@ -276,6 +280,7 @@ Partial Class SindicatoEditForm
         Me.RibbonPageGroup4.ItemLinks.Add(Me.bbiResetLayout)
         Me.RibbonPageGroup4.Name = "RibbonPageGroup4"
         Me.RibbonPageGroup4.Text = "Layer"
+        Me.RibbonPageGroup4.Visible = False
         '
         'RibbonStatusBar1
         '
@@ -388,10 +393,10 @@ Partial Class SindicatoEditForm
         'TelefonoTextEdit
         '
         Me.TelefonoTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.SindicatosBindingSource, "Telefono", True))
-        Me.TelefonoTextEdit.Location = New System.Drawing.Point(547, 132)
+        Me.TelefonoTextEdit.Location = New System.Drawing.Point(527, 132)
         Me.TelefonoTextEdit.MenuManager = Me.ribbonControl
         Me.TelefonoTextEdit.Name = "TelefonoTextEdit"
-        Me.TelefonoTextEdit.Size = New System.Drawing.Size(146, 20)
+        Me.TelefonoTextEdit.Size = New System.Drawing.Size(166, 20)
         Me.TelefonoTextEdit.StyleController = Me.LayoutControl1
         Me.TelefonoTextEdit.TabIndex = 12
         '
@@ -401,7 +406,7 @@ Partial Class SindicatoEditForm
         Me.EmailTextEdit.Location = New System.Drawing.Point(84, 132)
         Me.EmailTextEdit.MenuManager = Me.ribbonControl
         Me.EmailTextEdit.Name = "EmailTextEdit"
-        Me.EmailTextEdit.Size = New System.Drawing.Size(387, 20)
+        Me.EmailTextEdit.Size = New System.Drawing.Size(344, 20)
         Me.EmailTextEdit.StyleController = Me.LayoutControl1
         Me.EmailTextEdit.TabIndex = 11
         '
@@ -412,8 +417,10 @@ Partial Class SindicatoEditForm
         Me.IdProvinciaLookUpEdit.MenuManager = Me.ribbonControl
         Me.IdProvinciaLookUpEdit.Name = "IdProvinciaLookUpEdit"
         Me.IdProvinciaLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.IdProvinciaLookUpEdit.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Nombre", "Nombre")})
         Me.IdProvinciaLookUpEdit.Properties.DataSource = Me.ProvinciasBindingSource
         Me.IdProvinciaLookUpEdit.Properties.DisplayMember = "Nombre"
+        Me.IdProvinciaLookUpEdit.Properties.NullText = "Seleccione una provincia"
         Me.IdProvinciaLookUpEdit.Properties.ValueMember = "Id"
         Me.IdProvinciaLookUpEdit.Size = New System.Drawing.Size(202, 20)
         Me.IdProvinciaLookUpEdit.StyleController = Me.LayoutControl1
@@ -427,11 +434,11 @@ Partial Class SindicatoEditForm
         '
         Me.CodigoPostalSpinEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.SindicatosBindingSource, "CodigoPostal", True))
         Me.CodigoPostalSpinEdit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.CodigoPostalSpinEdit.Location = New System.Drawing.Point(618, 84)
+        Me.CodigoPostalSpinEdit.Location = New System.Drawing.Point(576, 84)
         Me.CodigoPostalSpinEdit.MenuManager = Me.ribbonControl
         Me.CodigoPostalSpinEdit.Name = "CodigoPostalSpinEdit"
         Me.CodigoPostalSpinEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.CodigoPostalSpinEdit.Size = New System.Drawing.Size(75, 20)
+        Me.CodigoPostalSpinEdit.Size = New System.Drawing.Size(117, 20)
         Me.CodigoPostalSpinEdit.StyleController = Me.LayoutControl1
         Me.CodigoPostalSpinEdit.TabIndex = 9
         '
@@ -441,7 +448,7 @@ Partial Class SindicatoEditForm
         Me.LocalidadTextEdit.Location = New System.Drawing.Point(84, 84)
         Me.LocalidadTextEdit.MenuManager = Me.ribbonControl
         Me.LocalidadTextEdit.Name = "LocalidadTextEdit"
-        Me.LocalidadTextEdit.Size = New System.Drawing.Size(458, 20)
+        Me.LocalidadTextEdit.Size = New System.Drawing.Size(387, 20)
         Me.LocalidadTextEdit.StyleController = Me.LayoutControl1
         Me.LocalidadTextEdit.TabIndex = 8
         '
@@ -479,7 +486,7 @@ Partial Class SindicatoEditForm
         '
         Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
         Me.Root.GroupBordersVisible = False
-        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem2, Me.LayoutControlItem3, Me.LayoutControlItem4, Me.LayoutControlItem5, Me.LayoutControlItem7, Me.LayoutControlItem8, Me.EmptySpaceItem1, Me.LayoutControlItem1, Me.EmptySpaceItem2, Me.LayoutControlItem6, Me.EmptySpaceItem3, Me.LayoutControlItem9})
+        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem2, Me.LayoutControlItem3, Me.LayoutControlItem4, Me.LayoutControlItem5, Me.LayoutControlItem7, Me.LayoutControlItem8, Me.EmptySpaceItem1, Me.LayoutControlItem1, Me.EmptySpaceItem2, Me.LayoutControlItem6, Me.EmptySpaceItem3, Me.LayoutControlItem9, Me.EmptySpaceItem4, Me.EmptySpaceItem5})
         Me.Root.Name = "Root"
         Me.Root.Size = New System.Drawing.Size(705, 365)
         Me.Root.TextVisible = False
@@ -516,7 +523,7 @@ Partial Class SindicatoEditForm
         Me.LayoutControlItem5.Control = Me.LocalidadTextEdit
         Me.LayoutControlItem5.Location = New System.Drawing.Point(0, 72)
         Me.LayoutControlItem5.Name = "LayoutControlItem5"
-        Me.LayoutControlItem5.Size = New System.Drawing.Size(534, 24)
+        Me.LayoutControlItem5.Size = New System.Drawing.Size(463, 24)
         Me.LayoutControlItem5.Text = "Localidad:"
         Me.LayoutControlItem5.TextSize = New System.Drawing.Size(69, 13)
         '
@@ -534,7 +541,7 @@ Partial Class SindicatoEditForm
         Me.LayoutControlItem8.Control = Me.EmailTextEdit
         Me.LayoutControlItem8.Location = New System.Drawing.Point(0, 120)
         Me.LayoutControlItem8.Name = "LayoutControlItem8"
-        Me.LayoutControlItem8.Size = New System.Drawing.Size(463, 24)
+        Me.LayoutControlItem8.Size = New System.Drawing.Size(420, 24)
         Me.LayoutControlItem8.Text = "Email:"
         Me.LayoutControlItem8.TextSize = New System.Drawing.Size(69, 13)
         '
@@ -566,9 +573,9 @@ Partial Class SindicatoEditForm
         'LayoutControlItem6
         '
         Me.LayoutControlItem6.Control = Me.CodigoPostalSpinEdit
-        Me.LayoutControlItem6.Location = New System.Drawing.Point(534, 72)
+        Me.LayoutControlItem6.Location = New System.Drawing.Point(492, 72)
         Me.LayoutControlItem6.Name = "LayoutControlItem6"
-        Me.LayoutControlItem6.Size = New System.Drawing.Size(151, 24)
+        Me.LayoutControlItem6.Size = New System.Drawing.Size(193, 24)
         Me.LayoutControlItem6.Text = "Codigo Postal:"
         Me.LayoutControlItem6.TextSize = New System.Drawing.Size(69, 13)
         '
@@ -583,11 +590,27 @@ Partial Class SindicatoEditForm
         'LayoutControlItem9
         '
         Me.LayoutControlItem9.Control = Me.TelefonoTextEdit
-        Me.LayoutControlItem9.Location = New System.Drawing.Point(463, 120)
+        Me.LayoutControlItem9.Location = New System.Drawing.Point(443, 120)
         Me.LayoutControlItem9.Name = "LayoutControlItem9"
-        Me.LayoutControlItem9.Size = New System.Drawing.Size(222, 24)
+        Me.LayoutControlItem9.Size = New System.Drawing.Size(242, 24)
         Me.LayoutControlItem9.Text = "Telefono:"
         Me.LayoutControlItem9.TextSize = New System.Drawing.Size(69, 13)
+        '
+        'EmptySpaceItem4
+        '
+        Me.EmptySpaceItem4.AllowHotTrack = False
+        Me.EmptySpaceItem4.Location = New System.Drawing.Point(463, 72)
+        Me.EmptySpaceItem4.Name = "EmptySpaceItem4"
+        Me.EmptySpaceItem4.Size = New System.Drawing.Size(29, 24)
+        Me.EmptySpaceItem4.TextSize = New System.Drawing.Size(0, 0)
+        '
+        'EmptySpaceItem5
+        '
+        Me.EmptySpaceItem5.AllowHotTrack = False
+        Me.EmptySpaceItem5.Location = New System.Drawing.Point(420, 120)
+        Me.EmptySpaceItem5.Name = "EmptySpaceItem5"
+        Me.EmptySpaceItem5.Size = New System.Drawing.Size(23, 24)
+        Me.EmptySpaceItem5.TextSize = New System.Drawing.Size(0, 0)
         '
         'SindicatoEditForm
         '
@@ -633,6 +656,8 @@ Partial Class SindicatoEditForm
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmptySpaceItem4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmptySpaceItem5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -686,4 +711,6 @@ Partial Class SindicatoEditForm
     Friend WithEvents RibbonPageGroup4 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents RibbonStatusBar1 As DevExpress.XtraBars.Ribbon.RibbonStatusBar
     Friend WithEvents bsiEstado As DevExpress.XtraBars.BarStaticItem
+    Friend WithEvents EmptySpaceItem4 As DevExpress.XtraLayout.EmptySpaceItem
+    Friend WithEvents EmptySpaceItem5 As DevExpress.XtraLayout.EmptySpaceItem
 End Class

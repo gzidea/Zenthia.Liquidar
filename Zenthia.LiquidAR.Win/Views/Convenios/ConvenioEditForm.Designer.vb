@@ -78,6 +78,7 @@ Partial Class ConvenioEditForm
         Me.mvvmContext = New DevExpress.Utils.MVVM.MVVMContext(Me.components)
         Me.categorias_DetailsPopUpMenu = New DevExpress.XtraBars.PopupMenu(Me.components)
         Me.BehaviorManager1 = New DevExpress.Utils.Behaviors.BehaviorManager(Me.components)
+        Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.ribbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dataLayout, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.dataLayout.SuspendLayout()
@@ -213,9 +214,9 @@ Partial Class ConvenioEditForm
         '
         'RibbonPageGroup3
         '
+        Me.RibbonPageGroup3.Alignment = DevExpress.XtraBars.Ribbon.RibbonPageGroupAlignment.Far
         Me.RibbonPageGroup3.ItemLinks.Add(Me.bbiClose)
         Me.RibbonPageGroup3.Name = "RibbonPageGroup3"
-        Me.RibbonPageGroup3.Text = "Cerrar"
         '
         'RibbonPageGroup4
         '
@@ -223,6 +224,7 @@ Partial Class ConvenioEditForm
         Me.RibbonPageGroup4.ItemLinks.Add(Me.bbiResetLayout)
         Me.RibbonPageGroup4.Name = "RibbonPageGroup4"
         Me.RibbonPageGroup4.Text = "Layer"
+        Me.RibbonPageGroup4.Visible = False
         '
         'dataLayout
         '
@@ -262,7 +264,7 @@ Partial Class ConvenioEditForm
         '
         'CategoriasGridView
         '
-        Me.CategoriasGridView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colCodigo, Me.colDescripcion, Me.colCondicionLiquidacion, Me.colImporte, Me.colAdicional1, Me.colAdicional2, Me.colHorasNormales, Me.colHorasMinimasImponibles, Me.colDiasMinimosImponibles})
+        Me.CategoriasGridView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colCodigo, Me.colDescripcion, Me.colCondicionLiquidacion, Me.colImporte, Me.colAdicional1, Me.colAdicional2, Me.colHorasNormales, Me.colHorasMinimasImponibles, Me.colDiasMinimosImponibles, Me.GridColumn1})
         Me.CategoriasGridView.GridControl = Me.CategoriasGridControl
         Me.CategoriasGridView.Name = "CategoriasGridView"
         Me.CategoriasGridView.OptionsBehavior.Editable = False
@@ -328,12 +330,10 @@ Partial Class ConvenioEditForm
         '
         'colHorasNormales
         '
-        Me.colHorasNormales.DisplayFormat.FormatString = "c2"
+        Me.colHorasNormales.DisplayFormat.FormatString = "n2"
         Me.colHorasNormales.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.colHorasNormales.FieldName = "HorasNormales"
         Me.colHorasNormales.Name = "colHorasNormales"
-        Me.colHorasNormales.Visible = True
-        Me.colHorasNormales.VisibleIndex = 5
         Me.colHorasNormales.Width = 112
         '
         'colHorasMinimasImponibles
@@ -577,6 +577,13 @@ Partial Class ConvenioEditForm
         Me.categorias_DetailsPopUpMenu.Manager = Me.categorias_DetailsBarManager
         Me.categorias_DetailsPopUpMenu.Name = "categorias_DetailsPopUpMenu"
         '
+        'GridColumn1
+        '
+        Me.GridColumn1.Name = "GridColumn1"
+        Me.GridColumn1.Visible = True
+        Me.GridColumn1.VisibleIndex = 5
+        Me.GridColumn1.Width = 60
+        '
         'ConvenioEditForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -675,4 +682,5 @@ Partial Class ConvenioEditForm
     Friend WithEvents ricbCondicion As DevExpress.XtraEditors.Repository.RepositoryItemComboBox
     Friend WithEvents riicbCondicionLiquidacion As DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox
     Friend WithEvents BehaviorManager1 As DevExpress.Utils.Behaviors.BehaviorManager
+    Friend WithEvents GridColumn1 As DevExpress.XtraGrid.Columns.GridColumn
 End Class
