@@ -20,6 +20,7 @@ Partial Class Bancos
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Bancos))
         Me.mvvmContext = New DevExpress.Utils.MVVM.MVVMContext(Me.components)
         Me.bbiNew = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiEdit = New DevExpress.XtraBars.BarButtonItem()
@@ -50,6 +51,8 @@ Partial Class Bancos
         Me.colAbreviacion = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.popupMenu = New DevExpress.XtraBars.PopupMenu(Me.components)
+        Me.RibbonPageGroup3 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.bbiClose1 = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.mvvmContext, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ribbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gridControl, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -60,7 +63,7 @@ Partial Class Bancos
         '
         'mvvmContext
         '
-        Me.mvvmContext.BindingExpressions.AddRange(New DevExpress.Utils.MVVM.BindingExpression() {DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.BancosCollectionViewModel), "New", Me.bbiNew), DevExpress.Utils.MVVM.BindingExpression.CreateParameterizedCommandBinding(GetType(Zenthia.LiquidAR.Win.BancosCollectionViewModel), "Edit", "SelectedEntity", Me.bbiEdit), DevExpress.Utils.MVVM.BindingExpression.CreateParameterizedCommandBinding(GetType(Zenthia.LiquidAR.Win.BancosCollectionViewModel), "Delete", "SelectedEntity", Me.bbiDelete), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.BancosCollectionViewModel), "Close", Me.bbiClose), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.BancosCollectionViewModel), "Refresh", Me.bbiRefresh), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.BancosCollectionViewModel), "ActualizarDesdeBCRAAsync", Me.bbiActualizarBCRA)})
+        Me.mvvmContext.BindingExpressions.AddRange(New DevExpress.Utils.MVVM.BindingExpression() {DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.BancosCollectionViewModel), "New", Me.bbiNew), DevExpress.Utils.MVVM.BindingExpression.CreateParameterizedCommandBinding(GetType(Zenthia.LiquidAR.Win.BancosCollectionViewModel), "Edit", "SelectedEntity", Me.bbiEdit), DevExpress.Utils.MVVM.BindingExpression.CreateParameterizedCommandBinding(GetType(Zenthia.LiquidAR.Win.BancosCollectionViewModel), "Delete", "SelectedEntity", Me.bbiDelete), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.BancosCollectionViewModel), "Close", Me.bbiClose1), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.BancosCollectionViewModel), "Refresh", Me.bbiRefresh), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.BancosCollectionViewModel), "ActualizarDesdeBCRAAsync", Me.bbiActualizarBCRA)})
         Me.mvvmContext.ContainerControl = Me
         Me.mvvmContext.ViewModelType = GetType(Zenthia.LiquidAR.Win.BancosCollectionViewModel)
         '
@@ -103,14 +106,15 @@ Partial Class Bancos
         '
         Me.bbiActualizarBCRA.Caption = "Importar"
         Me.bbiActualizarBCRA.Id = 15
+        Me.bbiActualizarBCRA.ImageOptions.SvgImage = CType(resources.GetObject("bbiActualizarBCRA.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
         Me.bbiActualizarBCRA.Name = "bbiActualizarBCRA"
         '
         'ribbonControl
         '
         Me.ribbonControl.ExpandCollapseItem.Id = 0
-        Me.ribbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl.ExpandCollapseItem, Me.ribbonControl.SearchEditItem, Me.bbiNew, Me.bbiEdit, Me.bbiDelete, Me.bbiRefresh, Me.bsiRecordsCount, Me.bbiActualizarBCRA, Me.bbiOnParentViewModelChanged, Me.BarButtonItem1, Me.BarButtonItem2, Me.BarButtonItem3, Me.bbiSave, Me.bbiClose, Me.BarButtonItem4, Me.bbiOnFilterExpressionChanged})
+        Me.ribbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl.ExpandCollapseItem, Me.ribbonControl.SearchEditItem, Me.bbiNew, Me.bbiEdit, Me.bbiDelete, Me.bbiRefresh, Me.bsiRecordsCount, Me.bbiActualizarBCRA, Me.bbiOnParentViewModelChanged, Me.BarButtonItem1, Me.BarButtonItem2, Me.BarButtonItem3, Me.bbiSave, Me.bbiClose, Me.BarButtonItem4, Me.bbiOnFilterExpressionChanged, Me.bbiClose1})
         Me.ribbonControl.Location = New System.Drawing.Point(0, 0)
-        Me.ribbonControl.MaxItemId = 24
+        Me.ribbonControl.MaxItemId = 25
         Me.ribbonControl.Name = "ribbonControl"
         Me.ribbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.[False]
@@ -176,22 +180,24 @@ Partial Class Bancos
         '
         'RibbonPage1
         '
-        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1, Me.RibbonPageGroup2})
+        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1, Me.RibbonPageGroup2, Me.RibbonPageGroup3})
         Me.RibbonPage1.Name = "RibbonPage1"
         Me.RibbonPage1.Text = "RibbonPage1"
         '
         'RibbonPageGroup1
         '
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiNew)
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiActualizarBCRA)
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiNew, True)
         Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiEdit)
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiDelete)
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiRefresh)
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiDelete, True)
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
+        Me.RibbonPageGroup1.Text = "Editar"
         '
         'RibbonPageGroup2
         '
-        Me.RibbonPageGroup2.ItemLinks.Add(Me.bbiActualizarBCRA)
+        Me.RibbonPageGroup2.ItemLinks.Add(Me.bbiRefresh)
         Me.RibbonPageGroup2.Name = "RibbonPageGroup2"
+        Me.RibbonPageGroup2.Text = "Consulta"
         '
         'RibbonStatusBar1
         '
@@ -283,6 +289,19 @@ Partial Class Bancos
         Me.popupMenu.Name = "popupMenu"
         Me.popupMenu.Ribbon = Me.ribbonControl
         '
+        'RibbonPageGroup3
+        '
+        Me.RibbonPageGroup3.Alignment = DevExpress.XtraBars.Ribbon.RibbonPageGroupAlignment.Far
+        Me.RibbonPageGroup3.ItemLinks.Add(Me.bbiClose1)
+        Me.RibbonPageGroup3.Name = "RibbonPageGroup3"
+        '
+        'bbiClose1
+        '
+        Me.bbiClose1.Caption = "Cerrar"
+        Me.bbiClose1.Id = 24
+        Me.bbiClose1.ImageOptions.SvgImage = CType(resources.GetObject("bbiClose1.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
+        Me.bbiClose1.Name = "bbiClose1"
+        '
         'Bancos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -333,4 +352,6 @@ Partial Class Bancos
     Friend WithEvents BarButtonItem4 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents bbiOnParentViewModelChanged As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents bbiOnFilterExpressionChanged As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents bbiClose1 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents RibbonPageGroup3 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
 End Class

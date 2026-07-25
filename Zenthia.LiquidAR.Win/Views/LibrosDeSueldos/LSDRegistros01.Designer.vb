@@ -20,6 +20,7 @@ Partial Class LSDRegistros01
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LSDRegistros01))
         Me.gridControl = New DevExpress.XtraGrid.GridControl()
         Me.LSDRegistro01BindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.gridView = New DevExpress.XtraGrid.Views.Grid.GridView()
@@ -36,6 +37,9 @@ Partial Class LSDRegistros01
         Me.colDiasBases = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colCantidadDeRegistros04 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colGenerado = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colExportado = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colFechaPago = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colBanco = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.ribbonControl = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.bsiRecordsCount = New DevExpress.XtraBars.BarStaticItem()
         Me.bbiNew = New DevExpress.XtraBars.BarButtonItem()
@@ -46,9 +50,9 @@ Partial Class LSDRegistros01
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.mvvmContext = New DevExpress.Utils.MVVM.MVVMContext(Me.components)
         Me.popupMenu = New DevExpress.XtraBars.PopupMenu(Me.components)
-        Me.colExportado = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colFechaPago = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colBanco = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.RibbonPageGroup3 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.bbiClose = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.gridControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LSDRegistro01BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -166,12 +170,43 @@ Partial Class LSDRegistros01
         Me.colGenerado.Visible = True
         Me.colGenerado.VisibleIndex = 8
         '
+        'colExportado
+        '
+        Me.colExportado.FieldName = "Exportado"
+        Me.colExportado.Name = "colExportado"
+        Me.colExportado.OptionsColumn.AllowEdit = False
+        Me.colExportado.OptionsColumn.ReadOnly = True
+        Me.colExportado.Visible = True
+        Me.colExportado.VisibleIndex = 9
+        '
+        'colFechaPago
+        '
+        Me.colFechaPago.Caption = "Fecha de Pago"
+        Me.colFechaPago.DisplayFormat.FormatString = "d"
+        Me.colFechaPago.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        Me.colFechaPago.FieldName = "FechaPago"
+        Me.colFechaPago.Name = "colFechaPago"
+        Me.colFechaPago.OptionsColumn.AllowEdit = False
+        Me.colFechaPago.OptionsColumn.ReadOnly = True
+        Me.colFechaPago.Visible = True
+        Me.colFechaPago.VisibleIndex = 10
+        '
+        'colBanco
+        '
+        Me.colBanco.Caption = "Banco"
+        Me.colBanco.FieldName = "Banco.Abreviacion"
+        Me.colBanco.Name = "colBanco"
+        Me.colBanco.OptionsColumn.AllowEdit = False
+        Me.colBanco.OptionsColumn.ReadOnly = True
+        Me.colBanco.Visible = True
+        Me.colBanco.VisibleIndex = 11
+        '
         'ribbonControl
         '
         Me.ribbonControl.ExpandCollapseItem.Id = 0
-        Me.ribbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl.ExpandCollapseItem, Me.ribbonControl.SearchEditItem, Me.bsiRecordsCount, Me.bbiNew, Me.bbiEdit, Me.bbiDelete, Me.bbiRefresh})
+        Me.ribbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl.ExpandCollapseItem, Me.ribbonControl.SearchEditItem, Me.bsiRecordsCount, Me.bbiNew, Me.bbiEdit, Me.bbiDelete, Me.bbiRefresh, Me.bbiClose})
         Me.ribbonControl.Location = New System.Drawing.Point(0, 0)
-        Me.ribbonControl.MaxItemId = 6
+        Me.ribbonControl.MaxItemId = 7
         Me.ribbonControl.Name = "ribbonControl"
         Me.ribbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.[False]
@@ -215,7 +250,7 @@ Partial Class LSDRegistros01
         '
         'RibbonPage1
         '
-        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1})
+        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1, Me.RibbonPageGroup2, Me.RibbonPageGroup3})
         Me.RibbonPage1.Name = "RibbonPage1"
         Me.RibbonPage1.Text = "RibbonPage1"
         '
@@ -223,13 +258,13 @@ Partial Class LSDRegistros01
         '
         Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiNew)
         Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiEdit)
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiDelete)
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiRefresh)
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiDelete, True)
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
+        Me.RibbonPageGroup1.Text = "Edición"
         '
         'mvvmContext
         '
-        Me.mvvmContext.BindingExpressions.AddRange(New DevExpress.Utils.MVVM.BindingExpression() {DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.LSDRegistro01CollectionViewModelvb), "New", Me.bbiNew), DevExpress.Utils.MVVM.BindingExpression.CreateParameterizedCommandBinding(GetType(Zenthia.LiquidAR.Win.LSDRegistro01CollectionViewModelvb), "Edit", "SelectedEntity", Me.bbiEdit), DevExpress.Utils.MVVM.BindingExpression.CreateParameterizedCommandBinding(GetType(Zenthia.LiquidAR.Win.LSDRegistro01CollectionViewModelvb), "Delete", "SelectedEntity", Me.bbiDelete), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.LSDRegistro01CollectionViewModelvb), "Refresh", Me.bbiRefresh)})
+        Me.mvvmContext.BindingExpressions.AddRange(New DevExpress.Utils.MVVM.BindingExpression() {DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.LSDRegistro01CollectionViewModelvb), "New", Me.bbiNew), DevExpress.Utils.MVVM.BindingExpression.CreateParameterizedCommandBinding(GetType(Zenthia.LiquidAR.Win.LSDRegistro01CollectionViewModelvb), "Edit", "SelectedEntity", Me.bbiEdit), DevExpress.Utils.MVVM.BindingExpression.CreateParameterizedCommandBinding(GetType(Zenthia.LiquidAR.Win.LSDRegistro01CollectionViewModelvb), "Delete", "SelectedEntity", Me.bbiDelete), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.LSDRegistro01CollectionViewModelvb), "Refresh", Me.bbiRefresh), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.LSDRegistro01CollectionViewModelvb), "Close", Me.bbiClose)})
         Me.mvvmContext.ContainerControl = Me
         Me.mvvmContext.ViewModelType = GetType(Zenthia.LiquidAR.Win.LSDRegistro01CollectionViewModelvb)
         '
@@ -242,36 +277,24 @@ Partial Class LSDRegistros01
         Me.popupMenu.Name = "popupMenu"
         Me.popupMenu.Ribbon = Me.ribbonControl
         '
-        'colExportado
+        'RibbonPageGroup2
         '
-        Me.colExportado.FieldName = "Exportado"
-        Me.colExportado.Name = "colExportado"
-        Me.colExportado.OptionsColumn.AllowEdit = False
-        Me.colExportado.OptionsColumn.ReadOnly = True
-        Me.colExportado.Visible = True
-        Me.colExportado.VisibleIndex = 9
+        Me.RibbonPageGroup2.ItemLinks.Add(Me.bbiRefresh)
+        Me.RibbonPageGroup2.Name = "RibbonPageGroup2"
+        Me.RibbonPageGroup2.Text = "Consulta"
         '
-        'colFechaPago
+        'RibbonPageGroup3
         '
-        Me.colFechaPago.Caption = "Fecha de Pago"
-        Me.colFechaPago.DisplayFormat.FormatString = "d"
-        Me.colFechaPago.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
-        Me.colFechaPago.FieldName = "FechaPago"
-        Me.colFechaPago.Name = "colFechaPago"
-        Me.colFechaPago.OptionsColumn.AllowEdit = False
-        Me.colFechaPago.OptionsColumn.ReadOnly = True
-        Me.colFechaPago.Visible = True
-        Me.colFechaPago.VisibleIndex = 10
+        Me.RibbonPageGroup3.Alignment = DevExpress.XtraBars.Ribbon.RibbonPageGroupAlignment.Far
+        Me.RibbonPageGroup3.ItemLinks.Add(Me.bbiClose)
+        Me.RibbonPageGroup3.Name = "RibbonPageGroup3"
         '
-        'colBanco
+        'bbiClose
         '
-        Me.colBanco.Caption = "Banco"
-        Me.colBanco.FieldName = "Banco.Abreviacion"
-        Me.colBanco.Name = "colBanco"
-        Me.colBanco.OptionsColumn.AllowEdit = False
-        Me.colBanco.OptionsColumn.ReadOnly = True
-        Me.colBanco.Visible = True
-        Me.colBanco.VisibleIndex = 11
+        Me.bbiClose.Caption = "Cerrar"
+        Me.bbiClose.Id = 6
+        Me.bbiClose.ImageOptions.SvgImage = CType(resources.GetObject("bbiClose.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
+        Me.bbiClose.Name = "bbiClose"
         '
         'LSDRegistros01
         '
@@ -321,4 +344,7 @@ Partial Class LSDRegistros01
     Friend WithEvents colExportado As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colFechaPago As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colBanco As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents bbiClose As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents RibbonPageGroup2 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents RibbonPageGroup3 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
 End Class

@@ -43,6 +43,7 @@ Partial Class ConceptosEditForm
         Me.GruposCostosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.IdConceptoSearchLookUpEditView = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colDescripcion2 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colTitulo = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.DescripcionTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.CodigoSpinEdit = New DevExpress.XtraEditors.SpinEdit()
         Me.ColumnaReciboLookUpEdit = New DevExpress.XtraEditors.ImageComboBoxEdit()
@@ -52,7 +53,6 @@ Partial Class ConceptosEditForm
         Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem1 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.colTitulo = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.mvvmContext, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ribbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ConceptosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -185,9 +185,9 @@ Partial Class ConceptosEditForm
         '
         'RibbonPageGroup3
         '
+        Me.RibbonPageGroup3.Alignment = DevExpress.XtraBars.Ribbon.RibbonPageGroupAlignment.Far
         Me.RibbonPageGroup3.ItemLinks.Add(Me.bbiClose)
         Me.RibbonPageGroup3.Name = "RibbonPageGroup3"
-        Me.RibbonPageGroup3.Text = "Cerrar"
         '
         'RibbonPageGroup4
         '
@@ -249,6 +249,13 @@ Partial Class ConceptosEditForm
         Me.colDescripcion2.Name = "colDescripcion2"
         Me.colDescripcion2.Visible = True
         Me.colDescripcion2.VisibleIndex = 0
+        '
+        'colTitulo
+        '
+        Me.colTitulo.FieldName = "Titulo"
+        Me.colTitulo.Name = "colTitulo"
+        Me.colTitulo.Visible = True
+        Me.colTitulo.VisibleIndex = 1
         '
         'DescripcionTextEdit
         '
@@ -337,13 +344,6 @@ Partial Class ConceptosEditForm
         Me.LayoutControlItem5.Size = New System.Drawing.Size(514, 65)
         Me.LayoutControlItem5.Text = "Agupar por:"
         Me.LayoutControlItem5.TextSize = New System.Drawing.Size(80, 13)
-        '
-        'colTitulo
-        '
-        Me.colTitulo.FieldName = "Titulo"
-        Me.colTitulo.Name = "colTitulo"
-        Me.colTitulo.Visible = True
-        Me.colTitulo.VisibleIndex = 1
         '
         'ConceptosEditForm
         '

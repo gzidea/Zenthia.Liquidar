@@ -125,15 +125,15 @@ Partial Class EmpresaEditForm
         Me.LayoutControlItem6 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem8 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.e = New DevExpress.XtraLayout.TabbedControlGroup()
-        Me.layoutControlGroupBancos = New DevExpress.XtraLayout.LayoutControlGroup()
-        Me.LayoutControlItem18 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem17 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.actividadesLayout = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem10 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.actividadToolbarLayout = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlGroup2 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem12 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem13 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.layoutControlGroupBancos = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.LayoutControlItem18 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem17 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem7 = New DevExpress.XtraLayout.LayoutControlItem()
@@ -275,15 +275,15 @@ Partial Class EmpresaEditForm
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.e, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.layoutControlGroupBancos, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem18, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem17, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.actividadesLayout, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.actividadToolbarLayout, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem12, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem13, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.layoutControlGroupBancos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem18, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem17, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -438,9 +438,9 @@ Partial Class EmpresaEditForm
         '
         'RibbonPageGroup3
         '
+        Me.RibbonPageGroup3.Alignment = DevExpress.XtraBars.Ribbon.RibbonPageGroupAlignment.Far
         Me.RibbonPageGroup3.ItemLinks.Add(Me.bbiClose)
         Me.RibbonPageGroup3.Name = "RibbonPageGroup3"
-        Me.RibbonPageGroup3.Text = "Cerrar"
         '
         'RibbonPageGroup4
         '
@@ -1036,32 +1036,6 @@ Partial Class EmpresaEditForm
         Me.e.Size = New System.Drawing.Size(935, 430)
         Me.e.TabPages.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.actividadesLayout, Me.LayoutControlGroup2, Me.layoutControlGroupBancos})
         '
-        'layoutControlGroupBancos
-        '
-        Me.layoutControlGroupBancos.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem18, Me.LayoutControlItem17})
-        Me.layoutControlGroupBancos.Location = New System.Drawing.Point(0, 0)
-        Me.layoutControlGroupBancos.Name = "layoutControlGroupBancos"
-        Me.layoutControlGroupBancos.Size = New System.Drawing.Size(911, 383)
-        Me.layoutControlGroupBancos.Text = "Bancos"
-        '
-        'LayoutControlItem18
-        '
-        Me.LayoutControlItem18.Control = Me.StandaloneBarDockControl1
-        Me.LayoutControlItem18.Location = New System.Drawing.Point(0, 0)
-        Me.LayoutControlItem18.Name = "LayoutControlItem18"
-        Me.LayoutControlItem18.Size = New System.Drawing.Size(911, 28)
-        Me.LayoutControlItem18.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem18.TextVisible = False
-        '
-        'LayoutControlItem17
-        '
-        Me.LayoutControlItem17.Control = Me.bancosGridControl
-        Me.LayoutControlItem17.Location = New System.Drawing.Point(0, 28)
-        Me.LayoutControlItem17.Name = "LayoutControlItem17"
-        Me.LayoutControlItem17.Size = New System.Drawing.Size(911, 355)
-        Me.LayoutControlItem17.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem17.TextVisible = False
-        '
         'actividadesLayout
         '
         Me.actividadesLayout.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem10, Me.actividadToolbarLayout})
@@ -1113,6 +1087,32 @@ Partial Class EmpresaEditForm
         Me.LayoutControlItem13.Size = New System.Drawing.Size(911, 26)
         Me.LayoutControlItem13.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem13.TextVisible = False
+        '
+        'layoutControlGroupBancos
+        '
+        Me.layoutControlGroupBancos.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem18, Me.LayoutControlItem17})
+        Me.layoutControlGroupBancos.Location = New System.Drawing.Point(0, 0)
+        Me.layoutControlGroupBancos.Name = "layoutControlGroupBancos"
+        Me.layoutControlGroupBancos.Size = New System.Drawing.Size(911, 383)
+        Me.layoutControlGroupBancos.Text = "Bancos"
+        '
+        'LayoutControlItem18
+        '
+        Me.LayoutControlItem18.Control = Me.StandaloneBarDockControl1
+        Me.LayoutControlItem18.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlItem18.Name = "LayoutControlItem18"
+        Me.LayoutControlItem18.Size = New System.Drawing.Size(911, 28)
+        Me.LayoutControlItem18.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem18.TextVisible = False
+        '
+        'LayoutControlItem17
+        '
+        Me.LayoutControlItem17.Control = Me.bancosGridControl
+        Me.LayoutControlItem17.Location = New System.Drawing.Point(0, 28)
+        Me.LayoutControlItem17.Name = "LayoutControlItem17"
+        Me.LayoutControlItem17.Size = New System.Drawing.Size(911, 355)
+        Me.LayoutControlItem17.TextSize = New System.Drawing.Size(0, 0)
+        Me.LayoutControlItem17.TextVisible = False
         '
         'LayoutControlItem3
         '
@@ -2002,15 +2002,15 @@ Partial Class EmpresaEditForm
         CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.e, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.layoutControlGroupBancos, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem18, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem17, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.actividadesLayout, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem10, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.actividadToolbarLayout, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem12, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem13, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.layoutControlGroupBancos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem18, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem17, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).EndInit()

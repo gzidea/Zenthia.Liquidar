@@ -162,6 +162,7 @@ Namespace Zenthia.mvvm.Common.ViewModel
             Me.RaiseCanExecuteChanged(Sub(x) x.Refresh())
         End Sub
         Protected Overridable Sub OnSelectedEntityChanged()
+
         End Sub
 
         Public Overridable Sub OnFilterExpressionChanged()

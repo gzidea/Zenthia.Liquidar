@@ -28,14 +28,39 @@ Public Class FormulaCollectionViewModel
 
     <Display(Name:="Duplicar formula")>
     Public Overridable Sub DuplicarFormulaSeleccionada()
-
-
         Using db As Zenthia.AccesoDatos.Modelo = New Zenthia.AccesoDatos.Modelo()
-            Dim _newFormula As New Zenthia.AccesoDatos.Formulas
-            db.Formulas.Attach(MyBase.SelectedEntity)
+            Dim original = MyBase.SelectedEntity
+            Dim _newFormula As New Zenthia.AccesoDatos.Formulas()
+
+            Dim entityType = GetType(Zenthia.AccesoDatos.Formulas)
+            Dim scalarProps = entityType.GetProperties().Where(Function(p)
+                                                                   Return p.CanWrite AndAlso
+               p.Name <> "Id" AndAlso
+               (p.PropertyType.IsPrimitive OrElse
+                p.PropertyType.IsValueType OrElse
+                p.PropertyType = GetType(String))
+                                                               End Function)
+
+            For Each prop In scalarProps
+                prop.SetValue(_newFormula, prop.GetValue(original))
+            Next
+
+            db.Formulas.Add(_newFormula)
             db.SaveChanges()
         End Using
+        MyBase.Refresh()
     End Sub
 
+    Protected Overrides Sub OnSelectedEntityChanged()
+        MyBase.OnSelectedEntityChanged()
+        Me.RaiseCanExecuteChanged(Sub(x) x.DuplicarFormulaSeleccionada())
+    End Sub
 
+    Public Sub OnSelectedItemsChanged()
+
+    End Sub
+
+    Public Function CanDuplicarFormulaSeleccionada() As Boolean
+        Return MyBase.SelectedEntity IsNot Nothing
+    End Function
 End Class

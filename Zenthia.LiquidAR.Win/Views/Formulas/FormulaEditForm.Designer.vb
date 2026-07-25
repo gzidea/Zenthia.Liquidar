@@ -50,8 +50,9 @@ Partial Class FormulaEditForm
         Me.RibbonPageGroup3 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup4 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.dataLayout = New DevExpress.XtraLayout.LayoutControl()
-        Me.AuxiliarCheckEdit = New DevExpress.XtraEditors.CheckEdit()
+        Me.OrdenSpinEdit = New DevExpress.XtraEditors.SpinEdit()
         Me.FormulasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.AuxiliarCheckEdit = New DevExpress.XtraEditors.CheckEdit()
         Me.CodigoAfipSpinEdit = New DevExpress.XtraEditors.SpinEdit()
         Me.NovedadCheckEdit = New DevExpress.XtraEditors.CheckEdit()
         Me.gridControlPeriodos = New DevExpress.XtraGrid.GridControl()
@@ -147,6 +148,8 @@ Partial Class FormulaEditForm
         Me.LayoutControlItem26 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem7 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.LayoutControlItem27 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem28 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.EmptySpaceItem8 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.MesesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.mvvmContext = New DevExpress.Utils.MVVM.MVVMContext(Me.components)
         Me.periodos_DetailsPopUpMenu = New DevExpress.XtraBars.PopupMenu(Me.components)
@@ -193,15 +196,13 @@ Partial Class FormulaEditForm
         Me.LayoutControlItem31 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem51 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.liquidacion_DetailsPopUpMenu = New DevExpress.XtraBars.PopupMenu(Me.components)
-        Me.OrdenSpinEdit = New DevExpress.XtraEditors.SpinEdit()
-        Me.LayoutControlItem28 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.EmptySpaceItem8 = New DevExpress.XtraLayout.EmptySpaceItem()
         CType(Me.RepositoryItemRibbonSearchEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ribbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dataLayout, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.dataLayout.SuspendLayout()
-        CType(Me.AuxiliarCheckEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.OrdenSpinEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FormulasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AuxiliarCheckEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CodigoAfipSpinEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NovedadCheckEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gridControlPeriodos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -270,6 +271,8 @@ Partial Class FormulaEditForm
         CType(Me.LayoutControlItem26, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem27, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem28, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmptySpaceItem8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MesesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.mvvmContext, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.periodos_DetailsPopUpMenu, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -293,9 +296,6 @@ Partial Class FormulaEditForm
         CType(Me.LayoutControlItem31, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem51, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.liquidacion_DetailsPopUpMenu, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.OrdenSpinEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem28, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmptySpaceItem8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RepositoryItemRibbonSearchEdit2
@@ -424,9 +424,9 @@ Partial Class FormulaEditForm
         '
         'RibbonPageGroup3
         '
+        Me.RibbonPageGroup3.Alignment = DevExpress.XtraBars.Ribbon.RibbonPageGroupAlignment.Far
         Me.RibbonPageGroup3.ItemLinks.Add(Me.bbiClose)
         Me.RibbonPageGroup3.Name = "RibbonPageGroup3"
-        Me.RibbonPageGroup3.Text = "Cerrar"
         '
         'RibbonPageGroup4
         '
@@ -434,6 +434,7 @@ Partial Class FormulaEditForm
         Me.RibbonPageGroup4.ItemLinks.Add(Me.bbiResetLayout)
         Me.RibbonPageGroup4.Name = "RibbonPageGroup4"
         Me.RibbonPageGroup4.Text = "Layer"
+        Me.RibbonPageGroup4.Visible = False
         '
         'dataLayout
         '
@@ -478,6 +479,22 @@ Partial Class FormulaEditForm
         Me.dataLayout.TabIndex = 4
         Me.dataLayout.Text = "LayoutControl1"
         '
+        'OrdenSpinEdit
+        '
+        Me.OrdenSpinEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.FormulasBindingSource, "Orden", True))
+        Me.OrdenSpinEdit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
+        Me.OrdenSpinEdit.Location = New System.Drawing.Point(348, 60)
+        Me.OrdenSpinEdit.MenuManager = Me.ribbonControl
+        Me.OrdenSpinEdit.Name = "OrdenSpinEdit"
+        Me.OrdenSpinEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.OrdenSpinEdit.Size = New System.Drawing.Size(79, 20)
+        Me.OrdenSpinEdit.StyleController = Me.dataLayout
+        Me.OrdenSpinEdit.TabIndex = 72
+        '
+        'FormulasBindingSource
+        '
+        Me.FormulasBindingSource.DataSource = GetType(Zenthia.AccesoDatos.Formulas)
+        '
         'AuxiliarCheckEdit
         '
         Me.AuxiliarCheckEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.FormulasBindingSource, "Auxiliar", True))
@@ -488,10 +505,6 @@ Partial Class FormulaEditForm
         Me.AuxiliarCheckEdit.Size = New System.Drawing.Size(469, 20)
         Me.AuxiliarCheckEdit.StyleController = Me.dataLayout
         Me.AuxiliarCheckEdit.TabIndex = 63
-        '
-        'FormulasBindingSource
-        '
-        Me.FormulasBindingSource.DataSource = GetType(Zenthia.AccesoDatos.Formulas)
         '
         'CodigoAfipSpinEdit
         '
@@ -1382,6 +1395,25 @@ Partial Class FormulaEditForm
         Me.LayoutControlItem27.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem27.TextVisible = False
         '
+        'LayoutControlItem28
+        '
+        Me.LayoutControlItem28.Control = Me.OrdenSpinEdit
+        Me.LayoutControlItem28.Location = New System.Drawing.Point(297, 48)
+        Me.LayoutControlItem28.Name = "LayoutControlItem28"
+        Me.LayoutControlItem28.Size = New System.Drawing.Size(122, 24)
+        Me.LayoutControlItem28.Text = "Orden:"
+        Me.LayoutControlItem28.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize
+        Me.LayoutControlItem28.TextSize = New System.Drawing.Size(34, 13)
+        Me.LayoutControlItem28.TextToControlDistance = 5
+        '
+        'EmptySpaceItem8
+        '
+        Me.EmptySpaceItem8.AllowHotTrack = False
+        Me.EmptySpaceItem8.Location = New System.Drawing.Point(419, 48)
+        Me.EmptySpaceItem8.Name = "EmptySpaceItem8"
+        Me.EmptySpaceItem8.Size = New System.Drawing.Size(53, 24)
+        Me.EmptySpaceItem8.TextSize = New System.Drawing.Size(0, 0)
+        '
         'MesesBindingSource
         '
         Me.MesesBindingSource.DataSource = GetType(Zenthia.AccesoDatos.Meses)
@@ -1747,37 +1779,6 @@ Partial Class FormulaEditForm
         Me.liquidacion_DetailsPopUpMenu.Manager = Me.liquidacion_DetailsBarManager
         Me.liquidacion_DetailsPopUpMenu.Name = "liquidacion_DetailsPopUpMenu"
         '
-        'OrdenSpinEdit
-        '
-        Me.OrdenSpinEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.FormulasBindingSource, "Orden", True))
-        Me.OrdenSpinEdit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.OrdenSpinEdit.Location = New System.Drawing.Point(348, 60)
-        Me.OrdenSpinEdit.MenuManager = Me.ribbonControl
-        Me.OrdenSpinEdit.Name = "OrdenSpinEdit"
-        Me.OrdenSpinEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.OrdenSpinEdit.Size = New System.Drawing.Size(79, 20)
-        Me.OrdenSpinEdit.StyleController = Me.dataLayout
-        Me.OrdenSpinEdit.TabIndex = 72
-        '
-        'LayoutControlItem28
-        '
-        Me.LayoutControlItem28.Control = Me.OrdenSpinEdit
-        Me.LayoutControlItem28.Location = New System.Drawing.Point(297, 48)
-        Me.LayoutControlItem28.Name = "LayoutControlItem28"
-        Me.LayoutControlItem28.Size = New System.Drawing.Size(122, 24)
-        Me.LayoutControlItem28.Text = "Orden:"
-        Me.LayoutControlItem28.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize
-        Me.LayoutControlItem28.TextSize = New System.Drawing.Size(34, 13)
-        Me.LayoutControlItem28.TextToControlDistance = 5
-        '
-        'EmptySpaceItem8
-        '
-        Me.EmptySpaceItem8.AllowHotTrack = False
-        Me.EmptySpaceItem8.Location = New System.Drawing.Point(419, 48)
-        Me.EmptySpaceItem8.Name = "EmptySpaceItem8"
-        Me.EmptySpaceItem8.Size = New System.Drawing.Size(53, 24)
-        Me.EmptySpaceItem8.TextSize = New System.Drawing.Size(0, 0)
-        '
         'FormulaEditForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1793,8 +1794,9 @@ Partial Class FormulaEditForm
         CType(Me.dataLayout, System.ComponentModel.ISupportInitialize).EndInit()
         Me.dataLayout.ResumeLayout(False)
         Me.dataLayout.PerformLayout()
-        CType(Me.AuxiliarCheckEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.OrdenSpinEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.FormulasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AuxiliarCheckEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CodigoAfipSpinEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NovedadCheckEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gridControlPeriodos, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1863,6 +1865,8 @@ Partial Class FormulaEditForm
         CType(Me.LayoutControlItem26, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem27, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem28, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmptySpaceItem8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MesesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.mvvmContext, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.periodos_DetailsPopUpMenu, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1886,9 +1890,6 @@ Partial Class FormulaEditForm
         CType(Me.LayoutControlItem31, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem51, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.liquidacion_DetailsPopUpMenu, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.OrdenSpinEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem28, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmptySpaceItem8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

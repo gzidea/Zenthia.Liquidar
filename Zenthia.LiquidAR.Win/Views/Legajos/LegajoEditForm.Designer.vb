@@ -172,24 +172,6 @@ Partial Class LegajoEditForm
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.TabbedControlGroup1 = New DevExpress.XtraLayout.TabbedControlGroup()
-        Me.LayoutControlGroup8 = New DevExpress.XtraLayout.LayoutControlGroup()
-        Me.LayoutControlItem37 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem38 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem36 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem40 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem39 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem41 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.EmptySpaceItem9 = New DevExpress.XtraLayout.EmptySpaceItem()
-        Me.EmptySpaceItem12 = New DevExpress.XtraLayout.EmptySpaceItem()
-        Me.EmptySpaceItem13 = New DevExpress.XtraLayout.EmptySpaceItem()
-        Me.EmptySpaceItem14 = New DevExpress.XtraLayout.EmptySpaceItem()
-        Me.LayoutControlItem43 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem42 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem44 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem45 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem46 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.SimpleSeparator1 = New DevExpress.XtraLayout.SimpleSeparator()
-        Me.LayoutControlItem47 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlGroup3 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem8 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem9 = New DevExpress.XtraLayout.LayoutControlItem()
@@ -218,6 +200,24 @@ Partial Class LegajoEditForm
         Me.LayoutControlGroup7 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem29 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlGroup8 = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.LayoutControlItem37 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem38 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem36 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem40 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem39 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem41 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.EmptySpaceItem9 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.EmptySpaceItem12 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.EmptySpaceItem13 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.EmptySpaceItem14 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.LayoutControlItem43 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem42 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem44 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem45 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem46 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.SimpleSeparator1 = New DevExpress.XtraLayout.SimpleSeparator()
+        Me.LayoutControlItem47 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.mvvmContext = New DevExpress.Utils.MVVM.MVVMContext(Me.components)
         Me.EmptySpaceItem8 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.BehaviorManager1 = New DevExpress.Utils.Behaviors.BehaviorManager(Me.components)
@@ -326,24 +326,6 @@ Partial Class LegajoEditForm
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TabbedControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlGroup8, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem37, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem38, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem36, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem40, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem39, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem41, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmptySpaceItem9, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmptySpaceItem12, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmptySpaceItem13, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmptySpaceItem14, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem43, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem42, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem44, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem45, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem46, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SimpleSeparator1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem47, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlGroup3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem9, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -372,6 +354,24 @@ Partial Class LegajoEditForm
         CType(Me.LayoutControlGroup7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem29, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlGroup8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem37, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem38, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem36, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem40, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem39, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem41, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmptySpaceItem9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmptySpaceItem12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmptySpaceItem13, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmptySpaceItem14, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem43, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem42, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem44, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem45, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem46, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SimpleSeparator1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem47, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.mvvmContext, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BehaviorManager1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -500,9 +500,9 @@ Partial Class LegajoEditForm
         '
         'RibbonPageGroup3
         '
+        Me.RibbonPageGroup3.Alignment = DevExpress.XtraBars.Ribbon.RibbonPageGroupAlignment.Far
         Me.RibbonPageGroup3.ItemLinks.Add(Me.bbiClose)
         Me.RibbonPageGroup3.Name = "RibbonPageGroup3"
-        Me.RibbonPageGroup3.Text = "Cerrar"
         '
         'RibbonPageGroup4
         '
@@ -1574,7 +1574,7 @@ Partial Class LegajoEditForm
         Me.BarDockControl1.CausesValidation = False
         Me.BarDockControl1.Location = New System.Drawing.Point(24, 281)
         Me.BarDockControl1.Manager = Me.LegajosConceptos_DetailsBarManager
-        Me.BarDockControl1.Size = New System.Drawing.Size(1213, 28)
+        Me.BarDockControl1.Size = New System.Drawing.Size(1213, 24)
         '
         'barDockControlBottom
         '
@@ -1810,168 +1810,6 @@ Partial Class LegajoEditForm
         Me.TabbedControlGroup1.SelectedTabPage = Me.LayoutControlGroup3
         Me.TabbedControlGroup1.Size = New System.Drawing.Size(1241, 307)
         Me.TabbedControlGroup1.TabPages.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlGroup3, Me.LayoutControlGroup7, Me.LayoutControlGroup8})
-        '
-        'LayoutControlGroup8
-        '
-        Me.LayoutControlGroup8.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem37, Me.LayoutControlItem38, Me.LayoutControlItem36, Me.LayoutControlItem40, Me.LayoutControlItem39, Me.LayoutControlItem41, Me.EmptySpaceItem9, Me.EmptySpaceItem12, Me.EmptySpaceItem13, Me.EmptySpaceItem14, Me.LayoutControlItem43, Me.LayoutControlItem42, Me.LayoutControlItem44, Me.LayoutControlItem45, Me.LayoutControlItem46, Me.SimpleSeparator1, Me.LayoutControlItem47})
-        Me.LayoutControlGroup8.Location = New System.Drawing.Point(0, 0)
-        Me.LayoutControlGroup8.Name = "LayoutControlGroup8"
-        Me.LayoutControlGroup8.Size = New System.Drawing.Size(1217, 260)
-        Me.LayoutControlGroup8.Text = "SICOSS"
-        '
-        'LayoutControlItem37
-        '
-        Me.LayoutControlItem37.Control = Me.IdSituacionRevista2SearchLookUpEdit
-        Me.LayoutControlItem37.Location = New System.Drawing.Point(0, 24)
-        Me.LayoutControlItem37.Name = "LayoutControlItem37"
-        Me.LayoutControlItem37.Size = New System.Drawing.Size(592, 24)
-        Me.LayoutControlItem37.Text = "Situacion Revista 2:"
-        Me.LayoutControlItem37.TextSize = New System.Drawing.Size(117, 13)
-        '
-        'LayoutControlItem38
-        '
-        Me.LayoutControlItem38.Control = Me.IdSituacionRevista3SearchLookUpEdit
-        Me.LayoutControlItem38.Location = New System.Drawing.Point(0, 48)
-        Me.LayoutControlItem38.Name = "LayoutControlItem38"
-        Me.LayoutControlItem38.Size = New System.Drawing.Size(592, 24)
-        Me.LayoutControlItem38.Text = "Situacion Revista 3:"
-        Me.LayoutControlItem38.TextSize = New System.Drawing.Size(117, 13)
-        '
-        'LayoutControlItem36
-        '
-        Me.LayoutControlItem36.Control = Me.IdSituacionRevista1SearchLookUpEdit
-        Me.LayoutControlItem36.Location = New System.Drawing.Point(0, 0)
-        Me.LayoutControlItem36.Name = "LayoutControlItem36"
-        Me.LayoutControlItem36.Size = New System.Drawing.Size(592, 24)
-        Me.LayoutControlItem36.Text = "Situacion Revista 1:"
-        Me.LayoutControlItem36.TextSize = New System.Drawing.Size(117, 13)
-        '
-        'LayoutControlItem40
-        '
-        Me.LayoutControlItem40.Control = Me.DiaInicioRevista1SpinEdit1
-        Me.LayoutControlItem40.Location = New System.Drawing.Point(602, 0)
-        Me.LayoutControlItem40.Name = "LayoutControlItem40"
-        Me.LayoutControlItem40.Size = New System.Drawing.Size(159, 24)
-        Me.LayoutControlItem40.Text = "Dia Inicio Revista 1:"
-        Me.LayoutControlItem40.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize
-        Me.LayoutControlItem40.TextSize = New System.Drawing.Size(95, 13)
-        Me.LayoutControlItem40.TextToControlDistance = 5
-        '
-        'LayoutControlItem39
-        '
-        Me.LayoutControlItem39.Control = Me.DiaInicioRevista2SpinEdit
-        Me.LayoutControlItem39.Location = New System.Drawing.Point(602, 24)
-        Me.LayoutControlItem39.Name = "LayoutControlItem39"
-        Me.LayoutControlItem39.Size = New System.Drawing.Size(159, 24)
-        Me.LayoutControlItem39.Text = "Dia Inicio Revista 2:"
-        Me.LayoutControlItem39.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize
-        Me.LayoutControlItem39.TextSize = New System.Drawing.Size(95, 13)
-        Me.LayoutControlItem39.TextToControlDistance = 5
-        '
-        'LayoutControlItem41
-        '
-        Me.LayoutControlItem41.Control = Me.DiaInicioRevista3SpinEdit
-        Me.LayoutControlItem41.Location = New System.Drawing.Point(602, 48)
-        Me.LayoutControlItem41.Name = "LayoutControlItem41"
-        Me.LayoutControlItem41.Size = New System.Drawing.Size(159, 58)
-        Me.LayoutControlItem41.Text = "Dia Inicio Revista 3:"
-        Me.LayoutControlItem41.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize
-        Me.LayoutControlItem41.TextSize = New System.Drawing.Size(95, 13)
-        Me.LayoutControlItem41.TextToControlDistance = 5
-        '
-        'EmptySpaceItem9
-        '
-        Me.EmptySpaceItem9.AllowHotTrack = False
-        Me.EmptySpaceItem9.Location = New System.Drawing.Point(761, 0)
-        Me.EmptySpaceItem9.Name = "EmptySpaceItem9"
-        Me.EmptySpaceItem9.Size = New System.Drawing.Size(456, 237)
-        Me.EmptySpaceItem9.TextSize = New System.Drawing.Size(0, 0)
-        '
-        'EmptySpaceItem12
-        '
-        Me.EmptySpaceItem12.AllowHotTrack = False
-        Me.EmptySpaceItem12.Location = New System.Drawing.Point(592, 0)
-        Me.EmptySpaceItem12.Name = "EmptySpaceItem12"
-        Me.EmptySpaceItem12.Size = New System.Drawing.Size(10, 106)
-        Me.EmptySpaceItem12.TextSize = New System.Drawing.Size(0, 0)
-        '
-        'EmptySpaceItem13
-        '
-        Me.EmptySpaceItem13.AllowHotTrack = False
-        Me.EmptySpaceItem13.Location = New System.Drawing.Point(0, 237)
-        Me.EmptySpaceItem13.Name = "EmptySpaceItem13"
-        Me.EmptySpaceItem13.Size = New System.Drawing.Size(1217, 23)
-        Me.EmptySpaceItem13.TextSize = New System.Drawing.Size(0, 0)
-        '
-        'EmptySpaceItem14
-        '
-        Me.EmptySpaceItem14.AllowHotTrack = False
-        Me.EmptySpaceItem14.Location = New System.Drawing.Point(0, 72)
-        Me.EmptySpaceItem14.Name = "EmptySpaceItem14"
-        Me.EmptySpaceItem14.Size = New System.Drawing.Size(592, 10)
-        Me.EmptySpaceItem14.TextSize = New System.Drawing.Size(0, 0)
-        '
-        'LayoutControlItem43
-        '
-        Me.LayoutControlItem43.Control = Me.DescripcionCompletaTextEdit
-        Me.LayoutControlItem43.Location = New System.Drawing.Point(0, 82)
-        Me.LayoutControlItem43.Name = "LayoutControlItem43"
-        Me.LayoutControlItem43.Size = New System.Drawing.Size(592, 24)
-        Me.LayoutControlItem43.Text = "Descripcion Completa:"
-        Me.LayoutControlItem43.TextSize = New System.Drawing.Size(117, 13)
-        '
-        'LayoutControlItem42
-        '
-        Me.LayoutControlItem42.Control = Me.IdCodigoCondicionSearchLookUpEdit
-        Me.LayoutControlItem42.Location = New System.Drawing.Point(0, 117)
-        Me.LayoutControlItem42.Name = "LayoutControlItem42"
-        Me.LayoutControlItem42.Size = New System.Drawing.Size(761, 24)
-        Me.LayoutControlItem42.Text = "Condicion:"
-        Me.LayoutControlItem42.TextSize = New System.Drawing.Size(117, 13)
-        '
-        'LayoutControlItem44
-        '
-        Me.LayoutControlItem44.Control = Me.IdCodigoActividadSearchLookUpEdit
-        Me.LayoutControlItem44.Location = New System.Drawing.Point(0, 141)
-        Me.LayoutControlItem44.Name = "LayoutControlItem44"
-        Me.LayoutControlItem44.Size = New System.Drawing.Size(761, 24)
-        Me.LayoutControlItem44.Text = "Actividad:"
-        Me.LayoutControlItem44.TextSize = New System.Drawing.Size(117, 13)
-        '
-        'LayoutControlItem45
-        '
-        Me.LayoutControlItem45.Control = Me.IdCodigoModalidadContratacionSearchLookUpEdit
-        Me.LayoutControlItem45.Location = New System.Drawing.Point(0, 165)
-        Me.LayoutControlItem45.Name = "LayoutControlItem45"
-        Me.LayoutControlItem45.Size = New System.Drawing.Size(761, 24)
-        Me.LayoutControlItem45.Text = "Modalidad Contratacion:"
-        Me.LayoutControlItem45.TextSize = New System.Drawing.Size(117, 13)
-        '
-        'LayoutControlItem46
-        '
-        Me.LayoutControlItem46.Control = Me.IdCodigoSiniestradoSearchLookUpEdit
-        Me.LayoutControlItem46.Location = New System.Drawing.Point(0, 189)
-        Me.LayoutControlItem46.Name = "LayoutControlItem46"
-        Me.LayoutControlItem46.Size = New System.Drawing.Size(761, 24)
-        Me.LayoutControlItem46.Text = "Codigo Siniestrado:"
-        Me.LayoutControlItem46.TextSize = New System.Drawing.Size(117, 13)
-        '
-        'SimpleSeparator1
-        '
-        Me.SimpleSeparator1.AllowHotTrack = False
-        Me.SimpleSeparator1.Location = New System.Drawing.Point(0, 106)
-        Me.SimpleSeparator1.Name = "SimpleSeparator1"
-        Me.SimpleSeparator1.Size = New System.Drawing.Size(761, 11)
-        Me.SimpleSeparator1.Spacing = New DevExpress.XtraLayout.Utils.Padding(0, 0, 5, 5)
-        '
-        'LayoutControlItem47
-        '
-        Me.LayoutControlItem47.Control = Me.IdCodigoLocalidadSearchLookUpEdit
-        Me.LayoutControlItem47.Location = New System.Drawing.Point(0, 213)
-        Me.LayoutControlItem47.Name = "LayoutControlItem47"
-        Me.LayoutControlItem47.Size = New System.Drawing.Size(761, 24)
-        Me.LayoutControlItem47.Text = "Codigo Localidad:"
-        Me.LayoutControlItem47.TextSize = New System.Drawing.Size(117, 13)
         '
         'LayoutControlGroup3
         '
@@ -2223,6 +2061,168 @@ Partial Class LegajoEditForm
         Me.LayoutControlItem29.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem29.TextVisible = False
         '
+        'LayoutControlGroup8
+        '
+        Me.LayoutControlGroup8.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem37, Me.LayoutControlItem38, Me.LayoutControlItem36, Me.LayoutControlItem40, Me.LayoutControlItem39, Me.LayoutControlItem41, Me.EmptySpaceItem9, Me.EmptySpaceItem12, Me.EmptySpaceItem13, Me.EmptySpaceItem14, Me.LayoutControlItem43, Me.LayoutControlItem42, Me.LayoutControlItem44, Me.LayoutControlItem45, Me.LayoutControlItem46, Me.SimpleSeparator1, Me.LayoutControlItem47})
+        Me.LayoutControlGroup8.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlGroup8.Name = "LayoutControlGroup8"
+        Me.LayoutControlGroup8.Size = New System.Drawing.Size(1217, 260)
+        Me.LayoutControlGroup8.Text = "SICOSS"
+        '
+        'LayoutControlItem37
+        '
+        Me.LayoutControlItem37.Control = Me.IdSituacionRevista2SearchLookUpEdit
+        Me.LayoutControlItem37.Location = New System.Drawing.Point(0, 24)
+        Me.LayoutControlItem37.Name = "LayoutControlItem37"
+        Me.LayoutControlItem37.Size = New System.Drawing.Size(592, 24)
+        Me.LayoutControlItem37.Text = "Situacion Revista 2:"
+        Me.LayoutControlItem37.TextSize = New System.Drawing.Size(117, 13)
+        '
+        'LayoutControlItem38
+        '
+        Me.LayoutControlItem38.Control = Me.IdSituacionRevista3SearchLookUpEdit
+        Me.LayoutControlItem38.Location = New System.Drawing.Point(0, 48)
+        Me.LayoutControlItem38.Name = "LayoutControlItem38"
+        Me.LayoutControlItem38.Size = New System.Drawing.Size(592, 24)
+        Me.LayoutControlItem38.Text = "Situacion Revista 3:"
+        Me.LayoutControlItem38.TextSize = New System.Drawing.Size(117, 13)
+        '
+        'LayoutControlItem36
+        '
+        Me.LayoutControlItem36.Control = Me.IdSituacionRevista1SearchLookUpEdit
+        Me.LayoutControlItem36.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlItem36.Name = "LayoutControlItem36"
+        Me.LayoutControlItem36.Size = New System.Drawing.Size(592, 24)
+        Me.LayoutControlItem36.Text = "Situacion Revista 1:"
+        Me.LayoutControlItem36.TextSize = New System.Drawing.Size(117, 13)
+        '
+        'LayoutControlItem40
+        '
+        Me.LayoutControlItem40.Control = Me.DiaInicioRevista1SpinEdit1
+        Me.LayoutControlItem40.Location = New System.Drawing.Point(602, 0)
+        Me.LayoutControlItem40.Name = "LayoutControlItem40"
+        Me.LayoutControlItem40.Size = New System.Drawing.Size(159, 24)
+        Me.LayoutControlItem40.Text = "Dia Inicio Revista 1:"
+        Me.LayoutControlItem40.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize
+        Me.LayoutControlItem40.TextSize = New System.Drawing.Size(95, 13)
+        Me.LayoutControlItem40.TextToControlDistance = 5
+        '
+        'LayoutControlItem39
+        '
+        Me.LayoutControlItem39.Control = Me.DiaInicioRevista2SpinEdit
+        Me.LayoutControlItem39.Location = New System.Drawing.Point(602, 24)
+        Me.LayoutControlItem39.Name = "LayoutControlItem39"
+        Me.LayoutControlItem39.Size = New System.Drawing.Size(159, 24)
+        Me.LayoutControlItem39.Text = "Dia Inicio Revista 2:"
+        Me.LayoutControlItem39.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize
+        Me.LayoutControlItem39.TextSize = New System.Drawing.Size(95, 13)
+        Me.LayoutControlItem39.TextToControlDistance = 5
+        '
+        'LayoutControlItem41
+        '
+        Me.LayoutControlItem41.Control = Me.DiaInicioRevista3SpinEdit
+        Me.LayoutControlItem41.Location = New System.Drawing.Point(602, 48)
+        Me.LayoutControlItem41.Name = "LayoutControlItem41"
+        Me.LayoutControlItem41.Size = New System.Drawing.Size(159, 58)
+        Me.LayoutControlItem41.Text = "Dia Inicio Revista 3:"
+        Me.LayoutControlItem41.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize
+        Me.LayoutControlItem41.TextSize = New System.Drawing.Size(95, 13)
+        Me.LayoutControlItem41.TextToControlDistance = 5
+        '
+        'EmptySpaceItem9
+        '
+        Me.EmptySpaceItem9.AllowHotTrack = False
+        Me.EmptySpaceItem9.Location = New System.Drawing.Point(761, 0)
+        Me.EmptySpaceItem9.Name = "EmptySpaceItem9"
+        Me.EmptySpaceItem9.Size = New System.Drawing.Size(456, 237)
+        Me.EmptySpaceItem9.TextSize = New System.Drawing.Size(0, 0)
+        '
+        'EmptySpaceItem12
+        '
+        Me.EmptySpaceItem12.AllowHotTrack = False
+        Me.EmptySpaceItem12.Location = New System.Drawing.Point(592, 0)
+        Me.EmptySpaceItem12.Name = "EmptySpaceItem12"
+        Me.EmptySpaceItem12.Size = New System.Drawing.Size(10, 106)
+        Me.EmptySpaceItem12.TextSize = New System.Drawing.Size(0, 0)
+        '
+        'EmptySpaceItem13
+        '
+        Me.EmptySpaceItem13.AllowHotTrack = False
+        Me.EmptySpaceItem13.Location = New System.Drawing.Point(0, 237)
+        Me.EmptySpaceItem13.Name = "EmptySpaceItem13"
+        Me.EmptySpaceItem13.Size = New System.Drawing.Size(1217, 23)
+        Me.EmptySpaceItem13.TextSize = New System.Drawing.Size(0, 0)
+        '
+        'EmptySpaceItem14
+        '
+        Me.EmptySpaceItem14.AllowHotTrack = False
+        Me.EmptySpaceItem14.Location = New System.Drawing.Point(0, 72)
+        Me.EmptySpaceItem14.Name = "EmptySpaceItem14"
+        Me.EmptySpaceItem14.Size = New System.Drawing.Size(592, 10)
+        Me.EmptySpaceItem14.TextSize = New System.Drawing.Size(0, 0)
+        '
+        'LayoutControlItem43
+        '
+        Me.LayoutControlItem43.Control = Me.DescripcionCompletaTextEdit
+        Me.LayoutControlItem43.Location = New System.Drawing.Point(0, 82)
+        Me.LayoutControlItem43.Name = "LayoutControlItem43"
+        Me.LayoutControlItem43.Size = New System.Drawing.Size(592, 24)
+        Me.LayoutControlItem43.Text = "Descripcion Completa:"
+        Me.LayoutControlItem43.TextSize = New System.Drawing.Size(117, 13)
+        '
+        'LayoutControlItem42
+        '
+        Me.LayoutControlItem42.Control = Me.IdCodigoCondicionSearchLookUpEdit
+        Me.LayoutControlItem42.Location = New System.Drawing.Point(0, 117)
+        Me.LayoutControlItem42.Name = "LayoutControlItem42"
+        Me.LayoutControlItem42.Size = New System.Drawing.Size(761, 24)
+        Me.LayoutControlItem42.Text = "Condicion:"
+        Me.LayoutControlItem42.TextSize = New System.Drawing.Size(117, 13)
+        '
+        'LayoutControlItem44
+        '
+        Me.LayoutControlItem44.Control = Me.IdCodigoActividadSearchLookUpEdit
+        Me.LayoutControlItem44.Location = New System.Drawing.Point(0, 141)
+        Me.LayoutControlItem44.Name = "LayoutControlItem44"
+        Me.LayoutControlItem44.Size = New System.Drawing.Size(761, 24)
+        Me.LayoutControlItem44.Text = "Actividad:"
+        Me.LayoutControlItem44.TextSize = New System.Drawing.Size(117, 13)
+        '
+        'LayoutControlItem45
+        '
+        Me.LayoutControlItem45.Control = Me.IdCodigoModalidadContratacionSearchLookUpEdit
+        Me.LayoutControlItem45.Location = New System.Drawing.Point(0, 165)
+        Me.LayoutControlItem45.Name = "LayoutControlItem45"
+        Me.LayoutControlItem45.Size = New System.Drawing.Size(761, 24)
+        Me.LayoutControlItem45.Text = "Modalidad Contratacion:"
+        Me.LayoutControlItem45.TextSize = New System.Drawing.Size(117, 13)
+        '
+        'LayoutControlItem46
+        '
+        Me.LayoutControlItem46.Control = Me.IdCodigoSiniestradoSearchLookUpEdit
+        Me.LayoutControlItem46.Location = New System.Drawing.Point(0, 189)
+        Me.LayoutControlItem46.Name = "LayoutControlItem46"
+        Me.LayoutControlItem46.Size = New System.Drawing.Size(761, 24)
+        Me.LayoutControlItem46.Text = "Codigo Siniestrado:"
+        Me.LayoutControlItem46.TextSize = New System.Drawing.Size(117, 13)
+        '
+        'SimpleSeparator1
+        '
+        Me.SimpleSeparator1.AllowHotTrack = False
+        Me.SimpleSeparator1.Location = New System.Drawing.Point(0, 106)
+        Me.SimpleSeparator1.Name = "SimpleSeparator1"
+        Me.SimpleSeparator1.Size = New System.Drawing.Size(761, 11)
+        Me.SimpleSeparator1.Spacing = New DevExpress.XtraLayout.Utils.Padding(0, 0, 5, 5)
+        '
+        'LayoutControlItem47
+        '
+        Me.LayoutControlItem47.Control = Me.IdCodigoLocalidadSearchLookUpEdit
+        Me.LayoutControlItem47.Location = New System.Drawing.Point(0, 213)
+        Me.LayoutControlItem47.Name = "LayoutControlItem47"
+        Me.LayoutControlItem47.Size = New System.Drawing.Size(761, 24)
+        Me.LayoutControlItem47.Text = "Codigo Localidad:"
+        Me.LayoutControlItem47.TextSize = New System.Drawing.Size(117, 13)
+        '
         'mvvmContext
         '
         Me.mvvmContext.BindingExpressions.AddRange(New DevExpress.Utils.MVVM.BindingExpression() {DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.LegajoViewModel), "Save", Me.bbiSave), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.LegajoViewModel), "SaveAndClose", Me.bbiSaveAndClose), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.LegajoViewModel), "SaveAndNew", Me.bbiSaveAndNew), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.LegajoViewModel), "Reset", Me.bbiReset), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.LegajoViewModel), "Delete", Me.bbiDelete), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.LegajoViewModel), "Close", Me.bbiClose), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.LegajoViewModel), "SaveLayout", Me.bbiSaveLayout), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.LegajoViewModel), "ResetLayout", Me.bbiResetLayout)})
@@ -2355,24 +2355,6 @@ Partial Class LegajoEditForm
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TabbedControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlGroup8, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem37, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem38, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem36, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem40, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem39, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem41, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmptySpaceItem9, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmptySpaceItem12, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmptySpaceItem13, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmptySpaceItem14, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem43, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem42, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem44, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem45, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem46, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SimpleSeparator1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem47, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlGroup3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem9, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2401,6 +2383,24 @@ Partial Class LegajoEditForm
         CType(Me.LayoutControlGroup7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem29, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlGroup8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem37, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem38, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem36, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem40, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem39, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem41, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmptySpaceItem9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmptySpaceItem12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmptySpaceItem13, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmptySpaceItem14, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem43, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem42, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem44, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem45, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem46, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SimpleSeparator1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem47, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.mvvmContext, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BehaviorManager1, System.ComponentModel.ISupportInitialize).EndInit()

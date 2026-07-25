@@ -20,6 +20,7 @@ Partial Class Conceptos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Conceptos))
         Me.MvvmContext = New DevExpress.Utils.MVVM.MVVMContext(Me.components)
         Me.bbiNew = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiEdit = New DevExpress.XtraBars.BarButtonItem()
@@ -39,6 +40,9 @@ Partial Class Conceptos
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonStatusBar1 = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
+        Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.RibbonPageGroup3 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.bbiCerrar = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.MvvmContext, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.popupMenu, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gridControl, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -49,7 +53,7 @@ Partial Class Conceptos
         '
         'MvvmContext
         '
-        Me.MvvmContext.BindingExpressions.AddRange(New DevExpress.Utils.MVVM.BindingExpression() {DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.ConceptosCollectionViewModel), "New", Me.bbiNew), DevExpress.Utils.MVVM.BindingExpression.CreateParameterizedCommandBinding(GetType(Zenthia.LiquidAR.Win.ConceptosCollectionViewModel), "Edit", "SelectedEntity", Me.bbiEdit), DevExpress.Utils.MVVM.BindingExpression.CreateParameterizedCommandBinding(GetType(Zenthia.LiquidAR.Win.ConceptosCollectionViewModel), "Delete", "SelectedEntity", Me.bbiDelete), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.ConceptosCollectionViewModel), "Refresh", Me.bbiRefresh)})
+        Me.MvvmContext.BindingExpressions.AddRange(New DevExpress.Utils.MVVM.BindingExpression() {DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.ConceptosCollectionViewModel), "New", Me.bbiNew), DevExpress.Utils.MVVM.BindingExpression.CreateParameterizedCommandBinding(GetType(Zenthia.LiquidAR.Win.ConceptosCollectionViewModel), "Edit", "SelectedEntity", Me.bbiEdit), DevExpress.Utils.MVVM.BindingExpression.CreateParameterizedCommandBinding(GetType(Zenthia.LiquidAR.Win.ConceptosCollectionViewModel), "Delete", "SelectedEntity", Me.bbiDelete), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.ConceptosCollectionViewModel), "Refresh", Me.bbiRefresh), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.ConceptosCollectionViewModel), "Close", Me.bbiCerrar)})
         Me.MvvmContext.ContainerControl = Me
         Me.MvvmContext.ViewModelType = GetType(Zenthia.LiquidAR.Win.ConceptosCollectionViewModel)
         '
@@ -142,9 +146,9 @@ Partial Class Conceptos
         'ribbonControl
         '
         Me.ribbonControl.ExpandCollapseItem.Id = 0
-        Me.ribbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl.ExpandCollapseItem, Me.ribbonControl.SearchEditItem, Me.bbiNew, Me.bbiEdit, Me.bbiDelete, Me.bbiRefresh, Me.bsiRecordsCount, Me.bbiDuplicar})
+        Me.ribbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl.ExpandCollapseItem, Me.ribbonControl.SearchEditItem, Me.bbiNew, Me.bbiEdit, Me.bbiDelete, Me.bbiRefresh, Me.bsiRecordsCount, Me.bbiDuplicar, Me.bbiCerrar})
         Me.ribbonControl.Location = New System.Drawing.Point(5, 5)
-        Me.ribbonControl.MaxItemId = 16
+        Me.ribbonControl.MaxItemId = 17
         Me.ribbonControl.Name = "ribbonControl"
         Me.ribbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.[False]
@@ -167,7 +171,7 @@ Partial Class Conceptos
         '
         'RibbonPage1
         '
-        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1})
+        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1, Me.RibbonPageGroup2, Me.RibbonPageGroup3})
         Me.RibbonPage1.Name = "RibbonPage1"
         Me.RibbonPage1.Text = "RibbonPage1"
         '
@@ -175,9 +179,9 @@ Partial Class Conceptos
         '
         Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiNew)
         Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiEdit)
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiDelete)
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiRefresh)
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiDelete, True)
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
+        Me.RibbonPageGroup1.Text = "Edicion"
         '
         'RibbonStatusBar1
         '
@@ -186,6 +190,25 @@ Partial Class Conceptos
         Me.RibbonStatusBar1.Name = "RibbonStatusBar1"
         Me.RibbonStatusBar1.Ribbon = Me.ribbonControl
         Me.RibbonStatusBar1.Size = New System.Drawing.Size(589, 27)
+        '
+        'RibbonPageGroup2
+        '
+        Me.RibbonPageGroup2.ItemLinks.Add(Me.bbiRefresh)
+        Me.RibbonPageGroup2.Name = "RibbonPageGroup2"
+        Me.RibbonPageGroup2.Text = "Consulta"
+        '
+        'RibbonPageGroup3
+        '
+        Me.RibbonPageGroup3.Alignment = DevExpress.XtraBars.Ribbon.RibbonPageGroupAlignment.Far
+        Me.RibbonPageGroup3.ItemLinks.Add(Me.bbiCerrar)
+        Me.RibbonPageGroup3.Name = "RibbonPageGroup3"
+        '
+        'bbiCerrar
+        '
+        Me.bbiCerrar.Caption = "Cerrar"
+        Me.bbiCerrar.Id = 16
+        Me.bbiCerrar.ImageOptions.SvgImage = CType(resources.GetObject("bbiCerrar.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
+        Me.bbiCerrar.Name = "bbiCerrar"
         '
         'Conceptos
         '
@@ -227,4 +250,7 @@ Partial Class Conceptos
     Friend WithEvents colCodigo As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colDescripcion As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colColumnaRecibo As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents RibbonPageGroup2 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents bbiCerrar As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents RibbonPageGroup3 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
 End Class
