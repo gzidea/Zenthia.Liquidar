@@ -406,9 +406,9 @@ Partial Class LSDRegistro01EditForm
         '
         'RibbonPageGroup3
         '
+        Me.RibbonPageGroup3.Alignment = DevExpress.XtraBars.Ribbon.RibbonPageGroupAlignment.Far
         Me.RibbonPageGroup3.ItemLinks.Add(Me.bbiClose)
         Me.RibbonPageGroup3.Name = "RibbonPageGroup3"
-        Me.RibbonPageGroup3.Text = "Cerrar"
         '
         'RibbonPageGroup4
         '

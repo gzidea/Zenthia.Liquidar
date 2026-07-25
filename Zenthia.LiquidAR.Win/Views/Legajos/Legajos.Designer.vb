@@ -20,6 +20,7 @@ Partial Class Legajos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Legajos))
         Me.gridControl = New DevExpress.XtraGrid.GridControl()
         Me.LegajosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.gridView = New DevExpress.XtraGrid.Views.Grid.GridView()
@@ -32,6 +33,7 @@ Partial Class Legajos
         Me.colTareas = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colObrasSociales = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colTieneNovedades = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colFechaNacimiento = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.ribbonControl = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.bbiNew = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiEdit = New DevExpress.XtraBars.BarButtonItem()
@@ -44,7 +46,9 @@ Partial Class Legajos
         Me.mvvmContext = New DevExpress.Utils.MVVM.MVVMContext(Me.components)
         Me.popupMenu = New DevExpress.XtraBars.PopupMenu(Me.components)
         Me.FiltrosEmpresas1 = New Zenthia.LiquidAR.Win.FiltrosEmpresas()
-        Me.colFechaNacimiento = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.bbiClose = New DevExpress.XtraBars.BarButtonItem()
+        Me.RibbonPageGroup3 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         CType(Me.gridControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LegajosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -148,12 +152,20 @@ Partial Class Legajos
         Me.colTieneNovedades.VisibleIndex = 9
         Me.colTieneNovedades.Width = 76
         '
+        'colFechaNacimiento
+        '
+        Me.colFechaNacimiento.FieldName = "FechaNacimiento"
+        Me.colFechaNacimiento.Name = "colFechaNacimiento"
+        Me.colFechaNacimiento.Visible = True
+        Me.colFechaNacimiento.VisibleIndex = 2
+        Me.colFechaNacimiento.Width = 97
+        '
         'ribbonControl
         '
         Me.ribbonControl.ExpandCollapseItem.Id = 0
-        Me.ribbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl.ExpandCollapseItem, Me.ribbonControl.SearchEditItem, Me.bbiNew, Me.bbiEdit, Me.bbiDelete, Me.bbiRefresh, Me.bsiRecordsCount})
+        Me.ribbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl.ExpandCollapseItem, Me.ribbonControl.SearchEditItem, Me.bbiNew, Me.bbiEdit, Me.bbiDelete, Me.bbiRefresh, Me.bsiRecordsCount, Me.bbiClose})
         Me.ribbonControl.Location = New System.Drawing.Point(0, 0)
-        Me.ribbonControl.MaxItemId = 15
+        Me.ribbonControl.MaxItemId = 16
         Me.ribbonControl.Name = "ribbonControl"
         Me.ribbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.[False]
@@ -198,7 +210,7 @@ Partial Class Legajos
         '
         'RibbonPage1
         '
-        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1})
+        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1, Me.RibbonPageGroup2, Me.RibbonPageGroup3})
         Me.RibbonPage1.Name = "RibbonPage1"
         Me.RibbonPage1.Text = "RibbonPage1"
         '
@@ -206,9 +218,9 @@ Partial Class Legajos
         '
         Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiNew)
         Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiEdit)
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiDelete)
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiRefresh)
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiDelete, True)
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
+        Me.RibbonPageGroup1.Text = "Edición"
         '
         'RibbonStatusBar1
         '
@@ -220,7 +232,7 @@ Partial Class Legajos
         '
         'mvvmContext
         '
-        Me.mvvmContext.BindingExpressions.AddRange(New DevExpress.Utils.MVVM.BindingExpression() {DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.LegajoCollectionViewModel), "New", Me.bbiNew), DevExpress.Utils.MVVM.BindingExpression.CreateParameterizedCommandBinding(GetType(Zenthia.LiquidAR.Win.LegajoCollectionViewModel), "Edit", "SelectedEntity", Me.bbiEdit), DevExpress.Utils.MVVM.BindingExpression.CreateParameterizedCommandBinding(GetType(Zenthia.LiquidAR.Win.LegajoCollectionViewModel), "Delete", "SelectedEntity", Me.bbiDelete), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.LegajoCollectionViewModel), "Refresh", Me.bbiRefresh)})
+        Me.mvvmContext.BindingExpressions.AddRange(New DevExpress.Utils.MVVM.BindingExpression() {DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.LegajoCollectionViewModel), "New", Me.bbiNew), DevExpress.Utils.MVVM.BindingExpression.CreateParameterizedCommandBinding(GetType(Zenthia.LiquidAR.Win.LegajoCollectionViewModel), "Edit", "SelectedEntity", Me.bbiEdit), DevExpress.Utils.MVVM.BindingExpression.CreateParameterizedCommandBinding(GetType(Zenthia.LiquidAR.Win.LegajoCollectionViewModel), "Delete", "SelectedEntity", Me.bbiDelete), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.LegajoCollectionViewModel), "Refresh", Me.bbiRefresh), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.LegajoCollectionViewModel), "Close", Me.bbiClose)})
         Me.mvvmContext.ContainerControl = Me
         Me.mvvmContext.ViewModelType = GetType(Zenthia.LiquidAR.Win.LegajoCollectionViewModel)
         '
@@ -242,13 +254,24 @@ Partial Class Legajos
         Me.FiltrosEmpresas1.Size = New System.Drawing.Size(1263, 39)
         Me.FiltrosEmpresas1.TabIndex = 14
         '
-        'colFechaNacimiento
+        'RibbonPageGroup2
         '
-        Me.colFechaNacimiento.FieldName = "FechaNacimiento"
-        Me.colFechaNacimiento.Name = "colFechaNacimiento"
-        Me.colFechaNacimiento.Visible = True
-        Me.colFechaNacimiento.VisibleIndex = 2
-        Me.colFechaNacimiento.Width = 97
+        Me.RibbonPageGroup2.Alignment = DevExpress.XtraBars.Ribbon.RibbonPageGroupAlignment.Far
+        Me.RibbonPageGroup2.ItemLinks.Add(Me.bbiClose)
+        Me.RibbonPageGroup2.Name = "RibbonPageGroup2"
+        '
+        'bbiClose
+        '
+        Me.bbiClose.Caption = "Cerrar"
+        Me.bbiClose.Id = 15
+        Me.bbiClose.ImageOptions.SvgImage = CType(resources.GetObject("bbiClose.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
+        Me.bbiClose.Name = "bbiClose"
+        '
+        'RibbonPageGroup3
+        '
+        Me.RibbonPageGroup3.ItemLinks.Add(Me.bbiRefresh)
+        Me.RibbonPageGroup3.Name = "RibbonPageGroup3"
+        Me.RibbonPageGroup3.Text = "Consulta"
         '
         'Legajos
         '
@@ -296,4 +319,7 @@ Partial Class Legajos
     Friend WithEvents FiltrosEmpresas1 As FiltrosEmpresas
     Friend WithEvents colTieneNovedades As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colFechaNacimiento As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents bbiClose As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents RibbonPageGroup2 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents RibbonPageGroup3 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
 End Class

@@ -48,13 +48,16 @@ Partial Class Formulas
         Me.bbiRefresh = New DevExpress.XtraBars.BarButtonItem()
         Me.bsiRecordsCount = New DevExpress.XtraBars.BarStaticItem()
         Me.bbiDuplicar = New DevExpress.XtraBars.BarButtonItem()
+        Me.bbiExportar = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-        Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonStatusBar1 = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
         Me.popupMenu = New DevExpress.XtraBars.PopupMenu(Me.components)
         Me.MvvmContext = New DevExpress.Utils.MVVM.MVVMContext(Me.components)
-        Me.bbiExportar = New DevExpress.XtraBars.BarButtonItem()
+        Me.RibbonPageGroup3 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.RibbonPageGroup4 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.bbiClose = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.gridControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FormulasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -205,9 +208,9 @@ Partial Class Formulas
         'ribbonControl
         '
         Me.ribbonControl.ExpandCollapseItem.Id = 0
-        Me.ribbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl.ExpandCollapseItem, Me.ribbonControl.SearchEditItem, Me.bbiNew, Me.bbiEdit, Me.bbiDelete, Me.bbiRefresh, Me.bsiRecordsCount, Me.bbiDuplicar, Me.bbiExportar})
+        Me.ribbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl.ExpandCollapseItem, Me.ribbonControl.SearchEditItem, Me.bbiNew, Me.bbiEdit, Me.bbiDelete, Me.bbiRefresh, Me.bsiRecordsCount, Me.bbiDuplicar, Me.bbiExportar, Me.bbiClose})
         Me.ribbonControl.Location = New System.Drawing.Point(5, 0)
-        Me.ribbonControl.MaxItemId = 17
+        Me.ribbonControl.MaxItemId = 18
         Me.ribbonControl.Name = "ribbonControl"
         Me.ribbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.[False]
@@ -254,29 +257,31 @@ Partial Class Formulas
         '
         Me.bbiDuplicar.Caption = "Duplicar"
         Me.bbiDuplicar.Id = 15
+        Me.bbiDuplicar.ImageOptions.SvgImage = CType(resources.GetObject("bbiDuplicar.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
         Me.bbiDuplicar.Name = "bbiDuplicar"
+        '
+        'bbiExportar
+        '
+        Me.bbiExportar.Caption = "Exportar"
+        Me.bbiExportar.Id = 16
+        Me.bbiExportar.ImageOptions.Image = CType(resources.GetObject("bbiExportar.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiExportar.ImageOptions.LargeImage = CType(resources.GetObject("bbiExportar.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.bbiExportar.Name = "bbiExportar"
         '
         'RibbonPage1
         '
-        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1, Me.RibbonPageGroup2})
+        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1, Me.RibbonPageGroup3, Me.RibbonPageGroup4, Me.RibbonPageGroup2})
         Me.RibbonPage1.Name = "RibbonPage1"
         Me.RibbonPage1.Text = "RibbonPage1"
         '
         'RibbonPageGroup1
         '
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiNew)
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiDuplicar)
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiNew, True)
         Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiEdit)
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiDelete)
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiRefresh)
-        Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiExportar, True)
+        Me.RibbonPageGroup1.ItemLinks.Add(Me.bbiDelete, True)
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
-        '
-        'RibbonPageGroup2
-        '
-        Me.RibbonPageGroup2.ItemLinks.Add(Me.bbiDuplicar)
-        Me.RibbonPageGroup2.Name = "RibbonPageGroup2"
-        Me.RibbonPageGroup2.Text = "RibbonPageGroup2"
-        Me.RibbonPageGroup2.Visible = False
+        Me.RibbonPageGroup1.Text = "Edicion"
         '
         'RibbonStatusBar1
         '
@@ -297,17 +302,34 @@ Partial Class Formulas
         '
         'MvvmContext
         '
-        Me.MvvmContext.BindingExpressions.AddRange(New DevExpress.Utils.MVVM.BindingExpression() {DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.FormulaCollectionViewModel), "New", Me.bbiNew), DevExpress.Utils.MVVM.BindingExpression.CreateParameterizedCommandBinding(GetType(Zenthia.LiquidAR.Win.FormulaCollectionViewModel), "Edit", "SelectedEntity", Me.bbiEdit), DevExpress.Utils.MVVM.BindingExpression.CreateParameterizedCommandBinding(GetType(Zenthia.LiquidAR.Win.FormulaCollectionViewModel), "Delete", "SelectedEntity", Me.bbiDelete), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.FormulaCollectionViewModel), "Refresh", Me.bbiRefresh), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.FormulaCollectionViewModel), "DuplicarFormulaSeleccionada", Me.bbiDuplicar)})
+        Me.MvvmContext.BindingExpressions.AddRange(New DevExpress.Utils.MVVM.BindingExpression() {DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.FormulaCollectionViewModel), "New", Me.bbiNew), DevExpress.Utils.MVVM.BindingExpression.CreateParameterizedCommandBinding(GetType(Zenthia.LiquidAR.Win.FormulaCollectionViewModel), "Edit", "SelectedEntity", Me.bbiEdit), DevExpress.Utils.MVVM.BindingExpression.CreateParameterizedCommandBinding(GetType(Zenthia.LiquidAR.Win.FormulaCollectionViewModel), "Delete", "SelectedEntity", Me.bbiDelete), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.FormulaCollectionViewModel), "Refresh", Me.bbiRefresh), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.FormulaCollectionViewModel), "DuplicarFormulaSeleccionada", Me.bbiDuplicar), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.FormulaCollectionViewModel), "Close", Me.bbiClose)})
         Me.MvvmContext.ContainerControl = Me
         Me.MvvmContext.ViewModelType = GetType(Zenthia.LiquidAR.Win.FormulaCollectionViewModel)
         '
-        'bbiExportar
+        'RibbonPageGroup3
         '
-        Me.bbiExportar.Caption = "Exportar"
-        Me.bbiExportar.Id = 16
-        Me.bbiExportar.ImageOptions.Image = CType(resources.GetObject("BarButtonItem1.ImageOptions.Image"), System.Drawing.Image)
-        Me.bbiExportar.ImageOptions.LargeImage = CType(resources.GetObject("BarButtonItem1.ImageOptions.LargeImage"), System.Drawing.Image)
-        Me.bbiExportar.Name = "bbiExportar"
+        Me.RibbonPageGroup3.ItemLinks.Add(Me.bbiRefresh)
+        Me.RibbonPageGroup3.Name = "RibbonPageGroup3"
+        Me.RibbonPageGroup3.Text = "Consulta"
+        '
+        'RibbonPageGroup4
+        '
+        Me.RibbonPageGroup4.ItemLinks.Add(Me.bbiExportar)
+        Me.RibbonPageGroup4.Name = "RibbonPageGroup4"
+        Me.RibbonPageGroup4.Text = "Salida"
+        '
+        'RibbonPageGroup2
+        '
+        Me.RibbonPageGroup2.Alignment = DevExpress.XtraBars.Ribbon.RibbonPageGroupAlignment.Far
+        Me.RibbonPageGroup2.ItemLinks.Add(Me.bbiClose)
+        Me.RibbonPageGroup2.Name = "RibbonPageGroup2"
+        '
+        'bbiClose
+        '
+        Me.bbiClose.Caption = "Cerrar"
+        Me.bbiClose.Id = 17
+        Me.bbiClose.ImageOptions.SvgImage = CType(resources.GetObject("bbiClose.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
+        Me.bbiClose.Name = "bbiClose"
         '
         'Formulas
         '
@@ -361,7 +383,10 @@ Partial Class Formulas
     Friend WithEvents colVigenteHasta As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colAuxiliar As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents bbiDuplicar As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents RibbonPageGroup2 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents colOrden As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents bbiExportar As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents RibbonPageGroup3 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents RibbonPageGroup4 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents bbiClose As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents RibbonPageGroup2 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
 End Class

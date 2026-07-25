@@ -37,35 +37,35 @@ Partial Class FormulaPeriodoEditForm
         Me.RibbonPageGroup3 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup4 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.dataLayout = New DevExpress.XtraLayout.LayoutControl()
-        Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
-        Me.FormulasPeriodosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.IdFormulaSearchLookUpEditView = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.IdFormulaSearchLookUpEdit = New DevExpress.XtraEditors.SearchLookUpEdit()
-        Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.NumeroMesLookUpEdit = New DevExpress.XtraEditors.LookUpEdit()
-        Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.SeleccionadoCheckEdit = New DevExpress.XtraEditors.CheckEdit()
+        Me.FormulasPeriodosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.NumeroMesLookUpEdit = New DevExpress.XtraEditors.LookUpEdit()
+        Me.MesesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.IdFormulaSearchLookUpEdit = New DevExpress.XtraEditors.SearchLookUpEdit()
+        Me.FormulasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.IdFormulaSearchLookUpEditView = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.colDescripcionCompleta = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem1 = New DevExpress.XtraLayout.EmptySpaceItem()
-        Me.FormulasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.colDescripcionCompleta = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.MesesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.mvvmContext = New DevExpress.Utils.MVVM.MVVMContext(Me.components)
         CType(Me.ribbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dataLayout, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.dataLayout.SuspendLayout()
-        CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.FormulasPeriodosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.IdFormulaSearchLookUpEditView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.IdFormulaSearchLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumeroMesLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SeleccionadoCheckEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FormulasPeriodosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumeroMesLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.MesesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.IdFormulaSearchLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FormulasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.IdFormulaSearchLookUpEditView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.FormulasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MesesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.mvvmContext, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -176,9 +176,9 @@ Partial Class FormulaPeriodoEditForm
         '
         'RibbonPageGroup3
         '
+        Me.RibbonPageGroup3.Alignment = DevExpress.XtraBars.Ribbon.RibbonPageGroupAlignment.Far
         Me.RibbonPageGroup3.ItemLinks.Add(Me.bbiClose)
         Me.RibbonPageGroup3.Name = "RibbonPageGroup3"
-        Me.RibbonPageGroup3.Text = "Cerrar"
         '
         'RibbonPageGroup4
         '
@@ -186,6 +186,7 @@ Partial Class FormulaPeriodoEditForm
         Me.RibbonPageGroup4.ItemLinks.Add(Me.bbiResetLayout)
         Me.RibbonPageGroup4.Name = "RibbonPageGroup4"
         Me.RibbonPageGroup4.Text = "Layer"
+        Me.RibbonPageGroup4.Visible = False
         '
         'dataLayout
         '
@@ -201,75 +202,6 @@ Partial Class FormulaPeriodoEditForm
         Me.dataLayout.TabIndex = 4
         Me.dataLayout.Text = "LayoutControl1"
         '
-        'Root
-        '
-        Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
-        Me.Root.GroupBordersVisible = False
-        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem2, Me.LayoutControlItem3, Me.LayoutControlItem4, Me.EmptySpaceItem1})
-        Me.Root.Name = "Root"
-        Me.Root.Size = New System.Drawing.Size(557, 140)
-        Me.Root.TextVisible = False
-        '
-        'FormulasPeriodosBindingSource
-        '
-        Me.FormulasPeriodosBindingSource.DataSource = GetType(Zenthia.AccesoDatos.FormulasPeriodos)
-        '
-        'IdFormulaSearchLookUpEditView
-        '
-        Me.IdFormulaSearchLookUpEditView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colDescripcionCompleta})
-        Me.IdFormulaSearchLookUpEditView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
-        Me.IdFormulaSearchLookUpEditView.Name = "IdFormulaSearchLookUpEditView"
-        Me.IdFormulaSearchLookUpEditView.OptionsSelection.EnableAppearanceFocusedCell = False
-        Me.IdFormulaSearchLookUpEditView.OptionsView.ShowGroupPanel = False
-        '
-        'IdFormulaSearchLookUpEdit
-        '
-        Me.IdFormulaSearchLookUpEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.FormulasPeriodosBindingSource, "IdFormula", True))
-        Me.IdFormulaSearchLookUpEdit.Location = New System.Drawing.Point(66, 12)
-        Me.IdFormulaSearchLookUpEdit.MenuManager = Me.ribbonControl
-        Me.IdFormulaSearchLookUpEdit.Name = "IdFormulaSearchLookUpEdit"
-        Me.IdFormulaSearchLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.IdFormulaSearchLookUpEdit.Properties.DataSource = Me.FormulasBindingSource
-        Me.IdFormulaSearchLookUpEdit.Properties.DisplayMember = "DescripcionCompleta"
-        Me.IdFormulaSearchLookUpEdit.Properties.PopupView = Me.IdFormulaSearchLookUpEditView
-        Me.IdFormulaSearchLookUpEdit.Properties.ValueMember = "Id"
-        Me.IdFormulaSearchLookUpEdit.Size = New System.Drawing.Size(479, 20)
-        Me.IdFormulaSearchLookUpEdit.StyleController = Me.dataLayout
-        Me.IdFormulaSearchLookUpEdit.TabIndex = 5
-        '
-        'LayoutControlItem2
-        '
-        Me.LayoutControlItem2.Control = Me.IdFormulaSearchLookUpEdit
-        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 0)
-        Me.LayoutControlItem2.Name = "LayoutControlItem2"
-        Me.LayoutControlItem2.Size = New System.Drawing.Size(537, 24)
-        Me.LayoutControlItem2.Text = "Formula:"
-        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(42, 13)
-        '
-        'NumeroMesLookUpEdit
-        '
-        Me.NumeroMesLookUpEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.FormulasPeriodosBindingSource, "NumeroMes", True))
-        Me.NumeroMesLookUpEdit.Location = New System.Drawing.Point(66, 36)
-        Me.NumeroMesLookUpEdit.MenuManager = Me.ribbonControl
-        Me.NumeroMesLookUpEdit.Name = "NumeroMesLookUpEdit"
-        Me.NumeroMesLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.NumeroMesLookUpEdit.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("NombreMes", "Periodo")})
-        Me.NumeroMesLookUpEdit.Properties.DataSource = Me.MesesBindingSource
-        Me.NumeroMesLookUpEdit.Properties.DisplayMember = "NombreMes"
-        Me.NumeroMesLookUpEdit.Properties.ValueMember = "Id"
-        Me.NumeroMesLookUpEdit.Size = New System.Drawing.Size(479, 20)
-        Me.NumeroMesLookUpEdit.StyleController = Me.dataLayout
-        Me.NumeroMesLookUpEdit.TabIndex = 6
-        '
-        'LayoutControlItem3
-        '
-        Me.LayoutControlItem3.Control = Me.NumeroMesLookUpEdit
-        Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 24)
-        Me.LayoutControlItem3.Name = "LayoutControlItem3"
-        Me.LayoutControlItem3.Size = New System.Drawing.Size(537, 24)
-        Me.LayoutControlItem3.Text = "Mes:"
-        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(42, 13)
-        '
         'SeleccionadoCheckEdit
         '
         Me.SeleccionadoCheckEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.FormulasPeriodosBindingSource, "Seleccionado", True))
@@ -280,6 +212,90 @@ Partial Class FormulaPeriodoEditForm
         Me.SeleccionadoCheckEdit.Size = New System.Drawing.Size(533, 20)
         Me.SeleccionadoCheckEdit.StyleController = Me.dataLayout
         Me.SeleccionadoCheckEdit.TabIndex = 7
+        '
+        'FormulasPeriodosBindingSource
+        '
+        Me.FormulasPeriodosBindingSource.DataSource = GetType(Zenthia.AccesoDatos.FormulasPeriodos)
+        '
+        'NumeroMesLookUpEdit
+        '
+        Me.NumeroMesLookUpEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.FormulasPeriodosBindingSource, "NumeroMes", True))
+        Me.NumeroMesLookUpEdit.Location = New System.Drawing.Point(57, 36)
+        Me.NumeroMesLookUpEdit.MenuManager = Me.ribbonControl
+        Me.NumeroMesLookUpEdit.Name = "NumeroMesLookUpEdit"
+        Me.NumeroMesLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.NumeroMesLookUpEdit.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("NombreMes", "Periodo")})
+        Me.NumeroMesLookUpEdit.Properties.DataSource = Me.MesesBindingSource
+        Me.NumeroMesLookUpEdit.Properties.DisplayMember = "NombreMes"
+        Me.NumeroMesLookUpEdit.Properties.ValueMember = "Id"
+        Me.NumeroMesLookUpEdit.Size = New System.Drawing.Size(488, 20)
+        Me.NumeroMesLookUpEdit.StyleController = Me.dataLayout
+        Me.NumeroMesLookUpEdit.TabIndex = 6
+        '
+        'MesesBindingSource
+        '
+        Me.MesesBindingSource.DataSource = GetType(Zenthia.AccesoDatos.Meses)
+        '
+        'IdFormulaSearchLookUpEdit
+        '
+        Me.IdFormulaSearchLookUpEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.FormulasPeriodosBindingSource, "IdFormula", True))
+        Me.IdFormulaSearchLookUpEdit.Location = New System.Drawing.Point(57, 12)
+        Me.IdFormulaSearchLookUpEdit.MenuManager = Me.ribbonControl
+        Me.IdFormulaSearchLookUpEdit.Name = "IdFormulaSearchLookUpEdit"
+        Me.IdFormulaSearchLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.IdFormulaSearchLookUpEdit.Properties.DataSource = Me.FormulasBindingSource
+        Me.IdFormulaSearchLookUpEdit.Properties.DisplayMember = "DescripcionCompleta"
+        Me.IdFormulaSearchLookUpEdit.Properties.PopupView = Me.IdFormulaSearchLookUpEditView
+        Me.IdFormulaSearchLookUpEdit.Properties.ValueMember = "Id"
+        Me.IdFormulaSearchLookUpEdit.Size = New System.Drawing.Size(488, 20)
+        Me.IdFormulaSearchLookUpEdit.StyleController = Me.dataLayout
+        Me.IdFormulaSearchLookUpEdit.TabIndex = 5
+        '
+        'FormulasBindingSource
+        '
+        Me.FormulasBindingSource.DataSource = GetType(Zenthia.AccesoDatos.Formulas)
+        '
+        'IdFormulaSearchLookUpEditView
+        '
+        Me.IdFormulaSearchLookUpEditView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colDescripcionCompleta})
+        Me.IdFormulaSearchLookUpEditView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
+        Me.IdFormulaSearchLookUpEditView.Name = "IdFormulaSearchLookUpEditView"
+        Me.IdFormulaSearchLookUpEditView.OptionsSelection.EnableAppearanceFocusedCell = False
+        Me.IdFormulaSearchLookUpEditView.OptionsView.ShowGroupPanel = False
+        '
+        'colDescripcionCompleta
+        '
+        Me.colDescripcionCompleta.FieldName = "DescripcionCompleta"
+        Me.colDescripcionCompleta.Name = "colDescripcionCompleta"
+        Me.colDescripcionCompleta.Visible = True
+        Me.colDescripcionCompleta.VisibleIndex = 0
+        '
+        'Root
+        '
+        Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
+        Me.Root.GroupBordersVisible = False
+        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem2, Me.LayoutControlItem3, Me.LayoutControlItem4, Me.EmptySpaceItem1})
+        Me.Root.Name = "Root"
+        Me.Root.Size = New System.Drawing.Size(557, 140)
+        Me.Root.TextVisible = False
+        '
+        'LayoutControlItem2
+        '
+        Me.LayoutControlItem2.Control = Me.IdFormulaSearchLookUpEdit
+        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlItem2.Name = "LayoutControlItem2"
+        Me.LayoutControlItem2.Size = New System.Drawing.Size(537, 24)
+        Me.LayoutControlItem2.Text = "Formula:"
+        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(42, 13)
+        '
+        'LayoutControlItem3
+        '
+        Me.LayoutControlItem3.Control = Me.NumeroMesLookUpEdit
+        Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 24)
+        Me.LayoutControlItem3.Name = "LayoutControlItem3"
+        Me.LayoutControlItem3.Size = New System.Drawing.Size(537, 24)
+        Me.LayoutControlItem3.Text = "Mes:"
+        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(42, 13)
         '
         'LayoutControlItem4
         '
@@ -298,21 +314,6 @@ Partial Class FormulaPeriodoEditForm
         Me.EmptySpaceItem1.Name = "EmptySpaceItem1"
         Me.EmptySpaceItem1.Size = New System.Drawing.Size(537, 48)
         Me.EmptySpaceItem1.TextSize = New System.Drawing.Size(0, 0)
-        '
-        'FormulasBindingSource
-        '
-        Me.FormulasBindingSource.DataSource = GetType(Zenthia.AccesoDatos.Formulas)
-        '
-        'colDescripcionCompleta
-        '
-        Me.colDescripcionCompleta.FieldName = "DescripcionCompleta"
-        Me.colDescripcionCompleta.Name = "colDescripcionCompleta"
-        Me.colDescripcionCompleta.Visible = True
-        Me.colDescripcionCompleta.VisibleIndex = 0
-        '
-        'MesesBindingSource
-        '
-        Me.MesesBindingSource.DataSource = GetType(Zenthia.AccesoDatos.Meses)
         '
         'mvvmContext
         '
@@ -333,18 +334,18 @@ Partial Class FormulaPeriodoEditForm
         CType(Me.ribbonControl, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dataLayout, System.ComponentModel.ISupportInitialize).EndInit()
         Me.dataLayout.ResumeLayout(False)
-        CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.FormulasPeriodosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.IdFormulaSearchLookUpEditView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.IdFormulaSearchLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumeroMesLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SeleccionadoCheckEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.FormulasPeriodosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumeroMesLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.MesesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.IdFormulaSearchLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.FormulasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.IdFormulaSearchLookUpEditView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.FormulasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MesesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.mvvmContext, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

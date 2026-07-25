@@ -39,32 +39,32 @@ Partial Class BancoEditForm
         Me.RibbonStatusBar1 = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
         Me.BarStaticItem1 = New DevExpress.XtraBars.BarStaticItem()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
-        Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.TextEdit1 = New DevExpress.XtraEditors.TextEdit()
-        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.BancosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SpinEdit1 = New DevExpress.XtraEditors.SpinEdit()
-        Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.EmptySpaceItem1 = New DevExpress.XtraLayout.EmptySpaceItem()
-        Me.EmptySpaceItem2 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.TextEdit2 = New DevExpress.XtraEditors.TextEdit()
+        Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.EmptySpaceItem1 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.EmptySpaceItem2 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem3 = New DevExpress.XtraLayout.EmptySpaceItem()
-        Me.BancosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.mvvmContext, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ribbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
-        CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BancosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SpinEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BancosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'mvvmContext
@@ -171,9 +171,9 @@ Partial Class BancoEditForm
         '
         'RibbonPageGroup3
         '
+        Me.RibbonPageGroup3.Alignment = DevExpress.XtraBars.Ribbon.RibbonPageGroupAlignment.Far
         Me.RibbonPageGroup3.ItemLinks.Add(Me.bbiClose)
         Me.RibbonPageGroup3.Name = "RibbonPageGroup3"
-        Me.RibbonPageGroup3.Text = "Cerrar"
         '
         'RibbonPageGroup4
         '
@@ -181,6 +181,7 @@ Partial Class BancoEditForm
         Me.RibbonPageGroup4.ItemLinks.Add(Me.bbiResetLayout)
         Me.RibbonPageGroup4.Name = "RibbonPageGroup4"
         Me.RibbonPageGroup4.Text = "Layer"
+        Me.RibbonPageGroup4.Visible = False
         '
         'RibbonStatusBar1
         '
@@ -209,6 +210,42 @@ Partial Class BancoEditForm
         Me.LayoutControl1.TabIndex = 4
         Me.LayoutControl1.Text = "LayoutControl1"
         '
+        'TextEdit1
+        '
+        Me.TextEdit1.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.BancosBindingSource, "Denominacion", True))
+        Me.TextEdit1.Location = New System.Drawing.Point(280, 12)
+        Me.TextEdit1.MenuManager = Me.ribbonControl
+        Me.TextEdit1.Name = "TextEdit1"
+        Me.TextEdit1.Size = New System.Drawing.Size(521, 20)
+        Me.TextEdit1.StyleController = Me.LayoutControl1
+        Me.TextEdit1.TabIndex = 4
+        '
+        'BancosBindingSource
+        '
+        Me.BancosBindingSource.DataSource = GetType(Zenthia.AccesoDatos.Bancos)
+        '
+        'SpinEdit1
+        '
+        Me.SpinEdit1.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.BancosBindingSource, "CodigoEntidad", True))
+        Me.SpinEdit1.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
+        Me.SpinEdit1.Location = New System.Drawing.Point(81, 12)
+        Me.SpinEdit1.MenuManager = Me.ribbonControl
+        Me.SpinEdit1.Name = "SpinEdit1"
+        Me.SpinEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.SpinEdit1.Size = New System.Drawing.Size(93, 20)
+        Me.SpinEdit1.StyleController = Me.LayoutControl1
+        Me.SpinEdit1.TabIndex = 5
+        '
+        'TextEdit2
+        '
+        Me.TextEdit2.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.BancosBindingSource, "Abreviacion", True))
+        Me.TextEdit2.Location = New System.Drawing.Point(81, 36)
+        Me.TextEdit2.MenuManager = Me.ribbonControl
+        Me.TextEdit2.Name = "TextEdit2"
+        Me.TextEdit2.Size = New System.Drawing.Size(245, 20)
+        Me.TextEdit2.StyleController = Me.LayoutControl1
+        Me.TextEdit2.TabIndex = 6
+        '
         'Root
         '
         Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
@@ -217,16 +254,6 @@ Partial Class BancoEditForm
         Me.Root.Name = "Root"
         Me.Root.Size = New System.Drawing.Size(813, 278)
         Me.Root.TextVisible = False
-        '
-        'TextEdit1
-        '
-        Me.TextEdit1.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.BancosBindingSource, "Denominacion", True))
-        Me.TextEdit1.Location = New System.Drawing.Point(289, 12)
-        Me.TextEdit1.MenuManager = Me.ribbonControl
-        Me.TextEdit1.Name = "TextEdit1"
-        Me.TextEdit1.Size = New System.Drawing.Size(512, 20)
-        Me.TextEdit1.StyleController = Me.LayoutControl1
-        Me.TextEdit1.TabIndex = 4
         '
         'LayoutControlItem1
         '
@@ -237,17 +264,13 @@ Partial Class BancoEditForm
         Me.LayoutControlItem1.Text = "Denominación"
         Me.LayoutControlItem1.TextSize = New System.Drawing.Size(66, 13)
         '
-        'SpinEdit1
+        'EmptySpaceItem1
         '
-        Me.SpinEdit1.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.BancosBindingSource, "CodigoEntidad", True))
-        Me.SpinEdit1.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.SpinEdit1.Location = New System.Drawing.Point(90, 12)
-        Me.SpinEdit1.MenuManager = Me.ribbonControl
-        Me.SpinEdit1.Name = "SpinEdit1"
-        Me.SpinEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.SpinEdit1.Size = New System.Drawing.Size(84, 20)
-        Me.SpinEdit1.StyleController = Me.LayoutControl1
-        Me.SpinEdit1.TabIndex = 5
+        Me.EmptySpaceItem1.AllowHotTrack = False
+        Me.EmptySpaceItem1.Location = New System.Drawing.Point(0, 48)
+        Me.EmptySpaceItem1.Name = "EmptySpaceItem1"
+        Me.EmptySpaceItem1.Size = New System.Drawing.Size(793, 210)
+        Me.EmptySpaceItem1.TextSize = New System.Drawing.Size(0, 0)
         '
         'LayoutControlItem2
         '
@@ -258,14 +281,6 @@ Partial Class BancoEditForm
         Me.LayoutControlItem2.Text = "Codigo:"
         Me.LayoutControlItem2.TextSize = New System.Drawing.Size(66, 13)
         '
-        'EmptySpaceItem1
-        '
-        Me.EmptySpaceItem1.AllowHotTrack = False
-        Me.EmptySpaceItem1.Location = New System.Drawing.Point(0, 48)
-        Me.EmptySpaceItem1.Name = "EmptySpaceItem1"
-        Me.EmptySpaceItem1.Size = New System.Drawing.Size(793, 210)
-        Me.EmptySpaceItem1.TextSize = New System.Drawing.Size(0, 0)
-        '
         'EmptySpaceItem2
         '
         Me.EmptySpaceItem2.AllowHotTrack = False
@@ -273,16 +288,6 @@ Partial Class BancoEditForm
         Me.EmptySpaceItem2.Name = "EmptySpaceItem2"
         Me.EmptySpaceItem2.Size = New System.Drawing.Size(33, 24)
         Me.EmptySpaceItem2.TextSize = New System.Drawing.Size(0, 0)
-        '
-        'TextEdit2
-        '
-        Me.TextEdit2.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.BancosBindingSource, "Abreviacion", True))
-        Me.TextEdit2.Location = New System.Drawing.Point(90, 36)
-        Me.TextEdit2.MenuManager = Me.ribbonControl
-        Me.TextEdit2.Name = "TextEdit2"
-        Me.TextEdit2.Size = New System.Drawing.Size(236, 20)
-        Me.TextEdit2.StyleController = Me.LayoutControl1
-        Me.TextEdit2.TabIndex = 6
         '
         'LayoutControlItem3
         '
@@ -301,10 +306,6 @@ Partial Class BancoEditForm
         Me.EmptySpaceItem3.Size = New System.Drawing.Size(475, 24)
         Me.EmptySpaceItem3.TextSize = New System.Drawing.Size(0, 0)
         '
-        'BancosBindingSource
-        '
-        Me.BancosBindingSource.DataSource = GetType(Zenthia.AccesoDatos.Bancos)
-        '
         'BancoEditForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -318,17 +319,17 @@ Partial Class BancoEditForm
         CType(Me.ribbonControl, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
-        CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BancosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SpinEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmptySpaceItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BancosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
