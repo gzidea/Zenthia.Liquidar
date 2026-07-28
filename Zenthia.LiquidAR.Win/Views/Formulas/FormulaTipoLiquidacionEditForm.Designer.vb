@@ -54,6 +54,7 @@ Partial Class FormulaTipoLiquidacionEditForm
         Me.EmptySpaceItem1 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.mvvmContext = New DevExpress.Utils.MVVM.MVVMContext(Me.components)
+        Me.colDescripcion1 = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.ribbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FormulaTipoLiquidacionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dataControl, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -241,6 +242,7 @@ Partial Class FormulaTipoLiquidacionEditForm
         '
         'IdTipoLiquidacionSearchLookUpEditView
         '
+        Me.IdTipoLiquidacionSearchLookUpEditView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colDescripcion1})
         Me.IdTipoLiquidacionSearchLookUpEditView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
         Me.IdTipoLiquidacionSearchLookUpEditView.Name = "IdTipoLiquidacionSearchLookUpEditView"
         Me.IdTipoLiquidacionSearchLookUpEditView.OptionsSelection.EnableAppearanceFocusedCell = False
@@ -256,6 +258,7 @@ Partial Class FormulaTipoLiquidacionEditForm
         Me.IdFormulaSearchLookUpEdit.Properties.DataSource = Me.FormulasBindingSource
         Me.IdFormulaSearchLookUpEdit.Properties.DisplayMember = "Descripcion"
         Me.IdFormulaSearchLookUpEdit.Properties.PopupView = Me.IdFormulaSearchLookUpEditView
+        Me.IdFormulaSearchLookUpEdit.Properties.ReadOnly = True
         Me.IdFormulaSearchLookUpEdit.Properties.ValueMember = "Id"
         Me.IdFormulaSearchLookUpEdit.Size = New System.Drawing.Size(462, 20)
         Me.IdFormulaSearchLookUpEdit.StyleController = Me.dataControl
@@ -345,6 +348,13 @@ Partial Class FormulaTipoLiquidacionEditForm
         Me.mvvmContext.ContainerControl = Me
         Me.mvvmContext.ViewModelType = GetType(Zenthia.LiquidAR.Win.FormulaTipoLiquidacionViewModal)
         '
+        'colDescripcion1
+        '
+        Me.colDescripcion1.FieldName = "Descripcion"
+        Me.colDescripcion1.Name = "colDescripcion1"
+        Me.colDescripcion1.Visible = True
+        Me.colDescripcion1.VisibleIndex = 0
+        '
         'FormulaTipoLiquidacionEditForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -411,4 +421,5 @@ Partial Class FormulaTipoLiquidacionEditForm
     Friend WithEvents colCodigo As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colConvenios As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colDescripcion As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colDescripcion1 As DevExpress.XtraGrid.Columns.GridColumn
 End Class

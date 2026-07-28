@@ -21,15 +21,15 @@ Partial Class EmpresaBancoEditForm
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.mvvmContext = New DevExpress.Utils.MVVM.MVVMContext(Me.components)
-        Me.ribbonControl = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.bbiSave = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiSaveAndClose = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiSaveAndNew = New DevExpress.XtraBars.BarButtonItem()
+        Me.bbiClose = New DevExpress.XtraBars.BarButtonItem()
+        Me.bbiDelete = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiReset = New DevExpress.XtraBars.BarButtonItem()
+        Me.ribbonControl = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.bbiSaveLayout = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiResetLayout = New DevExpress.XtraBars.BarButtonItem()
-        Me.bbiDelete = New DevExpress.XtraBars.BarButtonItem()
-        Me.bbiClose = New DevExpress.XtraBars.BarButtonItem()
         Me.bsiEstado = New DevExpress.XtraBars.BarStaticItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup5 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -52,6 +52,8 @@ Partial Class EmpresaBancoEditForm
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.EmptySpaceItem2 = New DevExpress.XtraLayout.EmptySpaceItem()
+        Me.colCodigoEntidad = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colDenominacion = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.mvvmContext, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ribbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -77,20 +79,6 @@ Partial Class EmpresaBancoEditForm
         Me.mvvmContext.ContainerControl = Me
         Me.mvvmContext.ViewModelType = GetType(Zenthia.LiquidAR.Win.EmpresaBancosViewModel)
         '
-        'ribbonControl
-        '
-        Me.ribbonControl.ExpandCollapseItem.Id = 0
-        Me.ribbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl.ExpandCollapseItem, Me.ribbonControl.SearchEditItem, Me.bbiSave, Me.bbiSaveAndClose, Me.bbiSaveAndNew, Me.bbiReset, Me.bbiSaveLayout, Me.bbiResetLayout, Me.bbiDelete, Me.bbiClose, Me.bsiEstado})
-        Me.ribbonControl.Location = New System.Drawing.Point(0, 0)
-        Me.ribbonControl.MaxItemId = 28
-        Me.ribbonControl.Name = "ribbonControl"
-        Me.ribbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
-        Me.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.[False]
-        Me.ribbonControl.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
-        Me.ribbonControl.Size = New System.Drawing.Size(611, 100)
-        Me.ribbonControl.StatusBar = Me.RibbonStatusBar1
-        Me.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
-        '
         'bbiSave
         '
         Me.bbiSave.Caption = "Guardar"
@@ -112,12 +100,40 @@ Partial Class EmpresaBancoEditForm
         Me.bbiSaveAndNew.ImageOptions.ImageUri.Uri = "SaveAndNew"
         Me.bbiSaveAndNew.Name = "bbiSaveAndNew"
         '
+        'bbiClose
+        '
+        Me.bbiClose.Caption = "Cerrar"
+        Me.bbiClose.Id = 26
+        Me.bbiClose.ImageOptions.ImageUri.Uri = "Close"
+        Me.bbiClose.Name = "bbiClose"
+        '
+        'bbiDelete
+        '
+        Me.bbiDelete.Caption = "Quitar"
+        Me.bbiDelete.Id = 25
+        Me.bbiDelete.ImageOptions.ImageUri.Uri = "Delete"
+        Me.bbiDelete.Name = "bbiDelete"
+        '
         'bbiReset
         '
         Me.bbiReset.Caption = "Deshacer"
         Me.bbiReset.Id = 22
         Me.bbiReset.ImageOptions.ImageUri.Uri = "Reset"
         Me.bbiReset.Name = "bbiReset"
+        '
+        'ribbonControl
+        '
+        Me.ribbonControl.ExpandCollapseItem.Id = 0
+        Me.ribbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl.ExpandCollapseItem, Me.ribbonControl.SearchEditItem, Me.bbiSave, Me.bbiSaveAndClose, Me.bbiSaveAndNew, Me.bbiReset, Me.bbiSaveLayout, Me.bbiResetLayout, Me.bbiDelete, Me.bbiClose, Me.bsiEstado})
+        Me.ribbonControl.Location = New System.Drawing.Point(0, 0)
+        Me.ribbonControl.MaxItemId = 28
+        Me.ribbonControl.Name = "ribbonControl"
+        Me.ribbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
+        Me.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.[False]
+        Me.ribbonControl.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
+        Me.ribbonControl.Size = New System.Drawing.Size(611, 100)
+        Me.ribbonControl.StatusBar = Me.RibbonStatusBar1
+        Me.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
         'bbiSaveLayout
         '
@@ -134,20 +150,6 @@ Partial Class EmpresaBancoEditForm
         Me.bbiResetLayout.ImageOptions.ImageUri.Uri = "Reset"
         Me.bbiResetLayout.Name = "bbiResetLayout"
         Me.bbiResetLayout.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
-        '
-        'bbiDelete
-        '
-        Me.bbiDelete.Caption = "Quitar"
-        Me.bbiDelete.Id = 25
-        Me.bbiDelete.ImageOptions.ImageUri.Uri = "Delete"
-        Me.bbiDelete.Name = "bbiDelete"
-        '
-        'bbiClose
-        '
-        Me.bbiClose.Caption = "Cerrar"
-        Me.bbiClose.Id = 26
-        Me.bbiClose.ImageOptions.ImageUri.Uri = "Close"
-        Me.bbiClose.Name = "bbiClose"
         '
         'bsiEstado
         '
@@ -241,6 +243,7 @@ Partial Class EmpresaBancoEditForm
         '
         'SearchLookUpEdit1View
         '
+        Me.SearchLookUpEdit1View.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colCodigoEntidad, Me.colDenominacion})
         Me.SearchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
         Me.SearchLookUpEdit1View.Name = "SearchLookUpEdit1View"
         Me.SearchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = False
@@ -254,6 +257,7 @@ Partial Class EmpresaBancoEditForm
         Me.IdEmpresaLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.IdEmpresaLookUpEdit.Properties.DataSource = Me.EmpresasBindingSource
         Me.IdEmpresaLookUpEdit.Properties.DisplayMember = "Nombre"
+        Me.IdEmpresaLookUpEdit.Properties.ReadOnly = True
         Me.IdEmpresaLookUpEdit.Properties.ValueMember = "Id"
         Me.IdEmpresaLookUpEdit.Size = New System.Drawing.Size(539, 20)
         Me.IdEmpresaLookUpEdit.StyleController = Me.LayoutControl1
@@ -328,6 +332,22 @@ Partial Class EmpresaBancoEditForm
         Me.EmptySpaceItem2.Size = New System.Drawing.Size(591, 10)
         Me.EmptySpaceItem2.TextSize = New System.Drawing.Size(0, 0)
         '
+        'colCodigoEntidad
+        '
+        Me.colCodigoEntidad.FieldName = "CodigoEntidad"
+        Me.colCodigoEntidad.Name = "colCodigoEntidad"
+        Me.colCodigoEntidad.Visible = True
+        Me.colCodigoEntidad.VisibleIndex = 0
+        Me.colCodigoEntidad.Width = 92
+        '
+        'colDenominacion
+        '
+        Me.colDenominacion.FieldName = "Denominacion"
+        Me.colDenominacion.Name = "colDenominacion"
+        Me.colDenominacion.Visible = True
+        Me.colDenominacion.VisibleIndex = 1
+        Me.colDenominacion.Width = 819
+        '
         'EmpresaBancoEditForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -391,4 +411,6 @@ Partial Class EmpresaBancoEditForm
     Friend WithEvents LayoutControlItem3 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents BancosBindingSource As BindingSource
     Friend WithEvents EmptySpaceItem2 As DevExpress.XtraLayout.EmptySpaceItem
+    Friend WithEvents colCodigoEntidad As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colDenominacion As DevExpress.XtraGrid.Columns.GridColumn
 End Class

@@ -40,14 +40,14 @@ Partial Class Empresas
         Me.bbiRefresh = New DevExpress.XtraBars.BarButtonItem()
         Me.bsiRecordsCount = New DevExpress.XtraBars.BarStaticItem()
         Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
+        Me.bbiClose = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.RibbonPageGroup3 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonStatusBar1 = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
         Me.mvvmContext = New DevExpress.Utils.MVVM.MVVMContext(Me.components)
         Me.popupMenu = New DevExpress.XtraBars.PopupMenu(Me.components)
-        Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-        Me.RibbonPageGroup3 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-        Me.bbiClose = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.gridControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmpresasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -206,6 +206,13 @@ Partial Class Empresas
         Me.BarButtonItem1.Name = "BarButtonItem1"
         Me.BarButtonItem1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
         '
+        'bbiClose
+        '
+        Me.bbiClose.Caption = "Cerrar"
+        Me.bbiClose.Id = 16
+        Me.bbiClose.ImageOptions.SvgImage = CType(resources.GetObject("bbiClose.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
+        Me.bbiClose.Name = "bbiClose"
+        '
         'RibbonPage1
         '
         Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1, Me.RibbonPageGroup2, Me.RibbonPageGroup3})
@@ -221,29 +228,6 @@ Partial Class Empresas
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
         Me.RibbonPageGroup1.Text = "Edicion"
         '
-        'RibbonStatusBar1
-        '
-        Me.RibbonStatusBar1.ItemLinks.Add(Me.bsiRecordsCount)
-        Me.RibbonStatusBar1.Location = New System.Drawing.Point(0, 672)
-        Me.RibbonStatusBar1.Name = "RibbonStatusBar1"
-        Me.RibbonStatusBar1.Ribbon = Me.ribbonControl
-        Me.RibbonStatusBar1.Size = New System.Drawing.Size(1234, 27)
-        '
-        'mvvmContext
-        '
-        Me.mvvmContext.BindingExpressions.AddRange(New DevExpress.Utils.MVVM.BindingExpression() {DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.EmpresaCollectionViewModel), "New", Me.bbiNew), DevExpress.Utils.MVVM.BindingExpression.CreateParameterizedCommandBinding(GetType(Zenthia.LiquidAR.Win.EmpresaCollectionViewModel), "Edit", "SelectedEntity", Me.bbiEdit), DevExpress.Utils.MVVM.BindingExpression.CreateParameterizedCommandBinding(GetType(Zenthia.LiquidAR.Win.EmpresaCollectionViewModel), "Delete", "SelectedEntity", Me.bbiDelete), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.EmpresaCollectionViewModel), "Refresh", Me.bbiRefresh), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.EmpresaCollectionViewModel), "ReportDesigner", Me.BarButtonItem1)})
-        Me.mvvmContext.ContainerControl = Me
-        Me.mvvmContext.ViewModelType = GetType(Zenthia.LiquidAR.Win.EmpresaCollectionViewModel)
-        '
-        'popupMenu
-        '
-        Me.popupMenu.ItemLinks.Add(Me.bbiNew)
-        Me.popupMenu.ItemLinks.Add(Me.bbiEdit)
-        Me.popupMenu.ItemLinks.Add(Me.bbiDelete)
-        Me.popupMenu.ItemLinks.Add(Me.bbiRefresh)
-        Me.popupMenu.Name = "popupMenu"
-        Me.popupMenu.Ribbon = Me.ribbonControl
-        '
         'RibbonPageGroup2
         '
         Me.RibbonPageGroup2.ItemLinks.Add(Me.bbiRefresh)
@@ -256,12 +240,28 @@ Partial Class Empresas
         Me.RibbonPageGroup3.ItemLinks.Add(Me.bbiClose)
         Me.RibbonPageGroup3.Name = "RibbonPageGroup3"
         '
-        'bbiClose
+        'RibbonStatusBar1
         '
-        Me.bbiClose.Caption = "Cerrar"
-        Me.bbiClose.Id = 16
-        Me.bbiClose.ImageOptions.SvgImage = CType(resources.GetObject("bbiClose.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
-        Me.bbiClose.Name = "bbiClose"
+        Me.RibbonStatusBar1.ItemLinks.Add(Me.bsiRecordsCount)
+        Me.RibbonStatusBar1.Location = New System.Drawing.Point(0, 672)
+        Me.RibbonStatusBar1.Name = "RibbonStatusBar1"
+        Me.RibbonStatusBar1.Ribbon = Me.ribbonControl
+        Me.RibbonStatusBar1.Size = New System.Drawing.Size(1234, 27)
+        '
+        'mvvmContext
+        '
+        Me.mvvmContext.BindingExpressions.AddRange(New DevExpress.Utils.MVVM.BindingExpression() {DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.EmpresaCollectionViewModel), "New", Me.bbiNew), DevExpress.Utils.MVVM.BindingExpression.CreateParameterizedCommandBinding(GetType(Zenthia.LiquidAR.Win.EmpresaCollectionViewModel), "Edit", "SelectedEntity", Me.bbiEdit), DevExpress.Utils.MVVM.BindingExpression.CreateParameterizedCommandBinding(GetType(Zenthia.LiquidAR.Win.EmpresaCollectionViewModel), "Delete", "SelectedEntity", Me.bbiDelete), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.EmpresaCollectionViewModel), "Refresh", Me.bbiRefresh), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.EmpresaCollectionViewModel), "ReportDesigner", Me.BarButtonItem1), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.EmpresaCollectionViewModel), "Close", Me.bbiClose)})
+        Me.mvvmContext.ContainerControl = Me
+        Me.mvvmContext.ViewModelType = GetType(Zenthia.LiquidAR.Win.EmpresaCollectionViewModel)
+        '
+        'popupMenu
+        '
+        Me.popupMenu.ItemLinks.Add(Me.bbiNew)
+        Me.popupMenu.ItemLinks.Add(Me.bbiEdit)
+        Me.popupMenu.ItemLinks.Add(Me.bbiDelete)
+        Me.popupMenu.ItemLinks.Add(Me.bbiRefresh)
+        Me.popupMenu.Name = "popupMenu"
+        Me.popupMenu.Ribbon = Me.ribbonControl
         '
         'Empresas
         '

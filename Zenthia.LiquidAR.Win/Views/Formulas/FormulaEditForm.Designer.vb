@@ -647,7 +647,7 @@ Partial Class FormulaEditForm
         '
         'AfectaMejorSueldoCheckEdit
         '
-        Me.AfectaMejorSueldoCheckEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.FormulasBindingSource, "Orden", True))
+        Me.AfectaMejorSueldoCheckEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.FormulasBindingSource, "AfectaMejorSueldo", True))
         Me.AfectaMejorSueldoCheckEdit.Location = New System.Drawing.Point(136, 266)
         Me.AfectaMejorSueldoCheckEdit.MenuManager = Me.ribbonControl
         Me.AfectaMejorSueldoCheckEdit.Name = "AfectaMejorSueldoCheckEdit"
@@ -685,6 +685,7 @@ Partial Class FormulaEditForm
         Me.CantidadUnidadLookUpEdit.MenuManager = Me.ribbonControl
         Me.CantidadUnidadLookUpEdit.Name = "CantidadUnidadLookUpEdit"
         Me.CantidadUnidadLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.CantidadUnidadLookUpEdit.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Descripcion", "Descripcion", 64, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CodigoAfip", "Codigo Afip", 65, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default])})
         Me.CantidadUnidadLookUpEdit.Properties.DataSource = Me.UnidadesBindingSource
         Me.CantidadUnidadLookUpEdit.Properties.DisplayMember = "Descripcion"
         Me.CantidadUnidadLookUpEdit.Properties.ValueMember = "Id"

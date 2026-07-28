@@ -285,6 +285,7 @@ Partial Class EmpresaActividadEditForm
         Me.IdEmpresaLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.IdEmpresaLookUpEdit.Properties.DataSource = Me.EmpresasBindingSource
         Me.IdEmpresaLookUpEdit.Properties.DisplayMember = "Nombre"
+        Me.IdEmpresaLookUpEdit.Properties.ReadOnly = True
         Me.IdEmpresaLookUpEdit.Properties.ValueMember = "Id"
         Me.IdEmpresaLookUpEdit.Size = New System.Drawing.Size(568, 20)
         Me.IdEmpresaLookUpEdit.StyleController = Me.dataLayout
