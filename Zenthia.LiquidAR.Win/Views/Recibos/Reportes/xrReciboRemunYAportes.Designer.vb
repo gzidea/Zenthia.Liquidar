@@ -118,7 +118,7 @@ Partial Public Class xrReciboRemunYAportes
         'XrTable2
         '
         Me.XrTable2.Dpi = 254.0!
-        Me.XrTable2.Font = New System.Drawing.Font("Arial", 8.0!)
+        Me.XrTable2.Font = New DevExpress.Drawing.DXFont("Arial", 8.0!)
         Me.XrTable2.LocationFloat = New DevExpress.Utils.PointFloat(0!, 0!)
         Me.XrTable2.Name = "XrTable2"
         Me.XrTable2.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
@@ -131,7 +131,7 @@ Partial Public Class xrReciboRemunYAportes
         Me.XrTableRow3.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrTableRow3.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell7, Me.XrTableCell8, Me.XrTableCell10, Me.XrTableCell9})
         Me.XrTableRow3.Dpi = 254.0!
-        Me.XrTableRow3.Font = New System.Drawing.Font("Arial", 8.0!)
+        Me.XrTableRow3.Font = New DevExpress.Drawing.DXFont("Arial", 8.0!)
         Me.XrTableRow3.Name = "XrTableRow3"
         Me.XrTableRow3.StylePriority.UseBorders = False
         Me.XrTableRow3.StylePriority.UseFont = False
@@ -146,7 +146,7 @@ Partial Public Class xrReciboRemunYAportes
         Me.XrTableCell7.Multiline = True
         Me.XrTableCell7.Name = "XrTableCell7"
         Me.XrTableCell7.Text = "XrTableCell7"
-        Me.XrTableCell7.TextTrimming = System.Drawing.StringTrimming.EllipsisCharacter
+        Me.XrTableCell7.TextTrimming = DevExpress.Drawing.DXStringTrimming.EllipsisCharacter
         Me.XrTableCell7.Weight = 2.0152337521324695R
         Me.XrTableCell7.WordWrap = False
         '
@@ -219,7 +219,7 @@ Partial Public Class xrReciboRemunYAportes
         Me.XrTableRow4.BorderWidth = 0.5!
         Me.XrTableRow4.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell11, Me.XrTableCell12, Me.XrTableCell14, Me.XrTableCell13})
         Me.XrTableRow4.Dpi = 254.0!
-        Me.XrTableRow4.Font = New System.Drawing.Font("Arial", 8.0!)
+        Me.XrTableRow4.Font = New DevExpress.Drawing.DXFont("Arial", 8.0!)
         Me.XrTableRow4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(99, Byte), Integer))
         Me.XrTableRow4.Name = "XrTableRow4"
         Me.XrTableRow4.StylePriority.UseBackColor = False
@@ -272,7 +272,7 @@ Partial Public Class xrReciboRemunYAportes
         Me.XrTableRow5.BorderWidth = 0.5!
         Me.XrTableRow5.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell15, Me.XrTableCell16, Me.XrTableCell17, Me.XrTableCell18})
         Me.XrTableRow5.Dpi = 254.0!
-        Me.XrTableRow5.Font = New System.Drawing.Font("Arial", 8.0!)
+        Me.XrTableRow5.Font = New DevExpress.Drawing.DXFont("Arial", 8.0!)
         Me.XrTableRow5.Name = "XrTableRow5"
         Me.XrTableRow5.StylePriority.UseBorderColor = False
         Me.XrTableRow5.StylePriority.UseBorders = False
@@ -398,7 +398,7 @@ Partial Public Class xrReciboRemunYAportes
         Me.XrTableRow2.BorderWidth = 0.5!
         Me.XrTableRow2.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell3, Me.XrTableCell4, Me.XrTableCell6, Me.XrTableCell5})
         Me.XrTableRow2.Dpi = 254.0!
-        Me.XrTableRow2.Font = New System.Drawing.Font("Arial", 8.0!)
+        Me.XrTableRow2.Font = New DevExpress.Drawing.DXFont("Arial", 8.0!)
         Me.XrTableRow2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(99, Byte), Integer))
         Me.XrTableRow2.Name = "XrTableRow2"
         Me.XrTableRow2.StylePriority.UseBackColor = False
@@ -466,7 +466,7 @@ Partial Public Class xrReciboRemunYAportes
         Me.XrTableRow1.BorderWidth = 1.0!
         Me.XrTableRow1.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell1, Me.XrTableCell2})
         Me.XrTableRow1.Dpi = 254.0!
-        Me.XrTableRow1.Font = New System.Drawing.Font("Arial", 10.0!)
+        Me.XrTableRow1.Font = New DevExpress.Drawing.DXFont("Arial", 10.0!)
         Me.XrTableRow1.Name = "XrTableRow1"
         Me.XrTableRow1.StylePriority.UseBackColor = False
         Me.XrTableRow1.StylePriority.UseBorderColor = False
@@ -516,11 +516,11 @@ Partial Public Class xrReciboRemunYAportes
         Me.ComponentStorage.AddRange(New System.ComponentModel.IComponent() {Me.ObjectDataSource1})
         Me.DataSource = Me.ObjectDataSource1
         Me.Dpi = 254.0!
-        Me.Font = New System.Drawing.Font("Arial", 9.75!)
-        Me.Margins = New System.Drawing.Printing.Margins(0, 0, 0, 1)
+        Me.Font = New DevExpress.Drawing.DXFont("Arial", 9.75!)
+        Me.Margins = New DevExpress.Drawing.DXMargins(0, 0, 0, 1)
         Me.PageHeight = 3100
         Me.PageWidth = 1833
-        Me.PaperKind = System.Drawing.Printing.PaperKind.Custom
+        Me.PaperKind = DevExpress.Drawing.Printing.DXPaperKind.Custom
         Me.ReportUnit = DevExpress.XtraReports.UI.ReportUnit.TenthsOfAMillimeter
         Me.SnapGridSize = 25.0!
         Me.Version = "20.1"

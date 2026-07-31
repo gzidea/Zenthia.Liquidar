@@ -119,45 +119,45 @@
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"></assembly>
   <data name="Action_Delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Action_Delete.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Culture=neutral</value>
+    <value>..\Resources\Action_Delete.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v23.2, Culture=neutral</value>
   </data>
   <data name="Action_Edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Action_Edit.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Culture=neutral</value>
+    <value>..\Resources\Action_Edit.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v23.2, Culture=neutral</value>
   </data>
   <data name="Action_Printing_PageSetup" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Action_Printing_PageSetup.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Culture=neutral</value>
+    <value>..\Resources\Action_Printing_PageSetup.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v23.2, Culture=neutral</value>
   </data>
   <data name="clearheaderandfooter" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\clearheaderandfooter.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Culture=neutral</value>
+    <value>..\Resources\clearheaderandfooter.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v23.2, Culture=neutral</value>
   </data>
   <data name="currency" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\currency.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Culture=neutral</value>
+    <value>..\Resources\currency.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v23.2, Culture=neutral</value>
   </data>
   <data name="new" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\new.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Culture=neutral</value>
+    <value>..\Resources\new.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v23.2, Culture=neutral</value>
   </data>
   <data name="pieseries" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pieseries.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Culture=neutral</value>
+    <value>..\Resources\pieseries.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v23.2, Culture=neutral</value>
   </data>
   <data name="PrintingPreview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PrintingPreview.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Culture=neutral</value>
+    <value>..\Resources\PrintingPreview.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v23.2, Culture=neutral</value>
   </data>
   <data name="Refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Refresh.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Culture=neutral</value>
+    <value>..\Resources\Refresh.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v23.2, Culture=neutral</value>
   </data>
   <data name="ResetView" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ResetView.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Culture=neutral</value>
+    <value>..\Resources\ResetView.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v23.2, Culture=neutral</value>
   </data>
   <data name="Save" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Save.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Culture=neutral</value>
+    <value>..\Resources\Save.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v23.2, Culture=neutral</value>
   </data>
   <data name="saveandclose" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\saveandclose.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Culture=neutral</value>
+    <value>..\Resources\saveandclose.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v23.2, Culture=neutral</value>
   </data>
   <data name="saveas" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\saveas.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Culture=neutral</value>
+    <value>..\Resources\saveas.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v23.2, Culture=neutral</value>
   </data>
   <data name="Transactions" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Transactions.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v20.1, Culture=neutral</value>
+    <value>..\Resources\Transactions.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v23.2, Culture=neutral</value>
   </data>
 </root>

@@ -12,12 +12,12 @@ Public Class xrReciboSueldoX1
 
     End Sub
 
-    Private Sub BottomMargin_BeforePrint(sender As Object, e As Printing.PrintEventArgs) Handles BottomMargin.BeforePrint
+    Private Sub BottomMargin_BeforePrint(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles BottomMargin.BeforePrint
 
 
     End Sub
 
-    Private Sub xlblRemunerativo_BeforePrint(sender As Object, e As Printing.PrintEventArgs) Handles xlblRemunerativo.BeforePrint, xlblDescuento.BeforePrint, xlblNoRemunerativo.BeforePrint
+    Private Sub xlblRemunerativo_BeforePrint(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles xlblRemunerativo.BeforePrint, xlblDescuento.BeforePrint, xlblNoRemunerativo.BeforePrint
         If TryCast(sender, DevExpress.XtraReports.UI.XRLabel).Value = 0 Then
             e.Cancel = True
         End If
@@ -28,7 +28,7 @@ Public Class xrReciboSueldoX1
 
     End Sub
 
-    Private Sub xrReciboSueldoX1_BeforePrint(sender As Object, e As PrintEventArgs) Handles Me.BeforePrint
+    Private Sub xrReciboSueldoX1_BeforePrint(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles Me.BeforePrint
         'Dim xbox As XRCrossBandBox = New XRCrossBandBox()
         'xbox.BorderWidth = 1
         'Dim topMargin As TopMarginBand = New TopMarginBand()
@@ -41,7 +41,7 @@ Public Class xrReciboSueldoX1
         'xbox.WidthF = xrReciboSueldoX1.PageWidth;
     End Sub
 
-    Private Sub PageFooter_BeforePrint(sender As Object, e As PrintEventArgs) Handles PageFooter.BeforePrint
+    Private Sub PageFooter_BeforePrint(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles PageFooter.BeforePrint
         Dim largo = Len(CStr(Format(CDbl(xlblTotalRecibo.Value), "#,###.00")))
 
         Dim decimales = Mid(CStr(Format(CDbl(xlblTotalRecibo.Value), "#,###.00")), largo - 2)
@@ -68,7 +68,7 @@ Public Class xrReciboSueldoX1
         fechaLarga = fechaTexto
     End Function
 
-    Private Sub Detail1_BeforePrint(sender As Object, e As PrintEventArgs) Handles Detail1.BeforePrint
+    Private Sub Detail1_BeforePrint(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles Detail1.BeforePrint
 
         'Debug.Print(CDbl(TryCast(DetailReport.GetCurrentRow, Zenthia.AccesoDatos.RecibosDetalles).Importe))
         'Dim importe As Double = TryCast(DetailReport.GetCurrentRow, Zenthia.AccesoDatos.RecibosDetalles).Remunerativo +

@@ -338,9 +338,11 @@ Partial Public Class ReciboViewModel
 
             Dim periodoAnterior As String = getPeriodoAnterior()
             Dim _lsd As Zenthia.AccesoDatos.LSDRegistro01 = UnitOfWork.LSDRegistro01.Where(Function(x) x.IdEmpresa = SelectedEmpresa And x.Periodo = periodoAnterior).FirstOrDefault()
-            Entity.FechaPagoAportes = _lsd.FechaPago
-            If Not IsNothing(_lsd.Banco) Then
-                Entity.BancoPagoAportes = _lsd.Banco.Abreviacion
+            If Not IsNothing(_lsd) Then
+                Entity.FechaPagoAportes = _lsd.FechaPago
+                If Not IsNothing(_lsd.Banco) Then
+                    Entity.BancoPagoAportes = _lsd.Banco.Abreviacion
+                End If
             End If
             Entity.Legajos = _legajo
         End If

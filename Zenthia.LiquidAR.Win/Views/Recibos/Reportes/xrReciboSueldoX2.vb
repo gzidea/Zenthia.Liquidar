@@ -20,11 +20,11 @@ Public Class xrReciboSueldoX2
         End Set
     End Property
 
-    Private Sub xrSubReportReciboOriginal_BeforePrint(sender As Object, e As Printing.PrintEventArgs) Handles xrSubReportReciboOriginal.BeforePrint
+    Private Sub xrSubReportReciboOriginal_BeforePrint(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles xrSubReportReciboOriginal.BeforePrint
         Me.xrSubReportReciboOriginal.ReportSource = Me.Recibo1
     End Sub
 
-    Private Sub xrSubReportReciboDuplicado_BeforePrint(sender As Object, e As Printing.PrintEventArgs) Handles xrSubReportReciboDuplicado.BeforePrint
+    Private Sub xrSubReportReciboDuplicado_BeforePrint(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles xrSubReportReciboDuplicado.BeforePrint
         Me.xrSubReportReciboDuplicado.ReportSource = Me.Recibo2
     End Sub
 End Class

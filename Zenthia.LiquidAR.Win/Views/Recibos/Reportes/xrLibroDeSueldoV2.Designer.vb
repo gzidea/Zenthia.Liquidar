@@ -156,7 +156,7 @@ Partial Public Class xrLibroDeSueldoV2
         '
         Me.XrLabel1.Dpi = 254.0!
         Me.XrLabel1.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Actividades].[Descripcion]")})
-        Me.XrLabel1.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel1.Font = New DevExpress.Drawing.DXFont("Times New Roman", 9.0!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel1.LocationFloat = New DevExpress.Utils.PointFloat(0!, 0!)
         Me.XrLabel1.Multiline = True
         Me.XrLabel1.Name = "XrLabel1"
@@ -193,7 +193,7 @@ Partial Public Class xrLibroDeSueldoV2
         '
         Me.XrLabel2.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel2.Dpi = 254.0!
-        Me.XrLabel2.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel2.Font = New DevExpress.Drawing.DXFont("Arial", 6.75!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel2.LocationFloat = New DevExpress.Utils.PointFloat(58.23127!, 20.51427!)
         Me.XrLabel2.Multiline = True
         Me.XrLabel2.Name = "XrLabel2"
@@ -210,7 +210,7 @@ Partial Public Class xrLibroDeSueldoV2
         Me.XrLabel4.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel4.Dpi = 254.0!
         Me.XrLabel4.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Legajo]")})
-        Me.XrLabel4.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel4.Font = New DevExpress.Drawing.DXFont("Arial", 6.75!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel4.LocationFloat = New DevExpress.Utils.PointFloat(149.6142!, 20.51427!)
         Me.XrLabel4.Multiline = True
         Me.XrLabel4.Name = "XrLabel4"
@@ -225,7 +225,7 @@ Partial Public Class xrLibroDeSueldoV2
         '
         Me.XrLabel14.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel14.Dpi = 254.0!
-        Me.XrLabel14.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel14.Font = New DevExpress.Drawing.DXFont("Arial", 6.75!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel14.LocationFloat = New DevExpress.Utils.PointFloat(278.2588!, 20.51427!)
         Me.XrLabel14.Multiline = True
         Me.XrLabel14.Name = "XrLabel14"
@@ -242,7 +242,7 @@ Partial Public Class xrLibroDeSueldoV2
         Me.XrLabel15.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel15.Dpi = 254.0!
         Me.XrLabel15.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[NombreYApellido]")})
-        Me.XrLabel15.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel15.Font = New DevExpress.Drawing.DXFont("Arial", 6.75!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel15.LocationFloat = New DevExpress.Utils.PointFloat(489.8067!, 20.51427!)
         Me.XrLabel15.Multiline = True
         Me.XrLabel15.Name = "XrLabel15"
@@ -258,7 +258,7 @@ Partial Public Class xrLibroDeSueldoV2
         Me.XrLabel16.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel16.Dpi = 254.0!
         Me.XrLabel16.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Substring([CUIL], 3, Len([CUIL])-5)")})
-        Me.XrLabel16.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel16.Font = New DevExpress.Drawing.DXFont("Arial", 6.75!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel16.LocationFloat = New DevExpress.Utils.PointFloat(1157.925!, 20.51427!)
         Me.XrLabel16.Multiline = True
         Me.XrLabel16.Name = "XrLabel16"
@@ -273,7 +273,7 @@ Partial Public Class xrLibroDeSueldoV2
         '
         Me.XrLabel17.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel17.Dpi = 254.0!
-        Me.XrLabel17.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel17.Font = New DevExpress.Drawing.DXFont("Arial", 6.75!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel17.LocationFloat = New DevExpress.Utils.PointFloat(946.3756!, 20.51427!)
         Me.XrLabel17.Multiline = True
         Me.XrLabel17.Name = "XrLabel17"
@@ -290,7 +290,7 @@ Partial Public Class xrLibroDeSueldoV2
         Me.XrLabel18.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel18.Dpi = 254.0!
         Me.XrLabel18.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[CUIL]")})
-        Me.XrLabel18.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel18.Font = New DevExpress.Drawing.DXFont("Arial", 6.75!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel18.LocationFloat = New DevExpress.Utils.PointFloat(1441.275!, 20.51427!)
         Me.XrLabel18.Multiline = True
         Me.XrLabel18.Name = "XrLabel18"
@@ -305,7 +305,7 @@ Partial Public Class xrLibroDeSueldoV2
         '
         Me.XrLabel19.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel19.Dpi = 254.0!
-        Me.XrLabel19.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel19.Font = New DevExpress.Drawing.DXFont("Arial", 6.75!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel19.LocationFloat = New DevExpress.Utils.PointFloat(1341.073!, 20.51427!)
         Me.XrLabel19.Multiline = True
         Me.XrLabel19.Name = "XrLabel19"
@@ -342,7 +342,7 @@ Partial Public Class xrLibroDeSueldoV2
         '
         Me.XrLabel20.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel20.Dpi = 254.0!
-        Me.XrLabel20.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel20.Font = New DevExpress.Drawing.DXFont("Arial", 6.75!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel20.LocationFloat = New DevExpress.Utils.PointFloat(111.1479!, 126.7887!)
         Me.XrLabel20.Multiline = True
         Me.XrLabel20.Name = "XrLabel20"
@@ -358,7 +358,7 @@ Partial Public Class xrLibroDeSueldoV2
         '
         Me.XrLabel21.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel21.Dpi = 254.0!
-        Me.XrLabel21.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel21.Font = New DevExpress.Drawing.DXFont("Arial", 6.75!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel21.LocationFloat = New DevExpress.Utils.PointFloat(225.3421!, 126.7887!)
         Me.XrLabel21.Multiline = True
         Me.XrLabel21.Name = "XrLabel21"
@@ -374,7 +374,7 @@ Partial Public Class xrLibroDeSueldoV2
         '
         Me.XrLabel22.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel22.Dpi = 254.0!
-        Me.XrLabel22.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel22.Font = New DevExpress.Drawing.DXFont("Arial", 6.75!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel22.LocationFloat = New DevExpress.Utils.PointFloat(1037.596!, 126.7887!)
         Me.XrLabel22.Multiline = True
         Me.XrLabel22.Name = "XrLabel22"
@@ -389,7 +389,7 @@ Partial Public Class xrLibroDeSueldoV2
         '
         Me.XrLabel23.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel23.Dpi = 254.0!
-        Me.XrLabel23.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel23.Font = New DevExpress.Drawing.DXFont("Arial", 6.75!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel23.LocationFloat = New DevExpress.Utils.PointFloat(1123.664!, 126.7887!)
         Me.XrLabel23.Multiline = True
         Me.XrLabel23.Name = "XrLabel23"
@@ -405,7 +405,7 @@ Partial Public Class xrLibroDeSueldoV2
         '
         Me.XrLabel24.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel24.Dpi = 254.0!
-        Me.XrLabel24.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel24.Font = New DevExpress.Drawing.DXFont("Arial", 6.75!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel24.LocationFloat = New DevExpress.Utils.PointFloat(1343.595!, 152.5468!)
         Me.XrLabel24.Multiline = True
         Me.XrLabel24.Name = "XrLabel24"
@@ -421,7 +421,7 @@ Partial Public Class xrLibroDeSueldoV2
         '
         Me.XrLabel25.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel25.Dpi = 254.0!
-        Me.XrLabel25.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel25.Font = New DevExpress.Drawing.DXFont("Arial", 6.75!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel25.LocationFloat = New DevExpress.Utils.PointFloat(1563.526!, 126.7887!)
         Me.XrLabel25.Multiline = True
         Me.XrLabel25.Name = "XrLabel25"
@@ -438,7 +438,7 @@ Partial Public Class xrLibroDeSueldoV2
         Me.XrLabel32.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel32.Dpi = 254.0!
         Me.XrLabel32.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Domicilio] + '-' + [Localidad]")})
-        Me.XrLabel32.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel32.Font = New DevExpress.Drawing.DXFont("Arial", 6.75!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel32.LocationFloat = New DevExpress.Utils.PointFloat(278.2588!, 53.36675!)
         Me.XrLabel32.Multiline = True
         Me.XrLabel32.Name = "XrLabel32"
@@ -453,7 +453,7 @@ Partial Public Class xrLibroDeSueldoV2
         '
         Me.XrLabel33.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel33.Dpi = 254.0!
-        Me.XrLabel33.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel33.Font = New DevExpress.Drawing.DXFont("Arial", 6.75!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel33.LocationFloat = New DevExpress.Utils.PointFloat(946.3756!, 53.36675!)
         Me.XrLabel33.Multiline = True
         Me.XrLabel33.Name = "XrLabel33"
@@ -470,7 +470,7 @@ Partial Public Class xrLibroDeSueldoV2
         Me.XrLabel34.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel34.Dpi = 254.0!
         Me.XrLabel34.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Categorias].[Descripcion]")})
-        Me.XrLabel34.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel34.Font = New DevExpress.Drawing.DXFont("Arial", 6.75!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel34.LocationFloat = New DevExpress.Utils.PointFloat(1034.451!, 53.36675!)
         Me.XrLabel34.Multiline = True
         Me.XrLabel34.Name = "XrLabel34"
@@ -485,7 +485,7 @@ Partial Public Class xrLibroDeSueldoV2
         '
         Me.XrLabel35.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel35.Dpi = 254.0!
-        Me.XrLabel35.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel35.Font = New DevExpress.Drawing.DXFont("Arial", 6.75!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel35.LocationFloat = New DevExpress.Utils.PointFloat(278.2588!, 86.21924!)
         Me.XrLabel35.Multiline = True
         Me.XrLabel35.Name = "XrLabel35"
@@ -501,7 +501,7 @@ Partial Public Class xrLibroDeSueldoV2
         '
         Me.XrLabel36.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel36.Dpi = 254.0!
-        Me.XrLabel36.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel36.Font = New DevExpress.Drawing.DXFont("Arial", 6.75!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel36.LocationFloat = New DevExpress.Utils.PointFloat(729.9319!, 86.21924!)
         Me.XrLabel36.Multiline = True
         Me.XrLabel36.Name = "XrLabel36"
@@ -518,7 +518,7 @@ Partial Public Class xrLibroDeSueldoV2
         Me.XrLabel37.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel37.Dpi = 254.0!
         Me.XrLabel37.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[FechaIngreso]")})
-        Me.XrLabel37.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel37.Font = New DevExpress.Drawing.DXFont("Arial", 6.75!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel37.LocationFloat = New DevExpress.Utils.PointFloat(454.5289!, 86.21924!)
         Me.XrLabel37.Multiline = True
         Me.XrLabel37.Name = "XrLabel37"
@@ -535,7 +535,7 @@ Partial Public Class xrLibroDeSueldoV2
         Me.XrLabel38.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel38.Dpi = 254.0!
         Me.XrLabel38.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Iif(Contains([FechaEgreso], '30/12/1899'), '' , [FechaEgreso])")})
-        Me.XrLabel38.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel38.Font = New DevExpress.Drawing.DXFont("Arial", 6.75!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel38.LocationFloat = New DevExpress.Utils.PointFloat(906.202!, 86.21924!)
         Me.XrLabel38.Multiline = True
         Me.XrLabel38.Name = "XrLabel38"
@@ -550,7 +550,7 @@ Partial Public Class xrLibroDeSueldoV2
         '
         Me.XrLabel39.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel39.Dpi = 254.0!
-        Me.XrLabel39.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel39.Font = New DevExpress.Drawing.DXFont("Arial", 6.75!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel39.LocationFloat = New DevExpress.Utils.PointFloat(1137.508!, 86.21924!)
         Me.XrLabel39.Multiline = True
         Me.XrLabel39.Name = "XrLabel39"
@@ -566,7 +566,7 @@ Partial Public Class xrLibroDeSueldoV2
         '
         Me.XrLabel40.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel40.Dpi = 254.0!
-        Me.XrLabel40.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel40.Font = New DevExpress.Drawing.DXFont("Arial", 6.75!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel40.LocationFloat = New DevExpress.Utils.PointFloat(1396.512!, 86.21924!)
         Me.XrLabel40.Multiline = True
         Me.XrLabel40.Name = "XrLabel40"
@@ -583,7 +583,7 @@ Partial Public Class xrLibroDeSueldoV2
         Me.XrLabel41.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel41.Dpi = 254.0!
         Me.XrLabel41.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Jornadas].[Descripcion]")})
-        Me.XrLabel41.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel41.Font = New DevExpress.Drawing.DXFont("Arial", 6.75!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel41.LocationFloat = New DevExpress.Utils.PointFloat(1515.456!, 86.21924!)
         Me.XrLabel41.Multiline = True
         Me.XrLabel41.Name = "XrLabel41"
@@ -598,7 +598,7 @@ Partial Public Class xrLibroDeSueldoV2
         '
         Me.XrLabel42.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel42.Dpi = 254.0!
-        Me.XrLabel42.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel42.Font = New DevExpress.Drawing.DXFont("Arial", 6.75!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel42.LocationFloat = New DevExpress.Utils.PointFloat(1123.665!, 152.5468!)
         Me.XrLabel42.Multiline = True
         Me.XrLabel42.Name = "XrLabel42"
@@ -615,7 +615,7 @@ Partial Public Class xrLibroDeSueldoV2
         Me.XrLabel26.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel26.Dpi = 254.0!
         Me.XrLabel26.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Categorias].[Importe]")})
-        Me.XrLabel26.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel26.Font = New DevExpress.Drawing.DXFont("Arial", 6.75!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel26.LocationFloat = New DevExpress.Utils.PointFloat(1232.933!, 86.21924!)
         Me.XrLabel26.Multiline = True
         Me.XrLabel26.Name = "XrLabel26"
@@ -650,7 +650,7 @@ Partial Public Class xrLibroDeSueldoV2
         Me.XrLabel48.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel48.Dpi = 254.0!
         Me.XrLabel48.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[TipoLiquidacion].[Descripcion]")})
-        Me.XrLabel48.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel48.Font = New DevExpress.Drawing.DXFont("Arial", 8.25!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel48.LocationFloat = New DevExpress.Utils.PointFloat(79.39793!, 0!)
         Me.XrLabel48.Multiline = True
         Me.XrLabel48.Name = "XrLabel48"
@@ -700,7 +700,7 @@ Partial Public Class xrLibroDeSueldoV2
         '
         Me.XrTableCell1.Dpi = 254.0!
         Me.XrTableCell1.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Formulas].[Codigo]")})
-        Me.XrTableCell1.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrTableCell1.Font = New DevExpress.Drawing.DXFont("Arial", 6.75!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrTableCell1.Multiline = True
         Me.XrTableCell1.Name = "XrTableCell1"
         Me.XrTableCell1.StylePriority.UseFont = False
@@ -711,7 +711,7 @@ Partial Public Class xrLibroDeSueldoV2
         '
         Me.XrTableCell2.Dpi = 254.0!
         Me.XrTableCell2.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Formulas].[DescripcionCompleta]")})
-        Me.XrTableCell2.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrTableCell2.Font = New DevExpress.Drawing.DXFont("Arial", 6.75!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrTableCell2.Multiline = True
         Me.XrTableCell2.Name = "XrTableCell2"
         Me.XrTableCell2.StylePriority.UseFont = False
@@ -722,7 +722,7 @@ Partial Public Class xrLibroDeSueldoV2
         '
         Me.XrTableCell5.Dpi = 254.0!
         Me.XrTableCell5.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Cantidad]")})
-        Me.XrTableCell5.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrTableCell5.Font = New DevExpress.Drawing.DXFont("Arial", 6.75!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrTableCell5.Multiline = True
         Me.XrTableCell5.Name = "XrTableCell5"
         Me.XrTableCell5.StylePriority.UseFont = False
@@ -734,7 +734,7 @@ Partial Public Class xrLibroDeSueldoV2
         '
         Me.XrTableCell6.Dpi = 254.0!
         Me.XrTableCell6.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Remunerativo]")})
-        Me.XrTableCell6.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrTableCell6.Font = New DevExpress.Drawing.DXFont("Arial", 6.75!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrTableCell6.Multiline = True
         Me.XrTableCell6.Name = "XrTableCell6"
         Me.XrTableCell6.StylePriority.UseFont = False
@@ -748,7 +748,7 @@ Partial Public Class xrLibroDeSueldoV2
         '
         Me.XrTableCell4.Dpi = 254.0!
         Me.XrTableCell4.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[NoRemunerativo]")})
-        Me.XrTableCell4.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrTableCell4.Font = New DevExpress.Drawing.DXFont("Arial", 6.75!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrTableCell4.Multiline = True
         Me.XrTableCell4.Name = "XrTableCell4"
         Me.XrTableCell4.StylePriority.UseFont = False
@@ -762,7 +762,7 @@ Partial Public Class xrLibroDeSueldoV2
         '
         Me.XrTableCell3.Dpi = 254.0!
         Me.XrTableCell3.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Descuento]")})
-        Me.XrTableCell3.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrTableCell3.Font = New DevExpress.Drawing.DXFont("Arial", 6.75!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrTableCell3.Multiline = True
         Me.XrTableCell3.Name = "XrTableCell3"
         Me.XrTableCell3.StylePriority.UseFont = False
@@ -797,7 +797,7 @@ Partial Public Class xrLibroDeSueldoV2
         '
         Me.XrLabel3.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel3.Dpi = 254.0!
-        Me.XrLabel3.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel3.Font = New DevExpress.Drawing.DXFont("Arial", 6.75!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel3.LocationFloat = New DevExpress.Utils.PointFloat(111.1479!, 8.859359!)
         Me.XrLabel3.Multiline = True
         Me.XrLabel3.Name = "XrLabel3"
@@ -813,7 +813,7 @@ Partial Public Class xrLibroDeSueldoV2
         '
         Me.XrLabel27.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel27.Dpi = 254.0!
-        Me.XrLabel27.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel27.Font = New DevExpress.Drawing.DXFont("Arial", 6.75!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel27.LocationFloat = New DevExpress.Utils.PointFloat(1297.956!, 41.96716!)
         Me.XrLabel27.Multiline = True
         Me.XrLabel27.Name = "XrLabel27"
@@ -830,7 +830,7 @@ Partial Public Class xrLibroDeSueldoV2
         Me.XrLabel28.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel28.Dpi = 254.0!
         Me.XrLabel28.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Recibos.Total]")})
-        Me.XrLabel28.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel28.Font = New DevExpress.Drawing.DXFont("Arial", 6.75!, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel28.LocationFloat = New DevExpress.Utils.PointFloat(1562.618!, 41.96708!)
         Me.XrLabel28.Multiline = True
         Me.XrLabel28.Name = "XrLabel28"
@@ -848,7 +848,7 @@ Partial Public Class xrLibroDeSueldoV2
         Me.XrLabel29.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel29.Dpi = 254.0!
         Me.XrLabel29.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([Remunerativo])")})
-        Me.XrLabel29.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel29.Font = New DevExpress.Drawing.DXFont("Arial", 6.75!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel29.LocationFloat = New DevExpress.Utils.PointFloat(1118.349!, 8.859413!)
         Me.XrLabel29.Multiline = True
         Me.XrLabel29.Name = "XrLabel29"
@@ -867,7 +867,7 @@ Partial Public Class xrLibroDeSueldoV2
         Me.XrLabel30.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel30.Dpi = 254.0!
         Me.XrLabel30.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([NoRemunerativo])")})
-        Me.XrLabel30.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel30.Font = New DevExpress.Drawing.DXFont("Arial", 6.75!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel30.LocationFloat = New DevExpress.Utils.PointFloat(1338.28!, 8.859413!)
         Me.XrLabel30.Multiline = True
         Me.XrLabel30.Name = "XrLabel30"
@@ -886,7 +886,7 @@ Partial Public Class xrLibroDeSueldoV2
         Me.XrLabel31.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel31.Dpi = 254.0!
         Me.XrLabel31.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([Descuento])")})
-        Me.XrLabel31.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel31.Font = New DevExpress.Drawing.DXFont("Arial", 6.75!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel31.LocationFloat = New DevExpress.Utils.PointFloat(1563.158!, 8.859413!)
         Me.XrLabel31.Multiline = True
         Me.XrLabel31.Name = "XrLabel31"
@@ -911,7 +911,7 @@ Partial Public Class xrLibroDeSueldoV2
         '
         Me.XrLabel58.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel58.Dpi = 254.0!
-        Me.XrLabel58.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel58.Font = New DevExpress.Drawing.DXFont("Arial", 8.25!, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel58.LocationFloat = New DevExpress.Utils.PointFloat(1282.786!, 53.48495!)
         Me.XrLabel58.Multiline = True
         Me.XrLabel58.Name = "XrLabel58"
@@ -927,7 +927,7 @@ Partial Public Class xrLibroDeSueldoV2
         '
         Me.XrLabel59.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel59.Dpi = 254.0!
-        Me.XrLabel59.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel59.Font = New DevExpress.Drawing.DXFont("Arial", 8.25!, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel59.LocationFloat = New DevExpress.Utils.PointFloat(61.08595!, 2.445345!)
         Me.XrLabel59.Multiline = True
         Me.XrLabel59.Name = "XrLabel59"
@@ -944,7 +944,7 @@ Partial Public Class xrLibroDeSueldoV2
         Me.XrLabel60.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel60.Dpi = 254.0!
         Me.XrLabel60.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([TotalRemunerativos])")})
-        Me.XrLabel60.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel60.Font = New DevExpress.Drawing.DXFont("Arial", 8.25!, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel60.LocationFloat = New DevExpress.Utils.PointFloat(1118.349!, 8.859413!)
         Me.XrLabel60.Multiline = True
         Me.XrLabel60.Name = "XrLabel60"
@@ -963,7 +963,7 @@ Partial Public Class xrLibroDeSueldoV2
         Me.XrLabel61.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel61.Dpi = 254.0!
         Me.XrLabel61.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([TotalNoRemunerativos])")})
-        Me.XrLabel61.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel61.Font = New DevExpress.Drawing.DXFont("Arial", 8.25!, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel61.LocationFloat = New DevExpress.Utils.PointFloat(1338.28!, 8.859413!)
         Me.XrLabel61.Multiline = True
         Me.XrLabel61.Name = "XrLabel61"
@@ -982,7 +982,7 @@ Partial Public Class xrLibroDeSueldoV2
         Me.XrLabel62.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel62.Dpi = 254.0!
         Me.XrLabel62.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([TotalDescuentos])")})
-        Me.XrLabel62.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel62.Font = New DevExpress.Drawing.DXFont("Arial", 8.25!, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel62.LocationFloat = New DevExpress.Utils.PointFloat(1563.158!, 8.859413!)
         Me.XrLabel62.Multiline = True
         Me.XrLabel62.Name = "XrLabel62"
@@ -1001,7 +1001,7 @@ Partial Public Class xrLibroDeSueldoV2
         Me.XrLabel63.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel63.Dpi = 254.0!
         Me.XrLabel63.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([Total])")})
-        Me.XrLabel63.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel63.Font = New DevExpress.Drawing.DXFont("Arial", 8.25!, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel63.LocationFloat = New DevExpress.Utils.PointFloat(1563.158!, 53.48497!)
         Me.XrLabel63.Multiline = True
         Me.XrLabel63.Name = "XrLabel63"
@@ -1036,7 +1036,7 @@ Partial Public Class xrLibroDeSueldoV2
         Me.XrLabel8.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel8.Dpi = 254.0!
         Me.XrLabel8.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([Recibos].[TotalRemunerativos])")})
-        Me.XrLabel8.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel8.Font = New DevExpress.Drawing.DXFont("Arial", 8.25!, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel8.LocationFloat = New DevExpress.Utils.PointFloat(1118.349!, 8.859413!)
         Me.XrLabel8.Multiline = True
         Me.XrLabel8.Name = "XrLabel8"
@@ -1055,7 +1055,7 @@ Partial Public Class xrLibroDeSueldoV2
         Me.XrLabel49.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel49.Dpi = 254.0!
         Me.XrLabel49.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([Recibos].[TotalNoRemunerativos])")})
-        Me.XrLabel49.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel49.Font = New DevExpress.Drawing.DXFont("Arial", 8.25!, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel49.LocationFloat = New DevExpress.Utils.PointFloat(1338.28!, 8.859413!)
         Me.XrLabel49.Multiline = True
         Me.XrLabel49.Name = "XrLabel49"
@@ -1074,7 +1074,7 @@ Partial Public Class xrLibroDeSueldoV2
         Me.XrLabel50.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel50.Dpi = 254.0!
         Me.XrLabel50.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([Recibos].[TotalDescuentos])")})
-        Me.XrLabel50.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel50.Font = New DevExpress.Drawing.DXFont("Arial", 8.25!, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel50.LocationFloat = New DevExpress.Utils.PointFloat(1563.158!, 8.859413!)
         Me.XrLabel50.Multiline = True
         Me.XrLabel50.Name = "XrLabel50"
@@ -1093,7 +1093,7 @@ Partial Public Class xrLibroDeSueldoV2
         Me.XrLabel51.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel51.Dpi = 254.0!
         Me.XrLabel51.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([Recibos].[Total])")})
-        Me.XrLabel51.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel51.Font = New DevExpress.Drawing.DXFont("Arial", 8.25!, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel51.LocationFloat = New DevExpress.Utils.PointFloat(1563.158!, 41.96704!)
         Me.XrLabel51.Multiline = True
         Me.XrLabel51.Name = "XrLabel51"
@@ -1112,7 +1112,7 @@ Partial Public Class xrLibroDeSueldoV2
         '
         Me.XrLabel52.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel52.Dpi = 254.0!
-        Me.XrLabel52.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel52.Font = New DevExpress.Drawing.DXFont("Arial", 8.25!, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel52.LocationFloat = New DevExpress.Utils.PointFloat(1364.807!, 41.96704!)
         Me.XrLabel52.Multiline = True
         Me.XrLabel52.Name = "XrLabel52"
@@ -1128,7 +1128,7 @@ Partial Public Class xrLibroDeSueldoV2
         '
         Me.XrLabel53.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel53.Dpi = 254.0!
-        Me.XrLabel53.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel53.Font = New DevExpress.Drawing.DXFont("Arial", 8.25!, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel53.LocationFloat = New DevExpress.Utils.PointFloat(2.459919!, 0!)
         Me.XrLabel53.Multiline = True
         Me.XrLabel53.Name = "XrLabel53"
@@ -1151,7 +1151,7 @@ Partial Public Class xrLibroDeSueldoV2
         '
         Me.XrLabel13.Dpi = 254.0!
         Me.XrLabel13.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[ClaveUnica]")})
-        Me.XrLabel13.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel13.Font = New DevExpress.Drawing.DXFont("Times New Roman", 9.0!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel13.LocationFloat = New DevExpress.Utils.PointFloat(846.6266!, 111.125!)
         Me.XrLabel13.Multiline = True
         Me.XrLabel13.Name = "XrLabel13"
@@ -1166,7 +1166,7 @@ Partial Public Class xrLibroDeSueldoV2
         '
         Me.XrLabel11.Dpi = 254.0!
         Me.XrLabel11.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Direccion]")})
-        Me.XrLabel11.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel11.Font = New DevExpress.Drawing.DXFont("Times New Roman", 9.0!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel11.LocationFloat = New DevExpress.Utils.PointFloat(1077.398!, 111.125!)
         Me.XrLabel11.Multiline = True
         Me.XrLabel11.Name = "XrLabel11"
@@ -1181,7 +1181,7 @@ Partial Public Class xrLibroDeSueldoV2
         '
         Me.XrLabel10.Dpi = 254.0!
         Me.XrLabel10.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Empresas].[Nombre]")})
-        Me.XrLabel10.Font = New System.Drawing.Font("Times New Roman", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel10.Font = New DevExpress.Drawing.DXFont("Times New Roman", 9.0!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel10.LocationFloat = New DevExpress.Utils.PointFloat(193.7902!, 111.125!)
         Me.XrLabel10.Multiline = True
         Me.XrLabel10.Name = "XrLabel10"
@@ -1195,7 +1195,7 @@ Partial Public Class xrLibroDeSueldoV2
         'XrLabel6
         '
         Me.XrLabel6.Dpi = 254.0!
-        Me.XrLabel6.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel6.Font = New DevExpress.Drawing.DXFont("Arial", 8.25!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel6.LocationFloat = New DevExpress.Utils.PointFloat(0!, 111.125!)
         Me.XrLabel6.Multiline = True
         Me.XrLabel6.Name = "XrLabel6"
@@ -1209,7 +1209,7 @@ Partial Public Class xrLibroDeSueldoV2
         'XrLabel12
         '
         Me.XrLabel12.Dpi = 254.0!
-        Me.XrLabel12.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel12.Font = New DevExpress.Drawing.DXFont("Arial", 8.25!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel12.LocationFloat = New DevExpress.Utils.PointFloat(0!, 55.5625!)
         Me.XrLabel12.Multiline = True
         Me.XrLabel12.Name = "XrLabel12"
@@ -1223,7 +1223,7 @@ Partial Public Class xrLibroDeSueldoV2
         'XrLabel5
         '
         Me.XrLabel5.Dpi = 254.0!
-        Me.XrLabel5.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel5.Font = New DevExpress.Drawing.DXFont("Arial", 11.25!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel5.LocationFloat = New DevExpress.Utils.PointFloat(0!, 0!)
         Me.XrLabel5.Multiline = True
         Me.XrLabel5.Name = "XrLabel5"
@@ -1237,7 +1237,7 @@ Partial Public Class xrLibroDeSueldoV2
         'XrLabel9
         '
         Me.XrLabel9.Dpi = 254.0!
-        Me.XrLabel9.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel9.Font = New DevExpress.Drawing.DXFont("Arial", 8.25!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel9.LocationFloat = New DevExpress.Utils.PointFloat(716.8932!, 111.125!)
         Me.XrLabel9.Multiline = True
         Me.XrLabel9.Name = "XrLabel9"
@@ -1251,7 +1251,7 @@ Partial Public Class xrLibroDeSueldoV2
         'labelPeriodoLiquidado
         '
         Me.labelPeriodoLiquidado.Dpi = 254.0!
-        Me.labelPeriodoLiquidado.Font = New System.Drawing.Font("Arial Narrow", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelPeriodoLiquidado.Font = New DevExpress.Drawing.DXFont("Arial Narrow", 9.0!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.labelPeriodoLiquidado.LocationFloat = New DevExpress.Utils.PointFloat(0!, 156.1042!)
         Me.labelPeriodoLiquidado.Multiline = True
         Me.labelPeriodoLiquidado.Name = "labelPeriodoLiquidado"
@@ -1280,7 +1280,7 @@ Partial Public Class xrLibroDeSueldoV2
         '
         Me.XrLabel7.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel7.Dpi = 254.0!
-        Me.XrLabel7.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel7.Font = New DevExpress.Drawing.DXFont("Arial", 8.25!, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel7.LocationFloat = New DevExpress.Utils.PointFloat(5.314598!, 2.445308!)
         Me.XrLabel7.Multiline = True
         Me.XrLabel7.Name = "XrLabel7"
@@ -1296,7 +1296,7 @@ Partial Public Class xrLibroDeSueldoV2
         '
         Me.XrLabel43.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel43.Dpi = 254.0!
-        Me.XrLabel43.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel43.Font = New DevExpress.Drawing.DXFont("Arial", 8.25!, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel43.LocationFloat = New DevExpress.Utils.PointFloat(1004.066!, 53.48495!)
         Me.XrLabel43.Multiline = True
         Me.XrLabel43.Name = "XrLabel43"
@@ -1313,7 +1313,7 @@ Partial Public Class xrLibroDeSueldoV2
         Me.XrLabel44.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel44.Dpi = 254.0!
         Me.XrLabel44.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([Actividades.Legajos.Recibos.Total])")})
-        Me.XrLabel44.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel44.Font = New DevExpress.Drawing.DXFont("Arial", 8.25!, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel44.LocationFloat = New DevExpress.Utils.PointFloat(1563.158!, 53.48497!)
         Me.XrLabel44.Multiline = True
         Me.XrLabel44.Name = "XrLabel44"
@@ -1333,7 +1333,7 @@ Partial Public Class xrLibroDeSueldoV2
         Me.XrLabel45.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel45.Dpi = 254.0!
         Me.XrLabel45.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([Actividades].[Legajos].[Recibos].[TotalDescuentos])")})
-        Me.XrLabel45.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel45.Font = New DevExpress.Drawing.DXFont("Arial", 8.25!, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel45.LocationFloat = New DevExpress.Utils.PointFloat(1563.158!, 8.859413!)
         Me.XrLabel45.Multiline = True
         Me.XrLabel45.Name = "XrLabel45"
@@ -1352,7 +1352,7 @@ Partial Public Class xrLibroDeSueldoV2
         Me.XrLabel46.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel46.Dpi = 254.0!
         Me.XrLabel46.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([Actividades].[Legajos].[Recibos].[TotalNoRemunerativos])")})
-        Me.XrLabel46.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel46.Font = New DevExpress.Drawing.DXFont("Arial", 8.25!, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel46.LocationFloat = New DevExpress.Utils.PointFloat(1338.28!, 8.859413!)
         Me.XrLabel46.Multiline = True
         Me.XrLabel46.Name = "XrLabel46"
@@ -1371,7 +1371,7 @@ Partial Public Class xrLibroDeSueldoV2
         Me.XrLabel47.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel47.Dpi = 254.0!
         Me.XrLabel47.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([Actividades].[Legajos].[Recibos].[TotalRemunerativos])")})
-        Me.XrLabel47.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel47.Font = New DevExpress.Drawing.DXFont("Arial", 8.25!, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel47.LocationFloat = New DevExpress.Utils.PointFloat(1118.349!, 8.859413!)
         Me.XrLabel47.Multiline = True
         Me.XrLabel47.Name = "XrLabel47"
@@ -1396,7 +1396,7 @@ Partial Public Class xrLibroDeSueldoV2
         '
         Me.XrLabel54.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel54.Dpi = 254.0!
-        Me.XrLabel54.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel54.Font = New DevExpress.Drawing.DXFont("Arial", 6.75!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrLabel54.LocationFloat = New DevExpress.Utils.PointFloat(1350.0!, 0!)
         Me.XrLabel54.Multiline = True
         Me.XrLabel54.Name = "XrLabel54"
@@ -1411,7 +1411,7 @@ Partial Public Class xrLibroDeSueldoV2
         'XrPageInfo1
         '
         Me.XrPageInfo1.Dpi = 254.0!
-        Me.XrPageInfo1.Font = New System.Drawing.Font("Arial", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrPageInfo1.Font = New DevExpress.Drawing.DXFont("Arial", 6.75!, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrPageInfo1.LocationFloat = New DevExpress.Utils.PointFloat(1620.0!, 0!)
         Me.XrPageInfo1.Name = "XrPageInfo1"
         Me.XrPageInfo1.Padding = New DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254.0!)
@@ -1424,11 +1424,11 @@ Partial Public Class xrLibroDeSueldoV2
         Me.ComponentStorage.AddRange(New System.ComponentModel.IComponent() {Me.ObjectDataSource1})
         Me.DataSource = Me.ObjectDataSource1
         Me.Dpi = 254.0!
-        Me.Font = New System.Drawing.Font("Arial", 9.75!)
-        Me.Margins = New System.Drawing.Printing.Margins(250, 50, 59, 14)
+        Me.Font = New DevExpress.Drawing.DXFont("Arial", 9.75!)
+        Me.Margins = New DevExpress.Drawing.DXMargins(250, 50, 59, 14)
         Me.PageHeight = 2970
         Me.PageWidth = 2100
-        Me.PaperKind = System.Drawing.Printing.PaperKind.A4
+        Me.PaperKind = DevExpress.Drawing.Printing.DXPaperKind.A4
         Me.ReportPrintOptions.PrintOnEmptyDataSource = False
         Me.ReportUnit = DevExpress.XtraReports.UI.ReportUnit.TenthsOfAMillimeter
         Me.SnapGridSize = 25.0!

@@ -35,7 +35,7 @@ Public Class xrRemunYAportes
         End Set
     End Property
 
-    Private Sub Detail1_BeforePrint(sender As Object, e As PrintEventArgs) Handles Detail1.BeforePrint
+    Private Sub Detail1_BeforePrint(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles Detail1.BeforePrint
         If IsNothing(DetailReport.GetCurrentRow) Then
             e.Cancel = True
             Return
@@ -58,7 +58,7 @@ Public Class xrRemunYAportes
         Return If(value, 0D)
     End Function
 
-    Private Sub ReportFooter_BeforePrint(sender As Object, e As PrintEventArgs) Handles ReportFooter.BeforePrint
+    Private Sub ReportFooter_BeforePrint(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles ReportFooter.BeforePrint
         xrTituloSubtotales.Text = Me.TituloSubtotal
         xrTotal.Visible = Me.MostrarTotal
     End Sub

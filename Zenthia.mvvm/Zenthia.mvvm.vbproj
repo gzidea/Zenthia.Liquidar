@@ -63,117 +63,101 @@
   <PropertyGroup>
     <MyType>Windows</MyType>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Zhenthia.Liquidar.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.Printing.v20.1.Core">
-      
+    <Reference Include="DevExpress.Data.Desktop.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Drawing.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Data.v23.2, Version=23.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v23.2.Core">
       <Private>False</Private>
     </Reference>
-    <Reference Include="DevExpress.BonusSkins.v20.1">
-      
+    <Reference Include="DevExpress.BonusSkins.v23.2">
       <Private>False</Private>
     </Reference>
-    <Reference Include="DevExpress.Charts.v20.1.Core">
-      
+    <Reference Include="DevExpress.Charts.v23.2.Core">
       <Private>False</Private>
     </Reference>
-    <Reference Include="DevExpress.Data.v20.1">
-      
+    <Reference Include="DevExpress.Map.v23.2.Core">
       <Private>False</Private>
     </Reference>
-    <Reference Include="DevExpress.Data.Desktop.v20.1">
-      
+    <Reference Include="DevExpress.Office.v23.2.Core">
       <Private>False</Private>
     </Reference>
-    <Reference Include="DevExpress.Map.v20.1.Core">
-      
+    <Reference Include="DevExpress.RichEdit.v23.2.Core">
       <Private>False</Private>
     </Reference>
-    <Reference Include="DevExpress.Office.v20.1.Core">
-      
+    <Reference Include="DevExpress.Tutorials.v23.2">
       <Private>False</Private>
     </Reference>
-    <Reference Include="DevExpress.RichEdit.v20.1.Core">
-      
+    <Reference Include="DevExpress.Utils.v23.2">
       <Private>False</Private>
     </Reference>
-    <Reference Include="DevExpress.Tutorials.v20.1">
-      
+    <Reference Include="DevExpress.Mvvm.v23.2">
       <Private>False</Private>
     </Reference>
-    <Reference Include="DevExpress.Utils.v20.1">
-      
+    <Reference Include="DevExpress.XtraBars.v23.2">
       <Private>False</Private>
     </Reference>
-    <Reference Include="DevExpress.Mvvm.v20.1">
-      
+    <Reference Include="DevExpress.XtraCharts.v23.2">
       <Private>False</Private>
     </Reference>
-    <Reference Include="DevExpress.XtraBars.v20.1">
-      
+    <Reference Include="DevExpress.XtraCharts.v23.2.UI">
       <Private>False</Private>
     </Reference>
-    <Reference Include="DevExpress.XtraCharts.v20.1">
-      
+    <Reference Include="DevExpress.XtraCharts.v23.2.Wizard">
       <Private>False</Private>
     </Reference>
-    <Reference Include="DevExpress.XtraCharts.v20.1.UI">
-      
+    <Reference Include="DevExpress.XtraEditors.v23.2">
       <Private>False</Private>
     </Reference>
-    <Reference Include="DevExpress.XtraCharts.v20.1.Wizard">
-      
+    <Reference Include="DevExpress.XtraGauges.v23.2.Core">
       <Private>False</Private>
     </Reference>
-    <Reference Include="DevExpress.XtraEditors.v20.1">
-      
+    <Reference Include="DevExpress.XtraGrid.v23.2">
       <Private>False</Private>
     </Reference>
-    <Reference Include="DevExpress.XtraGauges.v20.1.Core">
-      
+    <Reference Include="DevExpress.XtraMap.v23.2">
       <Private>False</Private>
     </Reference>
-    <Reference Include="DevExpress.XtraGrid.v20.1">
-      
+    <Reference Include="DevExpress.XtraPrinting.v23.2">
       <Private>False</Private>
     </Reference>
-    <Reference Include="DevExpress.XtraMap.v20.1">
-      
+    <Reference Include="DevExpress.XtraGauges.v23.2.Win">
       <Private>False</Private>
     </Reference>
-    <Reference Include="DevExpress.XtraPrinting.v20.1">
-      
+    <Reference Include="DevExpress.XtraLayout.v23.2">
       <Private>False</Private>
     </Reference>
-    <Reference Include="DevExpress.XtraGauges.v20.1.Win">
-      
+    <Reference Include="DevExpress.XtraNavBar.v23.2">
       <Private>False</Private>
     </Reference>
-    <Reference Include="DevExpress.XtraLayout.v20.1">
-      
+    <Reference Include="DevExpress.XtraRichEdit.v23.2">
       <Private>False</Private>
     </Reference>
-    <Reference Include="DevExpress.XtraNavBar.v20.1">
-      
+    <Reference Include="DevExpress.XtraScheduler.v23.2">
       <Private>False</Private>
     </Reference>
-    <Reference Include="DevExpress.XtraRichEdit.v20.1">
-      
+    <Reference Include="DevExpress.XtraScheduler.v23.2.Core.Desktop">
       <Private>False</Private>
     </Reference>
-    <Reference Include="DevExpress.XtraScheduler.v20.1">
-      
+    <Reference Include="DevExpress.XtraScheduler.v23.2.Core">
       <Private>False</Private>
     </Reference>
-    <Reference Include="DevExpress.XtraScheduler.v20.1.Core">
-      
+    <Reference Include="DevExpress.XtraTreeList.v23.2">
       <Private>False</Private>
     </Reference>
-    <Reference Include="DevExpress.XtraTreeList.v20.1">
-      
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="DevExpress.XtraVerticalGrid.v20.1">
-      
+    <Reference Include="DevExpress.XtraVerticalGrid.v23.2">
       <Private>False</Private>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -419,6 +403,7 @@
     <EmbeddedResource Include="Resources\TodoApp\Descriptions\RegisteringNavigationService.md" />
     <EmbeddedResource Include="Resources\TodoApp\Descriptions\SendingMessages.md" />
     <None Include="packages.config" />
+    <None Include="Zhenthia.Liquidar.pfx" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Action_Delete.svg" />

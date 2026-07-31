@@ -1,7 +1,7 @@
 ﻿Imports System.Drawing.Printing
 
 Public Class xrReciboRemunYAportes
-    Private Sub Detail1_BeforePrint(sender As Object, e As PrintEventArgs) Handles Detail1.BeforePrint
+    Private Sub Detail1_BeforePrint(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles Detail1.BeforePrint
         If IsNothing(DetailReport.GetCurrentRow) Then
             e.Cancel = True
             Return

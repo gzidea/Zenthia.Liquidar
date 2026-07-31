@@ -61,7 +61,7 @@ Public Class xrReciboA4
     '    xrSubReportContribuciones.AnchorHorizontal = DevExpress.XtraReports.UI.HorizontalAnchorStyles.Both
     'End Sub
 
-    Private Sub PageFooter_BeforePrint(sender As Object, e As PrintEventArgs) Handles PageFooter.BeforePrint
+    Private Sub PageFooter_BeforePrint(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles PageFooter.BeforePrint
         Dim recibo As List(Of Zenthia.AccesoDatos.Recibos) = CType(Me.DataSource, List(Of Zenthia.AccesoDatos.Recibos))
 
         xrChartResumenDeCostos.Series.Clear()

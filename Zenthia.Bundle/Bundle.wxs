@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Bundle Name="Zenthia.Bundle"
+	        Version="1.0.0.0"
+	        Manufacturer="Tu Empresa"
+	        UpgradeCode="PUT-GUID-AQUI-3333-3333-333333333333">
+
+		<!--
+		  TODO: generá un GUID nuevo para el UpgradeCode de arriba (distinto
+		  al del Product.wxs). Este es el que hace posible el auto-upgrade
+		  del Bundle: NUNCA lo cambies entre versiones.
+		-->
+
+		<BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.RtfLicense" />
+
+		<Chain>
+			<MsiPackage Id="ZenthiaMsi"
+			            DisplayName="Zenthia.Setupa"
+			            Vital="yes">
+
+				<!--
+				  RemotePayload: acá vive la lógica de "buscar en la web".
+				  - DownloadUrl: URL pública donde subís Product.msi.
+				  - FileSize y Hash: se calculan DESPUÉS de compilar Product.msi
+				    y subirlo al servidor (ver instrucciones al final).
+				-->
+				<RemotePayload
+					Description="Instalador de Zenthia"
+					ProductName="Zenthia.Setup"
+					Id="ProductMsiPayload"
+					Certificates="no"
+					CompressionLevel="none"
+					FileSize="0"
+					Hash="00000000000000000000000000000000000000"
+					Version="1.0.0.0"
+					ProductCode="{PUT-GUID-DEL-PRODUCT-AQUI}"
+					UpgradeCode="{7d334759-b000-4138-8406-6f586f91970d}"
+					DownloadUrl="https://xxx.tudominio.com/instaladores/Zenthia/Product.msi" />
+
+			</MsiPackage>
+		</Chain>
+
+	</Bundle>
+</Wix>
+
+<!--
+  ==========================================================================
+  CÓMO OBTENER FileSize Y Hash (después de compilar Product.msi):
+  ==========================================================================
+  1. Compilá el proyecto Product → obtenés Product.msi.
+  2. Subilo a tu servidor, en la misma URL que pusiste en DownloadUrl.
+  3. Sobre ESE archivo ya compilado, en PowerShell corré:
+
+       (Get-Item "Product.msi").Length
+       (Get-FileHash "Product.msi" -Algorithm SHA1).Hash
+
+  4. Pegá esos valores en FileSize y Hash de arriba.
+  5. Si recompilás Product.msi (cualquier cambio, aunque sea mínimo), el
+     hash cambia — hay que repetir este paso o el bootstrapper va a
+     rechazar la descarga por fallar la verificación de integridad.
+
+  CÓMO OBTENER ProductCode:
+  ==========================================================================
+  El ProductCode NO lo elegís vos manualmente — lo genera WiX solo en cada
+  build, porque en Product.wxs tenés Product Id="*" (autogenerado). Para
+  conseguirlo:
+    1. Compilá Product.msi.
+    2. Corré en PowerShell (con el módulo de MSI, o abriendo el .msi con
+       Orca/InstEd):
+         Compilá con: candle.exe / light.exe ya deja el log, o abrí el
+         .msi con Orca y mirá la tabla "Property" → fila "ProductCode".
+    Alternativa más simple: dejá el ProductCode como está ahora y compilá
+    el Bundle — WiX te va a tirar un error indicando el valor esperado si
+    no coincide, lo cual sirve para copiarlo directo del mensaje de error.
+  ==========================================================================
+-->

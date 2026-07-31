@@ -12,7 +12,7 @@ Public Class xrDosRecibosEnUnA4
         SuscribirEventos()
     End Sub
 
-    Private Sub PageFooter_BeforePrint(sender As Object, e As PrintEventArgs) Handles PageFooter.BeforePrint
+    Private Sub PageFooter_BeforePrint(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles PageFooter.BeforePrint
         Dim recibo As List(Of Zenthia.AccesoDatos.Recibos) = CType(Me.DataSource, List(Of Zenthia.AccesoDatos.Recibos))
 
         xrChartResumenDeCostos.Series.Clear()
@@ -44,7 +44,7 @@ Public Class xrDosRecibosEnUnA4
         Return series
     End Function
 
-    Private Sub Detail1_BeforePrint(sender As Object, e As PrintEventArgs) Handles Detail1.BeforePrint
+    Private Sub Detail1_BeforePrint(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles Detail1.BeforePrint
         If IsNothing(DetailReport.GetCurrentRow) Then
             e.Cancel = True
             Return
@@ -57,7 +57,7 @@ Public Class xrDosRecibosEnUnA4
         End If
     End Sub
 
-    Private Sub Detail2_BeforePrint(sender As Object, e As PrintEventArgs) Handles Detail2.BeforePrint
+    Private Sub Detail2_BeforePrint(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles Detail2.BeforePrint
         If IsNothing(DetailReport.GetCurrentRow) Then
             e.Cancel = True
             Return

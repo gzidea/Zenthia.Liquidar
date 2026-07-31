@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" Name="Zenthia.Setup" Language="1033" Version="1.0.0.0" Manufacturer="Zenthia" UpgradeCode="7d334759-b000-4138-8406-6f586f91970d">
+		<Package InstallerVersion="500" Compressed="yes" InstallScope="perMachine" />
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate EmbedCab="yes" />
+
+		<Feature Id="ProductFeature" Title="Zenthia.LiquidAR" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+			<ComponentGroupRef Id="HarvestedComponents" />
+		</Feature>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="Zenthia.Setup" />
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<!--
+		  TODO: reemplazá "Zenthia.LiquidAR.Win.exe" por el nombre real de tu
+		  ejecutable, y $(var.SourceDir) por la carpeta de salida del build
+		  (ej: ..\Zenthia.LiquidAR.Win\bin\Release).
+
+		  Si tenés más archivos (DLLs de DevExpress, .config, etc.), agregalos
+		  como componentes adicionales acá, o usá heat.exe para generarlos
+		  automáticamente (ver nota al final del archivo).
+		-->
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+			<Component Id="MainExecutable" Guid="a1b2c3d4-0001-0001-0001-000000000001">
+				<File Id="MainEXE"
+				      Source="..\Zenthia.LiquidAR.Win\bin\Release\Zenthia.LiquidAR.Win.exe"
+				      KeyPath="yes" />
+			</Component>
+		</ComponentGroup>
+	</Fragment>
+</Wix>
+
+<!--
+  ==========================================================================
+  NOTA IMPORTANTE: este archivo (Product.wxs) es solo la definición del
+  contenido del MSI. NO tiene lógica de descarga web — eso corre por cuenta
+  del Bundle.wxs, que descarga el Product.msi (ya compilado a partir de
+  este archivo) desde tu servidor.
+
+  Flujo completo:
+    1. Compilás este Product.wxs → obtenés Product.msi.
+    2. Subís Product.msi a tu servidor web.
+    3. El Bundle.wxs (bootstrapper) apunta a esa URL vía RemotePayload y es
+       el que el usuario final ejecuta — ese sí "busca en la web".
+
+  Si necesitás el Bundle.wxs actualizado también, avisame.
+  ==========================================================================
+
+  CÓMO GENERAR LOS COMPONENTES DE TODAS LAS DLLs AUTOMÁTICAMENTE (heat.exe):
+
+    heat.exe dir "..\Zenthia.LiquidAR.Win\bin\Release" ^
+      -cg ProductComponents ^
+      -gg -g1 -sfrag -srd ^
+      -dr INSTALLFOLDER ^
+      -var var.SourceDir ^
+      -out HarvestedFiles.wxs
+  ==========================================================================
+-->

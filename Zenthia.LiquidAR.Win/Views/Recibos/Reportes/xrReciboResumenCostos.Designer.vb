@@ -71,7 +71,7 @@ Partial Public Class xrReciboResumenCostos
         'XrTable1
         '
         Me.XrTable1.Dpi = 254.0!
-        Me.XrTable1.Font = New System.Drawing.Font("Arial", 6.0!)
+        Me.XrTable1.Font = New DevExpress.Drawing.DXFont("Arial", 6.0!)
         Me.XrTable1.LocationFloat = New DevExpress.Utils.PointFloat(0!, 0!)
         Me.XrTable1.Name = "XrTable1"
         Me.XrTable1.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
@@ -84,7 +84,7 @@ Partial Public Class xrReciboResumenCostos
         Me.XrTableRow1.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrTableRow1.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell1, Me.XrTableCell4})
         Me.XrTableRow1.Dpi = 254.0!
-        Me.XrTableRow1.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrTableRow1.Font = New DevExpress.Drawing.DXFont("Arial", 8.25!, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrTableRow1.Name = "XrTableRow1"
         Me.XrTableRow1.StylePriority.UseBorders = False
         Me.XrTableRow1.StylePriority.UseFont = False
@@ -96,7 +96,7 @@ Partial Public Class xrReciboResumenCostos
         '
         Me.XrTableCell1.Dpi = 254.0!
         Me.XrTableCell1.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[GrupoCosto].[Titulo]")})
-        Me.XrTableCell1.Font = New System.Drawing.Font("Arial", 6.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrTableCell1.Font = New DevExpress.Drawing.DXFont("Arial", 6.0!, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrTableCell1.Multiline = True
         Me.XrTableCell1.Name = "XrTableCell1"
         Me.XrTableCell1.StylePriority.UseFont = False
@@ -107,7 +107,7 @@ Partial Public Class xrReciboResumenCostos
         '
         Me.XrTableCell4.Dpi = 254.0!
         Me.XrTableCell4.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Trabajador]+[Empleador]")})
-        Me.XrTableCell4.Font = New System.Drawing.Font("Arial", 6.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrTableCell4.Font = New DevExpress.Drawing.DXFont("Arial", 6.0!, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrTableCell4.Multiline = True
         Me.XrTableCell4.Name = "XrTableCell4"
         Me.XrTableCell4.StylePriority.UseFont = False
@@ -120,7 +120,7 @@ Partial Public Class xrReciboResumenCostos
         'XrTable2
         '
         Me.XrTable2.Dpi = 254.0!
-        Me.XrTable2.Font = New System.Drawing.Font("Arial", 6.0!)
+        Me.XrTable2.Font = New DevExpress.Drawing.DXFont("Arial", 6.0!)
         Me.XrTable2.LocationFloat = New DevExpress.Utils.PointFloat(0!, 30.0!)
         Me.XrTable2.Name = "XrTable2"
         Me.XrTable2.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
@@ -133,7 +133,7 @@ Partial Public Class xrReciboResumenCostos
         Me.XrTableRow3.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrTableRow3.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell7, Me.XrTableCell9})
         Me.XrTableRow3.Dpi = 254.0!
-        Me.XrTableRow3.Font = New System.Drawing.Font("Arial", 8.0!)
+        Me.XrTableRow3.Font = New DevExpress.Drawing.DXFont("Arial", 8.0!)
         Me.XrTableRow3.Name = "XrTableRow3"
         Me.XrTableRow3.StylePriority.UseBorders = False
         Me.XrTableRow3.StylePriority.UseFont = False
@@ -144,7 +144,7 @@ Partial Public Class xrReciboResumenCostos
         'XrTableCell7
         '
         Me.XrTableCell7.Dpi = 254.0!
-        Me.XrTableCell7.Font = New System.Drawing.Font("Arial", 6.0!)
+        Me.XrTableCell7.Font = New DevExpress.Drawing.DXFont("Arial", 6.0!)
         Me.XrTableCell7.Multiline = True
         Me.XrTableCell7.Name = "XrTableCell7"
         Me.XrTableCell7.StylePriority.UseFont = False
@@ -155,7 +155,7 @@ Partial Public Class xrReciboResumenCostos
         '
         Me.XrTableCell9.Dpi = 254.0!
         Me.XrTableCell9.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Empleador]")})
-        Me.XrTableCell9.Font = New System.Drawing.Font("Arial", 6.0!)
+        Me.XrTableCell9.Font = New DevExpress.Drawing.DXFont("Arial", 6.0!)
         Me.XrTableCell9.Multiline = True
         Me.XrTableCell9.Name = "XrTableCell9"
         Me.XrTableCell9.StylePriority.UseFont = False
@@ -169,7 +169,7 @@ Partial Public Class xrReciboResumenCostos
         Me.XrTableRow2.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrTableRow2.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell2, Me.XrTableCell3})
         Me.XrTableRow2.Dpi = 254.0!
-        Me.XrTableRow2.Font = New System.Drawing.Font("Arial", 8.0!)
+        Me.XrTableRow2.Font = New DevExpress.Drawing.DXFont("Arial", 8.0!)
         Me.XrTableRow2.Name = "XrTableRow2"
         Me.XrTableRow2.StylePriority.UseBorders = False
         Me.XrTableRow2.StylePriority.UseFont = False
@@ -180,7 +180,7 @@ Partial Public Class xrReciboResumenCostos
         'XrTableCell2
         '
         Me.XrTableCell2.Dpi = 254.0!
-        Me.XrTableCell2.Font = New System.Drawing.Font("Arial", 6.0!)
+        Me.XrTableCell2.Font = New DevExpress.Drawing.DXFont("Arial", 6.0!)
         Me.XrTableCell2.Multiline = True
         Me.XrTableCell2.Name = "XrTableCell2"
         Me.XrTableCell2.StylePriority.UseFont = False
@@ -191,7 +191,7 @@ Partial Public Class xrReciboResumenCostos
         '
         Me.XrTableCell3.Dpi = 254.0!
         Me.XrTableCell3.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Trabajador]")})
-        Me.XrTableCell3.Font = New System.Drawing.Font("Arial", 6.0!)
+        Me.XrTableCell3.Font = New DevExpress.Drawing.DXFont("Arial", 6.0!)
         Me.XrTableCell3.Multiline = True
         Me.XrTableCell3.Name = "XrTableCell3"
         Me.XrTableCell3.StylePriority.UseFont = False
@@ -219,7 +219,7 @@ Partial Public Class xrReciboResumenCostos
         '
         Me.XrLabel4.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel4.Dpi = 254.0!
-        Me.XrLabel4.Font = New System.Drawing.Font("Arial", 6.0!)
+        Me.XrLabel4.Font = New DevExpress.Drawing.DXFont("Arial", 6.0!)
         Me.XrLabel4.LocationFloat = New DevExpress.Utils.PointFloat(0!, 0!)
         Me.XrLabel4.Multiline = True
         Me.XrLabel4.Name = "XrLabel4"
@@ -238,11 +238,11 @@ Partial Public Class xrReciboResumenCostos
         Me.DataMember = "RecibosGruposCostos"
         Me.DataSource = Me.ObjectDataSource1
         Me.Dpi = 254.0!
-        Me.Font = New System.Drawing.Font("Arial", 9.75!)
-        Me.Margins = New System.Drawing.Printing.Margins(0, 0, 0, 0)
+        Me.Font = New DevExpress.Drawing.DXFont("Arial", 9.75!)
+        Me.Margins = New DevExpress.Drawing.DXMargins(0, 0, 0, 0)
         Me.PageHeight = 417
         Me.PageWidth = 943
-        Me.PaperKind = System.Drawing.Printing.PaperKind.Custom
+        Me.PaperKind = DevExpress.Drawing.Printing.DXPaperKind.Custom
         Me.ReportUnit = DevExpress.XtraReports.UI.ReportUnit.TenthsOfAMillimeter
         Me.SnapGridSize = 25.0!
         Me.Version = "20.1"

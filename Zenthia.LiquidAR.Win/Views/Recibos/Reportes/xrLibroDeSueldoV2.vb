@@ -1,11 +1,11 @@
 ﻿Imports Zenthia.AccesoDatos
 
 Public Class xrLibroDeSueldoV2
-    Private Sub Detail2_BeforePrint(sender As Object, e As Printing.PrintEventArgs) Handles Detail2.BeforePrint
+    Private Sub Detail2_BeforePrint(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles Detail2.BeforePrint
 
     End Sub
 
-    Private Sub Detail3_BeforePrint(sender As Object, e As Printing.PrintEventArgs) Handles Detail3.BeforePrint
+    Private Sub Detail3_BeforePrint(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles Detail3.BeforePrint
         Dim reg As RecibosDetalles = TryCast(DetailReport2.GetCurrentRow, RecibosDetalles)
         If reg Is Nothing Then
             e.Cancel = True
@@ -16,14 +16,14 @@ Public Class xrLibroDeSueldoV2
         End If
     End Sub
 
-    Private Sub DetailReport1_BeforePrint(sender As Object, e As Printing.PrintEventArgs) Handles DetailReport1.BeforePrint
+    Private Sub DetailReport1_BeforePrint(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles DetailReport1.BeforePrint
         Dim reg As Zenthia.AccesoDatos.Recibos = TryCast(DetailReport1.GetCurrentRow, Zenthia.AccesoDatos.Recibos)
         If reg Is Nothing Then
             e.Cancel = True
         End If
     End Sub
 
-    Private Sub DetailReport_BeforePrint(sender As Object, e As Printing.PrintEventArgs) Handles DetailReport.BeforePrint
+    Private Sub DetailReport_BeforePrint(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles DetailReport.BeforePrint
         Dim reg As Zenthia.AccesoDatos.Legajos = TryCast(DetailReport.GetCurrentRow, Zenthia.AccesoDatos.Legajos)
         If reg Is Nothing Then
             e.Cancel = True
@@ -34,7 +34,7 @@ Public Class xrLibroDeSueldoV2
         End If
     End Sub
 
-    Private Sub Detail_BeforePrint(sender As Object, e As Printing.PrintEventArgs) Handles Detail.BeforePrint
+    Private Sub Detail_BeforePrint(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles Detail.BeforePrint
         'Dim reg As Zenthia.AccesoDatos.EmpresasActividades = TryCast(Me.GetCurrentRow, Zenthia.AccesoDatos.EmpresasActividades)
         'If reg.Actividades.Legajos.Count = 0 Then
         '    e.Cancel = True

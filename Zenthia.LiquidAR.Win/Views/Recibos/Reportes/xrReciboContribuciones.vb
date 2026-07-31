@@ -41,7 +41,7 @@ Public Class xrReciboContribuciones
 
     End Sub
 
-    Private Sub Detail1_BeforePrint(sender As Object, e As PrintEventArgs) Handles Detail1.BeforePrint
+    Private Sub Detail1_BeforePrint(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles Detail1.BeforePrint
         If IsNothing(DetailReport.GetCurrentRow) Then
             e.Cancel = True
             Return
@@ -61,7 +61,7 @@ Public Class xrReciboContribuciones
         Return If(value, 0D)
     End Function
 
-    Private Sub xrTableSueldoBruto_BeforePrint(sender As Object, e As PrintEventArgs) Handles xrTableSueldoBruto.BeforePrint, xrTableEncavezados.BeforePrint, xrTableDetalle.BeforePrint, xrTableSubTotal.BeforePrint
+    Private Sub xrTableSueldoBruto_BeforePrint(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles xrTableSueldoBruto.BeforePrint, xrTableEncavezados.BeforePrint, xrTableDetalle.BeforePrint, xrTableSubTotal.BeforePrint
         Dim table As XRTable = sender
         For Each row As XRTableRow In table.Rows
             Dim primeraCelda As XRTableCell = row.Cells(0)

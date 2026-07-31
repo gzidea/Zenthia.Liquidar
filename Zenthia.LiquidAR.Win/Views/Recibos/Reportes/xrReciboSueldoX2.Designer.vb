@@ -53,7 +53,7 @@ Partial Public Class xrReciboSueldoX2
         Me.XrLine1.Dpi = 254.0!
         Me.XrLine1.ForeColor = System.Drawing.Color.Gray
         Me.XrLine1.LineDirection = DevExpress.XtraReports.UI.LineDirection.Vertical
-        Me.XrLine1.LineStyle = System.Drawing.Drawing2D.DashStyle.Dot
+        Me.XrLine1.LineStyle = DevExpress.Drawing.DXDashStyle.Dot
         Me.XrLine1.LocationFloat = New DevExpress.Utils.PointFloat(1861.182!, 0!)
         Me.XrLine1.Name = "XrLine1"
         Me.XrLine1.SizeF = New System.Drawing.SizeF(10.0!, 2500.0!)
@@ -83,12 +83,12 @@ Partial Public Class xrReciboSueldoX2
         '
         Me.Bands.AddRange(New DevExpress.XtraReports.UI.Band() {Me.TopMargin, Me.BottomMargin, Me.Detail, Me.PageHeader})
         Me.Dpi = 254.0!
-        Me.Font = New System.Drawing.Font("Arial", 9.75!)
+        Me.Font = New DevExpress.Drawing.DXFont("Arial", 9.75!)
         Me.Landscape = True
-        Me.Margins = New System.Drawing.Printing.Margins(0, 0, 0, 0)
+        Me.Margins = New DevExpress.Drawing.DXMargins(0, 0, 0, 0)
         Me.PageHeight = 2970
         Me.PageWidth = 4200
-        Me.PaperKind = System.Drawing.Printing.PaperKind.A3
+        Me.PaperKind = DevExpress.Drawing.Printing.DXPaperKind.A3
         Me.ReportUnit = DevExpress.XtraReports.UI.ReportUnit.TenthsOfAMillimeter
         Me.SnapGridSize = 25.0!
         Me.Version = "20.1"

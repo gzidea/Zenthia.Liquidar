@@ -89,7 +89,7 @@ Partial Public Class xrReciboResumenCostosA4
         Me.XrTableRow1.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrTableRow1.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell1, Me.XrTableCell4})
         Me.XrTableRow1.Dpi = 254.0!
-        Me.XrTableRow1.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrTableRow1.Font = New DevExpress.Drawing.DXFont("Arial", 8.25!, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, New DevExpress.Drawing.DXFontAdditionalProperty() {New DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", CType(0, Byte))})
         Me.XrTableRow1.Name = "XrTableRow1"
         Me.XrTableRow1.StylePriority.UseBorders = False
         Me.XrTableRow1.StylePriority.UseFont = False
@@ -123,7 +123,7 @@ Partial Public Class xrReciboResumenCostosA4
         Me.XrTableRow3.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrTableRow3.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell7, Me.XrTableCell9})
         Me.XrTableRow3.Dpi = 254.0!
-        Me.XrTableRow3.Font = New System.Drawing.Font("Arial", 8.0!)
+        Me.XrTableRow3.Font = New DevExpress.Drawing.DXFont("Arial", 8.0!)
         Me.XrTableRow3.Name = "XrTableRow3"
         Me.XrTableRow3.StylePriority.UseBorders = False
         Me.XrTableRow3.StylePriority.UseFont = False
@@ -136,7 +136,7 @@ Partial Public Class xrReciboResumenCostosA4
         Me.XrTableRow2.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrTableRow2.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell2, Me.XrTableCell3})
         Me.XrTableRow2.Dpi = 254.0!
-        Me.XrTableRow2.Font = New System.Drawing.Font("Arial", 8.0!)
+        Me.XrTableRow2.Font = New DevExpress.Drawing.DXFont("Arial", 8.0!)
         Me.XrTableRow2.Name = "XrTableRow2"
         Me.XrTableRow2.StylePriority.UseBorders = False
         Me.XrTableRow2.StylePriority.UseFont = False
@@ -197,11 +197,11 @@ Partial Public Class xrReciboResumenCostosA4
         Me.DataMember = "RecibosGruposCostos"
         Me.DataSource = Me.ObjectDataSource1
         Me.Dpi = 254.0!
-        Me.Font = New System.Drawing.Font("Arial", 9.75!)
-        Me.Margins = New System.Drawing.Printing.Margins(0, 0, 0, 0)
+        Me.Font = New DevExpress.Drawing.DXFont("Arial", 9.75!)
+        Me.Margins = New DevExpress.Drawing.DXMargins(0, 0, 0, 0)
         Me.PageHeight = 3100
         Me.PageWidth = 1276
-        Me.PaperKind = System.Drawing.Printing.PaperKind.Custom
+        Me.PaperKind = DevExpress.Drawing.Printing.DXPaperKind.Custom
         Me.ReportUnit = DevExpress.XtraReports.UI.ReportUnit.TenthsOfAMillimeter
         Me.SnapGridSize = 25.0!
         Me.Version = "20.1"

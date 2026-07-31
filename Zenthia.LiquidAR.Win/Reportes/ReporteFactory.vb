@@ -41,9 +41,12 @@ Public Class ReporteFactory
         Dim reporte As New TReporte()
 
         If Not String.IsNullOrEmpty(entidad.LayoutXml) Then
-            Using stream As New MemoryStream(Encoding.UTF8.GetBytes(entidad.LayoutXml))
-                reporte.LoadLayout(stream)
-            End Using
+            DevExpress.Utils.DeserializationSettings.InvokeTrusted(
+            Sub()
+                Using stream As New MemoryStream(Encoding.UTF8.GetBytes(entidad.LayoutXml))
+                    reporte.LoadLayout(stream)
+                End Using
+            End Sub)
         End If
 
         ' Re-enganchar eventos si el reporte los expone -- sin conocer el tipo concreto
