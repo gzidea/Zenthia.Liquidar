@@ -1,0 +1,14 @@
+﻿<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+	<Package Id="Zenthia.InstalAR.Msi" Name="Zenthia.InstalAR.Msi" Manufacturer="Zenthia" Version="1.0.0" UpgradeCode="PONÉ-ACÁ-UN-GUID-FIJO">
+		<MajorUpgrade DowngradeErrorMessage="Ya existe una versión más nueva instalada." />
+		<MediaTemplate EmbedCab="yes" />
+
+		<DirectoryRef Id="INSTALLFOLDER">
+			<Files Include="$(var.Zenthia.LiquidAR.Win.TargetDir)**" />
+		</DirectoryRef>
+
+		<Feature Id="MainFeature">
+			<ComponentGroupRef Id="INSTALLFOLDER.Files" />
+		</Feature>
+	</Package>
+</Wix>
