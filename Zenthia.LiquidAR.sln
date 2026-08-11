@@ -1,15 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36202.13 d17.14
+VisualStudioVersion = 17.14.36202.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Zenthia.LiquidAR.Win", "Zenthia.LiquidAR.Win\Zenthia.LiquidAR.Win.vbproj", "{CD5E01F9-675A-4568-B5A8-B2925A749D8F}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Zenthia.AccesoDatos", "Zenthia.AccesoDatos\Zenthia.AccesoDatos.vbproj", "{5A1F0EC3-F7D0-46C1-9682-27B523330136}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Zenthia.mvvm", "Zenthia.mvvm\Zenthia.mvvm.vbproj", "{C636C3EB-8BBB-44CA-A14D-8329B1AD8851}"
-EndProject
-Project("{B7DD6F7E-DEF8-4E67-B5B7-07EF123DB6F0}") = "Zenthia.InstalAR.Msi", "Zenthia.InstalAR.Msi\Zenthia.InstalAR.Msi.wixproj", "{894A4B3E-E8B4-4D86-A655-7B3B2E0D64B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,22 +69,6 @@ Global
 		{C636C3EB-8BBB-44CA-A14D-8329B1AD8851}.Release|x64.Build.0 = Release|Any CPU
 		{C636C3EB-8BBB-44CA-A14D-8329B1AD8851}.Release|x86.ActiveCfg = Release|Any CPU
 		{C636C3EB-8BBB-44CA-A14D-8329B1AD8851}.Release|x86.Build.0 = Release|Any CPU
-		{894A4B3E-E8B4-4D86-A655-7B3B2E0D64B6}.Debug|Any CPU.ActiveCfg = Debug|x64
-		{894A4B3E-E8B4-4D86-A655-7B3B2E0D64B6}.Debug|Any CPU.Build.0 = Debug|x64
-		{894A4B3E-E8B4-4D86-A655-7B3B2E0D64B6}.Debug|ARM64.ActiveCfg = Debug|ARM64
-		{894A4B3E-E8B4-4D86-A655-7B3B2E0D64B6}.Debug|ARM64.Build.0 = Debug|ARM64
-		{894A4B3E-E8B4-4D86-A655-7B3B2E0D64B6}.Debug|x64.ActiveCfg = Debug|x64
-		{894A4B3E-E8B4-4D86-A655-7B3B2E0D64B6}.Debug|x64.Build.0 = Debug|x64
-		{894A4B3E-E8B4-4D86-A655-7B3B2E0D64B6}.Debug|x86.ActiveCfg = Debug|x86
-		{894A4B3E-E8B4-4D86-A655-7B3B2E0D64B6}.Debug|x86.Build.0 = Debug|x86
-		{894A4B3E-E8B4-4D86-A655-7B3B2E0D64B6}.Release|Any CPU.ActiveCfg = Release|x64
-		{894A4B3E-E8B4-4D86-A655-7B3B2E0D64B6}.Release|Any CPU.Build.0 = Release|x64
-		{894A4B3E-E8B4-4D86-A655-7B3B2E0D64B6}.Release|ARM64.ActiveCfg = Release|ARM64
-		{894A4B3E-E8B4-4D86-A655-7B3B2E0D64B6}.Release|ARM64.Build.0 = Release|ARM64
-		{894A4B3E-E8B4-4D86-A655-7B3B2E0D64B6}.Release|x64.ActiveCfg = Release|x64
-		{894A4B3E-E8B4-4D86-A655-7B3B2E0D64B6}.Release|x64.Build.0 = Release|x64
-		{894A4B3E-E8B4-4D86-A655-7B3B2E0D64B6}.Release|x86.ActiveCfg = Release|x86
-		{894A4B3E-E8B4-4D86-A655-7B3B2E0D64B6}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
