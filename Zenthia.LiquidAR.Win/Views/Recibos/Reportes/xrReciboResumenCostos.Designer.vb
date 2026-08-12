@@ -162,6 +162,7 @@ Partial Public Class xrReciboResumenCostos
         Me.XrTableCell9.StylePriority.UseTextAlignment = False
         Me.XrTableCell9.Text = "{0:c2}"
         Me.XrTableCell9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+        Me.XrTableCell9.TextFormatString = "{0:c2}"
         Me.XrTableCell9.Weight = 0.51356084393509038R
         '
         'XrTableRow2
@@ -239,13 +240,13 @@ Partial Public Class xrReciboResumenCostos
         Me.DataSource = Me.ObjectDataSource1
         Me.Dpi = 254.0!
         Me.Font = New DevExpress.Drawing.DXFont("Arial", 9.75!)
-        Me.Margins = New DevExpress.Drawing.DXMargins(0, 0, 0, 0)
+        Me.Margins = New DevExpress.Drawing.DXMargins(0!, 0!, 0!, 0!)
         Me.PageHeight = 417
         Me.PageWidth = 943
         Me.PaperKind = DevExpress.Drawing.Printing.DXPaperKind.Custom
         Me.ReportUnit = DevExpress.XtraReports.UI.ReportUnit.TenthsOfAMillimeter
         Me.SnapGridSize = 25.0!
-        Me.Version = "20.1"
+        Me.Version = "23.2"
         CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ObjectDataSource1, System.ComponentModel.ISupportInitialize).EndInit()

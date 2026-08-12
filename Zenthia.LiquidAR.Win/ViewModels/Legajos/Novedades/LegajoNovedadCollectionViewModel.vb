@@ -113,9 +113,15 @@ Public Class LegajoNovedadCollectionViewModel
                             recibodetalle.IdRecibo = recibo.Id
                             recibodetalle.IdConcepto = formula.Id
                             recibodetalle.formulaCantidad = legajoformula.Cantidad
+
                             If Not legajoformula.Importe Is Nothing AndAlso legajoformula.Importe <> 0 Then
-                                recibodetalle.formulaImporte = legajoformula.Importe
+                                recibodetalle.Importe = legajoformula.Importe
+                                recibodetalle.formulaImporte = legajoformula.Importe.ToString()
+                                recibodetalle.formulaBase = ""
                             Else
+                                recibodetalle.Importe = 0
+                                recibodetalle.formulaImporte = formula.FormulaImporte
+                                recibodetalle.formulaBase = formula.FormulaBase
                                 recibodetalle.formulaImporte = formula.FormulaImporte
                             End If
 
@@ -133,6 +139,7 @@ Public Class LegajoNovedadCollectionViewModel
                                 recibodetalle.IdRecibo = recibo.Id
                                 recibodetalle.IdConcepto = formula.Id
                                 recibodetalle.formulaCantidad = formula.FormulaCantidad
+                                recibodetalle.formulaBase = formula.FormulaBase
                                 recibodetalle.formulaImporte = formula.FormulaImporte
                                 recibo.RecibosDetalles.Add(recibodetalle)
                             End If

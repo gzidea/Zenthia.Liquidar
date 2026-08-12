@@ -36,6 +36,8 @@ Partial Public Class Formulas
 
     Public Property FormulaCantidad As String
 
+    Public Property FormulaBase As String
+
     Public Property FormulaImporte As String
 
     '<Required(ErrorMessage:="No te olvides del apellido")>

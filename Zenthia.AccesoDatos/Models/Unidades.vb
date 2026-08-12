@@ -21,5 +21,8 @@ Partial Public Class Unidades
     <DefaultValue(" ")>
     Public Property CodigoAfip As String
 
+    <DefaultValue(1)>
+    Public Property FactorConversion As Double?
+
     Public Overridable Property Formulas As ICollection(Of Formulas)
 End Class

@@ -25,14 +25,14 @@ Partial Public Class xrReciboResumenCostosA4
         Me.BottomMargin = New DevExpress.XtraReports.UI.BottomMarginBand()
         Me.Detail = New DevExpress.XtraReports.UI.DetailBand()
         Me.XrTable1 = New DevExpress.XtraReports.UI.XRTable()
-        Me.XrTable2 = New DevExpress.XtraReports.UI.XRTable()
         Me.XrTableRow1 = New DevExpress.XtraReports.UI.XRTableRow()
         Me.XrTableCell1 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell4 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTable2 = New DevExpress.XtraReports.UI.XRTable()
         Me.XrTableRow3 = New DevExpress.XtraReports.UI.XRTableRow()
-        Me.XrTableRow2 = New DevExpress.XtraReports.UI.XRTableRow()
         Me.XrTableCell7 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell9 = New DevExpress.XtraReports.UI.XRTableCell()
+        Me.XrTableRow2 = New DevExpress.XtraReports.UI.XRTableRow()
         Me.XrTableCell2 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrTableCell3 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.ObjectDataSource1 = New DevExpress.DataAccess.ObjectBinding.ObjectDataSource(Me.components)
@@ -75,15 +75,6 @@ Partial Public Class xrReciboResumenCostosA4
         Me.XrTable1.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow1})
         Me.XrTable1.SizeF = New System.Drawing.SizeF(619.9999!, 43.46726!)
         '
-        'XrTable2
-        '
-        Me.XrTable2.Dpi = 254.0!
-        Me.XrTable2.LocationFloat = New DevExpress.Utils.PointFloat(0!, 43.46727!)
-        Me.XrTable2.Name = "XrTable2"
-        Me.XrTable2.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
-        Me.XrTable2.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow3, Me.XrTableRow2})
-        Me.XrTable2.SizeF = New System.Drawing.SizeF(619.9999!, 86.93452!)
-        '
         'XrTableRow1
         '
         Me.XrTableRow1.Borders = DevExpress.XtraPrinting.BorderSide.None
@@ -118,6 +109,15 @@ Partial Public Class xrReciboResumenCostosA4
         Me.XrTableCell4.TextFormatString = "{0:c2}"
         Me.XrTableCell4.Weight = 0.66432054961294784R
         '
+        'XrTable2
+        '
+        Me.XrTable2.Dpi = 254.0!
+        Me.XrTable2.LocationFloat = New DevExpress.Utils.PointFloat(0!, 43.46727!)
+        Me.XrTable2.Name = "XrTable2"
+        Me.XrTable2.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
+        Me.XrTable2.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow3, Me.XrTableRow2})
+        Me.XrTable2.SizeF = New System.Drawing.SizeF(619.9999!, 86.93452!)
+        '
         'XrTableRow3
         '
         Me.XrTableRow3.Borders = DevExpress.XtraPrinting.BorderSide.None
@@ -130,19 +130,6 @@ Partial Public Class xrReciboResumenCostosA4
         Me.XrTableRow3.StylePriority.UseTextAlignment = False
         Me.XrTableRow3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
         Me.XrTableRow3.Weight = 0.5348838028050007R
-        '
-        'XrTableRow2
-        '
-        Me.XrTableRow2.Borders = DevExpress.XtraPrinting.BorderSide.None
-        Me.XrTableRow2.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell2, Me.XrTableCell3})
-        Me.XrTableRow2.Dpi = 254.0!
-        Me.XrTableRow2.Font = New DevExpress.Drawing.DXFont("Arial", 8.0!)
-        Me.XrTableRow2.Name = "XrTableRow2"
-        Me.XrTableRow2.StylePriority.UseBorders = False
-        Me.XrTableRow2.StylePriority.UseFont = False
-        Me.XrTableRow2.StylePriority.UseTextAlignment = False
-        Me.XrTableRow2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
-        Me.XrTableRow2.Weight = 0.5348838028050007R
         '
         'XrTableCell7
         '
@@ -161,7 +148,21 @@ Partial Public Class xrReciboResumenCostosA4
         Me.XrTableCell9.StylePriority.UseTextAlignment = False
         Me.XrTableCell9.Text = "{0:c2}"
         Me.XrTableCell9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+        Me.XrTableCell9.TextFormatString = "{0:c2}"
         Me.XrTableCell9.Weight = 0.664320549612948R
+        '
+        'XrTableRow2
+        '
+        Me.XrTableRow2.Borders = DevExpress.XtraPrinting.BorderSide.None
+        Me.XrTableRow2.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell2, Me.XrTableCell3})
+        Me.XrTableRow2.Dpi = 254.0!
+        Me.XrTableRow2.Font = New DevExpress.Drawing.DXFont("Arial", 8.0!)
+        Me.XrTableRow2.Name = "XrTableRow2"
+        Me.XrTableRow2.StylePriority.UseBorders = False
+        Me.XrTableRow2.StylePriority.UseFont = False
+        Me.XrTableRow2.StylePriority.UseTextAlignment = False
+        Me.XrTableRow2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        Me.XrTableRow2.Weight = 0.5348838028050007R
         '
         'XrTableCell2
         '
@@ -198,13 +199,13 @@ Partial Public Class xrReciboResumenCostosA4
         Me.DataSource = Me.ObjectDataSource1
         Me.Dpi = 254.0!
         Me.Font = New DevExpress.Drawing.DXFont("Arial", 9.75!)
-        Me.Margins = New DevExpress.Drawing.DXMargins(0, 0, 0, 0)
+        Me.Margins = New DevExpress.Drawing.DXMargins(0!, 0!, 0!, 0!)
         Me.PageHeight = 3100
         Me.PageWidth = 1276
         Me.PaperKind = DevExpress.Drawing.Printing.DXPaperKind.Custom
         Me.ReportUnit = DevExpress.XtraReports.UI.ReportUnit.TenthsOfAMillimeter
         Me.SnapGridSize = 25.0!
-        Me.Version = "20.1"
+        Me.Version = "23.2"
         CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ObjectDataSource1, System.ComponentModel.ISupportInitialize).EndInit()

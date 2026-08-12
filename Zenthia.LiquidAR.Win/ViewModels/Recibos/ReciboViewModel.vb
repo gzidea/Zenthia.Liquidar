@@ -2,6 +2,7 @@
 Imports DevExpress.Mvvm
 Imports DevExpress.Mvvm.POCO
 Imports DevExpress.XtraReports.UI
+Imports Syncfusion.XlsIO.Parser.Biff_Records
 Imports Zenthia.AccesoDatos
 Imports Zenthia.LiquidAR.Win.YiZi.mvvm.ViewModel
 Imports Zenthia.mvvm.Common.DataModel
@@ -46,21 +47,19 @@ Partial Public Class ReciboViewModel
         For i As Integer = 0 To 0
             For Each detalle As RecibosDetalles In MyBase.Entity.RecibosDetalles
                 _formula.NewVariable(detalle.Formulas.Variable & "I", detalle.formulaImporte)
+                _formula.NewVariable(detalle.Formulas.Variable & "B", detalle.formulaBase)
                 _formula.NewVariable(detalle.Formulas.Variable & "C", detalle.formulaCantidad)
 
-                detalle.Cantidad = CDbl(_formula.Formula(detalle.formulaCantidad))
-                detalle.Importe = CDbl(_formula.Formula(detalle.formulaImporte))
+                detalle.Cantidad = CType(CDbl(_formula.Formula(detalle.formulaCantidad)), Decimal?)
 
-                If (detalle.Cantidad = 0) Then
-                    detalle.Base = 0
+                If Not String.IsNullOrEmpty(detalle.formulaBase) Then
+                    Dim factor As Double? = detalle.Formulas.Unidades.FactorConversion
+                    detalle.Base = CType(CDbl(_formula.Formula(detalle.formulaBase)), Decimal?)
+                    detalle.Importe = detalle.Cantidad * detalle.Base * factor
                 Else
-                    If detalle.Formulas.CantidadUnidad = 5 Then 'Porcentajes
-                        detalle.Base = detalle.Importe / (detalle.Cantidad / 100)
-                    Else
-                        detalle.Base = detalle.Importe / (detalle.Cantidad)
-                    End If
+                    detalle.Base = 0
+                    detalle.Importe = CDbl(_formula.Formula(detalle.formulaImporte))
                 End If
-
 
                 detalle.Remunerativo = 0
                 detalle.NoRemunerativo = 0
@@ -69,15 +68,15 @@ Partial Public Class ReciboViewModel
 
                 Select Case detalle.Formulas.Conceptos.ColumnaRecibo
                     Case Entidades.enmColumnaRecivo.Remunerativo
-                        detalle.Remunerativo = detalle.Importe
+                        detalle.Remunerativo = CType(detalle.Importe, Decimal?)
                     Case Entidades.enmColumnaRecivo.NoRemunerativo
-                        detalle.NoRemunerativo = detalle.Importe
+                        detalle.NoRemunerativo = CType(detalle.Importe, Decimal?)
                     Case Entidades.enmColumnaRecivo.Descuento
-                        detalle.Descuento = detalle.Importe
+                        detalle.Descuento = CType(detalle.Importe, Decimal?)
                     Case Entidades.enmColumnaRecivo.DescuentoNoRemunerativo
-                        detalle.Descuento = detalle.Importe
+                        detalle.Descuento = CType(detalle.Importe, Decimal?)
                     Case Entidades.enmColumnaRecivo.Contribuciones
-                        detalle.Contribuciones = detalle.Importe
+                        detalle.Contribuciones = CType(detalle.Importe, Decimal?)
                 End Select
             Next
             DelAllGrupoCosto()
@@ -91,10 +90,10 @@ Partial Public Class ReciboViewModel
                               Select New RecibosGruposCostos With {
                       .IdRecibo = MyBase.Entity.Id,
                       .IdGrupoCosto = Id,
-                      .Empleador = g.Where(Function(x) x.c.ColumnaRecibo = 4) _
-                                    .Sum(Function(x) If(x.rd.Contribuciones, 0.0)),
-                      .Trabajador = g.Where(Function(x) x.c.ColumnaRecibo <> 4) _
-                                     .Sum(Function(x) If(x.rd.Descuento, 0.0))
+                      .Empleador = CType(g.Where(Function(x) x.c.ColumnaRecibo = 4) _
+                                    .Sum(Function(x) If(x.rd.Contribuciones, 0.0)), Decimal?),
+                      .Trabajador = CType(g.Where(Function(x) x.c.ColumnaRecibo <> 4) _
+                                     .Sum(Function(x) If(x.rd.Descuento, 0.0)), Decimal?)
                   }).ToList()
                 MyBase.Entity.RecibosGruposCostos = grupos
             End Using
@@ -103,9 +102,9 @@ Partial Public Class ReciboViewModel
 
             MyBase.Entity.TotalDescuentos = MyBase.Entity.RecibosDetalles.Sum(Function(x) x.Descuento)
             ''todo este codigo es por que no descubria el error de DESC hasta que lo remplace por DESCU. DESC debe estar siendo editada en las variable generales
-            Dim desc As Double = MyBase.Entity.RecibosDetalles.Where(Function(w) w.Formulas.Conceptos.ColumnaRecibo = Entidades.enmColumnaRecivo.Descuento).Sum(Function(x) x.Importe)
+            Dim desc As Double? = MyBase.Entity.RecibosDetalles.Where(Function(w) w.Formulas.Conceptos.ColumnaRecibo = Entidades.enmColumnaRecivo.Descuento).Sum(Function(x) x.Importe)
             'Debug.Print(desc)
-            _formula.NewVariable("DESCU", desc)
+            _formula.NewVariable("DESCU", desc.ToString())
             MyBase.Entity.TotalDescuentos = MyBase.Entity.RecibosDetalles.Sum(Function(x) x.Descuento)
             MyBase.Entity.TotalNoRemunerativos = MyBase.Entity.RecibosDetalles.Sum(Function(x) x.NoRemunerativo)
             MyBase.Entity.TotalContribuciones = MyBase.Entity.RecibosDetalles.Sum(Function(x) x.Contribuciones)
@@ -151,6 +150,7 @@ Partial Public Class ReciboViewModel
                 itemDetalle.IdConcepto = formula.Id
                 'Dim formula As Zenthia.AccesoDatos.Formulas = getFormula(item.IdFormula)
                 itemDetalle.formulaCantidad = formula.FormulaCantidad
+                itemDetalle.formulaBase = formula.FormulaBase
                 itemDetalle.formulaImporte = formula.FormulaImporte
                 itemDetalle.Remunerativo = 100
                 MyBase.Entity.RecibosDetalles.Add(itemDetalle)
@@ -163,13 +163,15 @@ Partial Public Class ReciboViewModel
                 itemDetalle.IdConcepto = item.IdFormula
                 Dim formula As Zenthia.AccesoDatos.Formulas = getFormula(item.IdFormula)
                 If item.Cantidad <> 0 Then
-                    itemDetalle.formulaCantidad = item.Cantidad
+                    itemDetalle.formulaCantidad = item.Cantidad.ToString()
                 Else
                     itemDetalle.formulaCantidad = formula.FormulaCantidad
                 End If
                 If item.Importe <> 0 Then
-                    itemDetalle.formulaImporte = item.Importe
+                    itemDetalle.formulaBase = ""
+                    itemDetalle.formulaImporte = item.Importe.ToString()
                 Else
+                    itemDetalle.formulaBase = formula.FormulaBase
                     itemDetalle.formulaImporte = formula.FormulaImporte
                 End If
 
@@ -201,6 +203,7 @@ Partial Public Class ReciboViewModel
                 itemDetalle.IdConcepto = item.IdFormula
                 Dim formula As Zenthia.AccesoDatos.Formulas = getFormula(item.IdFormula)
                 itemDetalle.formulaCantidad = formula.FormulaCantidad
+                itemDetalle.formulaBase = formula.FormulaBase
                 itemDetalle.formulaImporte = formula.FormulaImporte
                 itemDetalle.Remunerativo = 100
                 MyBase.Entity.RecibosDetalles.Add(itemDetalle)
@@ -212,13 +215,15 @@ Partial Public Class ReciboViewModel
                 itemDetalle.IdConcepto = item.IdFormula
                 Dim formula As Zenthia.AccesoDatos.Formulas = getFormula(item.IdFormula)
                 If item.Cantidad <> 0 Then
-                    itemDetalle.formulaCantidad = item.Cantidad
+                    itemDetalle.formulaCantidad = item.Cantidad.ToString()
                 Else
                     itemDetalle.formulaCantidad = formula.FormulaCantidad
                 End If
                 If item.Importe <> 0 Then
-                    itemDetalle.formulaImporte = item.Importe
+                    itemDetalle.formulaBase = ""
+                    itemDetalle.formulaImporte = item.Importe.ToString()
                 Else
+                    itemDetalle.formulaBase = formula.FormulaBase
                     itemDetalle.formulaImporte = formula.FormulaImporte
                 End If
 

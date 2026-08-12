@@ -18,6 +18,8 @@ Partial Public Class RecibosDetalles
 
     Public Property formulaImporte As String
 
+    Public Property formulaBase As String
+
     Public Property Activo As Boolean
 
     Public Property FechaDesde As Date?
