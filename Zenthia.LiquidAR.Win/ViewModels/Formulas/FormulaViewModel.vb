@@ -6,7 +6,8 @@ Imports Zenthia.mvvm.Common.ViewModel
 
 Partial Public Class FormulaViewModel
     Inherits SingleObjectViewModel(Of Zenthia.AccesoDatos.Formulas, Integer, IModeloDbContextUnitOfWork)
-
+    Private _canEditBase As Boolean
+    Private _canEditImporte As Boolean
 
     Public Shared Function Create(Optional ByVal unitOfWorkFactory As IUnitOfWorkFactory(Of IModeloDbContextUnitOfWork) = Nothing) As FormulaViewModel
         Return ViewModelSource.Create(Function() New FormulaViewModel(unitOfWorkFactory))
@@ -39,6 +40,25 @@ Partial Public Class FormulaViewModel
             Return GetLookUpEntitiesViewModel(Function(ByVal x As FormulaViewModel) x.LookUpPeriodos, Function(x) x.Periodos)
         End Get
     End Property
+
+    Public ReadOnly Property CanEditBase() As Boolean
+        Get
+            Return _canEditBase
+        End Get
+    End Property
+
+    Public ReadOnly Property CanEditImporte() As Boolean
+        Get
+            Return _canEditImporte
+        End Get
+    End Property
+
+    Protected Overrides Sub UpdateCommands()
+        MyBase.UpdateCommands()
+        _canEditBase = String.IsNullOrEmpty(Me.Entity.FormulaImporte) And Not String.IsNullOrEmpty(Me.Entity.FormulaCantidad)
+        _canEditImporte = String.IsNullOrEmpty(Me.Entity.FormulaBase)
+        MyBase.RaisePropertiesChanged()
+    End Sub
 
     Public Sub SaveAndClone()
         If SaveCore() Then

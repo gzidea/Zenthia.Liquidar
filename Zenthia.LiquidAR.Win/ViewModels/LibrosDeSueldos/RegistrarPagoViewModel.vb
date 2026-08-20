@@ -12,21 +12,21 @@ Public Class RegistrarPagoViewModel
     Private ReadOnly _unitOfWork As IModeloDbContextUnitOfWork
     Private _disposed As Boolean = False
 
-    Public Shared Function Create(Optional unitOfWorkFactory As IUnitOfWorkFactory(Of IModeloDbContextUnitOfWork) = Nothing) As RegistrarPagoViewModel
-        Return ViewModelSource.Create(Function() New RegistrarPagoViewModel(unitOfWorkFactory))
+    Public Shared Function Create(IdEmpresa As Integer, Optional unitOfWorkFactory As IUnitOfWorkFactory(Of IModeloDbContextUnitOfWork) = Nothing) As RegistrarPagoViewModel
+        Return ViewModelSource.Create(Function() New RegistrarPagoViewModel(IdEmpresa, unitOfWorkFactory))
     End Function
 
-    Protected Sub New(Optional unitOfWorkFactory As IUnitOfWorkFactory(Of IModeloDbContextUnitOfWork) = Nothing)
+    Protected Sub New(IdEmpresa As Integer, Optional unitOfWorkFactory As IUnitOfWorkFactory(Of IModeloDbContextUnitOfWork) = Nothing)
         _unitOfWork = If(unitOfWorkFactory, UnitOfWorkSource.GetUnitOfWorkFactory()).CreateUnitOfWork()
-        CargarBancos()
+        CargarBancos(IdEmpresa)
     End Sub
 
     Public Overridable Property IdBanco As Integer?
     Public Overridable Property FechaPago As DateTime?
     Public Overridable Property Bancos As ObservableCollection(Of Zenthia.AccesoDatos.EmpresasBancos)
 
-    Private Sub CargarBancos()
-        Bancos = New ObservableCollection(Of Zenthia.AccesoDatos.EmpresasBancos)(_unitOfWork.EmpresasBancos.ToList())
+    Private Sub CargarBancos(_idEmpresa As Integer)
+        Bancos = New ObservableCollection(Of Zenthia.AccesoDatos.EmpresasBancos)(_unitOfWork.EmpresasBancos.Where(Function(x) x.IdEmpresa = _idEmpresa).ToList())
     End Sub
 
     Protected Overridable Sub Dispose(disposing As Boolean)

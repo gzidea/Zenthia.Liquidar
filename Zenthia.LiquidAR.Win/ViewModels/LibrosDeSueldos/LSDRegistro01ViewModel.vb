@@ -501,7 +501,7 @@ Public Class LSDRegistro01ViewModel
 
     <Display(Name:="Registra el pago con la fecha y banco que se realizo")>
     Public Sub RegistrarPago()
-        registroPagoViewModel = RegistrarPagoViewModel.Create()
+        registroPagoViewModel = RegistrarPagoViewModel.Create(Me.Entity.IdEmpresa)
         OnRegistrarPago(DialogService.ShowDialog(MessageButton.OKCancel, "Ingrese su credencial", "RegistroPagoViewModel", registroPagoViewModel))
     End Sub
 

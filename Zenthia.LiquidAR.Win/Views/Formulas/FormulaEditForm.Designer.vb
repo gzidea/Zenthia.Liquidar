@@ -20,17 +20,17 @@ Partial Class FormulaEditForm
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim EditorButtonImageOptions1 As DevExpress.XtraEditors.Controls.EditorButtonImageOptions = New DevExpress.XtraEditors.Controls.EditorButtonImageOptions()
+        Dim EditorButtonImageOptions3 As DevExpress.XtraEditors.Controls.EditorButtonImageOptions = New DevExpress.XtraEditors.Controls.EditorButtonImageOptions()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormulaEditForm))
-        Dim SerializableAppearanceObject1 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject2 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject3 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject4 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim EditorButtonImageOptions2 As DevExpress.XtraEditors.Controls.EditorButtonImageOptions = New DevExpress.XtraEditors.Controls.EditorButtonImageOptions()
-        Dim SerializableAppearanceObject5 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject6 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject7 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject8 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject9 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject10 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject11 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject12 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim EditorButtonImageOptions4 As DevExpress.XtraEditors.Controls.EditorButtonImageOptions = New DevExpress.XtraEditors.Controls.EditorButtonImageOptions()
+        Dim SerializableAppearanceObject13 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject14 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject15 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject16 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
         Me.RepositoryItemRibbonSearchEdit2 = New DevExpress.XtraBars.Ribbon.Internal.RepositoryItemRibbonSearchEdit()
         Me.RibbonStatusBar1 = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
         Me.bsiEstado = New DevExpress.XtraBars.BarStaticItem()
@@ -142,7 +142,6 @@ Partial Class FormulaEditForm
         Me.LayoutControlItem25 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem14 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem15 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.EmptySpaceItem4 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem5 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.EmptySpaceItem6 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.LayoutControlItem26 = New DevExpress.XtraLayout.LayoutControlItem()
@@ -196,6 +195,8 @@ Partial Class FormulaEditForm
         Me.LayoutControlItem31 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem51 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.liquidacion_DetailsPopUpMenu = New DevExpress.XtraBars.PopupMenu(Me.components)
+        Me.FormulaBaseTextEdit = New DevExpress.XtraEditors.MemoEdit()
+        Me.LayoutControlItem29 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.RepositoryItemRibbonSearchEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ribbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dataLayout, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -265,7 +266,6 @@ Partial Class FormulaEditForm
         CType(Me.LayoutControlItem25, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem14, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem15, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EmptySpaceItem4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmptySpaceItem6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem26, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -296,6 +296,8 @@ Partial Class FormulaEditForm
         CType(Me.LayoutControlItem31, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem51, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.liquidacion_DetailsPopUpMenu, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FormulaBaseTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem29, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RepositoryItemRibbonSearchEdit2
@@ -303,9 +305,9 @@ Partial Class FormulaEditForm
         Me.RepositoryItemRibbonSearchEdit2.AllowFocused = False
         Me.RepositoryItemRibbonSearchEdit2.AutoHeight = False
         Me.RepositoryItemRibbonSearchEdit2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
-        EditorButtonImageOptions1.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.[True]
-        EditorButtonImageOptions1.SvgImage = CType(resources.GetObject("EditorButtonImageOptions1.SvgImage"), DevExpress.Utils.Svg.SvgImage)
-        Me.RepositoryItemRibbonSearchEdit2.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, True, True, True, EditorButtonImageOptions1, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject1, SerializableAppearanceObject2, SerializableAppearanceObject3, SerializableAppearanceObject4, "", Nothing, Nothing, DevExpress.Utils.ToolTipAnchor.[Default]), New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Clear, "", -1, True, False, False, EditorButtonImageOptions2, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject5, SerializableAppearanceObject6, SerializableAppearanceObject7, SerializableAppearanceObject8, "", Nothing, Nothing, DevExpress.Utils.ToolTipAnchor.[Default])})
+        EditorButtonImageOptions3.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.[True]
+        EditorButtonImageOptions3.SvgImage = CType(resources.GetObject("EditorButtonImageOptions3.SvgImage"), DevExpress.Utils.Svg.SvgImage)
+        Me.RepositoryItemRibbonSearchEdit2.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, True, True, True, EditorButtonImageOptions3, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject9, SerializableAppearanceObject10, SerializableAppearanceObject11, SerializableAppearanceObject12, "", Nothing, Nothing, DevExpress.Utils.ToolTipAnchor.[Default]), New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Clear, "", -1, True, False, False, EditorButtonImageOptions4, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject13, SerializableAppearanceObject14, SerializableAppearanceObject15, SerializableAppearanceObject16, "", Nothing, Nothing, DevExpress.Utils.ToolTipAnchor.[Default])})
         Me.RepositoryItemRibbonSearchEdit2.Name = "RepositoryItemRibbonSearchEdit2"
         Me.RepositoryItemRibbonSearchEdit2.NullText = "Search"
         '
@@ -326,14 +328,14 @@ Partial Class FormulaEditForm
         'ribbonControl
         '
         Me.ribbonControl.ExpandCollapseItem.Id = 0
-        Me.ribbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl.ExpandCollapseItem, Me.ribbonControl.SearchEditItem, Me.bbiSave, Me.bbiSaveAndClose, Me.bbiSaveAndNew, Me.bbiReset, Me.bbiSaveLayout, Me.bbiResetLayout, Me.bbiDelete, Me.bbiClose, Me.bsiEstado, Me.bbiSaveYClone})
+        Me.ribbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl.ExpandCollapseItem, Me.bbiSave, Me.bbiSaveAndClose, Me.bbiSaveAndNew, Me.bbiReset, Me.bbiSaveLayout, Me.bbiResetLayout, Me.bbiDelete, Me.bbiClose, Me.bsiEstado, Me.bbiSaveYClone})
         Me.ribbonControl.Location = New System.Drawing.Point(5, 0)
         Me.ribbonControl.MaxItemId = 29
         Me.ribbonControl.Name = "ribbonControl"
         Me.ribbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.[False]
         Me.ribbonControl.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
-        Me.ribbonControl.Size = New System.Drawing.Size(1090, 100)
+        Me.ribbonControl.Size = New System.Drawing.Size(1090, 126)
         Me.ribbonControl.StatusBar = Me.RibbonStatusBar1
         Me.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -470,12 +472,13 @@ Partial Class FormulaEditForm
         Me.dataLayout.Controls.Add(Me.BarDockControl5)
         Me.dataLayout.Controls.Add(Me.BarDockControl3)
         Me.dataLayout.Controls.Add(Me.BarDockControl2)
+        Me.dataLayout.Controls.Add(Me.FormulaBaseTextEdit)
         Me.dataLayout.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dataLayout.Location = New System.Drawing.Point(5, 100)
+        Me.dataLayout.Location = New System.Drawing.Point(5, 126)
         Me.dataLayout.Name = "dataLayout"
         Me.dataLayout.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = New System.Drawing.Rectangle(1027, 514, 650, 400)
         Me.dataLayout.Root = Me.Root
-        Me.dataLayout.Size = New System.Drawing.Size(1090, 814)
+        Me.dataLayout.Size = New System.Drawing.Size(1090, 788)
         Me.dataLayout.TabIndex = 4
         Me.dataLayout.Text = "LayoutControl1"
         '
@@ -498,7 +501,7 @@ Partial Class FormulaEditForm
         'AuxiliarCheckEdit
         '
         Me.AuxiliarCheckEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.FormulasBindingSource, "Auxiliar", True))
-        Me.AuxiliarCheckEdit.Location = New System.Drawing.Point(609, 314)
+        Me.AuxiliarCheckEdit.Location = New System.Drawing.Point(609, 331)
         Me.AuxiliarCheckEdit.MenuManager = Me.ribbonControl
         Me.AuxiliarCheckEdit.Name = "AuxiliarCheckEdit"
         Me.AuxiliarCheckEdit.Properties.Caption = " Concepto Auxiliar (No afecta al recibo directamente)"
@@ -521,7 +524,7 @@ Partial Class FormulaEditForm
         'NovedadCheckEdit
         '
         Me.NovedadCheckEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.FormulasBindingSource, "Novedad", True))
-        Me.NovedadCheckEdit.Location = New System.Drawing.Point(136, 314)
+        Me.NovedadCheckEdit.Location = New System.Drawing.Point(136, 331)
         Me.NovedadCheckEdit.MenuManager = Me.ribbonControl
         Me.NovedadCheckEdit.Name = "NovedadCheckEdit"
         Me.NovedadCheckEdit.Properties.Caption = "Mostrar como novedad a cargar"
@@ -532,11 +535,11 @@ Partial Class FormulaEditForm
         'gridControlPeriodos
         '
         Me.gridControlPeriodos.DataSource = Me.FormulasPeriodosBindingSource
-        Me.gridControlPeriodos.Location = New System.Drawing.Point(546, 457)
+        Me.gridControlPeriodos.Location = New System.Drawing.Point(546, 428)
         Me.gridControlPeriodos.MainView = Me.gridViewPeriodos
         Me.gridControlPeriodos.MenuManager = Me.ribbonControl
         Me.gridControlPeriodos.Name = "gridControlPeriodos"
-        Me.gridControlPeriodos.Size = New System.Drawing.Size(520, 333)
+        Me.gridControlPeriodos.Size = New System.Drawing.Size(520, 336)
         Me.gridControlPeriodos.TabIndex = 26
         Me.gridControlPeriodos.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridViewPeriodos})
         '
@@ -574,11 +577,11 @@ Partial Class FormulaEditForm
         'gridControlLiquidaciones
         '
         Me.gridControlLiquidaciones.DataSource = Me.FormulaTipoLiquidacionBindingSource
-        Me.gridControlLiquidaciones.Location = New System.Drawing.Point(24, 457)
+        Me.gridControlLiquidaciones.Location = New System.Drawing.Point(24, 428)
         Me.gridControlLiquidaciones.MainView = Me.gridViewLiquidaciones
         Me.gridControlLiquidaciones.MenuManager = Me.ribbonControl
         Me.gridControlLiquidaciones.Name = "gridControlLiquidaciones"
-        Me.gridControlLiquidaciones.Size = New System.Drawing.Size(494, 333)
+        Me.gridControlLiquidaciones.Size = New System.Drawing.Size(494, 336)
         Me.gridControlLiquidaciones.TabIndex = 24
         Me.gridControlLiquidaciones.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridViewLiquidaciones})
         '
@@ -616,17 +619,17 @@ Partial Class FormulaEditForm
         'DescripcionCompletaTextEdit
         '
         Me.DescripcionCompletaTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.FormulasBindingSource, "DescripcionCompleta", True))
-        Me.DescripcionCompletaTextEdit.Location = New System.Drawing.Point(121, 290)
+        Me.DescripcionCompletaTextEdit.Location = New System.Drawing.Point(130, 307)
         Me.DescripcionCompletaTextEdit.MenuManager = Me.ribbonControl
         Me.DescripcionCompletaTextEdit.Name = "DescripcionCompletaTextEdit"
-        Me.DescripcionCompletaTextEdit.Size = New System.Drawing.Size(444, 20)
+        Me.DescripcionCompletaTextEdit.Size = New System.Drawing.Size(435, 20)
         Me.DescripcionCompletaTextEdit.StyleController = Me.dataLayout
         Me.DescripcionCompletaTextEdit.TabIndex = 22
         '
         'IncluirDescripcionConceptoCheckEdit
         '
         Me.IncluirDescripcionConceptoCheckEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.FormulasBindingSource, "IncluirDescripcionConcepto", True))
-        Me.IncluirDescripcionConceptoCheckEdit.Location = New System.Drawing.Point(569, 290)
+        Me.IncluirDescripcionConceptoCheckEdit.Location = New System.Drawing.Point(569, 307)
         Me.IncluirDescripcionConceptoCheckEdit.MenuManager = Me.ribbonControl
         Me.IncluirDescripcionConceptoCheckEdit.Name = "IncluirDescripcionConceptoCheckEdit"
         Me.IncluirDescripcionConceptoCheckEdit.Properties.Caption = "Incluir descripcion de Concepto"
@@ -637,7 +640,7 @@ Partial Class FormulaEditForm
         'AfectaImpuestoGananciaCheckEdit
         '
         Me.AfectaImpuestoGananciaCheckEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.FormulasBindingSource, "AfectaImpuestoGanancia", True))
-        Me.AfectaImpuestoGananciaCheckEdit.Location = New System.Drawing.Point(333, 266)
+        Me.AfectaImpuestoGananciaCheckEdit.Location = New System.Drawing.Point(333, 283)
         Me.AfectaImpuestoGananciaCheckEdit.MenuManager = Me.ribbonControl
         Me.AfectaImpuestoGananciaCheckEdit.Name = "AfectaImpuestoGananciaCheckEdit"
         Me.AfectaImpuestoGananciaCheckEdit.Properties.Caption = "Afecta impuesto a Ganancias"
@@ -648,7 +651,7 @@ Partial Class FormulaEditForm
         'AfectaMejorSueldoCheckEdit
         '
         Me.AfectaMejorSueldoCheckEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.FormulasBindingSource, "AfectaMejorSueldo", True))
-        Me.AfectaMejorSueldoCheckEdit.Location = New System.Drawing.Point(136, 266)
+        Me.AfectaMejorSueldoCheckEdit.Location = New System.Drawing.Point(136, 283)
         Me.AfectaMejorSueldoCheckEdit.MenuManager = Me.ribbonControl
         Me.AfectaMejorSueldoCheckEdit.Name = "AfectaMejorSueldoCheckEdit"
         Me.AfectaMejorSueldoCheckEdit.Properties.Caption = "Afecta mejor Sueldo"
@@ -713,21 +716,21 @@ Partial Class FormulaEditForm
         '
         Me.ImporteSpinEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.FormulasBindingSource, "Importe", True))
         Me.ImporteSpinEdit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.ImporteSpinEdit.Location = New System.Drawing.Point(121, 108)
+        Me.ImporteSpinEdit.Location = New System.Drawing.Point(130, 108)
         Me.ImporteSpinEdit.MenuManager = Me.ribbonControl
         Me.ImporteSpinEdit.Name = "ImporteSpinEdit"
         Me.ImporteSpinEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.ImporteSpinEdit.Size = New System.Drawing.Size(245, 20)
+        Me.ImporteSpinEdit.Size = New System.Drawing.Size(236, 20)
         Me.ImporteSpinEdit.StyleController = Me.dataLayout
         Me.ImporteSpinEdit.TabIndex = 12
         '
         'DescripcionTextEdit
         '
         Me.DescripcionTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.FormulasBindingSource, "Descripcion", True))
-        Me.DescripcionTextEdit.Location = New System.Drawing.Point(121, 84)
+        Me.DescripcionTextEdit.Location = New System.Drawing.Point(130, 84)
         Me.DescripcionTextEdit.MenuManager = Me.ribbonControl
         Me.DescripcionTextEdit.Name = "DescripcionTextEdit"
-        Me.DescripcionTextEdit.Size = New System.Drawing.Size(957, 20)
+        Me.DescripcionTextEdit.Size = New System.Drawing.Size(948, 20)
         Me.DescripcionTextEdit.StyleController = Me.dataLayout
         Me.DescripcionTextEdit.TabIndex = 11
         '
@@ -756,11 +759,11 @@ Partial Class FormulaEditForm
         '
         Me.CodigoSpinEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.FormulasBindingSource, "Codigo", True))
         Me.CodigoSpinEdit.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.CodigoSpinEdit.Location = New System.Drawing.Point(121, 60)
+        Me.CodigoSpinEdit.Location = New System.Drawing.Point(130, 60)
         Me.CodigoSpinEdit.MenuManager = Me.ribbonControl
         Me.CodigoSpinEdit.Name = "CodigoSpinEdit"
         Me.CodigoSpinEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.CodigoSpinEdit.Size = New System.Drawing.Size(125, 20)
+        Me.CodigoSpinEdit.Size = New System.Drawing.Size(116, 20)
         Me.CodigoSpinEdit.StyleController = Me.dataLayout
         Me.CodigoSpinEdit.TabIndex = 8
         '
@@ -777,7 +780,7 @@ Partial Class FormulaEditForm
         'IdConceptoSearchLookUpEdit
         '
         Me.IdConceptoSearchLookUpEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.FormulasBindingSource, "IdConcepto", True))
-        Me.IdConceptoSearchLookUpEdit.Location = New System.Drawing.Point(121, 36)
+        Me.IdConceptoSearchLookUpEdit.Location = New System.Drawing.Point(130, 36)
         Me.IdConceptoSearchLookUpEdit.MenuManager = Me.ribbonControl
         Me.IdConceptoSearchLookUpEdit.Name = "IdConceptoSearchLookUpEdit"
         Me.IdConceptoSearchLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -785,7 +788,7 @@ Partial Class FormulaEditForm
         Me.IdConceptoSearchLookUpEdit.Properties.DisplayMember = "Descripcion"
         Me.IdConceptoSearchLookUpEdit.Properties.PopupView = Me.IdConceptoSearchLookUpEditView
         Me.IdConceptoSearchLookUpEdit.Properties.ValueMember = "Id"
-        Me.IdConceptoSearchLookUpEdit.Size = New System.Drawing.Size(329, 20)
+        Me.IdConceptoSearchLookUpEdit.Size = New System.Drawing.Size(320, 20)
         Me.IdConceptoSearchLookUpEdit.StyleController = Me.dataLayout
         Me.IdConceptoSearchLookUpEdit.TabIndex = 6
         '
@@ -818,7 +821,7 @@ Partial Class FormulaEditForm
         'IdConvenioSearchLookUpEdit
         '
         Me.IdConvenioSearchLookUpEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.FormulasBindingSource, "IdConvenio", True))
-        Me.IdConvenioSearchLookUpEdit.Location = New System.Drawing.Point(121, 12)
+        Me.IdConvenioSearchLookUpEdit.Location = New System.Drawing.Point(130, 12)
         Me.IdConvenioSearchLookUpEdit.MenuManager = Me.ribbonControl
         Me.IdConvenioSearchLookUpEdit.Name = "IdConvenioSearchLookUpEdit"
         Me.IdConvenioSearchLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -826,7 +829,7 @@ Partial Class FormulaEditForm
         Me.IdConvenioSearchLookUpEdit.Properties.DisplayMember = "Nombre"
         Me.IdConvenioSearchLookUpEdit.Properties.PopupView = Me.IdConvenioSearchLookUpEditView
         Me.IdConvenioSearchLookUpEdit.Properties.ValueMember = "Id"
-        Me.IdConvenioSearchLookUpEdit.Size = New System.Drawing.Size(957, 20)
+        Me.IdConvenioSearchLookUpEdit.Size = New System.Drawing.Size(948, 20)
         Me.IdConvenioSearchLookUpEdit.StyleController = Me.dataLayout
         Me.IdConvenioSearchLookUpEdit.TabIndex = 5
         '
@@ -866,22 +869,22 @@ Partial Class FormulaEditForm
         'FormulaCantidadTextEdit1
         '
         Me.FormulaCantidadTextEdit1.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.FormulasBindingSource, "FormulaCantidad", True))
-        Me.FormulaCantidadTextEdit1.Location = New System.Drawing.Point(121, 132)
+        Me.FormulaCantidadTextEdit1.Location = New System.Drawing.Point(130, 132)
         Me.FormulaCantidadTextEdit1.MenuManager = Me.ribbonControl
         Me.FormulaCantidadTextEdit1.MinimumSize = New System.Drawing.Size(0, 48)
         Me.FormulaCantidadTextEdit1.Name = "FormulaCantidadTextEdit1"
-        Me.FormulaCantidadTextEdit1.Size = New System.Drawing.Size(957, 50)
+        Me.FormulaCantidadTextEdit1.Size = New System.Drawing.Size(948, 48)
         Me.FormulaCantidadTextEdit1.StyleController = Me.dataLayout
         Me.FormulaCantidadTextEdit1.TabIndex = 35
         '
         'FormulaImporteTextEdit
         '
         Me.FormulaImporteTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.FormulasBindingSource, "FormulaImporte", True))
-        Me.FormulaImporteTextEdit.Location = New System.Drawing.Point(121, 186)
+        Me.FormulaImporteTextEdit.Location = New System.Drawing.Point(130, 228)
         Me.FormulaImporteTextEdit.MenuManager = Me.ribbonControl
         Me.FormulaImporteTextEdit.MinimumSize = New System.Drawing.Size(0, 51)
         Me.FormulaImporteTextEdit.Name = "FormulaImporteTextEdit"
-        Me.FormulaImporteTextEdit.Size = New System.Drawing.Size(957, 76)
+        Me.FormulaImporteTextEdit.Size = New System.Drawing.Size(948, 51)
         Me.FormulaImporteTextEdit.StyleController = Me.dataLayout
         Me.FormulaImporteTextEdit.TabIndex = 36
         '
@@ -957,9 +960,9 @@ Partial Class FormulaEditForm
         'BarDockControl1
         '
         Me.BarDockControl1.CausesValidation = False
-        Me.BarDockControl1.Location = New System.Drawing.Point(546, 427)
+        Me.BarDockControl1.Location = New System.Drawing.Point(546, 401)
         Me.BarDockControl1.Manager = Me.periodos_DetailsBarManager
-        Me.BarDockControl1.Size = New System.Drawing.Size(520, 26)
+        Me.BarDockControl1.Size = New System.Drawing.Size(520, 23)
         '
         'barDockControlBottom
         '
@@ -1049,9 +1052,9 @@ Partial Class FormulaEditForm
         'BarDockControl2
         '
         Me.BarDockControl2.CausesValidation = False
-        Me.BarDockControl2.Location = New System.Drawing.Point(24, 427)
+        Me.BarDockControl2.Location = New System.Drawing.Point(24, 401)
         Me.BarDockControl2.Manager = Me.liquidacion_DetailsBarManager
-        Me.BarDockControl2.Size = New System.Drawing.Size(494, 26)
+        Me.BarDockControl2.Size = New System.Drawing.Size(494, 23)
         '
         'BarDockControl3
         '
@@ -1073,9 +1076,9 @@ Partial Class FormulaEditForm
         '
         Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
         Me.Root.GroupBordersVisible = False
-        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem2, Me.LayoutControlItem3, Me.LayoutControlItem5, Me.LayoutControlItem8, Me.LayoutControlItem9, Me.LayoutControlItem16, Me.LayoutControlGroup1, Me.LayoutControlGroup2, Me.LayoutControlItem4, Me.LayoutControlItem6, Me.LayoutControlItem7, Me.EmptySpaceItem1, Me.LayoutControlItem10, Me.LayoutControlItem11, Me.LayoutControlItem12, Me.LayoutControlItem13, Me.LayoutControlItem17, Me.LayoutControlItem19, Me.LayoutControlItem18, Me.EmptySpaceItem2, Me.EmptySpaceItem3, Me.LayoutControlItem25, Me.LayoutControlItem14, Me.LayoutControlItem15, Me.EmptySpaceItem4, Me.EmptySpaceItem5, Me.EmptySpaceItem6, Me.LayoutControlItem26, Me.EmptySpaceItem7, Me.LayoutControlItem27, Me.LayoutControlItem28, Me.EmptySpaceItem8})
+        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem2, Me.LayoutControlItem3, Me.LayoutControlItem5, Me.LayoutControlItem8, Me.LayoutControlItem9, Me.LayoutControlItem16, Me.LayoutControlGroup1, Me.LayoutControlGroup2, Me.LayoutControlItem4, Me.LayoutControlItem6, Me.LayoutControlItem7, Me.EmptySpaceItem1, Me.LayoutControlItem10, Me.LayoutControlItem11, Me.LayoutControlItem12, Me.LayoutControlItem13, Me.LayoutControlItem17, Me.LayoutControlItem19, Me.LayoutControlItem18, Me.EmptySpaceItem2, Me.EmptySpaceItem3, Me.LayoutControlItem25, Me.LayoutControlItem14, Me.LayoutControlItem15, Me.EmptySpaceItem5, Me.EmptySpaceItem6, Me.LayoutControlItem26, Me.EmptySpaceItem7, Me.LayoutControlItem27, Me.LayoutControlItem28, Me.EmptySpaceItem8, Me.LayoutControlItem29})
         Me.Root.Name = "Root"
-        Me.Root.Size = New System.Drawing.Size(1090, 814)
+        Me.Root.Size = New System.Drawing.Size(1090, 788)
         Me.Root.TextVisible = False
         '
         'LayoutControlItem2
@@ -1126,7 +1129,7 @@ Partial Class FormulaEditForm
         'LayoutControlItem16
         '
         Me.LayoutControlItem16.Control = Me.AfectaMejorSueldoCheckEdit
-        Me.LayoutControlItem16.Location = New System.Drawing.Point(124, 254)
+        Me.LayoutControlItem16.Location = New System.Drawing.Point(124, 271)
         Me.LayoutControlItem16.Name = "LayoutControlItem16"
         Me.LayoutControlItem16.Size = New System.Drawing.Size(197, 24)
         Me.LayoutControlItem16.Text = "Afecta Mejor Sueldo:"
@@ -1136,7 +1139,7 @@ Partial Class FormulaEditForm
         'LayoutControlGroup1
         '
         Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem20, Me.LayoutControlItem23})
-        Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 382)
+        Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 356)
         Me.LayoutControlGroup1.Name = "LayoutControlGroup1"
         Me.LayoutControlGroup1.Size = New System.Drawing.Size(522, 412)
         Me.LayoutControlGroup1.Text = "Aplicar a las siguientes liquidaciones"
@@ -1144,9 +1147,9 @@ Partial Class FormulaEditForm
         'LayoutControlItem20
         '
         Me.LayoutControlItem20.Control = Me.gridControlLiquidaciones
-        Me.LayoutControlItem20.Location = New System.Drawing.Point(0, 30)
+        Me.LayoutControlItem20.Location = New System.Drawing.Point(0, 27)
         Me.LayoutControlItem20.Name = "LayoutControlItem20"
-        Me.LayoutControlItem20.Size = New System.Drawing.Size(498, 337)
+        Me.LayoutControlItem20.Size = New System.Drawing.Size(498, 340)
         Me.LayoutControlItem20.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem20.TextVisible = False
         '
@@ -1155,14 +1158,14 @@ Partial Class FormulaEditForm
         Me.LayoutControlItem23.Control = Me.BarDockControl2
         Me.LayoutControlItem23.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem23.Name = "LayoutControlItem23"
-        Me.LayoutControlItem23.Size = New System.Drawing.Size(498, 30)
+        Me.LayoutControlItem23.Size = New System.Drawing.Size(498, 27)
         Me.LayoutControlItem23.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem23.TextVisible = False
         '
         'LayoutControlGroup2
         '
         Me.LayoutControlGroup2.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem22, Me.LayoutControlItem21})
-        Me.LayoutControlGroup2.Location = New System.Drawing.Point(522, 382)
+        Me.LayoutControlGroup2.Location = New System.Drawing.Point(522, 356)
         Me.LayoutControlGroup2.Name = "LayoutControlGroup2"
         Me.LayoutControlGroup2.Size = New System.Drawing.Size(548, 412)
         Me.LayoutControlGroup2.Text = "Aplicar en los siguientes periodos"
@@ -1170,9 +1173,9 @@ Partial Class FormulaEditForm
         'LayoutControlItem22
         '
         Me.LayoutControlItem22.Control = Me.gridControlPeriodos
-        Me.LayoutControlItem22.Location = New System.Drawing.Point(0, 30)
+        Me.LayoutControlItem22.Location = New System.Drawing.Point(0, 27)
         Me.LayoutControlItem22.Name = "LayoutControlItem22"
-        Me.LayoutControlItem22.Size = New System.Drawing.Size(524, 337)
+        Me.LayoutControlItem22.Size = New System.Drawing.Size(524, 340)
         Me.LayoutControlItem22.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem22.TextVisible = False
         '
@@ -1181,7 +1184,7 @@ Partial Class FormulaEditForm
         Me.LayoutControlItem21.Control = Me.BarDockControl1
         Me.LayoutControlItem21.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem21.Name = "LayoutControlItem21"
-        Me.LayoutControlItem21.Size = New System.Drawing.Size(524, 30)
+        Me.LayoutControlItem21.Size = New System.Drawing.Size(524, 27)
         Me.LayoutControlItem21.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem21.TextVisible = False
         '
@@ -1273,7 +1276,7 @@ Partial Class FormulaEditForm
         'LayoutControlItem17
         '
         Me.LayoutControlItem17.Control = Me.AfectaImpuestoGananciaCheckEdit
-        Me.LayoutControlItem17.Location = New System.Drawing.Point(321, 254)
+        Me.LayoutControlItem17.Location = New System.Drawing.Point(321, 271)
         Me.LayoutControlItem17.Name = "LayoutControlItem17"
         Me.LayoutControlItem17.Size = New System.Drawing.Size(749, 24)
         Me.LayoutControlItem17.Text = "Afecta Impuesto Ganancia:"
@@ -1283,7 +1286,7 @@ Partial Class FormulaEditForm
         'LayoutControlItem19
         '
         Me.LayoutControlItem19.Control = Me.DescripcionCompletaTextEdit
-        Me.LayoutControlItem19.Location = New System.Drawing.Point(0, 278)
+        Me.LayoutControlItem19.Location = New System.Drawing.Point(0, 295)
         Me.LayoutControlItem19.Name = "LayoutControlItem19"
         Me.LayoutControlItem19.Size = New System.Drawing.Size(557, 24)
         Me.LayoutControlItem19.Text = "Descripcion Completa:"
@@ -1292,7 +1295,7 @@ Partial Class FormulaEditForm
         'LayoutControlItem18
         '
         Me.LayoutControlItem18.Control = Me.IncluirDescripcionConceptoCheckEdit
-        Me.LayoutControlItem18.Location = New System.Drawing.Point(557, 278)
+        Me.LayoutControlItem18.Location = New System.Drawing.Point(557, 295)
         Me.LayoutControlItem18.Name = "LayoutControlItem18"
         Me.LayoutControlItem18.Size = New System.Drawing.Size(513, 24)
         Me.LayoutControlItem18.Text = "Incluir Descripcion Concepto:"
@@ -1302,7 +1305,7 @@ Partial Class FormulaEditForm
         'EmptySpaceItem2
         '
         Me.EmptySpaceItem2.AllowHotTrack = False
-        Me.EmptySpaceItem2.Location = New System.Drawing.Point(0, 254)
+        Me.EmptySpaceItem2.Location = New System.Drawing.Point(0, 271)
         Me.EmptySpaceItem2.Name = "EmptySpaceItem2"
         Me.EmptySpaceItem2.Size = New System.Drawing.Size(124, 24)
         Me.EmptySpaceItem2.TextSize = New System.Drawing.Size(0, 0)
@@ -1310,9 +1313,9 @@ Partial Class FormulaEditForm
         'EmptySpaceItem3
         '
         Me.EmptySpaceItem3.AllowHotTrack = False
-        Me.EmptySpaceItem3.Location = New System.Drawing.Point(0, 372)
+        Me.EmptySpaceItem3.Location = New System.Drawing.Point(0, 343)
         Me.EmptySpaceItem3.Name = "EmptySpaceItem3"
-        Me.EmptySpaceItem3.Size = New System.Drawing.Size(1070, 10)
+        Me.EmptySpaceItem3.Size = New System.Drawing.Size(1070, 13)
         Me.EmptySpaceItem3.TextSize = New System.Drawing.Size(0, 0)
         '
         'LayoutControlItem25
@@ -1320,41 +1323,33 @@ Partial Class FormulaEditForm
         Me.LayoutControlItem25.Control = Me.FormulaCantidadTextEdit1
         Me.LayoutControlItem25.Location = New System.Drawing.Point(0, 120)
         Me.LayoutControlItem25.Name = "LayoutControlItem25"
-        Me.LayoutControlItem25.Size = New System.Drawing.Size(1070, 54)
+        Me.LayoutControlItem25.Size = New System.Drawing.Size(1070, 52)
         Me.LayoutControlItem25.Text = "Formula Cantidad:"
         Me.LayoutControlItem25.TextSize = New System.Drawing.Size(106, 13)
         '
         'LayoutControlItem14
         '
         Me.LayoutControlItem14.Control = Me.FormulaImporteTextEdit
-        Me.LayoutControlItem14.Location = New System.Drawing.Point(0, 174)
+        Me.LayoutControlItem14.Location = New System.Drawing.Point(0, 216)
         Me.LayoutControlItem14.Name = "LayoutControlItem14"
-        Me.LayoutControlItem14.Size = New System.Drawing.Size(1070, 80)
+        Me.LayoutControlItem14.Size = New System.Drawing.Size(1070, 55)
         Me.LayoutControlItem14.Text = "Formula Importe:"
         Me.LayoutControlItem14.TextSize = New System.Drawing.Size(106, 13)
         '
         'LayoutControlItem15
         '
         Me.LayoutControlItem15.Control = Me.NovedadCheckEdit
-        Me.LayoutControlItem15.Location = New System.Drawing.Point(124, 302)
+        Me.LayoutControlItem15.Location = New System.Drawing.Point(124, 319)
         Me.LayoutControlItem15.Name = "LayoutControlItem15"
         Me.LayoutControlItem15.Size = New System.Drawing.Size(473, 24)
         Me.LayoutControlItem15.Text = "Novedad:"
         Me.LayoutControlItem15.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem15.TextVisible = False
         '
-        'EmptySpaceItem4
-        '
-        Me.EmptySpaceItem4.AllowHotTrack = False
-        Me.EmptySpaceItem4.Location = New System.Drawing.Point(0, 326)
-        Me.EmptySpaceItem4.Name = "EmptySpaceItem4"
-        Me.EmptySpaceItem4.Size = New System.Drawing.Size(1070, 46)
-        Me.EmptySpaceItem4.TextSize = New System.Drawing.Size(0, 0)
-        '
         'EmptySpaceItem5
         '
         Me.EmptySpaceItem5.AllowHotTrack = False
-        Me.EmptySpaceItem5.Location = New System.Drawing.Point(0, 302)
+        Me.EmptySpaceItem5.Location = New System.Drawing.Point(0, 319)
         Me.EmptySpaceItem5.Name = "EmptySpaceItem5"
         Me.EmptySpaceItem5.Size = New System.Drawing.Size(124, 24)
         Me.EmptySpaceItem5.TextSize = New System.Drawing.Size(0, 0)
@@ -1389,7 +1384,7 @@ Partial Class FormulaEditForm
         'LayoutControlItem27
         '
         Me.LayoutControlItem27.Control = Me.AuxiliarCheckEdit
-        Me.LayoutControlItem27.Location = New System.Drawing.Point(597, 302)
+        Me.LayoutControlItem27.Location = New System.Drawing.Point(597, 319)
         Me.LayoutControlItem27.Name = "LayoutControlItem27"
         Me.LayoutControlItem27.Size = New System.Drawing.Size(473, 24)
         Me.LayoutControlItem27.Text = "Auxiliar:"
@@ -1547,7 +1542,7 @@ Partial Class FormulaEditForm
         'ribbonControl2
         '
         Me.ribbonControl2.ExpandCollapseItem.Id = 0
-        Me.ribbonControl2.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl2.ExpandCollapseItem, Me.ribbonControl2.SearchEditItem, Me.bbiSave1, Me.bbiSaveAndClose1, Me.bbiSaveAndNew1, Me.bbiReset1, Me.bbiSaveLayout1, Me.bbiResetLayout1, Me.bbiDelete1, Me.bbiClose1, Me.bsiEstado1})
+        Me.ribbonControl2.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl2.ExpandCollapseItem, Me.bbiSave1, Me.bbiSaveAndClose1, Me.bbiSaveAndNew1, Me.bbiReset1, Me.bbiSaveLayout1, Me.bbiResetLayout1, Me.bbiDelete1, Me.bbiClose1, Me.bsiEstado1})
         Me.ribbonControl2.Location = New System.Drawing.Point(0, 0)
         Me.ribbonControl2.MaxItemId = 28
         Me.ribbonControl2.Name = "ribbonControl2"
@@ -1672,30 +1667,30 @@ Partial Class FormulaEditForm
         '
         'DescripcionTextEdit1
         '
-        Me.DescripcionTextEdit1.Location = New System.Drawing.Point(73, 36)
+        Me.DescripcionTextEdit1.Location = New System.Drawing.Point(82, 36)
         Me.DescripcionTextEdit1.MenuManager = Me.ribbonControl2
         Me.DescripcionTextEdit1.Name = "DescripcionTextEdit1"
-        Me.DescripcionTextEdit1.Size = New System.Drawing.Size(641, 20)
+        Me.DescripcionTextEdit1.Size = New System.Drawing.Size(632, 20)
         Me.DescripcionTextEdit1.StyleController = Me.dataLayout1
         Me.DescripcionTextEdit1.TabIndex = 7
         '
         'NombreTextEdit
         '
-        Me.NombreTextEdit.Location = New System.Drawing.Point(241, 12)
+        Me.NombreTextEdit.Location = New System.Drawing.Point(250, 12)
         Me.NombreTextEdit.MenuManager = Me.ribbonControl2
         Me.NombreTextEdit.Name = "NombreTextEdit"
-        Me.NombreTextEdit.Size = New System.Drawing.Size(473, 20)
+        Me.NombreTextEdit.Size = New System.Drawing.Size(464, 20)
         Me.NombreTextEdit.StyleController = Me.dataLayout1
         Me.NombreTextEdit.TabIndex = 6
         '
         'CodigoSpinEdit1
         '
         Me.CodigoSpinEdit1.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.CodigoSpinEdit1.Location = New System.Drawing.Point(73, 12)
+        Me.CodigoSpinEdit1.Location = New System.Drawing.Point(82, 12)
         Me.CodigoSpinEdit1.MenuManager = Me.ribbonControl2
         Me.CodigoSpinEdit1.Name = "CodigoSpinEdit1"
         Me.CodigoSpinEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.CodigoSpinEdit1.Size = New System.Drawing.Size(95, 20)
+        Me.CodigoSpinEdit1.Size = New System.Drawing.Size(86, 20)
         Me.CodigoSpinEdit1.StyleController = Me.dataLayout1
         Me.CodigoSpinEdit1.TabIndex = 5
         '
@@ -1780,6 +1775,25 @@ Partial Class FormulaEditForm
         Me.liquidacion_DetailsPopUpMenu.Manager = Me.liquidacion_DetailsBarManager
         Me.liquidacion_DetailsPopUpMenu.Name = "liquidacion_DetailsPopUpMenu"
         '
+        'FormulaBaseTextEdit
+        '
+        Me.FormulaBaseTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.FormulasBindingSource, "FormulaBase", True))
+        Me.FormulaBaseTextEdit.Location = New System.Drawing.Point(130, 184)
+        Me.FormulaBaseTextEdit.MenuManager = Me.ribbonControl
+        Me.FormulaBaseTextEdit.Name = "FormulaBaseTextEdit"
+        Me.FormulaBaseTextEdit.Size = New System.Drawing.Size(948, 40)
+        Me.FormulaBaseTextEdit.StyleController = Me.dataLayout
+        Me.FormulaBaseTextEdit.TabIndex = 82
+        '
+        'LayoutControlItem29
+        '
+        Me.LayoutControlItem29.Control = Me.FormulaBaseTextEdit
+        Me.LayoutControlItem29.Location = New System.Drawing.Point(0, 172)
+        Me.LayoutControlItem29.Name = "LayoutControlItem29"
+        Me.LayoutControlItem29.Size = New System.Drawing.Size(1070, 44)
+        Me.LayoutControlItem29.Text = "Formula Base:"
+        Me.LayoutControlItem29.TextSize = New System.Drawing.Size(106, 13)
+        '
         'FormulaEditForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1860,7 +1874,6 @@ Partial Class FormulaEditForm
         CType(Me.LayoutControlItem25, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem14, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem15, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EmptySpaceItem4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmptySpaceItem6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem26, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1891,6 +1904,8 @@ Partial Class FormulaEditForm
         CType(Me.LayoutControlItem31, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem51, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.liquidacion_DetailsPopUpMenu, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.FormulaBaseTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem29, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2052,7 +2067,6 @@ Partial Class FormulaEditForm
     Friend WithEvents UnidadesBindingSource As BindingSource
     Friend WithEvents NovedadCheckEdit As DevExpress.XtraEditors.CheckEdit
     Friend WithEvents LayoutControlItem15 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents EmptySpaceItem4 As DevExpress.XtraLayout.EmptySpaceItem
     Friend WithEvents EmptySpaceItem5 As DevExpress.XtraLayout.EmptySpaceItem
     Friend WithEvents EmptySpaceItem6 As DevExpress.XtraLayout.EmptySpaceItem
     Friend WithEvents CodigoAfipSpinEdit As DevExpress.XtraEditors.SpinEdit
@@ -2064,6 +2078,8 @@ Partial Class FormulaEditForm
     Friend WithEvents OrdenSpinEdit As DevExpress.XtraEditors.SpinEdit
     Friend WithEvents LayoutControlItem28 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents EmptySpaceItem8 As DevExpress.XtraLayout.EmptySpaceItem
+    Friend WithEvents FormulaBaseTextEdit As DevExpress.XtraEditors.MemoEdit
+    Friend WithEvents LayoutControlItem29 As DevExpress.XtraLayout.LayoutControlItem
     'Friend WithEvents LayoutControlItem28 As DevExpress.XtraLayout.LayoutControlItem
     'Friend WithEvents LayoutControlItem29 As DevExpress.XtraLayout.LayoutControlItem
     'Friend WithEvents LayoutControlItem30 As DevExpress.XtraLayout.LayoutControlItem

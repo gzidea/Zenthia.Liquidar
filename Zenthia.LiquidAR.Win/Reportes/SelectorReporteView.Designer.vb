@@ -28,6 +28,7 @@ Partial Class SelectorReporteView
         Me.colDescripcion = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.checkEsPredeterminado = New DevExpress.XtraEditors.CheckEdit()
         Me.btnMarcarPredeterminado = New DevExpress.XtraEditors.SimpleButton()
+        Me.bbiEditarReporte = New DevExpress.XtraEditors.SimpleButton()
         Me.mvvmContext1 = New DevExpress.Utils.MVVM.MVVMContext(Me.components)
         CType(Me.searchLookUpEditReportes.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ReportesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -93,9 +94,21 @@ Partial Class SelectorReporteView
         Me.btnMarcarPredeterminado.Size = New System.Drawing.Size(30, 26)
         Me.btnMarcarPredeterminado.TabIndex = 2
         '
+        'bbiEditarReporte
+        '
+        Me.bbiEditarReporte.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter
+        Me.bbiEditarReporte.ImageOptions.SvgImage = CType(resources.GetObject("SimpleButton1.ImageOptions.SvgImage"), DevExpress.Utils.Svg.SvgImage)
+        Me.bbiEditarReporte.ImageOptions.SvgImageSize = New System.Drawing.Size(16, 16)
+        Me.bbiEditarReporte.Location = New System.Drawing.Point(472, 11)
+        Me.bbiEditarReporte.Name = "bbiEditarReporte"
+        Me.bbiEditarReporte.Size = New System.Drawing.Size(30, 26)
+        Me.bbiEditarReporte.TabIndex = 3
+        Me.bbiEditarReporte.ToolTip = "Editar reporte seleccionado"
+        Me.bbiEditarReporte.ToolTipTitle = "Reportes"
+        '
         'mvvmContext1
         '
-        Me.mvvmContext1.BindingExpressions.AddRange(New DevExpress.Utils.MVVM.BindingExpression() {DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.SelectorReporteViewModel), "MarcarComoPredeterminado", Me.btnMarcarPredeterminado)})
+        Me.mvvmContext1.BindingExpressions.AddRange(New DevExpress.Utils.MVVM.BindingExpression() {DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.SelectorReporteViewModel), "MarcarComoPredeterminado", Me.btnMarcarPredeterminado), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.SelectorReporteViewModel), "EditarLayout", Me.bbiEditarReporte)})
         Me.mvvmContext1.ContainerControl = Me
         Me.mvvmContext1.ViewModelType = GetType(Zenthia.LiquidAR.Win.SelectorReporteViewModel)
         '
@@ -103,11 +116,12 @@ Partial Class SelectorReporteView
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.bbiEditarReporte)
         Me.Controls.Add(Me.btnMarcarPredeterminado)
         Me.Controls.Add(Me.checkEsPredeterminado)
         Me.Controls.Add(Me.searchLookUpEditReportes)
         Me.Name = "SelectorReporteView"
-        Me.Size = New System.Drawing.Size(479, 67)
+        Me.Size = New System.Drawing.Size(509, 67)
         CType(Me.searchLookUpEditReportes.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ReportesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SearchLookUpEdit1View, System.ComponentModel.ISupportInitialize).EndInit()
@@ -125,4 +139,5 @@ Partial Class SelectorReporteView
     Friend WithEvents colDescripcion As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents btnMarcarPredeterminado As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents checkEsPredeterminado As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents bbiEditarReporte As DevExpress.XtraEditors.SimpleButton
 End Class

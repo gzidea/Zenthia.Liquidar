@@ -21,15 +21,15 @@ Partial Class BancoEditForm
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.mvvmContext = New DevExpress.Utils.MVVM.MVVMContext(Me.components)
-        Me.ribbonControl = New DevExpress.XtraBars.Ribbon.RibbonControl()
-        Me.bbiSave = New DevExpress.XtraBars.BarButtonItem()
-        Me.bbiSaveAndClose = New DevExpress.XtraBars.BarButtonItem()
-        Me.bbiSaveAndNew = New DevExpress.XtraBars.BarButtonItem()
+        Me.bbiClose = New DevExpress.XtraBars.BarButtonItem()
+        Me.bbiDelete = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiReset = New DevExpress.XtraBars.BarButtonItem()
+        Me.bbiSave = New DevExpress.XtraBars.BarButtonItem()
+        Me.bbiSaveAndNew = New DevExpress.XtraBars.BarButtonItem()
+        Me.ribbonControl = New DevExpress.XtraBars.Ribbon.RibbonControl()
+        Me.bbiSaveAndClose = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiSaveLayout = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiResetLayout = New DevExpress.XtraBars.BarButtonItem()
-        Me.bbiDelete = New DevExpress.XtraBars.BarButtonItem()
-        Me.bbiClose = New DevExpress.XtraBars.BarButtonItem()
         Me.bsiEstado = New DevExpress.XtraBars.BarStaticItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -69,22 +69,30 @@ Partial Class BancoEditForm
         '
         'mvvmContext
         '
+        Me.mvvmContext.BindingExpressions.AddRange(New DevExpress.Utils.MVVM.BindingExpression() {DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.BancoViewModel), "Close", Me.bbiClose), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.BancoViewModel), "Delete", Me.bbiDelete), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.BancoViewModel), "Reset", Me.bbiReset), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.BancoViewModel), "Save", Me.bbiSave), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.BancoViewModel), "SaveAndClose", Me.bbiSaveAndClose), DevExpress.Utils.MVVM.BindingExpression.CreateCommandBinding(GetType(Zenthia.LiquidAR.Win.BancoViewModel), "SaveAndNew", Me.bbiSaveAndNew)})
         Me.mvvmContext.ContainerControl = Me
         Me.mvvmContext.ViewModelType = GetType(Zenthia.LiquidAR.Win.BancoViewModel)
         '
-        'ribbonControl
+        'bbiClose
         '
-        Me.ribbonControl.ExpandCollapseItem.Id = 0
-        Me.ribbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl.ExpandCollapseItem, Me.ribbonControl.SearchEditItem, Me.bbiSave, Me.bbiSaveAndClose, Me.bbiSaveAndNew, Me.bbiReset, Me.bbiSaveLayout, Me.bbiResetLayout, Me.bbiDelete, Me.bbiClose, Me.bsiEstado})
-        Me.ribbonControl.Location = New System.Drawing.Point(0, 0)
-        Me.ribbonControl.MaxItemId = 28
-        Me.ribbonControl.Name = "ribbonControl"
-        Me.ribbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
-        Me.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.[False]
-        Me.ribbonControl.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
-        Me.ribbonControl.Size = New System.Drawing.Size(813, 100)
-        Me.ribbonControl.StatusBar = Me.RibbonStatusBar1
-        Me.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
+        Me.bbiClose.Caption = "Cerrar"
+        Me.bbiClose.Id = 26
+        Me.bbiClose.ImageOptions.ImageUri.Uri = "Close"
+        Me.bbiClose.Name = "bbiClose"
+        '
+        'bbiDelete
+        '
+        Me.bbiDelete.Caption = "Quitar"
+        Me.bbiDelete.Id = 25
+        Me.bbiDelete.ImageOptions.ImageUri.Uri = "Delete"
+        Me.bbiDelete.Name = "bbiDelete"
+        '
+        'bbiReset
+        '
+        Me.bbiReset.Caption = "Deshacer"
+        Me.bbiReset.Id = 22
+        Me.bbiReset.ImageOptions.ImageUri.Uri = "Reset"
+        Me.bbiReset.Name = "bbiReset"
         '
         'bbiSave
         '
@@ -93,13 +101,6 @@ Partial Class BancoEditForm
         Me.bbiSave.ImageOptions.ImageUri.Uri = "Save"
         Me.bbiSave.Name = "bbiSave"
         '
-        'bbiSaveAndClose
-        '
-        Me.bbiSaveAndClose.Caption = "Guardar y Cerrar"
-        Me.bbiSaveAndClose.Id = 20
-        Me.bbiSaveAndClose.ImageOptions.ImageUri.Uri = "SaveAndClose"
-        Me.bbiSaveAndClose.Name = "bbiSaveAndClose"
-        '
         'bbiSaveAndNew
         '
         Me.bbiSaveAndNew.Caption = "Guardar y Nuevo"
@@ -107,12 +108,26 @@ Partial Class BancoEditForm
         Me.bbiSaveAndNew.ImageOptions.ImageUri.Uri = "SaveAndNew"
         Me.bbiSaveAndNew.Name = "bbiSaveAndNew"
         '
-        'bbiReset
+        'ribbonControl
         '
-        Me.bbiReset.Caption = "Deshacer"
-        Me.bbiReset.Id = 22
-        Me.bbiReset.ImageOptions.ImageUri.Uri = "Reset"
-        Me.bbiReset.Name = "bbiReset"
+        Me.ribbonControl.ExpandCollapseItem.Id = 0
+        Me.ribbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl.ExpandCollapseItem, Me.bbiSave, Me.bbiSaveAndClose, Me.bbiSaveAndNew, Me.bbiReset, Me.bbiSaveLayout, Me.bbiResetLayout, Me.bbiDelete, Me.bbiClose, Me.bsiEstado})
+        Me.ribbonControl.Location = New System.Drawing.Point(0, 0)
+        Me.ribbonControl.MaxItemId = 28
+        Me.ribbonControl.Name = "ribbonControl"
+        Me.ribbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
+        Me.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.[False]
+        Me.ribbonControl.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
+        Me.ribbonControl.Size = New System.Drawing.Size(813, 126)
+        Me.ribbonControl.StatusBar = Me.RibbonStatusBar1
+        Me.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
+        '
+        'bbiSaveAndClose
+        '
+        Me.bbiSaveAndClose.Caption = "Guardar y Cerrar"
+        Me.bbiSaveAndClose.Id = 20
+        Me.bbiSaveAndClose.ImageOptions.ImageUri.Uri = "SaveAndClose"
+        Me.bbiSaveAndClose.Name = "bbiSaveAndClose"
         '
         'bbiSaveLayout
         '
@@ -127,20 +142,6 @@ Partial Class BancoEditForm
         Me.bbiResetLayout.Id = 24
         Me.bbiResetLayout.ImageOptions.ImageUri.Uri = "Reset"
         Me.bbiResetLayout.Name = "bbiResetLayout"
-        '
-        'bbiDelete
-        '
-        Me.bbiDelete.Caption = "Quitar"
-        Me.bbiDelete.Id = 25
-        Me.bbiDelete.ImageOptions.ImageUri.Uri = "Delete"
-        Me.bbiDelete.Name = "bbiDelete"
-        '
-        'bbiClose
-        '
-        Me.bbiClose.Caption = "Cerrar"
-        Me.bbiClose.Id = 26
-        Me.bbiClose.ImageOptions.ImageUri.Uri = "Close"
-        Me.bbiClose.Name = "bbiClose"
         '
         'bsiEstado
         '
@@ -203,20 +204,20 @@ Partial Class BancoEditForm
         Me.LayoutControl1.Controls.Add(Me.SpinEdit1)
         Me.LayoutControl1.Controls.Add(Me.TextEdit2)
         Me.LayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LayoutControl1.Location = New System.Drawing.Point(0, 100)
+        Me.LayoutControl1.Location = New System.Drawing.Point(0, 126)
         Me.LayoutControl1.Name = "LayoutControl1"
         Me.LayoutControl1.Root = Me.Root
-        Me.LayoutControl1.Size = New System.Drawing.Size(813, 278)
+        Me.LayoutControl1.Size = New System.Drawing.Size(813, 252)
         Me.LayoutControl1.TabIndex = 4
         Me.LayoutControl1.Text = "LayoutControl1"
         '
         'TextEdit1
         '
         Me.TextEdit1.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.BancosBindingSource, "Denominacion", True))
-        Me.TextEdit1.Location = New System.Drawing.Point(280, 12)
+        Me.TextEdit1.Location = New System.Drawing.Point(289, 12)
         Me.TextEdit1.MenuManager = Me.ribbonControl
         Me.TextEdit1.Name = "TextEdit1"
-        Me.TextEdit1.Size = New System.Drawing.Size(521, 20)
+        Me.TextEdit1.Size = New System.Drawing.Size(512, 20)
         Me.TextEdit1.StyleController = Me.LayoutControl1
         Me.TextEdit1.TabIndex = 4
         '
@@ -228,21 +229,21 @@ Partial Class BancoEditForm
         '
         Me.SpinEdit1.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.BancosBindingSource, "CodigoEntidad", True))
         Me.SpinEdit1.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.SpinEdit1.Location = New System.Drawing.Point(81, 12)
+        Me.SpinEdit1.Location = New System.Drawing.Point(90, 12)
         Me.SpinEdit1.MenuManager = Me.ribbonControl
         Me.SpinEdit1.Name = "SpinEdit1"
         Me.SpinEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.SpinEdit1.Size = New System.Drawing.Size(93, 20)
+        Me.SpinEdit1.Size = New System.Drawing.Size(84, 20)
         Me.SpinEdit1.StyleController = Me.LayoutControl1
         Me.SpinEdit1.TabIndex = 5
         '
         'TextEdit2
         '
         Me.TextEdit2.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.BancosBindingSource, "Abreviacion", True))
-        Me.TextEdit2.Location = New System.Drawing.Point(81, 36)
+        Me.TextEdit2.Location = New System.Drawing.Point(90, 36)
         Me.TextEdit2.MenuManager = Me.ribbonControl
         Me.TextEdit2.Name = "TextEdit2"
-        Me.TextEdit2.Size = New System.Drawing.Size(245, 20)
+        Me.TextEdit2.Size = New System.Drawing.Size(236, 20)
         Me.TextEdit2.StyleController = Me.LayoutControl1
         Me.TextEdit2.TabIndex = 6
         '
@@ -252,7 +253,7 @@ Partial Class BancoEditForm
         Me.Root.GroupBordersVisible = False
         Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1, Me.EmptySpaceItem1, Me.LayoutControlItem2, Me.EmptySpaceItem2, Me.LayoutControlItem3, Me.EmptySpaceItem3})
         Me.Root.Name = "Root"
-        Me.Root.Size = New System.Drawing.Size(813, 278)
+        Me.Root.Size = New System.Drawing.Size(813, 252)
         Me.Root.TextVisible = False
         '
         'LayoutControlItem1
@@ -269,7 +270,7 @@ Partial Class BancoEditForm
         Me.EmptySpaceItem1.AllowHotTrack = False
         Me.EmptySpaceItem1.Location = New System.Drawing.Point(0, 48)
         Me.EmptySpaceItem1.Name = "EmptySpaceItem1"
-        Me.EmptySpaceItem1.Size = New System.Drawing.Size(793, 210)
+        Me.EmptySpaceItem1.Size = New System.Drawing.Size(793, 184)
         Me.EmptySpaceItem1.TextSize = New System.Drawing.Size(0, 0)
         '
         'LayoutControlItem2

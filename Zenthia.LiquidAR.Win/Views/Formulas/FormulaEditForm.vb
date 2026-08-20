@@ -50,5 +50,8 @@ Public Class FormulaEditForm
         fluent.BindCommand(bbiPeriodo_DetailsRefresh, Sub(x) x.FormulaPeriodos.Refresh())
 
         fluent.SetBinding(bsiEstado, Function(item) item.Caption, Function(x) x.Estado, Function(estado) String.Format("Estado : {0}", estado))
+
+        fluent.SetBinding(FormulaBaseTextEdit, Function(c) c.Enabled, Function(x) x.CanEditBase)
+        fluent.SetBinding(FormulaImporteTextEdit, Function(c) c.Enabled, Function(x) x.CanEditImporte)
     End Sub
 End Class

@@ -38,6 +38,7 @@ Partial Public Class xrDosRecibosEnUnA4
         Dim SeriesPoint8 As DevExpress.XtraCharts.SeriesPoint = New DevExpress.XtraCharts.SeriesPoint("cuatro", New Object() {CType(20.0R, Object)}, 3)
         Dim PieSeriesView2 As DevExpress.XtraCharts.PieSeriesView = New DevExpress.XtraCharts.PieSeriesView()
         Dim ChartTitle2 As DevExpress.XtraCharts.ChartTitle = New DevExpress.XtraCharts.ChartTitle()
+        Dim XrWatermark1 As DevExpress.XtraReports.UI.XRWatermark = New DevExpress.XtraReports.UI.XRWatermark()
         Me.TopMargin = New DevExpress.XtraReports.UI.TopMarginBand()
         Me.BottomMargin = New DevExpress.XtraReports.UI.BottomMarginBand()
         Me.Detail = New DevExpress.XtraReports.UI.DetailBand()
@@ -397,6 +398,7 @@ Partial Public Class xrDosRecibosEnUnA4
         'XrTableCell32
         '
         Me.XrTableCell32.Dpi = 254.0!
+        Me.XrTableCell32.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Iif([TipoLiquidacion].[CodigoAfip] == 'Q', [TipoLiquidacion].[Id], '')" & Global.Microsoft.VisualBasic.ChrW(10))})
         Me.XrTableCell32.Multiline = True
         Me.XrTableCell32.Name = "XrTableCell32"
         Me.XrTableCell32.Text = "1"
@@ -405,6 +407,8 @@ Partial Public Class xrDosRecibosEnUnA4
         'XrTableCell33
         '
         Me.XrTableCell33.Dpi = 254.0!
+        Me.XrTableCell33.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "FormatString('{0:MMMM}', AddMonths(Today(), ToInt(Substring([Periodo], 0,2)) - Ge" &
+                    "tMonth(Today())))" & Global.Microsoft.VisualBasic.ChrW(10))})
         Me.XrTableCell33.Multiline = True
         Me.XrTableCell33.Name = "XrTableCell33"
         Me.XrTableCell33.Text = "DICIEMBRE"
@@ -413,6 +417,7 @@ Partial Public Class xrDosRecibosEnUnA4
         'XrTableCell34
         '
         Me.XrTableCell34.Dpi = 254.0!
+        Me.XrTableCell34.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Substring([Periodo], 2, 4)" & Global.Microsoft.VisualBasic.ChrW(10))})
         Me.XrTableCell34.Multiline = True
         Me.XrTableCell34.Name = "XrTableCell34"
         Me.XrTableCell34.Text = "2026"
@@ -443,6 +448,7 @@ Partial Public Class xrDosRecibosEnUnA4
         Me.XrTableCell37.Multiline = True
         Me.XrTableCell37.Name = "XrTableCell37"
         Me.XrTableCell37.Text = "XrTableCell6"
+        Me.XrTableCell37.TextFormatString = "{0:c2}"
         Me.XrTableCell37.Weight = 0.40896244546813509R
         '
         'XrTableCell38
@@ -526,9 +532,9 @@ Partial Public Class xrDosRecibosEnUnA4
         '
         'XrTableCell45
         '
+        Me.XrTableCell45.CanGrow = False
         Me.XrTableCell45.Dpi = 254.0!
         Me.XrTableCell45.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Legajos].[Categorias].[Descripcion]")})
-        Me.XrTableCell45.Multiline = True
         Me.XrTableCell45.Name = "XrTableCell45"
         Me.XrTableCell45.Text = "XrTableCell11"
         Me.XrTableCell45.Weight = 0.77494388912553436R
@@ -763,6 +769,7 @@ Partial Public Class xrDosRecibosEnUnA4
         'XrTableCell4
         '
         Me.XrTableCell4.Dpi = 254.0!
+        Me.XrTableCell4.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Iif([TipoLiquidacion].[CodigoAfip] == 'Q', [TipoLiquidacion].[Id], '')")})
         Me.XrTableCell4.Multiline = True
         Me.XrTableCell4.Name = "XrTableCell4"
         Me.XrTableCell4.Text = "1"
@@ -771,6 +778,8 @@ Partial Public Class xrDosRecibosEnUnA4
         'XrTableCell19
         '
         Me.XrTableCell19.Dpi = 254.0!
+        Me.XrTableCell19.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "FormatString('{0:MMMM}', AddMonths(Today(), ToInt(Substring([Periodo], 0,2)) - Ge" &
+                    "tMonth(Today())))")})
         Me.XrTableCell19.Multiline = True
         Me.XrTableCell19.Name = "XrTableCell19"
         Me.XrTableCell19.Text = "DICIEMBRE"
@@ -779,6 +788,7 @@ Partial Public Class xrDosRecibosEnUnA4
         'XrTableCell17
         '
         Me.XrTableCell17.Dpi = 254.0!
+        Me.XrTableCell17.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Substring([Periodo], 2, 4)")})
         Me.XrTableCell17.Multiline = True
         Me.XrTableCell17.Name = "XrTableCell17"
         Me.XrTableCell17.Text = "2026"
@@ -809,6 +819,7 @@ Partial Public Class xrDosRecibosEnUnA4
         Me.XrTableCell6.Multiline = True
         Me.XrTableCell6.Name = "XrTableCell6"
         Me.XrTableCell6.Text = "XrTableCell6"
+        Me.XrTableCell6.TextFormatString = "{0:c2}"
         Me.XrTableCell6.Weight = 0.40896244546813509R
         '
         'XrTableCell24
@@ -892,9 +903,9 @@ Partial Public Class xrDosRecibosEnUnA4
         '
         'XrTableCell11
         '
+        Me.XrTableCell11.CanGrow = False
         Me.XrTableCell11.Dpi = 254.0!
         Me.XrTableCell11.ExpressionBindings.AddRange(New DevExpress.XtraReports.UI.ExpressionBinding() {New DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Legajos].[Categorias].[Descripcion]")})
-        Me.XrTableCell11.Multiline = True
         Me.XrTableCell11.Name = "XrTableCell11"
         Me.XrTableCell11.Text = "XrTableCell11"
         Me.XrTableCell11.Weight = 0.77494388912553436R
@@ -1005,7 +1016,7 @@ Partial Public Class xrDosRecibosEnUnA4
         Me.XrTableCell91.StylePriority.UseTextAlignment = False
         Me.XrTableCell91.Text = "XrTableCell10"
         Me.XrTableCell91.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-        Me.XrTableCell91.TextFormatString = "{0:n2}"
+        Me.XrTableCell91.TextFormatString = "{0:c2}"
         Me.XrTableCell91.Weight = 0.64327811677642044R
         '
         'XrTableCell92
@@ -1096,7 +1107,7 @@ Partial Public Class xrDosRecibosEnUnA4
         Me.XrTableCell51.StylePriority.UseTextAlignment = False
         Me.XrTableCell51.Text = "XrTableCell10"
         Me.XrTableCell51.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-        Me.XrTableCell51.TextFormatString = "{0:n2}"
+        Me.XrTableCell51.TextFormatString = "{0:c2}"
         Me.XrTableCell51.Weight = 0.64327811677642044R
         '
         'XrTableCell52
@@ -1511,7 +1522,7 @@ Partial Public Class xrDosRecibosEnUnA4
         Me.XrTableCell103.StylePriority.UseTextAlignment = False
         Me.XrTableCell103.Text = "XrTableCell10"
         Me.XrTableCell103.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-        Me.XrTableCell103.TextFormatString = "{0:n2}"
+        Me.XrTableCell103.TextFormatString = "{0:c2}"
         Me.XrTableCell103.Weight = 0.63348010141231725R
         '
         'XrTableCell104
@@ -1602,7 +1613,7 @@ Partial Public Class xrDosRecibosEnUnA4
         Me.XrTableCell69.StylePriority.UseTextAlignment = False
         Me.XrTableCell69.Text = "XrTableCell10"
         Me.XrTableCell69.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
-        Me.XrTableCell69.TextFormatString = "{0:n2}"
+        Me.XrTableCell69.TextFormatString = "{0:c2}"
         Me.XrTableCell69.Weight = 0.63348010141231725R
         '
         'XrTableCell70
@@ -1888,7 +1899,7 @@ Partial Public Class xrDosRecibosEnUnA4
         Me.XrTableCell105.Name = "XrTableCell105"
         Me.XrTableCell105.StylePriority.UseFont = False
         Me.XrTableCell105.Text = "COMPOSICIÓN SALARIAL"
-        Me.XrTableCell105.Weight = 2.0685590814405383R
+        Me.XrTableCell105.Weight = 1.9958714503155597R
         '
         'XrTableCell106
         '
@@ -1898,7 +1909,7 @@ Partial Public Class xrDosRecibosEnUnA4
         Me.XrTableCell106.Name = "XrTableCell106"
         Me.XrTableCell106.StylePriority.UseFont = False
         Me.XrTableCell106.Text = "REMUNERATIVO"
-        Me.XrTableCell106.Weight = 0.47155950382444944R
+        Me.XrTableCell106.Weight = 0.544247134949428R
         '
         'XrTableCell107
         '
@@ -1944,7 +1955,7 @@ Partial Public Class xrDosRecibosEnUnA4
         Me.XrTableCell109.Multiline = True
         Me.XrTableCell109.Name = "XrTableCell109"
         Me.XrTableCell109.Text = "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        Me.XrTableCell109.Weight = 2.0685593225515455R
+        Me.XrTableCell109.Weight = 1.9958726136610707R
         '
         'XrTableCell110
         '
@@ -1956,7 +1967,7 @@ Partial Public Class xrDosRecibosEnUnA4
         Me.XrTableCell110.StylePriority.UseFont = False
         Me.XrTableCell110.Text = "XrTableCell16"
         Me.XrTableCell110.TextFormatString = "{0:c2}"
-        Me.XrTableCell110.Weight = 0.47952317565858554R
+        Me.XrTableCell110.Weight = 0.54424580273243939R
         '
         'XrTableCell111
         '
@@ -1968,7 +1979,7 @@ Partial Public Class xrDosRecibosEnUnA4
         Me.XrTableCell111.StylePriority.UseFont = False
         Me.XrTableCell111.Text = "XrTableCell17"
         Me.XrTableCell111.TextFormatString = "{0:c2}"
-        Me.XrTableCell111.Weight = 0.64231600318843285R
+        Me.XrTableCell111.Weight = 0.65028008500505374R
         '
         'XrTableCell112
         '
@@ -2153,7 +2164,7 @@ Partial Public Class xrDosRecibosEnUnA4
         Me.XrTableCell71.Name = "XrTableCell71"
         Me.XrTableCell71.StylePriority.UseFont = False
         Me.XrTableCell71.Text = "COMPOSICIÓN SALARIAL"
-        Me.XrTableCell71.Weight = 2.0685590814405383R
+        Me.XrTableCell71.Weight = 1.9998779304382204R
         '
         'XrTableCell72
         '
@@ -2163,7 +2174,7 @@ Partial Public Class xrDosRecibosEnUnA4
         Me.XrTableCell72.Name = "XrTableCell72"
         Me.XrTableCell72.StylePriority.UseFont = False
         Me.XrTableCell72.Text = "REMUNERATIVO"
-        Me.XrTableCell72.Weight = 0.47155950382444944R
+        Me.XrTableCell72.Weight = 0.54024065482676742R
         '
         'XrTableCell73
         '
@@ -2209,7 +2220,7 @@ Partial Public Class xrDosRecibosEnUnA4
         Me.XrTableCell75.Multiline = True
         Me.XrTableCell75.Name = "XrTableCell75"
         Me.XrTableCell75.Text = "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        Me.XrTableCell75.Weight = 2.0685593225515455R
+        Me.XrTableCell75.Weight = 1.9998780877097271R
         '
         'XrTableCell76
         '
@@ -2221,7 +2232,7 @@ Partial Public Class xrDosRecibosEnUnA4
         Me.XrTableCell76.StylePriority.UseFont = False
         Me.XrTableCell76.Text = "XrTableCell16"
         Me.XrTableCell76.TextFormatString = "{0:c2}"
-        Me.XrTableCell76.Weight = 0.47952317565858554R
+        Me.XrTableCell76.Weight = 0.53815653982249778R
         '
         'XrTableCell77
         '
@@ -2233,7 +2244,7 @@ Partial Public Class xrDosRecibosEnUnA4
         Me.XrTableCell77.StylePriority.UseFont = False
         Me.XrTableCell77.Text = "XrTableCell17"
         Me.XrTableCell77.TextFormatString = "{0:c2}"
-        Me.XrTableCell77.Weight = 0.64231600318843285R
+        Me.XrTableCell77.Weight = 0.65236387386633887R
         '
         'XrTableCell78
         '
@@ -2358,6 +2369,7 @@ Partial Public Class xrDosRecibosEnUnA4
         Me.xrChartResumenDeCostos2.Legend.Border.Visibility = DevExpress.Utils.DefaultBoolean.[False]
         Me.xrChartResumenDeCostos2.Legend.Direction = DevExpress.XtraCharts.LegendDirection.RightToLeft
         Me.xrChartResumenDeCostos2.Legend.DXFont = New DevExpress.Drawing.DXFont("Tahoma", 5.0!)
+        Me.xrChartResumenDeCostos2.Legend.LegendID = -1
         Me.xrChartResumenDeCostos2.Legend.Margins.Bottom = 0
         Me.xrChartResumenDeCostos2.Legend.Margins.Left = 0
         Me.xrChartResumenDeCostos2.Legend.Margins.Right = 0
@@ -2375,6 +2387,7 @@ Partial Public Class xrDosRecibosEnUnA4
         Series1.LabelsVisibility = DevExpress.Utils.DefaultBoolean.[True]
         Series1.Name = "Serie1"
         Series1.Points.AddRange(New DevExpress.XtraCharts.SeriesPoint() {SeriesPoint1, SeriesPoint2, SeriesPoint3, SeriesPoint4})
+        Series1.SeriesID = 0
         Series1.View = PieSeriesView1
         Me.xrChartResumenDeCostos2.SeriesSerializable = New DevExpress.XtraCharts.Series() {Series1}
         Me.xrChartResumenDeCostos2.SizeF = New System.Drawing.SizeF(498.0228!, 507.5209!)
@@ -2384,6 +2397,7 @@ Partial Public Class xrDosRecibosEnUnA4
         Me.xrChartResumenDeCostos2.StylePriority.UseBorderWidth = False
         ChartTitle1.DXFont = New DevExpress.Drawing.DXFont("Tahoma", 10.0!)
         ChartTitle1.Text = "Costo total Empleador"
+        ChartTitle1.TitleID = 0
         Me.xrChartResumenDeCostos2.Titles.AddRange(New DevExpress.XtraCharts.ChartTitle() {ChartTitle1})
         '
         'XrLine9
@@ -2482,6 +2496,7 @@ Partial Public Class xrDosRecibosEnUnA4
         Me.xrChartResumenDeCostos.Legend.Border.Visibility = DevExpress.Utils.DefaultBoolean.[False]
         Me.xrChartResumenDeCostos.Legend.Direction = DevExpress.XtraCharts.LegendDirection.RightToLeft
         Me.xrChartResumenDeCostos.Legend.DXFont = New DevExpress.Drawing.DXFont("Tahoma", 5.0!)
+        Me.xrChartResumenDeCostos.Legend.LegendID = -1
         Me.xrChartResumenDeCostos.Legend.Margins.Bottom = 0
         Me.xrChartResumenDeCostos.Legend.Margins.Left = 0
         Me.xrChartResumenDeCostos.Legend.Margins.Right = 0
@@ -2499,6 +2514,7 @@ Partial Public Class xrDosRecibosEnUnA4
         Series2.LabelsVisibility = DevExpress.Utils.DefaultBoolean.[True]
         Series2.Name = "Serie1"
         Series2.Points.AddRange(New DevExpress.XtraCharts.SeriesPoint() {SeriesPoint5, SeriesPoint6, SeriesPoint7, SeriesPoint8})
+        Series2.SeriesID = 0
         Series2.View = PieSeriesView2
         Me.xrChartResumenDeCostos.SeriesSerializable = New DevExpress.XtraCharts.Series() {Series2}
         Me.xrChartResumenDeCostos.SizeF = New System.Drawing.SizeF(496.0228!, 507.5209!)
@@ -2508,6 +2524,7 @@ Partial Public Class xrDosRecibosEnUnA4
         Me.xrChartResumenDeCostos.StylePriority.UseBorderWidth = False
         ChartTitle2.DXFont = New DevExpress.Drawing.DXFont("Tahoma", 10.0!)
         ChartTitle2.Text = "Costo total Empleador"
+        ChartTitle2.TitleID = 0
         Me.xrChartResumenDeCostos.Titles.AddRange(New DevExpress.XtraCharts.ChartTitle() {ChartTitle2})
         '
         'xrSubReportResumenCostos2
@@ -2536,14 +2553,16 @@ Partial Public Class xrDosRecibosEnUnA4
         Me.Dpi = 254.0!
         Me.Font = New DevExpress.Drawing.DXFont("Arial", 9.75!)
         Me.Landscape = True
-        Me.Margins = New DevExpress.Drawing.DXMargins(16, 16, 0, 18)
+        Me.Margins = New DevExpress.Drawing.DXMargins(16.0!, 16.0!, 0!, 18.46117!)
         Me.PageHeight = 2100
         Me.PageWidth = 2970
         Me.PaperKind = DevExpress.Drawing.Printing.DXPaperKind.A4
         Me.ReportUnit = DevExpress.XtraReports.UI.ReportUnit.TenthsOfAMillimeter
         Me.SnapGridSize = 25.0!
         Me.StyleSheet.AddRange(New DevExpress.XtraReports.UI.XRControlStyle() {Me.xrControlStyleEncavezado, Me.XrControlStyle1})
-        Me.Version = "20.1"
+        Me.Version = "23.2"
+        XrWatermark1.Id = "Watermark1"
+        Me.Watermarks.Add(XrWatermark1)
         CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XrTable11, System.ComponentModel.ISupportInitialize).EndInit()

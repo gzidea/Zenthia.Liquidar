@@ -1,6 +1,8 @@
-﻿Imports DevExpress.LookAndFeel
+﻿Imports System.Data.Entity
+Imports DevExpress.LookAndFeel
 Imports DevExpress.Skins
 Imports DevExpress.UserSkins
+'Imports Zenthia.AccesoDatos
 
 Friend NotInheritable Class Program
 
@@ -14,6 +16,12 @@ Friend NotInheritable Class Program
     Shared Sub Main()
         SkinManager.EnableFormSkins()
         Application.EnableVisualStyles()
+
+        'Using context As New Modelo()
+        '    Database.SetInitializer(Of Modelo)(New CreateDatabaseIfNotExists(Of Modelo)())
+        '    context.Database.Initialize(force:=True)
+        'End Using
+
         AplicarTemaGuardado()
         Application.SetCompatibleTextRenderingDefault(False)
         Application.Run(New frmPrincipal())
