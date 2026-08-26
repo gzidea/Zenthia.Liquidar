@@ -7,6 +7,8 @@ Imports Zenthia.AccesoDatos
 Imports Zenthia.LiquidAR.Win.YiZi.mvvm.ViewModel
 Imports Zenthia.mvvm.Common.DataModel
 Imports Zenthia.mvvm.Common.ViewModel
+Imports System.Data.Entity
+Imports DevExpress.XtraSplashScreen
 
 Partial Public Class ReciboViewModel
     Inherits SingleObjectViewModel(Of Zenthia.AccesoDatos.Recibos, Integer, IModeloDbContextUnitOfWork)
@@ -79,24 +81,8 @@ Partial Public Class ReciboViewModel
                         detalle.Contribuciones = CType(detalle.Importe, Decimal?)
                 End Select
             Next
-            DelAllGrupoCosto()
-            Using db As Zenthia.AccesoDatos.Modelo = New Zenthia.AccesoDatos.Modelo()
-                Dim grupos = (From rd In MyBase.Entity.RecibosDetalles
-                              Where rd.IdRecibo = MyBase.Entity.Id
-                              Join f In db.Formulas On rd.IdConcepto Equals f.Id
-                              Join c In db.Conceptos On f.IdConcepto Equals c.Id
-                              Join gc In db.GruposCostos On c.IdGrupoCosto Equals gc.Id
-                              Group By gc.Id, gc.Descripcion, gc.Titulo Into g = Group
-                              Select New RecibosGruposCostos With {
-                      .IdRecibo = MyBase.Entity.Id,
-                      .IdGrupoCosto = Id,
-                      .Empleador = CType(g.Where(Function(x) x.c.ColumnaRecibo = 4) _
-                                    .Sum(Function(x) If(x.rd.Contribuciones, 0.0)), Decimal?),
-                      .Trabajador = CType(g.Where(Function(x) x.c.ColumnaRecibo <> 4) _
-                                     .Sum(Function(x) If(x.rd.Descuento, 0.0)), Decimal?)
-                  }).ToList()
-                MyBase.Entity.RecibosGruposCostos = grupos
-            End Using
+            'DelAllGrupoCosto()
+
             MyBase.Entity.TotalRemunerativos = MyBase.Entity.RecibosDetalles.Sum(Function(x) x.Remunerativo)
             '_formula.NewVariable("REMUN", MyBase.Entity.TotalRemunerativos)
 
@@ -117,6 +103,7 @@ Partial Public Class ReciboViewModel
             MyBase.Entity.TotalCostoLaboral = MyBase.Entity.SueldoBruto + MyBase.Entity.TotalContribuciones
         Next
         MyBase.Save()
+        DeleteAndAddGruposCostos(MyBase.Entity.Id)
     End Sub
 
     Public Function CanGenerarDetalle() As Boolean
@@ -249,11 +236,55 @@ Partial Public Class ReciboViewModel
         End Using
     End Sub
 
-    Public Overridable Sub DelAllGrupoCosto()
-        Using db As Zenthia.AccesoDatos.Modelo = New Zenthia.AccesoDatos.Modelo()
-            Dim lista As List(Of RecibosGruposCostos) = db.RecibosGruposCostos.Where(Function(x) x.IdRecibo = Entity.Id).ToList
-            db.RecibosGruposCostos.RemoveRange(lista)
-            db.SaveChanges()
+    'Public Overridable Sub DelAllGrupoCosto()
+    '    ' 1. Obtenemos los elementos directamente de la propiedad del objeto que se está editando
+    '    Dim listaAEliminar = Entity.RecibosGruposCostos.ToList()
+
+    '    ' 2. Los eliminamos del repositorio del UnitOfWork principal
+    '    For Each grupo In listaAEliminar
+    '        ' Lo quitamos de la colección del padre
+    '        Entity.RecibosGruposCostos.Remove(grupo)
+
+    '        ' Le decimos al UnitOfWork principal que lo borre de la base de datos
+    '        MyBase.Save()
+    '    Next
+    'End Sub
+
+
+    Public Overridable Sub DeleteAndAddGruposCostos(idRecibo As Integer)
+
+
+        Using context As New Zenthia.AccesoDatos.Modelo()
+            Dim recibo = context.Recibos _
+                            .Include(Function(r) r.RecibosGruposCostos) _
+                            .FirstOrDefault(Function(r) r.Id = idRecibo)
+
+            ' 1) Eliminar los existentes directamente del DbSet
+            context.RecibosGruposCostos.RemoveRange(recibo.RecibosGruposCostos)
+
+            ' 2) Agregar los nuevos
+
+            Dim grupos = (From rd In MyBase.Entity.RecibosDetalles
+                          Where rd.IdRecibo = MyBase.Entity.Id
+                          Join f In context.Formulas On rd.IdConcepto Equals f.Id
+                          Join c In context.Conceptos On f.IdConcepto Equals c.Id
+                          Join gc In context.GruposCostos On c.IdGrupoCosto Equals gc.Id
+                          Group By gc.Id, gc.Descripcion, gc.Titulo Into g = Group
+                          Select New RecibosGruposCostos With {
+                      .IdRecibo = MyBase.Entity.Id,
+                      .IdGrupoCosto = Id,
+                      .Empleador = CType(g.Where(Function(x) x.c.ColumnaRecibo = 4) _
+                                    .Sum(Function(x) If(x.rd.Contribuciones, 0.0)), Decimal?),
+                      .Trabajador = CType(g.Where(Function(x) x.c.ColumnaRecibo <> 4) _
+                                     .Sum(Function(x) If(x.rd.Descuento, 0.0)), Decimal?)
+                  }).ToList()
+
+
+            For Each item In grupos
+                recibo.RecibosGruposCostos.Add(item)
+            Next
+
+            context.SaveChanges()
         End Using
     End Sub
 
@@ -362,9 +393,12 @@ Partial Public Class ReciboViewModel
     Public Overridable Property SelectedItems As IEnumerable(Of RecibosDetalles)
 
     Public Overridable Sub DeleteSelectedItems()
+        SplashScreenManager.ShowDefaultWaitForm("Procesando...", "Quitando y recalculando")
         For Each item As RecibosDetalles In SelectedItems
             ReciboDetalles.Delete(item)
         Next
+        Recalcular()
+        SplashScreenManager.CloseDefaultWaitForm()
     End Sub
 
     Protected Sub OnSelectedItemsChanged()

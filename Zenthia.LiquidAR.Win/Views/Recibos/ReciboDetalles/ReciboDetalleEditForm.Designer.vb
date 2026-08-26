@@ -50,6 +50,7 @@ Partial Class ReciboDetalleEditForm
         Me.colCodigo = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colConceptos = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colDescripcionCompleta = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.FormulaBaseTextEdit = New DevExpress.XtraEditors.TextEdit()
         Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
@@ -58,6 +59,7 @@ Partial Class ReciboDetalleEditForm
         Me.EmptySpaceItem1 = New DevExpress.XtraLayout.EmptySpaceItem()
         Me.LayoutControlItem10 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         CType(Me.ribbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.mvvmContext, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dataLayout, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -71,6 +73,7 @@ Partial Class ReciboDetalleEditForm
         CType(Me.IdConceptoLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FormulasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SearchLookUpEdit1View, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FormulaBaseTextEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -79,12 +82,13 @@ Partial Class ReciboDetalleEditForm
         CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RibbonStatusBar1
         '
         Me.RibbonStatusBar1.ItemLinks.Add(Me.bsiEstado)
-        Me.RibbonStatusBar1.Location = New System.Drawing.Point(5, 273)
+        Me.RibbonStatusBar1.Location = New System.Drawing.Point(5, 313)
         Me.RibbonStatusBar1.Name = "RibbonStatusBar1"
         Me.RibbonStatusBar1.Ribbon = Me.ribbonControl
         Me.RibbonStatusBar1.Size = New System.Drawing.Size(741, 27)
@@ -98,14 +102,14 @@ Partial Class ReciboDetalleEditForm
         'ribbonControl
         '
         Me.ribbonControl.ExpandCollapseItem.Id = 0
-        Me.ribbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl.ExpandCollapseItem, Me.ribbonControl.SearchEditItem, Me.bbiSave, Me.bbiSaveAndClose, Me.bbiSaveAndNew, Me.bbiReset, Me.bbiSaveLayout, Me.bbiResetLayout, Me.bbiDelete, Me.bbiClose, Me.bsiEstado})
+        Me.ribbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.ribbonControl.ExpandCollapseItem, Me.bbiSave, Me.bbiSaveAndClose, Me.bbiSaveAndNew, Me.bbiReset, Me.bbiSaveLayout, Me.bbiResetLayout, Me.bbiDelete, Me.bbiClose, Me.bsiEstado})
         Me.ribbonControl.Location = New System.Drawing.Point(5, 0)
         Me.ribbonControl.MaxItemId = 28
         Me.ribbonControl.Name = "ribbonControl"
         Me.ribbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.ribbonControl.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.[False]
         Me.ribbonControl.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide
-        Me.ribbonControl.Size = New System.Drawing.Size(741, 100)
+        Me.ribbonControl.Size = New System.Drawing.Size(741, 126)
         Me.ribbonControl.StatusBar = Me.RibbonStatusBar1
         Me.ribbonControl.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden
         '
@@ -214,12 +218,13 @@ Partial Class ReciboDetalleEditForm
         Me.dataLayout.Controls.Add(Me.FormulaImporteTextEdit)
         Me.dataLayout.Controls.Add(Me.FormulaCantidadTextEdit)
         Me.dataLayout.Controls.Add(Me.IdConceptoLookUpEdit)
+        Me.dataLayout.Controls.Add(Me.FormulaBaseTextEdit)
         Me.dataLayout.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dataLayout.Location = New System.Drawing.Point(5, 100)
+        Me.dataLayout.Location = New System.Drawing.Point(5, 126)
         Me.dataLayout.Name = "dataLayout"
         Me.dataLayout.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = New System.Drawing.Rectangle(1270, 450, 650, 400)
         Me.dataLayout.Root = Me.Root
-        Me.dataLayout.Size = New System.Drawing.Size(741, 173)
+        Me.dataLayout.Size = New System.Drawing.Size(741, 187)
         Me.dataLayout.TabIndex = 4
         Me.dataLayout.Text = "LayoutControl1"
         '
@@ -241,47 +246,47 @@ Partial Class ReciboDetalleEditForm
         'DescripcionTextEdit
         '
         Me.DescripcionTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.RecibosDetallesBindingSource, "Formulas.Unidades.Descripcion", True))
-        Me.DescripcionTextEdit.Location = New System.Drawing.Point(101, 108)
+        Me.DescripcionTextEdit.Location = New System.Drawing.Point(110, 132)
         Me.DescripcionTextEdit.MenuManager = Me.ribbonControl
         Me.DescripcionTextEdit.Name = "DescripcionTextEdit"
-        Me.DescripcionTextEdit.Size = New System.Drawing.Size(628, 20)
+        Me.DescripcionTextEdit.Size = New System.Drawing.Size(619, 20)
         Me.DescripcionTextEdit.StyleController = Me.dataLayout
         Me.DescripcionTextEdit.TabIndex = 9
         '
         'VariableTextEdit
         '
         Me.VariableTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.RecibosDetallesBindingSource, "Formulas.Variable", True))
-        Me.VariableTextEdit.Location = New System.Drawing.Point(101, 84)
+        Me.VariableTextEdit.Location = New System.Drawing.Point(110, 108)
         Me.VariableTextEdit.MenuManager = Me.ribbonControl
         Me.VariableTextEdit.Name = "VariableTextEdit"
-        Me.VariableTextEdit.Size = New System.Drawing.Size(628, 20)
+        Me.VariableTextEdit.Size = New System.Drawing.Size(619, 20)
         Me.VariableTextEdit.StyleController = Me.dataLayout
         Me.VariableTextEdit.TabIndex = 8
         '
         'FormulaImporteTextEdit
         '
         Me.FormulaImporteTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.RecibosDetallesBindingSource, "formulaImporte", True))
-        Me.FormulaImporteTextEdit.Location = New System.Drawing.Point(101, 60)
+        Me.FormulaImporteTextEdit.Location = New System.Drawing.Point(110, 84)
         Me.FormulaImporteTextEdit.MenuManager = Me.ribbonControl
         Me.FormulaImporteTextEdit.Name = "FormulaImporteTextEdit"
-        Me.FormulaImporteTextEdit.Size = New System.Drawing.Size(628, 20)
+        Me.FormulaImporteTextEdit.Size = New System.Drawing.Size(619, 20)
         Me.FormulaImporteTextEdit.StyleController = Me.dataLayout
         Me.FormulaImporteTextEdit.TabIndex = 7
         '
         'FormulaCantidadTextEdit
         '
         Me.FormulaCantidadTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.RecibosDetallesBindingSource, "formulaCantidad", True))
-        Me.FormulaCantidadTextEdit.Location = New System.Drawing.Point(101, 36)
+        Me.FormulaCantidadTextEdit.Location = New System.Drawing.Point(110, 36)
         Me.FormulaCantidadTextEdit.MenuManager = Me.ribbonControl
         Me.FormulaCantidadTextEdit.Name = "FormulaCantidadTextEdit"
-        Me.FormulaCantidadTextEdit.Size = New System.Drawing.Size(628, 20)
+        Me.FormulaCantidadTextEdit.Size = New System.Drawing.Size(619, 20)
         Me.FormulaCantidadTextEdit.StyleController = Me.dataLayout
         Me.FormulaCantidadTextEdit.TabIndex = 6
         '
         'IdConceptoLookUpEdit
         '
         Me.IdConceptoLookUpEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.RecibosDetallesBindingSource, "IdConcepto", True))
-        Me.IdConceptoLookUpEdit.Location = New System.Drawing.Point(101, 12)
+        Me.IdConceptoLookUpEdit.Location = New System.Drawing.Point(110, 12)
         Me.IdConceptoLookUpEdit.MenuManager = Me.ribbonControl
         Me.IdConceptoLookUpEdit.Name = "IdConceptoLookUpEdit"
         Me.IdConceptoLookUpEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -289,7 +294,7 @@ Partial Class ReciboDetalleEditForm
         Me.IdConceptoLookUpEdit.Properties.DisplayMember = "DescripcionCompleta"
         Me.IdConceptoLookUpEdit.Properties.PopupView = Me.SearchLookUpEdit1View
         Me.IdConceptoLookUpEdit.Properties.ValueMember = "Id"
-        Me.IdConceptoLookUpEdit.Size = New System.Drawing.Size(383, 20)
+        Me.IdConceptoLookUpEdit.Size = New System.Drawing.Size(374, 20)
         Me.IdConceptoLookUpEdit.StyleController = Me.dataLayout
         Me.IdConceptoLookUpEdit.TabIndex = 14
         '
@@ -326,13 +331,23 @@ Partial Class ReciboDetalleEditForm
         Me.colDescripcionCompleta.Visible = True
         Me.colDescripcionCompleta.VisibleIndex = 2
         '
+        'FormulaBaseTextEdit
+        '
+        Me.FormulaBaseTextEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.RecibosDetallesBindingSource, "formulaBase", True))
+        Me.FormulaBaseTextEdit.Location = New System.Drawing.Point(110, 60)
+        Me.FormulaBaseTextEdit.MenuManager = Me.ribbonControl
+        Me.FormulaBaseTextEdit.Name = "FormulaBaseTextEdit"
+        Me.FormulaBaseTextEdit.Size = New System.Drawing.Size(619, 20)
+        Me.FormulaBaseTextEdit.StyleController = Me.dataLayout
+        Me.FormulaBaseTextEdit.TabIndex = 15
+        '
         'Root
         '
         Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
         Me.Root.GroupBordersVisible = False
-        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem3, Me.LayoutControlItem4, Me.LayoutControlItem5, Me.LayoutControlItem6, Me.EmptySpaceItem1, Me.LayoutControlItem10, Me.LayoutControlItem2})
+        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem3, Me.LayoutControlItem4, Me.LayoutControlItem5, Me.LayoutControlItem6, Me.EmptySpaceItem1, Me.LayoutControlItem10, Me.LayoutControlItem2, Me.LayoutControlItem1})
         Me.Root.Name = "Root"
-        Me.Root.Size = New System.Drawing.Size(741, 173)
+        Me.Root.Size = New System.Drawing.Size(741, 187)
         Me.Root.TextVisible = False
         '
         'LayoutControlItem3
@@ -347,7 +362,7 @@ Partial Class ReciboDetalleEditForm
         'LayoutControlItem4
         '
         Me.LayoutControlItem4.Control = Me.FormulaImporteTextEdit
-        Me.LayoutControlItem4.Location = New System.Drawing.Point(0, 48)
+        Me.LayoutControlItem4.Location = New System.Drawing.Point(0, 72)
         Me.LayoutControlItem4.Name = "LayoutControlItem4"
         Me.LayoutControlItem4.Size = New System.Drawing.Size(721, 24)
         Me.LayoutControlItem4.Text = "formula Importe:"
@@ -356,7 +371,7 @@ Partial Class ReciboDetalleEditForm
         'LayoutControlItem5
         '
         Me.LayoutControlItem5.Control = Me.VariableTextEdit
-        Me.LayoutControlItem5.Location = New System.Drawing.Point(0, 72)
+        Me.LayoutControlItem5.Location = New System.Drawing.Point(0, 96)
         Me.LayoutControlItem5.Name = "LayoutControlItem5"
         Me.LayoutControlItem5.Size = New System.Drawing.Size(721, 24)
         Me.LayoutControlItem5.Text = "Variable:"
@@ -365,7 +380,7 @@ Partial Class ReciboDetalleEditForm
         'LayoutControlItem6
         '
         Me.LayoutControlItem6.Control = Me.DescripcionTextEdit
-        Me.LayoutControlItem6.Location = New System.Drawing.Point(0, 96)
+        Me.LayoutControlItem6.Location = New System.Drawing.Point(0, 120)
         Me.LayoutControlItem6.Name = "LayoutControlItem6"
         Me.LayoutControlItem6.Size = New System.Drawing.Size(721, 24)
         Me.LayoutControlItem6.Text = "Descripcion:"
@@ -374,9 +389,9 @@ Partial Class ReciboDetalleEditForm
         'EmptySpaceItem1
         '
         Me.EmptySpaceItem1.AllowHotTrack = False
-        Me.EmptySpaceItem1.Location = New System.Drawing.Point(0, 120)
+        Me.EmptySpaceItem1.Location = New System.Drawing.Point(0, 144)
         Me.EmptySpaceItem1.Name = "EmptySpaceItem1"
-        Me.EmptySpaceItem1.Size = New System.Drawing.Size(721, 33)
+        Me.EmptySpaceItem1.Size = New System.Drawing.Size(721, 23)
         Me.EmptySpaceItem1.TextSize = New System.Drawing.Size(0, 0)
         '
         'LayoutControlItem10
@@ -400,6 +415,15 @@ Partial Class ReciboDetalleEditForm
         Me.LayoutControlItem2.Text = "Concepto:"
         Me.LayoutControlItem2.TextSize = New System.Drawing.Size(86, 13)
         '
+        'LayoutControlItem1
+        '
+        Me.LayoutControlItem1.Control = Me.FormulaBaseTextEdit
+        Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 48)
+        Me.LayoutControlItem1.Name = "LayoutControlItem1"
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(721, 24)
+        Me.LayoutControlItem1.Text = "formula Base"
+        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(86, 13)
+        '
         'ReciboDetalleEditForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -409,7 +433,7 @@ Partial Class ReciboDetalleEditForm
         Me.Controls.Add(Me.ribbonControl)
         Me.Name = "ReciboDetalleEditForm"
         Me.Padding = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.Size = New System.Drawing.Size(751, 300)
+        Me.Size = New System.Drawing.Size(751, 340)
         CType(Me.ribbonControl, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.mvvmContext, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dataLayout, System.ComponentModel.ISupportInitialize).EndInit()
@@ -423,6 +447,7 @@ Partial Class ReciboDetalleEditForm
         CType(Me.IdConceptoLookUpEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.FormulasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SearchLookUpEdit1View, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.FormulaBaseTextEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
@@ -431,6 +456,7 @@ Partial Class ReciboDetalleEditForm
         CType(Me.EmptySpaceItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem10, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -474,4 +500,6 @@ Partial Class ReciboDetalleEditForm
     Friend WithEvents colCodigo As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colConceptos As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colDescripcionCompleta As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents FormulaBaseTextEdit As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LayoutControlItem1 As DevExpress.XtraLayout.LayoutControlItem
 End Class

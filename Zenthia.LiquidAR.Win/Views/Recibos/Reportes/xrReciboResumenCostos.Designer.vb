@@ -21,6 +21,7 @@ Partial Public Class xrReciboResumenCostos
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ObjectConstructorInfo1 As DevExpress.DataAccess.ObjectBinding.ObjectConstructorInfo = New DevExpress.DataAccess.ObjectBinding.ObjectConstructorInfo()
+        Dim XrWatermark1 As DevExpress.XtraReports.UI.XRWatermark = New DevExpress.XtraReports.UI.XRWatermark()
         Me.TopMargin = New DevExpress.XtraReports.UI.TopMarginBand()
         Me.BottomMargin = New DevExpress.XtraReports.UI.BottomMarginBand()
         Me.Detail = New DevExpress.XtraReports.UI.DetailBand()
@@ -76,7 +77,7 @@ Partial Public Class xrReciboResumenCostos
         Me.XrTable1.Name = "XrTable1"
         Me.XrTable1.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
         Me.XrTable1.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow1})
-        Me.XrTable1.SizeF = New System.Drawing.SizeF(458.8733!, 30.0!)
+        Me.XrTable1.SizeF = New System.Drawing.SizeF(388.2553!, 30.0!)
         Me.XrTable1.StylePriority.UseFont = False
         '
         'XrTableRow1
@@ -125,7 +126,7 @@ Partial Public Class xrReciboResumenCostos
         Me.XrTable2.Name = "XrTable2"
         Me.XrTable2.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
         Me.XrTable2.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow3, Me.XrTableRow2})
-        Me.XrTable2.SizeF = New System.Drawing.SizeF(458.8733!, 60.0!)
+        Me.XrTable2.SizeF = New System.Drawing.SizeF(388.2553!, 60.0!)
         Me.XrTable2.StylePriority.UseFont = False
         '
         'XrTableRow3
@@ -225,7 +226,7 @@ Partial Public Class xrReciboResumenCostos
         Me.XrLabel4.Multiline = True
         Me.XrLabel4.Name = "XrLabel4"
         Me.XrLabel4.Padding = New DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254.0!)
-        Me.XrLabel4.SizeF = New System.Drawing.SizeF(937.2083!, 42.33316!)
+        Me.XrLabel4.SizeF = New System.Drawing.SizeF(800.0!, 42.33316!)
         Me.XrLabel4.StylePriority.UseBorders = False
         Me.XrLabel4.StylePriority.UseFont = False
         Me.XrLabel4.StylePriority.UseTextAlignment = False
@@ -242,11 +243,13 @@ Partial Public Class xrReciboResumenCostos
         Me.Font = New DevExpress.Drawing.DXFont("Arial", 9.75!)
         Me.Margins = New DevExpress.Drawing.DXMargins(0!, 0!, 0!, 0!)
         Me.PageHeight = 417
-        Me.PageWidth = 943
+        Me.PageWidth = 800
         Me.PaperKind = DevExpress.Drawing.Printing.DXPaperKind.Custom
         Me.ReportUnit = DevExpress.XtraReports.UI.ReportUnit.TenthsOfAMillimeter
         Me.SnapGridSize = 25.0!
         Me.Version = "23.2"
+        XrWatermark1.Id = "Watermark1"
+        Me.Watermarks.Add(XrWatermark1)
         CType(Me.XrTable1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XrTable2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ObjectDataSource1, System.ComponentModel.ISupportInitialize).EndInit()

@@ -33,14 +33,16 @@ Public Class xrDosRecibosEnUnA4
         series.Points.Add(New SeriesPoint("Neto", recibo.FirstOrDefault.NetoACobrar))
         For Each grupo In recibo.FirstOrDefault.RecibosGruposCostos
             If grupo.Empleador.HasValue AndAlso grupo.Empleador > 0 Then
-                series.Points.Add(New SeriesPoint(grupo.GrupoCosto.Titulo, CDbl(grupo.Empleador)))
-                series.LegendTextPattern = "{A}"
+                series.Points.Add(New SeriesPoint(grupo.GrupoCosto.Titulo, CDbl(grupo.Total)))
+                series.LegendTextPattern = "{A}: {VP:P1}"
             End If
         Next
+        series.LabelsVisibility = DevExpress.Utils.DefaultBoolean.False
         ' Etiquetas dentro de cada porción con porcentaje
-        Dim label As PieSeriesLabel = CType(series.Label, PieSeriesLabel)
-        label.TextPattern = "{VP:P0}"
-        label.Position = PieSeriesLabelPosition.Radial
+        'Dim label As PieSeriesLabel = CType(series.Label, PieSeriesLabel)
+        'label.TextPattern = ""
+        'label.Position = PieSeriesLabelPosition.Radial
+
         Return series
     End Function
 

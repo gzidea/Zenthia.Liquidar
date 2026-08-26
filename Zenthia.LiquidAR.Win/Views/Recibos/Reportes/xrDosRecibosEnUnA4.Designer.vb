@@ -36,7 +36,7 @@ Partial Public Class xrDosRecibosEnUnA4
         Dim SeriesPoint6 As DevExpress.XtraCharts.SeriesPoint = New DevExpress.XtraCharts.SeriesPoint("dos", New Object() {CType(20.0R, Object)}, 1)
         Dim SeriesPoint7 As DevExpress.XtraCharts.SeriesPoint = New DevExpress.XtraCharts.SeriesPoint("tres", New Object() {CType(10.0R, Object)}, 2)
         Dim SeriesPoint8 As DevExpress.XtraCharts.SeriesPoint = New DevExpress.XtraCharts.SeriesPoint("cuatro", New Object() {CType(20.0R, Object)}, 3)
-        Dim PieSeriesView2 As DevExpress.XtraCharts.PieSeriesView = New DevExpress.XtraCharts.PieSeriesView()
+        Dim PieSeriesView2 As DevExpress.XtraCharts.PieSeriesView = New DevExpress.XtraCharts.PieSeriesView(New Integer() {2, 0})
         Dim ChartTitle2 As DevExpress.XtraCharts.ChartTitle = New DevExpress.XtraCharts.ChartTitle()
         Dim XrWatermark1 As DevExpress.XtraReports.UI.XRWatermark = New DevExpress.XtraReports.UI.XRWatermark()
         Me.TopMargin = New DevExpress.XtraReports.UI.TopMarginBand()
@@ -229,7 +229,6 @@ Partial Public Class xrDosRecibosEnUnA4
         Me.xrSubReportTablet = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrLabel8 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLine10 = New DevExpress.XtraReports.UI.XRLine()
-        Me.XrTableCell116 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.xrChartResumenDeCostos2 = New DevExpress.XtraReports.UI.XRChart()
         Me.XrLine9 = New DevExpress.XtraReports.UI.XRLine()
         Me.XrTable9 = New DevExpress.XtraReports.UI.XRTable()
@@ -237,7 +236,6 @@ Partial Public Class xrDosRecibosEnUnA4
         Me.XrTableCell81 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.XrLabel5 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLine8 = New DevExpress.XtraReports.UI.XRLine()
-        Me.XrTableCell82 = New DevExpress.XtraReports.UI.XRTableCell()
         Me.xrChartResumenDeCostos = New DevExpress.XtraReports.UI.XRChart()
         Me.xrSubReportResumenCostos2 = New DevExpress.XtraReports.UI.XRSubreport()
         Me.xrSubReportResumenCostos = New DevExpress.XtraReports.UI.XRSubreport()
@@ -281,7 +279,7 @@ Partial Public Class xrDosRecibosEnUnA4
         'BottomMargin
         '
         Me.BottomMargin.Dpi = 254.0!
-        Me.BottomMargin.HeightF = 18.46117!
+        Me.BottomMargin.HeightF = 0.2469165!
         Me.BottomMargin.Name = "BottomMargin"
         '
         'Detail
@@ -2294,7 +2292,7 @@ Partial Public Class xrDosRecibosEnUnA4
         Me.XrTable17.Name = "XrTable17"
         Me.XrTable17.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
         Me.XrTable17.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow30})
-        Me.XrTable17.SizeF = New System.Drawing.SizeF(1453.814!, 515.697!)
+        Me.XrTable17.SizeF = New System.Drawing.SizeF(1453.814!, 532.1935!)
         Me.XrTable17.StylePriority.UseBorderColor = False
         Me.XrTable17.StylePriority.UseBorderWidth = False
         '
@@ -2303,7 +2301,7 @@ Partial Public Class xrDosRecibosEnUnA4
         Me.XrTableRow30.Borders = CType((((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Top) _
             Or DevExpress.XtraPrinting.BorderSide.Right) _
             Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
-        Me.XrTableRow30.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.xrSubReportTablet, Me.XrTableCell116})
+        Me.XrTableRow30.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.xrSubReportTablet})
         Me.XrTableRow30.Dpi = 254.0!
         Me.XrTableRow30.Name = "XrTableRow30"
         Me.XrTableRow30.StylePriority.UseBorders = False
@@ -2311,11 +2309,11 @@ Partial Public Class xrDosRecibosEnUnA4
         '
         'xrSubReportTablet
         '
-        Me.xrSubReportTablet.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel8, Me.XrLine10})
+        Me.xrSubReportTablet.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.xrChartResumenDeCostos2, Me.XrLabel8, Me.XrLine10})
         Me.xrSubReportTablet.Dpi = 254.0!
         Me.xrSubReportTablet.Multiline = True
         Me.xrSubReportTablet.Name = "xrSubReportTablet"
-        Me.xrSubReportTablet.Weight = 1.9930989620692972R
+        Me.xrSubReportTablet.Weight = 3.0704648194163915R
         '
         'XrLabel8
         '
@@ -2344,17 +2342,6 @@ Partial Public Class xrDosRecibosEnUnA4
         Me.XrLine10.StylePriority.UseBorders = False
         Me.XrLine10.StylePriority.UseForeColor = False
         '
-        'XrTableCell116
-        '
-        Me.XrTableCell116.BorderWidth = 0.5!
-        Me.XrTableCell116.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.xrChartResumenDeCostos2})
-        Me.XrTableCell116.Dpi = 254.0!
-        Me.XrTableCell116.Multiline = True
-        Me.XrTableCell116.Name = "XrTableCell116"
-        Me.XrTableCell116.StylePriority.UseBorderWidth = False
-        Me.XrTableCell116.Text = "XrTableCell26"
-        Me.XrTableCell116.Weight = 1.0773658573470941R
-        '
         'xrChartResumenDeCostos2
         '
         Me.xrChartResumenDeCostos2.BackColor = System.Drawing.Color.Transparent
@@ -2379,7 +2366,7 @@ Partial Public Class xrDosRecibosEnUnA4
         Me.xrChartResumenDeCostos2.Legend.TextColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(162, Byte), Integer))
         Me.xrChartResumenDeCostos2.Legend.VerticalIndent = 1
         Me.xrChartResumenDeCostos2.Legend.Visibility = DevExpress.Utils.DefaultBoolean.[True]
-        Me.xrChartResumenDeCostos2.LocationFloat = New DevExpress.Utils.PointFloat(0!, 4.999988!)
+        Me.xrChartResumenDeCostos2.LocationFloat = New DevExpress.Utils.PointFloat(800.0!, 8.176181!)
         Me.xrChartResumenDeCostos2.Name = "xrChartResumenDeCostos2"
         PieSeriesLabel1.Position = DevExpress.XtraCharts.PieSeriesLabelPosition.Radial
         PieSeriesLabel1.TextPattern = "{V}%"
@@ -2390,7 +2377,7 @@ Partial Public Class xrDosRecibosEnUnA4
         Series1.SeriesID = 0
         Series1.View = PieSeriesView1
         Me.xrChartResumenDeCostos2.SeriesSerializable = New DevExpress.XtraCharts.Series() {Series1}
-        Me.xrChartResumenDeCostos2.SizeF = New System.Drawing.SizeF(498.0228!, 507.5209!)
+        Me.xrChartResumenDeCostos2.SizeF = New System.Drawing.SizeF(653.0!, 524.0173!)
         Me.xrChartResumenDeCostos2.StylePriority.UseBackColor = False
         Me.xrChartResumenDeCostos2.StylePriority.UseBorderColor = False
         Me.xrChartResumenDeCostos2.StylePriority.UseBorders = False
@@ -2421,7 +2408,7 @@ Partial Public Class xrDosRecibosEnUnA4
         Me.XrTable9.Name = "XrTable9"
         Me.XrTable9.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96.0!)
         Me.XrTable9.Rows.AddRange(New DevExpress.XtraReports.UI.XRTableRow() {Me.XrTableRow19})
-        Me.XrTable9.SizeF = New System.Drawing.SizeF(1454.814!, 515.697!)
+        Me.XrTable9.SizeF = New System.Drawing.SizeF(1454.814!, 532.1935!)
         Me.XrTable9.StylePriority.UseBorderColor = False
         Me.XrTable9.StylePriority.UseBorderWidth = False
         '
@@ -2430,7 +2417,7 @@ Partial Public Class xrDosRecibosEnUnA4
         Me.XrTableRow19.Borders = CType((((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Top) _
             Or DevExpress.XtraPrinting.BorderSide.Right) _
             Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
-        Me.XrTableRow19.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell81, Me.XrTableCell82})
+        Me.XrTableRow19.Cells.AddRange(New DevExpress.XtraReports.UI.XRTableCell() {Me.XrTableCell81})
         Me.XrTableRow19.Dpi = 254.0!
         Me.XrTableRow19.Name = "XrTableRow19"
         Me.XrTableRow19.StylePriority.UseBorders = False
@@ -2438,11 +2425,11 @@ Partial Public Class xrDosRecibosEnUnA4
         '
         'XrTableCell81
         '
-        Me.XrTableCell81.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel5, Me.XrLine8})
+        Me.XrTableCell81.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.xrChartResumenDeCostos, Me.XrLabel5, Me.XrLine8})
         Me.XrTableCell81.Dpi = 254.0!
         Me.XrTableCell81.Multiline = True
         Me.XrTableCell81.Name = "XrTableCell81"
-        Me.XrTableCell81.Weight = 1.9930989620692972R
+        Me.XrTableCell81.Weight = 3.070464819416391R
         '
         'XrLabel5
         '
@@ -2471,17 +2458,6 @@ Partial Public Class xrDosRecibosEnUnA4
         Me.XrLine8.StylePriority.UseBorders = False
         Me.XrLine8.StylePriority.UseForeColor = False
         '
-        'XrTableCell82
-        '
-        Me.XrTableCell82.BorderWidth = 0.5!
-        Me.XrTableCell82.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.xrChartResumenDeCostos})
-        Me.XrTableCell82.Dpi = 254.0!
-        Me.XrTableCell82.Multiline = True
-        Me.XrTableCell82.Name = "XrTableCell82"
-        Me.XrTableCell82.StylePriority.UseBorderWidth = False
-        Me.XrTableCell82.Text = "XrTableCell26"
-        Me.XrTableCell82.Weight = 1.0773658573470941R
-        '
         'xrChartResumenDeCostos
         '
         Me.xrChartResumenDeCostos.BackColor = System.Drawing.Color.Transparent
@@ -2506,18 +2482,19 @@ Partial Public Class xrDosRecibosEnUnA4
         Me.xrChartResumenDeCostos.Legend.TextColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(100, Byte), Integer), CType(CType(162, Byte), Integer))
         Me.xrChartResumenDeCostos.Legend.VerticalIndent = 1
         Me.xrChartResumenDeCostos.Legend.Visibility = DevExpress.Utils.DefaultBoolean.[True]
-        Me.xrChartResumenDeCostos.LocationFloat = New DevExpress.Utils.PointFloat(0!, 4.999988!)
+        Me.xrChartResumenDeCostos.LocationFloat = New DevExpress.Utils.PointFloat(799.9999!, 4.999856!)
         Me.xrChartResumenDeCostos.Name = "xrChartResumenDeCostos"
         PieSeriesLabel2.Position = DevExpress.XtraCharts.PieSeriesLabelPosition.Radial
         PieSeriesLabel2.TextPattern = "{V}%"
         Series2.Label = PieSeriesLabel2
-        Series2.LabelsVisibility = DevExpress.Utils.DefaultBoolean.[True]
+        Series2.LabelsVisibility = DevExpress.Utils.DefaultBoolean.[False]
         Series2.Name = "Serie1"
         Series2.Points.AddRange(New DevExpress.XtraCharts.SeriesPoint() {SeriesPoint5, SeriesPoint6, SeriesPoint7, SeriesPoint8})
         Series2.SeriesID = 0
+        PieSeriesView2.ExplodeMode = DevExpress.XtraCharts.PieExplodeMode.UsePoints
         Series2.View = PieSeriesView2
         Me.xrChartResumenDeCostos.SeriesSerializable = New DevExpress.XtraCharts.Series() {Series2}
-        Me.xrChartResumenDeCostos.SizeF = New System.Drawing.SizeF(496.0228!, 507.5209!)
+        Me.xrChartResumenDeCostos.SizeF = New System.Drawing.SizeF(653.8151!, 527.1936!)
         Me.xrChartResumenDeCostos.StylePriority.UseBackColor = False
         Me.xrChartResumenDeCostos.StylePriority.UseBorderColor = False
         Me.xrChartResumenDeCostos.StylePriority.UseBorders = False
@@ -2534,7 +2511,7 @@ Partial Public Class xrDosRecibosEnUnA4
         Me.xrSubReportResumenCostos2.LocationFloat = New DevExpress.Utils.PointFloat(1482.0!, 0!)
         Me.xrSubReportResumenCostos2.Name = "xrSubReportResumenCostos2"
         Me.xrSubReportResumenCostos2.ReportSource = New Zenthia.LiquidAR.Win.xrReciboResumenCostos()
-        Me.xrSubReportResumenCostos2.SizeF = New System.Drawing.SizeF(943.6995!, 417.5388!)
+        Me.xrSubReportResumenCostos2.SizeF = New System.Drawing.SizeF(800.0!, 417.5388!)
         '
         'xrSubReportResumenCostos
         '
@@ -2543,7 +2520,7 @@ Partial Public Class xrDosRecibosEnUnA4
         Me.xrSubReportResumenCostos.LocationFloat = New DevExpress.Utils.PointFloat(0!, 0!)
         Me.xrSubReportResumenCostos.Name = "xrSubReportResumenCostos"
         Me.xrSubReportResumenCostos.ReportSource = New Zenthia.LiquidAR.Win.xrReciboResumenCostos()
-        Me.xrSubReportResumenCostos.SizeF = New System.Drawing.SizeF(943.6995!, 417.5388!)
+        Me.xrSubReportResumenCostos.SizeF = New System.Drawing.SizeF(800.0!, 417.54!)
         '
         'xrDosRecibosEnUnA4
         '
@@ -2553,7 +2530,7 @@ Partial Public Class xrDosRecibosEnUnA4
         Me.Dpi = 254.0!
         Me.Font = New DevExpress.Drawing.DXFont("Arial", 9.75!)
         Me.Landscape = True
-        Me.Margins = New DevExpress.Drawing.DXMargins(16.0!, 16.0!, 0!, 18.46117!)
+        Me.Margins = New DevExpress.Drawing.DXMargins(16.0!, 16.0!, 0!, 0.2469165!)
         Me.PageHeight = 2100
         Me.PageWidth = 2970
         Me.PaperKind = DevExpress.Drawing.Printing.DXPaperKind.A4
@@ -2707,7 +2684,6 @@ Partial Public Class xrDosRecibosEnUnA4
     Friend WithEvents XrTableCell81 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrLabel5 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLine8 As DevExpress.XtraReports.UI.XRLine
-    Friend WithEvents XrTableCell82 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents xrChartResumenDeCostos As DevExpress.XtraReports.UI.XRChart
     Friend WithEvents XrTable2 As DevExpress.XtraReports.UI.XRTable
     Friend WithEvents XrTableRow5 As DevExpress.XtraReports.UI.XRTableRow
@@ -2795,7 +2771,6 @@ Partial Public Class xrDosRecibosEnUnA4
     Friend WithEvents xrSubReportTablet As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents XrLabel8 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLine10 As DevExpress.XtraReports.UI.XRLine
-    Friend WithEvents XrTableCell116 As DevExpress.XtraReports.UI.XRTableCell
     Friend WithEvents xrChartResumenDeCostos2 As DevExpress.XtraReports.UI.XRChart
     Friend WithEvents xrSubReportResumenCostos2 As DevExpress.XtraReports.UI.XRSubreport
 End Class

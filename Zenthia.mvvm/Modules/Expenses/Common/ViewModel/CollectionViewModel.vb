@@ -204,6 +204,7 @@ Namespace Zenthia.mvvm.Common.ViewModel
             End Set
         End Property
 
+        Private ReadOnly _deletingKeys As New HashSet(Of TPrimaryKey)
         ''' <summary>
         ''' Deletes a given entity from the repository and saves changes if confirmed by the user.
         ''' Since CollectionViewModelBase is a POCO view model, an the instance of this class will also expose the DeleteCommand property that can be used as a binding source in views.
@@ -216,9 +217,13 @@ Namespace Zenthia.mvvm.Common.ViewModel
                     Return
                 End If
             End If
+
+            Dim primaryKey As TPrimaryKey = Repository.GetProjectionPrimaryKey(projectionEntity)
+            If _deletingKeys.Contains(primaryKey) Then Return
+            _deletingKeys.Add(primaryKey)
+
             Try
                 Dim wasRemoved As Boolean = Entities.Remove(projectionEntity)
-                Dim primaryKey As TPrimaryKey = Repository.GetProjectionPrimaryKey(projectionEntity)
                 Dim entity As TEntity = Repository.Find(primaryKey)
                 If entity IsNot Nothing Then
                     OnBeforeEntityDeleted(primaryKey, entity)
@@ -232,8 +237,37 @@ Namespace Zenthia.mvvm.Common.ViewModel
             Catch e As DbException
                 Refresh()
                 MessageBoxService.ShowMessage(e.ErrorMessage, e.ErrorCaption, MessageButton.OK, MessageIcon.[Error])
+            Finally
+                _deletingKeys.Remove(primaryKey)
             End Try
         End Sub
+
+
+
+        'Public Overridable Sub Delete(ByVal projectionEntity As TProjection)
+        '    If canShowDialogDelete = True Then
+        '        If MessageBoxService.ShowMessage(String.Format(CommonResources.Confirmation_Delete, GetType(TEntity).Name), CommonResources.Confirmation_Caption, MessageButton.YesNo) <> MessageResult.Yes Then
+        '            Return
+        '        End If
+        '    End If
+        '    Try
+        '        Dim wasRemoved As Boolean = Entities.Remove(projectionEntity)
+        '        Dim primaryKey As TPrimaryKey = Repository.GetProjectionPrimaryKey(projectionEntity)
+        '        Dim entity As TEntity = Repository.Find(primaryKey)
+        '        If entity IsNot Nothing Then
+        '            OnBeforeEntityDeleted(primaryKey, entity)
+        '            Repository.Remove(entity)
+        '            Repository.UnitOfWork.SaveChanges()
+        '            OnEntityDeleted(primaryKey, entity)
+        '        End If
+        '        If wasRemoved Then
+        '            UpdateCommands()
+        '        End If
+        '    Catch e As DbException
+        '        Refresh()
+        '        MessageBoxService.ShowMessage(e.ErrorMessage, e.ErrorCaption, MessageButton.OK, MessageIcon.[Error])
+        '    End Try
+        'End Sub
         ''' <summary>
         ''' Determines whether an entity can be deleted.
         ''' Since CollectionViewModelBase is a POCO view model, this method will be used as a CanExecute callback for DeleteCommand.

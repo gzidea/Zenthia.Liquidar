@@ -6,6 +6,10 @@ Imports Zenthia.mvvm.Common.ViewModel
 
 Public Class ReciboDetallesViewModel
     Inherits SingleObjectViewModel(Of Zenthia.AccesoDatos.RecibosDetalles, Integer, IModeloDbContextUnitOfWork)
+
+    Private _canEditBase As Boolean
+    Private _canEditImporte As Boolean
+
     'Implements ISupportParentViewModel
 
     'Private _ParentViewModel As Object
@@ -47,5 +51,22 @@ Public Class ReciboDetallesViewModel
         End If
     End Sub
 
+    Public ReadOnly Property CanEditBase() As Boolean
+        Get
+            Return _canEditBase
+        End Get
+    End Property
 
+    Public ReadOnly Property CanEditImporte() As Boolean
+        Get
+            Return _canEditImporte
+        End Get
+    End Property
+
+    Protected Overrides Sub UpdateCommands()
+        MyBase.UpdateCommands()
+        _canEditBase = String.IsNullOrEmpty(Me.Entity.formulaImporte) And Not String.IsNullOrEmpty(Me.Entity.formulaCantidad)
+        _canEditImporte = String.IsNullOrEmpty(Me.Entity.formulaBase)
+        MyBase.RaisePropertiesChanged()
+    End Sub
 End Class

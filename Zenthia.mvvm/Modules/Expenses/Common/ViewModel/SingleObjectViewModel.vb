@@ -10,6 +10,7 @@ Imports DevExpress.MVVM.DataAnnotations
 Imports Zenthia.mvvm.Common.Utils
 Imports Zenthia.mvvm.Common.DataModel
 Imports DevExpress.MVVM.Demos.Properties
+Imports System.Data.Entity.Infrastructure
 
 Namespace Zenthia.mvvm.Common.ViewModel
     ''' <summary>
@@ -251,6 +252,16 @@ Namespace Zenthia.mvvm.Common.ViewModel
                 Me.RaisePropertyChanged(Function(x) x.IsPrimaryKeyReadOnly)
                 Return True
             Catch e As DbException
+                'MessageBoxService.ShowMessage(e.ErrorMessage, e.ErrorCaption, MessageButton.OK, MessageIcon.[Error])
+                'Return False
+                Dim isConcurrencyError As Boolean =
+                    e.GetType().Name = "DbUpdateConcurrencyException" OrElse
+                    (TypeOf e.InnerException Is DbUpdateConcurrencyException)
+
+                If isConcurrencyError Then
+                    LoadEntityByKey(PrimaryKey)
+                    Return True
+                End If
                 MessageBoxService.ShowMessage(e.ErrorMessage, e.ErrorCaption, MessageButton.OK, MessageIcon.[Error])
                 Return False
             End Try
